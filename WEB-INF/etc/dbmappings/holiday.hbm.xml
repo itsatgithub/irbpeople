@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Holiday" table="HOLIDAY">
+		<id name="holidaycode" column="holidaycode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+		<property name="start_date" type="timestamp">
+	<column name="start_date"  />
+</property><property name="end_date" type="string">
+	<column name="end_date" length="100" />
+</property><property name="days" type="int">
+	<column name="days"  default="0"/>
+</property><property name="description" type="string">
+	<column name="description" length="500" />
+</property>
+		
+		<!-- Associacion mappings -->
+		<many-to-one name="holiday_personal" class="Personal" column="holiday_personal" not-null="false"/>
+	
+<many-to-one name="type_of_holiday" class="Type_of_holidays" column="type_of_holiday" not-null="false"/>
+	
+
+		
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE beancodes [
+			<!ELEMENT beancodes (group)+>
+            <!ELEMENT group (code)+>
+<!ATTLIST group name CDATA #REQUIRED>
+
+            
+            <!ELEMENT code ((pattern)?,(num)?,(depends)?)>
+<!ATTLIST code beanName CDATA #REQUIRED>
+
+            <!ELEMENT pattern (#PCDATA)>
+            <!ELEMENT num (#PCDATA)>
+            
+            <!ELEMENT depends (atribute)*>
+            <!ELEMENT atribute (#PCDATA)>
+]>
+
+
+<!-- Pattern marks:
+	 {n}  -  number 
+	 {y}  -  YYYY 
+	 {m}  -  YYYYMM
+	 {d}  -  YYYYMMDD
+	 {a}  -  piece of code generated in run time
+  -->
+
+<beancodes>
+
+<group name="OBJECTS">
+
+	<code beanName="working_hours">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="type_of_grant">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="auditmessage">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="child">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="payment">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="research_group">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="category">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="compensation">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="funding_detail">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="grant">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="reportparameter">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="type_of_education">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="location">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="work_experience">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="type_of_contract">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="organization_unit">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="nationality">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="personal">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="marital_status">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="professional">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="payroll_institution">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="usuario">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="grant_concession">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="holiday">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="area">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="benefits">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="position">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="country">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="education">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="unit">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="type_of_holidays">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="report">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="gender">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="bank">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="type_of_institution">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="type_of_compensation">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="type_of_benefit">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="calendar">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="irbholiday">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+		<code beanName="irbholidayinfo">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	
+	<code beanName="customlist">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="column">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="filter">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+	<code beanName="orderBy">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
+</group>
+	
+</beancodes>

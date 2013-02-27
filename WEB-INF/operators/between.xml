@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+
+<operator name="between"> 		
+	<site name="en">
+	   	    
+	    <symbols>    
+	   	<symbol name="&lt;&gt;">    
+		    <caption language="en">Between</caption>
+		</symbol>    	  	
+	    </symbols>
+	  
+	</site>      
+</operator>

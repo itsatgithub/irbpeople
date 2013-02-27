@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Funding_detail" table="FUNDING_DETAIL">
+        <cache usage="read-write"/>
+    
+		<id name="funding_detailcode" column="funding_detailcode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+		<property name="institution" type="string">
+	<column name="institution" length="100" />
+</property><property name="percent" type="int">
+	<column name="percentage"  default="0"/>
+</property>
+		
+		<!-- Associacion mappings -->
+		<many-to-one name="funding_detail_personal" class="Personal" column="funding_detail_personal" not-null="false"/>
+		
+		<many-to-one name="irb_budget_code" class="Irb_budget" column="irb_budget_code" not-null="false"/>
+		
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

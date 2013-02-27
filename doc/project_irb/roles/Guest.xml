@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<role name="Guest" system-groups-included="true" default="true">
+  <description />
+  <accessible-groups>
+    <group name="other" />
+  </accessible-groups>
+  <forbidden-actions>
+    <action name="senttovalidatemessagewindow" group_name="other" />
+    <action name="appHome" group_name="other" />
+  </forbidden-actions>
+  <forbidden-actions-ref>
+    <action-ref action="senttovalidatemessagewindow" group="other" zone="submit" action-ref="generate_new_password_bis" group-ref="other" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="manage_all_personal" group-ref="oPersonalSys" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="manage_active_personal" group-ref="oPersonalSys" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="manage_research_groups" group-ref="oResearch_groupSys" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="viewlist_auditmessage" group-ref="oAuditmessageSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_unit" group-ref="oUnitSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_institution" group-ref="oType_of_institutionSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_holidays" group-ref="oType_of_holidaysSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_grant" group-ref="oType_of_grantSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_education" group-ref="oType_of_educationSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_contract" group-ref="oType_of_contractSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_compensation" group-ref="oType_of_compensationSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_benefit" group-ref="oType_of_benefitSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_position" group-ref="oPositionSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_payments" group-ref="oPaymentSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_organization_unit" group-ref="oOrganization_unitSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_nationalities" group-ref="oNationalitySys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_location" group-ref="oLocationSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_grants" group-ref="oGrantSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_countries" group-ref="oCountrySys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_area" group-ref="oAreaSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_gender" group-ref="oGenderSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_marital_status" group-ref="oMarital_statusSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_payroll_institution" group-ref="oPayroll_institutionSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_bank" group-ref="oBankSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_working_hours" group-ref="oWorking_hoursSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_category" group-ref="oCategorySys" />
+    <action-ref action="appHome" group="other" zone="group2" action-ref="todelete_choose_current_personal" group-ref="oPersonalSys" />
+    <action-ref action="appHome" group="other" zone="group2" action-ref="manage_my_rgroup_validating_personal" group-ref="oPersonalSys" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="reports" group-ref="other" />
+  </forbidden-actions-ref>
+</role>
+

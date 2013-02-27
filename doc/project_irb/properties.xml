@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project-properties>
+  <!-- GENERATED indica si se ha enviado alguna vez a generar  -->
+  <generated value="false" />
+  <inaccessibleActions value="true" />
+  <incompleteActions value="true" />
+  <company companyName="No-Company" companyNIF="" />
+  <role name="basic">
+    <error code="menuItemWithoutPermission" menu-item="Validating personal" />
+    <error code="menuItemWithoutPermission" menu-item="Validating cancelled personal" />
+    <error code="menuItemWithoutPermission" menu-item="In progress personal" />
+  </role>
+  <role name="human resources">
+    <error code="menuItemWithoutPermission" menu-item="Validating personal" />
+    <error code="menuItemWithoutPermission" menu-item="Validating cancelled personal" />
+    <error code="menuItemWithoutPermission" menu-item="In progress personal" />
+  </role>
+</project-properties>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+
+<type name="unit"> 		
+	<site name="en">
+	   	    
+	    <operators>    
+	   	<operator name="equals"/>    
+	   	<operator name="unit-less"/>    
+	   	<operator name="unit-more"/>    
+	   	<operator name="between"/>    	   	
+	    </operators>
+	  
+	</site>      
+</type>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+    <class name="Personal_comment" table="personal_comment">
+        <id name="personal_commentcode" column="personal_commentcode"></id>
+        
+        <version name="version"></version>
+
+        <property name="deleted" type="boolean">
+            <column name="deleted" />
+        </property>
+
+        <!-- attribute mappings -->
+        <property name="input_date" type="timestamp">
+            <column name="input_date" />
+        </property>
+        <property name="author" type="string">
+            <column name="author" length="100" />
+        </property>
+        <property name="text" type="string">
+            <column name="text" length="1000" />
+        </property>
+
+        <property name="tabindex" type="integer">
+            <column name="tabindex" />
+        </property>
+        
+        <!-- Associacion mappings -->
+        <many-to-one name="personal" class="Personal" column="personalcode" not-null="false" />
+
+
+        <!-- categorias -->
+
+    </class>
+</hibernate-mapping>

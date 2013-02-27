@@ -1,0 +1,2811 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+
+<form-validation>
+	<global>
+		<!-- An example global constant
+			<constant>
+			<constant-name>postalCode</constant-name>
+			<constant-value>^\d{5}\d*$</constant-value>
+			</constant>
+			end example-->
+	</global>
+
+	<formset>
+
+		<!-- ################################ -->
+		<!-- Individual form bean validations -->
+		<!-- ################################ -->
+
+		
+<form name="research_group_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="research_group.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="oCalendarSys__action_export_holidays_Form">
+    
+<field property="start_date" depends="required,localeDate">
+    <var>
+        <var-name>datePattern</var-name>
+        <var-value>simpleDate</var-value>
+    </var>
+    <arg key="professional.start_date" />
+</field>
+<field property="end_date" depends="required,localeDate">
+    <var>
+        <var-name>datePattern</var-name>
+        <var-value>simpleDate</var-value>
+    </var>
+    <arg key="professional.end_date" />
+</field>
+</form>
+<form name="professional_Form">
+	
+<field property="start_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="professional.start_date" />
+</field>
+<field property="end_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="professional.end_date" />
+</field>
+<field property="email" depends="email, mask">
+	<arg key="professional.email" />
+    <var>
+        <var-name>mask</var-name>
+        <var-value>^[-a-zA-Z0-9_.]+@irbbarcelona\.org$</var-value>
+    </var>
+</field>
+<field property="phone" depends="stringSize, mask">
+	<arg key="professional.phone" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+    <var>
+        <var-name>mask</var-name>
+        <var-value>^\+34 93 40 \d{5}$</var-value>
+    </var>
+</field>
+<field property="mobile_long" depends="stringSize, mask">
+	<arg key="mobile_long" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+    <var>
+        <var-name>mask</var-name>
+        <var-value>^\+34 \d{9}$</var-value>
+    </var>
+</field>
+<field property="mobile_short" depends="stringSize, mask">
+	<arg key="mobile_short" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+    <var>
+        <var-name>mask</var-name>
+        <var-value>^\d{5}$</var-value>
+    </var>
+</field>
+<field property="lab_phone_number" depends="stringSize, mask">
+	<arg key="lab_phone_number" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+    <var>
+        <var-name>mask</var-name>
+        <var-value>^\+34 93 40 \d{5}$</var-value>
+    </var>
+</field>
+<field property="fax" depends="stringSize, mask">
+	<arg key="fax" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+    <var>
+        <var-name>mask</var-name>
+        <var-value>^\+34 93 40 \d{5}$</var-value>
+    </var>
+</field>
+</form>
+<form name="location_Form">
+<field property="locationcode" depends="locationcode">
+	<arg key="locationcode" />
+</field>	
+<field property="description" depends="stringSize">
+	<arg key="location.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="type_of_education_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="type_of_education.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="benefits_Form">
+	
+<field property="start_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="benefits.start_date" />
+</field>
+<field property="end_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="benefits.end_date" />
+</field>
+<field property="description" depends="stringSize">
+	<arg key="benefits.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="type_of_benefit_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="type_of_benefit.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="grant_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="grant.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="education_Form">
+	
+<field property="start_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="education.start_date" />
+</field>
+<field property="end_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="education.end_date" />
+</field>
+<field property="graduation_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="education.graduation_date" />
+</field>
+<field property="title" depends="stringSize">
+	<arg key="education.title" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="speciality" depends="stringSize">
+	<arg key="education.speciality" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="center" depends="stringSize">
+	<arg key="education.center" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="marital_status_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="marital_status.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="nationality_Form">
+<field property="nationalitycode" depends="nationalitycode">
+	<arg key="nationalitycode" />
+</field>	
+<field property="description" depends="stringSize">
+	<arg key="nationality.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="payroll_institution_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="payroll_institution.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="child_Form">
+	
+<field property="birth_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="child.birth_date" />
+</field>
+<field property="observations" depends="stringSize">
+	<arg key="child.observations" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="work_experience_Form">
+	
+<field property="start_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="work_experience.start_date" />
+</field>
+<field property="end_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="work_experience.end_date" />
+</field>
+<field property="name_of_institution_or_company" depends="stringSize">
+	<arg key="work_experience.name_of_institution_or_company" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="type_of_grant_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="type_of_grant.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="payment_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="payment.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="organization_unit_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="organization_unit.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+
+<form name="irb_budget_Form">
+<field property="description" depends="stringSize">
+	<arg key="organization_unit.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+
+<form name="working_hours_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="working_hours.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="auditmessage_Form">
+	
+<field property="timestamp" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="auditmessage.timestamp" />
+</field>
+<field property="message" depends="stringSize">
+	<arg key="auditmessage.message" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="bank_Form">
+<field property="bankcode" depends="bankcode">
+	<arg key="bankcode" />
+</field>	
+<field property="description" depends="stringSize">
+	<arg key="bank.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="compensation_Form">
+	
+<field property="start_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="compensation.start_date" />
+</field>
+<field property="end_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="compensation.end_date" />
+</field>
+<field property="description" depends="stringSize">
+	<arg key="compensation.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="amount" depends="localeBigDecimal, bigDecimalRange">
+	<arg0 key="compensation.amount" />
+	<arg1 name="maximum" key="${var:maximum}"
+		resource="false" />
+	<arg1 name="minimum" key="${var:minimum}"
+		resource="false" />
+	<var>
+		<var-name>minimum</var-name>
+		<var-value>-999999999.99</var-value>
+	</var>
+	<var>
+		<var-name>maximum</var-name>
+		<var-value>999999999.99</var-value>
+	</var>				
+</field>
+
+</form>
+<form name="type_of_institution_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="type_of_institution.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="holiday_Form">
+	
+<field property="start_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="holiday.start_date" />
+</field>
+<field property="end_date" depends="stringSize">
+	<arg key="holiday.end_date" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="days" depends="integer">
+	<arg key="holiday.days" />
+</field>
+<field property="description" depends="stringSize">
+	<arg key="holiday.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="grant_concession_Form">
+
+<field property="start_date_msc_or_phd" depends="localeDate">
+    <var>
+        <var-name>datePattern</var-name>
+        <var-value>simpleDate</var-value>
+    </var>
+    <arg key="grant_concession.start_date" />
+</field>	
+<field property="start_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="grant_concession.start_date" />
+</field>
+<field property="end_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="grant_concession.end_date" />
+</field>
+<field property="call_code" depends="stringSize">
+	<arg key="grant_concession.call_code" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="thesis_director" depends="stringSize">
+    <arg key="grant_concession.thesis_director" />
+    <var>
+        <var-name>size</var-name>
+        <var-value>100</var-value>
+    </var>
+</field>
+<field property="name_master_or_programme" depends="stringSize">
+    <arg key="grant_concession.name_master_or_programme" />
+    <var>
+        <var-name>size</var-name>
+        <var-value>100</var-value>
+    </var>
+</field>
+<field property="university_enrolled" depends="stringSize">
+    <arg key="grant_concession.university_enrolled" />
+    <var>
+        <var-name>size</var-name>
+        <var-value>100</var-value>
+    </var>
+</field>
+</form>
+<form name="type_of_contract_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="type_of_contract.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="type_of_compensation_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="type_of_compensation.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="unit_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="unit.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="gender_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="gender.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="country_Form">
+<field property="countrycode" depends="countrycode">
+	<arg key="countrycode" />
+</field>
+	
+<field property="description" depends="stringSize">
+	<arg key="country.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="category_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="category.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="funding_detail_Form">
+	
+<field property="institution" depends="stringSize">
+	<arg key="funding_detail.institution" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="percent" depends="integer">
+	<arg key="funding_detail.percent" />
+</field>
+</form>
+<form name="area_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="area.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="type_of_holidays_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="type_of_holidays.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="personal_Form">
+	
+<field property="name" depends="stringSize">
+	<arg key="personal.name" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="surname1" depends="stringSize">
+	<arg key="personal.surname1" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="dni" depends="stringSize">
+	<arg key="personal.dni" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="birth_date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="personal.birth_date" />
+</field>
+<field property="birth_city" depends="stringSize">
+	<arg key="personal.birth_city" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="street" depends="stringSize">
+	<arg key="personal.street" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="city" depends="stringSize">
+	<arg key="personal.city" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="zip_code" depends="stringSize">
+	<arg key="personal.zip_code" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="phone" depends="stringSize">
+	<arg key="personal.phone" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="phone2" depends="stringSize">
+	<arg key="personal.phone2" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="ice_phone" depends="stringSize">
+	<arg key="personal.ice_phone" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="second_affiliation" depends="stringSize">
+    <arg key="personal.second_affiliation" />
+    <var>
+        <var-name>size</var-name>
+        <var-value>255</var-value>
+    </var>
+</field>
+<field property="ss_number" depends="stringSize">
+	<arg key="personal.ss_number" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="bank_account" depends="stringSize">
+	<arg key="personal.bank_account" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="research_project" depends="stringSize">
+	<arg key="personal.research_project" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="sponsoring_agency" depends="stringSize">
+	<arg key="personal.sponsoring_agency" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="holding_institution" depends="stringSize">
+	<arg key="personal.holding_institution" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="principal_investigator" depends="stringSize">
+	<arg key="personal.principal_investigator" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="end_of_contract_reason" depends="stringSize">
+	<arg key="personal.end_of_contract_reason" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="end_of_contract_address" depends="stringSize">
+	<arg key="personal.end_of_contract_address" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="end_of_contract_city" depends="stringSize">
+	<arg key="personal.end_of_contract_city" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="end_of_contract_zip_code" depends="stringSize">
+	<arg key="personal.end_of_contract_zip_code" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="end_of_contract_phone" depends="stringSize">
+	<arg key="personal.end_of_contract_phone" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="end_of_contract_email" depends="stringSize, email">
+	<arg key="personal.end_of_contract_email" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="usercode" depends="stringSize">
+	<arg key="personal.usercode" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="ss_number" depends="stringSize">
+	<arg key="personal.ss_number" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="position_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="position.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+<form name="usuarioForm">
+	
+<field property="username" depends="stringSize">
+	<arg key="usuario.username" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="password" depends="stringSize">
+	<arg key="usuario.password" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="email" depends="email">
+	<arg key="usuario.email" />
+</field>
+</form>
+		
+		<form name="report_Form">
+	
+<field property="name" depends="stringSize">
+	<arg key="report.name" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="date" depends="localeDate">
+	<var>
+		<var-name>datePattern</var-name>
+		<var-value>simpleDate</var-value>
+	</var>
+	<arg key="report.date" />
+</field>
+<field property="filename" depends="stringSize">
+	<arg key="report.filename" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="type" depends="stringSize">
+	<arg key="report.type" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="is_public" depends="stringSize">
+	<arg key="report.is_public" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="observations" depends="stringSize">
+	<arg key="report.observations" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
+
+
+		
+		<!-- ################################ -->
+		<!-- Container form bean validations  -->
+		<!-- ################################ -->
+		<form name="usuarioContainerForm">
+			<field property="usuarioForm" depends="nestedBean">
+				<var>
+					<var-name>beanName</var-name>
+					<var-value>usuarioForm</var-value>
+				</var>
+			</field>
+		</form>
+		
+		<form name="displayChangeUsuarioForm">
+			<field property="usuarioForm" depends="nestedBean">
+				<var>
+					<var-name>beanName</var-name>
+					<var-value>usuarioForm</var-value>
+				</var>
+			</field>
+		</form>
+
+		<!-- ################################ -->
+		<!-- Action form bean validations  -->
+		<!-- ################################ -->
+<form name="oReportSys__action_modify_modify_page_report_Form">
+	
+<field property="report_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>report_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oReportSys__action_delete_delete_page_report_Form">
+	
+<field property="report_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>report_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oReportSys__action_new_new_page_report_Form">
+	
+<field property="report_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>report_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+
+		<form name="/user/doAddUser">
+			<field property="usuarioForm.email" depends="required">
+				<arg key="usuario.email" />
+			</field>
+			<field property="usuarioForm.password" depends="required">
+				<arg key="usuario.password" />
+			</field>
+			<field property="usuarioForm.email2" depends="validwhen">
+				<arg key="error.confirmEmail" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>(usuarioForm.email== *this*)</var-value>
+				</var>
+			</field>
+			<field property="usuarioForm.password2" depends="validwhen">
+				<arg key="error.confirmPassword" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>(usuarioForm.password== *this*)</var-value>
+				</var>
+			</field>
+			
+		</form>
+
+		<form name="/user/doAddNewUser">
+			<field property="usuarioForm.email" depends="required">
+				<arg key="usuario.email" />
+			</field>
+			<field property="usuarioForm.password" depends="required">
+				<arg key="usuario.password" />
+			</field>
+		</form>
+
+		<form name="/workspace/doUpdateUser">
+			<field property="changePasswordForm.current" depends="required">
+				<arg key="usuario.currentpassword" />
+			</field>
+			<field property="changePasswordForm.password" depends="validwhen">
+				<arg key="error.confirmPassword" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>(changePasswordForm.password2== *this*)</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="/workspace/doDeactivateCurrentUser">
+			<field property="usuarioForm.password" depends="required">
+				<arg key="usuario.password" />
+			</field>
+		</form>
+
+		<form name="/user/doChangePassword">
+			<field property="changePasswordForm.password"
+				depends="required">
+				<arg key="usuario.password" />
+			</field>
+			<field property="changePasswordForm.password"
+				depends="required">
+				<arg key="usuario.password2" />
+			</field>
+		</form>
+
+		<form name="/workspace/doChangeMyPassword">
+			<field property="changePasswordForm.current"
+				depends="required">
+				<arg key="usuario.currentpassword" />
+			</field>
+			<field property="changePasswordForm.password"
+				depends="required">
+				<arg key="usuario.password" />
+			</field>
+			<field property="changePasswordForm.password"
+				depends="required">
+				<arg key="usuario.password2" />
+			</field>
+		</form>
+
+		
+<form name="oType_of_holidaysSys__action_new_new_page_type_of_holidays_Form">
+	
+<field property="type_of_holidays_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_holidays_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_holidays_Form.description" depends="required">
+	<arg key="type_of_holidays.description" />
+</field>
+
+
+
+</form>
+<form name="oType_of_holidaysSys__action_modify_modify_page_type_of_holidays_Form">
+	
+<field property="type_of_holidays_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_holidays_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_holidays_Form.description" depends="required">
+	<arg key="type_of_holidays.description" />
+</field>
+
+
+</form>
+<form name="oType_of_holidaysSys__action_delete_delete_page_type_of_holidays_Form">
+	
+<field property="type_of_holidays_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_holidays_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPayroll_institutionSys__action_new_new_page_payroll_institution_Form">
+	
+<field property="payroll_institution_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>payroll_institution_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPayroll_institutionSys__action_delete_delete_page_payroll_institution_Form">
+	
+<field property="payroll_institution_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>payroll_institution_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPayroll_institutionSys__action_modify_modify_page_payroll_institution_Form">
+	
+<field property="payroll_institution_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>payroll_institution_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oAuditmessageSys__action_new_new_page_auditmessage_Form">
+	
+<field property="auditmessage_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>auditmessage_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oWorking_hoursSys__action_delete_delete_page_working_hours_Form">
+	
+<field property="working_hours_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>working_hours_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oWorking_hoursSys__action_new_new_page_working_hours_Form">
+	
+<field property="working_hours_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>working_hours_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oWorking_hoursSys__action_modify_modify_page_working_hours_Form">
+	
+<field property="working_hours_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>working_hours_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oWork_experienceSys__action_add_my_own_work_experience_new_new_page_work_experience_Form">
+	
+<field property="work_experience_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>work_experience_Form</var-value>
+	</var>
+</field>
+
+<field property="work_experience_Form.start_date" depends="required">
+	<arg key="work_experience.start_date" />
+</field>
+<field property="work_experience_Form.end_date" depends="required">
+	<arg key="work_experience.end_date" />
+</field>
+<field property="work_experience_Form.name_of_institution_or_company" depends="required">
+	<arg key="work_experience.name_of_institution_or_company" />
+</field>
+
+
+<field property="work_experience_Form.type_of_institution.type_of_institutioncode" depends="required">
+	<arg key="work_experience.type_of_institution" />
+</field>
+<field property="work_experience_Form.area.areacode" depends="required">
+	<arg key="work_experience.area" />
+</field>
+<field property="work_experience_Form.position" depends="required">
+	<arg key="work_experience.work_experience_position" />
+</field>
+<field property="work_experience_Form.work_experience_country.countrycode" depends="required">
+	<arg key="work_experience.work_experience_country" />
+</field>
+	
+	
+</form>
+<form name="oWork_experienceSys__action_delete_delete_page_work_experience_Form">
+	
+<field property="work_experience_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>work_experience_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oWork_experienceSys__action_modify_modify_page_work_experience_Form">
+	
+<field property="work_experience_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>work_experience_Form</var-value>
+	</var>
+</field>
+<field property="work_experience_Form.start_date" depends="required">
+	<arg key="work_experience.start_date" />
+</field>
+<field property="work_experience_Form.end_date" depends="required">
+	<arg key="work_experience.end_date" />
+</field>
+<field property="work_experience_Form.name_of_institution_or_company" depends="required">
+	<arg key="work_experience.name_of_institution_or_company" />
+</field>
+
+
+<field property="work_experience_Form.type_of_institution.type_of_institutioncode" depends="required">
+	<arg key="work_experience.type_of_institution" />
+</field>
+<field property="work_experience_Form.area.areacode" depends="required">
+	<arg key="work_experience.area" />
+</field>
+<field property="work_experience_Form.position" depends="required">
+	<arg key="work_experience.work_experience_position" />
+</field>
+<field property="work_experience_Form.work_experience_country.countrycode" depends="required">
+	<arg key="work_experience.work_experience_country" />
+</field>
+	
+	
+</form>
+<form name="oWork_experienceSys__action_new_new_page_work_experience_Form">
+	
+<field property="work_experience_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>work_experience_Form</var-value>
+	</var>
+</field>
+
+<field property="work_experience_Form.start_date" depends="required">
+	<arg key="work_experience.start_date" />
+</field>
+<field property="work_experience_Form.end_date" depends="required">
+	<arg key="work_experience.end_date" />
+</field>
+<field property="work_experience_Form.name_of_institution_or_company" depends="required">
+	<arg key="work_experience.name_of_institution_or_company" />
+</field>
+
+
+<field property="work_experience_Form.type_of_institution.type_of_institutioncode" depends="required">
+	<arg key="work_experience.type_of_institution" />
+</field>
+<field property="work_experience_Form.area.areacode" depends="required">
+	<arg key="work_experience.area" />
+</field>
+<field property="work_experience_Form.position" depends="required">
+	<arg key="work_experience.work_experience_position" />
+</field>
+<field property="work_experience_Form.work_experience_country.countrycode" depends="required">
+	<arg key="work_experience.work_experience_country" />
+</field>
+</form>
+
+
+
+
+
+<form name="oCountrySys__action_new_new_page_country_Form">
+	
+<field property="country_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>country_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="country_Form.description" depends="required">
+	<arg key="country.description" />
+</field>
+
+
+</form>
+<form name="oCountrySys__action_modify_modify_page_country_Form">
+	
+<field property="country_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>country_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="country_Form.description" depends="required">
+	<arg key="country.description" />
+</field>
+
+
+</form>
+<form name="oCountrySys__action_delete_delete_page_country_Form">
+	
+<field property="country_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>country_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oFunding_detailSys__action_modify_modify_page_funding_detail_Form">
+	
+<field property="funding_detail_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>funding_detail_Form</var-value>
+	</var>
+</field>
+
+<field property="funding_detail_Form.institution" depends="required">
+    <arg key="funding_detail.institution"/>
+</field>    
+
+<field property="funding_detail_Form.percent" depends="required">
+    <arg key="funding_detail.percent"/>
+</field>    
+	
+	
+</form>
+<form name="oFunding_detailSys__action_new_new_page_funding_detail_Form">
+	
+<field property="funding_detail_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>funding_detail_Form</var-value>
+	</var>
+</field>
+
+<field property="funding_detail_Form.institution" depends="required">
+    <arg key="funding_detail.institution"/>
+</field>	
+
+<field property="funding_detail_Form.percent" depends="required">
+    <arg key="funding_detail.percent"/>
+</field>    
+	
+</form>
+<form name="oFunding_detailSys__action_delete_delete_page_funding_detail_Form">
+	
+<field property="funding_detail_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>funding_detail_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oChildSys__action_new_new_page_child_Form">
+	
+<field property="child_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>child_Form</var-value>
+	</var>
+</field>
+
+<field property="child_Form.birth_date" depends="required">
+    <arg key="child.birth_date" />
+</field>   	
+	
+</form>
+<form name="oChildSys__action_delete_delete_page_child_Form">
+	
+<field property="child_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>child_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oChildSys__action_modify_modify_page_child_Form">
+	
+<field property="child_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>child_Form</var-value>
+	</var>
+</field>
+
+<field property="child_Form.birth_date" depends="required">
+    <arg key="child.birth_date" />
+</field> 	
+	
+</form>
+<form name="oProfessionalSys__action_new_new_page_professional_Form">
+	
+<field property="professional_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>professional_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oProfessionalSys__action_modify_modify_page_professional_Form">
+	
+<field property="professional_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>professional_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oProfessionalSys__action_delete_delete_page_professional_Form">
+	
+<field property="professional_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>professional_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oUnitSys__action_modify_modify_page_unit_Form">
+	
+<field property="unit_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>unit_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="unit_Form.organization_unit.organization_unitcode" depends="required">
+	<arg key="unit.organization_unit" />
+</field>
+
+
+<field property="unit_Form.description" depends="required">
+	<arg key="unit.description" />
+</field>
+
+
+</form>
+<form name="oUnitSys__action_delete_delete_page_unit_Form">
+	
+<field property="unit_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>unit_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oUnitSys__action_new_new_page_unit_Form">
+	
+<field property="unit_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>unit_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="unit_Form.organization_unit.organization_unitcode" depends="required">
+	<arg key="unit.organization_unit" />
+</field>
+
+
+<field property="unit_Form.description" depends="required">
+	<arg key="unit.description" />
+</field>
+
+
+</form>
+<form name="oCategorySys__action_modify_modify_page_category_Form">
+	
+<field property="category_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>category_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oCategorySys__action_delete_delete_page_category_Form">
+	
+<field property="category_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>category_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oCategorySys__action_new_new_page_category_Form">
+	
+<field property="category_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>category_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oResearch_groupSys__action_new_new_page_research_group_Form">
+	
+<field property="research_group_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>research_group_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oResearch_groupSys__action_delete_delete_page_research_group_Form">
+	
+<field property="research_group_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>research_group_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oResearch_groupSys__action_modify_modify_page_research_group_Form">
+	
+<field property="research_group_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>research_group_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oMarital_statusSys__action_new_new_page_marital_status_Form">
+	
+<field property="marital_status_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>marital_status_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oMarital_statusSys__action_delete_delete_page_marital_status_Form">
+	
+<field property="marital_status_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>marital_status_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oMarital_statusSys__action_modify_modify_page_marital_status_Form">
+	
+<field property="marital_status_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>marital_status_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oGrantSys__action_delete_delete_page_grant_Form">
+	
+<field property="grant_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>grant_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oGrantSys__action_modify_modify_page_grant_Form">
+	
+<field property="grant_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>grant_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="grant_Form.description" depends="required">
+	<arg key="grant.description" />
+</field>
+
+
+<field property="grant_Form.type_of_grant.type_of_grantcode" depends="required">
+	<arg key="grant.type_of_grant" />
+</field>
+
+
+</form>
+<form name="oGrantSys__action_new_new_page_grant_Form">
+	
+<field property="grant_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>grant_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="grant_Form.description" depends="required">
+	<arg key="grant.description" />
+</field>
+
+
+<field property="grant_Form.type_of_grant.type_of_grantcode" depends="required">
+	<arg key="grant.type_of_grant" />
+</field>
+
+
+</form>
+<form name="oBankSys__action_modify_modify_page_bank_Form">
+	
+<field property="bank_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>bank_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oBankSys__action_delete_delete_page_bank_Form">
+	
+<field property="bank_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>bank_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oBankSys__action_new_new_page_bank_Form">
+	
+<field property="bank_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>bank_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPaymentSys__action_new_new_page_payment_Form">
+	
+<field property="payment_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>payment_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="payment_Form.description" depends="required">
+	<arg key="payment.description" />
+</field>
+
+
+</form>
+<form name="oPaymentSys__action_modify_modify_page_payment_Form">
+	
+<field property="payment_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>payment_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="payment_Form.description" depends="required">
+	<arg key="payment.description" />
+</field>
+
+
+</form>
+<form name="oPaymentSys__action_delete_delete_page_payment_Form">
+	
+<field property="payment_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>payment_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oType_of_educationSys__action_new_new_page_type_of_education_Form">
+	
+<field property="type_of_education_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_education_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_education_Form.description" depends="required">
+	<arg key="type_of_education.description" />
+</field>
+
+
+</form>
+<form name="oType_of_educationSys__action_delete_delete_page_type_of_education_Form">
+	
+<field property="type_of_education_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_education_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oType_of_educationSys__action_modify_modify_page_type_of_education_Form">
+	
+<field property="type_of_education_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_education_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_education_Form.description" depends="required">
+	<arg key="type_of_education.description" />
+</field>
+
+
+</form>
+<form name="oType_of_compensationSys__action_delete_delete_page_type_of_compensation_Form">
+	
+<field property="type_of_compensation_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_compensation_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oType_of_compensationSys__action_modify_modify_page_type_of_compensation_Form">
+	
+<field property="type_of_compensation_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_compensation_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_compensation_Form.description" depends="required">
+	<arg key="type_of_compensation.description" />
+</field>
+
+
+</form>
+<form name="oType_of_compensationSys__action_new_new_page_type_of_compensation_Form">
+	
+<field property="type_of_compensation_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_compensation_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_compensation_Form.description" depends="required">
+	<arg key="type_of_compensation.description" />
+</field>
+
+
+</form>
+<form name="oAreaSys__action_delete_delete_page_area_Form">
+	
+<field property="area_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>area_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oAreaSys__action_new_new_page_area_Form">
+	
+<field property="area_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>area_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="area_Form.description" depends="required">
+	<arg key="area.description" />
+</field>
+
+
+</form>
+<form name="oAreaSys__action_modify_modify_page_area_Form">
+	
+<field property="area_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>area_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="area_Form.description" depends="required">
+	<arg key="area.description" />
+</field>
+
+
+</form>
+<form name="oType_of_institutionSys__action_delete_delete_page_type_of_institution_Form">
+	
+<field property="type_of_institution_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_institution_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oType_of_institutionSys__action_modify_modify_page_type_of_institution_Form">
+	
+<field property="type_of_institution_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_institution_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_institution_Form.description" depends="required">
+	<arg key="type_of_institution.description" />
+</field>
+
+
+</form>
+<form name="oType_of_institutionSys__action_new_new_page_type_of_institution_Form">
+	
+<field property="type_of_institution_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_institution_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_institution_Form.description" depends="required">
+	<arg key="type_of_institution.description" />
+</field>
+
+
+</form>
+<form name="oType_of_benefitSys__action_delete_delete_page_type_of_benefit_Form">
+	
+<field property="type_of_benefit_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_benefit_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oType_of_benefitSys__action_modify_modify_page_type_of_benefit_Form">
+	
+<field property="type_of_benefit_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_benefit_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_benefit_Form.description" depends="required">
+	<arg key="type_of_benefit.description" />
+</field>
+
+
+</form>
+<form name="oType_of_benefitSys__action_new_new_page_type_of_benefit_Form">
+	
+<field property="type_of_benefit_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_benefit_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_benefit_Form.description" depends="required">
+	<arg key="type_of_benefit.description" />
+</field>
+
+
+</form>
+<form name="oType_of_grantSys__action_new_new_page_type_of_grant_Form">
+	
+<field property="type_of_grant_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_grant_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_grant_Form.description" depends="required">
+	<arg key="type_of_grant.description" />
+</field>
+
+
+</form>
+<form name="oType_of_grantSys__action_modify_modify_page_type_of_grant_Form">
+	
+<field property="type_of_grant_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_grant_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_grant_Form.description" depends="required">
+	<arg key="type_of_grant.description" />
+</field>
+
+
+</form>
+<form name="oType_of_grantSys__action_delete_delete_page_type_of_grant_Form">
+	
+<field property="type_of_grant_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_grant_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oEducationSys__action_new_new_page_education_Form">
+	
+<field property="education_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>education_Form</var-value>
+	</var>
+</field>
+<field property="education_Form.start_date" depends="required">
+	<arg key="education.start_date" />
+</field>
+<!-- 
+<field property="education_Form.graduation_date" depends="required">
+	<arg key="education.graduation_date" />
+</field>
+-->
+<field property="education_Form.title" depends="required">
+	<arg key="education.title" />
+</field>
+<field property="education_Form.speciality" depends="required">
+	<arg key="education.speciality" />
+</field>
+<field property="education_Form.center" depends="required">
+	<arg key="education.center" />
+</field>
+<field property="education_Form.type.type_of_educationcode" depends="required">
+	<arg key="education.type" />
+</field>
+<field property="education_Form.education_country.countrycode" depends="required">
+	<arg key="education.education_country" />
+</field>
+
+	
+</form>
+<form name="oEducationSys__action_modify_modify_page_education_Form">
+	
+<field property="education_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>education_Form</var-value>
+	</var>
+</field>
+<field property="education_Form.start_date" depends="required">
+	<arg key="education.start_date" />
+</field>
+<!-- 
+<field property="education_Form.graduation_date" depends="required">
+	<arg key="education.graduation_date" />
+</field>
+-->
+<field property="education_Form.title" depends="required">
+	<arg key="education.title" />
+</field>
+<field property="education_Form.speciality" depends="required">
+	<arg key="education.speciality" />
+</field>
+<field property="education_Form.center" depends="required">
+	<arg key="education.center" />
+</field>
+<field property="education_Form.type.type_of_educationcode" depends="required">
+	<arg key="education.type" />
+</field>
+<field property="education_Form.education_country.countrycode" depends="required">
+	<arg key="education.education_country" />
+</field>
+	
+	
+</form>
+<form name="oEducationSys__action_add_my_own_education_new_new_page_education_Form">
+	
+<field property="education_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>education_Form</var-value>
+	</var>
+</field>
+<field property="education_Form.start_date" depends="required">
+	<arg key="education.start_date" />
+</field>
+<!-- 
+<field property="education_Form.graduation_date" depends="required">
+	<arg key="education.graduation_date" />
+</field>
+-->
+<field property="education_Form.title" depends="required">
+	<arg key="education.title" />
+</field>
+<field property="education_Form.speciality" depends="required">
+	<arg key="education.speciality" />
+</field>
+<field property="education_Form.center" depends="required">
+	<arg key="education.center" />
+</field>
+<field property="education_Form.type.type_of_educationcode" depends="required">
+	<arg key="education.type" />
+</field>
+<field property="education_Form.education_country.countrycode" depends="required">
+	<arg key="education.education_country" />
+</field>
+	
+	
+</form>
+<form name="oEducationSys__action_delete_delete_page_education_Form">
+	
+<field property="education_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>education_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oNationalitySys__action_delete_delete_page_nationality_Form">
+	
+<field property="nationality_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>nationality_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oNationalitySys__action_new_new_page_nationality_Form">
+	
+<field property="nationality_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>nationality_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="nationality_Form.description" depends="required">
+	<arg key="nationality.description" />
+</field>
+
+
+</form>
+<form name="oNationalitySys__action_modify_modify_page_nationality_Form">
+	
+<field property="nationality_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>nationality_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="nationality_Form.description" depends="required">
+	<arg key="nationality.description" />
+</field>
+
+
+</form>
+
+<form name="oGrant_concessionSys__action_modify_modify_page_grant_concession_Form">
+	
+<field property="grant_concession_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>grant_concession_Form</var-value>
+	</var>
+</field>
+	
+</form>
+
+<form name="oGrant_concessionSys__action_delete_delete_page_grant_concession_Form">
+	
+<field property="grant_concession_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>grant_concession_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oGrant_concessionSys__action_new_new_page_grant_concession_Form">
+	
+<field property="grant_concession_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>grant_concession_Form</var-value>
+	</var>
+</field>	
+	
+</form>
+
+<form name="oGrant_concessionSys__action_add_my_own_grant_concession_new_new_page_grant_concession_Form">
+	
+<field property="grant_concession_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>grant_concession_Form</var-value>
+	</var>
+</field>
+	
+</form>
+
+<form name="oLocationSys__action_modify_modify_page_location_Form">
+	
+<field property="location_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>location_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="location_Form.description" depends="required">
+	<arg key="location.description" />
+</field>
+
+
+</form>
+<form name="oLocationSys__action_delete_delete_page_location_Form">
+	
+<field property="location_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>location_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oLocationSys__action_new_new_page_location_Form">
+	
+<field property="location_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>location_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="location_Form.description" depends="required">
+	<arg key="location.description" />
+</field>
+
+
+</form>
+<form name="oPersonalSys__action_new_new_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_change_state_form_pcancelled_to_progress_modify_modify_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_change_state_from_progress_to_active_modify_modify_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_change_state_from_vcancelled_to_validation_modify_modify_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_delete_delete_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_modify_modify_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_modify_my_rgroup_personal_modify_modify_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_changeto_inactivate_personal_modify_modify_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_change_state_from_progress_to_validation_modify_modify_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_change_state_from_inactive_to_active_modify_modify_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_change_state_from_validating_to_progress_modify_modify_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_modify_my_own_personal_modify_modify_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="personal_Form.name" depends="required">
+	<arg key="personal.name" />
+</field>
+
+
+<field property="personal_Form.surname1" depends="required">
+	<arg key="personal.surname1" />
+</field>
+
+
+<field property="personal_Form.dni" depends="required">
+	<arg key="personal.dni" />
+</field>
+
+
+</form>
+<form name="oPersonalSys__action_Send_to_validate_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_change_state_from_edition_to_validating_modify_modify_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_change_state_from_progress_to_pcancel_modify_modify_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oPersonalSys__action_change_state_from_validation_to_vcancelled_modify_modify_page_personal_Form">
+	
+<field property="personal_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>personal_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oCompensationSys__action_delete_delete_page_compensation_Form">
+	
+<field property="compensation_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>compensation_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oCompensationSys__action_new_new_page_compensation_Form">
+	
+<field property="compensation_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>compensation_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oCompensationSys__action_modify_modify_page_compensation_Form">
+	
+<field property="compensation_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>compensation_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oHolidaySys__action_new_new_page_holiday_Form">
+	
+<field property="holiday_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>holiday_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oHolidaySys__action_modify_modify_page_holiday_Form">
+	
+<field property="holiday_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>holiday_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oHolidaySys__action_delete_delete_page_holiday_Form">
+	
+<field property="holiday_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>holiday_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oGenderSys__action_delete_delete_page_gender_Form">
+	
+<field property="gender_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>gender_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oGenderSys__action_new_new_page_gender_Form">
+	
+<field property="gender_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>gender_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oGenderSys__action_modify_modify_page_gender_Form">
+	
+<field property="gender_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>gender_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oOrganization_unitSys__action_modify_modify_page_organization_unit_Form">
+	
+<field property="organization_unit_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>organization_unit_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="organization_unit_Form.description" depends="required">
+	<arg key="organization_unit.description" />
+</field>
+
+
+</form>
+<form name="oOrganization_unitSys__action_new_new_page_organization_unit_Form">
+	
+<field property="organization_unit_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>organization_unit_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="organization_unit_Form.description" depends="required">
+	<arg key="organization_unit.description" />
+</field>
+
+
+</form>
+<form name="oOrganization_unitSys__action_delete_delete_page_organization_unit_Form">
+	
+<field property="organization_unit_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>organization_unit_Form</var-value>
+	</var>
+</field>
+</form>
+<form name="oIrb_budgetSys__action_modify_modify_page_irb_budget_Form">
+	
+<field property="irb_budget_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>irb_budget_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="irb_budget_Form.description" depends="required">
+	<arg key="irb_budget.description" />
+</field>
+<field property="irb_budget_Form.irb_budgetcode" depends="required">
+	<arg key="irb_budgetcode" />
+</field>
+
+
+</form>
+<form name="oIrb_budgetSys__action_new_new_page_irb_budget_Form">
+	
+<field property="irb_budget_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>irb_budget_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="irb_budget_Form.description" depends="required">
+	<arg key="irb_budget.description" />
+</field>
+<field property="irb_budget_Form.irb_budgetcode" depends="required">
+	<arg key="irb_budgetcode" />
+</field>
+
+</form>
+<form name="oIrb_budgetSys__action_delete_delete_page_irb_budget_Form">
+	
+<field property="irb_budget_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>irb_budget_Form</var-value>
+	</var>
+</field>	
+	
+</form>
+<form name="oPositionSys__action_new_new_page_position_Form">
+	
+<field property="position_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>position_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="position_Form.description" depends="required">
+	<arg key="position.description" />
+</field>
+
+
+</form>
+<form name="oPositionSys__action_modify_modify_page_position_Form">
+	
+<field property="position_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>position_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="position_Form.description" depends="required">
+	<arg key="position.description" />
+</field>
+
+
+</form>
+<form name="oPositionSys__action_delete_delete_page_position_Form">
+	
+<field property="position_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>position_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oBenefitsSys__action_modify_modify_page_benefits_Form">
+	
+<field property="benefits_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>benefits_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oBenefitsSys__action_delete_delete_page_benefits_Form">
+	
+<field property="benefits_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>benefits_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oBenefitsSys__action_new_new_page_benefits_Form">
+	
+<field property="benefits_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>benefits_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oType_of_contractSys__action_new_new_page_type_of_contract_Form">
+	
+<field property="type_of_contract_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_contract_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_contract_Form.description" depends="required">
+	<arg key="type_of_contract.description" />
+</field>
+
+
+</form>
+<form name="oType_of_contractSys__action_modify_modify_page_type_of_contract_Form">
+	
+<field property="type_of_contract_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_contract_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_contract_Form.description" depends="required">
+	<arg key="type_of_contract.description" />
+</field>
+
+
+</form>
+<form name="oType_of_contractSys__action_delete_delete_page_type_of_contract_Form">
+	
+<field property="type_of_contract_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_contract_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+	</formset>
+
+</form-validation>

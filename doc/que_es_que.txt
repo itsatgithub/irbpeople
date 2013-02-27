@@ -1,0 +1,2 @@
+V5=ultima versión instalada.
+V6=Añadido campo professional.building <- ACTUAL EN IRB

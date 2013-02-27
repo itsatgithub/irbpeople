@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Type_of_grant" table="TYPE_OF_GRANT">
+        <cache usage="read-write"/>
+    
+		<id name="type_of_grantcode" column="type_of_grantcode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+		<property name="description" type="string">
+			<column name="description" length="100" />
+		</property>
+		
+		<!-- Associacion mappings -->
+		
+	<set name="itype_of_grant" cascade="none" lazy="true">
+		<key>
+			<column name="type_of_grant" />
+		</key>
+		<one-to-many class="Grant" />
+	</set>
+
+		
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

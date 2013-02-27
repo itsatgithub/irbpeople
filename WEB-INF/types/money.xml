@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+
+<type name="money"> 		
+	<site name="en">
+	   	    
+	    <operators>    
+	   	<operator name="equals"/>    
+	   	<operator name="money-less"/>    
+	   	<operator name="money-more"/>    
+	   	<operator name="between"/>    	   	
+	    </operators>
+	  
+	</site>      
+</type>

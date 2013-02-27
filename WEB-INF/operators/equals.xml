@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+
+<operator name="equals"> 		
+	<site name="en">
+	   	    
+	    <symbols>    
+	   	<symbol name="=">    
+		    <caption language="en">Equals</caption>
+		</symbol>    	  	
+	    </symbols>
+	  
+	</site>      
+</operator>

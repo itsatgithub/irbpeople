@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+<property name="hibernate.cache.use_second_level_cache">false</property>
+<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+<!-- sqlserver 2005 jdbc driver -->
+<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+<property name="hibernate.connection.url">jdbc:mysql://irbsvr3.irb.pcb.ub.es:3306/irbdb?zeroDateTimeBehavior=convertToNull</property>
+<property name="hibernate.connection.username">root</property>
+<property name="hibernate.connection.password">X24mnt32</property>
+<property name="hibernate.show.sql">false</property>
+
+<!-- Connection pool -->
+<property name="hibernate.c3p0.min_size">5</property>
+<property name="hibernate.c3p0.max_size">20</property>
+<property name="hibernate.c3p0.timeout">300</property>
+<property name="hibernate.c3p0.max_statements">0</property>
+<property name="hibernate.c3p0.idle_test_period">3000</property>
+
+<!-- mappings -->
+
+<mapping resource="../etc/dbmappings/applicationPreferences.hbm.xml"/>
+<mapping resource="../etc/dbmappings/personalPhoto.hbm.xml"/>
+
+<mapping resource="../etc/dbmappings/research_group.hbm.xml" />
+<mapping resource="../etc/dbmappings/professional.hbm.xml" />
+<mapping resource="../etc/dbmappings/location.hbm.xml" />
+<mapping resource="../etc/dbmappings/type_of_education.hbm.xml" />
+<mapping resource="../etc/dbmappings/benefits.hbm.xml" />
+<mapping resource="../etc/dbmappings/type_of_benefit.hbm.xml" />
+<mapping resource="../etc/dbmappings/grant.hbm.xml" />
+<mapping resource="../etc/dbmappings/education.hbm.xml" />
+<mapping resource="../etc/dbmappings/marital_status.hbm.xml" />
+<mapping resource="../etc/dbmappings/nationality.hbm.xml" />
+<mapping resource="../etc/dbmappings/payroll_institution.hbm.xml" />
+<mapping resource="../etc/dbmappings/child.hbm.xml" />
+<mapping resource="../etc/dbmappings/work_experience.hbm.xml" />
+<mapping resource="../etc/dbmappings/type_of_grant.hbm.xml" />
+<mapping resource="../etc/dbmappings/payment.hbm.xml" />
+<mapping resource="../etc/dbmappings/organization_unit.hbm.xml" />
+<mapping resource="../etc/dbmappings/irb_budget.hbm.xml" />
+<mapping resource="../etc/dbmappings/working_hours.hbm.xml" />
+<mapping resource="../etc/dbmappings/auditmessage.hbm.xml" />
+<mapping resource="../etc/dbmappings/auditmessagetype.hbm.xml" />
+<mapping resource="../etc/dbmappings/bank.hbm.xml" />
+<mapping resource="../etc/dbmappings/compensation.hbm.xml" />
+<mapping resource="../etc/dbmappings/type_of_institution.hbm.xml" />
+<mapping resource="../etc/dbmappings/holiday.hbm.xml" />
+<mapping resource="../etc/dbmappings/grant_concession.hbm.xml" />
+<mapping resource="../etc/dbmappings/type_of_contract.hbm.xml" />
+<mapping resource="../etc/dbmappings/type_of_compensation.hbm.xml" />
+<mapping resource="../etc/dbmappings/unit.hbm.xml" />
+<mapping resource="../etc/dbmappings/gender.hbm.xml" />
+<mapping resource="../etc/dbmappings/country.hbm.xml" />
+<mapping resource="../etc/dbmappings/category.hbm.xml" />
+<mapping resource="../etc/dbmappings/funding_detail.hbm.xml" />
+<mapping resource="../etc/dbmappings/area.hbm.xml" />
+<mapping resource="../etc/dbmappings/type_of_holidays.hbm.xml" />
+<mapping resource="../etc/dbmappings/personal.hbm.xml" />
+<mapping resource="../etc/dbmappings/personal_comment.hbm.xml" />
+<mapping resource="../etc/dbmappings/personalstate.hbm.xml" />
+<mapping resource="../etc/dbmappings/position.hbm.xml" />
+<mapping resource="../etc/dbmappings/usuario.hbm.xml" />
+<mapping resource="../etc/dbmappings/Beancode.hbm.xml" />
+<mapping resource="../etc/dbmappings/reportparameter.hbm.xml" />
+<mapping resource="../etc/dbmappings/report.hbm.xml" />
+<mapping resource="../etc/dbmappings/notirb_active_personal.hbm.xml" />
+<mapping resource="../etc/dbmappings/irbholiday.hbm.xml" />
+<mapping resource="../etc/dbmappings/irbholidayinfo.hbm.xml" />
+<mapping resource="../etc/dbmappings/column.hbm.xml" />
+<mapping resource="../etc/dbmappings/customList.hbm.xml" />
+<mapping resource="../etc/dbmappings/filter.hbm.xml" />
+<mapping resource="../etc/dbmappings/filterType.hbm.xml" />
+<mapping resource="../etc/dbmappings/orderBy.hbm.xml" />
+<mapping resource="../etc/dbmappings/views.hbm.xml" />
+<mapping resource="../etc/dbmappings/audit_log.hbm.xml" />
+
+
+<!-- mapping of the UserManagement -->
+<mapping resource="../etc/dbmappings/Entity.hbm.xml" />
+<mapping resource="../etc/dbmappings/Language.hbm.xml" />
+<mapping resource="../etc/dbmappings/MainTable.hbm.xml" />
+<mapping resource="../etc/dbmappings/Permission.hbm.xml" />
+<mapping resource="../etc/dbmappings/TypeInstance.hbm.xml" />
+
+</session-factory>
+</hibernate-configuration>

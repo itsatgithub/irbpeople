@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Work_experience" table="WORK_EXPERIENCE">
+        <cache usage="read-write"/>
+    
+		<id name="work_experiencecode" column="work_experiencecode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+		<property name="start_date" type="timestamp">
+	<column name="start_date"  />
+</property><property name="end_date" type="timestamp">
+	<column name="end_date"  />
+</property><property name="name_of_institution_or_company" type="string">
+	<column name="name_of_institution_or_company" length="100" />
+</property>
+		<property name="department" type="string">
+            <column name="department" length="45" />
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="45" />
+        </property>
+		<!-- Associacion mappings -->
+		<many-to-one name="work_experience_personal" class="Personal" column="work_experience_personal" not-null="false"/>
+	
+<many-to-one name="type_of_institution" class="Type_of_institution" column="type_of_institution" not-null="false"/>
+	
+<many-to-one name="area" class="Area" column="area" not-null="false"/>
+	
+<many-to-one name="work_experience_position" class="Position" column="work_experience_position" not-null="false"/>
+	
+<many-to-one name="work_experience_country" class="Country" column="work_experience_country" not-null="false"/>
+	
+
+		
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+    <class name="Unit" table="UNIT">
+        <cache usage="read-write"/>
+    
+        <id name="unitcode" column="unitcode"></id>
+        <version name="version"></version>
+
+        <property name="deleted" type="boolean">
+            <column name="deleted" />
+        </property>
+
+        <!-- attribute mappings -->
+        <property name="description" type="string">
+            <column name="description" length="100" />
+        </property>
+        
+        <property name="group" type="string">
+            <column name="`group`" length="100" />
+        </property>
+
+        <!-- Associacion mappings -->
+        <many-to-one name="organization_unit" class="Organization_unit" column="organization_unit" not-null="false" />
+        <many-to-one name="supervisor" class="Personal" column="supervisor" not-null="false" />
+
+
+        <set name="iunit" cascade="none" lazy="true">
+            <key>
+                <column name="unit" />
+            </key>
+            <one-to-many class="Research_group" />
+        </set>
+
+        <set name="iprofessional_unit" cascade="none" lazy="true">
+            <key>
+                <column name="professional_unit" />
+            </key>
+            <one-to-many class="Professional" />
+        </set>
+
+
+        <!-- categorias -->
+
+    </class>
+</hibernate-mapping>

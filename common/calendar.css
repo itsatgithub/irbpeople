@@ -1,0 +1,48 @@
+/* CSS per marcar de diferents colors el calendari */
+/* dia festiu */
+.shc .body .yearview .festiu {
+	height: 22px;
+	background-color : #ff8080;
+	font-weight: normal;
+	color: #000000;
+}
+
+/* dia de vacances per aprovar */
+.shc .body .yearview .vacances {
+	height: 22px;
+	background-color : #90ff90;
+	font-weight: normal;
+	color: #000000;
+}
+
+/* dia d'asumptes propis per aprovar */
+.shc .body .yearview .ap {
+	height: 22px;
+	background-color : #7090ff;
+	font-weight: normal;
+	color: #000000;
+}
+
+/* dia de vacances aprovades */
+.shc .body .yearview .avacances {
+	height: 22px;
+	background-color : #40ff40;
+	font-weight: normal;
+	color: #000000;
+}
+
+/* dia d'asumptes propis aprovat */
+.shc .body .yearview .aap {
+	height: 22px;
+	background-color : #3050ff;
+	font-weight: normal;
+	color: #000000;
+}
+
+/* dia d'asumptes propis aprovat */
+.shc .body .yearview .limvac {
+	height: 22px;
+	background-color : #f1bb00;
+	font-weight: normal;
+	color: #000000;
+}

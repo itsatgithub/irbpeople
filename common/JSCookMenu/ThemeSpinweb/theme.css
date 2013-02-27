@@ -1,0 +1,296 @@
+/* ThemeSpinwebMenu Style Sheet */
+
+.ThemeSpinwebMenu
+{
+
+	font-family:	verdana, arial, sans-serif;
+	font-size:	13px;
+	text-align: left;
+	font-weight: bold;
+    color: #ffffff;
+
+	padding:	0;
+
+	white-space:	nowrap;
+	cursor:		default;
+	
+	/* Esto sólo funciona en IE, no me convence
+	width:expression(document.body.clientWidth);
+	left: 0px;
+	top: 50px;
+	position: absolute;
+	*/
+}
+
+.ThemeSpinwebSubMenuTable
+{
+	font-family:	verdana, arial, sans-serif;
+	font-size:	13px;
+
+	padding:	0;
+
+	white-space:	nowrap;
+	cursor:		default;
+
+}
+
+.ThemeSpinwebSubMenu
+{
+	position:	absolute;
+	visibility:	hidden;
+	overflow:	hidden;
+
+	padding:	1px 1px 1px 1px;
+
+	/* background:	#F6F6F6 url(menubg.gif) repeat-y scroll 0%;
+	background-position:	left; */
+	
+	background-color: #ffffff;
+
+	border:		1px solid #333333;
+}
+
+.ThemeSpinwebSubMenuTable
+{
+	overflow:	hidden;
+}
+
+.ThemeSpinwebMainItem,.ThemeSpinwebMainItemHover,.ThemeSpinwebMainItemActive,
+.ThemeSpinwebMenuItem,.ThemeSpinwebMenuItemHover,.ThemeSpinwebMenuItemActive
+{
+	border:		0;
+	cursor:		default;
+	white-space:	nowrap;
+}
+
+.ThemeSpinwebMainItem
+{
+    background: #e7d9c5 url(menu-background-blue.gif) repeat-x scroll 0%;
+	/* background-color:	#A1C0F5; */
+	
+}
+
+.ThemeSpinwebMainItemHover,.ThemeSpinwebMainItemActive
+{
+	/* background:		url(mainmenubg.gif); */
+	background-color:   #ffffff; 
+	color:              #000000;
+	font-weight:    bold; 
+}
+
+.ThemeSpinwebMenuItem
+{
+	background-color:	transparent;
+}
+
+.ThemeSpinwebMenuItemHover,.ThemeSpinwebMenuItemActive
+{
+	background-color:	#596797;
+	color: #ffffff;
+}
+
+
+/* horizontal main menu */
+
+.ThemeSpinwebMainItem
+{
+	padding:	1px;
+	border:		0;
+	height:     26px;
+}
+
+td.ThemeSpinwebMainItemHover,td.ThemeSpinwebMainItemActive
+{
+	padding:	0px;
+	border:		1px solid #000000;
+}
+
+.ThemeSpinwebMainFolderLeft,.ThemeSpinwebMainItemLeft,
+.ThemeSpinwebMainFolderText,.ThemeSpinwebMainItemText,
+.ThemeSpinwebMainFolderRight,.ThemeSpinwebMainItemRight
+{
+	/* background-color:	inherit; */
+}
+
+/* vertical main menu sub components */
+
+td.ThemeSpinwebMainFolderLeft,
+td.ThemeSpinwebMainFolderLeft,
+td.ThemeSpinwebMainItemLeft,
+td.ThemeSpinwebMainItemLeft
+{
+	padding:	1px 2px 1px 1px;
+
+	border:		0;
+	background-color:	inherit;
+}
+
+td.ThemeSpinwebMainFolderText,
+td.ThemeSpinwebMainFolderText,
+td.ThemeSpinwebMainItemText,
+td.ThemeSpinwebMainItemText
+{
+	padding:	1px 5px 1px 5px;
+
+	border:		0;
+	background-color:	inherit;
+}
+
+td.ThemeSpinwebMainItemRight,
+td.ThemeSpinwebMainFolderRight
+{
+	padding:	1px 1px 1px 0px;
+
+	border:		0;
+
+	background-color:	inherit;
+}
+
+
+tr.ThemeSpinwebMainItemHover td.ThemeSpinwebMainFolderLeft,
+tr.ThemeSpinwebMainItemActive td.ThemeSpinwebMainFolderLeft,
+tr.ThemeSpinwebMainItemHover td.ThemeSpinwebMainItemLeft,
+tr.ThemeSpinwebMainItemActive td.ThemeSpinwebMainItemLeft
+{
+	padding:	0px 2px 0px 0px;
+
+	border-width:	1px 0px 1px 1px;
+	border-style:	solid;
+	border-color:	#000000;
+
+	background-color:	inherit;
+}
+
+tr.ThemeSpinwebMainItemHover td.ThemeSpinwebMainFolderText,
+tr.ThemeSpinwebMainItemActive td.ThemeSpinwebMainFolderText,
+tr.ThemeSpinwebMainItemHover td.ThemeSpinwebMainItemText,
+tr.ThemeSpinwebMainItemActive td.ThemeSpinwebMainItemText
+{
+	padding:	0px 5px 0px 5px;
+
+	border-width:	1px 0px 1px 0px;
+	border-style:	solid;
+	border-color:	#000000;
+
+	background-color:	inherit;
+}
+
+tr.ThemeSpinwebMainItemHover td.ThemeSpinwebMainFolderRight,
+tr.ThemeSpinwebMainItemActive td.ThemeSpinwebMainFolderRight,
+tr.ThemeSpinwebMainItemHover td.ThemeSpinwebMainItemRight,
+tr.ThemeSpinwebMainItemActive td.ThemeSpinwebMainItemRight
+{
+	padding:	0px;
+
+	border-width:	1px 1px 1px 0px;
+	border-style:	solid;
+	border-color:	#000000;
+
+	background-color:	inherit;
+}
+
+/* sub menu sub components */
+
+.ThemeSpinwebMenuFolderLeft,.ThemeSpinwebMenuItemLeft,
+.ThemeSpinwebMenuFolderText,.ThemeSpinwebMenuItemText,
+.ThemeSpinwebMenuFolderRight,.ThemeSpinwebMenuItemRight
+{
+	border:		0;
+	white-space:	nowrap;
+	background-color:	inherit;
+}
+
+
+.ThemeSpinwebMenuFolderLeft,
+.ThemeSpinwebMenuItemLeft
+{
+	padding:	3px 3px 3px 2px;
+}
+
+.ThemeSpinwebMenuFolderText,
+.ThemeSpinwebMenuItemText
+{
+	padding:	3px 5px 3px 5px;
+	white-space:	nowrap;
+}
+
+.ThemeSpinwebMenuFolderRight,
+.ThemeSpinwebMenuItemRight
+{
+	padding:	3px 1px 3px 0px;
+}
+
+.ThemeSpinwebMenuItemHover .ThemeSpinwebMenuFolderLeft,
+.ThemeSpinwebMenuItemActive .ThemeSpinwebMenuFolderLeft,
+.ThemeSpinwebMenuItemHover .ThemeSpinwebMenuItemLeft,
+.ThemeSpinwebMenuItemActive .ThemeSpinwebMenuItemLeft
+{
+	padding:	2px 3px 2px 1px;
+
+	border-width:	1px 0px 1px 1px;
+	border-style:	solid;
+	border-color:	#000000;
+}
+
+.ThemeSpinwebMenuItemHover .ThemeSpinwebMenuFolderText,
+.ThemeSpinwebMenuItemActive .ThemeSpinwebMenuFolderText,
+.ThemeSpinwebMenuItemHover .ThemeSpinwebMenuItemText,
+.ThemeSpinwebMenuItemActive .ThemeSpinwebMenuItemText
+{
+	padding:	2px 5px 2px 5px;
+
+	border-width:	1px 0px 1px 0px;
+	border-style:	solid;
+	border-color:	#000000;
+}
+
+.ThemeSpinwebMenuItemHover .ThemeSpinwebMenuFolderRight,
+.ThemeSpinwebMenuItemActive .ThemeSpinwebMenuFolderRight,
+.ThemeSpinwebMenuItemHover .ThemeSpinwebMenuItemRight,
+.ThemeSpinwebMenuItemActive .ThemeSpinwebMenuItemRight
+{
+	padding:	2px 0px 2px 0px;
+
+	border-width:	1px 1px 1px 0px;
+	border-style:	solid;
+	border-color:	#000000;
+}
+
+/* menu splits */
+
+.ThemeSpinwebMenuSplit
+{
+	margin:		2px;
+	height:		1px;
+	overflow:	hidden;
+	background-color:	inherit;
+	border-top:	1px solid #6A8CCB;
+}
+
+/* image shadow animation */
+
+/*
+	seq1:	image for normal
+	seq2:	image for hover and active
+
+	To use, in the icon field, input the following:
+	<img class="seq1" src="normal.gif" /><img class="seq2" src="hover.gif" />
+*/
+
+.ThemeSpinwebMenuItem img.seq1
+{
+	display:	inline;
+}
+
+.ThemeSpinwebMenuItemHover seq2,
+.ThemeSpinwebMenuItemActive seq2
+{
+	display:	inline;
+}
+
+.ThemeSpinwebMenuItem .seq2,
+.ThemeSpinwebMenuItemHover .seq1,
+.ThemeSpinwebMenuItemActive .seq1
+{
+	display:	none;
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Professional" table="PROFESSIONAL">
+        <cache usage="read-write"/>
+    
+		<id name="professionalcode" column="professionalcode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		<property name="current" type="boolean">
+            <column name="current" />
+        </property>
+		<!-- attribute mappings -->
+		<property name="start_date" type="timestamp">
+	<column name="start_date"  />
+</property><property name="end_date" type="timestamp">
+	<column name="end_date"  />
+</property><property name="email" type="string">
+	<column name="email" length="100" />
+</property><property name="phone" type="string">
+	<column name="phone" length="100" />
+</property><property name="mobile_long" type="string">
+	<column name="mobile_long" length="100" />
+</property><property name="mobile_short" type="string">
+	<column name="mobile_short" length="100" />
+</property><property name="lab_phone_number" type="string">
+	<column name="lab_phone_number" length="100" />
+</property><property name="fax" type="string">
+	<column name="fax" length="100" />
+</property>
+<property name="building" type="string">
+    <column name="building" length="255" />
+</property>
+		
+		<!-- Associacion mappings -->
+		<many-to-one name="professional_personal" class="Personal" column="professional_personal" not-null="false"/>
+	
+<many-to-one name="research_group" class="Research_group" column="research_group" not-null="false"/>
+	
+<many-to-one name="type_of_contract" class="Type_of_contract" column="type_of_contract" not-null="false"/>
+	
+<many-to-one name="location" class="Location" column="location" not-null="false"/>
+	
+<many-to-one name="position" class="Position" column="position" not-null="false"/>
+	
+<many-to-one name="professional_unit" class="Unit" column="professional_unit" not-null="false"/>
+	
+<many-to-one name="payroll_institution" class="Payroll_institution" column="payroll_institution" not-null="false"/>
+
+<many-to-one name="payroll_institution_2" class="Payroll_institution" column="payroll_institution_2" not-null="false"/>
+	
+
+		
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

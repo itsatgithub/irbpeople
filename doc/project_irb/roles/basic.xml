@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<role name="basic" system-groups-included="true">
+  <description />
+  <accessible-groups>
+    <group name="virtualfakegroup" />
+    <group name="oPersonalSys" />
+    <group name="oEducationSys" />
+    <group name="oGrant_concessionSys" />
+    <group name="oWork_experienceSys" />
+    <group name="other" />
+    <group name="oPersonalSys" />
+    <group name="other" />
+  </accessible-groups>
+  <forbidden-actions>
+    <action name="va_menu.human_resources.manage_personal.all" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.editing" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.cancelled" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.active" group_name="virtualfakegroup" />
+    <action name="va_menu.finish_data_obtention_phase" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_research_groups" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.validating" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.in_progress" group_name="virtualfakegroup" />
+    <action name="va_menu.manage_my_research_group_personal" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.inactive" group_name="virtualfakegroup" />
+    <action name="manage_personal_holidays" group_name="oPersonalSys" />
+    <action name="change_state_from_active_to_inactive" group_name="oPersonalSys" />
+    <action name="new_new_page_personal" group_name="oPersonalSys" />
+    <action name="manage_active_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_inactive_to_active" group_name="oPersonalSys" />
+    <action name="manage_personal_fundig_details" group_name="oPersonalSys" />
+    <action name="change_state_from_vcancelled_to_validation_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="change_state_form_pcancelled_to_progress_cancel_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="new_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_validating_to_progress_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="manage_my_rgroup_validating_personal" group_name="oPersonalSys" />
+    <action name="manage_in_progress_personal" group_name="oPersonalSys" />
+    <action name="change_state_form_pcancelled_to_progress_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_progress_to_validation_cancel_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="modify_my_rgroup_personal_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="manage_my_rgroup_in_progress_personal" group_name="oPersonalSys" />
+    <action name="delete_delete_page_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_progress_to_validation_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="changeto_inactivate_personal_cancel_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="manage_my_rgroup_validation_cancelled_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_validating_to_progress_cancel_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="change_state_form_pcancelled_to_progress" group_name="oPersonalSys" />
+    <action name="manage_my_rgroup_personal_professionals" group_name="oPersonalSys" />
+    <action name="changeto_inactivate_personal_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_edition_to_validating_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="manage_all_personal" group_name="oPersonalSys" />
+    <action name="view_details" group_name="oPersonalSys" />
+    <action name="cancel_delete_personal" group_name="oPersonalSys" />
+    <action name="cancel_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="manage_personal_education" group_name="oPersonalSys" />
+    <action name="change_state_from_vcancel_to_validation" group_name="oPersonalSys" />
+    <action name="manage_personal_professionals" group_name="oPersonalSys" />
+    <action name="change_state_from_validation_to_vcancelled_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="cancel_new_new_page_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_progress_to_active_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="todelete_choose_current_personal" group_name="oPersonalSys" />
+    <action name="manage_inactive_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_progress_to_active_cancel_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="manage_personal_children" group_name="oPersonalSys" />
+    <action name="manage_personal_grant_concessions" group_name="oPersonalSys" />
+    <action name="manage_cancelled_personal" group_name="oPersonalSys" />
+    <action name="manage_vatlidation_cancelled_personal" group_name="oPersonalSys" />
+    <action name="manage_personal_work_experience" group_name="oPersonalSys" />
+    <action name="manage_personal_benefits" group_name="oPersonalSys" />
+    <action name="manage_validating_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_progress_to_validation" group_name="oPersonalSys" />
+    <action name="change_state_from_progress_to_pcancel_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_progress_to_active" group_name="oPersonalSys" />
+    <action name="delete_page_personal" group_name="oPersonalSys" />
+    <action name="modify_page_personal" group_name="oPersonalSys" />
+    <action name="modify_my_rgroup_personal_cancel_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="manage_my_rgroup_personal_funding_details" group_name="oPersonalSys" />
+    <action name="change_state_from_validating_to_progress" group_name="oPersonalSys" />
+    <action name="change_state_from_progress_to_pcancel_cancel_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_edition_to_validating_cancel_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_edition_to_validating" group_name="oPersonalSys" />
+    <action name="change_state_from_progress_to_pcancel" group_name="oPersonalSys" />
+    <action name="manage_editing_personal" group_name="oPersonalSys" />
+    <action name="cancel_view_view_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_validation_to_vcancelled_cancel_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="manage_personal_compensation" group_name="oPersonalSys" />
+    <action name="modify_my_rgroup_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_validation_to_vcancel" group_name="oPersonalSys" />
+    <action name="change_state_from_vcancelled_to_validation_cancel_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_inactive_to_active_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="change_state_from_inactive_to_active_cancel_modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="modify_modify_page_personal" group_name="oPersonalSys" />
+    <action name="viewlist_education" group_name="oEducationSys" />
+    <action name="add_education" group_name="oEducationSys" />
+    <action name="viewlist_grant_concession" group_name="oGrant_concessionSys" />
+    <action name="add_grant_concession" group_name="oGrant_concessionSys" />
+    <action name="add_work_experience" group_name="oWork_experienceSys" />
+    <action name="viewlist_work_experience" group_name="oWork_experienceSys" />
+    <action name="senttovalidatemessagewindow" group_name="other" />
+    <action name="appHome" group_name="other" />
+  </forbidden-actions>
+  <forbidden-actions-ref>
+    <action-ref action="manage_personal_holidays" group="oPersonalSys" zone="operation" action-ref="add_holiday" group-ref="oHolidaySys" />
+    <action-ref action="manage_personal_holidays" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_holiday" group-ref="oHolidaySys" />
+    <action-ref action="manage_personal_holidays" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_holiday" group-ref="oHolidaySys" />
+    <action-ref action="change_state_from_active_to_inactive" group="oPersonalSys" zone="submit" action-ref="changeto_inactivate_personal_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_active_to_inactive" group="oPersonalSys" zone="submit" action-ref="changeto_inactivate_personal_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_active_personal" group="oPersonalSys" zone="operation" action-ref="new_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_active_personal" group="oPersonalSys" zone="rowaction0" action-ref="view_details" group-ref="oPersonalSys" />
+    <action-ref action="manage_active_personal" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_active_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_active_to_inactive" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_inactive_to_active" group="oPersonalSys" zone="submit" action-ref="change_state_from_inactive_to_active_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_inactive_to_active" group="oPersonalSys" zone="submit" action-ref="change_state_from_inactive_to_active_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_personal_fundig_details" group="oPersonalSys" zone="operation" action-ref="new_page_funding_detail" group-ref="oFunding_detailSys" />
+    <action-ref action="manage_personal_fundig_details" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_funding_detail" group-ref="oFunding_detailSys" />
+    <action-ref action="manage_personal_fundig_details" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_funding_detail" group-ref="oFunding_detailSys" />
+    <action-ref action="new_personal" group="oPersonalSys" zone="submit" action-ref="new_new_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="new_personal" group="oPersonalSys" zone="submit" action-ref="cancel_new_new_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validating_personal" group="oPersonalSys" zone="rowaction0" action-ref="modify_my_rgroup_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validating_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_validating_to_progress" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validating_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_validation_to_vcancel" group-ref="oPersonalSys" />
+    <action-ref action="manage_in_progress_personal" group="oPersonalSys" zone="operation" action-ref="new_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_in_progress_personal" group="oPersonalSys" zone="rowaction0" action-ref="view_details" group-ref="oPersonalSys" />
+    <action-ref action="manage_in_progress_personal" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_in_progress_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_progress_to_active" group-ref="oPersonalSys" />
+    <action-ref action="manage_in_progress_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_progress_to_validation" group-ref="oPersonalSys" />
+    <action-ref action="manage_in_progress_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_progress_to_pcancel" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validation_cancelled_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_vcancel_to_validation" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validation_cancelled_personal" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validation_cancelled_personal" group="oPersonalSys" zone="folder" action-ref="manage_my_rgroup_validating_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validation_cancelled_personal" group="oPersonalSys" zone="folder" action-ref="manage_my_rgroup_validation_cancelled_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validation_cancelled_personal" group="oPersonalSys" zone="folder" action-ref="manage_my_rgroup_in_progress_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_form_pcancelled_to_progress" group="oPersonalSys" zone="submit" action-ref="change_state_form_pcancelled_to_progress_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_form_pcancelled_to_progress" group="oPersonalSys" zone="submit" action-ref="change_state_form_pcancelled_to_progress_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_personal_professionals" group="oPersonalSys" zone="operation" action-ref="add_professional" group-ref="oProfessionalSys" />
+    <action-ref action="manage_my_rgroup_personal_professionals" group="oPersonalSys" zone="rowaction" action-ref="view_professional" group-ref="oProfessionalSys" />
+    <action-ref action="manage_all_personal" group="oPersonalSys" zone="operation" action-ref="new_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_all_personal" group="oPersonalSys" zone="rowaction0" action-ref="view_details" group-ref="oPersonalSys" />
+    <action-ref action="manage_all_personal" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_all_personal" group="oPersonalSys" zone="folder" action-ref="manage_all_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_all_personal" group="oPersonalSys" zone="folder" action-ref="manage_editing_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_all_personal" group="oPersonalSys" zone="folder" action-ref="manage_validating_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_all_personal" group="oPersonalSys" zone="folder" action-ref="manage_vatlidation_cancelled_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_all_personal" group="oPersonalSys" zone="folder" action-ref="manage_in_progress_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_all_personal" group="oPersonalSys" zone="folder" action-ref="manage_cancelled_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_all_personal" group="oPersonalSys" zone="folder" action-ref="manage_active_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_all_personal" group="oPersonalSys" zone="folder" action-ref="manage_inactive_personal" group-ref="oPersonalSys" />
+    <action-ref action="view_details" group="oPersonalSys" zone="submit" action-ref="cancel_view_view_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_personal_education" group="oPersonalSys" zone="operation" action-ref="add_education" group-ref="oEducationSys" />
+    <action-ref action="manage_personal_education" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_education" group-ref="oEducationSys" />
+    <action-ref action="manage_personal_education" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_education" group-ref="oEducationSys" />
+    <action-ref action="change_state_from_vcancel_to_validation" group="oPersonalSys" zone="submit" action-ref="change_state_from_vcancelled_to_validation_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_vcancel_to_validation" group="oPersonalSys" zone="submit" action-ref="change_state_from_vcancelled_to_validation_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_personal_professionals" group="oPersonalSys" zone="operation" action-ref="add_professional" group-ref="oProfessionalSys" />
+    <action-ref action="manage_personal_professionals" group="oPersonalSys" zone="rowaction" action-ref="view_professional" group-ref="oProfessionalSys" />
+    <action-ref action="manage_personal_professionals" group="oPersonalSys" zone="rowaction" action-ref="delete_page_professional" group-ref="oProfessionalSys" />
+    <action-ref action="manage_personal_professionals" group="oPersonalSys" zone="rowaction" action-ref="modify_page_professional" group-ref="oProfessionalSys" />
+    <action-ref action="todelete_choose_current_personal" group="oPersonalSys" zone="rowaction0" action-ref="modify_my_own_personal_data" group-ref="oPersonalSys" />
+    <action-ref action="todelete_choose_current_personal" group="oPersonalSys" zone="rowaction0" action-ref="send_my_own_data_to_validate" group-ref="oPersonalSys" />
+    <action-ref action="manage_inactive_personal" group="oPersonalSys" zone="operation" action-ref="new_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_inactive_personal" group="oPersonalSys" zone="rowaction0" action-ref="view_details" group-ref="oPersonalSys" />
+    <action-ref action="manage_inactive_personal" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_inactive_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_inactive_to_active" group-ref="oPersonalSys" />
+    <action-ref action="manage_personal_children" group="oPersonalSys" zone="rowaction1" action-ref="modify_page_child" group-ref="oChildSys" />
+    <action-ref action="manage_personal_children" group="oPersonalSys" zone="rowaction1" action-ref="delete_page_child" group-ref="oChildSys" />
+    <action-ref action="manage_personal_children" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_child" group-ref="oChildSys" />
+    <action-ref action="manage_personal_children" group="oPersonalSys" zone="rowaction0" action-ref="view_child" group-ref="oChildSys" />
+    <action-ref action="manage_personal_children" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_child" group-ref="oChildSys" />
+    <action-ref action="manage_personal_children" group="oPersonalSys" zone="go" action-ref="add_child" group-ref="oChildSys" />
+    <action-ref action="manage_personal_grant_concessions" group="oPersonalSys" zone="operation" action-ref="add_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="manage_personal_grant_concessions" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="manage_personal_grant_concessions" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="manage_cancelled_personal" group="oPersonalSys" zone="operation" action-ref="new_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_cancelled_personal" group="oPersonalSys" zone="rowaction0" action-ref="view_details" group-ref="oPersonalSys" />
+    <action-ref action="manage_cancelled_personal" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_cancelled_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_form_pcancelled_to_progress" group-ref="oPersonalSys" />
+    <action-ref action="manage_cancelled_personal" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_vatlidation_cancelled_personal" group="oPersonalSys" zone="operation" action-ref="new_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_vatlidation_cancelled_personal" group="oPersonalSys" zone="rowaction0" action-ref="view_details" group-ref="oPersonalSys" />
+    <action-ref action="manage_vatlidation_cancelled_personal" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_vatlidation_cancelled_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_vcancel_to_validation" group-ref="oPersonalSys" />
+    <action-ref action="manage_vatlidation_cancelled_personal" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_personal_work_experience" group="oPersonalSys" zone="operation" action-ref="add_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="manage_personal_work_experience" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="manage_personal_work_experience" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="manage_personal_benefits" group="oPersonalSys" zone="operation" action-ref="add_benefits" group-ref="oBenefitsSys" />
+    <action-ref action="manage_personal_benefits" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_benefits" group-ref="oBenefitsSys" />
+    <action-ref action="manage_personal_benefits" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_benefits" group-ref="oBenefitsSys" />
+    <action-ref action="manage_validating_personal" group="oPersonalSys" zone="operation" action-ref="new_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_validating_personal" group="oPersonalSys" zone="rowaction0" action-ref="view_details" group-ref="oPersonalSys" />
+    <action-ref action="manage_validating_personal" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_validating_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_validation_to_vcancel" group-ref="oPersonalSys" />
+    <action-ref action="manage_validating_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_validating_to_progress" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_progress_to_validation" group="oPersonalSys" zone="submit" action-ref="change_state_from_progress_to_validation_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_progress_to_validation" group="oPersonalSys" zone="submit" action-ref="change_state_from_progress_to_validation_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_progress_to_active" group="oPersonalSys" zone="submit" action-ref="change_state_from_progress_to_active_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_progress_to_active" group="oPersonalSys" zone="submit" action-ref="change_state_from_progress_to_active_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="delete_page_personal" group="oPersonalSys" zone="submit" action-ref="delete_delete_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="delete_page_personal" group="oPersonalSys" zone="submit" action-ref="cancel_delete_personal" group-ref="oPersonalSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_child" group-ref="oChildSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="rowaction0" action-ref="view_child" group-ref="oChildSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_child" group-ref="oChildSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="folder" action-ref="modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="folder" action-ref="manage_personal_children" group-ref="oPersonalSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="folder" action-ref="manage_personal_work_experience" group-ref="oPersonalSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="folder" action-ref="manage_personal_professionals" group-ref="oPersonalSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="folder" action-ref="manage_personal_fundig_details" group-ref="oPersonalSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="folder" action-ref="manage_personal_education" group-ref="oPersonalSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="folder" action-ref="manage_personal_compensation" group-ref="oPersonalSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="folder" action-ref="manage_personal_benefits" group-ref="oPersonalSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="folder" action-ref="manage_personal_holidays" group-ref="oPersonalSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="folder" action-ref="manage_personal_grant_concessions" group-ref="oPersonalSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="submit" action-ref="modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="modify_page_personal" group="oPersonalSys" zone="submit" action-ref="cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_personal_funding_details" group="oPersonalSys" zone="operation" action-ref="new_page_funding_detail" group-ref="oFunding_detailSys" />
+    <action-ref action="manage_my_rgroup_personal_funding_details" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_funding_detail" group-ref="oFunding_detailSys" />
+    <action-ref action="manage_my_rgroup_personal_funding_details" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_funding_detail" group-ref="oFunding_detailSys" />
+    <action-ref action="change_state_from_validating_to_progress" group="oPersonalSys" zone="submit" action-ref="change_state_from_validating_to_progress_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_validating_to_progress" group="oPersonalSys" zone="submit" action-ref="change_state_from_validating_to_progress_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_edition_to_validating" group="oPersonalSys" zone="submit" action-ref="change_state_from_edition_to_validating_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_edition_to_validating" group="oPersonalSys" zone="submit" action-ref="change_state_from_edition_to_validating_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_progress_to_pcancel" group="oPersonalSys" zone="submit" action-ref="change_state_from_progress_to_pcancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_progress_to_pcancel" group="oPersonalSys" zone="submit" action-ref="change_state_from_progress_to_pcancel_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_editing_personal" group="oPersonalSys" zone="operation" action-ref="new_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_editing_personal" group="oPersonalSys" zone="rowaction0" action-ref="view_details" group-ref="oPersonalSys" />
+    <action-ref action="manage_editing_personal" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_editing_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_edition_to_validating" group-ref="oPersonalSys" />
+    <action-ref action="manage_personal_compensation" group="oPersonalSys" zone="operation" action-ref="add_compensation" group-ref="oCompensationSys" />
+    <action-ref action="manage_personal_compensation" group="oPersonalSys" zone="rowaction0" action-ref="view_compensation" group-ref="oCompensationSys" />
+    <action-ref action="manage_personal_compensation" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_compensation" group-ref="oCompensationSys" />
+    <action-ref action="manage_personal_compensation" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_compensation" group-ref="oCompensationSys" />
+    <action-ref action="modify_my_rgroup_personal" group="oPersonalSys" zone="folder" action-ref="modify_my_rgroup_personal" group-ref="oPersonalSys" />
+    <action-ref action="modify_my_rgroup_personal" group="oPersonalSys" zone="folder" action-ref="manage_my_rgroup_personal_funding_details" group-ref="oPersonalSys" />
+    <action-ref action="modify_my_rgroup_personal" group="oPersonalSys" zone="submit" action-ref="modify_my_rgroup_personal_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="modify_my_rgroup_personal" group="oPersonalSys" zone="submit" action-ref="modify_my_rgroup_personal_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_validation_to_vcancel" group="oPersonalSys" zone="submit" action-ref="change_state_from_validation_to_vcancelled_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="change_state_from_validation_to_vcancel" group="oPersonalSys" zone="submit" action-ref="change_state_from_validation_to_vcancelled_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="viewlist_education" group="oEducationSys" zone="rowaction0" action-ref="view_education" group-ref="oEducationSys" />
+    <action-ref action="viewlist_education" group="oEducationSys" zone="rowaction0" action-ref="delete_page_education" group-ref="oEducationSys" />
+    <action-ref action="viewlist_education" group="oEducationSys" zone="rowaction0" action-ref="modify_page_education" group-ref="oEducationSys" />
+    <action-ref action="viewlist_education" group="oEducationSys" zone="go" action-ref="add_education" group-ref="oEducationSys" />
+    <action-ref action="add_education" group="oEducationSys" zone="submit" action-ref="new_new_page_education" group-ref="oEducationSys" />
+    <action-ref action="add_education" group="oEducationSys" zone="submit" action-ref="cancel_new_new_page_education" group-ref="oEducationSys" />
+    <action-ref action="viewlist_grant_concession" group="oGrant_concessionSys" zone="rowaction0" action-ref="modify_page_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="viewlist_grant_concession" group="oGrant_concessionSys" zone="rowaction0" action-ref="view_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="viewlist_grant_concession" group="oGrant_concessionSys" zone="rowaction0" action-ref="delete_page_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="viewlist_grant_concession" group="oGrant_concessionSys" zone="go" action-ref="add_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="add_grant_concession" group="oGrant_concessionSys" zone="submit" action-ref="new_new_page_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="add_grant_concession" group="oGrant_concessionSys" zone="submit" action-ref="cancel_new_new_page_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="add_work_experience" group="oWork_experienceSys" zone="submit" action-ref="new_new_page_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="add_work_experience" group="oWork_experienceSys" zone="submit" action-ref="cancel_new_new_page_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="viewlist_work_experience" group="oWork_experienceSys" zone="rowaction0" action-ref="view_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="viewlist_work_experience" group="oWork_experienceSys" zone="rowaction0" action-ref="delete_page_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="viewlist_work_experience" group="oWork_experienceSys" zone="rowaction0" action-ref="modify_page_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="viewlist_work_experience" group="oWork_experienceSys" zone="go" action-ref="add_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="senttovalidatemessagewindow" group="other" zone="submit" action-ref="generate_new_password_bis" group-ref="other" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="manage_all_personal" group-ref="oPersonalSys" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="manage_active_personal" group-ref="oPersonalSys" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="manage_research_groups" group-ref="oResearch_groupSys" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="viewlist_auditmessage" group-ref="oAuditmessageSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_unit" group-ref="oUnitSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_institution" group-ref="oType_of_institutionSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_holidays" group-ref="oType_of_holidaysSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_grant" group-ref="oType_of_grantSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_education" group-ref="oType_of_educationSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_contract" group-ref="oType_of_contractSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_compensation" group-ref="oType_of_compensationSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_benefit" group-ref="oType_of_benefitSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_position" group-ref="oPositionSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_payments" group-ref="oPaymentSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_organization_unit" group-ref="oOrganization_unitSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_nationalities" group-ref="oNationalitySys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_location" group-ref="oLocationSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_grants" group-ref="oGrantSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_countries" group-ref="oCountrySys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_area" group-ref="oAreaSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_gender" group-ref="oGenderSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_marital_status" group-ref="oMarital_statusSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_payroll_institution" group-ref="oPayroll_institutionSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_bank" group-ref="oBankSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_working_hours" group-ref="oWorking_hoursSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_category" group-ref="oCategorySys" />
+    <action-ref action="appHome" group="other" zone="group2" action-ref="todelete_choose_current_personal" group-ref="oPersonalSys" />
+    <action-ref action="appHome" group="other" zone="group2" action-ref="manage_my_rgroup_validating_personal" group-ref="oPersonalSys" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="reports" group-ref="other" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="reports" group-ref="other" />
+  </forbidden-actions-ref>
+</role>
+

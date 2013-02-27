@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Bank" table="BANK">
+        <cache usage="read-write"/>
+    
+		<id name="bankcode" column="bankcode"></id>
+        
+        
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+		<property name="description" type="string">
+	<column name="description" length="100" />
+</property>
+		
+		<!-- Associacion mappings -->
+		
+	<set name="ibank" cascade="none" lazy="true">
+		<key>
+			<column name="bank" />
+		</key>
+		<one-to-many class="Personal" />
+	</set>
+
+		
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

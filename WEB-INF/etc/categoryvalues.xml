@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<categories>
+	
+	<category tableName="auditmessagetype">
+	
+	    <row value="mail"></row>
+	    <row value="create"></row>
+	    <row value="modify"></row>
+	</category>
+	
+	
+	<category tableName="personalstate">
+	
+	    <row value="editing"></row>
+	    <row value="validating"></row>
+	    <row value="validated"></row>
+	    <row value="active"></row>
+	    <row value="inactive"></row>
+	</category>
+	
+	
+	
+	<category tableName="Language">
+	    <row id="es" value="Castellano"></row>
+   	    <row id="ct" value="Catalan"></row>
+   	    <row id="en" value="English"></row>
+
+	</category>
+	
+</categories>

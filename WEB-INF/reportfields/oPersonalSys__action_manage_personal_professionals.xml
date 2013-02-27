@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<report view="professional" site-number="3">
+    <site name="en">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="start_date" visible="true" default="true" type-of-field="date">
+                    <caption language="en">Start date</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="date">
+                    <caption language="en">End date</caption>
+                </field>
+                <field name="email" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Email</caption>
+                </field>
+                <field name="phone" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Phone</caption>
+                </field>
+                <field name="mobile" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Mobile</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="ct">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="start_date" visible="true" default="true" type-of-field="date">
+                    <caption language="ct">Data d'inici</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="date">
+                    <caption language="ct">Data de fi</caption>
+                </field>
+                <field name="email" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">Email</caption>
+                </field>
+                <field name="phone" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">Telèfon</caption>
+                </field>
+                <field name="mobile" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">Mòbil</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="es">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="start_date" visible="true" default="true" type-of-field="date">
+                    <caption language="es">Fecha de inicio</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="date">
+                    <caption language="es">Fecha de fin</caption>
+                </field>
+                <field name="email" visible="true" default="true" type-of-field="text">
+                    <caption language="es">Email</caption>
+                </field>
+                <field name="phone" visible="true" default="true" type-of-field="text">
+                    <caption language="es">Teléfono</caption>
+                </field>
+                <field name="mobile" visible="true" default="true" type-of-field="text">
+                    <caption language="es">Móvil</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+</report>
+

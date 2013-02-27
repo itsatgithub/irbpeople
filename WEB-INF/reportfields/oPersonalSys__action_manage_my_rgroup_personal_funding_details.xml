@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<report view="funding_detail" site-number="3">
+    <site name="en">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="institution" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Institution</caption>
+                </field>
+                <field name="irb_budget_code" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Irb budget code</caption>
+                </field>
+                <field name="percent" visible="true" default="true" type-of-field="integer">
+                    <caption language="en">Percent</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="ct">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="institution" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">Institució</caption>
+                </field>
+                <field name="irb_budget_code" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">Centre de cost de l'IRB</caption>
+                </field>
+                <field name="percent" visible="true" default="true" type-of-field="integer">
+                    <caption language="ct">Percentatge</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="es">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="institution" visible="true" default="true" type-of-field="text">
+                    <caption language="es">Institución</caption>
+                </field>
+                <field name="irb_budget_code" visible="true" default="true" type-of-field="text">
+                    <caption language="es">Centro de coste del IRB</caption>
+                </field>
+                <field name="percent" visible="true" default="true" type-of-field="integer">
+                    <caption language="es">Porcentaje</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+</report>
+

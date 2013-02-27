@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Compensation" table="COMPENSATION">
+        <cache usage="read-write"/>
+    
+		<id name="compensationcode" column="compensationcode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		<property name="current" type="boolean">
+            <column name="current" />
+        </property>
+		<!-- attribute mappings -->
+		<property name="start_date" type="timestamp">
+	<column name="start_date"  />
+</property><property name="end_date" type="timestamp">
+	<column name="end_date"  />
+</property><property name="description" type="string">
+	<column name="description" length="500" />
+</property><property name="amount" type="big_decimal">
+	<column name="amount"  />
+</property>
+		
+		<!-- Associacion mappings -->
+		<many-to-one name="compensation_personal" class="Personal" column="compensation_personal" not-null="false"/>
+	
+<many-to-one name="type_of_compensation" class="Type_of_compensation" column="type_of_compensation" not-null="false"/>
+	
+
+		
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

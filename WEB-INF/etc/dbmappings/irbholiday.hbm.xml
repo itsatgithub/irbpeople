@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Irbholiday" table="IRBHOLIDAY">
+    
+        <cache usage="read-write"/>
+    
+		<id name="irbholidaycode" column="irbholidaycode"></id>
+<!--		<version name="version"></version>-->
+<!--		-->
+<!--		<property name="deleted" type="boolean">-->
+<!--			<column name="deleted" />-->
+<!--		</property>-->
+		
+		<!-- attribute mappings -->
+		
+		<property name="initialdate" type="date">
+			<column name="initialdate" />
+		</property>
+		
+		<property name="enddate" type="date">
+			<column name="enddate" />
+		</property>
+		
+		<property name="description" type="string">
+			<column name="description" length="100" />
+		</property>
+		
+		<property name="type" type="int">
+			<column name="type" />
+		</property>
+		
+		<property name="status" type="int">
+			<column name="status" />
+		</property>
+		
+		<property name="holidays" type="int">
+			<column name="holidays" />
+		</property>
+		
+		<property name="previousyearholidays" type="int">
+			<column name="previousyearholidays" />
+		</property>
+		
+		<property name="aps" type="int">
+			<column name="aps" />
+		</property>
+		
+		<property name="validationcode" type="string">
+			<column name="validationcode" length="100" />
+		</property>
+		
+		<!-- Associacion mappings -->
+		
+		<many-to-one name="personal" class="Personal" column="personalcode" not-null="false"/>
+		
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+
+<operator name="unit-more"> 		
+	<site name="en">
+	   	    
+	    <symbols>    
+	   	<symbol name="&gt;">    
+		    <caption language="en">More than</caption>
+		</symbol>    	  	
+	    </symbols>
+	  
+	</site>      
+</operator>
