@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Payroll_institution" table="PAYROLL_INSTITUTION">
+        <cache usage="read-write"/>
+    
+		<id name="payroll_institutioncode" column="payroll_institutioncode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+		<property name="description" type="string">
+	<column name="description" length="100" />
+</property>
+		
+		<!-- Associacion mappings -->
+		
+	<set name="ipayroll_institution" cascade="none" lazy="true">
+		<key>
+			<column name="payroll_institution" />
+		</key>
+		<one-to-many class="Professional" />
+	</set>
+	
+	<set name="ipayroll_institution_2" cascade="none" lazy="true">
+		<key>
+			<column name="payroll_institution_2" />
+		</key>
+		<one-to-many class="Professional" />
+	</set>
+
+		
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

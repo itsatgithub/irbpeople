@@ -1,0 +1,1390 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+  <definition name="notlogged" path="/pages/common/templates/notlogged.jsp" />
+  <definition name="horizontal_evc_template1" path="/pages/common/templates/generalHori.jsp">
+    <put name="content" value="content_template5" />
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_horizontalMenu.jsp" />
+  </definition>
+  <definition name="horizontal_evc_template2" path="/pages/common/templates/generalHori.jsp">
+    <put name="content" value="content_template2" />
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_horizontalMenu.jsp" />
+  </definition>
+  <definition name="horizontal_evc_template3" path="/pages/common/templates/generalHori.jsp">
+    <put name="content" value="content_template3" />
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_horizontalMenu.jsp" />
+  </definition>
+  <definition name="horizontal_evc_template4" path="/pages/common/templates/generalHori.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_horizontalMenu.jsp" />
+    <put name="content" value="content_template4" />
+  </definition>
+  <definition name="horizontal_evc_template5" path="/pages/common/templates/generalHori.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_horizontalMenu.jsp" />
+    <put name="content" value="content_template5" />
+  </definition>
+  <definition name="horizontal_shortcuts1_template" path="/pages/common/templates/generalHori.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_horizontalMenu.jsp" />
+    <put name="content" value="shortcuts1_template" />
+  </definition>
+  <definition name="horizontal_shortcuts3_template" path="/pages/common/templates/generalHori.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_horizontalMenu.jsp" />
+    <put name="content" value="shortcuts3_template" />
+  </definition>
+  <definition name="horizontal_shortcuts6_template" path="/pages/common/templates/generalHori.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_horizontalMenu.jsp" />
+    <put name="content" value="shortcuts6_template" />
+  </definition>
+  <definition name="vertical_menu_evc_template1" path="/pages/common/templates/generalVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_verticalMenu.jsp" />
+    <put name="content" value="content_template1" />
+  </definition>
+  <definition name="vertical_menu_evc_template2" path="/pages/common/templates/generalVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_verticalMenu.jsp" />
+    <put name="content" value="content_template2" />
+  </definition>
+  <definition name="vertical_menu_evc_template3" path="/pages/common/templates/generalVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_verticalMenu.jsp" />
+    <put name="content" value="content_template3" />
+  </definition>
+  <definition name="vertical_menu_evc_template4" path="/pages/common/templates/generalVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_verticalMenu.jsp" />
+    <put name="content" value="content_template4" />
+  </definition>
+  <definition name="vertical_menu_evc_template5" path="/pages/common/templates/generalVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_verticalMenu.jsp" />
+    <put name="content" value="content_template5" />
+  </definition>
+  <definition name="vertical_menu_shortcuts1_template" path="/pages/common/templates/generalVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_verticalMenu.jsp" />
+    <put name="content" value="shortcuts1_template" />
+  </definition>
+  <definition name="vertical_menu_shortcuts3_template" path="/pages/common/templates/generalVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_verticalMenu.jsp" />
+    <put name="content" value="shortcuts3_template" />
+  </definition>
+  <definition name="vertical_menu_shortcuts6_template" path="/pages/common/templates/generalVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_verticalMenu.jsp" />
+    <put name="content" value="shortcuts6_template" />
+  </definition>
+  <definition name="vertical_tree_evc_template1" path="/pages/common/templates/generalTreeVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_treeMenu.jsp" />
+    <put name="content" value="content_template1" />
+  </definition>
+  <definition name="vertical_tree_evc_template2" path="/pages/common/templates/generalTreeVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_treeMenu.jsp" />
+    <put name="content" value="content_template2" />
+  </definition>
+  <definition name="vertical_tree_evc_template3" path="/pages/common/templates/generalTreeVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_treeMenu.jsp" />
+    <put name="content" value="content_template3" />
+  </definition>
+  <definition name="vertical_tree_evc_template4" path="/pages/common/templates/generalTreeVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_treeMenu.jsp" />
+    <put name="content" value="content_template4" />
+  </definition>
+  <definition name="vertical_tree_evc_template5" path="/pages/common/templates/generalTreeVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_treeMenu.jsp" />
+    <put name="content" value="content_template5" />
+  </definition>
+  <definition name="vertical_tree_shortcuts1_template" path="/pages/common/templates/generalTreeVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_treeMenu.jsp" />
+    <put name="content" value="shortcuts1_template" />
+  </definition>
+  <definition name="vertical_tree_shortcuts3_template" path="/pages/common/templates/generalTreeVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_treeMenu.jsp" />
+    <put name="content" value="shortcuts3_template" />
+  </definition>
+  <definition name="vertical_tree_shortcuts6_template" path="/pages/common/templates/generalTreeVert.jsp">
+    <put name="loginBar" value="/pages/common/templates/loginBar.jsp" />
+    <put name="menu" value="/pages/common/templates/menu_treeMenu.jsp" />
+    <put name="content" value="shortcuts6_template" />
+  </definition>
+  <definition name="popup_template" path="/pages/common/templates/popupTemplate.jsp">
+    <put name="submit" value="/pages/common/templates/submit.jsp" />
+  </definition>
+  <definition name="popup_closer_template" path="/pages/common/templates/popup_closer_template.jsp" />
+  <definition name="close_pop_up" extends="popup_closer_template">
+    <put name="center" value="/pages/common/templates/close_popup.jsp" />
+  </definition>
+  <definition name="mark_current_confirmation" extends="popup_closer_template">
+    <put name="center" value="/pages/common/templates/mark_current_confirmation.jsp" />
+  </definition>
+  <definition name="content_template1" path="/pages/common/templates/content_template1.jsp">
+    <put name="folder1" value="/pages/common/templates/folder1_zone.jsp" />
+    <put name="folder2" value="/pages/common/templates/folder2_zone.jsp" />
+    <put name="folder3" value="/pages/common/templates/folder3_zone.jsp" />
+    <put name="path" value="/pages/common/templates/PathZone.jsp" />
+    <put name="operation" value="/pages/common/templates/operation_zoneVert.jsp" />
+    <put name="go" value="/pages/common/templates/go_zoneVert.jsp" />
+    <put name="submit" value="/pages/common/templates/submit.jsp" />
+  </definition>
+  <definition name="content_template2" path="/pages/common/templates/content_template2.jsp">
+    <put name="folder1" value="/pages/common/templates/folder1_zone.jsp" />
+    <put name="folder2" value="/pages/common/templates/folder2_zone.jsp" />
+    <put name="folder3" value="/pages/common/templates/folder3_zone.jsp" />
+    <put name="path" value="/pages/common/templates/PathZone.jsp" />
+    <put name="operation" value="/pages/common/templates/operation_zoneHori.jsp" />
+    <put name="go" value="/pages/common/templates/go_zoneHori.jsp" />
+    <put name="submit" value="/pages/common/templates/submit.jsp" />
+  </definition>
+  <definition name="content_template3" path="/pages/common/templates/content_template3.jsp">
+    <put name="folder1" value="/pages/common/templates/folder1_zone.jsp" />
+    <put name="folder2" value="/pages/common/templates/folder2_zone.jsp" />
+    <put name="folder3" value="/pages/common/templates/folder3_zone.jsp" />
+    <put name="path" value="/pages/common/templates/PathZone.jsp" />
+    <put name="operation" value="/pages/common/templates/operation_zoneVert.jsp" />
+    <put name="go" value="/pages/common/templates/go_zoneVert.jsp" />
+    <put name="submit" value="/pages/common/templates/submit.jsp" />
+  </definition>
+  <definition name="content_template4" path="/pages/common/templates/content_template4.jsp">
+    <put name="folder1" value="/pages/common/templates/folder1_zone.jsp" />
+    <put name="folder2" value="/pages/common/templates/folder2_zone.jsp" />
+    <put name="folder3" value="/pages/common/templates/folder3_zone.jsp" />
+    <put name="path" value="/pages/common/templates/PathZone.jsp" />
+    <put name="submit" value="/pages/common/templates/submit.jsp" />
+  </definition>
+  <definition name="content_template5" path="/pages/common/templates/content_template5.jsp">
+    <put name="folder1" value="/pages/common/templates/folder1_zone.jsp" />
+    <put name="folder2" value="/pages/common/templates/folder2_zone.jsp" />
+    <put name="folder3" value="/pages/common/templates/folder3_zone.jsp" />
+    <put name="path" value="/pages/common/templates/PathZone.jsp" />
+    <put name="operation" value="/pages/common/templates/operation_zoneHori.jsp" />
+    <put name="go" value="/pages/common/templates/go_zoneHori.jsp" />
+    <put name="submit" value="/pages/common/templates/submit.jsp" />
+  </definition>
+  <definition name="shortcuts1_template" path="/pages/common/templates/shortcuts1_template.jsp">
+    <put name="folder1" value="/pages/common/templates/folder1_zone.jsp" />
+    <put name="folder2" value="/pages/common/templates/folder2_zone.jsp" />
+    <put name="folder3" value="/pages/common/templates/folder3_zone.jsp" />
+    <put name="path" value="/pages/common/templates/PathZone.jsp" />
+  </definition>
+  <definition name="shortcuts3_template" path="/pages/common/templates/shortcuts3_template.jsp">
+    <put name="folder1" value="/pages/common/templates/folder1_zone.jsp" />
+    <put name="folder2" value="/pages/common/templates/folder2_zone.jsp" />
+    <put name="folder3" value="/pages/common/templates/folder3_zone.jsp" />
+    <put name="path" value="/pages/common/templates/PathZone.jsp" />
+  </definition>
+  <definition name="shortcuts6_template" path="/pages/common/templates/shortcuts6_template.jsp">
+    <put name="folder1" value="/pages/common/templates/folder1_zone.jsp" />
+    <put name="folder2" value="/pages/common/templates/folder2_zone.jsp" />
+    <put name="folder3" value="/pages/common/templates/folder3_zone.jsp" />
+    <put name="path" value="/pages/common/templates/PathZone.jsp" />
+  </definition>
+  <definition name="template1" path="/pages/common/templates/layout_horizontalMenu.jsp">
+    <put name="menu" value="/pages/common/templates/menu_horizontalMenu.jsp" />
+  </definition>
+  <definition name="templateSubmit" path="/pages/common/templates/layout+submit.jsp">
+    <put name="menu" value="/pages/common/templates/menu.jsp" />
+    <put name="submit" value="/pages/common/templates/submit.jsp" />
+  </definition>
+  <definition name="templateOperation" path="/pages/common/templates/layout+operation.jsp">
+    <put name="menu" value="/pages/common/templates/menu.jsp" />
+    <put name="operation" value="/pages/common/templates/operation.jsp" />
+  </definition>
+  
+  
+  <definition name="customList.action_view_custom_list" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/customList/action_view_custom_list.jsp" />
+  </definition>
+  <definition name="customList.ajaxAction_view_custom_list" path="/pages/customList/ajaxAction_view_custom_list.jsp">
+    
+  </definition>
+  
+  <definition name="customList.action_execute_list" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/customList/action_execute_list.jsp" />
+  </definition>
+
+  <definition name="customList.action_saveAs_custom_list" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/customList/action_saveAs_custom_list.jsp" />
+  </definition>
+  
+  <definition name="customList.action_viewlist_custom_list" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/customList/action_viewlist_custom_list.jsp" />
+  </definition>
+  <definition name="customList.action_load_custom_list" extends="horizontal_evc_template1">
+     
+  </definition>
+  
+  <definition name="customList.action_modify_custom_list" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/customList/action_modify_custom_list.jsp" />
+  </definition>
+  
+    <definition name="customList.action_delete_custom_list" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/customList/action_delete_custom_list.jsp" />
+  </definition>
+  
+  <definition name="customList.popUp_action_delete_custom_list" extends="popup_template">
+    <put name="center" value="/pages/customList/action_delete_custom_list.jsp" />
+  </definition>
+  
+  <definition name="oType_of_holidaysSys.action_new_page_type_of_holidays" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_holidaysSys/action_new_page_type_of_holidays.jsp" />
+  </definition>
+  <definition name="oType_of_holidaysSys.popUp_action_new_page_type_of_holidays" extends="popup_template">
+    <put name="center" value="/pages/oType_of_holidaysSys/action_new_page_type_of_holidays.jsp" />
+  </definition>
+  <definition name="oType_of_holidaysSys.action_modify_page_type_of_holidays" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_holidaysSys/action_modify_page_type_of_holidays.jsp" />
+  </definition>
+  <definition name="oType_of_holidaysSys.action_delete_page_type_of_holidays" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_holidaysSys/action_delete_page_type_of_holidays.jsp" />
+  </definition>
+  <definition name="oType_of_holidaysSys.action_manage_type_of_holidays" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_holidaysSys/action_manage_type_of_holidays.jsp" />
+  </definition>
+  <definition name="oType_of_holidaysSys.popUp_action_modify_page_type_of_holidays" extends="popup_template">
+    <put name="center" value="/pages/oType_of_holidaysSys/action_modify_page_type_of_holidays.jsp" />
+  </definition>
+  <definition name="personalPhoto.action_Modify_PersonalPhoto" extends="popup_template">
+    <put name="center" value="/pages/personalPhoto/action_Modify_PersonalPhoto.jsp" />
+  </definition>
+  <definition name="oType_of_holidaysSys.popUp_action_delete_page_type_of_holidays" extends="popup_template">
+    <put name="center" value="/pages/oType_of_holidaysSys/action_delete_page_type_of_holidays.jsp" />
+  </definition>
+  <definition name="oType_of_holidaysSys.action_view_type_of_holidays" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_holidaysSys/action_view_type_of_holidays.jsp" />
+  </definition>
+  <definition name="oPayroll_institutionSys.action_manage_payroll_institution" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPayroll_institutionSys/action_manage_payroll_institution.jsp" />
+  </definition>
+  <definition name="oPayroll_institutionSys.action_new_page_payroll_institution" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPayroll_institutionSys/action_new_page_payroll_institution.jsp" />
+  </definition>
+  <definition name="oPayroll_institutionSys.action_delete_page_payroll_institution" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPayroll_institutionSys/action_delete_page_payroll_institution.jsp" />
+  </definition>
+  <definition name="oPayroll_institutionSys.action_view_payroll_institution" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPayroll_institutionSys/action_view_payroll_institution.jsp" />
+  </definition>
+  <definition name="oPayroll_institutionSys.action_modify_page_payroll_institution" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPayroll_institutionSys/action_modify_page_payroll_institution.jsp" />
+  </definition>
+  <definition name="oPayroll_institutionSys.popUp_action_new_page_payroll_institution" extends="popup_template">
+    <put name="center" value="/pages/oPayroll_institutionSys/action_new_page_payroll_institution.jsp" />
+  </definition>
+  <definition name="oPayroll_institutionSys.popUp_action_delete_page_payroll_institution" extends="popup_template">
+    <put name="center" value="/pages/oPayroll_institutionSys/action_delete_page_payroll_institution.jsp" />
+  </definition>
+  <definition name="oPayroll_institutionSys.popUp_action_view_payroll_institution" extends="popup_template">
+    <put name="center" value="/pages/oPayroll_institutionSys/action_view_payroll_institution.jsp" />
+  </definition>
+  <definition name="oPayroll_institutionSys.popUp_action_modify_page_payroll_institution" extends="popup_template">
+    <put name="center" value="/pages/oPayroll_institutionSys/action_modify_page_payroll_institution.jsp" />
+  </definition>
+  <definition name="other.action_senttovalidatemessagewindow" extends="notlogged">
+    <put name="center" value="/pages/other/action_senttovalidatemessagewindow.jsp" />
+  </definition>
+  <definition name="other.display_help" extends="popup_template">
+    <put name="center" value="/pages/other/display_help.jsp" />
+  </definition>
+  <definition name="other.action_appHome" extends="horizontal_shortcuts3_template">
+    <put name="center" value="/pages/other/action_appHome.jsp" />
+  </definition>
+  <definition name="other.action_reports" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/other/action_reports.jsp" />
+  </definition>
+  <definition name="oCalendarSys.action_export_holidays" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCalendarSys/action_export_holidays.jsp" />
+  </definition>
+  <definition name="other.action_generate_new_password" extends="popup_template">
+    <put name="center" value="/pages/other/action_generate_new_password.jsp" />
+  </definition>
+  <definition name="oAuditmessageSys.action_todelete_new_page_auditmessage" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAuditmessageSys/action_todelete_new_page_auditmessage.jsp" />
+  </definition>
+  <definition name="oAuditmessageSys.action_viewlist_auditmessage" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAuditmessageSys/action_viewlist_auditmessage.jsp" />
+  </definition>
+  <definition name="oAuditmessageSys.action_view_auditmessage" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAuditmessageSys/action_view_auditmessage.jsp" />
+  </definition>
+  <definition name="oWorking_hoursSys.action_delete_page_working_hours" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oWorking_hoursSys/action_delete_page_working_hours.jsp" />
+  </definition>
+  <definition name="oWorking_hoursSys.action_view_working_hours" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oWorking_hoursSys/action_view_working_hours.jsp" />
+  </definition>
+  <definition name="oWorking_hoursSys.action_manage_working_hours" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oWorking_hoursSys/action_manage_working_hours.jsp" />
+  </definition>
+  <definition name="oWorking_hoursSys.popUp_action_modify_page_working_hours" extends="popup_template">
+    <put name="center" value="/pages/oWorking_hoursSys/action_modify_page_working_hours.jsp" />
+  </definition>
+  <definition name="oWorking_hoursSys.popUp_action_delete_page_working_hours" extends="popup_template">
+    <put name="center" value="/pages/oWorking_hoursSys/action_delete_page_working_hours.jsp" />
+  </definition>
+  <definition name="oWorking_hoursSys.popUp_action_new_page_working_hours" extends="popup_template">
+    <put name="center" value="/pages/oWorking_hoursSys/action_new_page_working_hours.jsp" />
+  </definition>
+  <definition name="oWorking_hoursSys.action_new_page_working_hours" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oWorking_hoursSys/action_new_page_working_hours.jsp" />
+  </definition>
+  <definition name="oWorking_hoursSys.action_modify_page_working_hours" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oWorking_hoursSys/action_modify_page_working_hours.jsp" />
+  </definition>
+  <definition name="oWork_experienceSys.action_add_my_own_work_experience" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oWork_experienceSys/action_add_my_own_work_experience.jsp" />
+  </definition>
+  <definition name="oWork_experienceSys.action_viewlist_work_experience" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oWork_experienceSys/action_viewlist_work_experience.jsp" />
+  </definition>
+  <definition name="oWork_experienceSys.action_view_work_experience" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oWork_experienceSys/action_view_work_experience.jsp" />
+  </definition>
+  <definition name="oWork_experienceSys.action_delete_page_work_experience" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oWork_experienceSys/action_delete_page_work_experience.jsp" />
+  </definition>
+  <definition name="oWork_experienceSys.action_modify_page_work_experience" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oWork_experienceSys/action_modify_page_work_experience.jsp" />
+  </definition>
+  <definition name="oWork_experienceSys.action_add_work_experience" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oWork_experienceSys/action_add_work_experience.jsp" />
+  </definition>
+  <definition name="oCountrySys.action_new_page_country" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCountrySys/action_new_page_country.jsp" />
+  </definition>
+  <definition name="oCountrySys.popUp_action_new_page_country" extends="popup_template">
+    <put name="center" value="/pages/oCountrySys/action_new_page_country.jsp" />
+  </definition>
+  <definition name="oCountrySys.action_modify_page_country" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCountrySys/action_modify_page_country.jsp" />
+  </definition>
+  <definition name="oCountrySys.action_delete_page_country" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCountrySys/action_delete_page_country.jsp" />
+  </definition>
+  <definition name="oCountrySys.action_manage_countries" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCountrySys/action_manage_countries.jsp" />
+  </definition>
+  <definition name="oCountrySys.popUp_action_modify_page_country" extends="popup_template">
+    <put name="center" value="/pages/oCountrySys/action_modify_page_country.jsp" />
+  </definition>
+  <definition name="oCountrySys.popUp_action_delete_page_country" extends="popup_template">
+    <put name="center" value="/pages/oCountrySys/action_delete_page_country.jsp" />
+  </definition>
+  <definition name="oCountrySys.action_view_country" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCountrySys/action_view_country.jsp" />
+  </definition>
+  <definition name="oFunding_detailSys.action_modify_page_funding_detail" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oFunding_detailSys/action_modify_page_funding_detail.jsp" />
+  </definition>
+  <definition name="oFunding_detailSys.action_viewlist_funding_detail" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oFunding_detailSys/action_viewlist_funding_detail.jsp" />
+  </definition>
+  <definition name="oFunding_detailSys.action_view_funding_detail" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oFunding_detailSys/action_view_funding_detail.jsp" />
+  </definition>
+  <definition name="oFunding_detailSys.action_new_page_funding_detail" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oFunding_detailSys/action_new_page_funding_detail.jsp" />
+  </definition>
+  <definition name="oFunding_detailSys.action_delete_page_funding_detail" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oFunding_detailSys/action_delete_page_funding_detail.jsp" />
+  </definition>
+  <definition name="oChildSys.action_add_child" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oChildSys/action_add_child.jsp" />
+  </definition>
+  <definition name="oChildSys.action_delete_page_child" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oChildSys/action_delete_page_child.jsp" />
+  </definition>
+  <definition name="oChildSys.action_modify_page_child" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oChildSys/action_modify_page_child.jsp" />
+  </definition>
+  <definition name="oChildSys.action_view_child" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oChildSys/action_view_child.jsp" />
+  </definition>
+  <definition name="oProfessionalSys.action_viewlist_professional" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oProfessionalSys/action_viewlist_professional.jsp" />
+  </definition>
+  <definition name="oProfessionalSys.action_add_professional" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oProfessionalSys/action_add_professional.jsp" />
+  </definition>
+  <definition name="oProfessionalSys.action_modify_page_professional" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oProfessionalSys/action_modify_page_professional.jsp" />
+  </definition>
+  <definition name="oProfessionalSys.popUp_action_modify_page_professional" extends="popup_template">
+    <put name="center" value="/pages/oProfessionalSys/action_modify_page_professional.jsp" />
+  </definition>
+  <definition name="oProfessionalSys.action_delete_page_professional" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oProfessionalSys/action_delete_page_professional.jsp" />
+  </definition>
+  <definition name="oProfessionalSys.popUp_action_delete_page_professional" extends="popup_template">
+    <put name="center" value="/pages/oProfessionalSys/action_delete_page_professional.jsp" />
+  </definition>
+  <definition name="oProfessionalSys.popUp_action_mark_current_confirmation" extends="popup_template">
+    <put name="center" value="/pages/oProfessionalSys/action_mark_current_confirmation.jsp" />
+  </definition>
+  <definition name="oProfessionalSys.action_view_professional" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oProfessionalSys/action_view_professional.jsp" />
+  </definition>
+  <definition name="oProfessionalSys.popUp_action_view_professional" extends="popup_template">
+    <put name="center" value="/pages/oProfessionalSys/action_view_professional.jsp" />
+  </definition>
+  <definition name="oUnitSys.action_view_unit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oUnitSys/action_view_unit.jsp" />
+  </definition>
+  <definition name="oUnitSys.action_modify_page_unit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oUnitSys/action_modify_page_unit.jsp" />
+  </definition>
+  <definition name="oUnitSys.action_manage_unit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oUnitSys/action_manage_unit.jsp" />
+  </definition>
+  <definition name="oUnitSys.popUp_action_delete_page_unit" extends="popup_template">
+    <put name="center" value="/pages/oUnitSys/action_delete_page_unit.jsp" />
+  </definition>
+  <definition name="oUnitSys.popUp_action_modify_page_unit" extends="popup_template">
+    <put name="center" value="/pages/oUnitSys/action_modify_page_unit.jsp" />
+  </definition>
+  <definition name="oUnitSys.action_delete_page_unit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oUnitSys/action_delete_page_unit.jsp" />
+  </definition>
+  <definition name="oUnitSys.action_new_page_unit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oUnitSys/action_new_page_unit.jsp" />
+  </definition>
+  <definition name="oUnitSys.popUp_action_new_page_unit" extends="popup_template">
+    <put name="center" value="/pages/oUnitSys/action_new_page_unit.jsp" />
+  </definition>
+  <definition name="oCategorySys.action_manage_category" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCategorySys/action_manage_category.jsp" />
+  </definition>
+  <definition name="oCategorySys.popUp_action_modify_page_category" extends="popup_template">
+    <put name="center" value="/pages/oCategorySys/action_modify_page_category.jsp" />
+  </definition>
+  <definition name="oCategorySys.popUp_action_delete_page_category" extends="popup_template">
+    <put name="center" value="/pages/oCategorySys/action_delete_page_category.jsp" />
+  </definition>
+  <definition name="oCategorySys.popUp_action_new_page_category" extends="popup_template">
+    <put name="center" value="/pages/oCategorySys/action_new_page_category.jsp" />
+  </definition>
+  <definition name="oCategorySys.action_view_category" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCategorySys/action_view_category.jsp" />
+  </definition>
+  <definition name="oCategorySys.action_modify_page_category" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCategorySys/action_modify_page_category.jsp" />
+  </definition>
+  <definition name="oCategorySys.action_delete_page_category" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCategorySys/action_delete_page_category.jsp" />
+  </definition>
+  <definition name="oCategorySys.action_new_page_category" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCategorySys/action_new_page_category.jsp" />
+  </definition>
+  <definition name="oResearch_groupSys.action_view_research_group_personals" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oResearch_groupSys/action_view_research_group_personals.jsp" />
+  </definition>
+  <definition name="oResearch_groupSys.action_view_research_group" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oResearch_groupSys/action_view_research_group.jsp" />
+  </definition>
+  <definition name="oResearch_groupSys.action_new_page_research_group" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oResearch_groupSys/action_new_page_research_group.jsp" />
+  </definition>
+  <definition name="_popUp.selectPersonalPopUp" extends="popup_template">
+    <put name="center" value="/pages/_popUp/selectPersonalPopUp.jsp" />
+  </definition>
+  <definition name="oResearch_groupSys.action_delete_page_research_group" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oResearch_groupSys/action_delete_page_research_group.jsp" />
+  </definition>
+  <definition name="oResearch_groupSys.action_modify_page_research_group" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oResearch_groupSys/action_modify_page_research_group.jsp" />
+  </definition>
+  <definition name="oResearch_groupSys.action_manage_research_groups" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oResearch_groupSys/action_manage_research_groups.jsp" />
+  </definition>
+  <definition name="oResearch_groupSys.popUp_action_view_research_group" extends="popup_template">
+    <put name="center" value="/pages/oResearch_groupSys/action_view_research_group.jsp" />
+  </definition>
+  <definition name="oResearch_groupSys.popUp_action_modify_page_research_group" extends="popup_template">
+    <put name="center" value="/pages/oResearch_groupSys/action_modify_page_research_group.jsp" />
+  </definition>
+  <definition name="oResearch_groupSys.popUp_action_delete_page_research_group" extends="popup_template">
+    <put name="center" value="/pages/oResearch_groupSys/action_delete_page_research_group.jsp" />
+  </definition>
+  <definition name="oResearch_groupSys.popUp_action_new_page_research_group" extends="popup_template">
+    <put name="center" value="/pages/oResearch_groupSys/action_new_page_research_group.jsp" />
+  </definition>
+  <definition name="oMarital_statusSys.action_view_marital_status" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oMarital_statusSys/action_view_marital_status.jsp" />
+  </definition>
+  <definition name="oMarital_statusSys.action_new_page_marital_status" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oMarital_statusSys/action_new_page_marital_status.jsp" />
+  </definition>
+  <definition name="oMarital_statusSys.action_delete_page_marital_status" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oMarital_statusSys/action_delete_page_marital_status.jsp" />
+  </definition>
+  <definition name="oMarital_statusSys.action_modify_page_marital_status" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oMarital_statusSys/action_modify_page_marital_status.jsp" />
+  </definition>
+  <definition name="oMarital_statusSys.action_manage_marital_status" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oMarital_statusSys/action_manage_marital_status.jsp" />
+  </definition>
+  <definition name="oMarital_statusSys.popUp_action_modify_page_marital_status" extends="popup_template">
+    <put name="center" value="/pages/oMarital_statusSys/action_modify_page_marital_status.jsp" />
+  </definition>
+  <definition name="oMarital_statusSys.popUp_action_delete_page_marital_status" extends="popup_template">
+    <put name="center" value="/pages/oMarital_statusSys/action_delete_page_marital_status.jsp" />
+  </definition>
+  <definition name="oMarital_statusSys.popUp_action_new_page_marital_status" extends="popup_template">
+    <put name="center" value="/pages/oMarital_statusSys/action_new_page_marital_status.jsp" />
+  </definition>
+  <definition name="oGrantSys.action_delete_page_grant" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGrantSys/action_delete_page_grant.jsp" />
+  </definition>
+  <definition name="oGrantSys.action_manage_grants" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGrantSys/action_manage_grants.jsp" />
+  </definition>
+  <definition name="oGrantSys.popUp_action_modify_page_grant" extends="popup_template">
+    <put name="center" value="/pages/oGrantSys/action_modify_page_grant.jsp" />
+  </definition>
+  <definition name="oGrantSys.popUp_action_delete_page_grant" extends="popup_template">
+    <put name="center" value="/pages/oGrantSys/action_delete_page_grant.jsp" />
+  </definition>
+  <definition name="oGrantSys.action_modify_page_grant" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGrantSys/action_modify_page_grant.jsp" />
+  </definition>
+  <definition name="oGrantSys.action_view_grant" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGrantSys/action_view_grant.jsp" />
+  </definition>
+  <definition name="oGrantSys.action_new_page_grant" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGrantSys/action_new_page_grant.jsp" />
+  </definition>
+  <definition name="oGrantSys.popUp_action_new_page_grant" extends="popup_template">
+    <put name="center" value="/pages/oGrantSys/action_new_page_grant.jsp" />
+  </definition>
+  <definition name="oBankSys.action_view_bank" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oBankSys/action_view_bank.jsp" />
+  </definition>
+  <definition name="oBankSys.action_modify_page_bank" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oBankSys/action_modify_page_bank.jsp" />
+  </definition>
+  <definition name="oBankSys.action_manage_bank" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oBankSys/action_manage_bank.jsp" />
+  </definition>
+  <definition name="oBankSys.popUp_action_modify_page_bank" extends="popup_template">
+    <put name="center" value="/pages/oBankSys/action_modify_page_bank.jsp" />
+  </definition>
+  <definition name="oBankSys.popUp_action_delete_page_bank" extends="popup_template">
+    <put name="center" value="/pages/oBankSys/action_delete_page_bank.jsp" />
+  </definition>
+  <definition name="oBankSys.popUp_action_new_page_bank" extends="popup_template">
+    <put name="center" value="/pages/oBankSys/action_new_page_bank.jsp" />
+  </definition>
+  <definition name="oBankSys.action_delete_page_bank" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oBankSys/action_delete_page_bank.jsp" />
+  </definition>
+  <definition name="oBankSys.action_new_page_bank" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oBankSys/action_new_page_bank.jsp" />
+  </definition>
+  <definition name="oPaymentSys.action_new_page_payment" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPaymentSys/action_new_page_payment.jsp" />
+  </definition>
+  <definition name="oPaymentSys.popUp_action_new_page_payment" extends="popup_template">
+    <put name="center" value="/pages/oPaymentSys/action_new_page_payment.jsp" />
+  </definition>
+  <definition name="oPaymentSys.action_modify_page_payment" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPaymentSys/action_modify_page_payment.jsp" />
+  </definition>
+  <definition name="oPaymentSys.action_delete_page_payment" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPaymentSys/action_delete_page_payment.jsp" />
+  </definition>
+  <definition name="oPaymentSys.action_manage_payments" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPaymentSys/action_manage_payments.jsp" />
+  </definition>
+  <definition name="oPaymentSys.popUp_action_modify_page_payment" extends="popup_template">
+    <put name="center" value="/pages/oPaymentSys/action_modify_page_payment.jsp" />
+  </definition>
+  <definition name="oPaymentSys.popUp_action_delete_page_payment" extends="popup_template">
+    <put name="center" value="/pages/oPaymentSys/action_delete_page_payment.jsp" />
+  </definition>
+  <definition name="oPaymentSys.action_view_payment" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPaymentSys/action_view_payment.jsp" />
+  </definition>
+  <definition name="oType_of_educationSys.action_new_page_type_of_education" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_educationSys/action_new_page_type_of_education.jsp" />
+  </definition>
+  <definition name="oType_of_educationSys.popUp_action_new_page_type_of_education" extends="popup_template">
+    <put name="center" value="/pages/oType_of_educationSys/action_new_page_type_of_education.jsp" />
+  </definition>
+  <definition name="oType_of_educationSys.action_delete_page_type_of_education" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_educationSys/action_delete_page_type_of_education.jsp" />
+  </definition>
+  <definition name="oType_of_educationSys.action_modify_page_type_of_education" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_educationSys/action_modify_page_type_of_education.jsp" />
+  </definition>
+  <definition name="oType_of_educationSys.action_view_type_of_education" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_educationSys/action_view_type_of_education.jsp" />
+  </definition>
+  <definition name="oType_of_educationSys.action_manage_type_of_education" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_educationSys/action_manage_type_of_education.jsp" />
+  </definition>
+  <definition name="oType_of_educationSys.popUp_action_modify_page_type_of_education" extends="popup_template">
+    <put name="center" value="/pages/oType_of_educationSys/action_modify_page_type_of_education.jsp" />
+  </definition>
+  <definition name="oType_of_educationSys.popUp_action_delete_page_type_of_education" extends="popup_template">
+    <put name="center" value="/pages/oType_of_educationSys/action_delete_page_type_of_education.jsp" />
+  </definition>
+  <definition name="oType_of_compensationSys.action_delete_page_type_of_compensation" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_compensationSys/action_delete_page_type_of_compensation.jsp" />
+  </definition>
+  <definition name="oType_of_compensationSys.action_manage_type_of_compensation" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_compensationSys/action_manage_type_of_compensation.jsp" />
+  </definition>
+  <definition name="oType_of_compensationSys.popUp_action_modify_page_type_of_compensation" extends="popup_template">
+    <put name="center" value="/pages/oType_of_compensationSys/action_modify_page_type_of_compensation.jsp" />
+  </definition>
+  <definition name="oType_of_compensationSys.popUp_action_delete_page_type_of_compensation" extends="popup_template">
+    <put name="center" value="/pages/oType_of_compensationSys/action_delete_page_type_of_compensation.jsp" />
+  </definition>
+  <definition name="oType_of_compensationSys.action_view_type_of_compensation" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_compensationSys/action_view_type_of_compensation.jsp" />
+  </definition>
+  <definition name="oType_of_compensationSys.action_modify_page_type_of_compensation" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_compensationSys/action_modify_page_type_of_compensation.jsp" />
+  </definition>
+  <definition name="oType_of_compensationSys.action_new_page_type_of_compensation" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_compensationSys/action_new_page_type_of_compensation.jsp" />
+  </definition>
+  <definition name="oType_of_compensationSys.popUp_action_new_page_type_of_compensation" extends="popup_template">
+    <put name="center" value="/pages/oType_of_compensationSys/action_new_page_type_of_compensation.jsp" />
+  </definition>
+  <definition name="other.noPersimionsError" extends="notlogged">
+    <put name="center" value="/pages/other/noPersimionsError.jsp" />
+  </definition>
+  <definition name="other.errorPage" extends="notlogged">
+    <put name="center" value="/pages/other/errorPage.jsp" />
+  </definition>
+    <definition name="other.action_validate_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/other/action_validate_personal.jsp" />
+  </definition>
+  <definition name="other.action_validate_holidays" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/other/action_validate_holidays.jsp" />
+  </definition>
+  <definition name="oAreaSys.action_manage_area" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAreaSys/action_manage_area.jsp" />
+  </definition>
+  <definition name="oAreaSys.popUp_action_modify_page_area" extends="popup_template">
+    <put name="center" value="/pages/oAreaSys/action_modify_page_area.jsp" />
+  </definition>
+  <definition name="oAreaSys.popUp_action_delete_page_area" extends="popup_template">
+    <put name="center" value="/pages/oAreaSys/action_delete_page_area.jsp" />
+  </definition>
+  <definition name="oAreaSys.action_delete_page_area" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAreaSys/action_delete_page_area.jsp" />
+  </definition>
+  <definition name="oAreaSys.action_new_page_area" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAreaSys/action_new_page_area.jsp" />
+  </definition>
+  <definition name="oAreaSys.popUp_action_new_page_area" extends="popup_template">
+    <put name="center" value="/pages/oAreaSys/action_new_page_area.jsp" />
+  </definition>
+  <definition name="oAreaSys.action_view_area" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAreaSys/action_view_area.jsp" />
+  </definition>
+  <definition name="oAreaSys.action_modify_page_area" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAreaSys/action_modify_page_area.jsp" />
+  </definition>
+  <definition name="oReportSys.action_view_report" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oReportSys/action_view_report.jsp" />
+  </definition>
+  <definition name="oReportSys.action_modify_page_report" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oReportSys/action_modify_page_report.jsp" />
+  </definition>
+  <definition name="oReportSys.action_delete_page_report" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oReportSys/action_delete_page_report.jsp" />
+  </definition>
+  <definition name="oReportSys.action_new_page_report" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oReportSys/action_new_page_report.jsp" />
+  </definition>
+  <definition name="oReportSys.popUp_action_new_page_report" extends="popup_template">
+    <put name="center" value="/pages/oReportSys/action_new_page_report.jsp" />
+  </definition>
+  <definition name="oReportSys.action_viewlist_report" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oReportSys/action_viewlist_report.jsp" />
+  </definition>
+  <definition name="oType_of_institutionSys.action_delete_page_type_of_institution" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_institutionSys/action_delete_page_type_of_institution.jsp" />
+  </definition>
+  <definition name="oType_of_institutionSys.action_modify_page_type_of_institution" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_institutionSys/action_modify_page_type_of_institution.jsp" />
+  </definition>
+  <definition name="oType_of_institutionSys.action_view_type_of_institution" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_institutionSys/action_view_type_of_institution.jsp" />
+  </definition>
+  <definition name="oType_of_institutionSys.action_manage_type_of_institution" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_institutionSys/action_manage_type_of_institution.jsp" />
+  </definition>
+  <definition name="oType_of_institutionSys.popUp_action_delete_page_type_of_institution" extends="popup_template">
+    <put name="center" value="/pages/oType_of_institutionSys/action_delete_page_type_of_institution.jsp" />
+  </definition>
+  <definition name="oType_of_institutionSys.popUp_action_modify_page_type_of_institution" extends="popup_template">
+    <put name="center" value="/pages/oType_of_institutionSys/action_modify_page_type_of_institution.jsp" />
+  </definition>
+  <definition name="oType_of_institutionSys.action_new_page_type_of_institution" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_institutionSys/action_new_page_type_of_institution.jsp" />
+  </definition>
+  <definition name="oType_of_institutionSys.popUp_action_new_page_type_of_institution" extends="popup_template">
+    <put name="center" value="/pages/oType_of_institutionSys/action_new_page_type_of_institution.jsp" />
+  </definition>
+  <definition name="oType_of_benefitSys.action_view_type_of_benefit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_benefitSys/action_view_type_of_benefit.jsp" />
+  </definition>
+  <definition name="oType_of_benefitSys.action_delete_page_type_of_benefit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_benefitSys/action_delete_page_type_of_benefit.jsp" />
+  </definition>
+  <definition name="oType_of_benefitSys.action_modify_page_type_of_benefit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_benefitSys/action_modify_page_type_of_benefit.jsp" />
+  </definition>
+  <definition name="oType_of_benefitSys.action_manage_type_of_benefit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_benefitSys/action_manage_type_of_benefit.jsp" />
+  </definition>
+  <definition name="oType_of_benefitSys.popUp_action_modify_page_type_of_benefit" extends="popup_template">
+    <put name="center" value="/pages/oType_of_benefitSys/action_modify_page_type_of_benefit.jsp" />
+  </definition>
+  <definition name="oType_of_benefitSys.popUp_action_delete_page_type_of_benefit" extends="popup_template">
+    <put name="center" value="/pages/oType_of_benefitSys/action_delete_page_type_of_benefit.jsp" />
+  </definition>
+  <definition name="oType_of_benefitSys.action_new_page_type_of_benefit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_benefitSys/action_new_page_type_of_benefit.jsp" />
+  </definition>
+  <definition name="oType_of_benefitSys.popUp_action_new_page_type_of_benefit" extends="popup_template">
+    <put name="center" value="/pages/oType_of_benefitSys/action_new_page_type_of_benefit.jsp" />
+  </definition>
+  <definition name="oType_of_grantSys.action_view_type_of_grant" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_grantSys/action_view_type_of_grant.jsp" />
+  </definition>
+  <definition name="oType_of_grantSys.action_manage_type_of_grant" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_grantSys/action_manage_type_of_grant.jsp" />
+  </definition>
+  <definition name="oType_of_grantSys.popUp_action_modify_page_type_of_grant" extends="popup_template">
+    <put name="center" value="/pages/oType_of_grantSys/action_modify_page_type_of_grant.jsp" />
+  </definition>
+  <definition name="oType_of_grantSys.popUp_action_delete_page_type_of_grant" extends="popup_template">
+    <put name="center" value="/pages/oType_of_grantSys/action_delete_page_type_of_grant.jsp" />
+  </definition>
+  <definition name="oType_of_grantSys.action_new_page_type_of_grant" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_grantSys/action_new_page_type_of_grant.jsp" />
+  </definition>
+  <definition name="oType_of_grantSys.popUp_action_new_page_type_of_grant" extends="popup_template">
+    <put name="center" value="/pages/oType_of_grantSys/action_new_page_type_of_grant.jsp" />
+  </definition>
+  <definition name="oType_of_grantSys.action_modify_page_type_of_grant" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_grantSys/action_modify_page_type_of_grant.jsp" />
+  </definition>
+  <definition name="oType_of_grantSys.action_delete_page_type_of_grant" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_grantSys/action_delete_page_type_of_grant.jsp" />
+  </definition>
+  <definition name="oEducationSys.action_view_education" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oEducationSys/action_view_education.jsp" />
+  </definition>
+  <definition name="oEducationSys.action_add_education" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oEducationSys/action_add_education.jsp" />
+  </definition>
+  <definition name="oEducationSys.action_modify_page_education" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oEducationSys/action_modify_page_education.jsp" />
+  </definition>
+  <definition name="oEducationSys.action_add_my_own_education" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oEducationSys/action_add_my_own_education.jsp" />
+  </definition>
+  <definition name="oEducationSys.action_viewlist_education" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oEducationSys/action_viewlist_education.jsp" />
+  </definition>
+  <definition name="oEducationSys.action_delete_page_education" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oEducationSys/action_delete_page_education.jsp" />
+  </definition>
+  <definition name="oNationalitySys.action_view_nationality" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oNationalitySys/action_view_nationality.jsp" />
+  </definition>
+  <definition name="oNationalitySys.action_delete_page_nationality" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oNationalitySys/action_delete_page_nationality.jsp" />
+  </definition>
+  <definition name="oNationalitySys.action_new_page_nationality" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oNationalitySys/action_new_page_nationality.jsp" />
+  </definition>
+  <definition name="oNationalitySys.popUp_action_new_page_nationality" extends="popup_template">
+    <put name="center" value="/pages/oNationalitySys/action_new_page_nationality.jsp" />
+  </definition>
+  <definition name="oNationalitySys.action_modify_page_nationality" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oNationalitySys/action_modify_page_nationality.jsp" />
+  </definition>
+  <definition name="oNationalitySys.action_manage_nationalities" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oNationalitySys/action_manage_nationalities.jsp" />
+  </definition>
+  <definition name="oNationalitySys.popUp_action_modify_page_nationality" extends="popup_template">
+    <put name="center" value="/pages/oNationalitySys/action_modify_page_nationality.jsp" />
+  </definition>
+  <definition name="oNationalitySys.popUp_action_delete_page_nationality" extends="popup_template">
+    <put name="center" value="/pages/oNationalitySys/action_delete_page_nationality.jsp" />
+  </definition>
+  <definition name="oGrant_concessionSys.action_modify_page_grant_concession" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGrant_concessionSys/action_modify_page_grant_concession.jsp" />
+  </definition>
+  <definition name="oGrant_concessionSys.action_delete_page_grant_concession" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGrant_concessionSys/action_delete_page_grant_concession.jsp" />
+  </definition>
+  <definition name="oGrant_concessionSys.action_viewlist_grant_concession" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGrant_concessionSys/action_viewlist_grant_concession.jsp" />
+  </definition>
+  <definition name="oGrant_concessionSys.action_add_grant_concession" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGrant_concessionSys/action_add_grant_concession.jsp" />
+  </definition>
+  <definition name="oGrant_concessionSys.action_add_my_own_grant_concession" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGrant_concessionSys/action_add_my_own_grant_concession.jsp" />
+  </definition>
+  <definition name="oGrant_concessionSys.action_view_grant_concession" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGrant_concessionSys/action_view_grant_concession.jsp" />
+  </definition>
+  <definition name="oLocationSys.action_manage_location" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oLocationSys/action_manage_location.jsp" />
+  </definition>
+  <definition name="oLocationSys.popUp_action_modify_page_location" extends="popup_template">
+    <put name="center" value="/pages/oLocationSys/action_modify_page_location.jsp" />
+  </definition>
+  <definition name="oLocationSys.popUp_action_delete_page_location" extends="popup_template">
+    <put name="center" value="/pages/oLocationSys/action_delete_page_location.jsp" />
+  </definition>
+  <definition name="oLocationSys.action_view_location" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oLocationSys/action_view_location.jsp" />
+  </definition>
+  <definition name="oLocationSys.action_modify_page_location" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oLocationSys/action_modify_page_location.jsp" />
+  </definition>
+  <definition name="oLocationSys.action_delete_page_location" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oLocationSys/action_delete_page_location.jsp" />
+  </definition>
+  <definition name="oLocationSys.action_new_page_location" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oLocationSys/action_new_page_location.jsp" />
+  </definition>
+  <definition name="oLocationSys.popUp_action_new_page_location" extends="popup_template">
+    <put name="center" value="/pages/oLocationSys/action_new_page_location.jsp" />
+  </definition>
+  <definition name="oReportparameterSys.action_new_page_reportparameter" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oReportparameterSys/action_new_page_reportparameter.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_editing_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_editing_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.popUp_action_view_details" extends="popup_template">
+    <put name="center" value="/pages/oPersonalSys/action_view_details.jsp" />
+  </definition>
+  <definition name="oPersonalSys.popUp_action_change_state_from_edition_to_validating" extends="popup_template">
+    <put name="center" value="/pages/oPersonalSys/action_change_state_from_edition_to_validating.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_new_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_new_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_personal_education" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_education.jsp" />
+  </definition>
+  <definition name="oEducationSys.popUp_action_add_education" extends="popup_template">
+    <put name="center" value="/pages/oEducationSys/action_add_education.jsp" />
+  </definition>
+  <definition name="oEducationSys.popUp_action_delete_page_education" extends="popup_template">
+    <put name="center" value="/pages/oEducationSys/action_delete_page_education.jsp" />
+  </definition>
+  <definition name="oEducationSys.popUp_action_modify_page_education" extends="popup_template">
+    <put name="center" value="/pages/oEducationSys/action_modify_page_education.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_personal_professionals" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_professionals.jsp" />
+  </definition>
+  <definition name="oProfessionalSys.popUp_action_add_professional" extends="popup_template">
+    <put name="center" value="/pages/oProfessionalSys/action_add_professional.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_my_rgroup_personal_professionals" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_my_rgroup_personal_professionals.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_cancelled_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_cancelled_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.popUp_action_delete_page_personal" extends="popup_template">
+    <put name="center" value="/pages/oPersonalSys/action_delete_page_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_my_rgroup_in_progress_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_my_rgroup_in_progress_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_personal_compensation" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_compensation.jsp" />
+  </definition>
+  <definition name="oCompensationSys.popUp_action_add_compensation" extends="popup_template">
+    <put name="center" value="/pages/oCompensationSys/action_add_compensation.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_change_state_from_validated_to_active" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_change_state_from_validated_to_active.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_personal_holidays" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_holidays.jsp" />
+  </definition>
+  <definition name="oHolidaySys.popUp_action_add_holiday" extends="popup_template">
+    <put name="center" value="/pages/oHolidaySys/action_add_holiday.jsp" />
+  </definition>
+  <definition name="oHolidaySys.popUp_action_modify_page_holiday" extends="popup_template">
+    <put name="center" value="/pages/oHolidaySys/action_modify_page_holiday.jsp" />
+  </definition>
+  <definition name="oHolidaySys.popUp_action_delete_page_holiday" extends="popup_template">
+    <put name="center" value="/pages/oHolidaySys/action_delete_page_holiday.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_my_own_personal_education" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_my_own_personal_education.jsp" />
+  </definition>
+  <definition name="oEducationSys.popUp_action_add_my_own_education" extends="popup_template">
+    <put name="center" value="/pages/oEducationSys/action_add_my_own_education.jsp" />
+  </definition>
+  <definition name="oEducationSys.popUp_action_view_education" extends="popup_template">
+    <put name="center" value="/pages/oEducationSys/action_view_education.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_view_details" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_view_details.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_personal_grant_concessions" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_grant_concessions.jsp" />
+  </definition>
+  <definition name="oGrant_concessionSys.popUp_action_add_grant_concession" extends="popup_template">
+    <put name="center" value="/pages/oGrant_concessionSys/action_add_grant_concession.jsp" />
+  </definition>
+  <definition name="oGrant_concessionSys.popUp_action_modify_page_grant_concession" extends="popup_template">
+    <put name="center" value="/pages/oGrant_concessionSys/action_modify_page_grant_concession.jsp" />
+  </definition>
+  <definition name="oGrant_concessionSys.popUp_action_delete_page_grant_concession" extends="popup_template">
+    <put name="center" value="/pages/oGrant_concessionSys/action_delete_page_grant_concession.jsp" />
+  </definition>
+  <definition name="oGrant_concessionSys.popUp_action_mark_current_confirmation" extends="popup_template">
+    <put name="center" value="/pages/oGrant_concessionSys/action_mark_current_confirmation.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_todelete_choose_current_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_todelete_choose_current_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_personal_work_experience" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_work_experience.jsp" />
+  </definition>
+  <definition name="oWork_experienceSys.popUp_action_add_work_experience" extends="popup_template">
+    <put name="center" value="/pages/oWork_experienceSys/action_add_work_experience.jsp" />
+  </definition>
+  <definition name="oWork_experienceSys.popUp_action_delete_page_work_experience" extends="popup_template">
+    <put name="center" value="/pages/oWork_experienceSys/action_delete_page_work_experience.jsp" />
+  </definition>
+  <definition name="oWork_experienceSys.popUp_action_modify_page_work_experience" extends="popup_template">
+    <put name="center" value="/pages/oWork_experienceSys/action_modify_page_work_experience.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_delete_page_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_delete_page_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_modify_page_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_modify_page_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_modify_my_rgroup_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_modify_my_rgroup_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_change_state_from_active_to_inactive" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_change_state_from_active_to_inactive.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_change_state_from_inactive_to_active" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_change_state_from_inactive_to_active.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_active_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_active_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.popUp_action_change_state_from_active_to_inactive" extends="popup_template">
+    <put name="center" value="/pages/oPersonalSys/action_change_state_from_active_to_inactive.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_validating_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_validating_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.popUp_action_change_state_from_validating_to_validated" extends="popup_template">
+    <put name="center" value="/pages/oPersonalSys/action_change_state_from_validating_to_validated.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_change_state_from_validating_to_validated" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_change_state_from_validating_to_validated.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_my_rgroup_validating_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_my_rgroup_validating_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_validated_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_validated_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.popUp_action_change_state_from_validated_to_active" extends="popup_template">
+    <put name="center" value="/pages/oPersonalSys/action_change_state_from_validated_to_active.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_all_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_all_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_modify_my_own_personal_data" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_modify_my_own_personal_data.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_send_my_own_data_to_validate" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_send_my_own_data_to_validate.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_my_own_personal_grant_concessions" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_my_own_personal_grant_concessions.jsp" />
+  </definition>
+  <definition name="oGrant_concessionSys.popUp_action_add_my_own_grant_concession" extends="popup_template">
+    <put name="center" value="/pages/oGrant_concessionSys/action_add_my_own_grant_concession.jsp" />
+  </definition>
+  <definition name="oGrant_concessionSys.popUp_action_view_grant_concession" extends="popup_template">
+    <put name="center" value="/pages/oGrant_concessionSys/action_view_grant_concession.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_change_state_from_edition_to_validating" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_change_state_from_edition_to_validating.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_validation_cancelled_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_validation_cancelled_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_personal_with_contract" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_with_contract.jsp" />
+  </definition>
+
+  <definition name="oPersonalSys.action_manage_personal_with_contract_about_to_expire" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_with_contract_about_to_expire.jsp" />
+  </definition>
+
+  <definition name="oPersonalSys.action_manage_personal_with_grant" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_with_grant.jsp" />
+  </definition>
+      <definition name="oPersonalSys.action_manage_other_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_other_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_personal_funding_details" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_funding_details.jsp" />
+  </definition>
+  <definition name="oFunding_detailSys.popUp_action_new_page_funding_detail" extends="popup_template">
+    <put name="center" value="/pages/oFunding_detailSys/action_new_page_funding_detail.jsp" />
+  </definition>
+  <definition name="oFunding_detailSys.popUp_action_delete_page_funding_detail" extends="popup_template">
+    <put name="center" value="/pages/oFunding_detailSys/action_delete_page_funding_detail.jsp" />
+  </definition>
+  <definition name="oFunding_detailSys.popUp_action_modify_page_funding_detail" extends="popup_template">
+    <put name="center" value="/pages/oFunding_detailSys/action_modify_page_funding_detail.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_my_rgroup_validation_cancelled_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_my_rgroup_validation_cancelled_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_my_own_personal_work_experience" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_my_own_personal_work_experience.jsp" />
+  </definition>
+  <definition name="oWork_experienceSys.popUp_action_add_my_own_work_experience" extends="popup_template">
+    <put name="center" value="/pages/oWork_experienceSys/action_add_my_own_work_experience.jsp" />
+  </definition>
+  <definition name="oWork_experienceSys.popUp_action_view_work_experience" extends="popup_template">
+    <put name="center" value="/pages/oWork_experienceSys/action_view_work_experience.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_my_rgroup_personal_funding_details" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_my_rgroup_personal_funding_details.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_personal_children" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_children.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_my_own_personal_children" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_my_own_personal_children.jsp" />
+  </definition>
+  <definition name="oChildSys.popUp_action_modify_page_child" extends="popup_template">
+    <put name="center" value="/pages/oChildSys/action_modify_page_child.jsp" />
+  </definition>
+  <definition name="oChildSys.popUp_action_delete_page_child" extends="popup_template">
+    <put name="center" value="/pages/oChildSys/action_delete_page_child.jsp" />
+  </definition>
+  <definition name="oChildSys.popUp_action_add_child" extends="popup_template">
+    <put name="center" value="/pages/oChildSys/action_add_child.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_personal_benefits" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_benefits.jsp" />
+  </definition>
+  <definition name="oBenefitsSys.popUp_action_add_benefits" extends="popup_template">
+    <put name="center" value="/pages/oBenefitsSys/action_add_benefits.jsp" />
+  </definition>
+  <definition name="oBenefitsSys.popUp_action_modify_page_benefits" extends="popup_template">
+    <put name="center" value="/pages/oBenefitsSys/action_modify_page_benefits.jsp" />
+  </definition>
+  <definition name="oBenefitsSys.popUp_action_delete_page_benefits" extends="popup_template">
+    <put name="center" value="/pages/oBenefitsSys/action_delete_page_benefits.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_inactive_personal" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_inactive_personal.jsp" />
+  </definition>
+  <definition name="oPersonalSys.popUp_action_change_state_from_inactive_to_active" extends="popup_template">
+    <put name="center" value="/pages/oPersonalSys/action_change_state_from_inactive_to_active.jsp" />
+  </definition>
+  <definition name="oCompensationSys.action_delete_page_compensation" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCompensationSys/action_delete_page_compensation.jsp" />
+  </definition>
+  <definition name="oCompensationSys.popUp_action_delete_page_compensation" extends="popup_template">
+    <put name="center" value="/pages/oCompensationSys/action_delete_page_compensation.jsp" />
+  </definition>
+  <definition name="oCompensationSys.popUp_action_mark_current_confirmation" extends="popup_template">
+    <put name="center" value="/pages/oCompensationSys/action_mark_current_confirmation.jsp" />
+  </definition>  
+  <definition name="oCompensationSys.action_view_compensation" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCompensationSys/action_view_compensation.jsp" />
+  </definition>
+  <definition name="oCompensationSys.popUp_action_view_compensation" extends="popup_template">
+    <put name="center" value="/pages/oCompensationSys/action_view_compensation.jsp" />
+  </definition>
+  <definition name="oCompensationSys.action_viewlist_compensation" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCompensationSys/action_viewlist_compensation.jsp" />
+  </definition>
+  <definition name="oCompensationSys.action_add_compensation" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCompensationSys/action_add_compensation.jsp" />
+  </definition>
+  <definition name="oCompensationSys.action_modify_page_compensation" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCompensationSys/action_modify_page_compensation.jsp" />
+  </definition>
+  <definition name="oCompensationSys.popUp_action_modify_page_compensation" extends="popup_template">
+    <put name="center" value="/pages/oCompensationSys/action_modify_page_compensation.jsp" />
+  </definition>
+  <definition name="oHolidaySys.action_view_holiday" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oHolidaySys/action_view_holiday.jsp" />
+  </definition>
+  <definition name="oHolidaySys.action_add_holiday" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oHolidaySys/action_add_holiday.jsp" />
+  </definition>
+  <definition name="oHolidaySys.action_modify_page_holiday" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oHolidaySys/action_modify_page_holiday.jsp" />
+  </definition>
+  <definition name="oHolidaySys.action_delete_page_holiday" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oHolidaySys/action_delete_page_holiday.jsp" />
+  </definition>
+  <definition name="oHolidaySys.action_viewlist_holiday" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oHolidaySys/action_viewlist_holiday.jsp" />
+  </definition>
+  <definition name="oGenderSys.action_delete_page_gender" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGenderSys/action_delete_page_gender.jsp" />
+  </definition>
+  <definition name="oGenderSys.action_new_page_gender" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGenderSys/action_new_page_gender.jsp" />
+  </definition>
+  <definition name="oGenderSys.action_manage_gender" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGenderSys/action_manage_gender.jsp" />
+  </definition>
+  <definition name="oGenderSys.popUp_action_modify_page_gender" extends="popup_template">
+    <put name="center" value="/pages/oGenderSys/action_modify_page_gender.jsp" />
+  </definition>
+  <definition name="oGenderSys.popUp_action_delete_page_gender" extends="popup_template">
+    <put name="center" value="/pages/oGenderSys/action_delete_page_gender.jsp" />
+  </definition>
+  <definition name="oGenderSys.popUp_action_new_page_gender" extends="popup_template">
+    <put name="center" value="/pages/oGenderSys/action_new_page_gender.jsp" />
+  </definition>
+  <definition name="oGenderSys.action_view_gender" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGenderSys/action_view_gender.jsp" />
+  </definition>
+  <definition name="oGenderSys.action_modify_page_gender" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGenderSys/action_modify_page_gender.jsp" />
+  </definition>
+  <definition name="oOrganization_unitSys.action_modify_page_organization_unit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oOrganization_unitSys/action_modify_page_organization_unit.jsp" />
+  </definition>
+  <definition name="oOrganization_unitSys.action_view_organization_unit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oOrganization_unitSys/action_view_organization_unit.jsp" />
+  </definition>
+  <definition name="oOrganization_unitSys.action_manage_organization_unit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oOrganization_unitSys/action_manage_organization_unit.jsp" />
+  </definition>
+  <definition name="oOrganization_unitSys.popUp_action_modify_page_organization_unit" extends="popup_template">
+    <put name="center" value="/pages/oOrganization_unitSys/action_modify_page_organization_unit.jsp" />
+  </definition>
+  <definition name="oOrganization_unitSys.popUp_action_delete_page_organization_unit" extends="popup_template">
+    <put name="center" value="/pages/oOrganization_unitSys/action_delete_page_organization_unit.jsp" />
+  </definition>
+  <definition name="oOrganization_unitSys.action_new_page_organization_unit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oOrganization_unitSys/action_new_page_organization_unit.jsp" />
+  </definition>
+  <definition name="oOrganization_unitSys.popUp_action_new_page_organization_unit" extends="popup_template">
+    <put name="center" value="/pages/oOrganization_unitSys/action_new_page_organization_unit.jsp" />
+  </definition>
+  <definition name="oOrganization_unitSys.action_delete_page_organization_unit" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oOrganization_unitSys/action_delete_page_organization_unit.jsp" />
+  </definition>
+  <definition name="oIrb_budgetSys.action_modify_page_irb_budget" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oIrb_budgetSys/action_modify_page_irb_budget.jsp" />
+  </definition>
+  <definition name="oIrb_budgetSys.action_view_irb_budget" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oIrb_budgetSys/action_view_irb_budget.jsp" />
+  </definition>
+  <definition name="oIrb_budgetSys.action_manage_irb_budget" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oIrb_budgetSys/action_manage_irb_budget.jsp" />
+  </definition>
+  <definition name="oIrb_budgetSys.popUp_action_modify_page_irb_budget" extends="popup_template">
+    <put name="center" value="/pages/oIrb_budgetSys/action_modify_page_irb_budget.jsp" />
+  </definition>
+  <definition name="oIrb_budgetSys.popUp_action_delete_page_irb_budget" extends="popup_template">
+    <put name="center" value="/pages/oIrb_budgetSys/action_delete_page_irb_budget.jsp" />
+  </definition>
+  <definition name="oIrb_budgetSys.action_new_page_irb_budget" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oIrb_budgetSys/action_new_page_irb_budget.jsp" />
+  </definition>
+  <definition name="oIrb_budgetSys.popUp_action_new_page_irb_budget" extends="popup_template">
+    <put name="center" value="/pages/oIrb_budgetSys/action_new_page_irb_budget.jsp" />
+  </definition>
+  <definition name="oIrb_budgetSys.action_delete_page_irb_budget" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oIrb_budgetSys/action_delete_page_irb_budget.jsp" />
+  </definition>
+  <definition name="oPositionSys.action_new_page_position" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPositionSys/action_new_page_position.jsp" />
+  </definition>
+  <definition name="oPositionSys.popUp_action_new_page_position" extends="popup_template">
+    <put name="center" value="/pages/oPositionSys/action_new_page_position.jsp" />
+  </definition>
+  <definition name="oPositionSys.action_manage_position" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPositionSys/action_manage_position.jsp" />
+  </definition>
+  <definition name="oPositionSys.popUp_action_modify_page_position" extends="popup_template">
+    <put name="center" value="/pages/oPositionSys/action_modify_page_position.jsp" />
+  </definition>
+  <definition name="oPositionSys.popUp_action_delete_page_position" extends="popup_template">
+    <put name="center" value="/pages/oPositionSys/action_delete_page_position.jsp" />
+  </definition>
+  <definition name="oPositionSys.action_view_position" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPositionSys/action_view_position.jsp" />
+  </definition>
+  <definition name="oPositionSys.action_modify_page_position" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPositionSys/action_modify_page_position.jsp" />
+  </definition>
+  <definition name="oPositionSys.action_delete_page_position" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPositionSys/action_delete_page_position.jsp" />
+  </definition>
+  <definition name="oBenefitsSys.action_view_benefits" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oBenefitsSys/action_view_benefits.jsp" />
+  </definition>
+  <definition name="oBenefitsSys.action_viewlist_benefits" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oBenefitsSys/action_viewlist_benefits.jsp" />
+  </definition>
+  <definition name="oBenefitsSys.action_modify_page_benefits" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oBenefitsSys/action_modify_page_benefits.jsp" />
+  </definition>
+  <definition name="oBenefitsSys.action_delete_page_benefits" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oBenefitsSys/action_delete_page_benefits.jsp" />
+  </definition>
+  <definition name="oBenefitsSys.action_add_benefits" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oBenefitsSys/action_add_benefits.jsp" />
+  </definition>
+  <definition name="oType_of_contractSys.action_manage_type_of_contract" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_contractSys/action_manage_type_of_contract.jsp" />
+  </definition>
+  <definition name="oType_of_contractSys.popUp_action_modify_page_type_of_contract" extends="popup_template">
+    <put name="center" value="/pages/oType_of_contractSys/action_modify_page_type_of_contract.jsp" />
+  </definition>
+  <definition name="oType_of_contractSys.popUp_action_delete_page_type_of_contract" extends="popup_template">
+    <put name="center" value="/pages/oType_of_contractSys/action_delete_page_type_of_contract.jsp" />
+  </definition>
+  <definition name="oType_of_contractSys.action_view_type_of_contract" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_contractSys/action_view_type_of_contract.jsp" />
+  </definition>
+  <definition name="oType_of_contractSys.action_new_page_type_of_contract" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_contractSys/action_new_page_type_of_contract.jsp" />
+  </definition>
+  <definition name="oType_of_contractSys.popUp_action_new_page_type_of_contract" extends="popup_template">
+    <put name="center" value="/pages/oType_of_contractSys/action_new_page_type_of_contract.jsp" />
+  </definition>
+  <definition name="oType_of_contractSys.action_modify_page_type_of_contract" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_contractSys/action_modify_page_type_of_contract.jsp" />
+  </definition>
+  <definition name="oType_of_contractSys.action_delete_page_type_of_contract" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_contractSys/action_delete_page_type_of_contract.jsp" />
+  </definition>
+  <definition name="display.login" extends="notlogged">
+    <put name="center" value="/pages/login/displayLoginForm.jsp" />
+  </definition>
+  <definition name="display.usuario.viewAllUsuarios" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/user/viewAllUsuarios.jsp" />
+  </definition>
+  <definition name="display.usuario.viewAllUsuariosPendientes" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/user/viewAllUsuariosPendientes.jsp" />
+  </definition>
+  <definition name="display.usuario.viewAllUsuariosBorrados" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/user/viewAllUsuariosBorrados.jsp" />
+  </definition>
+  <definition name="display.usuario.displayAddUserForm" extends="notlogged">
+    <put name="center" value="/pages/user/displayAddUserForm.jsp" />
+  </definition>
+  <definition name="display.usuario.displayAddNewUserForm" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/user/displayAddNewUserForm.jsp" />
+  </definition>
+  <definition name="display.usuario.displayAddUser" extends="notlogged">
+    <put name="center" value="/pages/user/displayAddUser.jsp" />
+  </definition>
+  <definition name="display.workspace.displayDeactivateCurrentUserForm" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/workspace/displayDeactivateCurrentUserForm.jsp" />
+  </definition>
+  <definition name="display.usuario.displayChangeUsuarioForm" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/user/displayChangeUsuarioForm.jsp" />
+  </definition>
+  <definition name="display.workspace.displayCurrentUserForm" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/workspace/displayCurrentUser.jsp" />
+  </definition>
+  <definition name="display.usuario.displayChangePasswordForm" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/user/displayChangePasswordForm.jsp" />
+  </definition>
+  <definition name="display.workspace.displayChangeMyPasswordForm" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/workspace/displayChangeMyPasswordForm.jsp" />
+  </definition>
+  <definition name="display.usuario.displayAltaUsuarioForm" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/user/displayAltaUsuarioForm.jsp" />
+  </definition>
+  <definition name="display.usuario.displayUpdateAllReservasFromUsuarioForm" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/user/displayUpdateAllReservasFromUsuarioForm.jsp" />
+  </definition>
+  <definition name="display.workspace.displayUpdateUserForm" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/workspace/displayUpdateUserForm.jsp" />
+  </definition>
+  <definition name="display.usuario.displayUpdatedUser" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/user/displayUpdatedUser.jsp" />
+  </definition>
+  <definition name="oCalendarSys.action_manage_calendar" extends="horizontal_evc_template1">
+  	<put name="center" value="/pages/oCalendarSys/action_manage_calendar.jsp"></put>
+  </definition>
+  <definition name="oCalendarSys.action_manage_personal_calendar" extends="horizontal_evc_template1">
+  	<put name="center" value="/pages/oCalendarSys/action_manage_personal_calendar.jsp"></put>
+  </definition>
+  <definition name="oCalendarSys.popUp_action_add_event" extends="popup_template">
+    <put name="center" value="/pages/oCalendarSys/action_add_event.jsp" />
+  </definition>
+  <definition name="oCalendarSys.popUp_action_delete_event" extends="popup_template">
+    <put name="center" value="/pages/oCalendarSys/action_delete_event.jsp" />
+  </definition>
+   <definition name="oCalendarSys.popUp_action_modify_event" extends="popup_template">
+    <put name="center" value="/pages/oCalendarSys/action_modify_event.jsp" />
+  </definition>
+  <definition name="oCalendarSys.popUp_action_add_calendar" extends="popup_template">
+    <put name="center" value="/pages/oCalendarSys/action_add_calendar.jsp" />
+  </definition>
+    <definition name="oCalendarSys.action_manage_all_holidays" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oCalendarSys/action_manage_all_holidays.jsp" />
+  </definition>
+  <definition name="oCalendarSys.popUp_action_modify_calendar" extends="popup_template">
+    <put name="center" value="/pages/oCalendarSys/action_modify_calendar.jsp" />
+  </definition>
+  <definition name="oCalendarSys.popUp_action_delete_calendar" extends="popup_template">
+    <put name="center" value="/pages/oCalendarSys/action_delete_calendar.jsp" />
+  </definition>
+  <definition name="oCalendarSys.popUp_action_send_calendar_info" extends="popup_template">
+    <put name="center" value="/pages/oCalendarSys/action_send_calendar_info.jsp" />
+  </definition>
+  <definition name="oCalendarSys.popUp_action_new_year" extends="popup_template">
+    <put name="center" value="/pages/oCalendarSys/action_new_year.jsp" />
+  </definition>
+  <definition name="oCalendarSys.popUp_action_modify_calendar_info" extends="popup_template">
+    <put name="center" value="/pages/oCalendarSys/action_modify_calendar_info.jsp" />
+  </definition>
+  <definition name="oPersonalSys.popUp_action_modify_page_personal_comment" extends="popup_template">
+    <put name="center" value="/pages/oPersonalSys/action_modify_page_personal_comment.jsp" />
+  </definition>  
+</tiles-definitions>
+

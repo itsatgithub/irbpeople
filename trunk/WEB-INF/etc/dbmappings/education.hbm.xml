@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Education" table="EDUCATION">
+        <cache usage="read-write"/>
+    
+		<id name="educationcode" column="educationcode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+		<property name="start_date" type="timestamp">
+	<column name="start_date"  />
+</property><property name="end_date" type="timestamp">
+	<column name="end_date"  />
+</property><property name="graduation_date" type="timestamp">
+	<column name="graduation_date"  />
+</property><property name="title" type="string">
+	<column name="title" length="100" />
+</property><property name="speciality" type="string">
+	<column name="speciality" length="100" />
+</property><property name="center" type="string">
+	<column name="center" length="100" />
+</property>
+		
+		<!-- Associacion mappings -->
+		<many-to-one name="education_personal" class="Personal" column="education_personal" not-null="false"/>
+	
+<many-to-one name="type" class="Type_of_education" column="type" not-null="false"/>
+	
+<many-to-one name="education_country" class="Country" column="education_country" not-null="false"/>
+	
+
+		
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

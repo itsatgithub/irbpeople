@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Country" table="COUNTRY">
+        <cache usage="read-write"/>
+    
+		<id name="countrycode" column="countrycode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+		<property name="description" type="string">
+	<column name="description" length="100" />
+</property>
+		
+		<!-- Associacion mappings -->
+		
+	<set name="iwork_experience_country" cascade="none" lazy="true">
+		<key>
+			<column name="work_experience_country" />
+		</key>
+		<one-to-many class="Work_experience" />
+	</set>
+
+	<set name="ieducation_country" cascade="none" lazy="true">
+		<key>
+			<column name="education_country" />
+		</key>
+		<one-to-many class="Education" />
+	</set>
+
+	<set name="ibirth_country" cascade="none" lazy="true">
+		<key>
+			<column name="birth_country" />
+		</key>
+		<one-to-many class="Personal" />
+	</set>
+
+	<set name="icountry" cascade="none" lazy="true">
+		<key>
+			<column name="country" />
+		</key>
+		<one-to-many class="Personal" />
+	</set>
+
+	<set name="iend_of_contract_country" cascade="none" lazy="true">
+		<key>
+			<column name="end_of_contract_country" />
+		</key>
+		<one-to-many class="Personal" />
+	</set>
+
+		
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

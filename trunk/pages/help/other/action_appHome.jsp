@@ -1,0 +1,1 @@
+Welcome to the IRB - people application. From the main window you may navigate to all the contents of the application. To do so, you can either use the drop-down menu, or using the links on the page.

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<role name="human resources" system-groups-included="true">
+  <description>human resources</description>
+  <accessible-groups>
+    <group name="oUserSys" />
+    <group name="oType_of_benefitSys" />
+    <group name="oType_of_institutionSys" />
+    <group name="oPersonalSys" />
+    <group name="oUnitSys" />
+    <group name="oCountrySys" />
+    <group name="oPositionSys" />
+    <group name="oCompensationSys" />
+    <group name="oOrganization_unitSys" />
+    <group name="oPaymentSys" />
+    <group name="other" />
+    <group name="oType_of_educationSys" />
+    <group name="oEducationSys" />
+    <group name="oResearch_groupSys" />
+    <group name="oWork_experienceSys" />
+    <group name="oType_of_holidaysSys" />
+    <group name="oBenefitsSys" />
+    <group name="oType_of_compensationSys" />
+    <group name="oProfessionalSys" />
+    <group name="oType_of_grantSys" />
+    <group name="oType_of_contractSys" />
+    <group name="oGrantSys" />
+    <group name="oFunding_detailSys" />
+    <group name="oAreaSys" />
+    <group name="oNationalitySys" />
+    <group name="oLocationSys" />
+    <group name="virtualfakegroup" />
+    <group name="oGrant_concessionSys" />
+    <group name="oHolidaySys" />
+    <group name="oPersonalSys" />
+    <group name="oGenderSys" />
+    <group name="oMarital_statusSys" />
+    <group name="oPayroll_institutionSys" />
+    <group name="oBankSys" />
+    <group name="oChildSys" />
+    <group name="oCategorySys" />
+    <group name="oWorking_hoursSys" />
+    <group name="other" />
+    <group name="other" />
+    <group name="virtualfakegroup" />
+    <group name="oReportSys" />
+    <group name="other" />
+    <group name="oAuditmessageSys" />
+    <group name="virtualfakegroup" />
+  </accessible-groups>
+  <forbidden-actions>
+    <action name="manage_my_rgroup_validating_personal" group_name="oPersonalSys" />
+    <action name="modify_my_own_personal_data" group_name="oPersonalSys" />
+    <action name="manage_my_rgroup_in_progress_personal" group_name="oPersonalSys" />
+    <action name="manage_my_own_personal_work_experience" group_name="oPersonalSys" />
+    <action name="manage_my_rgroup_validation_cancelled_personal" group_name="oPersonalSys" />
+    <action name="manage_my_rgroup_personal_professionals" group_name="oPersonalSys" />
+    <action name="manage_my_own_personal_education" group_name="oPersonalSys" />
+    <action name="send_my_own_data_to_validate" group_name="oPersonalSys" />
+    <action name="todelete_choose_current_personal" group_name="oPersonalSys" />
+    <action name="manage_my_rgroup_personal_funding_details" group_name="oPersonalSys" />
+    <action name="manage_my_own_personal_grant_concessions" group_name="oPersonalSys" />
+    <action name="modify_my_rgroup_personal" group_name="oPersonalSys" />
+    <action name="generate_new_password" group_name="other" />
+    <action name="generate_new_password_bis" group_name="other" />
+    <action name="senttovalidatemessagewindow" group_name="other" />
+    <action name="finishdataobtentinophase" group_name="other" />
+    <action name="Generar_nuevo_password" group_name="other" />
+    <action name="Finish_the_Obtention_phase" group_name="other" />
+    <action name="add_my_own_education" group_name="oEducationSys" />
+    <action name="add_my_own_work_experience" group_name="oWork_experienceSys" />
+    <action name="va_menu.human_resources.manage_personal.all" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.editing" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.cancelled" group_name="virtualfakegroup" />
+    <action name="va_menu.manage_my_research_group_personal.validating_personal" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.active" group_name="virtualfakegroup" />
+    <action name="va_menu.finish_data_obtention_phase" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_research_groups" group_name="virtualfakegroup" />
+    <action name="va_menu.manage_my_research_group_personal.validating_cancelled_personal" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.validating" group_name="virtualfakegroup" />
+    <action name="va_menu.enviar_a_validar" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal" group_name="virtualfakegroup" />
+    <action name="va_menu.manage_my_research_group_personal.in_progress_personal" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.in_progress" group_name="virtualfakegroup" />
+    <action name="va_menu.manage_my_research_group_personal" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.inactive" group_name="virtualfakegroup" />
+    <action name="add_my_own_grant_concession" group_name="oGrant_concessionSys" />
+    <action name="va_menu.finish_data_obtention_phase" group_name="virtualfakegroup" />
+    <action name="view_auditmessage" group_name="oAuditmessageSys" />
+    <action name="viewlist_auditmessage" group_name="oAuditmessageSys" />
+    <action name="todelete_new_page_auditmessage" group_name="oAuditmessageSys" />
+    <action name="va_menu.human_resources.manage_personal.all" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.editing" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.cancelled" group_name="virtualfakegroup" />
+    <action name="va_menu.manage_my_research_group_personal.validating_personal" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.active" group_name="virtualfakegroup" />
+    <action name="va_menu.finish_data_obtention_phase" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_research_groups" group_name="virtualfakegroup" />
+    <action name="va_menu.manage_my_research_group_personal.validating_cancelled_personal" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.validating" group_name="virtualfakegroup" />
+    <action name="va_menu.enviar_a_validar" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal" group_name="virtualfakegroup" />
+    <action name="va_menu.manage_my_research_group_personal.in_progress_personal" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.in_progress" group_name="virtualfakegroup" />
+    <action name="va_menu.manage_my_research_group_personal" group_name="virtualfakegroup" />
+    <action name="va_menu.human_resources.manage_personal.inactive" group_name="virtualfakegroup" />
+  </forbidden-actions>
+  <forbidden-actions-ref>
+    <action-ref action="manage_my_rgroup_validating_personal" group="oPersonalSys" zone="rowaction0" action-ref="modify_my_rgroup_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validating_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_validating_to_progress" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validating_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_validation_to_vcancel" group-ref="oPersonalSys" />
+    <action-ref action="modify_my_own_personal_data" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_child" group-ref="oChildSys" />
+    <action-ref action="modify_my_own_personal_data" group="oPersonalSys" zone="rowaction0" action-ref="view_child" group-ref="oChildSys" />
+    <action-ref action="modify_my_own_personal_data" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_child" group-ref="oChildSys" />
+    <action-ref action="modify_my_own_personal_data" group="oPersonalSys" zone="folder" action-ref="modify_my_own_personal_data" group-ref="oPersonalSys" />
+    <action-ref action="modify_my_own_personal_data" group="oPersonalSys" zone="folder" action-ref="manage_my_own_personal_work_experience" group-ref="oPersonalSys" />
+    <action-ref action="modify_my_own_personal_data" group="oPersonalSys" zone="folder" action-ref="manage_my_own_personal_grant_concessions" group-ref="oPersonalSys" />
+    <action-ref action="modify_my_own_personal_data" group="oPersonalSys" zone="folder" action-ref="manage_my_own_personal_education" group-ref="oPersonalSys" />
+    <action-ref action="modify_my_own_personal_data" group="oPersonalSys" zone="submit" action-ref="modify_my_own_personal_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="modify_my_own_personal_data" group="oPersonalSys" zone="submit" action-ref="modify_my_own_personal_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_own_personal_work_experience" group="oPersonalSys" zone="operation" action-ref="add_my_own_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="manage_my_own_personal_work_experience" group="oPersonalSys" zone="rowaction0" action-ref="view_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="manage_my_own_personal_work_experience" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="manage_my_own_personal_work_experience" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="manage_my_rgroup_validation_cancelled_personal" group="oPersonalSys" zone="rowaction0" action-ref="change_state_from_vcancel_to_validation" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validation_cancelled_personal" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validation_cancelled_personal" group="oPersonalSys" zone="folder" action-ref="manage_my_rgroup_validating_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validation_cancelled_personal" group="oPersonalSys" zone="folder" action-ref="manage_my_rgroup_validation_cancelled_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_validation_cancelled_personal" group="oPersonalSys" zone="folder" action-ref="manage_my_rgroup_in_progress_personal" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_personal_professionals" group="oPersonalSys" zone="operation" action-ref="add_professional" group-ref="oProfessionalSys" />
+    <action-ref action="manage_my_rgroup_personal_professionals" group="oPersonalSys" zone="rowaction" action-ref="view_professional" group-ref="oProfessionalSys" />
+    <action-ref action="manage_my_own_personal_education" group="oPersonalSys" zone="operation" action-ref="add_my_own_education" group-ref="oEducationSys" />
+    <action-ref action="manage_my_own_personal_education" group="oPersonalSys" zone="rowaction0" action-ref="view_education" group-ref="oEducationSys" />
+    <action-ref action="manage_my_own_personal_education" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_education" group-ref="oEducationSys" />
+    <action-ref action="manage_my_own_personal_education" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_education" group-ref="oEducationSys" />
+    <action-ref action="send_my_own_data_to_validate" group="oPersonalSys" zone="rowaction1" action-ref="view_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="send_my_own_data_to_validate" group="oPersonalSys" zone="rowaction0" action-ref="view_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="send_my_own_data_to_validate" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="send_my_own_data_to_validate" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="send_my_own_data_to_validate" group="oPersonalSys" zone="submit" action-ref="Send_to_validate" group-ref="oPersonalSys" />
+    <action-ref action="send_my_own_data_to_validate" group="oPersonalSys" zone="submit" action-ref="Cancel" group-ref="oPersonalSys" />
+    <action-ref action="todelete_choose_current_personal" group="oPersonalSys" zone="rowaction0" action-ref="modify_my_own_personal_data" group-ref="oPersonalSys" />
+    <action-ref action="todelete_choose_current_personal" group="oPersonalSys" zone="rowaction0" action-ref="send_my_own_data_to_validate" group-ref="oPersonalSys" />
+    <action-ref action="manage_my_rgroup_personal_funding_details" group="oPersonalSys" zone="operation" action-ref="new_page_funding_detail" group-ref="oFunding_detailSys" />
+    <action-ref action="manage_my_rgroup_personal_funding_details" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_funding_detail" group-ref="oFunding_detailSys" />
+    <action-ref action="manage_my_rgroup_personal_funding_details" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_funding_detail" group-ref="oFunding_detailSys" />
+    <action-ref action="manage_my_own_personal_grant_concessions" group="oPersonalSys" zone="operation" action-ref="add_my_own_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="manage_my_own_personal_grant_concessions" group="oPersonalSys" zone="rowaction0" action-ref="view_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="manage_my_own_personal_grant_concessions" group="oPersonalSys" zone="rowaction0" action-ref="modify_page_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="manage_my_own_personal_grant_concessions" group="oPersonalSys" zone="rowaction0" action-ref="delete_page_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="modify_my_rgroup_personal" group="oPersonalSys" zone="folder" action-ref="modify_my_rgroup_personal" group-ref="oPersonalSys" />
+    <action-ref action="modify_my_rgroup_personal" group="oPersonalSys" zone="folder" action-ref="manage_my_rgroup_personal_funding_details" group-ref="oPersonalSys" />
+    <action-ref action="modify_my_rgroup_personal" group="oPersonalSys" zone="submit" action-ref="modify_my_rgroup_personal_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="modify_my_rgroup_personal" group="oPersonalSys" zone="submit" action-ref="modify_my_rgroup_personal_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
+    <action-ref action="generate_new_password" group="other" zone="submit" action-ref="Generar_nuevo_password" group-ref="other" />
+    <action-ref action="senttovalidatemessagewindow" group="other" zone="submit" action-ref="generate_new_password_bis" group-ref="other" />
+    <action-ref action="finishdataobtentinophase" group="other" zone="submit" action-ref="Finish_the_Obtention_phase" group-ref="other" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="viewlist_auditmessage" group-ref="oAuditmessageSys" />
+    <action-ref action="appHome" group="other" zone="group2" action-ref="todelete_choose_current_personal" group-ref="oPersonalSys" />
+    <action-ref action="appHome" group="other" zone="group2" action-ref="manage_my_rgroup_validating_personal" group-ref="oPersonalSys" />
+    <action-ref action="add_my_own_education" group="oEducationSys" zone="submit" action-ref="add_my_own_education_new_new_page_education" group-ref="oEducationSys" />
+    <action-ref action="add_my_own_education" group="oEducationSys" zone="submit" action-ref="add_my_own_education_cancel_new_new_page_education" group-ref="oEducationSys" />
+    <action-ref action="add_my_own_work_experience" group="oWork_experienceSys" zone="submit" action-ref="add_my_own_work_experience_new_new_page_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="add_my_own_work_experience" group="oWork_experienceSys" zone="submit" action-ref="add_my_own_work_experience_cancel_new_new_page_work_experience" group-ref="oWork_experienceSys" />
+    <action-ref action="add_my_own_grant_concession" group="oGrant_concessionSys" zone="submit" action-ref="add_my_own_grant_concession_new_new_page_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="add_my_own_grant_concession" group="oGrant_concessionSys" zone="submit" action-ref="add_my_own_grant_concession_cancel_new_new_page_grant_concession" group-ref="oGrant_concessionSys" />
+    <action-ref action="generate_new_password" group="other" zone="submit" action-ref="Generar_nuevo_password" group-ref="other" />
+    <action-ref action="senttovalidatemessagewindow" group="other" zone="submit" action-ref="generate_new_password_bis" group-ref="other" />
+    <action-ref action="finishdataobtentinophase" group="other" zone="submit" action-ref="Finish_the_Obtention_phase" group-ref="other" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="viewlist_auditmessage" group-ref="oAuditmessageSys" />
+    <action-ref action="appHome" group="other" zone="group2" action-ref="todelete_choose_current_personal" group-ref="oPersonalSys" />
+    <action-ref action="appHome" group="other" zone="group2" action-ref="manage_my_rgroup_validating_personal" group-ref="oPersonalSys" />
+    <action-ref action="generate_new_password" group="other" zone="submit" action-ref="Generar_nuevo_password" group-ref="other" />
+    <action-ref action="senttovalidatemessagewindow" group="other" zone="submit" action-ref="generate_new_password_bis" group-ref="other" />
+    <action-ref action="finishdataobtentinophase" group="other" zone="submit" action-ref="Finish_the_Obtention_phase" group-ref="other" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="viewlist_auditmessage" group-ref="oAuditmessageSys" />
+    <action-ref action="appHome" group="other" zone="group2" action-ref="todelete_choose_current_personal" group-ref="oPersonalSys" />
+    <action-ref action="appHome" group="other" zone="group2" action-ref="manage_my_rgroup_validating_personal" group-ref="oPersonalSys" />
+    <action-ref action="finishdataobtentinophase" group="other" zone="submit" action-ref="Finish_the_Obtention_phase" group-ref="other" />
+    <action-ref action="senttovalidatemessagewindow" group="other" zone="submit" action-ref="generate_new_password_bis" group-ref="other" />
+    <action-ref action="appHome" group="other" zone="group1" action-ref="viewlist_auditmessage" group-ref="oAuditmessageSys" />
+    <action-ref action="appHome" group="other" zone="group2" action-ref="todelete_choose_current_personal" group-ref="oPersonalSys" />
+    <action-ref action="appHome" group="other" zone="group2" action-ref="manage_my_rgroup_validating_personal" group-ref="oPersonalSys" />
+    <action-ref action="generate_new_password" group="other" zone="submit" action-ref="Generar_nuevo_password" group-ref="other" />
+    <action-ref action="view_auditmessage" group="oAuditmessageSys" zone="submit" action-ref="cancel_view_view_auditmessage" group-ref="oAuditmessageSys" />
+    <action-ref action="viewlist_auditmessage" group="oAuditmessageSys" zone="rowaction0" action-ref="view_auditmessage" group-ref="oAuditmessageSys" />
+    <action-ref action="todelete_new_page_auditmessage" group="oAuditmessageSys" zone="submit" action-ref="new_new_page_auditmessage" group-ref="oAuditmessageSys" />
+    <action-ref action="todelete_new_page_auditmessage" group="oAuditmessageSys" zone="submit" action-ref="cancel_new_new_page_auditmessage" group-ref="oAuditmessageSys" />
+  </forbidden-actions-ref>
+</role>
+

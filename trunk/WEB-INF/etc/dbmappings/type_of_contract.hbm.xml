@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Type_of_contract" table="TYPE_OF_CONTRACT">
+        <cache usage="read-write"/>
+    
+		<id name="type_of_contractcode" column="type_of_contractcode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+		<property name="description" type="string">
+	       <column name="description" length="100" />
+        </property>
+		
+        <property name="is_irbs" type="boolean">
+            <column name="is_irbs" />
+        </property>
+        
+		<!-- Associacion mappings -->
+		
+	<set name="itype_of_contract" cascade="none" lazy="true">
+		<key>
+			<column name="type_of_contract" />
+		</key>
+		<one-to-many class="Professional" />
+	</set>
+
+		
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

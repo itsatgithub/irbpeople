@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Report" table="REPORT">
+		<id name="reportcode" column="reportcode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+		<property name="name" type="string">
+	<column name="name" length="100" />
+</property><property name="date" type="timestamp">
+	<column name="date"  />
+</property><property name="filename" type="string">
+	<column name="filename" length="100" />
+</property><property name="type" type="string">
+	<column name="type" length="100" />
+</property><property name="is_public" type="boolean">
+	<column name="is_public"  default="1"/>
+</property><property name="observations" type="string">
+	<column name="observations" length="500" />
+</property>
+		
+		<!-- Associacion mappings -->
+		<many-to-one name="author" class="Usuario" column="author" not-null="false"/>
+	
+
+	<set name="ireport" cascade="none" lazy="true">
+		<key>
+			<column name="report" />
+		</key>
+		<one-to-many class="Reportparameter" />
+	</set>
+
+		
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

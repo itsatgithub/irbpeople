@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="AuditLog" table="AUDIT_LOG">
+		<id name="audit_logcode" column="audit_logcode"></id>
+		
+		<!-- attribute mappings -->
+		<property name="date" type="timestamp">
+	       <column name="date"  />
+        </property>
+        <property name="user" type="string">
+            <column name="user" length="45" />
+        </property>
+        <property name="role" type="string">
+            <column name="role" length="45" />
+        </property>
+        <property name="remoteHost" type="string">
+            <column name="remotehost" length="100" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="45" />
+        </property>
+	   
+	</class>
+</hibernate-mapping>

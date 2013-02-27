@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<report view="view_grant_info" site-number="1">
+    <site>
+        <!-- Label es el nombre del listado en el desplegable en la pantalla de nuevo listado. -->
+        <label>MSc and PhD Grant and professional info (current)</label>
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields>
+                <field name="personalcode" visible="true" type-of-field="text">
+                    <caption>Personal: Personalcode</caption>
+                </field>
+                <field name="name" visible="true" type-of-field="text">
+                    <caption >Personal: Name</caption>
+                </field>
+                <field name="surname1" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 1</caption>
+                </field>
+                <field name="surname2" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 2</caption>
+                </field>
+                <field name="dni" visible="true" type-of-field="text">
+                    <caption >Personal: DNI</caption>
+                </field>
+                <field name="nationality" visible="true" type-of-field="text">
+                    <caption >Personal: Nationality</caption>
+                </field>
+                <field name="nationality_2" visible="true" type-of-field="text">
+                    <caption >Personal: Nationality 2</caption>
+                </field>
+                <field name="gender" visible="true" type-of-field="text">
+                    <caption >Personal: Gender</caption>
+                </field>
+                <field name="state" visible="true" type-of-field="text">
+                    <caption >Personal: State</caption>
+                </field>
+                <field name="email" visible="true" type-of-field="text">
+                    <caption >Professional: Email</caption>
+                </field>
+                <field name="professional_phone" visible="true" type-of-field="text">
+                    <caption >Professional: Professional phone</caption>
+                </field>
+                <field name="position" visible="true" type-of-field="text">
+                    <caption >Professional: Position</caption>
+                </field>
+                <field name="payroll_institution" visible="true" type-of-field="text">
+                    <caption >Professional: Payroll institution</caption>
+                </field>
+                <field name="payroll_institution_2" visible="true" type-of-field="text">
+                    <caption >Professional: Payroll institution 2</caption>
+                </field>
+                <field name="research_group" visible="true" type-of-field="text">
+                    <caption >Professional: Research group</caption>
+                </field>
+                <field name="start_date_msc_or_phd" visible="true" type-of-field="text">
+                    <caption >Grant: Start date of MSc. or PhD.</caption>
+                </field>
+                <field name="thesis_director" visible="true" type-of-field="text">
+                    <caption >Grant: Thesis Director</caption>
+                </field>
+                <field name="name_master_or_programme" visible="true" type-of-field="text">
+                    <caption >Grant: Name of Master or Doctoral Programme</caption>
+                </field>
+                <field name="university_enrolled" visible="true" type-of-field="text">
+                    <caption >Grant: University enrolled</caption>
+                </field>
+                <field name="grant_start_date" visible="true" type-of-field="text">
+                    <caption >Grant: Start date</caption>
+                </field>
+                <field name="grant_end_date" visible="true" type-of-field="text">
+                    <caption >Grant: End date</caption>
+                </field>
+                <field name="grant" visible="true" type-of-field="text">
+                    <caption >Grant: Name</caption>
+                </field>
+                <field name="type_of_grant" visible="true" type-of-field="text">
+                    <caption >Grant: Type of Grant</caption>
+                </field>
+                <field name="call_code" visible="true" type-of-field="text">
+                    <caption >Grant: Call code</caption>
+                </field>                
+            </select-fields>
+            <where-fields>
+                <field name="personalcode" visible="true" type-of-field="text">
+                    <caption>Personal: Personalcode</caption>
+                </field>
+                <field name="name" visible="true" type-of-field="text">
+                    <caption >Personal: Name</caption>
+                </field>
+                <field name="surname1" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 1</caption>
+                </field>
+                <field name="surname2" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 2</caption>
+                </field>
+                <field name="dni" visible="true" type-of-field="text">
+                    <caption >Personal: DNI</caption>
+                </field>
+                <field name="nationality" visible="true" type-of-field="select description from nationality order by description">
+                    <caption >Personal: Nationality</caption>
+                </field>
+                <field name="nationality_2" visible="true" type-of-field="select description from nationality order by description">
+                    <caption >Personal: Nationality 2</caption>
+                </field>
+                <field name="gender" visible="true" type-of-field="select description from gender order by description">
+                    <caption >Personal: Gender</caption>
+                </field>
+                <field name="state" visible="true" type-of-field="select description from personalstate order by description">
+                    <caption >Personal: State</caption>
+                </field>
+                <field name="email" visible="true" type-of-field="text">
+                    <caption >Professional: Email</caption>
+                </field>
+                <field name="professional_phone" visible="true" type-of-field="text">
+                    <caption >Professional: Professional phone</caption>
+                </field>
+                <field name="position" visible="true" type-of-field="text">
+                    <caption >Professional: Position</caption>
+                </field>
+                <field name="payroll_institution" visible="true" type-of-field="select description from payroll_institution order by description">
+                    <caption >Professional: Payroll institution</caption>
+                </field>
+                <field name="payroll_institution_2" visible="true" type-of-field="select description from payroll_institution order by description">
+                    <caption >Professional: Payroll institution 2</caption>
+                </field>
+                <field name="research_group" visible="true" type-of-field="select description from research_group order by description">
+                    <caption >Professional: Research group</caption>
+                </field>
+                <field name="start_date_msc_or_phd" visible="true" type-of-field="date">
+                    <caption >Grant: Start date of MSc. or PhD.</caption>
+                </field>
+                <field name="thesis_director" visible="true" type-of-field="text">
+                    <caption >Grant: Thesis Director</caption>
+                </field>
+                <field name="name_master_or_programme" visible="true" type-of-field="text">
+                    <caption >Grant: Name of Master or Doctoral Programme</caption>
+                </field>
+                <field name="university_enrolled" visible="true" type-of-field="text">
+                    <caption >Grant: University enrolled</caption>
+                </field>
+                <field name="grant_start_date" visible="true" type-of-field="date">
+                    <caption >Grant: Start date</caption>
+                </field>
+                <field name="grant_end_date" visible="true" type-of-field="date">
+                    <caption >Grant: End date</caption>
+                </field>
+                <field name="grant" visible="true" type-of-field="select description from table_grant order by description">
+                    <caption >Grant: Name</caption>
+                </field>
+                <field name="type_of_grant" visible="true" type-of-field="select description from type_of_grant order by description">
+                    <caption >Grant: Type of Grant</caption>
+                </field>
+                <field name="call_code" visible="true" type-of-field="text">
+                    <caption >Grant: Call code</caption>
+                </field>  
+            </where-fields>
+            <orderby-fields>
+                <field name="personalcode" visible="true" type-of-field="text">
+                    <caption>Personal: Personalcode</caption>
+                </field>
+                <field name="name" visible="true" type-of-field="text">
+                    <caption >Personal: Name</caption>
+                </field>
+                <field name="surname1" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 1</caption>
+                </field>
+                <field name="surname2" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 2</caption>
+                </field>
+                <field name="dni" visible="true" type-of-field="text">
+                    <caption >Personal: DNI</caption>
+                </field>
+                <field name="nationality" visible="true" type-of-field="text">
+                    <caption >Personal: Nationality</caption>
+                </field>
+                <field name="nationality_2" visible="true" type-of-field="text">
+                    <caption >Personal: Nationality 2</caption>
+                </field>
+                <field name="gender" visible="true" type-of-field="text">
+                    <caption >Personal: Gender</caption>
+                </field>
+                <field name="state" visible="true" type-of-field="text">
+                    <caption >Personal: State</caption>
+                </field>
+                <field name="email" visible="true" type-of-field="text">
+                    <caption >Professional: Email</caption>
+                </field>
+                <field name="professional_phone" visible="true" type-of-field="text">
+                    <caption >Professional: Professional phone</caption>
+                </field>
+                <field name="position" visible="true" type-of-field="text">
+                    <caption >Professional: Position</caption>
+                </field>
+                <field name="payroll_institution" visible="true" type-of-field="text">
+                    <caption >Professional: Payroll institution</caption>
+                </field>
+                <field name="payroll_institution_2" visible="true" type-of-field="text">
+                    <caption >Professional: Payroll institution 2</caption>
+                </field>
+                <field name="research_group" visible="true" type-of-field="text">
+                    <caption >Professional: Research group</caption>
+                </field>
+                <field name="start_date_msc_or_phd" visible="true" type-of-field="text">
+                    <caption >Grant: Start date of MSc. or PhD.</caption>
+                </field>
+                <field name="thesis_director" visible="true" type-of-field="text">
+                    <caption >Grant: Thesis Director</caption>
+                </field>
+                <field name="name_master_or_programme" visible="true" type-of-field="text">
+                    <caption >Grant: Name of Master or Doctoral Programme</caption>
+                </field>
+                <field name="university_enrolled" visible="true" type-of-field="text">
+                    <caption >Grant: University enrolled</caption>
+                </field>
+                <field name="grant_start_date" visible="true" type-of-field="text">
+                    <caption >Grant: Start date</caption>
+                </field>
+                <field name="grant_end_date" visible="true" type-of-field="text">
+                    <caption >Grant: End date</caption>
+                </field>
+                <field name="grant" visible="true" type-of-field="text">
+                    <caption >Grant: Name</caption>
+                </field>
+                <field name="type_of_grant" visible="true" type-of-field="text">
+                    <caption >Grant: Type of Grant</caption>
+                </field>
+                <field name="call_code" visible="true" type-of-field="text">
+                    <caption >Grant: Call code</caption>
+                </field>            
+            </orderby-fields>
+        </fields>
+    </site>
+</report>

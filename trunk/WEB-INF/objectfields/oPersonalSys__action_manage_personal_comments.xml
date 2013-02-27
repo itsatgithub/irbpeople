@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Nota: El nombre del objeto (nombre_del_objeto) es el nombre en minusculas de la tabla en base de datos. 	-->
+<!-- Nota: En general, si un atributo de tipo 'boolean' no se encuentra se considera su valor como 'false'. 	-->
+<item-list obj="child" site-number="3">
+    <desc>Descripcion para la lista del objeto 'child'.</desc>
+    <!-- Categorizaciones para poder agrupar los ficheros de configuracion. -->
+    <!-- Para agregar una categoria poner un atributo 'attName=attValue'.   -->
+    <category />
+    <site name="en">
+        <label language="es">Etiqueta de visualizacion para el objeto 'child'.</label>
+        <comment language="es">Descripcion de visualizacion para el objeto 'child'.</comment>
+        <title language="es">Titulo de visualizacion para el objeto 'child'.</title>
+        <!-- Campos del objeto para visualizacion -->
+        <fields>
+            <!-- - Campos visibles -->
+            <!-- El orden es el de aparicion de los tags. Para editar el orden se recomienda utilizar el XMLSpy, -->
+            <!-- mediante el cual, es sencillo mover un tag arriba y abajo. -->
+            <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
+            <!-- Los atributos modificables son: 'default' y 'visible'.  -->
+            <visible-fields>
+                <field name="input_date" visible="true" default="true" type-of-field="text" size="10">
+                    <caption language="en">Date</caption>
+                </field>
+                <field name="author" visible="true" default="true" type-of-field="text" size="10">
+                    <caption language="en">Author</caption>
+                </field>
+                <field name="text" visible="true" default="true" type-of-field="text" size="70">
+                    <caption language="en">Text</caption>
+                </field>
+            </visible-fields>
+            <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
+            <!-- 1/2 - Campos 'hidden'. -->
+            <hidden-fields />
+            <!-- 2/2 - Campos 'discarded'. -->
+            <discarded-fields />
+        </fields>
+    </site>
+    <site name="ct">
+        <label language="es">Etiqueta de visualizacion para el objeto 'child'.</label>
+        <comment language="es">Descripcion de visualizacion para el objeto 'child'.</comment>
+        <title language="es">Titulo de visualizacion para el objeto 'child'.</title>
+        <!-- Campos del objeto para visualizacion -->
+        <fields>
+            <!-- - Campos visibles -->
+            <!-- El orden es el de aparicion de los tags. Para editar el orden se recomienda utilizar el XMLSpy, -->
+            <!-- mediante el cual, es sencillo mover un tag arriba y abajo. -->
+            <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
+            <!-- Los atributos modificables son: 'default' y 'visible'.  -->
+            <visible-fields>
+                <field name="input_date" visible="true" default="true" type-of-field="text" size="10">
+                    <caption language="ct">Data</caption>
+                </field>
+                <field name="author" visible="true" default="true" type-of-field="text" size="10">
+                    <caption language="ct">Autor</caption>
+                </field>
+                <field name="text" visible="true" default="true" type-of-field="text" size="70">
+                    <caption language="ct">Text</caption>
+                </field>
+            </visible-fields>
+            <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
+            <!-- 1/2 - Campos 'hidden'. -->
+            <hidden-fields />
+            <!-- 2/2 - Campos 'discarded'. -->
+            <discarded-fields />
+        </fields>
+    </site>
+    <site name="es">
+        <label language="es">Etiqueta de visualizacion para el objeto 'child'.</label>
+        <comment language="es">Descripcion de visualizacion para el objeto 'child'.</comment>
+        <title language="es">Titulo de visualizacion para el objeto 'child'.</title>
+        <!-- Campos del objeto para visualizacion -->
+        <fields>
+            <!-- - Campos visibles -->
+            <!-- El orden es el de aparicion de los tags. Para editar el orden se recomienda utilizar el XMLSpy, -->
+            <!-- mediante el cual, es sencillo mover un tag arriba y abajo. -->
+            <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
+            <!-- Los atributos modificables son: 'default' y 'visible'.  -->
+            <visible-fields>
+                <field name="input_date" visible="true" default="true" type-of-field="text" size="10">
+                    <caption language="es">Fecha</caption>
+                </field>
+                <field name="author" visible="true" default="true" type-of-field="text" size="10">
+                    <caption language="es">Autor</caption>
+                </field>
+                <field name="text" visible="true" default="true" type-of-field="text" size="70">
+                    <caption language="es">Texto</caption>
+                </field>
+            </visible-fields>
+            <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
+            <!-- 1/2 - Campos 'hidden'. -->
+            <hidden-fields />
+            <!-- 2/2 - Campos 'discarded'. -->
+            <discarded-fields />
+        </fields>
+    </site>
+</item-list>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.justinmind.usermanagement.permission.TypeInstance" table="typeinstance">
+       	<id name="id" type="string">
+            <column name="typeinstancecode" length="20"/>
+            <generator class="assigned" />
+        </id>
+
+		<property name="typetable" type="string">
+            <column name="typetable" length="100" not-null="true" />
+        </property>
+
+		<property name="pkey" type="binary">
+            <column name="pkey" not-null="true" />
+        </property>
+
+		<many-to-one name="maintable" class="com.justinmind.usermanagement.permission.MainTable" fetch="select">
+            <column name="tablename" length="100" not-null="true" />
+        </many-to-one>		
+
+        <set name="permissions" inverse="true">
+            <key>
+                <column name="typeinstancecode" length="20" not-null="true" />
+            </key>
+            <one-to-many class="com.justinmind.usermanagement.permission.Permission" />
+        </set>
+    
+    </class>
+</hibernate-mapping>

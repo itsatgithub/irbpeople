@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<objects>
+  <object name="area">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="auditmessage">
+    <field name="timestamp" type="date" isInDescriptor="true" />
+    <field name="message" type="longtext" />
+    <field name="type" type="category" isInDescriptor="true">
+      <value>mail</value>
+      <value>create</value>
+      <value>modify</value>
+    </field>
+    <asociations>
+      <one BO-to="user" name="user" />
+    </asociations>
+  </object>
+  <object name="bank">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="benefits">
+    <field name="start date" type="date" isInDescriptor="true" />
+    <field name="end date" type="date" isInDescriptor="true" />
+    <field name="description" type="longtext" isInDescriptor="true" />
+    <asociations>
+      <one BO-to="personal" name="benefits_personal" />
+      <one BO-to="type_of_benefit" name="type_of_benefit" />
+    </asociations>
+  </object>
+  <object name="category">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="child">
+    <field name="birth date" type="date" isInDescriptor="true" />
+    <field name="observations" type="text" isInDescriptor="true" />
+    <asociations>
+      <one BO-to="personal" name="child_personal" />
+    </asociations>
+  </object>
+  <object name="compensation">
+    <field name="start date" type="date" isInDescriptor="true" />
+    <field name="end date" type="date" isInDescriptor="true" />
+    <field name="description" type="longtext" isInDescriptor="true" />
+    <field name="amount" type="money" />
+    <asociations>
+      <one BO-to="personal" name="compensation_personal" />
+      <one BO-to="type_of_compensation" name="type_of_compensation" />
+    </asociations>
+  </object>
+  <object name="country">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="education">
+    <field name="start date" type="date" isInDescriptor="true" />
+    <field name="end date" type="date" isInDescriptor="true" />
+    <field name="graduation date" type="date" />
+    <field name="title" type="text" isInDescriptor="true" />
+    <field name="speciality" type="text" />
+    <field name="center" type="text" />
+    <asociations>
+      <one BO-to="personal" name="education_personal" />
+      <one BO-to="type_of_education" name="type" />
+      <one BO-to="country" name="education_country" />
+    </asociations>
+  </object>
+  <object name="funding_detail">
+    <field name="institution" type="text" isInDescriptor="true" />
+    <field name="irb budget code" type="text" isInDescriptor="true" />
+    <field name="percent" type="percentage" isInDescriptor="true" />
+    <asociations>
+      <one BO-to="personal" name="funding_detail_personal" />
+    </asociations>
+  </object>
+  <object name="gender">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="grant">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations>
+      <one BO-to="type_of_grant" name="type_of_grant" />
+    </asociations>
+  </object>
+  <object name="grant_concession">
+    <field name="start date" type="date" isInDescriptor="true" />
+    <field name="end date" type="date" isInDescriptor="true" />
+    <field name="call code" type="text" isInDescriptor="true" />
+    <asociations>
+      <one BO-to="personal" name="grant_concession_personal" />
+      <one BO-to="grant" name="grant" />
+    </asociations>
+  </object>
+  <object name="holiday">
+    <field name="start date" type="date" isInDescriptor="true" />
+    <field name="end date" type="text" isInDescriptor="true" />
+    <field name="days" type="number" />
+    <field name="description" type="longtext" />
+    <asociations>
+      <one BO-to="personal" name="holiday_personal" />
+      <one BO-to="type_of_holidays" name="type_of_holiday" />
+    </asociations>
+  </object>
+  <object name="location">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="marital_status">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="nationality">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="organization_unit">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="payment">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="payroll_institution">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="personal">
+    <field name="name" type="text" isInDescriptor="true" />
+    <field name="surname" type="text" isInDescriptor="true" />
+    <field name="dni" type="text" />
+    <field name="birth date" type="date" />
+    <field name="birth city" type="text" />
+    <field name="street" type="text" />
+    <field name="city" type="text" />
+    <field name="zip code" type="text" />
+    <field name="phone" type="text" />
+    <field name="phone2" type="text" />
+    <field name="ice phone" type="text" />
+    <field name="ss number" type="text" />
+    <field name="bank account" type="text" />
+    <field name="research project" type="text" />
+    <field name="sponsoring agency" type="text" />
+    <field name="holding institution" type="text" />
+    <field name="principal investigator" type="text" />
+    <field name="end of contract reason" type="text" />
+    <field name="end of contract address" type="text" />
+    <field name="end of contract city" type="text" />
+    <field name="end of contract zip code" type="text" />
+    <field name="end of contract phone" type="text" />
+    <field name="end of contract email" type="text" />
+    <field name="state" type="category">
+      <value>editing</value>
+      <value>validating</value>
+      <value>validating cancelled</value>
+      <value>in progress</value>
+      <value>cancelled</value>
+      <value>active</value>
+      <value>inactive</value>
+    </field>
+    <field name="usercode" type="text" isInDescriptor="true" />
+    <asociations>
+      <one BO-to="country" name="birth_country" />
+      <one BO-to="nationality" name="nationality" />
+      <one BO-to="nationality" name="nationality_2" />
+      <one BO-to="country" name="country" />
+      <one BO-to="payment" name="payments" />
+      <one BO-to="country" name="end_of_contract_country" />
+      <one BO-to="gender" name="gender" />
+      <one BO-to="marital_status" name="marital_status" />
+      <one BO-to="bank" name="bank" />
+      <one BO-to="working_hours" name="working_hours" />
+      <one BO-to="category" name="category" />
+    </asociations>
+  </object>
+  <object name="position">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="professional">
+    <field name="start date" type="date" isInDescriptor="true" />
+    <field name="end date" type="date" isInDescriptor="true" />
+    <field name="email" type="text" />
+    <field name="phone" type="text" />
+    <field name="mobile" type="text" />
+    <asociations>
+      <one BO-to="personal" name="professional_personal" />
+      <one BO-to="research_group" name="research_group" />
+      <one BO-to="type_of_contract" name="type_of_contract" />
+      <one BO-to="location" name="location" />
+      <one BO-to="position" name="position" />
+      <one BO-to="unit" name="professional_unit" />
+      <one BO-to="payroll_institution" name="payroll_institution" />
+    </asociations>
+  </object>
+  <object name="report">
+    <field name="name" type="text" isInDescriptor="true" />
+    <field name="date" type="date" />
+    <field name="filename" type="text" />
+    <field name="type" type="text" />
+    <field name="is public" type="boolean" />
+    <field name="observations" type="longtext" />
+    <asociations>
+      <one BO-to="user" name="Author" />
+    </asociations>
+  </object>
+  <object name="reportparameter">
+    <field name="class type" type="text" />
+    <field name="value" type="text" isInDescriptor="true" />
+    <asociations>
+      <one BO-to="report" name="report" />
+    </asociations>
+  </object>
+  <object name="research_group">
+    <field name="description" type="longtext" isInDescriptor="true" />
+    <asociations>
+      <one BO-to="personal" name="supervisor" />
+      <one BO-to="unit" name="unit" />
+    </asociations>
+  </object>
+  <object name="type_of_benefit">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="type_of_compensation">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="type_of_contract">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="type_of_education">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="type_of_grant">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="type_of_holidays">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="type_of_institution">
+    <field name="descritption" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="unit">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations>
+      <one BO-to="organization_unit" name="organization_unit" />
+    </asociations>
+  </object>
+  <userBO name="user" con="user">
+    <field name="username" type="text" isInDescriptor="true" />
+    <field name="password" type="text" isInDescriptor="true" />
+    <asociations />
+  </userBO>
+  <object name="work_experience">
+    <field name="start date" type="date" isInDescriptor="true" />
+    <field name="end date" type="date" isInDescriptor="true" />
+    <field name="name of institution or company" type="text" isInDescriptor="true" />
+    <asociations>
+      <one BO-to="personal" name="work_experience_personal" />
+      <one BO-to="type_of_institution" name="type_of_institution" />
+      <one BO-to="area" name="area" />
+      <one BO-to="position" name="work_experience_position" />
+      <one BO-to="country" name="work_experience_country" />
+    </asociations>
+  </object>
+  <object name="working_hours">
+    <field name="description" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+</objects>
+

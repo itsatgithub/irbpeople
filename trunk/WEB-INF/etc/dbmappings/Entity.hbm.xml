@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.justinmind.usermanagement.entity.Entity" table="entity" polymorphism="implicit">
+        <id name="entitycode" type="string">
+            <column name="entitycode" length="100"/>
+            <generator class="assigned" />
+        </id>
+
+		<version name="version"></version>
+
+		<property name="hashkey" type="string">
+            <column name="hashkey" length="22" />
+            <!-- not-null="true"  -->
+        </property>
+        
+       	<set name="permissions" inverse="true">
+            <key>
+                <column name="entitycode" length="100" not-null="true" />
+            </key>
+            <one-to-many class="com.justinmind.usermanagement.permission.Permission" />
+        </set>
+       
+       <!--  Lets define the subclasses  -->
+
+        
+        <joined-subclass name="com.justinmind.usermanagement.entity.Role" table="role">
+        	<key column="entitycode"/>
+        	
+        	<property name="description" type="string">
+            	<column name="description" length="400" not-null="true" />
+        	</property>
+        	
+        	<property name="type" type="string">
+            	<column name="type" length="100" not-null="false" />
+        	</property>
+        	
+        	<!--  
+	        <set name="actions" table="roleaction">
+	            <key>
+	                <column name="rolecode" not-null="true" />
+	            </key>
+	            <many-to-many class="com.justinmind.usermanagement.entity.Action" column="actioncode" />
+	        </set>
+	        -->
+	       	
+	       	<set name="users" table="userrole">
+	            <key>
+	                <column name="rolecode" not-null="true" />
+	            </key>
+	            <many-to-many class="com.justinmind.usermanagement.entity.Umuser" column="usercode" />
+	        </set>
+       	</joined-subclass>
+        
+        <joined-subclass name="com.justinmind.usermanagement.entity.Umgroup" table="umgroup">
+        	<key column="entitycode"/>
+        	
+			<property name="description" type="string">
+            	<column name="description" length="500" not-null="false" />
+        	</property>
+        
+	        <set name="users" table="usergroup">
+	            <key>
+	                <column name="groupcode" not-null="true" />
+	            </key>
+	            <many-to-many class="com.justinmind.usermanagement.entity.Umuser" column="usercode" />
+	        </set>
+        </joined-subclass>
+        
+        <joined-subclass name="com.justinmind.usermanagement.entity.Umuser" table="umuser">
+        	<key column="entitycode"/>
+        	
+			<property name="password" type="binary">
+            	<column name="password" not-null="true" />
+        	</property>
+        
+<!--       	<property name="email" type="string">
+            	<column name="email" length="100" not-null="false" />
+        	</property>
+        	
+        	<property name="name" type="string">
+            	<column name="name" length="150" not-null="false" />
+        	</property>
+        	
+        	<property name="surname" type="string">
+            	<column name="surname" length="300" not-null="false" />
+        	</property>
+        	
+        	<property name="hometelf" type="string">
+            	<column name="hometelf" length="30" not-null="false" />
+        	</property>
+        	
+        	<property name="mobiletelf" type="string">
+            	<column name="mobiletelf" length="30" not-null="false" />
+        	</property>
+        	
+        	
+        	 -->
+        	
+        	<property name="inidate" type="integer">
+            	<column name="inidate" not-null="true" />
+        	</property>
+        	
+        	<property name="enddate" type="integer">
+            	<column name="enddate" not-null="false" />
+        	</property>        	      	
+        	
+        	<property name="deletedboolean" type="integer">
+            	<column name="deletedboolean" not-null="true" />
+        	</property>
+        	
+        	<property name="activeboolean" type="integer">
+            	<column name="activeboolean" not-null="true" />
+        	</property>
+	
+        	<many-to-one name="language" class="com.justinmind.usermanagement.entity.Language" lazy="false">
+            	<column name="languagecode" length="15" not-null="true" />
+        	</many-to-one>
+     
+	        <set name="roles" table="userrole" inverse="true">
+	            <key>
+	                <column name="usercode" not-null="true" />
+	            </key>
+	            <many-to-many class="com.justinmind.usermanagement.entity.Role" column="rolecode" />
+	        </set>
+	        
+	       	<set name="groups" table="usergroup" inverse="true">
+	            <key>
+	                <column name="usercode" not-null="true" />
+	            </key>
+	            <many-to-many class="com.justinmind.usermanagement.entity.Umgroup" column="groupcode" />
+	        </set>
+        </joined-subclass>
+        
+    </class>
+</hibernate-mapping>

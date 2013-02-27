@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<report view="education" site-number="3">
+    <site name="en">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="start_date" visible="true" default="true" type-of-field="date">
+                    <caption language="en">Start date</caption>
+                </field>
+                <field name="graduation_date" visible="true" default="true" type-of-field="date">
+                    <caption language="en">Graduation date</caption>
+                </field>
+                <field name="title" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Title</caption>
+                </field>
+                <field name="speciality" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Speciality</caption>
+                </field>
+                <field name="center" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Center</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="ct">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="start_date" visible="true" default="true" type-of-field="date">
+                    <caption language="ct">Data d'inici</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="date">
+                    <caption language="ct">Data de fi</caption>
+                </field>
+                <field name="graduation_date" visible="true" default="true" type-of-field="date">
+                    <caption language="ct">Data de graduació</caption>
+                </field>
+                <field name="title" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">Títol</caption>
+                </field>
+                <field name="speciality" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">Especialitat</caption>
+                </field>
+                <field name="center" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">Centre</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="es">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="start_date" visible="true" default="true" type-of-field="date">
+                    <caption language="es">Fecha de inicio</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="date">
+                    <caption language="es">Fecha de fin</caption>
+                </field>
+                <field name="graduation_date" visible="true" default="true" type-of-field="date">
+                    <caption language="es">Fecha de graduación</caption>
+                </field>
+                <field name="title" visible="true" default="true" type-of-field="text">
+                    <caption language="es">Título</caption>
+                </field>
+                <field name="speciality" visible="true" default="true" type-of-field="text">
+                    <caption language="es">Especialidad</caption>
+                </field>
+                <field name="center" visible="true" default="true" type-of-field="text">
+                    <caption language="es">Centro</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+</report>
+

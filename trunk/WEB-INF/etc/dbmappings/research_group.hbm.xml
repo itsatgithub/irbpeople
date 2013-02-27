@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+    <class name="Research_group" table="RESEARCH_GROUP">
+        <cache usage="read-write"/>
+    
+        <id name="research_groupcode" column="research_groupcode"></id>
+        <version name="version"></version>
+
+        <property name="deleted" type="boolean">
+            <column name="deleted" />
+        </property>
+
+        <!-- attribute mappings -->
+        <property name="description" type="string">
+            <column name="description" length="500" />
+        </property>
+
+        <property name="group" type="string">
+            <column name="`group`" length="100" />
+        </property>
+
+        <!-- Associacion mappings -->
+        <many-to-one name="supervisor" class="Personal" column="supervisor" not-null="false" />
+
+        <many-to-one name="unit" class="Unit" column="unit" not-null="false" />
+
+
+        <set name="iresearch_group" cascade="none" lazy="true">
+            <key>
+                <column name="research_group" />
+            </key>
+            <one-to-many class="Professional" />
+        </set>
+
+
+        <!-- categorias -->
+
+    </class>
+</hibernate-mapping>

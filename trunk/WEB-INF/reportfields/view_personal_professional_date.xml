@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<report view="personal_professional" site-number="1">
+    <site>
+        <!-- Label es el nombre del listado en el desplegable en la pantalla de nuevo listado. -->
+        <label>Complete data on a specific date</label>
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields>
+                <field name="personalcode" visible="true" type-of-field="text">
+                    <caption>Personal: Personalcode</caption>
+                </field>
+                <field name="name" visible="true" type-of-field="text">
+                    <caption >Personal: Name</caption>
+                </field>
+                <field name="surname1" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 1</caption>
+                </field>
+                <field name="surname2" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 2</caption>
+                </field>
+                <field name="dni" visible="true" type-of-field="text">
+                    <caption >Personal: DNI</caption>
+                </field>
+                <field name="birth_date" visible="true" type-of-field="text">
+                    <caption >Personal: Birth date</caption>
+                </field>
+                <field name="birth_city" visible="true" type-of-field="text">
+                    <caption >Personal: Birth city</caption>
+                </field>
+                <field name="street" visible="true" type-of-field="text">
+                    <caption >Personal: Street</caption>
+                </field>
+                <field name="city" visible="true" type-of-field="text">
+                    <caption >Personal: City</caption>
+                </field>
+                <field name="zip_code" visible="true" type-of-field="text">
+                    <caption >Personal: Zip code</caption>
+                </field>
+                <field name="phone" visible="true" type-of-field="text">
+                    <caption >Personal: Phone</caption>
+                </field>
+                <field name="phone2" visible="true" type-of-field="text">
+                    <caption >Personal: Phone 2</caption>
+                </field>
+                <field name="ice_phone" visible="true" type-of-field="text">
+                    <caption >Personal: ICE phone</caption>
+                </field>
+                <field name="ss_number" visible="true" type-of-field="text">
+                    <caption >Employee: SS number</caption>
+                </field>
+                <field name="bank_account" visible="true" type-of-field="text">
+                    <caption >Employee: Bank account</caption>
+                </field>
+                <field name="research_project" visible="true" type-of-field="text">
+                    <caption >Personal: Research project</caption>
+                </field>
+                <field name="sponsoring_agency" visible="true" type-of-field="text">
+                    <caption >Personal: Sponsoring agency</caption>
+                </field>
+                <field name="holding_institution" visible="true" type-of-field="text">
+                    <caption >Personal: Holding institution</caption>
+                </field>
+                <field name="principal_investigator" visible="true" type-of-field="text">
+                    <caption >Personal: Principal investigator</caption>
+                </field>
+                <field name="end_of_contract_reason" visible="true" type-of-field="text">
+                    <caption >End of contract: Reason</caption>
+                </field>
+                <field name="end_of_contract_address" visible="true" type-of-field="text">
+                    <caption >End of contract: Address</caption>
+                </field>
+                <field name="end_of_contract_city" visible="true" type-of-field="text">
+                    <caption >End of contract: City</caption>
+                </field>
+                <field name="end_of_contract_zip_code" visible="true" type-of-field="text">
+                    <caption >End of contract: Zip code</caption>
+                </field>
+                <field name="end_of_contract_phone" visible="true" type-of-field="text">
+                    <caption >End of contract: Phone</caption>
+                </field>
+                <field name="end_of_contract_email" visible="true" type-of-field="text">
+                    <caption >End of contract: Email</caption>
+                </field>
+                <field name="end_of_contract_country" visible="true" type-of-field="text">
+                    <caption >End of contract: Country</caption>
+                </field>
+                <field name="birth_country" visible="true" type-of-field="text">
+                    <caption >Personal: Birth country</caption>
+                </field>
+                <field name="nationality" visible="true" type-of-field="text">
+                    <caption >Personal: Nationality</caption>
+                </field>
+                <field name="nationality_2" visible="true" type-of-field="text">
+                    <caption >Personal: Nationality 2</caption>
+                </field>
+                <field name="country" visible="true" type-of-field="text">
+                    <caption >Personal: Country</caption>
+                </field>
+                <field name="payments" visible="true" type-of-field="text">
+                    <caption >Employee: Payments</caption>
+                </field>
+                <field name="gender" visible="true" type-of-field="text">
+                    <caption >Personal: Gender</caption>
+                </field>
+                <field name="marital_status" visible="true" type-of-field="text">
+                    <caption >Employee: Marital status</caption>
+                </field>
+                <field name="bank" visible="true" type-of-field="text">
+                    <caption >Employee: Bank</caption>
+                </field>
+                <field name="working_hours" visible="true" type-of-field="text">
+                    <caption >Employee: Working hours</caption>
+                </field>
+                <field name="category" visible="true" type-of-field="text">
+                    <caption >Employee: Category</caption>
+                </field>
+                <field name="second_affiliation" visible="true" type-of-field="text">
+                    <caption >Employee: 2nd affiliation</caption>
+                </field>
+                <field name="max_education" visible="true" type-of-field="text">
+                    <caption >Employee: Most important academic title</caption>
+                </field>
+                <field name="state" visible="true" type-of-field="text">
+                    <caption >Personal: State</caption>
+                </field>
+                <field name="personal_email" visible="true" type-of-field="text">
+                    <caption >Personal: Personal email</caption>
+                </field>
+                <field name="language" visible="true" type-of-field="text">
+                    <caption >Personal: Language</caption>
+                </field>
+                <field name="first_start_date" visible="true" type-of-field="text">
+                    <caption >Professional: First start date</caption>
+                </field>
+                <field name="professional_start_date" visible="true" type-of-field="text">
+                    <caption >Professional: Start date</caption>
+                </field>
+                <field name="professional_end_date" visible="true" type-of-field="text">
+                    <caption >Professional: End date</caption>
+                </field>
+                <field name="location" visible="true" type-of-field="text">
+                    <caption >Professional: Location</caption>
+                </field>
+                <field name="email" visible="true" type-of-field="text">
+                    <caption >Professional: Email</caption>
+                </field>
+                <field name="professional_phone" visible="true" type-of-field="text">
+                    <caption >Professional: Professional phone</caption>
+                </field>
+                <field name="mobile_long" visible="true" type-of-field="text">
+                    <caption >Professional: Mobile long</caption>
+                </field>
+                <field name="mobile_short" visible="true" type-of-field="text">
+                    <caption >Professional: Mobile short</caption>
+                </field>
+                <field name="lab_phone_number" visible="true" type-of-field="text">
+                    <caption >Professional: Lab phone number</caption>
+                </field>
+                <field name="fax" visible="true" type-of-field="text">
+                    <caption >Professional: Fax</caption>
+                </field>
+                <field name="type_of_contract" visible="true" type-of-field="text">
+                    <caption >Professional: Type of contract</caption>
+                </field>
+                <field name="contract_is_irbs" visible="true" type-of-field="text">
+                    <caption >Professional: Contract is IRB's</caption>
+                </field>
+                <field name="position" visible="true" type-of-field="text">
+                    <caption >Professional: Position</caption>
+                </field>
+                <field name="payroll_institution" visible="true" type-of-field="text">
+                    <caption >Professional: Payroll institution</caption>
+                </field>
+                <field name="payroll_institution_2" visible="true" type-of-field="text">
+                    <caption >Professional: Payroll institution 2</caption>
+                </field>
+                <field name="research_group" visible="true" type-of-field="text">
+                    <caption >Professional: Research group</caption>
+                </field>
+                <field name="professional_unit" visible="true" type-of-field="text">
+                    <caption >Professional: Unit</caption>
+                </field>
+                <field name="organization_unit" visible="true" type-of-field="text">
+                    <caption >Professional: Organization unit</caption>
+                </field>
+                <field name="`gc`.`start_date`" visible="true" type-of-field="text">
+                    <caption >Grant: Start date</caption>
+                </field>
+                <field name="`gc`.`end_date`" visible="true" type-of-field="text">
+                    <caption >Grant: End date</caption>
+                </field>
+                <field name="`gc`.`call_code`" visible="true" type-of-field="text">
+                    <caption >Grant: Call code</caption>
+                </field>
+                <field name="`gc`.`thesis_director`" visible="true" type-of-field="text">
+                    <caption >Grant: Thesis director</caption>
+                </field>
+                <field name="`gc`.`name_master_or_programme`" visible="true" type-of-field="text">
+                    <caption >Grant: Name of master or programme</caption>
+                </field>
+                <field name="`gc`.`university_enrolled`" visible="true" type-of-field="text">
+                    <caption >Grant: University enrolled</caption>
+                </field>
+                <field name="`gc`.`start_date_msc_or_phd`" visible="true" type-of-field="text">
+                    <caption >Grant: Start date of MSc. or PhD.</caption>
+                </field>
+                <field name="`tg`.`description`" visible="true" type-of-field="text">
+                    <caption >Grant: Grant</caption>
+                </field>
+                <field name="`typ`.`description`" visible="true" type-of-field="text">
+                    <caption >Grant: Type of grant</caption>
+                </field>                
+                <field name="`com`.`start_date`" visible="true" type-of-field="text">
+                    <caption >Compensation: Start date</caption>
+                </field>
+                <field name="`com`.`end_date`" visible="true" type-of-field="text">
+                    <caption >Compensation: End date</caption>
+                </field>                
+                <field name="`com`.`amount`" visible="true" type-of-field="text">
+                    <caption >Compensation: Amount</caption>
+                </field>                
+                <field name="`com`.`description`" visible="true" type-of-field="text">
+                    <caption >Compensation: Description</caption>
+                </field>                
+                <field name="`tco`.`description`" visible="true" type-of-field="text">
+                    <caption >Compensation: Type</caption>
+                </field>
+                <field name="`ben`.`start_date`" visible="true" type-of-field="text">
+                    <caption >Benefit: Start date</caption>
+                </field>
+                <field name="`ben`.`end_date`" visible="true" type-of-field="text">
+                    <caption >Benefit: End date</caption>
+                </field>
+                <field name="`ben`.`description`" visible="true" type-of-field="text">
+                    <caption >Benefit: Description</caption>
+                </field>             
+                <field name="`tbe`.`description`" visible="true" type-of-field="text">
+                    <caption >Benefit: Type</caption>
+                </field>
+            </select-fields>
+            <where-fields>
+                <field name="personalcode" visible="true" type-of-field="text">
+                    <caption >Personal: Personalcode</caption>
+                </field>
+                <field name="name" visible="true" type-of-field="text">
+                    <caption >Personal: Name</caption>
+                </field>
+                <field name="surname1" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 1</caption>
+                </field>
+                <field name="surname2" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 2</caption>
+                </field>
+                <field name="dni" visible="true" type-of-field="text">
+                    <caption >Personal: DNI</caption>
+                </field>
+                <field name="birth_date" visible="true" type-of-field="date">
+                    <caption >Personal: Birth date</caption>
+                </field>
+                <field name="birth_city" visible="true" type-of-field="text">
+                    <caption >Personal: Birth city</caption>
+                </field>
+                <field name="street" visible="true" type-of-field="text">
+                    <caption >Personal: Street</caption>
+                </field>
+                <field name="city" visible="true" type-of-field="text">
+                    <caption >Personal: City</caption>
+                </field>
+                <field name="zip_code" visible="true" type-of-field="text">
+                    <caption >Personal: Zip code</caption>
+                </field>
+                <field name="phone" visible="true" type-of-field="text">
+                    <caption >Personal: Phone</caption>
+                </field>
+                <field name="phone2" visible="true" type-of-field="text">
+                    <caption >Personal: Phone 2</caption>
+                </field>
+                <field name="ice_phone" visible="true" type-of-field="text">
+                    <caption >Personal: ICE phone</caption>
+                </field>
+                <field name="ss_number" visible="true" type-of-field="text">
+                    <caption >Employee: SS number</caption>
+                </field>
+                <field name="bank_account" visible="true" type-of-field="text">
+                    <caption >Employee: Bank account</caption>
+                </field>
+                <field name="research_project" visible="true" type-of-field="text">
+                    <caption >Personal: Research project</caption>
+                </field>
+                <field name="sponsoring_agency" visible="true" type-of-field="text">
+                    <caption >Personal: Sponsoring agency</caption>
+                </field>
+                <field name="holding_institution" visible="true" type-of-field="text">
+                    <caption >Personal: Holding institution</caption>
+                </field>
+                <field name="principal_investigator" visible="true" type-of-field="text">
+                    <caption >Personal: Principal investigator</caption>
+                </field>
+                <field name="end_of_contract_reason" visible="true" type-of-field="text">
+                    <caption >End of contract: Reason</caption>
+                </field>
+                <field name="end_of_contract_address" visible="true" type-of-field="text">
+                    <caption >End of contract: Address</caption>
+                </field>
+                <field name="end_of_contract_city" visible="true" type-of-field="text">
+                    <caption >End of contract: City</caption>
+                </field>
+                <field name="end_of_contract_zip_code" visible="true" type-of-field="text">
+                    <caption >End of contract: Zip code</caption>
+                </field>
+                <field name="end_of_contract_phone" visible="true" type-of-field="text">
+                    <caption >End of contract: Phone</caption>
+                </field>
+                <field name="end_of_contract_email" visible="true" type-of-field="text">
+                    <caption >End of contract: Email</caption>
+                </field>
+                <field name="end_of_contract_country" visible="true" type-of-field="select description from country order by description">
+                    <caption >End of contract: Country</caption>
+                </field>
+                <field name="birth_country" visible="true" type-of-field="select description from country order by description">
+                    <caption >Personal: Birth country</caption>
+                </field>
+                <field name="nationality" visible="true" type-of-field="select description from nationality order by description">
+                    <caption >Personal: Nationality</caption>
+                </field>
+                <field name="nationality_2" visible="true" type-of-field="select description from nationality order by description">
+                    <caption >Personal: Nationality 2</caption>
+                </field>
+                <field name="country" visible="true" type-of-field="select description from country order by description">
+                    <caption >Personal: Country</caption>
+                </field>
+                <field name="payments" visible="true" type-of-field="select description from payment order by description">
+                    <caption >Employee: Payments</caption>
+                </field>
+                <field name="gender" visible="true" type-of-field="select description from gender order by description">
+                    <caption >Personal: Gender</caption>
+                </field>
+                <field name="marital_status" visible="true" type-of-field="select description from marital_status order by description">
+                    <caption >Employee: Marital status</caption>
+                </field>
+                <field name="bank" visible="true" type-of-field="select description from bank order by description">
+                    <caption >Employee: Bank</caption>
+                </field>
+                <field name="working_hours" visible="true" type-of-field="select description from working_hours order by description">
+                    <caption >Employee: Working hours</caption>
+                </field>
+                <field name="category" visible="true" type-of-field="select description from category order by description">
+                    <caption >Employee: Category</caption>
+                </field>
+                <field name="second_affiliation" visible="true" type-of-field="text">
+                    <caption >Employee: 2nd affiliation</caption>
+                </field>
+                <field name="max_education" visible="true" type-of-field="select description from type_of_education order by `order`">
+                    <caption >Employee: Most important academic title</caption>
+                </field>
+                <field name="state" visible="true" type-of-field="select description from personalstate order by description">
+                    <caption >Personal: State</caption>
+                </field>
+                <field name="personal_email" visible="true" type-of-field="text">
+                    <caption >Personal: Personal email</caption>
+                </field>
+                <field name="language" visible="true" type-of-field="text">
+                    <caption >Personal: Language</caption>
+                </field>
+                <!-- 
+                <field name="first_start_date" visible="true" type-of-field="date">
+                    <caption >Professional: First start date</caption>
+                </field>
+                <field name="professional_start_date" visible="true" type-of-field="date">
+                    <caption >Professional: Start date</caption>
+                </field>
+                <field name="professional_end_date" visible="true" type-of-field="date">
+                    <caption >Professional: End date</caption>
+                </field>
+                 -->
+                <field name="location" visible="true" type-of-field="select description from location order by description">
+                    <caption >Professional: Location</caption>
+                </field>
+                <field name="email" visible="true" type-of-field="text">
+                    <caption >Professional: Email</caption>
+                </field>
+                <field name="professional_phone" visible="true" type-of-field="text">
+                    <caption >Professional: Professional phone</caption>
+                </field>
+                <field name="mobile_long" visible="true" type-of-field="text">
+                    <caption >Professional: Mobile long</caption>
+                </field>
+                <field name="mobile_short" visible="true" type-of-field="text">
+                    <caption >Professional: Mobile short</caption>
+                </field>
+                <field name="lab_phone_number" visible="true" type-of-field="text">
+                    <caption >Professional: Lab phone number</caption>
+                </field>
+                <field name="fax" visible="true" type-of-field="text">
+                    <caption >Professional: Fax</caption>
+                </field>
+                <field name="type_of_contract" visible="true" type-of-field="select description from type_of_contract order by description">
+                    <caption >Professional: Type of contract</caption>
+                </field>
+                <field name="contract_is_irbs" visible="true" type-of-field="boolean">
+                    <caption >Professional: Contract is IRB's</caption>
+                </field>
+                <field name="position" visible="true" type-of-field="text">
+                    <caption >Professional: Position</caption>
+                </field>
+                <field name="payroll_institution" visible="true" type-of-field="select description from payroll_institution order by description">
+                    <caption >Professional: Payroll institution</caption>
+                </field>
+                <field name="payroll_institution_2" visible="true" type-of-field="select description from payroll_institution order by description">
+                    <caption >Professional: Payroll institution 2</caption>
+                </field>
+                <field name="research_group" visible="true" type-of-field="select description from research_group order by description">
+                    <caption >Professional: Research group</caption>
+                </field>
+                <field name="professional_unit" visible="true" type-of-field="select description from unit order by description">
+                    <caption >Professional: Unit</caption>
+                </field>
+                <field name="organization_unit" visible="true" type-of-field="select description from organization_unit order by description">
+                    <caption >Professional: Organization unit</caption>
+                </field>
+                <!-- 
+                <field name="grant_start_date" visible="true" type-of-field="date">
+                    <caption >Grant: Start date</caption>
+                </field>
+                <field name="grant_end_date" visible="true" type-of-field="date">
+                    <caption >Grant: End date</caption>
+                </field>
+                 -->
+                <field name="`gc`.`call_code`" visible="true" type-of-field="text">
+                    <caption >Grant: Call code</caption>
+                </field>
+                <field name="`gc`.`thesis_director`" visible="true" type-of-field="text">
+                    <caption >Grant: Thesis director</caption>
+                </field>
+                <field name="`gc`.`name_master_or_programme`" visible="true" type-of-field="text">
+                    <caption >Grant: Name of master or programme</caption>
+                </field>
+                <field name="`gc`.`university_enrolled`" visible="true" type-of-field="text">
+                    <caption >Grant: University enrolled</caption>
+                </field>
+                <field name="`gc`.`start_date_msc_or_phd`" visible="true" type-of-field="text">
+                    <caption >Grant: Start date of MSc. or PhD.</caption>
+                </field>
+                <field name="`tg`.`description`" visible="true" type-of-field="select description from table_grant order by description">
+                    <caption >Grant: Grant</caption>
+                </field>
+                <field name="`typ`.`description`" visible="true" type-of-field="select description from type_of_grant order by description">
+                    <caption >Grant: Type of grant</caption>
+                </field>
+                <!--                 
+                <field name="compensation_start_date" visible="true" type-of-field="date">
+                    <caption >Compensation: Start date</caption>
+                </field>
+                <field name="compensation_end_date" visible="true" type-of-field="date">
+                    <caption >Compensation: End date</caption>
+                </field>
+                 -->                
+                <field name="`com`.`amount`" visible="true" type-of-field="money">
+                    <caption >Compensation: Amount</caption>
+                </field>                
+                <field name="`com`.`description`" visible="true" type-of-field="text">
+                    <caption >Compensation: Description</caption>
+                </field>                
+                <field name="`tco`.`description`" visible="true" type-of-field="select description from type_of_compensation order by description">
+                    <caption >Compensation: Type</caption>
+                </field>
+                <field name="`ben`.`description`" visible="true" type-of-field="text">
+                    <caption >Benefit: Description</caption>
+                </field>
+                <field name="`tbe`.`description`" visible="true" type-of-field="select description from type_of_benefit order by description">
+                    <caption >Benefit: Type</caption>
+                </field>
+                <!-- 
+                <field name="benefit_start_date" visible="true" type-of-field="date">
+                    <caption >Benefit: Start date</caption>
+                </field>
+                <field name="benefit_end_date" visible="true" type-of-field="date">
+                    <caption >Benefit: End date</caption>
+                </field>
+                 -->
+            </where-fields>
+            <orderby-fields>
+                <field name="personalcode" visible="true" type-of-field="text">
+                    <caption >Personal: Personalcode</caption>
+                </field>
+                <field name="name" visible="true" type-of-field="text">
+                    <caption >Personal: Name</caption>
+                </field>
+                <field name="surname1" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 1</caption>
+                </field>
+                <field name="surname2" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 2</caption>
+                </field>
+                <field name="dni" visible="true" type-of-field="text">
+                    <caption >Personal: DNI</caption>
+                </field>
+                <field name="birth_date" visible="true" type-of-field="text">
+                    <caption >Personal: Birth date</caption>
+                </field>
+                <field name="birth_city" visible="true" type-of-field="text">
+                    <caption >Personal: Birth city</caption>
+                </field>
+                <field name="street" visible="true" type-of-field="text">
+                    <caption >Personal: Street</caption>
+                </field>
+                <field name="city" visible="true" type-of-field="text">
+                    <caption >Personal: City</caption>
+                </field>
+                <field name="zip_code" visible="true" type-of-field="text">
+                    <caption >Personal: Zip code</caption>
+                </field>
+                <field name="phone" visible="true" type-of-field="text">
+                    <caption >Personal: Phone</caption>
+                </field>
+                <field name="phone2" visible="true" type-of-field="text">
+                    <caption >Personal: Phone 2</caption>
+                </field>
+                <field name="ice_phone" visible="true" type-of-field="text">
+                    <caption >Personal: ICE phone</caption>
+                </field>
+                <field name="ss_number" visible="true" type-of-field="text">
+                    <caption >Employee: SS number</caption>
+                </field>
+                <field name="bank_account" visible="true" type-of-field="text">
+                    <caption >Employee: Bank account</caption>
+                </field>
+                <field name="research_project" visible="true" type-of-field="text">
+                    <caption >Personal: Research project</caption>
+                </field>
+                <field name="sponsoring_agency" visible="true" type-of-field="text">
+                    <caption >Personal: Sponsoring agency</caption>
+                </field>
+                <field name="holding_institution" visible="true" type-of-field="text">
+                    <caption >Personal: Holding institution</caption>
+                </field>
+                <field name="principal_investigator" visible="true" type-of-field="text">
+                    <caption >Personal: Principal investigator</caption>
+                </field>
+                <field name="end_of_contract_reason" visible="true" type-of-field="text">
+                    <caption >End of contract: Reason</caption>
+                </field>
+                <field name="end_of_contract_address" visible="true" type-of-field="text">
+                    <caption >End of contract: Address</caption>
+                </field>
+                <field name="end_of_contract_city" visible="true" type-of-field="text">
+                    <caption >End of contract: City</caption>
+                </field>
+                <field name="end_of_contract_zip_code" visible="true" type-of-field="text">
+                    <caption >End of contract: Zip code</caption>
+                </field>
+                <field name="end_of_contract_phone" visible="true" type-of-field="text">
+                    <caption >End of contract: Phone</caption>
+                </field>
+                <field name="end_of_contract_email" visible="true" type-of-field="text">
+                    <caption >End of contract: Email</caption>
+                </field>
+                <field name="end_of_contract_country" visible="true" type-of-field="text">
+                    <caption >End of contract: Country</caption>
+                </field>
+                <field name="birth_country" visible="true" type-of-field="text">
+                    <caption >Personal: Birth country</caption>
+                </field>
+                <field name="nationality" visible="true" type-of-field="text">
+                    <caption >Personal: Nationality</caption>
+                </field>
+                <field name="nationality_2" visible="true" type-of-field="text">
+                    <caption >Personal: Nationality 2</caption>
+                </field>
+                <field name="country" visible="true" type-of-field="text">
+                    <caption >Personal: Country</caption>
+                </field>
+                <field name="payments" visible="true" type-of-field="text">
+                    <caption >Employee: Payments</caption>
+                </field>
+                <field name="gender" visible="true" type-of-field="text">
+                    <caption >Personal: Gender</caption>
+                </field>
+                <field name="marital_status" visible="true" type-of-field="text">
+                    <caption >Employee: Marital status</caption>
+                </field>
+                <field name="bank" visible="true" type-of-field="text">
+                    <caption >Employee: Bank</caption>
+                </field>
+                <field name="working_hours" visible="true" type-of-field="text">
+                    <caption >Employee: Working hours</caption>
+                </field>
+                <field name="category" visible="true" type-of-field="text">
+                    <caption >Employee: Category</caption>
+                </field>
+                <field name="second_affiliation" visible="true" type-of-field="text">
+                    <caption >Employee: 2nd affiliation</caption>
+                </field>
+                <field name="max_education" visible="true" type-of-field="text">
+                    <caption >Employee: Most important academic title</caption>
+                </field>
+                <field name="state" visible="true" type-of-field="text">
+                    <caption >Personal: State</caption>
+                </field>
+                <field name="personal_email" visible="true" type-of-field="text">
+                    <caption >Personal: Personal email</caption>
+                </field>
+                <field name="language" visible="true" type-of-field="text">
+                    <caption >Personal: Language</caption>
+                </field>
+                <field name="first_start_date" visible="true" type-of-field="text">
+                    <caption >Professional: First start date</caption>
+                </field>
+                <field name="professional_start_date" visible="true" type-of-field="text">
+                    <caption >Professional: Start date</caption>
+                </field>
+                <field name="professional_end_date" visible="true" type-of-field="text">
+                    <caption >Professional: End date</caption>
+                </field>
+                <field name="location" visible="true" type-of-field="text">
+                    <caption >Professional: Location</caption>
+                </field>
+                <field name="email" visible="true" type-of-field="text">
+                    <caption >Professional: Email</caption>
+                </field>
+                <field name="professional_phone" visible="true" type-of-field="text">
+                    <caption >Professional: Professional phone</caption>
+                </field>
+                <field name="mobile_long" visible="true" type-of-field="text">
+                    <caption >Professional: Mobile long</caption>
+                </field>
+                <field name="mobile_short" visible="true" type-of-field="text">
+                    <caption >Professional: Mobile short</caption>
+                </field>
+                <field name="lab_phone_number" visible="true" type-of-field="text">
+                    <caption >Professional: Lab phone number</caption>
+                </field>
+                <field name="fax" visible="true" type-of-field="text">
+                    <caption >Professional: Fax</caption>
+                </field>
+                <field name="type_of_contract" visible="true" type-of-field="text">
+                    <caption >Professional: Type of contract</caption>
+                </field>
+                <field name="contract_is_irbs" visible="true" type-of-field="text">
+                    <caption >Professional: Contract is IRB's</caption>
+                </field>
+                <field name="position" visible="true" type-of-field="text">
+                    <caption >Professional: Position</caption>
+                </field>
+                <field name="payroll_institution" visible="true" type-of-field="text">
+                    <caption >Professional: Payroll institution</caption>
+                </field>
+                <field name="payroll_institution_2" visible="true" type-of-field="text">
+                    <caption >Professional: Payroll institution 2</caption>
+                </field>
+                <field name="research_group" visible="true" type-of-field="text">
+                    <caption >Professional: Research group</caption>
+                </field>
+                <field name="professional_unit" visible="true" type-of-field="text">
+                    <caption >Professional: Unit</caption>
+                </field>
+                <field name="organization_unit" visible="true" type-of-field="text">
+                    <caption >Professional: Organization unit</caption>
+                </field>
+                <field name="`gc`.`start_date`" visible="true" type-of-field="text">
+                    <caption >Grant: Start date</caption>
+                </field>
+                <field name="`gc`.`end_date`" visible="true" type-of-field="text">
+                    <caption >Grant: End date</caption>
+                </field>
+                <field name="`gc`.`call_code`" visible="true" type-of-field="text">
+                    <caption >Grant: Call code</caption>
+                </field>
+                <field name="`gc`.`thesis_director`" visible="true" type-of-field="text">
+                    <caption >Grant: Thesis director</caption>
+                </field>
+                <field name="`gc`.`name_master_or_programme`" visible="true" type-of-field="text">
+                    <caption >Grant: Name of master or programme</caption>
+                </field>
+                <field name="`gc`.`university_enrolled`" visible="true" type-of-field="text">
+                    <caption >Grant: University enrolled</caption>
+                </field>
+                <field name="`gc`.`start_date_msc_or_phd`" visible="true" type-of-field="text">
+                    <caption >Grant: Start date of MSc. or PhD.</caption>
+                </field>
+                <field name="`tg`.`description`" visible="true" type-of-field="text">
+                    <caption >Grant: Grant</caption>
+                </field>
+                <field name="`typ`.`description`" visible="true" type-of-field="text">
+                    <caption >Grant: Type of grant</caption>
+                </field>               
+                <field name="`com`.`start_date`" visible="true" type-of-field="text">
+                    <caption >Compensation: Start date</caption>
+                </field>
+                <field name="`com`.`end_date`" visible="true" type-of-field="text">
+                    <caption >Compensation: End date</caption>
+                </field>                
+                <field name="`com`.`amount`" visible="true" type-of-field="text">
+                    <caption >Compensation: Amount</caption>
+                </field>                
+                <field name="`com`.`description`" visible="true" type-of-field="text">
+                    <caption >Compensation: Description</caption>
+                </field>                
+                <field name="`tco`.`description`" visible="true" type-of-field="text">
+                    <caption >Compensation: Type</caption>
+                </field>
+                <field name="`ben`.`start_date`" visible="true" type-of-field="text">
+                    <caption >Benefit: Start date</caption>
+                </field>
+                <field name="`ben`.`end_date`" visible="true" type-of-field="text">
+                    <caption >Benefit: End date</caption>
+                </field>
+                <field name="`ben`.`description`" visible="true" type-of-field="text">
+                    <caption >Benefit: Description</caption>
+                </field>
+                <field name="`tbe`.`description`" visible="true" type-of-field="text">
+                    <caption >Benefit: Type</caption>
+                </field>
+            </orderby-fields>
+        </fields>
+    </site>
+</report>

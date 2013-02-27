@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<report view="view_education_info" site-number="1">
+    <site>
+        <!-- Label es el nombre del listado en el desplegable en la pantalla de nuevo listado. -->
+        <label>Education info (just shows the most important title of each person)</label>
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields>
+                <field name="personalcode" visible="true" type-of-field="text">
+                    <caption>Personal: Personalcode</caption>
+                </field>
+                <field name="name" visible="true" type-of-field="text">
+                    <caption >Personal: Name</caption>
+                </field>
+                <field name="surname1" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 1</caption>
+                </field>
+                <field name="surname2" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 2</caption>
+                </field>
+                <field name="dni" visible="true" type-of-field="text">
+                    <caption >Personal: DNI</caption>
+                </field>
+                <field name="nationality" visible="true" type-of-field="text">
+                    <caption >Personal: Nationality</caption>
+                </field>
+                <field name="nationality_2" visible="true" type-of-field="text">
+                    <caption >Personal: Nationality 2</caption>
+                </field>
+                <field name="gender" visible="true" type-of-field="text">
+                    <caption >Personal: Gender</caption>
+                </field>
+                <field name="state" visible="true" type-of-field="text">
+                    <caption >Personal: State</caption>
+                </field>
+                <field name="email" visible="true" type-of-field="text">
+                    <caption >Professional: Email</caption>
+                </field>
+                <field name="professional_phone" visible="true" type-of-field="text">
+                    <caption >Professional: Professional phone</caption>
+                </field>
+                <field name="position" visible="true" type-of-field="text">
+                    <caption >Professional: Position</caption>
+                </field>
+                <field name="payroll_institution" visible="true" type-of-field="text">
+                    <caption >Professional: Payroll institution</caption>
+                </field>
+                <field name="payroll_institution_2" visible="true" type-of-field="text">
+                    <caption >Professional: Payroll institution 2</caption>
+                </field>
+                <field name="research_group" visible="true" type-of-field="text">
+                    <caption >Professional: Research group</caption>
+                </field>
+                <field name="start_date" visible="true" type-of-field="text">
+                    <caption >Education: Start date</caption>
+                </field>
+                <field name="end_date" visible="true" type-of-field="text">
+                    <caption >Education: End date</caption>
+                </field>
+                <field name="graduation_date" visible="true" type-of-field="text">
+                    <caption >Education: Graduation date</caption>
+                </field>
+                <field name="title" visible="true" type-of-field="text">
+                    <caption >Education: Title</caption>
+                </field>
+                <field name="speciality" visible="true" type-of-field="text">
+                    <caption >Education: Speciality</caption>
+                </field>
+                <field name="center" visible="true" type-of-field="text">
+                    <caption >Education: Center</caption>
+                </field>
+                <field name="education_country" visible="true" type-of-field="text">
+                    <caption >Education: Education country</caption>
+                </field>
+                <field name="description" visible="true" type-of-field="text">
+                    <caption >Education: Type</caption>
+                </field>
+            </select-fields>
+            <where-fields>
+                <field name="personalcode" visible="true" type-of-field="text">
+                    <caption>Personal: Personalcode</caption>
+                </field>
+                <field name="name" visible="true" type-of-field="text">
+                    <caption >Personal: Name</caption>
+                </field>
+                <field name="surname1" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 1</caption>
+                </field>
+                <field name="surname2" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 2</caption>
+                </field>
+                <field name="dni" visible="true" type-of-field="text">
+                    <caption >Personal: DNI</caption>
+                </field>
+                <field name="nationality" visible="true" type-of-field="select description from nationality order by description">
+                    <caption >Personal: Nationality</caption>
+                </field>
+                <field name="nationality_2" visible="true" type-of-field="select description from nationality order by description">
+                    <caption >Personal: Nationality 2</caption>
+                </field>
+                <field name="gender" visible="true" type-of-field="select description from gender order by description">
+                    <caption >Personal: Gender</caption>
+                </field>
+                <field name="state" visible="true" type-of-field="select description from personalstate order by description">
+                    <caption >Personal: State</caption>
+                </field>
+                <field name="email" visible="true" type-of-field="text">
+                    <caption >Professional: Email</caption>
+                </field>
+                <field name="professional_phone" visible="true" type-of-field="text">
+                    <caption >Professional: Professional phone</caption>
+                </field>
+                <field name="position" visible="true" type-of-field="text">
+                    <caption >Professional: Position</caption>
+                </field>
+                <field name="payroll_institution" visible="true" type-of-field="select description from payroll_institution order by description">
+                    <caption >Professional: Payroll institution</caption>
+                </field>
+                <field name="payroll_institution_2" visible="true" type-of-field="select description from payroll_institution order by description">
+                    <caption >Professional: Payroll institution 2</caption>
+                </field>
+                <field name="research_group" visible="true" type-of-field="select description from research_group order by description">
+                    <caption >Professional: Research group</caption>
+                </field>  
+                <field name="start_date" visible="true" type-of-field="date">
+                    <caption >Education: Start date</caption>
+                </field>
+                <field name="end_date" visible="true" type-of-field="date">
+                    <caption >Education: End date</caption>
+                </field>
+                <field name="graduation_date" visible="true" type-of-field="date">
+                    <caption >Education: Graduation date</caption>
+                </field>
+                <field name="title" visible="true" type-of-field="text">
+                    <caption >Education: Title</caption>
+                </field>
+                <field name="speciality" visible="true" type-of-field="text">
+                    <caption >Education: Speciality</caption>
+                </field>
+                <field name="center" visible="true" type-of-field="text">
+                    <caption >Education: Center</caption>
+                </field>
+                <field name="education_country" visible="true" type-of-field="select description from country order by description">
+                    <caption >Education: Education country</caption>
+                </field>
+                <field name="description" visible="true" type-of-field="select description from type_of_education order by description">
+                    <caption >Education: Type</caption>
+                </field>                
+            </where-fields>
+            <orderby-fields>
+                <field name="personalcode" visible="true" type-of-field="text">
+                    <caption>Personal: Personalcode</caption>
+                </field>
+                <field name="name" visible="true" type-of-field="text">
+                    <caption >Personal: Name</caption>
+                </field>
+                <field name="surname1" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 1</caption>
+                </field>
+                <field name="surname2" visible="true" type-of-field="text">
+                    <caption >Personal: Surname 2</caption>
+                </field>
+                <field name="dni" visible="true" type-of-field="text">
+                    <caption >Personal: DNI</caption>
+                </field>
+                <field name="nationality" visible="true" type-of-field="text">
+                    <caption >Personal: Nationality</caption>
+                </field>
+                <field name="nationality_2" visible="true" type-of-field="text">
+                    <caption >Personal: Nationality 2</caption>
+                </field>
+                <field name="gender" visible="true" type-of-field="text">
+                    <caption >Personal: Gender</caption>
+                </field>
+                <field name="state" visible="true" type-of-field="text">
+                    <caption >Personal: State</caption>
+                </field>
+                <field name="email" visible="true" type-of-field="text">
+                    <caption >Professional: Email</caption>
+                </field>
+                <field name="professional_phone" visible="true" type-of-field="text">
+                    <caption >Professional: Professional phone</caption>
+                </field>
+                <field name="position" visible="true" type-of-field="text">
+                    <caption >Professional: Position</caption>
+                </field>
+                <field name="payroll_institution" visible="true" type-of-field="text">
+                    <caption >Professional: Payroll institution</caption>
+                </field>
+                <field name="payroll_institution_2" visible="true" type-of-field="text">
+                    <caption >Professional: Payroll institution 2</caption>
+                </field>
+                <field name="research_group" visible="true" type-of-field="text">
+                    <caption >Professional: Research group</caption>
+                </field>
+                <field name="start_date" visible="true" type-of-field="text">
+                    <caption >Education: Start date</caption>
+                </field>
+                <field name="end_date" visible="true" type-of-field="text">
+                    <caption >Education: End date</caption>
+                </field>
+                <field name="graduation_date" visible="true" type-of-field="text">
+                    <caption >Education: Graduation date</caption>
+                </field>
+                <field name="title" visible="true" type-of-field="text">
+                    <caption >Education: Title</caption>
+                </field>
+                <field name="speciality" visible="true" type-of-field="text">
+                    <caption >Education: Speciality</caption>
+                </field>
+                <field name="center" visible="true" type-of-field="text">
+                    <caption >Education: Center</caption>
+                </field>
+                <field name="education_country" visible="true" type-of-field="text">
+                    <caption >Education: Education country</caption>
+                </field>
+                <field name="description" visible="true" type-of-field="text">
+                    <caption >Education: Type</caption>
+                </field>
+            </orderby-fields>
+        </fields>
+    </site>
+</report>

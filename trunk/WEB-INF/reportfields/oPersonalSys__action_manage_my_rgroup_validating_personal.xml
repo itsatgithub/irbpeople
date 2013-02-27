@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<report view="personal" site-number="3">
+    <site name="en">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="name" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Name</caption>
+                </field>
+                <field name="surname1" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Surname</caption>
+                </field>
+                <field name="surname2" visible="true" default="true" type-of-field="text">
+                    <caption language="en">2nd Surname</caption>
+                </field>
+                <field name="dni" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Dni</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="ct">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="name" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">Nom</caption>
+                </field>
+                <field name="surname1" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">1er. Cognom</caption>
+                </field>
+                <field name="surname2" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">2on. Cognom</caption>
+                </field>
+                <field name="dni" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">Dni</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="es">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="name" visible="true" default="true" type-of-field="text">
+                    <caption language="es">Nombre</caption>
+                </field>
+                <field name="surname1" visible="true" default="true" type-of-field="text">
+                    <caption language="es">1er. Apellido</caption>
+                </field>
+                <field name="surname2" visible="true" default="true" type-of-field="text">
+                    <caption language="es">2o. Apellido</caption>
+                </field>
+                <field name="dni" visible="true" default="true" type-of-field="text">
+                    <caption language="es">Dni</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+</report>
+

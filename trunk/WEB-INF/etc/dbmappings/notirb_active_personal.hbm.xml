@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Notirb_active_personal" table="VIEW_NOTIRB_ACTIVE_PERSONAL">
+		<id name="personalcode" column="personalcode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+		<property name="name" type="string">
+	<column name="name" length="100" />
+</property><property name="surname1" type="string">
+	<column name="surname1" length="100" />
+</property><property name="surname2" type="string">
+    <column name="surname2" length="100" />
+</property><property name="dni" type="string">
+	<column name="dni" length="100" />
+</property><property name="birth_date" type="timestamp">
+	<column name="birth_date"  />
+</property><property name="birth_city" type="string">
+	<column name="birth_city" length="100" />
+</property><property name="street" type="string">
+	<column name="street" length="100" />
+</property><property name="city" type="string">
+	<column name="city" length="100" />
+</property><property name="zip_code" type="string">
+	<column name="zip_code" length="100" />
+</property><property name="phone" type="string">
+	<column name="phone" length="100" />
+</property><property name="phone2" type="string">
+	<column name="phone2" length="100" />
+</property><property name="ice_phone" type="string">
+	<column name="ice_phone" length="100" />
+</property><property name="ss_number" type="string">
+	<column name="ss_number" length="100" />
+</property><property name="bank_account" type="string">
+	<column name="bank_account" length="100" />
+</property><property name="research_project" type="string">
+	<column name="research_project" length="100" />
+</property><property name="sponsoring_agency" type="string">
+	<column name="sponsoring_agency" length="100" />
+</property><property name="holding_institution" type="string">
+	<column name="holding_institution" length="100" />
+</property><property name="principal_investigator" type="string">
+	<column name="principal_investigator" length="100" />
+</property><property name="end_of_contract_reason" type="string">
+	<column name="end_of_contract_reason" length="100" />
+</property><property name="end_of_contract_address" type="string">
+	<column name="end_of_contract_address" length="100" />
+</property><property name="end_of_contract_city" type="string">
+	<column name="end_of_contract_city" length="100" />
+</property><property name="end_of_contract_zip_code" type="string">
+	<column name="end_of_contract_zip_code" length="100" />
+</property><property name="end_of_contract_phone" type="string">
+	<column name="end_of_contract_phone" length="100" />
+</property><property name="end_of_contract_email" type="string">
+	<column name="end_of_contract_email" length="100" />
+</property>
+
+<property name="validationCode" type="string">
+	<column name="validationCode" length="100" />
+</property>
+		
+		<!-- Associacion mappings -->
+		<many-to-one name="birth_country" class="Country" column="birth_country" not-null="false"/>
+	
+<many-to-one name="nationality" class="Nationality" column="nationality" not-null="false"/>
+	
+<many-to-one name="nationality_2" class="Nationality" column="nationality_2" not-null="false"/>
+	
+<many-to-one name="country" class="Country" column="country" not-null="false"/>
+	
+<many-to-one name="payments" class="Payment" column="payments" not-null="false"/>
+	
+<many-to-one name="end_of_contract_country" class="Country" column="end_of_contract_country" not-null="false"/>
+	
+<many-to-one name="gender" class="Gender" column="gender" not-null="false"/>
+	
+<many-to-one name="marital_status" class="Marital_status" column="marital_status" not-null="false"/>
+	
+<many-to-one name="bank" class="Bank" column="bank" not-null="false"/>
+	
+<many-to-one name="working_hours" class="Working_hours" column="working_hours" not-null="false"/>
+	
+<many-to-one name="category" class="Category" column="category" not-null="false"/>
+
+<many-to-one name="photo" class="PersonalPhoto" column="photo" not-null="false"/>
+	
+
+	<set name="iwork_experience_personal" cascade="delete" lazy="true">
+		<key>
+			<column name="work_experience_personal" />
+		</key>
+		<one-to-many class="Work_experience" />
+	</set>
+
+	<set name="ibenefits_personal" cascade="delete" lazy="true">
+		<key>
+			<column name="benefits_personal" />
+		</key>
+		<one-to-many class="Benefits" />
+	</set>
+
+	<set name="ieducation_personal" cascade="delete" lazy="true">
+		<key>
+			<column name="education_personal" />
+		</key>
+		<one-to-many class="Education" />
+	</set>
+
+	<set name="isupervisor" cascade="none" lazy="true">
+		<key>
+			<column name="supervisor" />
+		</key>
+		<one-to-many class="Research_group" />
+	</set>
+
+	<set name="ichild_personal" cascade="delete" lazy="true">
+		<key>
+			<column name="child_personal" />
+		</key>
+		<one-to-many class="Child" />
+	</set>
+
+	<set name="igrant_concession_personal" cascade="delete" lazy="true">
+		<key>
+			<column name="grant_concession_personal" />
+		</key>
+		<one-to-many class="Grant_concession" />
+	</set>
+
+	<set name="iprofessional_personal" cascade="delete" lazy="true">
+		<key>
+			<column name="professional_personal" />
+		</key>
+		<one-to-many class="Professional" />
+	</set>
+
+	<set name="iholiday_personal" cascade="delete" lazy="true">
+		<key>
+			<column name="holiday_personal" />
+		</key>
+		<one-to-many class="Holiday" />
+	</set>
+
+	<set name="icompensation_personal" cascade="delete" lazy="true">
+		<key>
+			<column name="compensation_personal" />
+		</key>
+		<one-to-many class="Compensation" />
+	</set>
+
+	<set name="ifunding_detail_personal" cascade="delete" lazy="true">
+		<key>
+			<column name="funding_detail_personal" />
+		</key>
+		<one-to-many class="Funding_detail" />
+	</set>
+	
+	<set name="isupervisor_unit" cascade="none" lazy="true">
+		<key>
+			<column name="supervisor" />
+		</key>
+		<one-to-many class="Unit" />
+	</set>
+
+		
+		<!-- categorias -->
+		<many-to-one name="state" class="Personalstate" column="state" lazy="false"/>
+	</class>
+</hibernate-mapping>

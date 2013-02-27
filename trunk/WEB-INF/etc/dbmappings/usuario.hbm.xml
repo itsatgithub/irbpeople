@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+	<joined-subclass name="Usuario" table="USUARIO" extends="com.justinmind.usermanagement.entity.Umuser">
+		<key column="usuariocode"/>
+		
+		<property name="username" update="true" insert="true"
+			type="string">
+			<column name="username" length="50" />
+		</property>
+		
+		<property name="email" type="string">
+			<column name="email" length="100" />
+		</property>
+		
+		<property name="activationCode" type="string">
+			<column name="activationCode" length="100" />
+		</property>
+		
+		<property name="changePasswordCode" type="string">
+			<column name="changePasswordCode" length="100" />
+		</property>
+		
+		<!-- attribute mappings -->
+		
+		
+		<!-- Associacion mappings -->
+		<one-to-one name="personal" class="Personal"/>
+		
+	<set name="iauthor" cascade="none" lazy="true">
+		<key>
+			<column name="author" />
+		</key>
+		<one-to-many class="Report" />
+	</set>
+
+
+		
+		<!-- categorias -->
+		
+	</joined-subclass>
+</hibernate-mapping>

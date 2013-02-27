@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="CustomList" table="REPORTCUSTOMLIST">
+		<id name="customListcode" column="customListcode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+<property name="name" type="string">
+	<column name="name" length="100" />
+</property>
+<property name="view_name" type="string">
+	<column name="view_name" length="100" />
+</property>
+
+<property name="usercode" type="string">
+	<column name="usercode" length="100" />
+</property>
+
+<property name="update_date" type="timestamp">
+	<column name="update_date"  />
+</property>
+
+<property name="comments" type="string">
+	<column name="comments" length="255" />
+</property>
+
+<property name="periodic" type="boolean">
+    <column name="periodic" />
+</property>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<config>
+
+
+<!-- NOTA 1: TAG PARA INDICAR EL ESTADO DE UN PARAMETRO DE CONDIGURACION -->
+<!-- ** VERIFIED: ? | PRODUCTION-VALUE: ? | DEMO-VALUE: ? | BEST-PERFORMANCE: ? ** -->
+<!--             yes                    -               -                     -    -->
+<!--                                   true            true                  true  -->
+<!--                                  false           false                 false  -->
+<!-- 	- VERIFIED lo utilizamos para indicar que hemos testeado el funcionamiento correcto de un parametro. 	-->
+<!-- 	- PRODUCTION-VALUE indica el valor mas adecuado de cara al rendimiento del parametro en cuestion.    	-->
+<!-- 	- DEMO-VALUE indica la posicion del tag para mostrar la aplicacion a algun cliente. 			-->
+<!-- 	- BEST-PERFORMANCE indica la posicion del tag para tener mejor rendimiento. 				-->
+ 
+
+<!-- NOTA 2: Para TESTEAR el fichero 'site.xml' se tienen que ACTIVAR (poner a 'true') las variables que están  -->
+<!--         acompañadas por el siguiente TAG: 									-->
+					<!-- check -->
+<!--         Testear el fichero 'site.xml' permite sacar por pantalla errores y warnings que, viendo los 	-->
+<!--         mensajes de error, son fácilemnte subsanables.  							-->
+	
+
+	<!-- **************************************** -->
+	<!-- **************************************** -->
+	<!-- ****        GLOBAL LOGGER           **** -->
+	<!-- **************************************** -->
+	<!-- **************************************** -->
+	
+				
+	<!-- PARAMETROS QUE CONFIGURAN EL FICHERO DE LOGS DE SITEORG. 							-->
+	<!-- NOTA: UN BON TUTORIAL DE LOG4JAVA:										-->
+	<!-- http://supportweb.cs.bham.ac.uk/documentation/tutorials/docsystem/build/tutorials/log4j/log4j.html		-->
+	<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+	<!--  	  com.justinmind.util.siteorg.SiteOrgManager.setupLogFile(String)  -->
+	<section id="siteorg.logs">		   		
+	
+   		<!-- Si 'activation' vale 'false' el 'appender' esta desactivado y no se hacen logs. -->
+   		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: false | DEMO-VALUE: - | BEST-PERFORMANCE: false ** -->
+    		<parameter id="activation"					value="false" /> 	
+	
+    		<!-- Nombre del fichero de logs. Se puede añadir el path relativo del directorio. -->	
+    		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->						
+    		<parameter id="fileName"					value="logsForSiteOrg.log" />    	
+    			    		
+    		<!-- Si 'append' vale 'true' añadimos al fichero, sino subreescribimos. -->
+   		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: false | DEMO-VALUE: - | BEST-PERFORMANCE: false ** -->    		
+    		<parameter id="append"						value="true" />   
+    		
+    		<!-- Si 'true' trabajamos con un fichero cada vez que la aplicación se pone en marcha,  -->
+    		<!-- ponemos un timestamp para la identificación del fichero. -->
+    		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+    		<parameter id="multiFile"					value="true" />      		 	
+    		
+    		<!-- Indica el formato en que van a generarse las lineas de log. Para mas informacion ver la documentacion de log4j -->	
+    		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->						
+    		<parameter id="pattern"						value="%-4r %-5p [%t] %37c %3x - %m %n" />       			  						
+   	 		    				
+	</section> 						
+	
+	
+	<!-- **************************************** -->
+	<!-- **************************************** -->
+	<!-- ****         SITEORGMANAGER         **** -->
+	<!-- **************************************** -->
+	<!-- **************************************** -->	
+	
+					<!-- **************************************** -->
+					<!-- ****   SITEORG - LOAD ON START      **** -->
+					<!-- **************************************** -->	
+	
+	<!-- 1. PARAMETROS DE INICIALIZACION DEL FICHERO. -->
+    	<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    	<!--  	  com.justinmind.util.siteorg.SiteOrgManager.init()  -->	
+	<section id="siteorg.init.parameters">		   		
+    		<!-- El nombre del fichero, normalmente 'site.xml' -->	
+    		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->						
+    		<parameter id="siteorg.file.name"				value="site.xml" />    	
+    			    		
+    		<!-- El idioma por defecto, normalmente 'en' -->
+    		<!-- Nota: esto es realmente el nombre del site, es decir el atributo 'name' del tag    -->
+    		<!-- <site> dentro de fichero site.xml.                                                 -->
+    		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - **    -->
+    		<parameter id="siteorg.default.language"			value="en" />    		
+  						
+  		    <!-- Activa al multilenguaje, si el multilenguaje esta activo, se intenta coger el 'site' cuyo nombre   -->
+  		    <!-- conincida con el idioma.                                                                           -->
+    		<parameter id="siteorg.multilanguage"				value="true" />   
+    		
+    		<!-- Indicamos si podemos utilizar o no la cache. La cache almacena en SiteOrgManager, todos los    -->
+    		<!-- roles que se van pidiendo. Se alamacena con la llave (rol,idioma) si utilizamos multiidioma    -->
+    		<!-- o bién con la llave (rol) si no utilizamos multiidioma y lo único que diferencia un SiteOrg    -->
+    		<!-- de otro es el rol.                                                                             -->
+    		<parameter id="siteorg.cacheCanBeUsed"				value="true" />    		    		 	 		    				
+	</section> 	
+	
+	<!-- 2. CARGA, CHEQUEO DE ERRORES Y WARNINGS del fichero 'site.xml' de configuracion EN EL INICIO DE LA APLICACION, (NO CONFUNDIR CON LA CONFIGURACION DE UN USUARIO EN PARTICULAR).  -->
+    	<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    	<!--  	  com.justinmind.util.siteorg.SiteOrgManager.init()  -->	
+	<section id="siteorg.site.init.parameters">		
+	
+    		<!-- - checkErrorsAndWarnings   = true -> Chequeamos errores y warnings del fichero de configuracion, site.xml. 		-->	
+    		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: false | DEMO-VALUE: - | BEST-PERFORMANCE: false ** -->
+    		<parameter id="init.checkErrorsAndWarnings"			value="true" />    <!-- check -->	
+    		 		 		
+		<!-- NOTA INFORMMATIVA: Si las zonactions (acciones presentes en zonas) no contienen mas informacion que el -->
+		<!--   nombre de la accion y el comando, debe ponerse a 'true' este parametro, otrosí se producirá un error -->
+		<!--   ya que no se  podra localizar la informacion de ninguna zonaction.                                   -->   		    		 		 		
+		<!-- - Si 'true' consideramos todos los sectores, la búsqueda se realizará también fuera del sector recomendado. -->
+		<!-- Si esta a 'false' buscamos solo en el sector indicado, si allí no se encuentra consideramos que no está.  -->
+		<!-- Luego si la tenemos a 'false' tenemos que estar muy seguros de pasar siempre el sector correcto.          -->
+                <!-- - Este parametro tiene utilidad dentro de la clase 'com.justinmind.util.siteorg.SiteOrgLoader', donde alimenta			-->
+                <!-- al parametro interno 'considerOtherGroupsInternal', parametro que  su vez se pasa a la funcion:                                    -->
+                <!-- 1. 'SiteOrgDocUtils.utilGetGroup' dentro de las siguientes funciones de 'SiteOrgLoader':                                           -->
+                <!-- 	- SiteOrgLoader.passedDependence(Iterator) - Comprobacion de dependencias en SiteOrgLoader.comprehension().                     -->
+                <!-- 	- SiteOrgLoader.passedZoneAction(Iterator) - Verificacion de las zonactions en el metodo SiteOrgLoader.comprehension().         -->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: false | DEMO-VALUE: - | BEST-PERFORMANCE: false ** -->
+		<parameter id="init.considerOtherSectors"			value="true" />      		 	
+   		
+		<!-- NOTA INFORMMATIVA: Si las zonactions (acciones presentes en zonas) no contienen mas informacion que el -->
+		<!--   nombre de la accion y el comando, debe ponerse a 'true' este parametro, otrosí se producirá un error -->
+		<!--   ya que no se  podra localizar la informacion de ninguna zonaction.                                   -->   		   		
+    		<!-- - Si vale 'false' solo buscamos el grupo por su tag 'name' y no por el tag 'command'. 					-->
+    		<!-- Recordemos que en site.xml podemos tener grupos con diferente 'name' y mismo 'command'. 					-->
+    		<!-- Cuando vale 'true' si no se ha encontrado el grupo mediante el 'name' se realiza    					-->
+    		<!-- una segunda búsqueda mediante el atributo 'command'. 				 					-->      
+		<!-- - Este parametro tiene utilidad dentro de la clase 'com.justinmind.util.siteorg.SiteOrgLoader', donde alimenta 		-->
+		<!-- al parametro interno 'considerOtherGroupsInternal', parámetro que a su vez se pasa a la funcion:		-->
+		<!-- 1. 'SiteOrgDocUtils.utilGetInfoForThisAction' dentro de la siguiente funcion de 'SiteOrg':               -->
+		<!-- 	- SiteOrgLoader.passedZoneAction(Iterator) - Dentro del metodo SiteOrgLoader.comprehension() que evalua la consistencia del site.                              -->
+		<!--      NOTA: Realmente a nivel practico no tenemos que trabajar directamente con la clase SiteOrgLoader, sino que en                    -->
+		<!--            la carga inicial del site, en la inicializacion de la aplicacion, se carga este parametro desde la clase 'SiteOrgManager'.	-->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: false | DEMO-VALUE: - | BEST-PERFORMANCE: false ** -->
+    		<parameter id="init.considerOtherGroups"			value="true" />     		
+    		
+		<!-- Este parámetro es de simple comprobación ya que solo se aplica a SiteOrgLoader, es decir que el parametro -->
+		<!-- entra por SiteOrgManager pero solo tiene efecto en el loader y solamente si 'checkErrorsAndWarnings==true',-->
+		<!-- es decir, solamente si realizamos el chequeo del site maestro en la carga del mismo en el método comprehension() -->
+		<!-- dentro de SiteOrgLoader. Si està a 'true' y no se cumple, es decir que HAY MÁS DE UN GRUPO CON UN MISMO COMANDO, se -->
+		<!-- generara un error. Recordamos aquí que siempre que se pueda es bueno que haya una correspondencia biunívoca entre -->
+		<!-- grupos y comandos (commmandEqualsGroup==true). Al afectar solamente al chequeo del site en SiteOrgLoader, -->
+		<!-- es un parametro al que no aplica el rendimiento. Recordemos que en producción hemos de evitar todo chequeo.  -->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+    		<parameter id="init.commandEqualsGroup"				value="false" />        			
+    		 		
+    		 		
+    		<!-- cleanDoc = true -> Limpiamos el documento de configuracion del site de tags que no se van a usar para aligerar peso. -->				
+    		<!-- - Se eliminan los tags indicados en la funcion 'com.justinmind.util.siteorg.SiteOrgDocUtils.utilIsCleanableElement(Element)' que son los siguientes: -->
+    		<!--   Tags.DESCRIPTION, Tags.EXAMPLES, Tags.EXTENDS, Tags.SHOW, Tags.NO_GENERATION, Tags.GENERATION, Tags.FIXED_GENERATION, Tags.GENERATION_HOME_WHEN_LOGGED, Tags.GENERATION_HOME_WHEN_NOT_LOGGED. -->
+    		<!-- - No se eliminan los comentarios, solo elimina TAGS. En producción el documento ha de estar libre de comentarios de entrada. -->
+		<!-- - Tiene que evaluarse si vale la pena eliminar estos Tags. -->
+    		<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    		<!--  	  com.justinmind.util.siteorg.SiteOrgManager.init() -->
+    		<!--      com.justinmind.util.siteorg.SiteOrgManager.loadAndCheck(boolean, boolean, boolean, boolean, boolean) -->
+    		<!--	  com.justinmind.util.siteorg.SiteOrgLoader.clean() -->
+    		<!--      void com.justinmind.util.siteorg.SiteOrgDocUtils.recursiveCleaner(Element) -->
+    		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: false | DEMO-VALUE: - | BEST-PERFORMANCE: false ** -->
+    		<parameter id="init.cleanDoc"					value="false" />    	
+	</section> 	
+		
+	<!-- **************************************** -->
+	<!-- **************************************** -->
+	<!-- ****             SITEORG            **** -->
+	<!-- **************************************** -->
+	<!-- **************************************** -->		
+		
+				<!-- **************************************************** -->
+				<!-- ****       SITEORG - CONFIGURATION PROCESS      **** -->
+				<!-- **************************************************** -->
+	
+	<!-- 1.- PARAMETROS QUE SE USAN EN EL MOMENTO EN QUE EL SITE ES CONFIGURADO. -->
+	<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    	<!--  	  com.justinmind.util.siteorg.SiteOrg.configAndCheck()  -->	
+	<section id="siteorg.site.configuration.for.each.user.check">	
+		
+		<!-- NOTA IMPORTANTE: -->
+    		<!-- EXPULSIÓN DEL SITE CONFIGURADO EN DEBUG -->
+    		<!-- Esto NO funciona mediante un parametro de configuracion, sino en la eleccion del método de condiguración de SiteOrg: -->
+    		<!-- com.justinmind.util.siteorg.SiteOrg.configureMySite()  -> No expulsamos el site configurado -->
+    		<!-- com.justinmind.util.siteorg.SiteOrg.configureMySite(String realOutputPath) -> Expulsamos en el directorio 'realOutputPath' -->
+    		<!--   el site configurado, siempre con el mismo nombre: 'site_user_configured.xml'. -->		
+		
+    		<!-- Si 'true' realizamos un chequeo del site una vez cargado. Solo para DEBUG. 'false' es el valor por defecto. -->
+    		<!-- Realiza un chequeo de dependencias, es decir que si queremos un grupo que depende de otro tiene en cuenta los dos -->
+    		<!-- En realidad lo que chequeamos es la lisa de servicios que tiene cada usuario, comprobamos que la lista sea correcta, -->
+		<!-- lo hacemos contra el fichero 'site.xml' que consideramos bien definido.  -->
+		<!-- En el fichero 'site.xml' deben de estar los tags '<dependence group="nombreDeOtroGrupoDelQueDependeEste" />' -->
+		<!-- donde corresponda, para que el chequeo pueda llevarse a termino.						  -->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: false | DEMO-VALUE: - | BEST-PERFORMANCE: false ** -->
+    		<parameter id="configuration.for.each.user.doCheckServices"	value="false" />  <!-- check -->   	
+	
+    		<!-- Si 'true' Realizamos la correccion de errores que se hayan podido detectar. 'true' es el valor por defecto. -->				
+    		<!-- Es necesario que este activa la variable anterior: 'configuration.for.each.user.doCheckServices'. -->	
+    		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->			
+    		<parameter id="configuration.for.each.user.tryToSolve"		value="false" />    
+
+	</section> 
+
+
+				<!-- **************************************************** -->
+				<!-- ****       SITEORG - WHEN SITEORG IS USED       **** -->
+				<!-- **************************************************** -->
+
+	<!-- 2.- PARAMETROS QUE SE USAN MIENTRAS EL OBJETO SITEORG ASOCIADO AL USUARIO ES UTILIZADO. -->
+	<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    	<!--  	  com.justinmind.util.siteorg.SiteOrg.configAndCheck()  -->	
+	<section id="siteorg.site.configuration.for.each.user">		
+	
+		<!-- NOTA INFORMMATIVA: Si las zonactions (acciones presentes en zonas) no contienen mas informacion que el -->
+		<!--   nombre de la accion y el comando, debe ponerse a 'true' este parametro, otrosí se producirá un error -->
+		<!--   ya que no se  podra localizar la informacion de ninguna zonaction.                                   -->   			
+		<!-- - Si 'true' consideramos todos los sectores, la búsqueda se realizará también fuera del sector recomendado. -->
+		<!-- Si esta a 'false' buscamos solo en el sector indicado, si allí no se encuentra consideramos que no está.  -->
+		<!-- Luego si la tenemos a 'false' tenemos que estar muy seguros de pasar siempre el sector correcto.          -->		
+		<!-- - Este parametro tiene utilidad dentro de la clase 'com.justinmind.util.siteorg.SiteOrg', donde alimenta					-->
+		<!-- al parametro interno 'considerOtherSerctorsInternal', parámetro que a su vez se pasa a las siguientes funciones:                           -->
+		<!-- 1. 'SiteOrgDocUtils.utilGetInfoForThisAction'												-->
+		<!-- 	- SiteOrg.menuFactory(Element, String, int) - Acelera la localizacion de la accion remota, construccion del menu de zona.               -->
+		<!-- 	- SiteOrg.passedZoneAction(Iterator, Element) - Configuracion del site para un usuario en particular.					-->
+		<!-- 	- SiteOrg.factoryTitleWindow(String, String, String, String, int, String) - Funcion publica de construccion del titulo de ventana.      -->
+		<!-- 2. 'SiteOrgDocUtils.utilActionIsAlive'													-->
+		<!-- 	- SiteOrg.passedMainMenuItem(Iterator) - Sirve para eliminar las acciones de los items de menu a los que el usuario no tiene acceso.    -->
+		<!-- 	- SiteOrg.passedSubMenuItem(Iterator) - Idem.												-->
+		<!-- 3. SiteOrgDocUtils.utilGetGroup                                                                                                            -->                                                                       
+		<!-- 	- SiteOrg.passedZoneAction(Iterator, Element) - Configuracion del site para un usuario en particular. (2 apariciones en esta funcion)	-->			
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: false | DEMO-VALUE: - | BEST-PERFORMANCE: false ** -->
+		<parameter id="consider.all.sectors"				value="true" />    		
+		
+		<!-- NOTA INFORMMATIVA: Si las zonactions (acciones presentes en zonas) no contienen mas informacion que el -->
+		<!--   nombre de la accion y el comando, debe ponerse a 'true' este parametro, otrosí se producirá un error -->
+		<!--   ya que no se  podra localizar la informacion de ninguna zonaction.                                   -->   				
+    		<!-- - Si vale 'false' solo buscamos el grupo por su tag 'name' y no por el tag 'command'. 					-->
+    		<!-- Recordemos que en site.xml podemos tener grupos con diferente 'name' y mismo 'command'. 					-->
+    		<!-- Cuando vale 'true' si no se ha encontrado el grupo mediante el 'name' se realiza    					-->
+    		<!-- una segunda búsqueda mediante el atributo 'command'. 				 					-->      
+		<!-- - Este parametro tiene utilidad dentro de la clase 'com.justinmind.util.siteorg.SiteOrg', donde alimenta								-->
+		<!-- al parametro interno 'considerOtherGroupsInternal', parámetro que a su vez se pasa a la funcion:                        -->
+		<!-- 1. 'SiteOrgDocUtils.utilGetInfoForThisAction' dentro de las siguientes funciones de 'SiteOrg':                                                                          -->
+		<!-- 	- SiteOrg.menuFactory(Element, String, int)   - Esta funcion es básica para las funciones 'SiteOrg.menuZoneFactory'.                                               -->
+		<!-- 	- SiteOrg.passedZoneAction(Iterator, Element) - En la configuracion del site, concretamente en la primera vuelta de configuracion (SiteOrg.ConfigureFirst()).      -->
+		<!-- 	- SiteOrg.factoryTitleWindow(String, String, String, String, int, String) - Esta funcion se llama directamente desde la JSP para obtener el titulo de la ventana.	-->	
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: false | DEMO-VALUE: - | BEST-PERFORMANCE: false ** -->
+		<parameter id="consider.all.groups"				value="true" />  
+		
+    		<!-- Controla que reprocesemos los links cada vez que mostremos un menuZone    					-->
+    		<!-- que tengamos en caché.				 					-->      
+		<!-- - Este parametro tiene utilidad dentro de la clase 'com.justinmind.util.siteorg.SiteOrg', donde alimenta								-->
+		<!-- al parametro interno 'reProcessLinks', parámetro que a su vez se utiliza en:                        -->
+		<!-- 1. 'com.justinmind.util.siteorg.SiteOrg.menuZoneFactory(String, String, String, String, String, boolean)' dentro de las siguientes funciones de 'SiteOrg':    -->
+		<!-- ** VERIFIED: ? | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+		<parameter id="reProcessLinks"					value="true" />		
+			
+	</section> 
+
+	<!-- *************************************************** -->
+	<!-- *************************************************** -->
+	<!-- ****           SITEORGCONFIGURATOR             **** -->
+	<!-- *************************************************** -->
+	<!-- *************************************************** -->
+
+				<!-- *************************************************************************************************** -->
+				<!-- ****   SITEORGCONFIGURATOR - CONFIGURATION FOR EACH USER - CONFIGURATION CONTROL PARAMETERS    **** -->
+				<!-- *************************************************************************************************** -->
+	
+	<!-- 1.- PARAMETROS QUE SE USAN EN EL MOMENTO EN QUE EL SITE ES CONFIGURADO. -->
+	<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    	<!--  	  com.justinmind.util.siteorg.SiteOrgConfigurator.config_loadConfigurationControlParameters()  -->	
+	<section id="configforeachuser.loadConfigurationControlParameters">	
+    		
+		    <!-- Deshabilita los roles para facilitar la programación en la fase de desarrollo.    -->
+		    <!-- No significa que no va a haber ningun servicio, sino todo lo contrario, aparecen  -->
+		    <!-- todos los servicios accesibles. -->
+		    <!-- ** VERIFIED: ? | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+		    <parameter id="disableRoles"					value="false" />	    		
+		    
+		    <!-- Si vale 'false' todos los grupos son tratados como 'service' (dejan de haber grupos typo 'system').  -->
+		    <!-- En este caso, para una correcta configuración, es necesario incluir tambien todos aquellos grupos System referenciados -->
+		    <!-- Que se vayan a utilizar. Y la configuración es más lenta. -->
+		    <!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+		    <parameter id="systemGroupsEnabled"				value="true" />	    		
+    		
+    		<!-- No puede haber un procesado teniendo en cuenta gruposSystem si el fichero de -->
+    		<!-- rol tiene grupos System, ([system-groups-included] == true) dentro del fichero de rol,  -->
+		    <!-- dado que los grupos System en el funcionamiento original de SiteOrg, -->
+		    <!-- se cargan automáticamente. Por ello este parámetro. -->		    	
+		    <!-- Si vale 'true' el procesado de los grupos SYSTEM se realiza en funcion -->
+		    <!-- de cada rol, según se indica con la variable interna 'system-groups-included' -->
+		    <!-- que se encuentra en la raiz del documento XML del cada rol. Recordar que ha de estar -->
+		    <!-- habilitada la variable 'systemGroupsEnabled' (definida más arriba), es decir a 'true'. -->
+		    <!-- Si 'systemGroupsEnabled' vale 'false' todos los grupos son tratados como grupos service -->
+		    <!-- y por ello los grupos no incluidos no se van a incluir de forma automática. -->
+		    <!-- .................................................................................... -->
+		    <!-- .................................................................................... -->
+		    <!-- EN DEFINITIVA: 'processSystemGroups' en un rol determinado si... -->
+		    <!-- !([system-groups-included] && systemGroupsProcessingPerRole) && systemGroupsEnabled -->
+		    <!-- .................................................................................... -->
+		    <!-- .................................................................................... -->
+		    <!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+		    <parameter id="systemGroupsProcessingPerRole"	value="true" />	    		
+    		
+			<!-- El procesado de acciones permite a todos aquellos objetos que referencian								-->
+			<!-- una accion virtual trasladarles la accion real si hay redirect en la                     -->
+			<!-- virtual action. Luego la VirtualAction es eliminada por completo.                        -->
+			<!-- Observemos que esto solo tiene efecto en SiteOrg, es decir que el fichero                -->
+			<!-- maestro no queda afectado. No se trata de una limpieza de virtualActions del             -->
+			<!-- site.xml de EVC. Las virtualActions en EVC no se eliminaran, ya que es la manera         -->
+			<!-- de configurar por roles fácilmente cualquier nuevo objeto que aparezca aparte de los     -->
+			<!-- menús, sin tener que modificar en nada el sistema de roles ni siteOrg, simplemente es    -->
+			<!-- necesario agregar un nuevo plugin, como ocurre con los diferentes tipos de menu.         -->
+			<!-- Por defecto el procesado de acciones virtuales está conectado.                           -->
+		    <!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: true ** -->		    
+		    <parameter id="processVirtualActions"				value="true" />	
+		    
+    		<!-- Cuando ejecutamos el metodo 'com.justinmind.util.siteorg.SiteOrgConfigurator.configureMySite()' podemos, al finalizar dicho metodo, limpiar el fichero XML -->
+    		<!-- de aquellos TAGS  que hemos utilizado para realizar la configuracion. -->
+    		<!-- - Se eliminan los tags indicados en la funcion 'com.justinmind.util.siteorg.SiteOrgDocUtils.utilIsCleanableElement_configuredSite(Element)' que son los siguientes: -->
+    		<!--   Tags.IN_USE_BY_SYSTEM, Tags.IN_USE_BY_SERVICE. -->    	
+    		<!-- - No se eliminan los comentarios, solo elimina TAGS. En producción el documento ha de estar libre de comentarios de entrada. -->	    		
+    		<!-- - De hecho la presencia de estos tags no es ningún problema por lo que esta operacion puede obviarse. -->
+    		<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    		<!--	  com.justinmind.util.siteorg.SiteOrgConfigurator.config_loadConfigurationControlParameters() -->
+    		<!--	  com.justinmind.util.siteorg.SiteOrgConfigurator.configureMySite_configureFinally() -->
+    		<!--	  void com.justinmind.util.siteorg.SiteOrgDocUtils.recursiveCleaner_configuredSite(Element) -->
+    		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: false | DEMO-VALUE: - | BEST-PERFORMANCE: false ** -->
+    	    <parameter id="cleanConfiguredSite"				value="false" />       		
+    		
+                <!--  Si el parametro 'returnSiteXMLString' está a true retornamos en el momento de hacer   		-->
+                <!--  el configureMySite() el fichero convertido en String, para su posterior almacenamiento.    	--> 	
+                <!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: false ** -->
+    		<parameter id="returnSiteXMLString"				value="false" />   
+    		
+                <!-- - Si el parametro 'deleteXMLDefinitionFirstLine' está a 'true' eliminamos la primera                                	-->
+                <!--   linea del documento en string, la que corresponde a la definición XML, es necesario que se pase                     	--> 	
+                <!--   de este modo el fichero para crear un objeto JDOM a partir de un String.                                            	-->
+    		<!--   Este parametro solo tiene aplicación si 'returnSiteXMLString' esta a true, en caso contrario no se retornara el site	--> 	
+                <!--   en formato String.                                                                                                  	-->
+                <!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: false ** -->
+    		<parameter id="deleteXMLDefinitionFirstLine"			value="false" />     				
+    		
+    		<!-- Fija el valor de 'encoding' en la cabecera del fichero de XML. -->
+    		<!-- Se utiliza en el fichero que se genera a modo de debug con el fichero de configuracion particular para ese usuario. -->
+    		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+    		<parameter id="XMLEncoding"					value="ISO-8859-1" />     	
+    		
+    		<!-- Si el path 'realOutputPath' que se indica al llamar a 'mySiteOrg.configureForThisUser(realOutputPath);' -->
+    		<!-- es nulo automáticamente esta variable vale false, ya que no se podrá grabar el fichero de salida con un path nulo. -->
+    		<!-- ** VERIFIED: yes | DEFAULT-VALUE: false | PRODUCTION-VALUE: false | DEMO-VALUE: true | BEST-PERFORMANCE: false ** -->    		
+    		<parameter id="SaveConfiguredSiteXML"		value="false" /> 	      		    		       		
+    			    		
+	</section> 		
+	
+				<!-- ******************************************************************************** -->
+				<!-- ****   SITEORGCONFIGURATOR - CONFIGURATION FOR EACH USER - PRELOAD CACHES   **** -->
+				<!-- ******************************************************************************** -->	
+
+	<!-- 2.- PARAMETROS QUE CONTROLAN SI REALIZAMOS O NO UNA PRECARGA DE LAS CACHES AL INICIO -->
+	<!--     EN CASO CONTRARIO LAS CACHES SE IRÁN LLENANDO A MEDIDA QUE EL USUARIO ACCEDA A LAS PAGINAS -->
+	<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    	<!--  	  com.justinmind.util.siteorg.SiteOrgConfigurator.config_cachePreloadingControlParameters()  -->					
+	<section id="configforeachuser.cachePreloadingControlParameters">		   		
+		<!-- - Parametro que activa la creacion y carga de hashtables -->
+    		<!--   para que las Caches contengan desde un principio todas las acciones.  -->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: true | DEMO-VALUE: - | BEST-PERFORMANCE: true ** -->
+		<parameter id="generateHashesToInitCaches"			value="true" />	
+		
+  		<!-- - Generamos la Hashtable de la cache de Zonas, esto lleva bastante		-->
+  		<!--   tiempo, por lo que podemos desactivar su creacion con esta variable.         -->
+  		<!--   Esta variable está supeditada a la variable anterior que tiene que estar a   -->
+  		<!--   'true' para que tanga efecto.                                                -->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: true | DEMO-VALUE: - | BEST-PERFORMANCE: true ** -->
+		<parameter id="generateZonesHash"					value="true" />			
+		
+  		<!-- - Control de generacion de la cache construida de Barras de Menú.	-->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: true | DEMO-VALUE: - | BEST-PERFORMANCE: true ** -->
+		<parameter id="generateCacheBuildMenuBar"			value="true" />	
+		
+  		<!-- - Control de generacion de la cache CONSTRUIDA de zonas. -->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: true | DEMO-VALUE: - | BEST-PERFORMANCE: true ** -->
+		<parameter id="generateCacheBuildZone"				value="true" />						
+		 	 		    				
+	</section> 		
+					
+
+				<!-- ************************************************************************************************ -->
+				<!-- ****   SITEORGCONFIGURATOR - CONFIGURATION FOR EACH USER - TRATAMIENTO DEL TAG 'REDIRECT'   **** -->
+				<!-- ************************************************************************************************ -->	
+	
+	<!-- 3.- PARAMETROS QUE CONTROLAN EL TRATAMIENTO DEL TAG 'REDIRECT'. -->
+	<!--     El tag redirect se tratará solamente cuando se encuentre dentro de una accion de grupo SERVICE y -->
+	<!--     que éste grupo esté contratado por el usuario, es decir que se trate de un grupo dentro del rol. -->
+	<!--     El tratamiento será activar para el rol el grupo al que redireccione la accion. Se separa en dos -->
+	<!--     parámetros, uno para el caso de activar un grupo SERVICE y otro para activar el grupo SYSTEM. -->
+	<!-- TIMESTAMP DE INSERCION: 200602041739 -->
+	<!-- ** APLICACIÓN DE LOS PARÁMETROS: -->
+    <!--  	  com.justinmind.util.siteorg.SiteOrgConfigurator.XXXXXXXXXXXXXXX()  -->					
+	<section id="configforeachuser.redirectTagBehaviour">		
+	   		
+		<!-- - Activa el tratamiento del tag. -->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+		<parameter id="redirectTagBehaviourActivation"				value="true" />	
+		
+		<!-- - (1/2) - Si encontramos el tag redirect en una accion dentro de un grupo 'SERVICE': -->
+		
+		<!-- - Evitamos la eliminación del grupo SERVICE al que se redirige. -->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+		<parameter id="redirectedServiceIsUsedByService"			value="true" />			
+		<!-- - Evitamos la eliminación del grupo SYSTEM al que se redirige. -->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+		<parameter id="redirectedSystemIsUsedByService"				value="true" />	
+
+		<!-- - (1/2) - Si encontramos el tag redirect en una accion dentro de un grupo 'SYSTEM': -->
+		
+		<!-- - Se produce un error si desde una accion de grupo SYSTEM redirigimos a una accion. -->
+		<!--   de grupo SERVICE, por lo que mediante este parametro controlamos si lanzamos el error o no. -->
+		<!--   Se trata de un error de LOG, no se lanza excepción. -->
+		<!--   Si no se lanza el error (false) se sigue con el procesaro del site y no se actua. -->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+		<parameter id="redirectedServiceIsUsedBySystemLaunchError"	value="true" />			
+		<!-- - Evitamos la eliminación del grupo SYSTEM al que se redirige. -->
+		<!--   De SYSTEM a SYSTEM sí que está permitido. -->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: - | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+		<parameter id="redirectedSystemIsUsedBySystem"				value="true" />							 	 		    						
+		
+		
+	</section> 		
+		
+		
+	<!-- **************************************** -->
+	<!-- **************************************** -->
+	<!-- ****    COMPONENT-SECTION MENU      **** -->
+	<!-- **************************************** -->
+	<!-- **************************************** -->		
+		
+	<section id="component.section.menu.configuration">		
+		<!--   TIPOS DE MENU DISPONIBLES PARA EL MENU DE COMPONENTES-SECCIONES.                 		-->
+		<!--   De momento solo hay dos opciones.                                                                -->
+		<!--   "GenericMenu" 		- Menu de links.                                                        -->
+		<!--   "AllWebMenusMenu"	- Configuracion 'on the fly' del menu en javascript.		        -->
+		<!--   Nota: el menu de modulos solo tiene un tipo de menu, el de links o 'GenericMenu'.                -->
+		<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    		<!--  	  C:\webapp\cresa\www\ws-layout\component-selection.jsp  -->
+    		<parameter id="menu.type"					value="GenericMenu" />    	
+	</section> 
+	
+
+	<!-- **************************************** -->
+	<!-- **************************************** -->
+	<!-- ****      DEBUG IN JSP PAGES        **** -->
+	<!-- **************************************** -->
+	<!-- **************************************** -->
+	
+	<section id="jsp.debug.parameters">
+	<!-- ** VERIFIED: yes | PRODUCTION-VALUE: false | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+	
+		<!-- Permite ver el menu de pruebas y de GENERACION DE CODIGO en la pagina de entrada en el site -->
+		<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    		<!--  	  C:\webapp\cresa\www\pages\facade-public\main_menu.jsp  -->		
+		<parameter id="main_menu.view.main.menu"			value="false" />
+		
+		<!-- Permite ver el menu de test dentro de protected-menu -->
+		<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    		<!--  	  C:\webapp\cresa\www\pages\facade-protected\protected_menu.jsp  -->
+		<parameter id="protected_menu.view.protected.menu"		value="false" />			
+
+
+	   <!-- * -->   	
+	   <!-- * -->
+	   <!-- * - Controla la VISUALIZACIÓN DEL LOGO DE LA EMPRESA en el centro de 'main_menu.jsp' y 'protected_menu.jsp'. 		-->
+	   <!-- *     main_menu.view.company.logo: 			controla si se ve o no el logo en 'main_menu.jsp'.             	-->
+	   <!-- *     protected_menu.view.company.logo: 		controla si se ve o no el logo en 'protected_menu.jsp'.     	-->
+	   <!-- *     view.over.logo.text: 				visualizamos o no el texto de presentación encima del logo.    	-->
+	   <!-- *     company.name: 					introduce el nombre de la empresa.     				-->
+	   <!-- *     company.logo.name: 				el nombre del logo que se añade.			    	-->
+	   <!-- * - ** APLICACIÓN DEL PARÁMETRO: -->
+    	   <!-- *     C:\webapp\cresa\www\pages\facade-public\main_menu.jsp  -->
+    	   <!-- *     C:\webapp\cresa\www\pages\facade-protected\protected_menu.jsp  -->
+	   <!-- * --> <parameter id="view.over.logo.text"			value="true" />	
+	   <!-- * --> <parameter id="main_menu.view.company.logo"		value="true" />	
+	   <!-- * --> <parameter id="protected_menu.view.company.logo"		value="true" />	
+	   
+	   
+	   <!-- * 1/3 -->
+	   <!-- * -->
+	   <!-- * PARA VER EL LOGO POR DEFECTO DE JUSTIMIND -->
+	   <!-- * DESCOMENTAR LO SIGUIENTE Y PONER LA VARIABLE 'view.over.logo.text' A 'false' -->
+	   <!-- * -->
+	   <!-- * -->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/JUSTINMIND/justinmind-EIM.jpg" /> 	-->
+	   
+	   
+	   <!-- * 2/3 -->
+	   <!-- * -->
+	   <!-- * LOGOS DE ORGANIZACIONES VISITADAS -->
+	   <!-- * -->
+	   <!-- * -->
+	   <!-- * --> <!-- <parameter id="company.name"					value="TechCenter de LEAR (Valls)" />	    	   	-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/lear/lear.gif" /> 	-->
+	   <!-- * --> <!-- <parameter id="company.name"					value="CIRCUTOR S.A." />				-->	    	   
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/CIRCUTOR/CIRCUTOR.jpg" />		-->
+	   <!-- * --> <!-- <parameter id="company.name"					value="SOLER I PALAU - S&amp;P" />			-->					    	   
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/SP/SP.gif" />		-->	
+	   <!-- * --> <!-- <parameter id="company.name"					value="BIMBO, S.A." />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/BIMBO/BIMBO.gif" />		-->
+	   <!-- * --> <!-- <parameter id="company.name"					value="FCR i ACER" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/acer-fcr/acer-fcr.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="FCR" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/FCR/FCR.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="F.INICIATIVAS" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/f-iniciativas/f-iniciativas.gif" />		-->
+	   <!-- * --> <!-- <parameter id="company.name"					value="SYNTHON" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/synthon/synthon.gif" />		-->
+	   <!-- * --> <!-- <parameter id="company.name"					value="GRUPO FERRER" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/ferrer/ferrer.gif" />		-->
+	   <!-- * --> <!-- <parameter id="company.name"					value="FICOSA" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/ficosa/ficosa.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="SALVAT Laboratorios" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/salvat/salvat.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="ROBERLO" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/roberlo/roberlo.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="ILEMO HARDI" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/IlemoHardi/IlemoHardi.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="La Farga LACAMBRA" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/LaFargaLaCambra/LaFargaLaCambra.gif" />		-->	   	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="Simon" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/Simon/Simon.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="Panrico" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/Panrico/Panrico.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="&quot;la Caixa&quot;" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/LaCaixa/LaCaixa.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="ASCAMM" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/ASCAMM/ASCAMM.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="Profibra" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/Profibra/Profibra.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="IRTA" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/IRTA/IRTA.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="AUSA" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/AUSA/AUSA.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="DURERO" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/DURERO/DURERO.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="CIRSA" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/CIRSA/CIRSA.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="AFFINITY" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/AFFINITY/AFFINITY.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="URIACH" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/URIACH/URIACH.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="INDO" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/INDO/INDO.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="CARBUROS METALICOS" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/CARBUROS/CARBUROS.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="EUROPA INNOVA" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/EUROPAINNOVA/EUROPAINNOVA.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="NEWPOL" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/NEWPOL/NEWPOL.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="Cambra de Comerç de Barcelona" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/CC-BCN/CC-BCN.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="Cambra de Comerç de Sabadell" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/CC-SABADELL/CC-SABADELL.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="Cambra de Comerç de Tarragona" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/CC-TARRAGONA/CC-TARRAGONA.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="Cambra de Comerç de Lleida" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/CC-LLEIDA/CC-LLEIDA.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="CD6-UPC" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/CD6/CD6.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="EDV" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/EDV/EDV.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="HENKEL" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/HENKEL/HENKEL.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="HENKEL ECOLAB" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/HENKEL-ECOLAB/HENKEL-ECOLAB.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="PROMAX" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/PROMAX/PROMAX.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="VALEO" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/VALEO/VALEO.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="AUTOLIV" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/AUTOLIV/AUTOLIV.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="GRUPO MATACHANA" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/MATACHANA/MATACHANA.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="IDOM" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/IDOM/IDOM.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="EUROPASTRY" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/EUROPASTRY/EUROPASTRY.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="IDIADA" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/IDIADA/IDIADA.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="CIDEM" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/CIDEM/CIDEM.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="URV (Universitat Rovira i Virgili)" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/URV/URV.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="CEBAL ENTEC - Grupo Pechiney" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/CEBAL-ENTEC/CEBAL-ENTEC.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="CIRIT (DURSI)" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/DURSI-CIRIT/DURSI-CIRIT.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="CTT de la UPC" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/CTT/CTT.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="ORBITA 97" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/ORBITA97/ORBITA97.gif" />		-->	   
+	   <!-- * --> <!-- ELS LOGOS QUE VENEN A CONTINUACIO NO HAN ESTA INCLOSOS EN EL POWERPOINT DE CLIENTS -->
+	   <!-- * --> <!-- <parameter id="company.name"					value="TEMPOS21 - Innovación en Aplicaciones Móviles" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/TEMPOS21/TEMPOS21.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="CATA" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/CATA/CATA.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="FDB - Fundició Dúctil Benito" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/FDB/FDB.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="Fundació CECOT Innovació" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/FCI/FCI.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="ICMS - Intellectual Capital Management Systems" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/ICMS/ICMS.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="IALE" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/IALE/IALE.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="DOGI International Fabrics" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/DOGI/DOGI.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="DIGITAL PARKS" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/DIGITALPARKS/DIGITALPARKS.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="NEOTEC" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/NEOTEC/NEOTEC.gif" />		-->	   
+	   <!-- * --> <!-- <parameter id="company.name"					value="CRESA" />					-->
+	   <!-- * --> <!-- <parameter id="company.logo.name"				value="./images/company-logos/CRESA/CRESA.gif" />		-->	   
+
+	   
+	   <!-- * 3/3 -->
+	   <!-- * -->
+	   <!-- * CLIENTE ACTIVO -->
+	   <!-- * -->
+	   <!-- * -->	   	   
+	   <!-- * --> <parameter id="company.name"					value="CRESA" />
+	   <!-- * --> <parameter id="company.logo.name"					value="./images/company-logos/CRESA/CRESA.gif" />
+	   
+	   <!-- * -->
+	   <!-- * -->
+
+
+	   <!-- * -->   	
+	   <!-- * -->
+	   <!-- * - Controla la VISUALIZACION DE UNA IMAGEN 'UNDERCONSTRUCTION en las paginas que todavía no tienen logica de negocio. 	-->
+	   <!-- *     view.underconstruction.logo: 			controla si se ve o no el logo de 'UNDERCONSTRUCTION'.        	-->
+	   <!-- *     underconstruction.logo.name: 			selección específica del nombre del logo que se va a utilizar 	-->
+	   <!-- * - ** APLICACIÓN DEL PARÁMETRO: -->
+    	   <!-- *     [En las paginas que todavía no tienen incorporada la lógica de negocio.]  -->
+	   <!-- * --> <parameter id="view.underconstruction.logo"		value="true" />	
+	   <!-- * --> <parameter id="underconstruction.logo.name"	 	value="./images/under-construction-logos/CRESA.jpg" />
+	   <!-- * -->
+	   <!-- * -->						
+
+		
+		<!-- Visualización del comando y la accion cuya ejecución ha dado como resultado la pantalla actual y del nombre de la pagina JSP. -->
+		<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    		<!--  	  Todas las paginas de layout: C:\webapp\cresa\www\ws-layout\*.*  -->
+		<parameter id="view.jspname.groupcommand.and.action"		value="false" />	
+		
+		<!-- Obtenemos inforamcion del framework del pedro, el codigo que activa esta en las JSP de plantilla. -->
+		<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    		<!--  	  C:\webapp\cresa\www\templates\protected_template.jsp  -->
+		<parameter id="view.appsessionfacade.parameters.in.template"	value="false" />
+		
+		<!-- Controla la visualizacion de errores. Cuando no estamos en DEBUG los errores no se muestran y se redirige automaticamente a la pagina principal de MAIN_MENU. -->
+		<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    		<!--  	  C:\webapp\cresa\www\error.jsp  -->
+		<parameter id="view.errors.in.jsp.error.page"			value="false" /> <!-- check -->
+	</section> 		
+		
+	<!-- **************************************** -->
+	<!-- **************************************** -->
+	<!-- ****     DEBUG IN EIM JAVA CODE     **** -->
+	<!-- **************************************** -->
+	<!-- **************************************** -->
+	
+	<section id="eim.java.debug.parameters">
+	
+		<!-- Testing: No está claro que es lo que va mas rapido, si la carga de un fichero existente o la configuracion -->
+		<!--          Lo que esta claro es que para hacer las pruebas se ha de trabajar con Strings sin cabecera XML.   -->
+		<!-- ** APLICACIÓN DEL PARÁMETRO: -->
+    		<!--  	  Formas de cargar los grupos a los que está suscrito el usuario.  -->
+		<!-- ** VERIFIED: yes | PRODUCTION-VALUE: ??? | DEMO-VALUE: - | BEST-PERFORMANCE: - ** -->
+		<parameter id="forzamosConfiguracionMedianteElFicheroMaestro"	value="true" />		
+		
+	</section> 							
+		
+</config>
+
