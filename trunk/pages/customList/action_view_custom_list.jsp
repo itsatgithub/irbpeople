@@ -58,8 +58,9 @@
 		log_for_filter.warn(e);
 	}
 	
+	/*
 	Collections.sort(views_labels, new Comparator<String[]>()
-		{
+		{		
 			public int compare(String[] s1, String[] s2)
 			{
 			    if(s1 != null && s1[0] !=null && s2!=null && s2[0]!=null)
@@ -73,6 +74,7 @@
 			}
 		}
 	);
+	*/
 %>
 
 

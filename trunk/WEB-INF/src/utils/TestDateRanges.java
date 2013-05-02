@@ -50,12 +50,12 @@ public class TestDateRanges {
 	}
 
 	@Test
-	public void rangosNoSeSolapanDifAños() {
+	public void rangosNoSeSolapanDifAnos() {
 		Assert.assertFalse(UseCaseUtils.dateRangesOverlap(rango3, rango4));
 	}
 
 	@Test
-	public void rangosNoSeSolapanDifAñosInverso() {
+	public void rangosNoSeSolapanDifAnosInverso() {
 		Assert.assertFalse(UseCaseUtils.dateRangesOverlap(rango4, rango3));
 	}
 

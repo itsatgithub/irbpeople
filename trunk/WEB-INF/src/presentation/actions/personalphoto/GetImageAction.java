@@ -34,8 +34,10 @@ public class GetImageAction extends Action{
 
 		
 //		response.setContentType(contentType);
-		OutputStream os=response.getOutputStream();
-		os.write(photo.getPhoto());
+		if(photo!=null){
+			OutputStream os=response.getOutputStream();
+			os.write(photo.getPhoto());
+		}
 		
 		return null;
 	}
