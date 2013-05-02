@@ -326,13 +326,11 @@ public class CustomRequestProcessor extends TilesRequestProcessor {
 		boolean userAllowed = defaultActions || siteOrg.isAccessibleAction(commandName, actionName);
 
 		if (!userAllowed) {
-			System.out.println("se necesita login");
-			return true;
-			/*ActionErrors errors = new ActionErrors();
+			ActionErrors errors = new ActionErrors();
 			ActionMessages messages = new ActionMessages();
 			messages.add("info.se-necesita-login", new ActionMessage("info.se-necesita-login"));
 			errors.add(messages);
-			request.setAttribute(Globals.ERROR_KEY, errors);*/
+			request.setAttribute(Globals.ERROR_KEY, errors);
 		}
 
 		return userAllowed;
