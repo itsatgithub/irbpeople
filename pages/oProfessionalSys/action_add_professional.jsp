@@ -29,6 +29,35 @@
 </nested:nest>
 
 
+<script type="text/javascript" src="<%=JspUtils.getProjectPath(request) %>/common/jquery-1.2.6.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		  $("#add_research").click(function(){
+			  $("#research_group_3").show();
+			  $(this).hide();
+		  });
+		  $("#add_research_2").click(function(){
+			  $("#research_group_4").show();
+			  $(this).hide();
+		  });
+		  
+		  $("#add_unit").click(function(){
+			  $("#unit_3").show();
+			  $(this).hide();
+		  });
+		  $("#add_unit_2").click(function(){
+			  $("#unit_4").show();
+			  $(this).hide();
+		  });
+		  
+		  $(".hide_on_empty select").each(function(){
+			  if($(this).val().length == 0){
+				  $(this).parent().parent().hide();
+			  }
+		  });
+	});
+</script>
+
 
 <table cellpadding=0 cellspacing=0>
 	<tr>
@@ -281,6 +310,74 @@
 	<td class="FormSeparator"></td>
 	<td class="BlankSeparator"></td>
 </tr>
+
+
+
+<tr>
+	
+<td class="FormFieldLeft">
+	
+<jim:message key="unit_2" />	
+</td>
+<td class="FormFieldRight">
+	
+<nested-jim:TagSelect property="professional_unit_2.unitcode"  >
+	<nested-jim:TagOptionsCollection name="_selec_unit" label="_descripcion" value="unitcode" />
+</nested-jim:TagSelect>
+	<input type="button" value="+" id="add_unit" class="add_unit"/>
+</td>
+</tr>
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
+
+<tr id="unit_3" class="hide_on_empty">
+	
+<td class="FormFieldLeft">
+	
+<jim:message key="unit_3" />
+	
+</td>
+<td class="FormFieldRight">
+	
+<nested-jim:TagSelect property="professional_unit_3.unitcode">
+	<nested-jim:TagOptionsCollection name="_selec_unit" label="_descripcion" value="unitcode" />
+</nested-jim:TagSelect>
+<input type="button" value="+" id="add_unit_2" class="add_unit"/>	
+</td>
+</tr>
+
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
+
+<tr id="unit_4" class="hide_on_empty">
+	
+<td class="FormFieldLeft">
+	
+<jim:message key="unit_4" />
+	
+</td>
+<td class="FormFieldRight">
+	
+<nested-jim:TagSelect property="professional_unit_4.unitcode">
+	<nested-jim:TagOptionsCollection name="_selec_unit" label="_descripcion" value="unitcode" />
+</nested-jim:TagSelect>
+	
+</td>
+</tr>
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
+
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
+
 <tr>
 	
 <td class="FormFieldLeft">
@@ -290,7 +387,7 @@
 </td>
 <td class="FormFieldRight">
 	
-<nested-jim:TagSelect property="research_group.research_groupcode"  >
+<nested-jim:TagSelect property="research_group.research_groupcode">
 	<nested-jim:TagOptionsCollection name="_selec_research_group" label="_descripcion" value="research_groupcode" />
 </nested-jim:TagSelect>
 	
@@ -300,6 +397,70 @@
 	<td class="FormSeparator"></td>
 	<td class="BlankSeparator"></td>
 </tr>
+
+
+<tr>
+	
+<td class="FormFieldLeft">
+	
+<jim:message key="research/spgroup_2" />
+	
+</td>
+<td class="FormFieldRight">
+	
+<nested-jim:TagSelect property="research_group_2.research_groupcode">
+	<nested-jim:TagOptionsCollection name="_selec_research_group" label="_descripcion" value="research_groupcode" />
+</nested-jim:TagSelect>
+	<input type="button" value="+" id="add_research" class="add_research"/>	
+</td>
+</tr>
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
+
+
+<tr id="research_group_3" class="hide_on_empty">
+	
+<td class="FormFieldLeft">
+	
+<jim:message key="research/spgroup_3" />
+	
+</td>
+<td class="FormFieldRight">
+	
+<nested-jim:TagSelect property="research_group_3.research_groupcode">
+	<nested-jim:TagOptionsCollection name="_selec_research_group" label="_descripcion" value="research_groupcode" />
+</nested-jim:TagSelect>
+<input type="button" value="+" id="add_research_2" class="add_research"/>	
+</td>
+</tr>
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
+
+<tr id="research_group_4" class="hide_on_empty">
+	
+<td class="FormFieldLeft">
+	
+<jim:message key="research/spgroup_4" />
+	
+</td>
+<td class="FormFieldRight">
+	
+<nested-jim:TagSelect property="research_group_4.research_groupcode">
+	<nested-jim:TagOptionsCollection name="_selec_research_group" label="_descripcion" value="research_groupcode" />
+</nested-jim:TagSelect>
+	
+</td>
+</tr>
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
+
+
 <tr>
 	
 <td class="FormFieldLeft">

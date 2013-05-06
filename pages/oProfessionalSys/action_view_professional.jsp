@@ -274,6 +274,57 @@
 	<td class="FormSeparator"></td>
 	<td class="BlankSeparator"></td>
 </tr>
+
+<tr>
+	
+<td class="FormFieldLeft">
+	
+<jim:message key="unit_2" />
+	
+</td>
+<td class="FormFieldRight">
+	<nested:write property="professional_unit_2"/>
+	
+</td>
+</tr>
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
+
+<tr>
+	
+<td class="FormFieldLeft">
+	
+<jim:message key="unit_3" />
+	
+</td>
+<td class="FormFieldRight">
+	<nested:write property="professional_unit_3"/>
+	
+</td>
+</tr>
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
+
+<tr>
+	
+<td class="FormFieldLeft">
+	
+<jim:message key="unit_4" />
+	
+</td>
+<td class="FormFieldRight">
+	<nested:write property="professional_unit_4"/>
+	
+</td>
+</tr>
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
 <tr>
 	
 <td class="FormFieldLeft">
@@ -290,6 +341,57 @@
 	<td class="FormSeparator"></td>
 	<td class="BlankSeparator"></td>
 </tr>
+<tr>
+	
+<td class="FormFieldLeft">
+	
+<jim:message key="research/spgroup_2" />
+	
+</td>
+<td class="FormFieldRight">
+	<nested:textarea property="research_group_2" readonly="true"/>
+	
+</td>
+</tr>
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
+
+<tr>
+	
+<td class="FormFieldLeft">
+	
+<jim:message key="research/spgroup_3" />
+	
+</td>
+<td class="FormFieldRight">
+	<nested:textarea property="research_group_3" readonly="true"/>
+	
+</td>
+</tr>
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
+
+<tr>
+	
+<td class="FormFieldLeft">
+	
+<jim:message key="research/spgroup_4" />
+	
+</td>
+<td class="FormFieldRight">
+	<nested:textarea property="research_group_4" readonly="true"/>
+	
+</td>
+</tr>
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
+
 <tr>
 	
 <td class="FormFieldLeft">

@@ -3,8 +3,6 @@ package bussineslogic.objects;
 
 
 
-import java.math.BigDecimal;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,6 +32,9 @@ Organization_unit organization_unit;
 Personal supervisor;
 Set<Research_group> iunit=new HashSet<Research_group>();
 Set<Professional> iprofessional_unit=new HashSet<Professional>();
+Set<Professional> iprofessional_unit_2=new HashSet<Professional>();
+Set<Professional> iprofessional_unit_3=new HashSet<Professional>();
+Set<Professional> iprofessional_unit_4=new HashSet<Professional>();
 
 	/**
 	 * Default Constructor which creates an empty unit
@@ -193,6 +194,96 @@ public void removeIprofessional_unit(Professional iprofessional_unit){
 	this.iprofessional_unit.remove(iprofessional_unit);
 }
 
+
+/**
+ * @return the iprofessional_unit
+ */
+public Set<Professional> getIprofessional_unit_2(){
+	return iprofessional_unit_2;
+}
+
+/**
+* @param iprofessional_unit the iprofessional_unit to set.
+*/
+public void setIprofessional_unit_2(Set<Professional> iprofessional_unit){
+	this.iprofessional_unit_2=iprofessional_unit;
+}
+/**
+* Adds a Professional to the iprofessional_unit set.
+* @param iprofessional_unit Professional to be added
+*/
+public void addIprofessional_unit_2(Professional iprofessional_unit){
+	this.iprofessional_unit_2.add(iprofessional_unit);
+}
+
+/**
+* Removes a Professional to the iprofessional_unit set.
+* @param iprofessional_unit Professional to be removed
+*/
+public void removeIprofessional_unit_2(Professional iprofessional_unit){
+	this.iprofessional_unit_2.remove(iprofessional_unit);
+}
+
+
+/**
+ * @return the iprofessional_unit
+ */
+public Set<Professional> getIprofessional_unit_3(){
+	return iprofessional_unit_3;
+}
+
+/**
+* @param iprofessional_unit the iprofessional_unit to set.
+*/
+public void setIprofessional_unit_3(Set<Professional> iprofessional_unit){
+	this.iprofessional_unit_3=iprofessional_unit;
+}
+/**
+* Adds a Professional to the iprofessional_unit set.
+* @param iprofessional_unit Professional to be added
+*/
+public void addIprofessional_unit_3(Professional iprofessional_unit){
+	this.iprofessional_unit_3.add(iprofessional_unit);
+}
+
+/**
+* Removes a Professional to the iprofessional_unit set.
+* @param iprofessional_unit Professional to be removed
+*/
+public void removeIprofessional_unit_3(Professional iprofessional_unit){
+	this.iprofessional_unit_3.remove(iprofessional_unit);
+}
+
+
+
+/**
+ * @return the iprofessional_unit
+ */
+public Set<Professional> getIprofessional_unit_4(){
+	return iprofessional_unit_4;
+}
+
+/**
+* @param iprofessional_unit the iprofessional_unit to set.
+*/
+public void setIprofessional_unit_4(Set<Professional> iprofessional_unit){
+	this.iprofessional_unit_4=iprofessional_unit;
+}
+/**
+* Adds a Professional to the iprofessional_unit set.
+* @param iprofessional_unit Professional to be added
+*/
+public void addIprofessional_unit_4(Professional iprofessional_unit){
+	this.iprofessional_unit_4.add(iprofessional_unit);
+}
+
+/**
+* Removes a Professional to the iprofessional_unit set.
+* @param iprofessional_unit Professional to be removed
+*/
+public void removeIprofessional_unit_4(Professional iprofessional_unit){
+	this.iprofessional_unit_4.remove(iprofessional_unit);
+}
 
 
 	
