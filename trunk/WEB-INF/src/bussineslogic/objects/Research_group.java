@@ -33,6 +33,9 @@ String group;
 Personal supervisor;
 Unit unit;
 Set<Professional> iresearch_group=new HashSet<Professional>();
+Set<Professional> iresearch_group_2=new HashSet<Professional>();
+Set<Professional> iresearch_group_3=new HashSet<Professional>();
+Set<Professional> iresearch_group_4=new HashSet<Professional>();
 
 	/**
 	 * Default Constructor which creates an empty research_group
@@ -177,8 +180,95 @@ public void removeIresearch_group(Professional iresearch_group){
 }
 
 
+/**
+ * @return the iresearch_group
+ */
+public Set<Professional> getIresearch_group_2(){
+	return iresearch_group_2;
+}
 
+/**
+* @param iresearch_group the iresearch_group to set.
+*/
+public void setIresearch_group_2(Set<Professional> iresearch_group){
+	this.iresearch_group_2=iresearch_group;
+}
+/**
+* Adds a Professional to the iresearch_group set.
+* @param iresearch_group Professional to be added
+*/
+public void addIresearch_group_2(Professional iresearch_group){
+	this.iresearch_group_2.add(iresearch_group);
+}
+
+/**
+* Removes a Professional to the iresearch_group set.
+* @param iresearch_group Professional to be removed
+*/
+public void removeIresearch_group_2(Professional iresearch_group){
+	this.iresearch_group_2.remove(iresearch_group);
+}
 	
+
+
+/**
+ * @return the iresearch_group
+ */
+public Set<Professional> getIresearch_group_3(){
+	return iresearch_group_3;
+}
+
+/**
+* @param iresearch_group the iresearch_group to set.
+*/
+public void setIresearch_group_3(Set<Professional> iresearch_group){
+	this.iresearch_group_3=iresearch_group;
+}
+/**
+* Adds a Professional to the iresearch_group set.
+* @param iresearch_group Professional to be added
+*/
+public void addIresearch_group_3(Professional iresearch_group){
+	this.iresearch_group_3.add(iresearch_group);
+}
+
+/**
+* Removes a Professional to the iresearch_group set.
+* @param iresearch_group Professional to be removed
+*/
+public void removeIresearch_group_3(Professional iresearch_group){
+	this.iresearch_group_3.remove(iresearch_group);
+}
+
+
+/**
+ * @return the iresearch_group
+ */
+public Set<Professional> getIresearch_group_4(){
+	return iresearch_group_4;
+}
+
+/**
+* @param iresearch_group the iresearch_group to set.
+*/
+public void setIresearch_group_4(Set<Professional> iresearch_group){
+	this.iresearch_group_4=iresearch_group;
+}
+/**
+* Adds a Professional to the iresearch_group set.
+* @param iresearch_group Professional to be added
+*/
+public void addIresearch_group_4(Professional iresearch_group){
+	this.iresearch_group_4.add(iresearch_group);
+}
+
+/**
+* Removes a Professional to the iresearch_group set.
+* @param iresearch_group Professional to be removed
+*/
+public void removeIresearch_group_4(Professional iresearch_group){
+	this.iresearch_group_4.remove(iresearch_group);
+}
 	
 	@Override
 	public String toString(){

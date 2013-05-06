@@ -1252,6 +1252,45 @@ public class UseCase {
 	    TOProfessional.setResearch_group(getResearch_group(TOProfessional
 		    .getResearch_group().getResearch_groupcode()));
 	}
+	
+	// we store if the research_group is defined for later use
+	boolean _research_group_2IsDefined = false;
+
+	if (TOProfessional.getResearch_group_2() != null
+		&& TOProfessional.getResearch_group_2().getResearch_groupcode() != null) {
+	    // if research_group is defined we replace the research_group in the
+	    // DTO with its current state in the DB.
+	    _research_group_2IsDefined = true;
+
+	    TOProfessional.setResearch_group_2(getResearch_group(TOProfessional
+		    .getResearch_group_2().getResearch_groupcode()));
+	}
+	
+	// we store if the research_group is defined for later use
+	boolean _research_group_3IsDefined = false;
+
+	if (TOProfessional.getResearch_group_3() != null
+		&& TOProfessional.getResearch_group_3().getResearch_groupcode() != null) {
+	    // if research_group is defined we replace the research_group in the
+	    // DTO with its current state in the DB.
+	    _research_group_3IsDefined = true;
+
+	    TOProfessional.setResearch_group_3(getResearch_group(TOProfessional
+		    .getResearch_group_3().getResearch_groupcode()));
+	}
+	
+	// we store if the research_group is defined for later use
+	boolean _research_group_4IsDefined = false;
+
+	if (TOProfessional.getResearch_group_4() != null
+		&& TOProfessional.getResearch_group_4().getResearch_groupcode() != null) {
+	    // if research_group is defined we replace the research_group in the
+	    // DTO with its current state in the DB.
+	    _research_group_4IsDefined = true;
+
+	    TOProfessional.setResearch_group_4(getResearch_group(TOProfessional
+		    .getResearch_group_4().getResearch_groupcode()));
+	}
 
 	// we store if the type_of_contract is defined for later use
 	boolean _type_of_contractIsDefined = false;
@@ -1305,6 +1344,45 @@ public class UseCase {
 
 	    TOProfessional.setProfessional_unit(getUnit(TOProfessional
 		    .getProfessional_unit().getUnitcode()));
+	}
+	
+	// we store if the professional_unit is defined for later use
+	boolean _professional_unit_2IsDefined = false;
+
+	if (TOProfessional.getProfessional_unit_2() != null
+		&& TOProfessional.getProfessional_unit_2().getUnitcode() != null) {
+	    // if professional_unit is defined we replace the professional_unit
+	    // in the DTO with its current state in the DB.
+	    _professional_unit_2IsDefined = true;
+
+	    TOProfessional.setProfessional_unit_2(getUnit(TOProfessional
+		    .getProfessional_unit_2().getUnitcode()));
+	}
+	
+	// we store if the professional_unit is defined for later use
+	boolean _professional_unit_3IsDefined = false;
+
+	if (TOProfessional.getProfessional_unit_3() != null
+		&& TOProfessional.getProfessional_unit_3().getUnitcode() != null) {
+	    // if professional_unit is defined we replace the professional_unit
+	    // in the DTO with its current state in the DB.
+	    _professional_unit_3IsDefined = true;
+
+	    TOProfessional.setProfessional_unit_2(getUnit(TOProfessional
+		    .getProfessional_unit_3().getUnitcode()));
+	}
+	
+	// we store if the professional_unit is defined for later use
+	boolean _professional_unit_4IsDefined = false;
+
+	if (TOProfessional.getProfessional_unit_4() != null
+		&& TOProfessional.getProfessional_unit_4().getUnitcode() != null) {
+	    // if professional_unit is defined we replace the professional_unit
+	    // in the DTO with its current state in the DB.
+	    _professional_unit_4IsDefined = true;
+
+	    TOProfessional.setProfessional_unit_4(getUnit(TOProfessional
+		    .getProfessional_unit_4().getUnitcode()));
 	}
 
 	// we store if the payroll_institution is defined for later use
@@ -1452,6 +1530,41 @@ public class UseCase {
 
 	    professional.setResearch_group(TOProfessional.getResearch_group());
 	}
+	
+	if (_research_group_2IsDefined) {
+
+	    if (TOProfessional.getResearch_group_2() != null) {
+
+		TOProfessional.getResearch_group_2().addIresearch_group(
+			professional);
+	    }
+
+	    professional.setResearch_group_2(TOProfessional.getResearch_group_2());
+	}
+	
+	if (_research_group_3IsDefined) {
+
+	    if (TOProfessional.getResearch_group_3() != null) {
+
+		TOProfessional.getResearch_group_3().addIresearch_group(
+			professional);
+	    }
+
+	    professional.setResearch_group_3(TOProfessional.getResearch_group_3());
+	}
+	
+	if (_research_group_4IsDefined) {
+
+	    if (TOProfessional.getResearch_group_4() != null) {
+
+		TOProfessional.getResearch_group_4().addIresearch_group(
+			professional);
+	    }
+
+	    professional.setResearch_group_4(TOProfessional.getResearch_group_4());
+	}
+	
+	
 
 	if (_type_of_contractIsDefined) {
 
@@ -1495,6 +1608,42 @@ public class UseCase {
 
 	    professional.setProfessional_unit(TOProfessional
 		    .getProfessional_unit());
+	}
+	
+	if (_professional_unit_2IsDefined) {
+
+	    if (TOProfessional.getProfessional_unit_2() != null) {
+
+		TOProfessional.getProfessional_unit_2().addIprofessional_unit(
+			professional);
+	    }
+
+	    professional.setProfessional_unit_2(TOProfessional
+		    .getProfessional_unit_2());
+	}
+	
+	if (_professional_unit_3IsDefined) {
+
+	    if (TOProfessional.getProfessional_unit_3() != null) {
+
+		TOProfessional.getProfessional_unit_3().addIprofessional_unit(
+			professional);
+	    }
+
+	    professional.setProfessional_unit_3(TOProfessional
+		    .getProfessional_unit_3());
+	}
+	
+	if (_professional_unit_4IsDefined) {
+
+	    if (TOProfessional.getProfessional_unit_4() != null) {
+
+		TOProfessional.getProfessional_unit_4().addIprofessional_unit(
+			professional);
+	    }
+
+	    professional.setProfessional_unit_4(TOProfessional
+		    .getProfessional_unit_4());
 	}
 
 	if (_payroll_institutionIsDefined) {
@@ -1606,6 +1755,131 @@ public class UseCase {
 	return professional;
 
     }
+    
+
+    /**
+     * This method modifies the research group of a professional.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param professional
+     *            Professional (not DTO) to be modified.
+     * @param newResearchGroup
+     * @return the modified professional
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Professional UpdateProfessionalReseachGroup_2(Usuario user,
+	    Professional professional, Research_group newResearchGroup)
+	    throws InternalException, NoPermisosException {
+	Research_group orlResearchGroup = professional.getResearch_group_2();
+	if (orlResearchGroup == null && newResearchGroup == null)
+	    return professional;
+
+	if (orlResearchGroup != null
+		&& newResearchGroup != null
+		&& orlResearchGroup.getCode()
+			.equals(newResearchGroup.getCode())) {
+	    return professional;
+	}
+
+	if (orlResearchGroup != null) {
+	    orlResearchGroup.removeIresearch_group_2(professional);
+	}
+	if (newResearchGroup != null) {
+	    newResearchGroup.addIresearch_group_2(professional);
+	}
+	professional.setResearch_group_2(newResearchGroup);
+
+	// UseCaseUtils.sendValidatingPersonalSettedToSupervisor(newResearchGroup
+	// .getSupervisor(), professional.getProfessional_personal());
+
+	return professional;
+
+    }
+    
+    /**
+     * This method modifies the research group of a professional.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param professional
+     *            Professional (not DTO) to be modified.
+     * @param newResearchGroup
+     * @return the modified professional
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Professional UpdateProfessionalReseachGroup_3(Usuario user,
+	    Professional professional, Research_group newResearchGroup)
+	    throws InternalException, NoPermisosException {
+	Research_group orlResearchGroup = professional.getResearch_group_3();
+	if (orlResearchGroup == null && newResearchGroup == null)
+	    return professional;
+
+	if (orlResearchGroup != null
+		&& newResearchGroup != null
+		&& orlResearchGroup.getCode()
+			.equals(newResearchGroup.getCode())) {
+	    return professional;
+	}
+
+	if (orlResearchGroup != null) {
+	    orlResearchGroup.removeIresearch_group_3(professional);
+	}
+	if (newResearchGroup != null) {
+	    newResearchGroup.addIresearch_group_3(professional);
+	}
+	professional.setResearch_group_3(newResearchGroup);
+
+	// UseCaseUtils.sendValidatingPersonalSettedToSupervisor(newResearchGroup
+	// .getSupervisor(), professional.getProfessional_personal());
+
+	return professional;
+
+    }
+    
+    
+    /**
+     * This method modifies the research group of a professional.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param professional
+     *            Professional (not DTO) to be modified.
+     * @param newResearchGroup
+     * @return the modified professional
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Professional UpdateProfessionalReseachGroup_4(Usuario user,
+	    Professional professional, Research_group newResearchGroup)
+	    throws InternalException, NoPermisosException {
+	Research_group orlResearchGroup = professional.getResearch_group_4();
+	if (orlResearchGroup == null && newResearchGroup == null)
+	    return professional;
+
+	if (orlResearchGroup != null
+		&& newResearchGroup != null
+		&& orlResearchGroup.getCode()
+			.equals(newResearchGroup.getCode())) {
+	    return professional;
+	}
+
+	if (orlResearchGroup != null) {
+	    orlResearchGroup.removeIresearch_group_4(professional);
+	}
+	if (newResearchGroup != null) {
+	    newResearchGroup.addIresearch_group_4(professional);
+	}
+	professional.setResearch_group_4(newResearchGroup);
+
+	// UseCaseUtils.sendValidatingPersonalSettedToSupervisor(newResearchGroup
+	// .getSupervisor(), professional.getProfessional_personal());
+
+	return professional;
+
+    }
 
     /**
      * This method modifies a professional.
@@ -1683,6 +1957,45 @@ public class UseCase {
 	    TOProfessional.setResearch_group(getResearch_group(TOProfessional
 		    .getResearch_group().getResearch_groupcode()));
 	}
+	
+	// we store if the research_group is defined for later use
+	boolean _research_group_2IsDefined = false;
+
+	if (TOProfessional.getResearch_group_2() != null
+		&& TOProfessional.getResearch_group_2().getResearch_groupcode() != null) {
+	    // if research_group is defined we replace the research_group in the
+	    // DTO with its current state in the DB.
+	    _research_group_2IsDefined = true;
+
+	    TOProfessional.setResearch_group_2(getResearch_group(TOProfessional
+		    .getResearch_group_2().getResearch_groupcode()));
+	}
+	
+	// we store if the research_group is defined for later use
+	boolean _research_group_3IsDefined = false;
+
+	if (TOProfessional.getResearch_group_3() != null
+		&& TOProfessional.getResearch_group_3().getResearch_groupcode() != null) {
+	    // if research_group is defined we replace the research_group in the
+	    // DTO with its current state in the DB.
+	    _research_group_3IsDefined = true;
+
+	    TOProfessional.setResearch_group_3(getResearch_group(TOProfessional
+		    .getResearch_group_3().getResearch_groupcode()));
+	}
+	
+	// we store if the research_group is defined for later use
+	boolean _research_group_4IsDefined = false;
+
+	if (TOProfessional.getResearch_group_4() != null
+		&& TOProfessional.getResearch_group_4().getResearch_groupcode() != null) {
+	    // if research_group is defined we replace the research_group in the
+	    // DTO with its current state in the DB.
+	    _research_group_4IsDefined = true;
+
+	    TOProfessional.setResearch_group_4(getResearch_group(TOProfessional
+		    .getResearch_group_4().getResearch_groupcode()));
+	}
 
 	// we store if the type_of_contract is defined for later use
 	boolean _type_of_contractIsDefined = false;
@@ -1736,6 +2049,45 @@ public class UseCase {
 
 	    TOProfessional.setProfessional_unit(getUnit(TOProfessional
 		    .getProfessional_unit().getUnitcode()));
+	}
+	
+	// we store if the professional_unit is defined for later use
+	boolean _professional_unit_2IsDefined = false;
+
+	if (TOProfessional.getProfessional_unit_2() != null
+		&& TOProfessional.getProfessional_unit_2().getUnitcode() != null) {
+	    // if professional_unit is defined we replace the professional_unit
+	    // in the DTO with its current state in the DB.
+	    _professional_unit_2IsDefined = true;
+
+	    TOProfessional.setProfessional_unit_2(getUnit(TOProfessional
+		    .getProfessional_unit_2().getUnitcode()));
+	}
+	
+	// we store if the professional_unit is defined for later use
+	boolean _professional_unit_3IsDefined = false;
+
+	if (TOProfessional.getProfessional_unit_3() != null
+		&& TOProfessional.getProfessional_unit_3().getUnitcode() != null) {
+	    // if professional_unit is defined we replace the professional_unit
+	    // in the DTO with its current state in the DB.
+	    _professional_unit_3IsDefined = true;
+
+	    TOProfessional.setProfessional_unit_3(getUnit(TOProfessional
+		    .getProfessional_unit_3().getUnitcode()));
+	}
+	
+	// we store if the professional_unit is defined for later use
+	boolean _professional_unit_4IsDefined = false;
+
+	if (TOProfessional.getProfessional_unit_4() != null
+		&& TOProfessional.getProfessional_unit_4().getUnitcode() != null) {
+	    // if professional_unit is defined we replace the professional_unit
+	    // in the DTO with its current state in the DB.
+	    _professional_unit_4IsDefined = true;
+
+	    TOProfessional.setProfessional_unit_4(getUnit(TOProfessional
+		    .getProfessional_unit_4().getUnitcode()));
 	}
 
 	// we store if the payroll_institution is defined for later use
@@ -1828,6 +2180,22 @@ public class UseCase {
 	    UpdateProfessionalReseachGroup(user, professional,
 		    TOProfessional.getResearch_group());
 	}
+	
+
+	if (_research_group_2IsDefined) {
+	    UpdateProfessionalReseachGroup_2(user, professional,
+		    TOProfessional.getResearch_group_2());
+	}
+	
+	if (_research_group_3IsDefined) {
+	    UpdateProfessionalReseachGroup_3(user, professional,
+		    TOProfessional.getResearch_group_3());
+	}
+	
+	if (_research_group_4IsDefined) {
+	    UpdateProfessionalReseachGroup_4(user, professional,
+		    TOProfessional.getResearch_group_4());
+	}
 
 	if (_type_of_contractIsDefined) {
 
@@ -1893,6 +2261,60 @@ public class UseCase {
 
 	    professional.setProfessional_unit(TOProfessional
 		    .getProfessional_unit());
+	}
+	
+	if (_professional_unit_2IsDefined) {
+
+	    if (professional.getProfessional_unit_2() != null) {
+
+		professional.getProfessional_unit_2().removeIprofessional_unit_2(
+			professional);
+	    }
+
+	    if (TOProfessional.getProfessional_unit_2() != null) {
+
+		TOProfessional.getProfessional_unit_2().addIprofessional_unit_2(
+			professional);
+	    }
+
+	    professional.setProfessional_unit_2(TOProfessional
+		    .getProfessional_unit_2());
+	}
+	
+	if (_professional_unit_3IsDefined) {
+
+	    if (professional.getProfessional_unit_3() != null) {
+
+		professional.getProfessional_unit_3().removeIprofessional_unit_3(
+			professional);
+	    }
+
+	    if (TOProfessional.getProfessional_unit_3() != null) {
+
+		TOProfessional.getProfessional_unit_3().addIprofessional_unit_3(
+			professional);
+	    }
+
+	    professional.setProfessional_unit_3(TOProfessional
+		    .getProfessional_unit_3());
+	}
+	
+	if (_professional_unit_4IsDefined) {
+
+	    if (professional.getProfessional_unit_4() != null) {
+
+		professional.getProfessional_unit_4().removeIprofessional_unit_4(
+			professional);
+	    }
+
+	    if (TOProfessional.getProfessional_unit_4() != null) {
+
+		TOProfessional.getProfessional_unit_4().addIprofessional_unit_4(
+			professional);
+	    }
+
+	    professional.setProfessional_unit_4(TOProfessional
+		    .getProfessional_unit_4());
 	}
 
 	if (_payroll_institutionIsDefined) {

@@ -57,31 +57,29 @@
 	} catch (Exception e) {
 		log_for_filter.warn(e);
 	}
-	
-	/*
-	Collections.sort(views_labels, new Comparator<String[]>()
-		{		
-			public int compare(String[] s1, String[] s2)
-			{
-			    if(s1 != null && s1[0] !=null && s2!=null && s2[0]!=null)
-			    {
-			    	return s1[0].compareTo(s2[0]);
-			    }
-			    else   
-			    {
-			        return 0;
-			    }
-			}
-		}
-	);
-	*/
 %>
 
 
 <script type="text/javascript" src="<%=JspUtils.getProjectPath(request) %>/common/jquery-1.2.6.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
+function sortSelect(elSelect) {
+    items=document.getElementById(elSelect).options;
+    opt=new Array();
+    for(a=0;a<items.length;a++)
+        opt[a]=new Array( items[a].text, items[a].value);
+    opt.sort();
+    for(a=0;a<items.length;a++) {
+        items[a].text=opt[a][0];
+        items[a].value=opt[a][1];
+    }
+}
 
+$(document).ready(function(){
+    var selectedValue = $("select[@name=selected_view]").val();
+    sortSelect("selected_view");
+    $("select[@name=selected_view]").val(selectedValue);
+
+	
 <%--
 <% if (views_form.get(0) != null){%>
 $.ajax({
@@ -163,7 +161,7 @@ $("select[@name=selected_view]").change(function () {
 
 						</td>
 						<td class="FormFieldRight">
-						<select name="selected_view"  >
+						<select name="selected_view" id="selected_view" >
 <%
 		
 		boolean first = true;

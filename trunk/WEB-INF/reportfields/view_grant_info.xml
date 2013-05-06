@@ -53,6 +53,27 @@
                 <field name="research_group" visible="true" type-of-field="text">
                     <caption >Professional: Research group</caption>
                 </field>
+                <field name="research_group_2" visible="true" type-of-field="text">
+                    <caption >Professional: Research group 2</caption>
+                </field>
+                <field name="research_group_3" visible="true" type-of-field="text">
+                    <caption >Professional: Research group 3</caption>
+                </field>
+                <field name="research_group_4" visible="true" type-of-field="text">
+                    <caption >Professional: Research group 4</caption>
+                </field>                
+                <field name="professional_unit" visible="true" type-of-field="text">
+                    <caption >Professional: Unit</caption>
+                </field>
+                <field name="professional_unit_2" visible="true" type-of-field="text">
+                    <caption >Professional: Unit 2</caption>
+                </field>
+                <field name="professional_unit_3" visible="true" type-of-field="text">
+                    <caption >Professional: Unit 3</caption>
+                </field>
+                <field name="professional_unit_4" visible="true" type-of-field="text">
+                    <caption >Professional: Unit 4</caption>
+                </field>
                 <field name="start_date_msc_or_phd" visible="true" type-of-field="text">
                     <caption >Grant: Start date of MSc. or PhD.</caption>
                 </field>
@@ -127,6 +148,27 @@
                 <field name="research_group" visible="true" type-of-field="select description from research_group order by description">
                     <caption >Professional: Research group</caption>
                 </field>
+                <field name="research_group_2" visible="true" type-of-field="select description from research_group order by description">
+                    <caption >Professional: Research group 2</caption>
+                </field>
+                <field name="research_group_3" visible="true" type-of-field="select description from research_group order by description">
+                    <caption >Professional: Research group 3</caption>
+                </field>
+                <field name="research_group_4" visible="true" type-of-field="select description from research_group order by description">
+                    <caption >Professional: Research group 4</caption>
+                </field>
+                <field name="professional_unit" visible="true" type-of-field="select description from unit order by description">
+                    <caption >Professional: Unit</caption>
+                </field>
+                <field name="professional_unit_2" visible="true" type-of-field="select description from unit order by description">
+                    <caption >Professional: Unit 2</caption>
+                </field>
+                <field name="professional_unit_3" visible="true" type-of-field="select description from unit order by description">
+                    <caption >Professional: Unit 3</caption>
+                </field>
+                <field name="professional_unit_4" visible="true" type-of-field="select description from unit order by description">
+                    <caption >Professional: Unit 4</caption>
+                </field>
                 <field name="start_date_msc_or_phd" visible="true" type-of-field="date">
                     <caption >Grant: Start date of MSc. or PhD.</caption>
                 </field>
@@ -200,6 +242,27 @@
                 </field>
                 <field name="research_group" visible="true" type-of-field="text">
                     <caption >Professional: Research group</caption>
+                </field>
+                <field name="research_group_2" visible="true" type-of-field="text">
+                    <caption >Professional: Research group 2</caption>
+                </field>
+                <field name="research_group_3" visible="true" type-of-field="text">
+                    <caption >Professional: Research group 3</caption>
+                </field>
+                <field name="research_group_4" visible="true" type-of-field="text">
+                    <caption >Professional: Research group 4</caption>
+                </field>
+                <field name="professional_unit" visible="true" type-of-field="text">
+                    <caption >Professional: Unit</caption>
+                </field>
+                <field name="professional_unit_2" visible="true" type-of-field="text">
+                    <caption >Professional: Unit 2</caption>
+                </field>
+                <field name="professional_unit_3" visible="true" type-of-field="text">
+                    <caption >Professional: Unit 3</caption>
+                </field>
+                <field name="professional_unit_4" visible="true" type-of-field="text">
+                    <caption >Professional: Unit 4</caption>
                 </field>
                 <field name="start_date_msc_or_phd" visible="true" type-of-field="text">
                     <caption >Grant: Start date of MSc. or PhD.</caption>

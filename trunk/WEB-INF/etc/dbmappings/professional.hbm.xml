@@ -41,6 +41,12 @@
 		<many-to-one name="professional_personal" class="Personal" column="professional_personal" not-null="false"/>
 	
 <many-to-one name="research_group" class="Research_group" column="research_group" not-null="false"/>
+
+<many-to-one name="research_group_2" class="Research_group" column="research_group_2" not-null="false"/>
+
+<many-to-one name="research_group_3" class="Research_group" column="research_group_3" not-null="false"/>
+
+<many-to-one name="research_group_4" class="Research_group" column="research_group_4" not-null="false"/>
 	
 <many-to-one name="type_of_contract" class="Type_of_contract" column="type_of_contract" not-null="false"/>
 	
@@ -49,6 +55,12 @@
 <many-to-one name="position" class="Position" column="position" not-null="false"/>
 	
 <many-to-one name="professional_unit" class="Unit" column="professional_unit" not-null="false"/>
+
+<many-to-one name="professional_unit_2" class="Unit" column="professional_unit_2" not-null="false"/>
+
+<many-to-one name="professional_unit_3" class="Unit" column="professional_unit_3" not-null="false"/>
+
+<many-to-one name="professional_unit_4" class="Unit" column="professional_unit_4" not-null="false"/>
 	
 <many-to-one name="payroll_institution" class="Payroll_institution" column="payroll_institution" not-null="false"/>
 

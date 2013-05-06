@@ -33,14 +33,34 @@
             </key>
             <one-to-many class="Research_group" />
         </set>
-
+        
         <set name="iprofessional_unit" cascade="none" lazy="true">
             <key>
                 <column name="professional_unit" />
             </key>
             <one-to-many class="Professional" />
         </set>
-
+        
+        <set name="iprofessional_unit_2" cascade="none" lazy="true">
+            <key>
+                <column name="professional_unit_2" />
+            </key>
+            <one-to-many class="Professional" />
+        </set>
+        
+        <set name="iprofessional_unit_3" cascade="none" lazy="true">
+            <key>
+                <column name="professional_unit_3" />
+            </key>
+            <one-to-many class="Professional" />
+        </set>
+        
+        <set name="iprofessional_unit_4" cascade="none" lazy="true">
+            <key>
+                <column name="professional_unit_4" />
+            </key>
+            <one-to-many class="Professional" />
+        </set>
 
         <!-- categorias -->
 
