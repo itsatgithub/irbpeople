@@ -1368,7 +1368,7 @@ public class UseCase {
 	    // in the DTO with its current state in the DB.
 	    _professional_unit_3IsDefined = true;
 
-	    TOProfessional.setProfessional_unit_2(getUnit(TOProfessional
+	    TOProfessional.setProfessional_unit_3(getUnit(TOProfessional
 		    .getProfessional_unit_3().getUnitcode()));
 	}
 	
