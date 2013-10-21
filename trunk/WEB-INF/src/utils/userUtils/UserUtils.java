@@ -158,5 +158,14 @@ public class UserUtils {
 		// es un usuari no logejat 
 		else return true;
 	}
+	
+	// return true if current user is RRHH
+	public static boolean checkRole(HttpServletRequest request, String rolename) {
+		Usuario u = getCurrentUsuario(request);
+		if(u!=null)
+			return UseCase.checkRole(u, rolename);
+		// es un usuari no logejat 
+		else return true;
+	}
 		
 }
