@@ -1,7 +1,10 @@
+<%@page import="bussineslogic.controlers.UseCase"%>
 <%@ taglib uri="/tags/struts-nested" prefix="nested"%>
 <%@ taglib uri="/tags/jim" prefix="jim"%>
 
 <%@page import="utils.userUtils.UserUtils"%>
+
+<% if(!UserUtils.checkRole(request, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) && !UserUtils.checkRole(request, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)) { %>
 
 <table cellpadding="0" cellspacing="0" width="900">
 	<tr>
@@ -12,7 +15,7 @@
 			<table class="FormTable" cellpadding="0" cellspacing="0">
 	<tr>
 		<td align="center">
-		<% if(UserUtils.isRRHH(request)) { %>
+		<% if(!UserUtils.isRRHH(request)) { %>
 	<jsp:include
 		page="/pages/common/lists/BOAdderStart_.jsp" flush="true">
 		<jsp:param name="BOAdderName" value="personal_comments" />
@@ -69,3 +72,4 @@
 		</td>
 	</tr>
 </table>
+<%} %>

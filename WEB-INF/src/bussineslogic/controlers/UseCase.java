@@ -129,6 +129,7 @@ public class UseCase {
     public final static String BASIC_ROLE_NAME = "basic";
     public final static String HUMAN_RESOURCES_ROLE_NAME = "irbpeople_rw";
     public final static String IRBPEOPLE_GRANT_ROLE_NAME = "irbpeople_grant";
+    public final static String IRBPEOPLE_INNOVATION_ROLE_NAME = "irbpeople_innovation";
     public final static String SUPERVISOR_ROLE_NAME = "supervisor";
     public final static String GUEST_ROLE_NAME = "guest";
 
@@ -13566,6 +13567,9 @@ public class UseCase {
 	return (user.getRoles().contains(getRole(ADMINISTRATOR_ROLE_NAME)));
     }
 
+    
+    
+    
     /**
      * Tests if a user is an human resorces.
      * 
@@ -13574,10 +13578,35 @@ public class UseCase {
      * @return returns true if the user is an administrator
      */
     public static boolean isHHRR(Usuario user) {
-	return (user.getRoles().contains(getRole(HUMAN_RESOURCES_ROLE_NAME)) || user
-		.getRoles().contains(getRole(IRBPEOPLE_GRANT_ROLE_NAME)));
+	return (checkRole(user, HUMAN_RESOURCES_ROLE_NAME) || isIRBPeopleGrant(user) || isIRBInnovation(user));
+    }
+    
+    /**
+     * Tests if a user is IRB People Grant.
+     * 
+     * @param user
+     *            the user to be tested
+     * @return returns true if the user is an administrator
+     */
+    public static boolean isIRBPeopleGrant(Usuario user) {
+    	return checkRole(user, IRBPEOPLE_GRANT_ROLE_NAME);    	
+    }
+    
+    /**
+     * Tests if a user is IRB People Innovation.
+     * 
+     * @param user
+     *            the user to be tested
+     * @return returns true if the user is an administrator
+     */
+    public static boolean isIRBInnovation(Usuario user) {
+    	return checkRole(user, IRBPEOPLE_INNOVATION_ROLE_NAME);    	
     }
 
+    public static boolean checkRole(Usuario user, String role){
+    	return user.getRoles().contains(getRole(role));
+    }
+    
     // private static boolean isSupervisor(Usuario user) {
     // return (user.getRoles().contains(getRole(SUPERVISOR_ROLE_NAME)));
     // }
