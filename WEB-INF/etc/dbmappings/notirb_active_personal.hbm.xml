@@ -40,6 +40,8 @@
 	<column name="ss_number" length="100" />
 </property><property name="bank_account" type="string">
 	<column name="bank_account" length="100" />
+</property><property name="bic" type="string">
+	<column name="bic" length="20" />
 </property><property name="research_project" type="string">
 	<column name="research_project" length="100" />
 </property><property name="sponsoring_agency" type="string">

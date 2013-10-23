@@ -62,7 +62,10 @@
                     <caption language="en">Ss number</caption>
                 </field>
                 <field name="personal.bank_account" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Bank account</caption>
+                    <caption language="en">IBAN</caption>
+                </field>
+                <field name="personal.BIC" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">BIC</caption>
                 </field>
                 <field name="personal.research_project" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Research project</caption>
@@ -161,7 +164,10 @@
                     <caption language="ct">NASS</caption>
                 </field>
                 <field name="personal.bank_account" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="ct">Compte bancari</caption>
+                    <caption language="ct">IBAN</caption>
+                </field>
+                <field name="personal.bic" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">BIC</caption>
                 </field>
                 <field name="personal.research_project" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="ct">Projecte de recerca</caption>
@@ -260,7 +266,10 @@
                     <caption language="es">NASS</caption>
                 </field>
                 <field name="personal.bank_account" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">Cuenta bancaria</caption>
+                    <caption language="es">IBAN</caption>
+                </field>
+                <field name="personal.bic" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="es">BIC</caption>
                 </field>
                 <field name="personal.research_project" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="es">Proyecto de investigación</caption>

@@ -10901,6 +10901,8 @@ public class UseCase {
 		    .getUsername().trim() : null);
 
 	    personal.setBank_account(TOPersonal.getBank_account());
+	    
+	    personal.setBic(TOPersonal.getBic());
 
 	    personal.setResearch_project(TOPersonal.getResearch_project());
 
@@ -11365,6 +11367,8 @@ public class UseCase {
 	    }
 
 	    personal.setBank_account(TOPersonal.getBank_account());
+	    
+	    personal.setBic(TOPersonal.getBic());
 
 	    personal.setResearch_project(TOPersonal.getResearch_project());
 
