@@ -5,6 +5,7 @@
     <group name="oUserSys" />
     <group name="oType_of_benefitSys" />
     <group name="oType_of_institutionSys" />
+    <group name="oType_of_studySys" />
     <group name="oPersonalSys" />
     <group name="oUnitSys" />
     <group name="oCountrySys" />

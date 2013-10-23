@@ -42,6 +42,7 @@ String phone2;
 String ice_phone;
 String ss_number;
 String bank_account;
+String bic;
 String research_project;
 String sponsoring_agency;
 String holding_institution;
@@ -347,6 +348,20 @@ public String getBank_account(){
 */
 public void setBank_account(String bank_account){
 	this.bank_account=bank_account;
+}
+
+/**
+ * @return the bic
+ */
+public String getBic(){
+	return bic;
+}
+
+/**
+* @param bic the bic to set.
+*/
+public void setBic(String bic){
+	this.bic=bic;
 }
 
 /**

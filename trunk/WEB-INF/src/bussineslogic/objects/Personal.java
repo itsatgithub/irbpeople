@@ -55,6 +55,8 @@ public class Personal implements Persistent {
 	String ss_number;
 
 	String bank_account;
+	
+	String bic;
 
 	String research_project;
 
@@ -439,6 +441,21 @@ public class Personal implements Persistent {
 		this.bank_account = bank_account;
 	}
 
+	/**
+	 * @return the bic
+	 */
+	public String getBic(){
+		return bic;
+	}
+
+	/**
+	* @param bic the bic to set.
+	*/
+	public void setBic(String bic){
+		this.bic=bic;
+	}
+
+	
 	/**
 	 * @return the research_project
 	 */

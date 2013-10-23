@@ -249,6 +249,10 @@
     <field name="descritption" type="text" isInDescriptor="true" />
     <asociations />
   </object>
+  <object name="type_of_study">
+    <field name="descritption" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
   <object name="unit">
     <field name="description" type="text" isInDescriptor="true" />
     <asociations>

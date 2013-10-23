@@ -277,6 +277,12 @@
 										<nested-jim:TagOptionsCollection name="_selec_category"	label="_descripcion" value="categorycode" />
 									</nested-jim:TagSelect>
 								</td>
+								<td class="FormFieldLeft">
+									<jim:message key="bic" />
+								</td>
+								<td class="FormFieldRight">	
+									<nested:text property="bic" maxlength="20" tabindex="29" size="20" onchange="this.form.elements['tainted'].value=true"/>	
+								</td>
 							</tr>
 							<tr>
 								<td class="FormSeparator"></td>
@@ -328,7 +334,7 @@
 									<td class="FormFieldLeft"><jim:message key="observations" />
 									</td>
 									<td class="FormFieldRight"><nested:text
-										property="observations" maxlength="100" tabindex="29"/></td>
+										property="observations" maxlength="100" tabindex="30"/></td>
 									<td><input type="submit"
 										value="<jim:message key="BOAdderButton"/>"
 										onclick="submitAddToBOAdderButton(this.form,'personal_child'); return false;" />

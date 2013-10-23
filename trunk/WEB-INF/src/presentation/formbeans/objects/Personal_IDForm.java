@@ -38,6 +38,8 @@ public class Personal_IDForm extends ValidatorFormAndAction {
 	private String ss_number = null;
 
 	private String bank_account = null;
+	
+	private String bic = null;
 
 	private String research_project = null;
 
@@ -200,6 +202,14 @@ public class Personal_IDForm extends ValidatorFormAndAction {
 
 	public void setBank_account(String bank_account) {
 		this.bank_account = bank_account;
+	}
+	
+	public String getBic() {
+		return bic;
+	}
+	
+	public void setBic(String bic) {
+		this.bic = bic;
 	}
 
 	public String getResearch_project() {

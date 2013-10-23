@@ -450,6 +450,12 @@
 	<nested:write property="marital_status"/>
 	
 </td>
+<td class="FormFieldLeft">
+<jim:message key="bic" />
+</td>
+<td class="FormFieldRight">	
+	<nested:write property="bic"/>	
+</td>
 </tr>
 <tr>
 	<td class="FormSeparator"></td>

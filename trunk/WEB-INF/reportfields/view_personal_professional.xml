@@ -51,7 +51,10 @@
                     <caption >Employee: SS number</caption>
                 </field>
                 <field name="bank_account" visible="true" type-of-field="text">
-                    <caption >Employee: Bank account</caption>
+                    <caption >Employee: IBAN</caption>
+                </field>
+                <field name="bic" visible="true" type-of-field="text">
+                    <caption >Employee: BIC</caption>
                 </field>
                 <field name="research_project" visible="true" type-of-field="text">
                     <caption >Personal: Research project</caption>
@@ -302,7 +305,10 @@
                     <caption >Employee: SS number</caption>
                 </field>
                 <field name="bank_account" visible="true" type-of-field="text">
-                    <caption >Employee: Bank account</caption>
+                    <caption >Employee: IBAN</caption>
+                </field>
+                <field name="bic" visible="true" type-of-field="text">
+                    <caption >Employee: BIC</caption>
                 </field>
                 <field name="research_project" visible="true" type-of-field="text">
                     <caption >Personal: Research project</caption>
@@ -553,7 +559,10 @@
                     <caption >Employee: SS number</caption>
                 </field>
                 <field name="bank_account" visible="true" type-of-field="text">
-                    <caption >Employee: Bank account</caption>
+                    <caption >Employee: IBAN</caption>
+                </field>
+                <field name="bic" visible="true" type-of-field="text">
+                    <caption >Employee: BIC</caption>
                 </field>
                 <field name="research_project" visible="true" type-of-field="text">
                     <caption >Personal: Research project</caption>

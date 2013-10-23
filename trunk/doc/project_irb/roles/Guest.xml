@@ -16,6 +16,7 @@
     <action-ref action="appHome" group="other" zone="group1" action-ref="viewlist_auditmessage" group-ref="oAuditmessageSys" />
     <action-ref action="appHome" group="other" zone="group3" action-ref="manage_unit" group-ref="oUnitSys" />
     <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_institution" group-ref="oType_of_institutionSys" />
+    <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_study" group-ref="oType_of_studySys" />
     <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_holidays" group-ref="oType_of_holidaysSys" />
     <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_grant" group-ref="oType_of_grantSys" />
     <action-ref action="appHome" group="other" zone="group3" action-ref="manage_type_of_education" group-ref="oType_of_educationSys" />
