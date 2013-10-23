@@ -166,9 +166,16 @@ function submitDeleteNoneRowAction(form,boAdderName,name,value){
 	Vector visibleNames = lco.getVisibleNames();
 	Vector visibleLabels = lco.getVisibleLabels(UserUtils.getCurrentLocale(request).getLanguage());	
 	Vector visibleSizes = lco.getVisibleAtts("size");
-	Vector typeOfFields= lco.getVisibleTypeNames();
-
 	
+	Vector typeOfFields= lco.getVisibleTypeNames();
+	String showOptionalFieldsString = (String)request.getParameter("showOptionalFields");
+	String optionalFields = (String)request.getParameter("optionalFields");
+
+	boolean showOptionalFields = (showOptionalFieldsString==null || showOptionalFieldsString.equals("true"));
+	List<String> optionalFieldsList = null;
+	if(optionalFields!=null){
+		optionalFieldsList = Arrays.asList(optionalFields.split(","));
+	}
 	%>
 	
 	<table cellpadding="0" cellspacing="0">
@@ -193,8 +200,12 @@ function submitDeleteNoneRowAction(form,boAdderName,name,value){
 	%>
 		<td width=5px ><img src="<%=JspUtils.getProjectPath(request)%>/images/gui/columns-left.gif"></td>
 	<%
-	for (int i = 0; i < visibleNames.size(); i++) {		
-		%>	<td class="ucheader" width="<%=(Integer.parseInt( (String)visibleSizes.get(i)) * 10)%>" 
+	for (int i = 0; i < visibleNames.size(); i++) {
+				
+		if(!showOptionalFields && optionalFieldsList.contains(visibleNames.get(i))){
+			continue;
+		}
+		%>	<td class="ucheader" width="<%=(Integer.parseInt( (String)visibleSizes.get(i)) * 10)%>"		
 			<%
 					if(i== 0)
 					{
@@ -363,7 +374,11 @@ if(am != null)
 		<td style="border-left:1px solid #CCCCCC" bgcolor="<%=rowColor%>" width=4px><img src="<%=JspUtils.getProjectPath(request)%>/images/gui/transparent.gif" /></td>
 		<%
 		// Pintar todos los atributos visibles
-		for(int i=0;i<visibleNames.size();i++) {				
+		for(int i=0;i<visibleNames.size();i++) {
+			if(!showOptionalFields && optionalFieldsList.contains(visibleNames.get(i))){
+				continue;
+			}
+			
 	        String css_class = i == 0 ? "listColumns0 bgcolor=\""+rowColor+"\"" : "listColumns bgcolor=\""+rowColor+"\"";
 			if(typeOfFields.get(i).equals("input") && isReadOnly.equals("false")){
 				

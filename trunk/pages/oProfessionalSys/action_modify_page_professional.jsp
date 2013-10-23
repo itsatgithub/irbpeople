@@ -5,6 +5,8 @@
 <%@ taglib uri="/tags/jim" prefix="jim"%>
 <%@ taglib uri="/tags/nested-jim" prefix="nested-jim"%>
 <%@page import="utils.jsp.JspUtils"%>
+<%@page import="bussineslogic.controlers.UseCase"%>
+<%@page import="utils.userUtils.UserUtils"%>
 
 <logic:notPresent name="org.apache.struts.action.MESSAGE" scope="application">
 	<font color="red">
@@ -121,6 +123,7 @@
 	<td class="BlankSeparator"></td>
 </tr>
 <tr>
+<% if(!UserUtils.checkRole(request, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) && !UserUtils.checkRole(request, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)) { %>
 	
 <td class="FormFieldLeft">
 	
@@ -133,6 +136,7 @@
 	
 </td>
 </tr>
+<% } %>
 <tr>
 	<td class="FormSeparator"></td>
 	<td class="BlankSeparator"></td>

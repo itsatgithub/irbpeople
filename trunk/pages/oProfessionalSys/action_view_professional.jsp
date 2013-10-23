@@ -6,6 +6,9 @@
 <%@ taglib uri="/tags/nested-jim" prefix="nested-jim"%>
 <%@page import="utils.jsp.JspUtils"%>
 
+<%@page import="bussineslogic.controlers.UseCase"%>
+<%@page import="utils.userUtils.UserUtils"%>
+
 <logic:notPresent name="org.apache.struts.action.MESSAGE" scope="application">
 	<font color="red">
 		ERROR: Application resources not loaded -- check servlet container logs for error messages. 
@@ -77,6 +80,7 @@
 	<td class="FormSeparator"></td>
 	<td class="BlankSeparator"></td>
 </tr>
+<% if(!UserUtils.checkRole(request, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) && !UserUtils.checkRole(request, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)) { %>
 <tr>
 	
 <td class="FormFieldLeft">
@@ -89,6 +93,7 @@
 	
 </td>
 </tr>
+<% } %>
 <tr>
 	<td class="FormSeparator"></td>
 	<td class="BlankSeparator"></td>

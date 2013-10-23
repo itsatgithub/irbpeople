@@ -483,6 +483,18 @@
     <form-bean name="oType_of_institutionSys__action_new_new_page_type_of_institution_Form" type="presentation.formbeans.oType_of_institutionSys.Action_new_new_page_type_of_institution_Form" />
     <form-bean name="oType_of_institutionSys__action_new_page_type_of_institution_Form" type="presentation.formbeans.oType_of_institutionSys.Action_new_page_type_of_institution_Form" />
     <form-bean name="oType_of_institutionSys__action_view_type_of_institution_Form" type="presentation.formbeans.oType_of_institutionSys.Action_view_type_of_institution_Form" />
+    <form-bean name="oType_of_studySys__action_cancel_delete_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_cancel_delete_type_of_study_Form" />
+    <form-bean name="oType_of_studySys__action_cancel_modify_modify_page_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_cancel_modify_modify_page_type_of_study_Form" />
+    <form-bean name="oType_of_studySys__action_cancel_new_new_page_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_cancel_new_new_page_type_of_study_Form" />
+    <form-bean name="oType_of_studySys__action_cancel_view_view_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_cancel_view_view_type_of_study_Form" />
+    <form-bean name="oType_of_studySys__action_delete_delete_page_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_delete_delete_page_type_of_study_Form" />
+    <form-bean name="oType_of_studySys__action_delete_page_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_delete_page_type_of_study_Form" />
+    <form-bean name="oType_of_studySys__action_manage_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_manage_type_of_study_Form" />
+    <form-bean name="oType_of_studySys__action_modify_modify_page_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_modify_modify_page_type_of_study_Form" />
+    <form-bean name="oType_of_studySys__action_modify_page_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_modify_page_type_of_study_Form" />
+    <form-bean name="oType_of_studySys__action_new_new_page_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_new_new_page_type_of_study_Form" />
+    <form-bean name="oType_of_studySys__action_new_page_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_new_page_type_of_study_Form" />
+    <form-bean name="oType_of_studySys__action_view_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_view_type_of_study_Form" />
     <form-bean name="oUnitSys__action_cancel_delete_unit_Form" type="presentation.formbeans.oUnitSys.Action_cancel_delete_unit_Form" />
     <form-bean name="oUnitSys__action_cancel_modify_modify_page_unit_Form" type="presentation.formbeans.oUnitSys.Action_cancel_modify_modify_page_unit_Form" />
     <form-bean name="oUnitSys__action_cancel_new_new_page_unit_Form" type="presentation.formbeans.oUnitSys.Action_cancel_new_new_page_unit_Form" />
@@ -588,6 +600,7 @@
     <form-bean name="type_of_grant_Form" type="presentation.formbeans.objects.Type_of_grant_Form" />
     <form-bean name="type_of_holidays_Form" type="presentation.formbeans.objects.Type_of_holidays_Form" />
     <form-bean name="type_of_institution_Form" type="presentation.formbeans.objects.Type_of_institution_Form" />
+    <form-bean name="type_of_study_Form" type="presentation.formbeans.objects.Type_of_study_Form" />
     <form-bean name="unit_Form" type="presentation.formbeans.objects.Unit_Form" />
     <form-bean name="usuarioContainerForm" type="presentation.formbeans.user.UsuarioContainerForm" />
     <form-bean name="usuarioForm" type="presentation.formbeans.objects.UsuarioForm" />
@@ -1986,6 +1999,37 @@
     </action>
     <action name="oType_of_institutionSys__action_modify_page_type_of_institution_Form" path="/oType_of_institutionSys/popUp_action_modify_page_type_of_institution" scope="request" type="presentation.actions.oType_of_institutionSys.Action_modify_page_type_of_institution" unknown="false" validate="true">
       <forward contextRelative="false" name="success" path="oType_of_institutionSys.popUp_action_modify_page_type_of_institution" redirect="false" />
+    </action>
+    <action path="/oType_of_studySys/action_cancel_delete_type_of_study" type="presentation.actions.oType_of_studySys.Action_cancel_delete_type_of_study" unknown="false" validate="true" />
+    <action path="/oType_of_studySys/action_cancel_modify_modify_page_type_of_study" type="presentation.actions.oType_of_studySys.Action_cancel_modify_modify_page_type_of_study" unknown="false" validate="true" />
+    <action path="/oType_of_studySys/action_cancel_new_new_page_type_of_study" type="presentation.actions.oType_of_studySys.Action_cancel_new_new_page_type_of_study" unknown="false" validate="true" />
+    <action path="/oType_of_studySys/action_cancel_view_view_type_of_study" type="presentation.actions.oType_of_studySys.Action_cancel_view_view_type_of_study" unknown="false" validate="true" />
+    <action name="oType_of_studySys__action_delete_delete_page_type_of_study_Form" path="/oType_of_studySys/action_delete_delete_page_type_of_study" scope="request" type="presentation.actions.oType_of_studySys.Action_delete_delete_page_type_of_study" unknown="false" validate="true" />
+    <action name="oType_of_studySys__action_delete_page_type_of_study_Form" path="/oType_of_studySys/action_delete_page_type_of_study" scope="request" type="presentation.actions.oType_of_studySys.Action_delete_page_type_of_study" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oType_of_studySys.action_delete_page_type_of_study" redirect="false" />
+    </action>
+    <action name="oType_of_studySys__action_manage_type_of_study_Form" path="/oType_of_studySys/action_manage_type_of_study" scope="request" type="presentation.actions.oType_of_studySys.Action_manage_type_of_study" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oType_of_studySys.action_manage_type_of_study" redirect="false" />
+    </action>
+    <action name="oType_of_studySys__action_modify_modify_page_type_of_study_Form" path="/oType_of_studySys/action_modify_modify_page_type_of_study" scope="request" type="presentation.actions.oType_of_studySys.Action_modify_modify_page_type_of_study" unknown="false" validate="true" />
+    <action name="oType_of_studySys__action_modify_page_type_of_study_Form" path="/oType_of_studySys/action_modify_page_type_of_study" scope="request" type="presentation.actions.oType_of_studySys.Action_modify_page_type_of_study" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oType_of_studySys.action_modify_page_type_of_study" redirect="false" />
+    </action>
+    <action name="oType_of_studySys__action_new_new_page_type_of_study_Form" path="/oType_of_studySys/action_new_new_page_type_of_study" scope="request" type="presentation.actions.oType_of_studySys.Action_new_new_page_type_of_study" unknown="false" validate="true" />
+    <action name="oType_of_studySys__action_new_page_type_of_study_Form" path="/oType_of_studySys/action_new_page_type_of_study" scope="request" type="presentation.actions.oType_of_studySys.Action_new_page_type_of_study" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oType_of_studySys.action_new_page_type_of_study" redirect="false" />
+    </action>
+    <action name="oType_of_studySys__action_new_page_type_of_study_Form" path="/oType_of_studySys/popUp_action_new_page_type_of_study" scope="request" type="presentation.actions.oType_of_studySys.Action_new_page_type_of_study" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oType_of_studySys.popUp_action_new_page_type_of_study" redirect="false" />
+    </action>    
+    <action name="oType_of_studySys__action_view_type_of_study_Form" path="/oType_of_studySys/action_view_type_of_study" scope="request" type="presentation.actions.oType_of_studySys.Action_view_type_of_study" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oType_of_studySys.action_view_type_of_study" redirect="false" />
+    </action>
+    <action name="oType_of_studySys__action_delete_page_type_of_study_Form" path="/oType_of_studySys/popUp_action_delete_page_type_of_study" scope="request" type="presentation.actions.oType_of_studySys.Action_delete_page_type_of_study" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oType_of_studySys.popUp_action_delete_page_type_of_study" redirect="false" />
+    </action>
+    <action name="oType_of_studySys__action_modify_page_type_of_study_Form" path="/oType_of_studySys/popUp_action_modify_page_type_of_study" scope="request" type="presentation.actions.oType_of_studySys.Action_modify_page_type_of_study" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oType_of_studySys.popUp_action_modify_page_type_of_study" redirect="false" />
     </action>
     <action path="/oUnitSys/action_cancel_delete_unit" type="presentation.actions.oUnitSys.Action_cancel_delete_unit" unknown="false" validate="true" />
     <action path="/oUnitSys/action_cancel_modify_modify_page_unit" type="presentation.actions.oUnitSys.Action_cancel_modify_modify_page_unit" unknown="false" validate="true" />
