@@ -162,10 +162,15 @@ public class UserUtils {
 	// return true if current user is RRHH
 	public static boolean checkRole(HttpServletRequest request, String rolename) {
 		Usuario u = getCurrentUsuario(request);
-		if(u!=null)
-			return UseCase.checkRole(u, rolename);
-		// es un usuari no logejat 
-		else return true;
+		return checkRole(u, rolename);
 	}
+	
+	// return true if current user is RRHH
+		public static boolean checkRole(Usuario u, String rolename) {
+			if(u!=null)
+				return UseCase.checkRole(u, rolename);
+			// es un usuari no logejat 
+			else return true;
+		}
 		
 }

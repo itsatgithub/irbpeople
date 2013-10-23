@@ -43,6 +43,7 @@ import utils.filter.ListConfigurator;
 import utils.filter.ListConfigurator.CompareData;
 import utils.hibernate.HibernateUtil;
 import utils.listFilter.ViewListConfiguration;
+import utils.userUtils.UserUtils;
 import bussineslogic.excepciones.HolidaysException;
 import bussineslogic.excepciones.InternalException;
 import bussineslogic.excepciones.NoPermisosException;
@@ -96,6 +97,7 @@ import bussineslogic.objects.Type_of_education;
 import bussineslogic.objects.Type_of_grant;
 import bussineslogic.objects.Type_of_holidays;
 import bussineslogic.objects.Type_of_institution;
+import bussineslogic.objects.Type_of_study;
 import bussineslogic.objects.Unit;
 import bussineslogic.objects.Usuario;
 import bussineslogic.objects.Views;
@@ -1429,7 +1431,9 @@ public class UseCase {
 
 	professional.setStart_date(TOProfessional.getStart_date());
 
-	professional.setEnd_date(TOProfessional.getEnd_date());
+	if(!UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) && !UserUtils.checkRole(user, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)) {
+		professional.setEnd_date(TOProfessional.getEnd_date());
+	}
 
 	Professional currentPro = null;
 
@@ -2131,7 +2135,9 @@ public class UseCase {
 
 	professional.setStart_date(TOProfessional.getStart_date());
 
-	professional.setEnd_date(TOProfessional.getEnd_date());
+	if(!UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) && !UserUtils.checkRole(user, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)) {
+		professional.setEnd_date(TOProfessional.getEnd_date());
+	}
 
 	professional.setEmail(TOProfessional.getEmail());
 
@@ -7667,6 +7673,218 @@ public class UseCase {
 	return pair;
     }
 
+    
+    
+    
+    
+    
+    /**
+     * This method creates a Type_of_study.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOType_of_study
+     *            Type_of_study data transfer object (DTO) with the values
+     *            of the new instance.
+     * @return the new type_of_study created with this Use Case
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Type_of_study CreateType_of_study(Usuario user,
+	    Type_of_study TOType_of_study)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We create the new instance * */
+	Type_of_study type_of_study = new Type_of_study();
+
+	/**
+	 * 3. We set all the simple attributes (no associations) to the new
+	 * instance *
+	 */
+
+	type_of_study.setDescription(TOType_of_study
+		.getDescription());
+
+	/** 4. We set the code to the new instance * */
+	try {
+	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
+
+	    type_of_study.setType_of_studycode(im
+		    .getId(TOType_of_study));
+	} catch (identifyException ie) {
+
+	    log.error(
+		    "Error en asignaci�n de nuevo id en CreateType_of_study",
+		    ie);
+	    throw new Error(ie.getMessage());
+	}
+
+	/** 5. We save the new instance to the DB* */
+	HibernateUtil.getSession().save(type_of_study);
+
+	/** 6. We create an Audit message * */
+	CreateCreationAuditmessage(user, type_of_study);
+
+	/** 7. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return type_of_study;
+    }
+
+    /**
+     * This method modifies a type_of_study.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOType_of_study
+     *            Type_of_study data transfer object (DTO) with the values
+     *            of the modified instance. The code of this attribute indicates
+     *            which type_of_study will be modified.
+     * @return the modified type_of_study
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Type_of_study UpdateType_of_study(Usuario user,
+	    Type_of_study TOType_of_study)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain form the DB the instance to modify * */
+	Type_of_study type_of_study = getType_of_study(TOType_of_study
+		.getType_of_studycode());
+	;
+
+	/**
+	 * 3. We set all the simple attributes (no associations) to the instance
+	 * *
+	 */
+
+	type_of_study.setDescription(TOType_of_study
+		.getDescription());
+
+	/**
+	 * 4. We set the DTO version to the modified object and we update it
+	 * with the new values in the DB. We evict and update the instance to
+	 * prevent concurrent modification *
+	 */
+	HibernateUtil.getSession().evict(type_of_study);
+	type_of_study.setVersion(TOType_of_study.getVersion());
+	HibernateUtil.getSession().update(type_of_study);
+
+	/** 5. We create an Audit message * */
+	CreateModificationAuditmessage(user, type_of_study);
+
+	/** 6. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return type_of_study;
+    }
+
+    /**
+     * This method removes a type_of_study.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param type_of_studycode
+     *            Code of the type_of_study to be removed
+     * @throws NoPermisosException
+     */
+    public static void RemoveType_of_study(Usuario user,
+	    String type_of_studycode) throws NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain the object to delete form the DB. * */
+	Type_of_study type_of_study = getType_of_study(type_of_studycode);
+
+	/** 3. We mark it as deleted. * */
+	type_of_study.setDeleted(Boolean.TRUE);
+
+	/** 4. We create an Audit message * */
+	CreateRemovealAuditmessage(user, type_of_study);
+
+	/** 5. We commit the DB transaction. * */
+	HibernateUtil.commitTransaction();
+    }
+
+    /**
+     * This method obtains one instance of type_of_study given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param type_of_studycode
+     *            Code of the type_of_study to be obtained
+     * @return Type_of_study with the given code.
+     */
+    public static Type_of_study ObtainType_of_study(Usuario user,
+	    String type_of_studycode) {
+
+	/**
+	 * 1. We obtain the object from the DB using the private getter and we
+	 * return it. *
+	 */
+
+	Type_of_study type_of_study = getType_of_study(type_of_studycode);
+	return type_of_study;
+    }
+
+    /**
+     * This method obtains all instances of Type_of_study, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Type_of_study>> ObtainAllType_of_study(
+	    Usuario user, ListConfigurator configurator) {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Type_of_study.class);
+
+	// we only want to obtain the non deleted objects
+	crit.add(Expression.eq("deleted", Boolean.FALSE));
+	crit.setCacheable(true);
+
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	List<Type_of_study> type_of_study = (List<Type_of_study>) crit
+		.list();
+
+	Pair<Integer, List<Type_of_study>> pair = new Pair<Integer, List<Type_of_study>>(
+		count, type_of_study);
+
+	return pair;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * This method creates a Holiday.
      * 
@@ -13128,6 +13346,22 @@ public class UseCase {
 		.getSession().get(Type_of_institution.class,
 			type_of_institutioncode);
 	return type_of_institution;
+    }
+    
+    /**
+     * Returns the Type_of_study with the given key. This method is used
+     * internally to get objects form the database.
+     * 
+     * @param type_of_studycode
+     *            code of the Type_of_study
+     * @return Type_of_study with the given code
+     */
+    protected static Type_of_study getType_of_study(
+	    String type_of_studycode) {
+	Type_of_study type_of_study = (Type_of_study) HibernateUtil
+		.getSession().get(Type_of_study.class,
+			type_of_studycode);
+	return type_of_study;
     }
 
     /**

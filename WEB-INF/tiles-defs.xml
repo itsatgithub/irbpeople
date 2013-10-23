@@ -745,6 +745,30 @@
   <definition name="oType_of_institutionSys.popUp_action_new_page_type_of_institution" extends="popup_template">
     <put name="center" value="/pages/oType_of_institutionSys/action_new_page_type_of_institution.jsp" />
   </definition>
+  <definition name="oType_of_studySys.action_delete_page_type_of_study" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_studySys/action_delete_page_type_of_study.jsp" />
+  </definition>
+  <definition name="oType_of_studySys.action_modify_page_type_of_study" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_studySys/action_modify_page_type_of_study.jsp" />
+  </definition>
+  <definition name="oType_of_studySys.action_view_type_of_study" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_studySys/action_view_type_of_study.jsp" />
+  </definition>
+  <definition name="oType_of_studySys.action_manage_type_of_study" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_studySys/action_manage_type_of_study.jsp" />
+  </definition>
+  <definition name="oType_of_studySys.popUp_action_delete_page_type_of_study" extends="popup_template">
+    <put name="center" value="/pages/oType_of_studySys/action_delete_page_type_of_study.jsp" />
+  </definition>
+  <definition name="oType_of_studySys.popUp_action_modify_page_type_of_study" extends="popup_template">
+    <put name="center" value="/pages/oType_of_studySys/action_modify_page_type_of_study.jsp" />
+  </definition>
+  <definition name="oType_of_studySys.action_new_page_type_of_study" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oType_of_studySys/action_new_page_type_of_study.jsp" />
+  </definition>
+  <definition name="oType_of_studySys.popUp_action_new_page_type_of_study" extends="popup_template">
+    <put name="center" value="/pages/oType_of_studySys/action_new_page_type_of_study.jsp" />
+  </definition>
   <definition name="oType_of_benefitSys.action_view_type_of_benefit" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oType_of_benefitSys/action_view_type_of_benefit.jsp" />
   </definition>

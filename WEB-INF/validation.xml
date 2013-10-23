@@ -441,6 +441,16 @@
 	</var>
 </field>
 </form>
+<form name="type_of_study_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="type_of_study.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+</form>
 <form name="holiday_Form">
 	
 <field property="start_date" depends="localeDate">
@@ -1927,6 +1937,54 @@
 
 
 </form>
+
+<form name="oType_of_studySys__action_delete_delete_page_type_of_study_Form">
+	
+<field property="type_of_study_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_study_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oType_of_studySys__action_modify_modify_page_type_of_study_Form">
+	
+<field property="type_of_study_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_study_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_study_Form.description" depends="required">
+	<arg key="type_of_study.description" />
+</field>
+
+
+</form>
+<form name="oType_of_studySys__action_new_new_page_type_of_study_Form">
+	
+<field property="type_of_study_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>type_of_study_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="type_of_study_Form.description" depends="required">
+	<arg key="type_of_study.description" />
+</field>
+
+
+</form>
+
 <form name="oType_of_benefitSys__action_delete_delete_page_type_of_benefit_Form">
 	
 <field property="type_of_benefit_Form" depends="nestedBean">

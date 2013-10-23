@@ -168,6 +168,10 @@
 		<pattern>{n}</pattern>
 		<num>0000000000001</num>
 	</code>
+	<code beanName="type_of_study">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
 	<code beanName="type_of_compensation">
 		<pattern>{n}</pattern>
 		<num>0000000000001</num>

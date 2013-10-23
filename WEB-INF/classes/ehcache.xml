@@ -242,6 +242,12 @@
         eternal="false"
         overflowToDisk="false"
         />
+	
+	<cache name="bussineslogic.objects.type_of_study"
+        maxElementsInMemory="10"
+        eternal="false"
+        overflowToDisk="false"
+        />
 
 	<cache name="bussineslogic.objects.unit"
         maxElementsInMemory="30"

@@ -5,6 +5,7 @@
     <group name="oUserSys" />
     <group name="oType_of_benefitSys" />
     <group name="oType_of_institutionSys" />
+    <group name="oType_of_studySys" />
     <group name="oUnitSys" />
     <group name="oCalendarSys" />
     <group name="oCountrySys" />
@@ -240,6 +241,8 @@
     <action-ref action="action_manage_type_of_education" group="oType_of_educationSys" zone="go" action-ref="action_new_page_type_of_education" group-ref="oType_of_educationSys" />
     <action-ref action="action_manage_type_of_institution" group="oType_of_institutionSys" zone="rowaction0" action-ref="action_delete_page_type_of_institution" group-ref="oType_of_institutionSys" />
     <action-ref action="action_manage_type_of_institution" group="oType_of_institutionSys" zone="go" action-ref="action_new_page_type_of_institution" group-ref="oType_of_institutionSys" />
+    <action-ref action="action_manage_type_of_study" group="oType_of_studySys" zone="rowaction0" action-ref="action_delete_page_type_of_study" group-ref="oType_of_studySys" />
+    <action-ref action="action_manage_type_of_study" group="oType_of_studySys" zone="go" action-ref="action_new_page_type_of_study" group-ref="oType_of_studySys" />
     <action-ref action="action_manage_type_of_contract" group="oType_of_contractSys" zone="rowaction0" action-ref="action_delete_page_type_of_contract" group-ref="oType_of_contractSys" />
     <action-ref action="action_manage_type_of_contract" group="oType_of_contractSys" zone="go" action-ref="action_new_page_type_of_contract" group-ref="oType_of_contractSys" />
     <action-ref action="action_manage_type_of_holidays" group="oType_of_holidaysSys" zone="rowaction0" action-ref="action_delete_page_type_of_holidays" group-ref="oType_of_holidaysSys" />

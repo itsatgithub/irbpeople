@@ -58,6 +58,7 @@ import bussineslogic.objects.Type_of_education;
 import bussineslogic.objects.Type_of_grant;
 import bussineslogic.objects.Type_of_holidays;
 import bussineslogic.objects.Type_of_institution;
+import bussineslogic.objects.Type_of_study;
 import bussineslogic.objects.Unit;
 import bussineslogic.objects.Usuario;
 import bussineslogic.objects.Views;
@@ -1521,6 +1522,66 @@ public class UseCaseFacade {
 		return UseCase.ObtainAllType_of_institution(UseCase.getUsuario(administradorId), configurator);
 	}
 
+	/**
+	 * This method creates a type_of_study.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param type_of_study Type_of_study data transfer object (DTO) with the values of the new instance.
+	 * @return the new type_of_study created with the Use Case
+	 * @throws InternalException
+	 */
+	public static Type_of_study CreateType_of_study(String administradorId, Type_of_study type_of_study) throws InternalException, NoPermisosException {
+		return UseCase.CreateType_of_study(UseCase.getUsuario(administradorId), type_of_study);
+	}
+
+	/**
+	 * This method modifies a type_of_study.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param type_of_study Type_of_study data transfer object (DTO) with the values of the modified instance. The code of this attribute indicates which type_of_study will be modified.
+	 * @return the modified type_of_study
+	 * @throws InternalException
+	 */
+	public static Type_of_study UpdateType_of_study(String administradorId, Type_of_study type_of_study) throws InternalException, NoPermisosException {
+		return UseCase.UpdateType_of_study(UseCase.getUsuario(administradorId), type_of_study);
+	}
+
+	/**
+	 * This method removes a type_of_study.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param type_of_studycode  Code of the type_of_study to be removed
+	 */
+	public static void RemoveType_of_study(String administradorId, String type_of_studycode) throws InternalException, NoPermisosException {
+		UseCase.RemoveType_of_study(UseCase.getUsuario(administradorId), type_of_studycode);
+	}
+
+	/**
+	 * This method obtains one instance of type_of_study given its code.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param type_of_studycode Code of the type_of_study to be obtained
+	 * @return Type_of_study with the given code.
+	 * @throws InternalException
+	 */
+	public static Type_of_study ObtainType_of_study(String administradorId, String type_of_studycode) throws InternalException {
+		return UseCase.ObtainType_of_study(UseCase.getUsuario(administradorId), type_of_studycode);
+	}
+
+	/**
+	 * This method obtains all instances of Type_of_study, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws InternalException
+	 */
+	public static Pair<Integer, List<Type_of_study>> ObtainAllType_of_study(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllType_of_study(UseCase.getUsuario(administradorId), configurator);
+	}
+
+	
+	
 	/**
 	 * This method creates a holiday.
 	 * 

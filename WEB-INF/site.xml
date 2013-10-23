@@ -11005,6 +11005,244 @@
                         </content>
                     </action>
                 </group>
+                <group e="" name="oType_of_studySys" command="oType_of_studySys" nick="oType_of_studySys" type="system" action-number="" st0="SystemObj">
+                    <description>Auto generated group</description>
+                    <caption language="en">type_of_study</caption>
+                    <extends>BaseCommandsProtected</extends>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_delete_type_of_study</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_type_of_study cancel</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_type_of_study cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_delete_page_type_of_study" command="oType_of_studySys" />
+                        <parameter name="zoneaction.oType_of_studySys.delete_page_type_of_study" value="oType_of_studySys.delete_page_type_of_study" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_modify_modify_page_type_of_study</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_type_of_study cancel</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_type_of_study cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_modify_page_type_of_study" command="oType_of_studySys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oType_of_studySys.modify_page_type_of_study" value="oType_of_studySys.modify_page_type_of_study" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_new_new_page_type_of_study</name>
+                        <description />
+                        <title-caption language="en">New new_page_type_of_study cancel</title-caption>
+                        <menuitem-caption language="en">New new_page_type_of_study cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_new_page_type_of_study" command="oType_of_studySys" />
+                        <parameter name="zoneaction.oType_of_studySys.new_page_type_of_study" value="oType_of_studySys.new_page_type_of_study" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_view_view_type_of_study</name>
+                        <description />
+                        <title-caption language="en">View view_type_of_study cancel</title-caption>
+                        <menuitem-caption language="en">View view_type_of_study cancel</menuitem-caption>
+                        <button-caption language="en">Back</button-caption>
+                        <path action="action_" command="oType_of_studySys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oType_of_studySys.view_type_of_study" value="oType_of_studySys.view_type_of_study" />
+                    </action>
+                    <action e="" con="del" obj="type_of_study" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_delete_page_type_of_study</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_type_of_study ok</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_type_of_study ok</menuitem-caption>
+                        <button-caption language="en">Delete</button-caption>
+                        <path action="action_delete_page_type_of_study" command="oType_of_studySys" />
+                        <parameter name="zoneaction.oType_of_studySys.delete_page_type_of_study" value="oType_of_studySys.delete_page_type_of_study" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="del" obj="type_of_study" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_page_type_of_study</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Delete type of study</title-caption>
+                        <menuitem-caption language="en">Delete type of study</menuitem-caption>
+                        <button-caption language="en">Delete type of study</button-caption>
+                        <path action="action_manage_type_of_study" command="oType_of_studySys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oType_of_studySys" action="action_delete_delete_page_type_of_study" />
+                                <action command="oType_of_studySys" action="action_cancel_delete_type_of_study" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="type_of_study" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="viewlist" obj="type_of_study" type="viewlist" st0="" st1="" completed="false">
+                        <name>action_manage_type_of_study</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Type of study</title-caption>
+                        <menuitem-caption language="en">Type of study</menuitem-caption>
+                        <button-caption language="en">Type of study</button-caption>
+                        <path action="action_appHome" command="oType_of_studySys" />
+                        <zones>
+                            <zone name="rowaction0">
+                                <action command="oType_of_studySys" action="action_delete_page_type_of_study">
+                                    <parameter name="isPopUp" />
+                                </action>
+                                <action command="oType_of_studySys" action="action_modify_page_type_of_study">
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="folder" />
+                            <zone name="go">
+                                <action command="oType_of_studySys" action="action_new_page_type_of_study">
+                                    <button-caption language="en">Create Type of study</button-caption>
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="submit" />
+                            <zone name="operation" />
+                            <zone name="folder" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder2" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder3" command="oUnitSys" action="action_manage_unit" />
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <list type="BO" object="type_of_study" selectable="false" multiselectable="false" filter="false" pagination="false" rowactions="true" rowactionszone="rowaction0">
+                                            <field name="description" />
+                                        </list>
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="mod" obj="type_of_study" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_modify_page_type_of_study</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_type_of_study ok</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_type_of_study ok</menuitem-caption>
+                        <button-caption language="en">Save</button-caption>
+                        <path action="action_modify_page_type_of_study" command="oType_of_studySys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oType_of_studySys.modify_page_type_of_study" value="oType_of_studySys.modify_page_type_of_study" />
+                    </action>
+                    <action e="" con="mod" obj="type_of_study" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_page_type_of_study</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Modify type of study</title-caption>
+                        <menuitem-caption language="en">Modify type of study</menuitem-caption>
+                        <button-caption language="en">Modify type of study</button-caption>
+                        <path action="action_manage_type_of_study" command="oType_of_studySys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oType_of_studySys" action="action_modify_modify_page_type_of_study" />
+                                <action command="oType_of_studySys" action="action_cancel_modify_modify_page_type_of_study" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="type_of_study" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="new" obj="type_of_study" type="new" st0="" st1="" completed="false">
+                        <name>action_new_new_page_type_of_study</name>
+                        <description />
+                        <title-caption language="en">New new_page_type_of_study ok</title-caption>
+                        <menuitem-caption language="en">New new_page_type_of_study ok</menuitem-caption>
+                        <button-caption language="en">Ok</button-caption>
+                        <path action="action_new_page_type_of_study" command="oType_of_studySys" />
+                        <parameter name="zoneaction.oType_of_studySys.new_page_type_of_study" value="oType_of_studySys.new_page_type_of_study" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="new" obj="type_of_study" type="new" st0="" st1="" completed="false">
+                        <name>action_new_page_type_of_study</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">New type of study</title-caption>
+                        <menuitem-caption language="en">New type of study</menuitem-caption>
+                        <button-caption language="en">New type of study</button-caption>
+                        <path action="action_manage_type_of_study" command="oType_of_studySys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oType_of_studySys" action="action_new_new_page_type_of_study" />
+                                <action command="oType_of_studySys" action="action_cancel_new_new_page_type_of_study" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="type_of_study" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="vone" obj="type_of_study" type="viewone" st0="" st1="" completed="false">
+                        <name>action_view_type_of_study</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">View type of study</title-caption>
+                        <menuitem-caption language="en">View type of study</menuitem-caption>
+                        <button-caption language="en">View type of study</button-caption>
+                        <path action="action_" command="oType_of_studySys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oType_of_studySys" action="action_cancel_view_view_type_of_study" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="type_of_study" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                </group>
                 <group e="" name="oType_of_institutionSys" command="oType_of_institutionSys" nick="oType_of_institutionSys" type="system" action-number="" st0="SystemObj">
                     <description>Auto generated group</description>
                     <caption language="en">type_of_institution</caption>
@@ -11344,6 +11582,7 @@
                                 <action command="oType_of_grantSys" action="action_manage_type_of_grant" />
                                 <action command="oType_of_holidaysSys" action="action_manage_type_of_holidays" />
                                 <action command="oType_of_institutionSys" action="action_manage_type_of_institution" />
+                                <action command="oType_of_studySys" action="action_manage_type_of_study" />
                                 <action command="oType_of_contractSys" action="action_manage_type_of_contract" />
                                 <action command="oUnitSys" action="action_manage_unit" />
                                 <action command="oWorking_hoursSys" action="action_manage_working_hours" />
@@ -12549,6 +12788,7 @@
                                 <action command="oType_of_educationSys" action="action_manage_type_of_education" />                                
                                 <action command="oType_of_holidaysSys" action="action_manage_type_of_holidays" />
                                 <action command="oType_of_institutionSys" action="action_manage_type_of_institution" />
+                                <action command="oType_of_studySys" action="action_manage_type_of_study" />
                                 <action command="oType_of_contractSys" action="action_manage_type_of_contract" /> 
                                 <action command="oCategorySys" action="action_manage_category">
                                     <button-caption>...</button-caption>

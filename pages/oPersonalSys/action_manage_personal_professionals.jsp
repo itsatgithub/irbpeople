@@ -6,6 +6,7 @@
 <%@ taglib uri="/tags/nested-jim" prefix="nested-jim"%>
 <%@page import="utils.jsp.JspUtils"%>
 <%@page import="utils.userUtils.UserUtils"%>
+<%@page import="bussineslogic.controlers.UseCase"%>
 
 <logic:notPresent name="org.apache.struts.action.MESSAGE" scope="application">
 	<font color="red">
@@ -104,12 +105,15 @@
 			
 <tr><td>
 
-
+<% String showOptionalFields = String.valueOf((!UserUtils.checkRole(request, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) && !UserUtils.checkRole(request, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)));
+System.out.println("ShowOptionalFields: "+showOptionalFields);
+%>
 <jsp:include page="/pages/common/lists/viewlist.jsp" flush="true">
 	<jsp:param name="selectionType" value="ROWACTION"/>
 	<jsp:param name="objectname" value="professional"/>
+	<jsp:param name="showOptionalFields" value="<%=showOptionalFields%>"/>	
+	<jsp:param name="optionalFields" value="end_date"/>	
 	<jsp:param name="objectfield" value="oPersonalSys__action_manage_personal_professionals"/>
-	
 	
 	<jsp:param name="isReadOnly" value="true"/>
 	<jsp:param name="rowActionZoneName" value="rowaction"/>
