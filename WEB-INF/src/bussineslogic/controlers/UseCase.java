@@ -725,6 +725,11 @@ public class UseCase {
 	crit.createCriteria("professional_personal").add(
 		Expression.idEq(personal.getPersonalcode()));
 
+	crit.setFirstResult(0);
+	configurator.setMaxResults(5000);
+	configurator.setOrderBy("start_date");	
+	configurator.setAsc("");
+	
 	// we add the ListConfigurator to the criteria, obtaining the number of
 	// results without the pagination
 	int count = configurator.addCriterions(crit);
@@ -845,6 +850,10 @@ public class UseCase {
 
 	// we add the ListConfigurator to the criteria, obtaining the number of
 	// results without the pagination
+	crit.setFirstResult(0);
+	configurator.setMaxResults(5000);
+	configurator.setOrderBy("start_date");	
+	configurator.setAsc("");	
 	int count = configurator.addCriterions(crit);
 
 	/**
