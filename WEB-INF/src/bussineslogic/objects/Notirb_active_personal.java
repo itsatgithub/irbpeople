@@ -68,6 +68,7 @@ Working_hours working_hours;
 Category category;
 PersonalPhoto photo;
 Set<Grant_concession> igrant_concession_personal=new HashSet<Grant_concession>();
+Set<Academic_info> iacademic_info_personal=new HashSet<Academic_info>();
 Set<Benefits> ibenefits_personal=new HashSet<Benefits>();
 Set<Education> ieducation_personal=new HashSet<Education>();
 Set<Funding_detail> ifunding_detail_personal=new HashSet<Funding_detail>();
@@ -706,6 +707,36 @@ public void addIgrant_concession_personal(Grant_concession igrant_concession_per
 */
 public void removeIgrant_concession_personal(Grant_concession igrant_concession_personal){
 	this.igrant_concession_personal.remove(igrant_concession_personal);
+}
+
+
+/**
+ * @return the iacademic_info_personal
+ */
+public Set<Academic_info> getIacademic_info_personal(){
+	return iacademic_info_personal;
+}
+
+/**
+ * @param igrant_concession_personal the igrant_concession_personal to set.
+ */
+public void setIacademic_info_personal(Set<Academic_info> iacademic_info_personal){
+	this.iacademic_info_personal=iacademic_info_personal;
+}
+/**
+ * Adds a Grant_concession to the igrant_concession_personal set.
+ * @param igrant_concession_personal Grant_concession to be added
+ */
+public void addIacademic_info_personal(Academic_info iacademic_info_personal){
+	this.iacademic_info_personal.add(iacademic_info_personal);
+}
+
+/**
+ * Removes a Grant_concession to the igrant_concession_personal set.
+ * @param igrant_concession_personal Grant_concession to be removed
+ */
+public void removeIacademic_info_personal(Academic_info iacademic_info_personal){
+	this.iacademic_info_personal.remove(iacademic_info_personal);
 }
 
 

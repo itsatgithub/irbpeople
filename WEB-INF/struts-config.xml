@@ -18,6 +18,7 @@
     <form-bean name="gender_Form" type="presentation.formbeans.objects.Gender_Form" />
     <form-bean name="grant_Form" type="presentation.formbeans.objects.Grant_Form" />
     <form-bean name="grant_concession_Form" type="presentation.formbeans.objects.Grant_concession_Form" />
+    <form-bean name="academic_info_Form" type="presentation.formbeans.objects.Academic_info_Form" />
     <form-bean name="holiday_Form" type="presentation.formbeans.objects.Holiday_Form" />
     <form-bean name="location_Form" type="presentation.formbeans.objects.Location_Form" />
     <form-bean name="marital_status_Form" type="presentation.formbeans.objects.Marital_status_Form" />
@@ -186,6 +187,21 @@
     <form-bean name="oGrant_concessionSys__action_new_new_page_grant_concession_Form" type="presentation.formbeans.oGrant_concessionSys.Action_new_new_page_grant_concession_Form" />
     <form-bean name="oGrant_concessionSys__action_view_grant_concession_Form" type="presentation.formbeans.oGrant_concessionSys.Action_view_grant_concession_Form" />
     <form-bean name="oGrant_concessionSys__action_viewlist_grant_concession_Form" type="presentation.formbeans.oGrant_concessionSys.Action_viewlist_grant_concession_Form" />
+    <form-bean name="oAcademic_infoSys__action_add_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_add_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_add_my_own_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_add_my_own_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_add_my_own_academic_info_cancel_new_new_page_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_add_my_own_academic_info_cancel_new_new_page_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_add_my_own_academic_info_new_new_page_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_add_my_own_academic_info_new_new_page_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_cancel_delete_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_cancel_delete_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_cancel_modify_modify_page_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_cancel_modify_modify_page_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_cancel_new_new_page_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_cancel_new_new_page_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_cancel_view_view_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_cancel_view_view_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_delete_delete_page_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_delete_delete_page_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_delete_page_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_delete_page_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_modify_modify_page_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_modify_modify_page_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_modify_page_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_modify_page_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_new_new_page_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_new_new_page_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_view_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_view_academic_info_Form" />
+    <form-bean name="oAcademic_infoSys__action_viewlist_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_viewlist_academic_info_Form" />
     <form-bean name="oHolidaySys__action_add_holiday_Form" type="presentation.formbeans.oHolidaySys.Action_add_holiday_Form" />
     <form-bean name="oHolidaySys__action_cancel_delete_holiday_Form" type="presentation.formbeans.oHolidaySys.Action_cancel_delete_holiday_Form" />
     <form-bean name="oHolidaySys__action_cancel_modify_modify_page_holiday_Form" type="presentation.formbeans.oHolidaySys.Action_cancel_modify_modify_page_holiday_Form" />
@@ -312,6 +328,7 @@
     <form-bean name="oPersonalSys__action_manage_inactive_personal_Form" type="presentation.formbeans.oPersonalSys.Action_manage_inactive_personal_Form" />
     <form-bean name="oPersonalSys__action_manage_my_own_personal_education_Form" type="presentation.formbeans.oPersonalSys.Action_manage_my_own_personal_education_Form" />
     <form-bean name="oPersonalSys__action_manage_my_own_personal_grant_concessions_Form" type="presentation.formbeans.oPersonalSys.Action_manage_my_own_personal_grant_concessions_Form" />
+    <form-bean name="oPersonalSys__action_manage_my_own_personal_academic_info_Form" type="presentation.formbeans.oPersonalSys.Action_manage_my_own_personal_academic_info_Form" />
     <form-bean name="oPersonalSys__action_manage_my_own_personal_work_experience_Form" type="presentation.formbeans.oPersonalSys.Action_manage_my_own_personal_work_experience_Form" />
     <form-bean name="oPersonalSys__action_manage_my_rgroup_in__personal_Form" type="presentation.formbeans.oPersonalSys.Action_manage_my_rgroup_in__personal_Form" />
     <form-bean name="oPersonalSys__action_manage_my_rgroup_personal_funding_details_Form" type="presentation.formbeans.oPersonalSys.Action_manage_my_rgroup_personal_funding_details_Form" />
@@ -324,6 +341,7 @@
     <form-bean name="oPersonalSys__action_manage_personal_education_Form" type="presentation.formbeans.oPersonalSys.Action_manage_personal_education_Form" />
     <form-bean name="oPersonalSys__action_manage_personal_funding_details_Form" type="presentation.formbeans.oPersonalSys.Action_manage_personal_funding_details_Form" />
     <form-bean name="oPersonalSys__action_manage_personal_grant_concessions_Form" type="presentation.formbeans.oPersonalSys.Action_manage_personal_grant_concessions_Form" />
+    <form-bean name="oPersonalSys__action_manage_personal_academic_info_Form" type="presentation.formbeans.oPersonalSys.Action_manage_personal_academic_info_Form" />
     <form-bean name="oPersonalSys__action_manage_personal_holidays_Form" type="presentation.formbeans.oPersonalSys.Action_manage_personal_holidays_Form" />
     <form-bean name="oPersonalSys__action_manage_personal_professionals_Form" type="presentation.formbeans.oPersonalSys.Action_manage_personal_professionals_Form" />
     <form-bean name="oPersonalSys__action_manage_personal_work_experience_Form" type="presentation.formbeans.oPersonalSys.Action_manage_personal_work_experience_Form" />
@@ -1200,6 +1218,57 @@
     <action name="oGrant_concessionSys__action_view_grant_concession_Form" path="/oGrant_concessionSys/popUp_action_view_grant_concession" scope="request" type="presentation.actions.oGrant_concessionSys.Action_view_grant_concession" unknown="false" validate="true">
       <forward contextRelative="false" name="success" path="oGrant_concessionSys.popUp_action_view_grant_concession" redirect="false" />
     </action>
+    <action name="oAcademic_infoSys__action_add_academic_info_Form" path="/oAcademic_infoSys/action_add_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_add_academic_info" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAcademic_infoSys.action_add_academic_info" redirect="false" />
+    </action>
+    <action name="oAcademic_infoSys__action_add_my_own_academic_info_Form" path="/oAcademic_infoSys/action_add_my_own_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_add_my_own_academic_info" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAcademic_infoSys.action_add_my_own_academic_info" redirect="false" />
+    </action>
+    <action path="/oAcademic_infoSys/action_add_my_own_academic_info_cancel_new_new_page_academic_info" type="presentation.actions.oAcademic_infoSys.Action_add_my_own_academic_info_cancel_new_new_page_academic_info" unknown="false" validate="true" />
+    <action name="oAcademic_infoSys__action_add_my_own_academic_info_new_new_page_academic_info_Form" path="/oAcademic_infoSys/action_add_my_own_academic_info_new_new_page_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_add_my_own_academic_info_new_new_page_academic_info" unknown="false" validate="true" />
+    <action path="/oAcademic_infoSys/action_cancel_delete_academic_info" type="presentation.actions.oAcademic_infoSys.Action_cancel_delete_academic_info" unknown="false" validate="true" />
+    <action path="/oAcademic_infoSys/action_cancel_modify_modify_page_academic_info" type="presentation.actions.oAcademic_infoSys.Action_cancel_modify_modify_page_academic_info" unknown="false" validate="true" />
+    <action path="/oAcademic_infoSys/action_cancel_new_new_page_academic_info" type="presentation.actions.oAcademic_infoSys.Action_cancel_new_new_page_academic_info" unknown="false" validate="true" />
+    <action path="/oAcademic_infoSys/action_cancel_view_view_academic_info" type="presentation.actions.oAcademic_infoSys.Action_cancel_view_view_academic_info" unknown="false" validate="true" />
+    <action name="oAcademic_infoSys__action_delete_page_academic_info_Form" path="/oAcademic_infoSys/action_set_current_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_set_current_academic_info" unknown="false" validate="true">
+        <forward contextRelative="false"  name="success" path="/oPersonalSys/action_manage_personal_academic_info.do" redirect="true" />
+    </action>
+    <action name="oAcademic_infoSys__action_delete_delete_page_academic_info_Form" path="/oAcademic_infoSys/action_delete_delete_page_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_delete_delete_page_academic_info" unknown="false" validate="true" />
+    <action name="oAcademic_infoSys__action_delete_page_academic_info_Form" path="/oAcademic_infoSys/action_delete_page_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_delete_page_academic_info" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAcademic_infoSys.action_delete_page_academic_info" redirect="false" />
+    </action>
+    <action name="oAcademic_infoSys__action_modify_modify_page_academic_info_Form" path="/oAcademic_infoSys/action_modify_modify_page_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_modify_modify_page_academic_info" unknown="false" validate="true" />
+    <action name="oAcademic_infoSys__action_modify_page_academic_info_Form" path="/oAcademic_infoSys/action_modify_page_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_modify_page_academic_info" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAcademic_infoSys.action_modify_page_academic_info" redirect="false" />
+    </action>
+    <action name="oAcademic_infoSys__action_new_new_page_academic_info_Form" path="/oAcademic_infoSys/action_new_new_page_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_new_new_page_academic_info" unknown="false" validate="true" />
+    <action name="oAcademic_infoSys__action_view_academic_info_Form" path="/oAcademic_infoSys/action_view_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_view_academic_info" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAcademic_infoSys.action_view_academic_info" redirect="false" />
+    </action>
+    <action name="oAcademic_infoSys__action_viewlist_academic_info_Form" path="/oAcademic_infoSys/action_viewlist_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_viewlist_academic_info" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAcademic_infoSys.action_viewlist_academic_info" redirect="false" />
+    </action>
+    <action name="oAcademic_infoSys__action_add_academic_info_Form" path="/oAcademic_infoSys/popUp_action_add_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_add_academic_info" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAcademic_infoSys.popUp_action_add_academic_info" redirect="false" />
+    </action>
+    <action name="oAcademic_infoSys__action_add_my_own_academic_info_Form" path="/oAcademic_infoSys/popUp_action_add_my_own_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_add_my_own_academic_info" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAcademic_infoSys.popUp_action_add_my_own_academic_info" redirect="false" />
+    </action>
+    <action name="oAcademic_infoSys__action_delete_page_academic_info_Form" path="/oAcademic_infoSys/popUp_action_delete_page_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_delete_page_academic_info" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAcademic_infoSys.popUp_action_delete_page_academic_info" redirect="false" />
+    </action>
+    <action name="oAcademic_infoSys__action_delete_page_academic_info_Form" path="/oAcademic_infoSys/popUp_action_mark_current_confirmation" scope="request" type="presentation.actions.oAcademic_infoSys.Action_mark_current_confirmation" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAcademic_infoSys.popUp_action_mark_current_confirmation" redirect="false" />
+    </action>
+    <action name="oAcademic_infoSys__action_delete_page_academic_info_Form" path="/oAcademic_infoSys/popUp_action_mark_current_compensation" scope="request" type="presentation.actions.oAcademic_infoSys.Action_mark_current_compensation" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAcademic_infoSys.popUp_action_mark_current_compensation" redirect="false" />
+    </action>    
+    <action name="oAcademic_infoSys__action_modify_page_academic_info_Form" path="/oAcademic_infoSys/popUp_action_modify_page_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_modify_page_academic_info" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAcademic_infoSys.popUp_action_modify_page_academic_info" redirect="false" />
+    </action>
+    <action name="oAcademic_infoSys__action_view_academic_info_Form" path="/oAcademic_infoSys/popUp_action_view_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_view_academic_info" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAcademic_infoSys.popUp_action_view_academic_info" redirect="false" />
+    </action>
     <action name="oHolidaySys__action_add_holiday_Form" path="/oHolidaySys/action_add_holiday" scope="request" type="presentation.actions.oHolidaySys.Action_add_holiday" unknown="false" validate="false">
       <forward contextRelative="false" name="success" path="oHolidaySys.action_add_holiday" redirect="false" />
     </action>
@@ -1511,6 +1580,9 @@
     <action name="oPersonalSys__action_manage_my_own_personal_grant_concessions_Form" path="/oPersonalSys/action_manage_my_own_personal_grant_concessions" scope="request" type="presentation.actions.oPersonalSys.Action_manage_my_own_personal_grant_concessions" unknown="false" validate="false">
       <forward contextRelative="false" name="success" path="oPersonalSys.action_manage_my_own_personal_grant_concessions" redirect="false" />
     </action>
+    <action name="oPersonalSys__action_manage_my_own_personal_academic_info_Form" path="/oPersonalSys/action_manage_my_own_personal_academic_info" scope="request" type="presentation.actions.oPersonalSys.Action_manage_my_own_personal_academic_info" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oPersonalSys.action_manage_my_own_personal_academic_info" redirect="false" />
+    </action>
     <action name="oPersonalSys__action_manage_my_own_personal_work_experience_Form" path="/oPersonalSys/action_manage_my_own_personal_work_experience" scope="request" type="presentation.actions.oPersonalSys.Action_manage_my_own_personal_work_experience" unknown="false" validate="false">
       <forward contextRelative="false" name="success" path="oPersonalSys.action_manage_my_own_personal_work_experience" redirect="false" />
     </action>
@@ -1552,6 +1624,12 @@
     </action>
     <action name="oPersonalSys__action_manage_personal_grant_concessions_Form" path="/oPersonalSys/action_manage_personal_rgroup_grant_concessions" scope="request" type="presentation.actions.oPersonalSys.Action_manage_personal_grant_concessions" unknown="false" validate="false">
       <forward contextRelative="false" name="success" path="oPersonalSys.action_manage_personal_grant_concessions" redirect="false" />
+    </action>
+    <action name="oPersonalSys__action_manage_personal_academic_info_Form" path="/oPersonalSys/action_manage_personal_academic_info" scope="request" type="presentation.actions.oPersonalSys.Action_manage_personal_academic_info" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oPersonalSys.action_manage_personal_academic_info" redirect="false" />
+    </action>
+    <action name="oPersonalSys__action_manage_personal_academic_info_Form" path="/oPersonalSys/action_manage_personal_rgroup_academic_info" scope="request" type="presentation.actions.oPersonalSys.Action_manage_personal_academic_info" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oPersonalSys.action_manage_personal_academic_info" redirect="false" />
     </action>
     <action name="oPersonalSys__action_manage_personal_holidays_Form" path="/oPersonalSys/action_manage_personal_holidays" scope="request" type="presentation.actions.oPersonalSys.Action_manage_personal_holidays" unknown="false" validate="false">
       <forward contextRelative="false" name="success" path="oPersonalSys.action_manage_personal_holidays" redirect="false" />

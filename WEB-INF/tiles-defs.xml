@@ -877,6 +877,24 @@
   <definition name="oGrant_concessionSys.action_view_grant_concession" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oGrant_concessionSys/action_view_grant_concession.jsp" />
   </definition>
+  <definition name="oAcademic_infoSys.action_modify_page_academic_info" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAcademic_infoSys/action_modify_page_academic_info.jsp" />
+  </definition>
+  <definition name="oAcademic_infoSys.action_delete_page_academic_info" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oGrant_concessionSys/action_delete_page_academic_info.jsp" />
+  </definition>
+  <definition name="oAcademic_infoSys.action_viewlist_academic_info" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAcademic_infoSys/action_viewlist_academic_info.jsp" />
+  </definition>
+  <definition name="oAcademic_infoSys.action_add_academic_info" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAcademic_infoSys/action_add_academic_info.jsp" />
+  </definition>
+  <definition name="oAcademic_infoSys.action_add_my_own_academic_info" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAcademic_infoSys/action_add_my_own_academic_info.jsp" />
+  </definition>
+  <definition name="oAcademic_infoSys.action_view_academic_info" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAcademic_infoSys/action_view_academic_info.jsp" />
+  </definition>
   <definition name="oLocationSys.action_manage_location" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oLocationSys/action_manage_location.jsp" />
   </definition>
@@ -994,6 +1012,21 @@
   <definition name="oGrant_concessionSys.popUp_action_mark_current_confirmation" extends="popup_template">
     <put name="center" value="/pages/oGrant_concessionSys/action_mark_current_confirmation.jsp" />
   </definition>
+  <definition name="oPersonalSys.action_manage_personal_academic_info" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_academic_info.jsp" />
+  </definition>
+  <definition name="oAcademic_infoSys.popUp_action_add_academic_info" extends="popup_template">
+    <put name="center" value="/pages/oAcademic_infoSys/action_add_academic_info.jsp" />
+  </definition>
+  <definition name="oAcademic_infoSys.popUp_action_modify_page_academic_info" extends="popup_template">
+    <put name="center" value="/pages/oAcademic_infoSys/action_modify_page_academic_info.jsp" />
+  </definition>
+  <definition name="oAcademic_infoSys.popUp_action_delete_page_academic_info" extends="popup_template">
+    <put name="center" value="/pages/oAcademic_infoSys/action_delete_page_academic_info.jsp" />
+  </definition>
+  <definition name="oAcademic_infoSys.popUp_action_mark_current_confirmation" extends="popup_template">
+    <put name="center" value="/pages/oAcademic_infoSys/action_mark_current_confirmation.jsp" />
+  </definition>
   <definition name="oPersonalSys.action_todelete_choose_current_personal" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oPersonalSys/action_todelete_choose_current_personal.jsp" />
   </definition>
@@ -1065,6 +1098,15 @@
   </definition>
   <definition name="oGrant_concessionSys.popUp_action_view_grant_concession" extends="popup_template">
     <put name="center" value="/pages/oGrant_concessionSys/action_view_grant_concession.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_my_own_personal_academic_info" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_my_own_personal_academic_info.jsp" />
+  </definition>
+  <definition name="oAcademic_infoSys.popUp_action_add_my_own_academic_info" extends="popup_template">
+    <put name="center" value="/pages/oGrant_concessionSys/action_add_my_own_academic_info.jsp" />
+  </definition>
+  <definition name="oAcademic_infoSys.popUp_action_view_academic_info" extends="popup_template">
+    <put name="center" value="/pages/oAcademic_infoSys/action_view_academic_info.jsp" />
   </definition>
   <definition name="oPersonalSys.action_change_state_from_edition_to_validating" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oPersonalSys/action_change_state_from_edition_to_validating.jsp" />

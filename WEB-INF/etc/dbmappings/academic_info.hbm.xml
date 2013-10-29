@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Academic_info" table="ACADEMIC_INFO">
+        <cache usage="read-write"/>
+    
+		<id name="academic_infocode" column="academic_infocode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+        <property name="current" type="boolean">
+            <column name="current" />
+        </property>
+		<!-- attribute mappings -->
+		<property name="start_date" type="timestamp">
+	       <column name="start_date"  />
+        </property>
+        <property name="end_date" type="timestamp">
+	       <column name="end_date"  />
+        </property>
+        <property name="lab_rotation_date" type="timestamp">
+	       <column name="lab_rotation_date"  />
+        </property>
+        <property name="thesis_defense_date" type="timestamp">
+	       <column name="thesis_defense_date" />
+        </property>
+        
+        <property name="thesis_director" type="string">
+           <column name="thesis_director" length="100" />
+        </property>
+        <property name="thesis_codirector" type="string">
+           <column name="thesis_codirector" length="100" />
+        </property>
+        <property name="studies_name" type="string">
+           <column name="studies_name" length="100" />
+        </property>
+        <property name="tac0" type="boolean">
+            <column name="tac0" />
+        </property>
+        <property name="university_enrolled" type="string">
+           <column name="university_enrolled" length="100" />
+        </property>
+        
+        
+		<!-- Associacion mappings -->
+		<many-to-one name="academic_info_personal" class="Personal" column="academic_info_personal" not-null="false"/>
+	
+        <many-to-one name="type_of_study" class="Type_of_study" column="type_of_study" not-null="false"/>
+        
+        <many-to-one name="lab_rotation_lab" class="Research_group" column="lab_rotation_lab" not-null="false"/>
+        
+        <many-to-one name="lab_rotation_lab2" class="Research_group" column="lab_rotation_lab2" not-null="false"/>
+	
+		<!-- categorias -->
+		
+	</class>
+</hibernate-mapping>

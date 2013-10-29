@@ -530,6 +530,66 @@
     </var>
 </field>
 </form>
+
+<form name="academic_info_Form">
+	<field property="thesis_defense_date" depends="localeDate">
+		<var>
+			<var-name>datePattern</var-name>
+			<var-value>simpleDate</var-value>
+		</var>
+		<arg key="academic_info.thesis_defense_date" />
+	</field>  
+	<field property="lab_rotation_date" depends="localeDate">
+		<var>
+			<var-name>datePattern</var-name>
+			<var-value>simpleDate</var-value>
+		</var>
+		<arg key="academic_info.lab_rotation_date" />
+	</field>  
+	<field property="start_date" depends="localeDate">
+		<var>
+			<var-name>datePattern</var-name>
+			<var-value>simpleDate</var-value>
+		</var>
+		<arg key="academic_info.start_date" />
+	</field>
+	<field property="end_date" depends="localeDate">
+		<var>
+			<var-name>datePattern</var-name>
+			<var-value>simpleDate</var-value>
+		</var>
+		<arg key="academic_info.end_date" />
+	</field>
+	<field property="thesis_director" depends="stringSize">
+	    <arg key="academic_info.thesis_director" />
+	    <var>
+	        <var-name>size</var-name>
+	        <var-value>100</var-value>
+	    </var>
+	</field>
+	<field property="thesis_codirector" depends="stringSize">
+	    <arg key="academic_info.thesis_codirector" />
+	    <var>
+	        <var-name>size</var-name>
+	        <var-value>100</var-value>
+	    </var>
+	</field>
+	<field property="university_enrolled" depends="stringSize">
+	    <arg key="academic_info.university_enrolled" />
+	    <var>
+	        <var-name>size</var-name>
+	        <var-value>100</var-value>
+	    </var>
+	</field>
+	<field property="studies_name" depends="stringSize">
+	    <arg key="academic_info.studies_name" />
+	    <var>
+	        <var-name>size</var-name>
+	        <var-value>100</var-value>
+	    </var>
+	</field>
+</form>
+
 <form name="type_of_contract_Form">
 	
 <field property="description" depends="stringSize">
@@ -2285,6 +2345,51 @@
 	<var>
 		<var-name>beanName</var-name>
 		<var-value>grant_concession_Form</var-value>
+	</var>
+</field>
+	
+</form>
+
+<form name="oAcademic_infoSys__action_modify_modify_page_academic_info_Form">
+	
+<field property="academic_info_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>academic_info_Form</var-value>
+	</var>
+</field>
+	
+</form>
+
+<form name="oAcademic_infoSys__action_delete_delete_page_academic_info_Form">
+	
+<field property="academic_info_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>academic_info_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oAcademic_infoSys__action_new_new_page_academic_info_Form">
+	
+<field property="academic_info_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>academic_info_Form</var-value>
+	</var>
+</field>	
+	
+</form>
+
+<form name="oAcademic_infoSys__action_add_my_own_academic_info_new_new_page_academic_info_Form">
+	
+<field property="academic_info_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>academic_info_Form</var-value>
 	</var>
 </field>
 	

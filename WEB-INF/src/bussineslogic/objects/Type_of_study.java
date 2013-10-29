@@ -27,7 +27,7 @@ public class Type_of_study implements Persistent{
 	//definition of the specific attributes
 	
 String description;
-Set<Work_experience> itype_of_study=new HashSet<Work_experience>();
+Set<Academic_info> iacademic_info=new HashSet<Academic_info>();
 
 	/**
 	 * Default Constructor which creates an empty type_of_study
@@ -117,30 +117,30 @@ public void setDescription(String description){
 /**
  * @return the itype_of_study
  */
-public Set<Work_experience> getItype_of_study(){
-	return itype_of_study;
+public Set<Academic_info> getIacademic_info(){
+	return iacademic_info;
 }
 
 /**
 * @param itype_of_study the itype_of_study to set.
 */
-public void setItype_of_study(Set<Work_experience> itype_of_study){
-	this.itype_of_study=itype_of_study;
+public void setIacademic_info(Set<Academic_info> iacademic_info){
+	this.iacademic_info=iacademic_info;
 }
 /**
 * Adds a Work_experience to the itype_of_study set.
 * @param itype_of_study Work_experience to be added
 */
-public void addItype_of_study(Work_experience itype_of_study){
-	this.itype_of_study.add(itype_of_study);
+public void addIacademic_info(Academic_info iacademic_info){
+	this.iacademic_info.add(iacademic_info);
 }
 
 /**
 * Removes a Work_experience to the itype_of_study set.
 * @param itype_of_study Work_experience to be removed
 */
-public void removeItype_of_study(Work_experience itype_of_study){
-	this.itype_of_study.remove(itype_of_study);
+public void removeIacademic_info(Academic_info iacademic_info){
+	this.iacademic_info.remove(iacademic_info);
 }
 
 
