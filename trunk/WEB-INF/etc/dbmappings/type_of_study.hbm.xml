@@ -20,11 +20,11 @@
 		
 		<!-- Associacion mappings -->
 		
-	<set name="itype_of_study" cascade="none" lazy="true">
+	<set name="iacademic_info" cascade="none" lazy="true">
 		<key>
 			<column name="type_of_study" />
 		</key>
-		<one-to-many class="Work_experience" />
+		<one-to-many class="Academic_info" />
 	</set>
 
 		

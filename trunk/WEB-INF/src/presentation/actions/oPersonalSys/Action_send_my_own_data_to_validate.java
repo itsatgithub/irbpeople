@@ -1,39 +1,46 @@
 package presentation.actions.oPersonalSys;
 
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
-import java.util.Collections;
-import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import utils.formbeans.ToStringComparator;
-import utils.actions.NavigationFunctions;
-import utils.actions.BOAdderFunctions;
-import utils.formbeans.FormBeanManager;
-import utils.formbeans.BOAdderFormBean;
-import utils.userUtils.UserUtils;
+import presentation.formbeans.oPersonalSys.Action_send_my_own_data_to_validate_Form;
+import presentation.formbeans.objects.Academic_info_Form;
+import presentation.formbeans.objects.Country_Form;
+import presentation.formbeans.objects.Education_Form;
+import presentation.formbeans.objects.Gender_Form;
+import presentation.formbeans.objects.Grant_concession_Form;
+import presentation.formbeans.objects.Nationality_Form;
+import presentation.formbeans.objects.Personal_Form;
+import presentation.formbeans.objects.Work_experience_Form;
 import utils.Pair;
-import utils.listFilter.ViewListConfiguration;
+import utils.actions.NavigationFunctions;
 import utils.beanUtils.ExtendedBeanUtils;
 import utils.filter.ListConfigurator;
-
+import utils.formbeans.FormBeanManager;
+import utils.formbeans.ToStringComparator;
+import utils.listFilter.ViewListConfiguration;
+import utils.userUtils.UserUtils;
 import bussineslogic.controlers.UseCaseFacade;
 import bussineslogic.excepciones.ValidationFailedException;
-
-import bussineslogic.objects.*;
-import presentation.formbeans.objects.*;
-
-import presentation.formbeans.oPersonalSys.*;
+import bussineslogic.objects.Academic_info;
+import bussineslogic.objects.Country;
+import bussineslogic.objects.Education;
+import bussineslogic.objects.Gender;
+import bussineslogic.objects.Grant_concession;
+import bussineslogic.objects.Nationality;
+import bussineslogic.objects.Personal;
+import bussineslogic.objects.Professional;
+import bussineslogic.objects.Work_experience;
 
 
 /**
@@ -160,6 +167,12 @@ request.setAttribute("_selec_nationality", _selec_nationality_Form);
 	/** 6.5.3.  We obtain copy the list of pojos to a list of FormBeans */
 	List<Grant_concession_Form> grantConcesion_viewlistElements =ExtendedBeanUtils.copyPropertiesToFormBean(_list_grant_concesion.getSecond(), locale, Grant_concession_Form.class);
 	request.setAttribute("grant_concession_viewlistElements", grantConcesion_viewlistElements);
+	
+	/** 6.5.2.  We obtain the list of objects form the Business logic */
+	Pair<Integer,List<Academic_info>> _list_academic_info=UseCaseFacade.ObtainAllIacademic_info_personalFromPersonal(usercode,personal.getCode(),filter.obtainListConfigurator(locale, false));
+	/** 6.5.3.  We obtain copy the list of pojos to a list of FormBeans */
+	List<Academic_info_Form> academicInfo_viewlistElements =ExtendedBeanUtils.copyPropertiesToFormBean(_list_academic_info.getSecond(), locale, Academic_info_Form.class);
+	request.setAttribute("academic_info_viewlistElements", academicInfo_viewlistElements);
 	
 
 	/** 6.5.2.  We obtain the list of objects form the Business logic */

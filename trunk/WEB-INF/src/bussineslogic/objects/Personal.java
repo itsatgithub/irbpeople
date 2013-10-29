@@ -113,6 +113,8 @@ public class Personal implements Persistent {
 	String second_affiliation;
 
 	Set<Grant_concession> igrant_concession_personal = new HashSet<Grant_concession>();
+	
+	Set<Academic_info> iacademic_info_personal = new HashSet<Academic_info>();
 
 	Set<Benefits> ibenefits_personal = new HashSet<Benefits>();
 
@@ -826,6 +828,41 @@ public class Personal implements Persistent {
 	 */
 	public void removeIgrant_concession_personal(Grant_concession igrant_concession_personal) {
 		this.igrant_concession_personal.remove(igrant_concession_personal);
+	}
+	
+	/**
+	 * @return the igrant_concession_personal
+	 */
+	public Set<Academic_info> getIacademic_info_personal() {
+		return iacademic_info_personal;
+	}
+	
+	/**
+	 * @param igrant_concession_personal
+	 *            the igrant_concession_personal to set.
+	 */
+	public void setIacademic_info_personal(Set<Academic_info> iacademic_info_personal) {
+		this.iacademic_info_personal = iacademic_info_personal;
+	}
+	
+	/**
+	 * Adds a Grant_concession to the igrant_concession_personal set.
+	 * 
+	 * @param igrant_concession_personal
+	 *            Grant_concession to be added
+	 */
+	public void addIacademic_info_personal(Academic_info iacademic_info_personal) {
+		this.iacademic_info_personal.add(iacademic_info_personal);
+	}
+	
+	/**
+	 * Removes a Grant_concession to the igrant_concession_personal set.
+	 * 
+	 * @param igrant_concession_personal
+	 *            Grant_concession to be removed
+	 */
+	public void removeIacademic_info_personal(Academic_info iacademic_info_personal) {
+		this.iacademic_info_personal.remove(iacademic_info_personal);
 	}
 
 	/**

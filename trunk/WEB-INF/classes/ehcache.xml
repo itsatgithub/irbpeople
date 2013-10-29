@@ -119,6 +119,12 @@
         eternal="false"
         overflowToDisk="false"
         />
+	
+	<cache name="bussineslogic.objects.academic_info"
+        maxElementsInMemory="500"
+        eternal="false"
+        overflowToDisk="false"
+        />
 
 
 	<cache name="bussineslogic.objects.irb_budget"

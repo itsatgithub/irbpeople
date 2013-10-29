@@ -105,9 +105,7 @@
 			
 <tr><td>
 
-<% String showOptionalFields = String.valueOf((!UserUtils.checkRole(request, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) && !UserUtils.checkRole(request, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)));
-System.out.println("ShowOptionalFields: "+showOptionalFields);
-%>
+<% String showOptionalFields = String.valueOf((!UserUtils.checkRole(request, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) && !UserUtils.checkRole(request, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)));%>
 <jsp:include page="/pages/common/lists/viewlist.jsp" flush="true">
 	<jsp:param name="selectionType" value="ROWACTION"/>
 	<jsp:param name="objectname" value="professional"/>

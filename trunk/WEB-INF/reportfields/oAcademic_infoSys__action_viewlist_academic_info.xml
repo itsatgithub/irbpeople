@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<report view="academic_info" site-number="3">
+    <site name="en">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+				<field name="current" visible="true" default="true" type-of-field="boolean" size="7">
+                    <caption language="en">Current</caption>
+                </field>
+                <field name="thesis_director" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Thesis director</caption>
+                </field>
+                <field name="thesis_codirector" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Thesis codirector</caption>
+                </field>
+                <field name="university_enrolled" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">University</caption>
+                </field>
+                <field name="studies_name" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Phd/Master Programme name</caption>
+                </field>
+                <field name="type_of_study" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Type</caption>
+                </field>
+                <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Start date</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">End date</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="ct">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                 <field name="current" visible="true" default="true" type-of-field="boolean" size="7">
+                    <caption language="en">Actual</caption>
+                </field>
+                <field name="thesis_director" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Director de tesi</caption>
+                </field>
+                <field name="thesis_codirector" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Codirector de tesi</caption>
+                </field>
+                <field name="university_enrolled" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Universitat</caption>
+                </field>
+                <field name="studies_name" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Nom de Phd/Master</caption>
+                </field>
+                <field name="type_of_study" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Tipus</caption>
+                </field>
+                <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Data d'inici</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Data fi</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="es">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                 <field name="current" visible="true" default="true" type-of-field="boolean" size="7">
+                    <caption language="en">Actual</caption>
+                </field>
+                <field name="thesis_director" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Director de tesis</caption>
+                </field>
+                <field name="thesis_codirector" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Codirector de tesis</caption>
+                </field>
+                <field name="university_enrolled" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Universidad</caption>
+                </field>
+                <field name="studies_name" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Nombre de Phd/Master</caption>
+                </field>
+                <field name="type_of_study" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Tipo</caption>
+                </field>
+                <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Fecha inicio</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Fecha fin</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+</report>
+

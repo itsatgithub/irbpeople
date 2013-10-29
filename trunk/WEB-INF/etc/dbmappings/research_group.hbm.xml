@@ -55,6 +55,19 @@
             </key>
             <one-to-many class="Professional" />
         </set>
+        
+        <set name="iacademic_info" cascade="none" lazy="true">
+			<key>
+				<column name="lab_rotation_lab" />
+			</key>
+			<one-to-many class="Academic_info" />
+		</set>
+        <set name="iacademic_info_2" cascade="none" lazy="true">
+			<key>
+				<column name="lab_rotation_lab2" />
+			</key>
+			<one-to-many class="Academic_info" />
+		</set>
 
 
         <!-- categorias -->

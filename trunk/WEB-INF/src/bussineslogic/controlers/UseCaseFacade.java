@@ -14,6 +14,7 @@ import bussineslogic.excepciones.NoPermisosException;
 import bussineslogic.excepciones.UsuarioExisteException;
 import bussineslogic.excepciones.UsuarioNoActivoException;
 import bussineslogic.excepciones.ValidationFailedException;
+import bussineslogic.objects.Academic_info;
 import bussineslogic.objects.Area;
 import bussineslogic.objects.Auditmessage;
 import bussineslogic.objects.Auditmessagetype;
@@ -239,6 +240,18 @@ public class UseCaseFacade {
 		return UseCase.ObtainAllIgrant_concession_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getPersonal(personalcode), configurator);
 	}
 
+	/**
+	 * This method obtains all instances of Academic_info, which belong to the set of iacademic_info_personal of a personal, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param personalcode Code of the personal which contains the set of iacademic_info_personal
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 */
+	public static Pair<Integer, List<Academic_info>> ObtainAllIacademic_info_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllIacademic_info_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getPersonal(personalcode), configurator);
+	}
+	
 	/**
 	 * This method obtains all instances of Work_experience, which belong to the set of iwork_experience_personal of a personal, given a list-configurator.
 	 * 
@@ -1699,6 +1712,65 @@ public class UseCaseFacade {
 	}
 
 	/**
+	 * This method creates a academic_info.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param academic_info Academic_info data transfer object (DTO) with the values of the new instance.
+	 * @return the new academic_info created with the Use Case
+	 * @throws InternalException
+	 */
+	public static Academic_info CreateAcademic_info(String administradorId, Academic_info academic_info) throws InternalException, NoPermisosException {
+		return UseCase.CreateAcademic_info(UseCase.getUsuario(administradorId), academic_info);
+	}
+
+	/**
+	 * This method modifies a academic_info.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param academic_info Academic_info data transfer object (DTO) with the values of the modified instance. The code of this attribute indicates which academic_info will be modified.
+	 * @return the modified academic_info
+	 * @throws InternalException
+	 */
+	public static Academic_info UpdateAcademic_info(String administradorId, Academic_info academic_info) throws InternalException, NoPermisosException {
+		return UseCase.UpdateAcademic_info(UseCase.getUsuario(administradorId), academic_info);
+	}
+
+	/**
+	 * This method removes a academic_info.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param academic_infocode  Code of the academic_info to be removed
+	 */
+	public static void RemoveAcademic_info(String administradorId, String academic_infocode) throws InternalException, NoPermisosException {
+		UseCase.RemoveAcademic_info(UseCase.getUsuario(administradorId), academic_infocode);
+	}
+
+	/**
+	 * This method obtains one instance of academic_info given its code.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param academic_infocode Code of the academic_info to be obtained
+	 * @return Academic_info with the given code.
+	 * @throws InternalException
+	 */
+	public static Academic_info ObtainAcademic_info(String administradorId, String academic_infocode) throws InternalException {
+		return UseCase.ObtainAcademic_info(UseCase.getUsuario(administradorId), academic_infocode);
+	}
+
+	/**
+	 * This method obtains all instances of Academic_info, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws InternalException
+	 */
+	public static Pair<Integer, List<Academic_info>> ObtainAllAcademic_info(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllAcademic_info(UseCase.getUsuario(administradorId), configurator);
+	}
+
+	
+	/**
 	 * This method creates a type_of_contract.
 	 * 
 	 * @param administradorId Code (no username) of the user who executes this use case
@@ -3091,6 +3163,10 @@ public class UseCaseFacade {
 
 	public static String SetCurrentGrant_concession(String usercode, String grant_concessioncode) throws InternalException {
 		return UseCase.SetCurrentGrant_concession(UseCase.getUsuario(usercode), grant_concessioncode);
+	}
+
+	public static String SetCurrentAcademic_info(String usercode, String academic_infocode) throws InternalException {
+		return UseCase.SetCurrentAcademic_info(UseCase.getUsuario(usercode), academic_infocode);
 	}
 
 	public static CustomList SetPeriodicCustomList(String usercode, String customListcode) throws InternalException {

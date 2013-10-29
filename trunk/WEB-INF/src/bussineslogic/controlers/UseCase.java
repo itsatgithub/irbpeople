@@ -50,6 +50,7 @@ import bussineslogic.excepciones.NoPermisosException;
 import bussineslogic.excepciones.UsuarioExisteException;
 import bussineslogic.excepciones.UsuarioNoActivoException;
 import bussineslogic.excepciones.ValidationFailedException;
+import bussineslogic.objects.Academic_info;
 import bussineslogic.objects.ApplicationPreferences;
 import bussineslogic.objects.Area;
 import bussineslogic.objects.AuditLog;
@@ -990,6 +991,52 @@ public class UseCase {
 	 * elements in the DB *
 	 */
 	Pair<Integer, List<Grant_concession>> pair = new Pair<Integer, List<Grant_concession>>(
+		count, crit.list());
+
+	return pair;
+    }
+    
+    /**
+     * This method obtains all instances of Academic_info, which belong to
+     * the set of iacademic_info_personal of a personal, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param personal
+     *            Personal which contains the set of iacademic_info_personal
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Academic_info>> ObtainAllIacademic_info_personalFromPersonal(
+	    Usuario user, Personal personal, ListConfigurator configurator) {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Academic_info.class);
+
+	// we only want to obtain the non deleted objects
+
+	crit.add(Expression.eq("deleted", Boolean.FALSE));
+
+	// we add the requirement that we only want to display the ones which
+	// are associated
+	crit.createCriteria("academic_info_personal").add(
+		Expression.idEq(personal.getPersonalcode()));
+
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	Pair<Integer, List<Academic_info>> pair = new Pair<Integer, List<Academic_info>>(
 		count, crit.list());
 
 	return pair;
@@ -8582,6 +8629,458 @@ public class UseCase {
     }
 
     /**
+     * This method creates a Academic_info.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAcademic_info
+     *            Academic_info data transfer object (DTO) with the values of
+     *            the new instance.
+     * @return the new academic_info created with this Use Case
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Academic_info CreateAcademic_info(Usuario user,
+	    Academic_info TOAcademic_info) throws InternalException,
+	    NoPermisosException {
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/**
+	 * 2. For each association from the TOAcademic_info that are filled
+	 * in the DTO we put the real objects from the DB. *
+	 */
+
+	// we store if the academic_info_personal is defined for later use
+	boolean _academic_info_personalIsDefined = false;
+
+	if (TOAcademic_info.getAcademic_info_personal() != null
+		&& TOAcademic_info.getAcademic_info_personal()
+			.getPersonalcode() != null) {
+	    // if academic_info_personal is defined we replace the
+	    // academic_info_personal in the DTO with its current state in
+	    // the DB.
+	    _academic_info_personalIsDefined = true;
+
+	    TOAcademic_info
+		    .setAcademic_info_personal(getPersonal(TOAcademic_info
+			    .getAcademic_info_personal().getPersonalcode()));
+	}
+
+	// testIsHHRROrItself(user,
+	// TOAcademic_info.getAcademic_info_personal());
+
+	// we store if the grant is defined for later use
+	boolean _type_of_studyIsDefined = false;
+
+	if (TOAcademic_info.getType_of_study() != null
+		&& TOAcademic_info.getType_of_study().getType_of_studycode() != null) {
+	    // if grant is defined we replace the grant in the DTO with its
+	    // current state in the DB.
+	    _type_of_studyIsDefined = true;
+
+	    TOAcademic_info.setType_of_study(getType_of_study(TOAcademic_info.getType_of_study()
+		    .getType_of_studycode()));
+	}
+	
+	boolean _lab_rotation_labIsDefined = false;
+
+	if (TOAcademic_info.getLab_rotation_lab() != null
+		&& TOAcademic_info.getLab_rotation_lab().getCode() != null) {
+	    // if grant is defined we replace the grant in the DTO with its
+	    // current state in the DB.
+		_lab_rotation_labIsDefined = true;
+
+	    TOAcademic_info.setLab_rotation_lab(getResearch_group(TOAcademic_info.getLab_rotation_lab()
+		    .getCode()));
+	}
+	
+	boolean _lab_rotation_lab2IsDefined = false;
+
+	if (TOAcademic_info.getLab_rotation_lab2() != null
+		&& TOAcademic_info.getLab_rotation_lab2().getCode() != null) {
+	    // if grant is defined we replace the grant in the DTO with its
+	    // current state in the DB.
+		_lab_rotation_lab2IsDefined = true;
+
+	    TOAcademic_info.setLab_rotation_lab2(getResearch_group(TOAcademic_info.getLab_rotation_lab2()
+		    .getCode()));
+	}
+
+	/** 3. We create the new instance * */
+	Academic_info academic_info = new Academic_info();
+
+	/**
+	 * 4. We set all the simple attributes (no associations) to the new
+	 * instance *
+	 */
+
+	academic_info.setStart_date(TOAcademic_info.getStart_date());
+
+	academic_info.setEnd_date(TOAcademic_info.getEnd_date());
+	
+	academic_info.setTac0(TOAcademic_info.isTac0());
+	academic_info.setUniversity_enrolled(TOAcademic_info
+		.getUniversity_enrolled());
+	
+	academic_info.setLab_rotation_date(TOAcademic_info.getLab_rotation_date());
+	
+	academic_info.setThesis_defense_date(TOAcademic_info.getThesis_defense_date());	
+	academic_info.setStudies_name(TOAcademic_info.getStudies_name());
+	
+	academic_info.setThesis_director(TOAcademic_info.getThesis_director());
+	academic_info.setThesis_codirector(TOAcademic_info.getThesis_codirector());
+	
+	academic_info.setTac0(TOAcademic_info.isTac0());
+	
+
+	/** 5. We set the code to the new instance * */
+	try {
+	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
+
+	    academic_info.setAcademic_infocode(im
+		    .getId(TOAcademic_info));
+	} catch (identifyException ie) {
+
+	    log.error(
+		    "Error en asignaci�n de nuevo id en CreateAcademic_info",
+		    ie);
+	    throw new Error(ie.getMessage());
+	}
+
+	/** 6. We save the new instance to the DB* */
+	HibernateUtil.getSession().save(academic_info);
+
+	/**
+	 * We associate the current object to the other objects (only in case
+	 * that the associations where defined in the DTO) *
+	 */
+
+	if (_academic_info_personalIsDefined) {
+
+	    if (TOAcademic_info.getAcademic_info_personal() != null) {
+
+		TOAcademic_info.getAcademic_info_personal()
+			.addIacademic_info_personal(academic_info);
+	    }
+
+	    academic_info.setAcademic_info_personal(TOAcademic_info
+		    .getAcademic_info_personal());
+	}
+
+	if (_type_of_studyIsDefined) {
+
+	    if (TOAcademic_info.getType_of_study() != null) {
+
+		TOAcademic_info.getType_of_study().addIacademic_info(academic_info);
+	    }
+
+	    academic_info.setType_of_study(TOAcademic_info.getType_of_study());
+	}
+	if (_lab_rotation_labIsDefined) {
+		
+		if (TOAcademic_info.getLab_rotation_lab() != null) {
+			
+			TOAcademic_info.getLab_rotation_lab().addIacademic_info(academic_info);
+		}
+		
+		academic_info.setLab_rotation_lab(TOAcademic_info.getLab_rotation_lab());
+	}
+	if (_lab_rotation_lab2IsDefined) {
+		
+		if (TOAcademic_info.getLab_rotation_lab2() != null) {
+			
+			TOAcademic_info.getLab_rotation_lab2().addIacademic_info_2(academic_info);
+		}
+		
+		academic_info.setLab_rotation_lab2(TOAcademic_info.getLab_rotation_lab2());
+	}
+
+	/** 7. We create an Audit message * */
+	CreateCreationAuditmessage(user, academic_info);
+
+	/** 8. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return academic_info;
+    }
+
+    /**
+     * This method modifies a academic_info.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAcademic_info
+     *            Academic_info data transfer object (DTO) with the values of
+     *            the modified instance. The code of this attribute indicates
+     *            which academic_info will be modified.
+     * @return the modified academic_info
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Academic_info UpdateAcademic_info(Usuario user,
+	    Academic_info TOAcademic_info) throws InternalException,
+	    NoPermisosException {
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 3. We obtain form the DB the instance to modify * */
+	Academic_info academic_info = getAcademic_info(TOAcademic_info
+		.getAcademic_infocode());
+	// testIsHHRROrItself(user,
+	// academic_info.getAcademic_info_personal());
+
+	/**
+	 * 2. For each association from the TOAcademic_info that are filled
+	 * in the DTO we put the real objects from the DB. *
+	 */
+
+	// we store if the academic_info_personal is defined for later use
+	boolean _academic_info_personalIsDefined = false;
+
+	if (TOAcademic_info.getAcademic_info_personal() != null
+		&& TOAcademic_info.getAcademic_info_personal()
+			.getPersonalcode() != null) {
+	    // if academic_info_personal is defined we replace the
+	    // academic_info_personal in the DTO with its current state in
+	    // the DB.
+	    _academic_info_personalIsDefined = true;
+
+	    TOAcademic_info
+		    .setAcademic_info_personal(getPersonal(TOAcademic_info
+			    .getAcademic_info_personal().getPersonalcode()));
+	}
+
+	// we store if the grant is defined for later use
+	boolean _type_of_studyIsDefined = false;
+
+	if (TOAcademic_info.getType_of_study() != null
+		&& TOAcademic_info.getType_of_study().getType_of_studycode() != null) {
+	    // if grant is defined we replace the grant in the DTO with its
+	    // current state in the DB.
+	    _type_of_studyIsDefined = true;
+
+	    TOAcademic_info.setType_of_study(getType_of_study(TOAcademic_info.getType_of_study()
+		    .getType_of_studycode()));
+	}
+	
+	boolean _lab_rotation_labIsDefined = false;
+
+	if (TOAcademic_info.getLab_rotation_lab() != null
+		&& TOAcademic_info.getLab_rotation_lab().getCode() != null) {
+	    // if grant is defined we replace the grant in the DTO with its
+	    // current state in the DB.
+		_lab_rotation_labIsDefined = true;
+
+	    TOAcademic_info.setLab_rotation_lab(getResearch_group(TOAcademic_info.getLab_rotation_lab()
+		    .getCode()));
+	}
+	
+	boolean _lab_rotation_lab2IsDefined = false;
+
+	if (TOAcademic_info.getLab_rotation_lab2() != null
+		&& TOAcademic_info.getLab_rotation_lab2().getCode() != null) {
+	    // if grant is defined we replace the grant in the DTO with its
+	    // current state in the DB.
+		_lab_rotation_lab2IsDefined = true;
+
+	    TOAcademic_info.setLab_rotation_lab2(getResearch_group(TOAcademic_info.getLab_rotation_lab2()
+		    .getCode()));
+	}
+	
+		/**
+	 * 4. We set all the simple attributes (no associations) to the instance
+	 * *
+	 */
+
+	academic_info.setStart_date(TOAcademic_info.getStart_date());
+
+	academic_info.setEnd_date(TOAcademic_info.getEnd_date());
+	
+	academic_info.setTac0(TOAcademic_info.isTac0());
+	academic_info.setUniversity_enrolled(TOAcademic_info
+		.getUniversity_enrolled());
+	
+	academic_info.setLab_rotation_date(TOAcademic_info.getLab_rotation_date());
+	
+	academic_info.setThesis_defense_date(TOAcademic_info.getThesis_defense_date());
+	academic_info.setStudies_name(TOAcademic_info.getStudies_name());
+	
+	academic_info.setThesis_director(TOAcademic_info.getThesis_director());
+	academic_info.setThesis_codirector(TOAcademic_info.getThesis_codirector());
+	
+	academic_info.setTac0(TOAcademic_info.isTac0());
+
+	/**
+	 * 5. We set the DTO version to the modified object and we update it
+	 * with the new values in the DB. We evict and update the instance to
+	 * prevent concurrent modification *
+	 */
+	HibernateUtil.getSession().evict(academic_info);
+	academic_info.setVersion(TOAcademic_info.getVersion());
+	HibernateUtil.getSession().update(academic_info);
+
+	/**
+	 * We associate/disassociate the current object to the other objects
+	 * (only in case that the associations where defined in the DTO) *
+	 */
+
+	if (_academic_info_personalIsDefined) {
+
+	    if (academic_info.getAcademic_info_personal() != null) {
+
+		academic_info.getAcademic_info_personal()
+			.removeIacademic_info_personal(academic_info);
+	    }
+
+	    if (TOAcademic_info.getAcademic_info_personal() != null) {
+
+		TOAcademic_info.getAcademic_info_personal()
+			.addIacademic_info_personal(academic_info);
+	    }
+
+	    academic_info.setAcademic_info_personal(TOAcademic_info
+		    .getAcademic_info_personal());
+	}
+
+	if (_type_of_studyIsDefined) {
+
+	    if (academic_info.getType_of_study() != null) {
+
+		academic_info.getType_of_study().removeIacademic_info(academic_info);
+	    }
+
+	    if (TOAcademic_info.getType_of_study() != null) {
+
+		TOAcademic_info.getType_of_study().addIacademic_info(academic_info);
+	    }
+
+	    academic_info.setType_of_study(TOAcademic_info.getType_of_study());
+	}
+
+	if (_lab_rotation_labIsDefined) {
+		
+		if (TOAcademic_info.getLab_rotation_lab() != null) {
+			
+			TOAcademic_info.getLab_rotation_lab().addIacademic_info(academic_info);
+		}
+		
+		academic_info.setLab_rotation_lab(TOAcademic_info.getLab_rotation_lab());
+	}
+	if (_lab_rotation_lab2IsDefined) {
+		
+		if (TOAcademic_info.getLab_rotation_lab2() != null) {
+			
+			TOAcademic_info.getLab_rotation_lab2().addIacademic_info_2(academic_info);
+		}
+		
+		academic_info.setLab_rotation_lab2(TOAcademic_info.getLab_rotation_lab2());
+	}
+	
+	/** 6. We create an Audit message * */
+	CreateModificationAuditmessage(user, academic_info);
+
+	/** 7. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return academic_info;
+    }
+
+    /**
+     * This method removes a academic_info.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param academic_infocode
+     *            Code of the academic_info to be removed
+     * @throws NoPermisosException
+     */
+    public static void RemoveAcademic_info(Usuario user,
+	    String academic_infocode) throws NoPermisosException {
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain the object to delete form the DB. * */
+	Academic_info academic_info = getAcademic_info(academic_infocode);
+	// testIsHHRROrItself(user,
+	// academic_info.getAcademic_info_personal());
+
+	/** 3. We mark it as deleted. * */
+	academic_info.setDeleted(Boolean.TRUE);
+
+	/** 4. We create an Audit message * */
+	CreateRemovealAuditmessage(user, academic_info);
+
+	/** 5. We commit the DB transaction. * */
+	HibernateUtil.commitTransaction();
+    }
+
+    /**
+     * This method obtains one instance of academic_info given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param academic_infocode
+     *            Code of the academic_info to be obtained
+     * @return Academic_info with the given code.
+     */
+    public static Academic_info ObtainAcademic_info(Usuario user,
+	    String academic_infocode) {
+
+	/**
+	 * 1. We obtain the object from the DB using the private getter and we
+	 * return it. *
+	 */
+
+	Academic_info academic_info = getAcademic_info(academic_infocode);
+	return academic_info;
+    }
+
+    /**
+     * This method obtains all instances of Academic_info, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Academic_info>> ObtainAllAcademic_info(
+	    Usuario user, ListConfigurator configurator) {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Academic_info.class);
+
+	// we only want to obtain the non deleted objects
+	crit.add(Expression.eq("deleted", Boolean.FALSE));
+
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	List<Academic_info> academic_infos = (List<Academic_info>) crit
+		.list();
+
+	Pair<Integer, List<Academic_info>> pair = new Pair<Integer, List<Academic_info>>(
+		count, academic_infos);
+
+	return pair;
+    }
+    
+    
+    /**
      * This method creates a Type_of_contract.
      * 
      * @param user
@@ -13405,6 +13904,21 @@ public class UseCase {
 		.getSession().get(Grant_concession.class, grant_concessioncode);
 	return grant_concession;
     }
+    
+    /**
+     * Returns the Academic_info with the given key. This method is used
+     * internally to get objects form the database.
+     * 
+     * @param academic_infocode
+     *            code of the Academic_info
+     * @return Academic_info with the given code
+     */
+    protected static Academic_info getAcademic_info(
+	    String academic_infocode) {
+	Academic_info academic_info = (Academic_info) HibernateUtil
+		.getSession().get(Academic_info.class, academic_infocode);
+	return academic_info;
+    }
 
     /**
      * Returns the Type_of_contract with the given key. This method is used
@@ -17253,7 +17767,7 @@ public class UseCase {
 	    //
 	    // dateString = df.format(d);
 	    // }
-
+//TODO JORDI REVISAR
 	    view_name += " left join `grant_concession` `gc` on `gc`.`grant_concession_personal` = `personalcode` and `gc`.`deleted`=0 and ( (gc.start_date is null and gc.end_date is null)  or ('"
 		    + dateString
 		    + "' between gc.start_date and gc.end_date) or (gc.start_date is null and '"
@@ -18599,6 +19113,37 @@ public class UseCase {
 		.getPersonalcode();
     }
 
+    public static String SetCurrentAcademic_info(Usuario usuario,
+    	    String academic_infocode) {
+
+    	/** 1. We begin the DB transaction. * */
+    	HibernateUtil.beginTransaction();
+
+    	/** 2. We obtain the object to delete form the DB. * */
+    	Academic_info academic_info = getAcademic_info(academic_infocode);
+
+    	boolean oldValue = academic_info.isCurrent();
+
+    	Set<Academic_info> lineasDeAcademic_infocode = academic_info
+    		.getAcademic_info_personal().getIacademic_info_personal();
+
+    	for (Academic_info linea : lineasDeAcademic_infocode) {
+    	    linea.setCurrent(false);
+    	}
+
+    	/** 3. We mark it as deleted. * */
+    	academic_info.setCurrent(!oldValue);
+
+    	/** 4. We create an Audit message * */
+    	// CreateRemovealAuditmessage(user, professional);
+
+    	/** 5. We commit the DB transaction. * */
+    	HibernateUtil.commitTransaction();
+
+    	return academic_info.getAcademic_info_personal()
+    		.getPersonalcode();
+    }
+    
     public static CustomList SetPeriodicCustomList(Usuario usuario,
 	    String customListcode) {
 

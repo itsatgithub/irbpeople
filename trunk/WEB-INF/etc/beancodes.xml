@@ -120,6 +120,10 @@
 		<pattern>{n}</pattern>
 		<num>0000000000001</num>
 	</code>
+	<code beanName="academic_info">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
 	<code beanName="holiday">
 		<pattern>{n}</pattern>
 		<num>0000000000001</num>

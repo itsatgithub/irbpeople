@@ -3,8 +3,6 @@ package bussineslogic.objects;
 
 
 
-import java.math.BigDecimal;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -36,6 +34,8 @@ Set<Professional> iresearch_group=new HashSet<Professional>();
 Set<Professional> iresearch_group_2=new HashSet<Professional>();
 Set<Professional> iresearch_group_3=new HashSet<Professional>();
 Set<Professional> iresearch_group_4=new HashSet<Professional>();
+Set<Academic_info> iacademic_info=new HashSet<Academic_info>();
+Set<Academic_info> iacademic_info_2=new HashSet<Academic_info>();
 
 	/**
 	 * Default Constructor which creates an empty research_group
@@ -261,6 +261,65 @@ public void setIresearch_group_4(Set<Professional> iresearch_group){
 public void addIresearch_group_4(Professional iresearch_group){
 	this.iresearch_group_4.add(iresearch_group);
 }
+
+/**
+ * @return the iresearch_group
+ */
+public Set<Academic_info> getIacademic_info(){
+	return iacademic_info;
+}
+
+/**
+* @param iresearch_group the iresearch_group to set.
+*/
+public void setIacademic_info(Set<Academic_info> iresearch_group){
+	this.iacademic_info=iresearch_group;
+}
+/**
+* Adds a Professional to the iresearch_group set.
+* @param iresearch_group Professional to be added
+*/
+public void addIacademic_info(Academic_info iresearch_group){
+	this.iacademic_info.add(iresearch_group);
+}
+
+/**
+* Removes a Professional to the iresearch_group set.
+* @param iresearch_group Professional to be removed
+*/
+public void removeIacademic_info(Academic_info iresearch_group){
+	this.iacademic_info.remove(iresearch_group);
+}
+
+/**
+ * @return the iresearch_group
+ */
+public Set<Academic_info> getIacademic_info_2(){
+	return iacademic_info_2;
+}
+
+/**
+* @param iresearch_group the iresearch_group to set.
+*/
+public void setIacademic_info_2(Set<Academic_info> iresearch_group){
+	this.iacademic_info_2=iresearch_group;
+}
+/**
+* Adds a Professional to the iresearch_group set.
+* @param iresearch_group Professional to be added
+*/
+public void addIacademic_info_2(Academic_info iresearch_group){
+	this.iacademic_info_2.add(iresearch_group);
+}
+
+/**
+* Removes a Professional to the iresearch_group set.
+* @param iresearch_group Professional to be removed
+*/
+public void removeIacademic_info_2(Academic_info iresearch_group){
+	this.iacademic_info_2.remove(iresearch_group);
+}
+
 
 /**
 * Removes a Professional to the iresearch_group set.
