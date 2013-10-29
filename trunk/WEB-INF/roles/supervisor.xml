@@ -47,7 +47,6 @@
     <action name="action_cancel_view_view_personal" group_name="oPersonalSys" />
     <action name="action_manage_personal_compensation" group_name="oPersonalSys" />
     <action name="action_manage_my_own_personal_grant_concessions" group_name="oPersonalSys" />
-    <action name="action_manage_my_own_personal_academic_info" group_name="oPersonalSys" />
     <action name="action_modify_modify_page_personal" group_name="oPersonalSys" />
     <action name="action_viewlist_funding_detail" group_name="oFunding_detailSys" />
     <action name="action_va_menu_human_resources_manage_personal_all" group_name="virtualfakegroup" />
@@ -91,7 +90,6 @@
     <action-ref action="action_modify_my_own_personal_data" group="oPersonalSys" zone="folder" action-ref="action_modify_my_own_personal_data" group-ref="oPersonalSys" />
     <action-ref action="action_modify_my_own_personal_data" group="oPersonalSys" zone="folder" action-ref="action_manage_my_own_personal_work_experience" group-ref="oPersonalSys" />
     <action-ref action="action_modify_my_own_personal_data" group="oPersonalSys" zone="folder" action-ref="action_manage_my_own_personal_grant_concessions" group-ref="oPersonalSys" />
-    <action-ref action="action_modify_my_own_personal_data" group="oPersonalSys" zone="folder" action-ref="action_manage_my_own_personal_academic_info" group-ref="oPersonalSys" />
     <action-ref action="action_modify_my_own_personal_data" group="oPersonalSys" zone="folder" action-ref="action_manage_my_own_personal_education" group-ref="oPersonalSys" />
     <action-ref action="action_modify_my_own_personal_data" group="oPersonalSys" zone="submit" action-ref="action_modify_my_own_personal_modify_modify_page_personal" group-ref="oPersonalSys" />
     <action-ref action="action_modify_my_own_personal_data" group="oPersonalSys" zone="submit" action-ref="action_modify_my_own_personal_cancel_modify_modify_page_personal" group-ref="oPersonalSys" />
@@ -189,10 +187,6 @@
     <action-ref action="action_manage_my_own_personal_grant_concessions" group="oPersonalSys" zone="rowaction0" action-ref="action_view_grant_concession" group-ref="oGrant_concessionSys" />
     <action-ref action="action_manage_my_own_personal_grant_concessions" group="oPersonalSys" zone="rowaction0" action-ref="action_modify_page_grant_concession" group-ref="oGrant_concessionSys" />
     <action-ref action="action_manage_my_own_personal_grant_concessions" group="oPersonalSys" zone="rowaction0" action-ref="action_delete_page_grant_concession" group-ref="oGrant_concessionSys" />
-    <action-ref action="action_manage_my_own_personal_academic_info" group="oPersonalSys" zone="operation" action-ref="action_add_my_own_academic_info" group-ref="oAcademic_infoSys" />
-    <action-ref action="action_manage_my_own_personal_academic_info" group="oPersonalSys" zone="rowaction0" action-ref="action_view_academic_info" group-ref="oAacademic_infoSys" />
-    <action-ref action="action_manage_my_own_personal_academic_info" group="oPersonalSys" zone="rowaction0" action-ref="action_modify_page_academic_info" group-ref="oAcademic_infoSys" />
-    <action-ref action="action_manage_my_own_personal_academic_info" group="oPersonalSys" zone="rowaction0" action-ref="action_delete_page_academic_info" group-ref="oAcademic_infoSys" />
     <action-ref action="action_viewlist_funding_detail" group="oFunding_detailSys" zone="rowaction0" action-ref="action_view_funding_detail" group-ref="oFunding_detailSys" />
     <action-ref action="action_viewlist_funding_detail" group="oFunding_detailSys" zone="rowaction0" action-ref="action_delete_page_funding_detail" group-ref="oFunding_detailSys" />
     <action-ref action="action_viewlist_funding_detail" group="oFunding_detailSys" zone="rowaction0" action-ref="action_modify_page_funding_detail" group-ref="oFunding_detailSys" />

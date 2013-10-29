@@ -17,8 +17,7 @@
   </accessible-groups>
   <forbidden-actions>
     <action name="action_manage_personal_rgroup_grant_concessions" group_name="oPersonalSys" />
-    <action name="action_manage_personal_rgroup_academic_info" group_name="oPersonalSys" />
-      <action name="action_va_menu_suport_tables" group_name="virtualfakegroup" />
+    <action name="action_va_menu_suport_tables" group_name="virtualfakegroup" />
     <action name="action_va_menu_human_resources_manage_personal_all" group_name="virtualfakegroup" />
     <action name="action_va_menu_human_resources" group_name="virtualfakegroup" />
     <action name="action_va_menu_human_resources_manage_personal_editing" group_name="virtualfakegroup" />
@@ -102,7 +101,6 @@
     <action name="action_add_education" group_name="oEducationSys" />
     <action name="action_viewlist_grant_concession" group_name="oGrant_concessionSys" />
     <action name="action_add_grant_concession" group_name="oGrant_concessionSys" />
-    <action name="action_viewlist_academic_info" group_name="oAcademic_infoSys" />
     <action name="action_add_academic_info" group_name="oAcademic_infoSys" />
     <action name="action_add_work_experience" group_name="oWork_experienceSys" />
     <action name="action_viewlist_work_experience" group_name="oWork_experienceSys" />
@@ -263,10 +261,6 @@
     <action-ref action="action_viewlist_grant_concession" group="oGrant_concessionSys" zone="go" action-ref="action_add_grant_concession" group-ref="oGrant_concessionSys" />
     <action-ref action="action_add_grant_concession" group="oGrant_concessionSys" zone="submit" action-ref="action_new_new_page_grant_concession" group-ref="oGrant_concessionSys" />
     <action-ref action="action_add_grant_concession" group="oGrant_concessionSys" zone="submit" action-ref="action_cancel_new_new_page_grant_concession" group-ref="oGrant_concessionSys" />
-    <action-ref action="action_viewlist_academic_info" group="oAcademic_infoSys" zone="rowaction0" action-ref="action_modify_page_academic_info" group-ref="oAcademic_infoSys" />
-    <action-ref action="action_viewlist_academic_info" group="oAcademic_infoSys" zone="rowaction0" action-ref="action_view_academic_info" group-ref="oAcademic_infoSys" />
-    <action-ref action="action_viewlist_academic_info" group="oAcademic_infoSys" zone="rowaction0" action-ref="action_delete_page_academic_info" group-ref="oAcademic_infoSys" />
-    <action-ref action="action_viewlist_academic_info" group="oAcademic_infoSys" zone="go" action-ref="action_add_academic_info" group-ref="oAcademic_infoSys" />
     <action-ref action="action_add_academic_info" group="oAcademic_infoSys" zone="submit" action-ref="action_new_new_page_academic_info" group-ref="oAcademic_infoSys" />
     <action-ref action="action_add_academic_info" group="oAcademic_infoSys" zone="submit" action-ref="action_cancel_new_new_page_academic_info" group-ref="oAcademic_infoSys" />
     <action-ref action="action_add_work_experience" group="oWork_experienceSys" zone="submit" action-ref="action_new_new_page_work_experience" group-ref="oWork_experienceSys" />

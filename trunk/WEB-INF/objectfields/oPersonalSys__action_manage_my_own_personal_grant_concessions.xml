@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- Nota: El nombre del objeto (nombre_del_objeto) es el nombre en minusculas de la tabla en base de datos. 	-->
 <!-- Nota: En general, si un atributo de tipo 'boolean' no se encuentra se considera su valor como 'false'. 	-->
-<item-list obj="academic_info" site-number="3">
-    <desc>Descripcion para la lista del objeto 'academic_info'.</desc>
+<item-list obj="grant_concession" site-number="3">
+    <desc>Descripcion para la lista del objeto 'grant_concession'.</desc>
     <!-- Categorizaciones para poder agrupar los ficheros de configuracion. -->
     <!-- Para agregar una categoria poner un atributo 'attName=attValue'.   -->
     <category />
     <site name="en">
-        <label language="es">Etiqueta de visualizacion para el objeto 'academic_info'.</label>
-        <comment language="es">Descripcion de visualizacion para el objeto 'academic_info'.</comment>
-        <title language="es">Titulo de visualizacion para el objeto 'academic_info'.</title>
+        <label language="es">Etiqueta de visualizacion para el objeto 'grant_concession'.</label>
+        <comment language="es">Descripcion de visualizacion para el objeto 'grant_concession'.</comment>
+        <title language="es">Titulo de visualizacion para el objeto 'grant_concession'.</title>
         <!-- Campos del objeto para visualizacion -->
         <fields>
             <!-- - Campos visibles -->
@@ -18,29 +18,17 @@
             <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
             <!-- Los atributos modificables son: 'default' y 'visible'.  -->
             <visible-fields>
-                <field name="current" visible="true" default="true" type-of-field="boolean" size="7">
-                    <caption language="en">Current</caption>
-                </field>
-                <field name="thesis_director" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Thesis director</caption>
-                </field>
-                <field name="thesis_codirector" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Thesis codirector</caption>
-                </field>
-                <field name="university_enrolled" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">University</caption>
-                </field>
-                <field name="studies_name" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Phd/Master Programme name</caption>
-                </field>
-                <field name="type_of_study" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Type</caption>
-                </field>
                 <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Start date</caption>
                 </field>
                 <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">End date</caption>
+                </field>
+                <field name="call_code" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Call code</caption>
+                </field>
+                <field name="grant.description" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Grant</caption>
                 </field>
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
@@ -51,9 +39,9 @@
         </fields>
     </site>
     <site name="ct">
-        <label language="es">Etiqueta de visualizacion para el objeto 'academic_info'.</label>
-        <comment language="es">Descripcion de visualizacion para el objeto 'academic_info'.</comment>
-        <title language="es">Titulo de visualizacion para el objeto 'academic_info'.</title>
+        <label language="es">Etiqueta de visualizacion para el objeto 'grant_concession'.</label>
+        <comment language="es">Descripcion de visualizacion para el objeto 'grant_concession'.</comment>
+        <title language="es">Titulo de visualizacion para el objeto 'grant_concession'.</title>
         <!-- Campos del objeto para visualizacion -->
         <fields>
             <!-- - Campos visibles -->
@@ -62,29 +50,17 @@
             <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
             <!-- Los atributos modificables son: 'default' y 'visible'.  -->
             <visible-fields>
-                <field name="current" visible="true" default="true" type-of-field="boolean" size="7">
-                    <caption language="en">Actual</caption>
-                </field>
-                <field name="thesis_director" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Director de tesi</caption>
-                </field>
-                <field name="thesis_codirector" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Codirector de tesi</caption>
-                </field>
-                <field name="university_enrolled" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Universitat</caption>
-                </field>
-                <field name="studies_name" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Nom de Phd/Master</caption>
-                </field>
-                <field name="type_of_study" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Tipus</caption>
-                </field>
                 <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Data d'inici</caption>
+                    <caption language="ct">Data d'inici</caption>
                 </field>
                 <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Data fi</caption>
+                    <caption language="ct">Data de fi</caption>
+                </field>
+                <field name="call_code" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Convocatoria</caption>
+                </field>
+                <field name="grant.description" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Beca</caption>
                 </field>
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
@@ -95,9 +71,9 @@
         </fields>
     </site>
     <site name="es">
-        <label language="es">Etiqueta de visualizacion para el objeto 'academic_info'.</label>
-        <comment language="es">Descripcion de visualizacion para el objeto 'academic_info'.</comment>
-        <title language="es">Titulo de visualizacion para el objeto 'academic_info'.</title>
+        <label language="es">Etiqueta de visualizacion para el objeto 'grant_concession'.</label>
+        <comment language="es">Descripcion de visualizacion para el objeto 'grant_concession'.</comment>
+        <title language="es">Titulo de visualizacion para el objeto 'grant_concession'.</title>
         <!-- Campos del objeto para visualizacion -->
         <fields>
             <!-- - Campos visibles -->
@@ -106,29 +82,17 @@
             <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
             <!-- Los atributos modificables son: 'default' y 'visible'.  -->
             <visible-fields>
-               <field name="current" visible="true" default="true" type-of-field="boolean" size="7">
-                    <caption language="en">Actual</caption>
-                </field>
-                <field name="thesis_director" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Director de tesis</caption>
-                </field>
-                <field name="thesis_codirector" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Codirector de tesis</caption>
-                </field>
-                <field name="university_enrolled" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Universidad</caption>
-                </field>
-                <field name="studies_name" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Nombre de Phd/Master</caption>
-                </field>
-                <field name="type_of_study" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Tipo</caption>
-                </field>
                 <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Fecha inicio</caption>
+                    <caption language="es">Fecha de inicio</caption>
                 </field>
                 <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">Fecha fin</caption>
+                    <caption language="es">Fecha de fin</caption>
+                </field>
+                <field name="call_code" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="es">Convocatoria</caption>
+                </field>
+                <field name="grant.description" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="es">Beca</caption>
                 </field>
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
