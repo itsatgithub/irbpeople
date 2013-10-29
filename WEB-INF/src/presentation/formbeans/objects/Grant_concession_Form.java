@@ -26,15 +26,6 @@ public class Grant_concession_Form extends ValidatorFormAndAction{
 
 	private String current = null;
 
-	private String start_date_msc_or_phd = null;
-	
-	private String thesis_director = null;
-	
-	private String name_master_or_programme = null;
-	
-	private String university_enrolled = null;
-	
-
 	private Personal_IDForm grant_concession_personal=null;
 
 	private Grant_IDForm grant=null;
@@ -139,39 +130,5 @@ public class Grant_concession_Form extends ValidatorFormAndAction{
     public void setCurrent(String current) {
         this.current = current;
     }
-
-    public String getStart_date_msc_or_phd() {
-        return start_date_msc_or_phd;
-    }
-
-    public void setStart_date_msc_or_phd(String start_date_msc_or_phd) {
-        this.start_date_msc_or_phd = start_date_msc_or_phd;
-    }
-
-    public String getThesis_director() {
-        return thesis_director;
-    }
-
-    public void setThesis_director(String thesis_director) {
-        this.thesis_director = thesis_director;
-    }
-
-    public String getName_master_or_programme() {
-        return name_master_or_programme;
-    }
-
-    public void setName_master_or_programme(String name_master_or_programme) {
-        this.name_master_or_programme = name_master_or_programme;
-    }
-
-    public String getUniversity_enrolled() {
-        return university_enrolled;
-    }
-
-    public void setUniversity_enrolled(String university_enrolled) {
-        this.university_enrolled = university_enrolled;
-    }
-	
-
 
 }

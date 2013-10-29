@@ -63,58 +63,6 @@
 	<td class="BlankSeparator"></td>
 </tr>
 <tr>
-	<td class="FormFieldLeft">
-	<jim:message key="start_date_msc_or_phd" />
-	</td>
-	<td class="FormFieldRight">
-		<nested-jim:TagDate property="start_date_msc_or_phd" />
-	</td>
-</tr>
-
-<tr>
-	<td class="FormSeparator"></td>
-	<td class="BlankSeparator"></td>
-</tr>
-<tr>
-	<td class="FormFieldLeft">
-		<jim:message key="thesis_director" />
-	</td>
-	<td class="FormFieldRight">
-		<nested:text property="thesis_director" maxlength="100"/>
-	</td>
-</tr>
-
-<tr>
-	<td class="FormSeparator"></td>
-	<td class="BlankSeparator"></td>
-</tr>
-<tr>
-	<td class="FormFieldLeft">
-		<jim:message key="name_master_or_programme" />
-	</td>
-	<td class="FormFieldRight">
-		<nested:text property="name_master_or_programme" maxlength="100"/>
-	</td>
-</tr>
-
-<tr>
-	<td class="FormSeparator"></td>
-	<td class="BlankSeparator"></td>
-</tr>
-<tr>
-	<td class="FormFieldLeft">
-		<jim:message key="university_enrolled" />
-	</td>
-	<td class="FormFieldRight">
-		<nested:text property="university_enrolled" maxlength="100"/>
-	</td>
-</tr>
-
-<tr>
-	<td class="FormSeparator"></td>
-	<td class="BlankSeparator"></td>
-</tr>
-<tr>
 	
 <td class="FormFieldLeft">
 	

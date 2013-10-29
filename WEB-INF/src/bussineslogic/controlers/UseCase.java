@@ -8333,18 +8333,6 @@ public class UseCase {
 
 	grant_concession.setCall_code(TOGrant_concession.getCall_code());
 
-	grant_concession.setStart_date_msc_or_phd(TOGrant_concession
-		.getStart_date_msc_or_phd());
-
-	grant_concession.setThesis_director(TOGrant_concession
-		.getThesis_director());
-
-	grant_concession.setName_master_or_programme(TOGrant_concession
-		.getName_master_or_programme());
-
-	grant_concession.setUniversity_enrolled(TOGrant_concession
-		.getUniversity_enrolled());
-
 	/** 5. We set the code to the new instance * */
 	try {
 	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
@@ -8469,18 +8457,7 @@ public class UseCase {
 
 	grant_concession.setCall_code(TOGrant_concession.getCall_code());
 
-	grant_concession.setStart_date_msc_or_phd(TOGrant_concession
-		.getStart_date_msc_or_phd());
-
-	grant_concession.setThesis_director(TOGrant_concession
-		.getThesis_director());
-
-	grant_concession.setName_master_or_programme(TOGrant_concession
-		.getName_master_or_programme());
-
-	grant_concession.setUniversity_enrolled(TOGrant_concession
-		.getUniversity_enrolled());
-
+	
 	/**
 	 * 5. We set the DTO version to the modified object and we update it
 	 * with the new values in the DB. We evict and update the instance to
