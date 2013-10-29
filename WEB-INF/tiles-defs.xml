@@ -882,16 +882,10 @@
   </definition>
   <definition name="oAcademic_infoSys.action_delete_page_academic_info" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oGrant_concessionSys/action_delete_page_academic_info.jsp" />
-  </definition>
-  <definition name="oAcademic_infoSys.action_viewlist_academic_info" extends="horizontal_evc_template1">
-    <put name="center" value="/pages/oAcademic_infoSys/action_viewlist_academic_info.jsp" />
-  </definition>
+  </definition>  
   <definition name="oAcademic_infoSys.action_add_academic_info" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oAcademic_infoSys/action_add_academic_info.jsp" />
-  </definition>
-  <definition name="oAcademic_infoSys.action_add_my_own_academic_info" extends="horizontal_evc_template1">
-    <put name="center" value="/pages/oAcademic_infoSys/action_add_my_own_academic_info.jsp" />
-  </definition>
+  </definition>  
   <definition name="oAcademic_infoSys.action_view_academic_info" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oAcademic_infoSys/action_view_academic_info.jsp" />
   </definition>
@@ -1101,10 +1095,7 @@
   </definition>
   <definition name="oPersonalSys.action_manage_my_own_personal_academic_info" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oPersonalSys/action_manage_my_own_personal_academic_info.jsp" />
-  </definition>
-  <definition name="oAcademic_infoSys.popUp_action_add_my_own_academic_info" extends="popup_template">
-    <put name="center" value="/pages/oGrant_concessionSys/action_add_my_own_academic_info.jsp" />
-  </definition>
+  </definition>  
   <definition name="oAcademic_infoSys.popUp_action_view_academic_info" extends="popup_template">
     <put name="center" value="/pages/oAcademic_infoSys/action_view_academic_info.jsp" />
   </definition>

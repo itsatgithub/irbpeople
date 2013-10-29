@@ -2356,17 +2356,6 @@
 	
 </form>
 
-<form name="oAcademic_infoSys__action_add_my_own_academic_info_new_new_page_academic_info_Form">
-	
-<field property="academic_info_Form" depends="nestedBean">
-	<var>
-		<var-name>beanName</var-name>
-		<var-value>academic_info_Form</var-value>
-	</var>
-</field>
-	
-</form>
-
 <form name="oLocationSys__action_modify_modify_page_location_Form">
 	
 <field property="location_Form" depends="nestedBean">
