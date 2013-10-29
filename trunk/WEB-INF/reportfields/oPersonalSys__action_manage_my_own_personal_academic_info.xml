@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- Nota: El nombre del objeto (nombre_del_objeto) es el nombre en minusculas de la tabla en base de datos. 	-->
-<!-- Nota: En general, si un atributo de tipo 'boolean' no se encuentra se considera su valor como 'false'. 	-->
-<item-list obj="academic_info" site-number="3">
-    <desc>Descripcion para la lista del objeto 'academic_info'.</desc>
-    <!-- Categorizaciones para poder agrupar los ficheros de configuracion. -->
-    <!-- Para agregar una categoria poner un atributo 'attName=attValue'.   -->
-    <category />
+<report view="academic_info" site-number="3">
     <site name="en">
-        <label language="es">Etiqueta de visualizacion para el objeto 'academic_info'.</label>
-        <comment language="es">Descripcion de visualizacion para el objeto 'academic_info'.</comment>
-        <title language="es">Titulo de visualizacion para el objeto 'academic_info'.</title>
-        <!-- Campos del objeto para visualizacion -->
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
         <fields>
-            <!-- - Campos visibles -->
-            <!-- El orden es el de aparicion de los tags. Para editar el orden se recomienda utilizar el XMLSpy, -->
-            <!-- mediante el cual, es sencillo mover un tag arriba y abajo. -->
-            <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
-            <!-- Los atributos modificables son: 'default' y 'visible'.  -->
-            <visible-fields>
-                <field name="current" visible="true" default="true" type-of-field="boolean" size="7">
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+				<field name="current" visible="true" default="true" type-of-field="boolean" size="7">
                     <caption language="en">Current</caption>
                 </field>
                 <field name="thesis_director" visible="true" default="true" type-of-field="text" size="20">
@@ -42,27 +35,25 @@
                 <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">End date</caption>
                 </field>
-            </visible-fields>
-            <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
-            <!-- 1/2 - Campos 'hidden'. -->
-            <hidden-fields />
-            <!-- 2/2 - Campos 'discarded'. -->
-            <discarded-fields />
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
         </fields>
     </site>
     <site name="ct">
-        <label language="es">Etiqueta de visualizacion para el objeto 'academic_info'.</label>
-        <comment language="es">Descripcion de visualizacion para el objeto 'academic_info'.</comment>
-        <title language="es">Titulo de visualizacion para el objeto 'academic_info'.</title>
-        <!-- Campos del objeto para visualizacion -->
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
         <fields>
-            <!-- - Campos visibles -->
-            <!-- El orden es el de aparicion de los tags. Para editar el orden se recomienda utilizar el XMLSpy, -->
-            <!-- mediante el cual, es sencillo mover un tag arriba y abajo. -->
-            <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
-            <!-- Los atributos modificables son: 'default' y 'visible'.  -->
-            <visible-fields>
-                <field name="current" visible="true" default="true" type-of-field="boolean" size="7">
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                 <field name="current" visible="true" default="true" type-of-field="boolean" size="7">
                     <caption language="en">Actual</caption>
                 </field>
                 <field name="thesis_director" visible="true" default="true" type-of-field="text" size="20">
@@ -86,27 +77,25 @@
                 <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Data fi</caption>
                 </field>
-            </visible-fields>
-            <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
-            <!-- 1/2 - Campos 'hidden'. -->
-            <hidden-fields />
-            <!-- 2/2 - Campos 'discarded'. -->
-            <discarded-fields />
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
         </fields>
     </site>
     <site name="es">
-        <label language="es">Etiqueta de visualizacion para el objeto 'academic_info'.</label>
-        <comment language="es">Descripcion de visualizacion para el objeto 'academic_info'.</comment>
-        <title language="es">Titulo de visualizacion para el objeto 'academic_info'.</title>
-        <!-- Campos del objeto para visualizacion -->
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
         <fields>
-            <!-- - Campos visibles -->
-            <!-- El orden es el de aparicion de los tags. Para editar el orden se recomienda utilizar el XMLSpy, -->
-            <!-- mediante el cual, es sencillo mover un tag arriba y abajo. -->
-            <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
-            <!-- Los atributos modificables son: 'default' y 'visible'.  -->
-            <visible-fields>
-               <field name="current" visible="true" default="true" type-of-field="boolean" size="7">
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                 <field name="current" visible="true" default="true" type-of-field="boolean" size="7">
                     <caption language="en">Actual</caption>
                 </field>
                 <field name="thesis_director" visible="true" default="true" type-of-field="text" size="20">
@@ -130,13 +119,12 @@
                 <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Fecha fin</caption>
                 </field>
-            </visible-fields>
-            <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
-            <!-- 1/2 - Campos 'hidden'. -->
-            <hidden-fields />
-            <!-- 2/2 - Campos 'discarded'. -->
-            <discarded-fields />
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
         </fields>
     </site>
-</item-list>
+</report>
 

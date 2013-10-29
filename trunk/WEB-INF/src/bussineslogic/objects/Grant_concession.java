@@ -34,10 +34,6 @@ String call_code;
 Personal grant_concession_personal;
 Grant grant;
 private boolean current = false;
-Date start_date_msc_or_phd;
-String thesis_director;
-String name_master_or_programme;
-String university_enrolled;
 
 	/**
 	 * Default Constructor which creates an empty grant_concession
@@ -204,43 +200,6 @@ public void setGrant(Grant grant){
     }
 
 
-    public Date getStart_date_msc_or_phd() {
-        return start_date_msc_or_phd;
-    }
-
-
-    public void setStart_date_msc_or_phd(Date start_date_msc_or_phd) {
-        this.start_date_msc_or_phd = start_date_msc_or_phd;
-    }
-
-
-    public String getThesis_director() {
-        return thesis_director;
-    }
-
-
-    public void setThesis_director(String thesis_director) {
-        this.thesis_director = thesis_director;
-    }
-
-
-    public String getName_master_or_programme() {
-        return name_master_or_programme;
-    }
-
-
-    public void setName_master_or_programme(String name_master_or_programme) {
-        this.name_master_or_programme = name_master_or_programme;
-    }
-
-
-    public String getUniversity_enrolled() {
-        return university_enrolled;
-    }
-
-
-    public void setUniversity_enrolled(String university_enrolled) {
-        this.university_enrolled = university_enrolled;
-    }
+    
 
 }

@@ -214,19 +214,7 @@
                 </field>
                 <field name="call_code" visible="true" type-of-field="text">
                     <caption >Grant: Call code</caption>
-                </field>
-                <field name="thesis_director" visible="true" type-of-field="text">
-                    <caption >Grant: Thesis director</caption>
-                </field>
-                <field name="name_master_or_programme" visible="true" type-of-field="text">
-                    <caption >Grant: Name of master or programme</caption>
-                </field>
-                <field name="university_enrolled" visible="true" type-of-field="text">
-                    <caption >Grant: University enrolled</caption>
-                </field>
-                <field name="start_date_msc_or_phd" visible="true" type-of-field="text">
-                    <caption >Grant: Start date of MSc. or PhD.</caption>
-                </field>
+                </field>                
                 <field name="grant" visible="true" type-of-field="text">
                     <caption >Grant: Grant</caption>
                 </field>
@@ -468,19 +456,7 @@
                 </field>
                 <field name="call_code" visible="true" type-of-field="text">
                     <caption >Grant: Call code</caption>
-                </field>
-                <field name="thesis_director" visible="true" type-of-field="text">
-                    <caption >Grant: Thesis director</caption>
-                </field>
-                <field name="name_master_or_programme" visible="true" type-of-field="text">
-                    <caption >Grant: Name of master or programme</caption>
-                </field>
-                <field name="university_enrolled" visible="true" type-of-field="text">
-                    <caption >Grant: University enrolled</caption>
-                </field>
-                <field name="start_date_msc_or_phd" visible="true" type-of-field="text">
-                    <caption >Grant: Start date of MSc. or PhD.</caption>
-                </field>
+                </field>                
                 <field name="grant" visible="true" type-of-field="select description from table_grant order by description">
                     <caption >Grant: Grant</caption>
                 </field>
@@ -722,19 +698,7 @@
                 </field>
                 <field name="call_code" visible="true" type-of-field="text">
                     <caption >Grant: Call code</caption>
-                </field>
-                <field name="thesis_director" visible="true" type-of-field="text">
-                    <caption >Grant: Thesis director</caption>
-                </field>
-                <field name="name_master_or_programme" visible="true" type-of-field="text">
-                    <caption >Grant: Name of master or programme</caption>
-                </field>
-                <field name="university_enrolled" visible="true" type-of-field="text">
-                    <caption >Grant: University enrolled</caption>
-                </field>
-                <field name="start_date_msc_or_phd" visible="true" type-of-field="text">
-                    <caption >Grant: Start date of MSc. or PhD.</caption>
-                </field>
+                </field>                
                 <field name="grant" visible="true" type-of-field="text">
                     <caption >Grant: Grant</caption>
                 </field>

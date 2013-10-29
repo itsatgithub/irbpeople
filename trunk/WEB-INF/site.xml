@@ -8934,7 +8934,7 @@
                                     <button-caption language="en">Benefits</button-caption>
                                 </action>
                                 <action command="oPersonalSys" action="action_manage_personal_grant_concessions">
-                                    <button-caption language="en">Grant Concessions &amp; Academic Info</button-caption>
+                                    <button-caption language="en">Grant Concessions</button-caption>
                                 </action>
                                 <action command="oPersonalSys" action="action_manage_personal_academic_info">
                                     <button-caption language="en">Academic Info</button-caption>
