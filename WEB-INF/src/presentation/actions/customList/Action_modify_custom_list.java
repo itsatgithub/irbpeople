@@ -18,6 +18,7 @@ import presentation.formbeans.customList.Action_load_customList_Form;
 import presentation.formbeans.objects.CustomList_Form;
 import utils.actions.NavigationFunctions;
 import utils.beanUtils.ExtendedBeanUtils;
+import utils.reportFilter.ReportFilter;
 import utils.userUtils.UserUtils;
 import bussineslogic.controlers.UseCase;
 import bussineslogic.controlers.UseCaseFacade;
@@ -231,6 +232,12 @@ public class Action_modify_custom_list extends Action {
 	// were used in the jsp where showCombos is used.
 
 	// finally we set the request attributes needed by the showCombos tag
+	
+	ReportFilter.filterFieldsByProfile(user, SELleftNames, SELleftLabels);
+	ReportFilter.filterFieldsByProfile(user, SELrightNames, SELrightLabels);
+	ReportFilter.filterFieldsByProfile(user, ORDleftNames, ORDleftLabels);
+	ReportFilter.filterFieldsByProfile(user, ORDrightNames, ORDrightLabels);
+	
 	request.setAttribute("SELleftFieldNames", (Vector) SELleftNames);
 	request.setAttribute("SELleftLabels", (Vector) SELleftLabels);
 	request.setAttribute("SELrightFieldNames", (Vector) SELrightNames);

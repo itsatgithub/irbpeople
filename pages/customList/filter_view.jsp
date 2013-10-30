@@ -4,6 +4,7 @@
 <%@page import="utils.hibernate.HibernateUtil"%>
 <%@page import="org.hibernate.SQLQuery" %>
 <%@page import="java.util.regex.*" %>
+<%@page import="utils.reportFilter.ReportFilter" %>
 
 <script type="text/javascript" src="<%=JspUtils.getProjectPath(request)%>/common/formUtils.js"></script>
 
@@ -51,6 +52,8 @@ function filtersubmit(form){
 	Vector visibleFieldNames = rco.getWhere().getVisibleFieldNames();
 	Vector visibleLabels = rco.getWhere().getVisibleLabels(UserUtils.getCurrentLocale(request).getLanguage());
 	Vector visibleTypes =  rco.getWhere().getVisibleTypeNames();
+	
+	ReportFilter.filterFieldsByProfile(UserUtils.getCurrentUsuario(request), visibleFieldNames, visibleLabels);
 	
 %>
 

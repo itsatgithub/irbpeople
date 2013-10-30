@@ -248,6 +248,43 @@
                 <field name="`tbe`.`description`" visible="true" type-of-field="text">
                     <caption >Benefit: Type</caption>
                 </field>
+                <!-- New academic info fields -->
+                <field name="`ai`.`start_date`" visible="true" type-of-field="date">
+					<caption >Academic info: Start date</caption>
+				</field>
+				<field name="`ai`.`end_date`" visible="true" type-of-field="date">
+					<caption >Academic info: End date</caption>
+				</field>
+				<field name="`ai`.`lab_rotation_date`" visible="true" type-of-field="date">
+					<caption >Academic info: Laboratory rotation date</caption>
+				</field>				
+				<field name="`ai`.`thesis_defense_date`" visible="true" type-of-field="date">
+					<caption >Academic info: Thesis defense date</caption>
+				</field>
+				<field name="`ai`.`studies_name`" visible="true" type-of-field="text">
+					<caption >Academic info: Phd-Master Programme Name</caption>
+				</field>				
+				<field name="`ai`.`thesis_director`" visible="true" type-of-field="text">
+					<caption >Academic info: Thesis director</caption>
+				</field>				
+				<field name="`ai`.`thesis_codirector`" visible="true" type-of-field="text">
+					<caption >Academic info: Thesis codirector</caption>
+				</field>				
+				<field name="`ai`.`university_enrolled`" visible="true" type-of-field="text">
+					<caption >Academic info: University enrolled</caption>
+				</field>				
+				<field name="`ai`.`tac0`" visible="true" type-of-field="text">
+					<caption >Academic info: Tac 0</caption>
+				</field>				
+				<field name="`ts`.`description`" visible="true" type-of-field="text">
+					<caption >Academic info: Type of study</caption>
+				</field>				
+				<field name="`airg`.`description`" visible="true" type-of-field="text">
+					<caption >Academic info: Lab rotation laboratory</caption>
+				</field>				
+				<field name="`airg2`.`description`" visible="true" type-of-field="text">
+					<caption >Academic info: Lab rotation laboratory 2</caption>
+				</field>                
             </select-fields>
             <where-fields>
                 <field name="personalcode" visible="true" type-of-field="text">
@@ -498,6 +535,43 @@
                     <caption >Benefit: End date</caption>
                 </field>
                  -->
+                <!-- New academic info fields 
+                <field name="academic_info_start_date" visible="true" type-of-field="date">
+					<caption >Academic info: Start date</caption>
+				</field>
+				<field name="academic_info_end_date" visible="true" type-of-field="date">
+					<caption >Academic info: End date</caption>
+				</field>-->
+				<field name="`ai`.`lab_rotation_date`" visible="true" type-of-field="date">
+					<caption >Academic info: Laboratory rotation date</caption>
+				</field>				
+				<field name="`ai`.`thesis_defense_date`" visible="true" type-of-field="date">
+					<caption >Academic info: Thesis defense date</caption>
+				</field>
+				<field name="`ai`.`studies_name`" visible="true" type-of-field="text">
+					<caption >Academic info: Phd-Master Programme Name</caption>
+				</field>				
+				<field name="`ai`.`thesis_director`" visible="true" type-of-field="text">
+					<caption >Academic info: Thesis director</caption>
+				</field>				
+				<field name="`ai`.`thesis_codirector`" visible="true" type-of-field="text">
+					<caption >Academic info: Thesis codirector</caption>
+				</field>				
+				<field name="`ai`.`university_enrolled`" visible="true" type-of-field="text">
+					<caption >Academic info: University enrolled</caption>
+				</field>				
+				<field name="`ai`.`tac0`" visible="true" type-of-field="boolean">
+					<caption >Academic info: Tac 0</caption>
+				</field>				
+				<field name="`ts`.`description`" visible="true" type-of-field="select description from type_of_study order by description">
+					<caption >Academic info: Type of study</caption>
+				</field>				
+				<field name="`airg`.`description`" visible="true" type-of-field="select description from research_group order by description">
+					<caption >Academic info: Lab rotation laboratory</caption>
+				</field>				
+				<field name="`airg2`.`description`" visible="true" type-of-field="select description from research_group order by description">
+					<caption >Academic info: Lab rotation laboratory 2</caption>
+				</field> 
             </where-fields>
             <orderby-fields>
                 <field name="personalcode" visible="true" type-of-field="text">
@@ -740,6 +814,43 @@
                 <field name="`tbe`.`description`" visible="true" type-of-field="text">
                     <caption >Benefit: Type</caption>
                 </field>
+                 <!-- New academic info fields -->
+                <field name="`ai`.`start_date`" visible="true" type-of-field="date">
+					<caption >Academic info: Start date</caption>
+				</field>
+				<field name="`ai`.`end_date`" visible="true" type-of-field="date">
+					<caption >Academic info: End date</caption>
+				</field>
+				<field name="`ai`.`lab_rotation_date`" visible="true" type-of-field="date">
+					<caption >Academic info: Laboratory rotation date</caption>
+				</field>				
+				<field name="`ai`.`thesis_defense_date`" visible="true" type-of-field="date">
+					<caption >Academic info: Thesis defense date</caption>
+				</field>
+				<field name="`ai`.`studies_name`" visible="true" type-of-field="text">
+					<caption >Academic info: Phd-Master Programme Name</caption>
+				</field>				
+				<field name="`ai`.`thesis_director`" visible="true" type-of-field="text">
+					<caption >Academic info: Thesis director</caption>
+				</field>				
+				<field name="`ai`.`thesis_codirector`" visible="true" type-of-field="text">
+					<caption >Academic info: Thesis codirector</caption>
+				</field>				
+				<field name="`ai`.`university_enrolled`" visible="true" type-of-field="text">
+					<caption >Academic info: University enrolled</caption>
+				</field>				
+				<field name="`ai`.`tac0`" visible="true" type-of-field="text">
+					<caption >Academic info: Tac 0</caption>
+				</field>				
+				<field name="`ts`.`description`" visible="true" type-of-field="text">
+					<caption >Academic info: Type of study</caption>
+				</field>				
+				<field name="`airg`.`description`" visible="true" type-of-field="text">
+					<caption >Academic info: Lab rotation laboratory</caption>
+				</field>				
+				<field name="`airg2`.`description`" visible="true" type-of-field="text">
+					<caption >Academic info: Lab rotation laboratory 2</caption>
+				</field>         
             </orderby-fields>
         </fields>
     </site>
