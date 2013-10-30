@@ -17744,7 +17744,7 @@ public class UseCase {
 	    //
 	    // dateString = df.format(d);
 	    // }
-//TODO JORDI REVISAR
+
 	    view_name += " left join `grant_concession` `gc` on `gc`.`grant_concession_personal` = `personalcode` and `gc`.`deleted`=0 and ( (gc.start_date is null and gc.end_date is null)  or ('"
 		    + dateString
 		    + "' between gc.start_date and gc.end_date) or (gc.start_date is null and '"
@@ -17770,6 +17770,20 @@ public class UseCase {
 		    + dateString
 		    + "' >= ben.start_date and ben.end_date is null))"
 		    + " left join type_of_benefit `tbe` on ben.type_of_benefit = tbe.type_of_benefitcode ";
+	    
+	    
+	    //Add academic info
+	    view_name += " left join `academic_info` `ai` on `ai`.`academic_info_personal` = `personalcode` and `ai`.`deleted`=0 and ( (ai.start_date is null and ai.end_date is null)  or ('"
+			    + dateString
+			    + "' between ai.start_date and ai.end_date) or (ai.start_date is null and '"
+			    + dateString
+			    + "' <= ai.end_date) or ('"
+			    + dateString
+			    + "' >= ai.start_date and ai.end_date is null))"
+			    + " LEFT JOIN `type_of_study` `ts` ON `ts`.`type_of_studycode` = `ai`.`type_of_study`"
+			    + " LEFT JOIN `research_group` `airg` ON `ai`.`lab_rotation_lab` = `airg`.`research_groupcode`"
+			    + " LEFT JOIN `research_group` `airg2` ON `ai`.`lab_rotation_lab` = `airg2`.`research_groupcode`";
+	    
 
 	    String max_education_field = "(select typedu.description from EDUCATION edu"
 		    + " inner join TYPE_OF_EDUCATION typedu on edu.type=typedu.type_of_educationcode and edu.deleted=0"

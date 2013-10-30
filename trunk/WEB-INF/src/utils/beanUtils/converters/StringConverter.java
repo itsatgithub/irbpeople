@@ -67,7 +67,7 @@ public final class StringConverter implements Converter {
     		return pattern.format(value);
     	}
     	
-    	if(Integer.class.isInstance(value) || int.class.isInstance(value)){
+    	if(Integer.class.isInstance(value) || int.class.isInstance(value) ){
     		String thousandsSeparator = patternsBundle.getString("thousandsSeparator");
     		int groupingSize = Integer.parseInt(patternsBundle.getString("groupingSize"));
     		DecimalFormat pattern = new DecimalFormat();
@@ -82,7 +82,12 @@ public final class StringConverter implements Converter {
     		pattern.setGroupingUsed(true);
     		return pattern.format(value);
     	}
-    	
+    	if(byte.class.isInstance(value) || Byte.class.isInstance(value)){
+    		if(value.toString().equals("1")){
+    			return patternsBundle.getString("trueEtiq");
+    		}
+    		return null;
+    	}
     	if(Boolean.class.isInstance(value)){
     		if((Boolean)value==true) return patternsBundle.getString("trueEtiq");
     		else return patternsBundle.getString("falseEtiq");

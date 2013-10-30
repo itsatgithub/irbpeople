@@ -124,8 +124,7 @@
 </td>
 </tr>
 <tr>
-<td align="center">
-	
+<td align="center">	
 <table cellpadding=0 cellspacing=0 width="100%">
 	<tr>
 		<td><jsp:include page="/pages/common/templates/groupHeader.jsp">
