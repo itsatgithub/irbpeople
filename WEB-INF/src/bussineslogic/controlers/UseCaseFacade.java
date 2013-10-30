@@ -175,8 +175,9 @@ public class UseCaseFacade {
 	 * @param personalcode Code of the personal which contains the set of ieducation_personal
 	 * @param configurator ListConfigurator to be used
 	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws NoPermisosException 
 	 */
-	public static Pair<Integer, List<Education>> ObtainAllIeducation_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException {
+	public static Pair<Integer, List<Education>> ObtainAllIeducation_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException, NoPermisosException {
 		return UseCase.ObtainAllIeducation_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getPersonal(personalcode), configurator);
 	}
 
@@ -187,8 +188,9 @@ public class UseCaseFacade {
 	 * @param personalcode Code of the personal which contains the set of iprofessional_personal
 	 * @param configurator ListConfigurator to be used
 	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws NoPermisosException 
 	 */
-	public static Pair<Integer, List<Professional>> ObtainAllIprofessional_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException {
+	public static Pair<Integer, List<Professional>> ObtainAllIprofessional_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException, NoPermisosException {
 		return UseCase.ObtainAllIprofessional_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getPersonal(personalcode), configurator);
 	}
 
@@ -199,8 +201,9 @@ public class UseCaseFacade {
 	 * @param personalcode Code of the personal which contains the set of icompensation_personal
 	 * @param configurator ListConfigurator to be used
 	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws NoPermisosException 
 	 */
-	public static Pair<Integer, List<Compensation>> ObtainAllIcompensation_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException {
+	public static Pair<Integer, List<Compensation>> ObtainAllIcompensation_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException, NoPermisosException {
 		return UseCase.ObtainAllIcompensation_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getPersonal(personalcode), configurator);
 	}
 
@@ -211,8 +214,9 @@ public class UseCaseFacade {
 	 * @param personal Personal which contains the set of icompensation_personal
 	 * @return the las compesation
 	 * @throws InternalException 
+	 * @throws NoPermisosException 
 	 */
-	public static Compensation ObtainCurrentCompensationFromPersonal(String administradorId, String personalcode) throws InternalException {
+	public static Compensation ObtainCurrentCompensationFromPersonal(String administradorId, String personalcode) throws InternalException, NoPermisosException {
 		return UseCase.ObtainCurrentCompensationFromPersonal(UseCase.getUsuario(administradorId), UseCase.getPersonal(personalcode));
 	}
 
@@ -235,8 +239,9 @@ public class UseCaseFacade {
 	 * @param personalcode Code of the personal which contains the set of igrant_concession_personal
 	 * @param configurator ListConfigurator to be used
 	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws NoPermisosException 
 	 */
-	public static Pair<Integer, List<Grant_concession>> ObtainAllIgrant_concession_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException {
+	public static Pair<Integer, List<Grant_concession>> ObtainAllIgrant_concession_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException, NoPermisosException {
 		return UseCase.ObtainAllIgrant_concession_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getPersonal(personalcode), configurator);
 	}
 
@@ -247,8 +252,9 @@ public class UseCaseFacade {
 	 * @param personalcode Code of the personal which contains the set of iacademic_info_personal
 	 * @param configurator ListConfigurator to be used
 	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws NoPermisosException 
 	 */
-	public static Pair<Integer, List<Academic_info>> ObtainAllIacademic_info_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException {
+	public static Pair<Integer, List<Academic_info>> ObtainAllIacademic_info_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException, NoPermisosException {
 		return UseCase.ObtainAllIacademic_info_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getPersonal(personalcode), configurator);
 	}
 	
@@ -259,8 +265,9 @@ public class UseCaseFacade {
 	 * @param personalcode Code of the personal which contains the set of iwork_experience_personal
 	 * @param configurator ListConfigurator to be used
 	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws NoPermisosException 
 	 */
-	public static Pair<Integer, List<Work_experience>> ObtainAllIwork_experience_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException {
+	public static Pair<Integer, List<Work_experience>> ObtainAllIwork_experience_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException, NoPermisosException {
 		return UseCase.ObtainAllIwork_experience_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getPersonal(personalcode), configurator);
 	}
 
@@ -271,8 +278,9 @@ public class UseCaseFacade {
 	 * @param personalcode Code of the personal which contains the set of ifunding_detail_personal
 	 * @param configurator ListConfigurator to be used
 	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws NoPermisosException 
 	 */
-	public static Pair<Integer, List<Funding_detail>> ObtainAllIfunding_detail_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException {
+	public static Pair<Integer, List<Funding_detail>> ObtainAllIfunding_detail_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException, NoPermisosException {
 		return UseCase.ObtainAllIfunding_detail_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getPersonal(personalcode), configurator);
 	}
 
@@ -288,7 +296,7 @@ public class UseCaseFacade {
 		return UseCase.ObtainAllIchild_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getPersonal(personalcode), configurator);
 	}
 
-	public static Pair<Integer, List<Personal_comment>> ObtainAllIpersonal_commentsFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException {
+	public static Pair<Integer, List<Personal_comment>> ObtainAllIpersonal_commentsFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException, NoPermisosException {
 		return UseCase.ObtainAllIpersonal_commentsFromPersonal(UseCase.getUsuario(administradorId), UseCase.getPersonal(personalcode), configurator);
 	}
 
@@ -299,8 +307,9 @@ public class UseCaseFacade {
 	 * @param personalcode Code of the personal which contains the set of ibenefits_personal
 	 * @param configurator ListConfigurator to be used
 	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws NoPermisosException 
 	 */
-	public static Pair<Integer, List<Benefits>> ObtainAllIbenefits_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException {
+	public static Pair<Integer, List<Benefits>> ObtainAllIbenefits_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException, NoPermisosException {
 		return UseCase.ObtainAllIbenefits_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getPersonal(personalcode), configurator);
 	}
 
@@ -2836,8 +2845,9 @@ public class UseCaseFacade {
 	 * @return the modified personal
 	 * @throws InternalException
 	 * @throws ValidationFailedException 
+	 * @throws NoPermisosException 
 	 */
-	public static Personal changeStateOfPersonalFromValidatedToActive(String usercode, String personalcode) throws InternalException, ValidationFailedException {
+	public static Personal changeStateOfPersonalFromValidatedToActive(String usercode, String personalcode) throws InternalException, ValidationFailedException, NoPermisosException {
 		return UseCase.changeStateOfPersonalFromValidatedToActive(UseCase.getUsuario(usercode), UseCase.getPersonal(personalcode));
 	}
 
@@ -2900,8 +2910,9 @@ public class UseCaseFacade {
 	 * @param personalCode
 	 * @throws InternalException 
 	 * @throws ValidationFailedException 
+	 * @throws NoPermisosException 
 	 */
-	public static void checkToValidateRequiredData(String usercode, String personalCode) throws InternalException, ValidationFailedException {
+	public static void checkToValidateRequiredData(String usercode, String personalCode) throws InternalException, ValidationFailedException, NoPermisosException {
 		UseCase.checkToValidateRequiredData(UseCase.getUsuario(usercode), personalCode);
 	}
 
@@ -2911,12 +2922,13 @@ public class UseCaseFacade {
 	 * @param personalCode
 	 * @throws InternalException 
 	 * @throws ValidationFailedException 
+	 * @throws NoPermisosException 
 	 */
-	public static void checkToProgressRequiredData(String usercode, String personalCode) throws InternalException, ValidationFailedException {
+	public static void checkToProgressRequiredData(String usercode, String personalCode) throws InternalException, ValidationFailedException, NoPermisosException {
 		UseCase.checkToValidatedRequiredData(UseCase.getUsuario(usercode), personalCode);
 	}
 
-	public static boolean isSupervisorOf(String usercode, String supervisorPersonalCode, String personalCode) throws InternalException {
+	public static boolean isSupervisorOf(String usercode, String supervisorPersonalCode, String personalCode) throws InternalException, NoPermisosException {
 		return UseCase.isSupervisorOf(UseCase.getUsuario(usercode), UseCase.getPersonal(supervisorPersonalCode), UseCase.getPersonal(personalCode));
 	}
 

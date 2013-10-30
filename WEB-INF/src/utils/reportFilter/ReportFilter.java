@@ -16,7 +16,7 @@ public class ReportFilter {
 
 	public static void filterFieldsByProfile(Usuario user, Vector<String> names, Vector<String> labels) {
 		String[] fieldsToSkip = { "professional_end_date" };
-		if (true || UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) || UserUtils.checkRole(user, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)) {
+		if (UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) || UserUtils.checkRole(user, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)) {
 			for (int i = 0; i < fieldsToSkip.length; i++) {
 				int index = names.indexOf(fieldsToSkip[i]);
 				if (index != -1) {
