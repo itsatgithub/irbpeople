@@ -32,6 +32,7 @@ import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.criterion.Expression;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.exception.ConstraintViolationException;
 
 import utils.Pair;
@@ -664,9 +665,10 @@ public class UseCase {
      *         match the search without appling the 'pagination' of the
      *         ListConfigurator, and the list of the instances which match the
      *         configurator (incluing pagination)
+     * @throws NoPermisosException 
      */
     public static Pair<Integer, List<Education>> ObtainAllIeducation_personalFromPersonal(
-	    Usuario user, Personal personal, ListConfigurator configurator) {
+	    Usuario user, Personal personal, ListConfigurator configurator) throws NoPermisosException {
 
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
@@ -681,6 +683,8 @@ public class UseCase {
 	crit.createCriteria("education_personal").add(
 		Expression.idEq(personal.getPersonalcode()));
 
+	checkByRole(user, personal.getPersonalcode());
+	
 	// we add the ListConfigurator to the criteria, obtaining the number of
 	// results without the pagination
 	int count = configurator.addCriterions(crit);
@@ -709,9 +713,10 @@ public class UseCase {
      *         match the search without appling the 'pagination' of the
      *         ListConfigurator, and the list of the instances which match the
      *         configurator (incluing pagination)
+     * @throws NoPermisosException 
      */
     public static Pair<Integer, List<Professional>> ObtainAllIprofessional_personalFromPersonal(
-	    Usuario user, Personal personal, ListConfigurator configurator) {
+	    Usuario user, Personal personal, ListConfigurator configurator) throws NoPermisosException {
 
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
@@ -720,7 +725,8 @@ public class UseCase {
 	// we only want to obtain the non deleted objects
 
 	crit.add(Expression.eq("deleted", Boolean.FALSE));
-
+	checkByRole(user, personal.getPersonalcode());
+	
 	// we add the requirement that we only want to display the ones which
 	// are associated
 	crit.createCriteria("professional_personal").add(
@@ -760,9 +766,10 @@ public class UseCase {
      *         match the search without appling the 'pagination' of the
      *         ListConfigurator, and the list of the instances which match the
      *         configurator (incluing pagination)
+     * @throws NoPermisosException 
      */
     public static Pair<Integer, List<Professional>> ObtainAllActiveIprofessional_personalFromPersonal(
-	    Usuario user, Personal personal, ListConfigurator configurator) {
+	    Usuario user, Personal personal, ListConfigurator configurator) throws NoPermisosException {
 
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
@@ -774,6 +781,8 @@ public class UseCase {
 
 	crit.add(Expression.eq("current", Boolean.TRUE));
 
+	checkByRole(user, personal.getPersonalcode());
+	
 	// we add the requirement that we only want to display the ones which
 	// are associated
 	crit.createCriteria("professional_personal").add(
@@ -800,7 +809,7 @@ public class UseCase {
 		Professional.class);
 
 	crit.add(Expression.eq("deleted", Boolean.FALSE));
-
+	
 	// crit.add(Expression.or(Expression.isNull("end_date"), Expression.gt(
 	// "end_date", new Date())));
 
@@ -832,9 +841,10 @@ public class UseCase {
      *         match the search without appling the 'pagination' of the
      *         ListConfigurator, and the list of the instances which match the
      *         configurator (incluing pagination)
+     * @throws NoPermisosException 
      */
     public static Pair<Integer, List<Compensation>> ObtainAllIcompensation_personalFromPersonal(
-	    Usuario user, Personal personal, ListConfigurator configurator) {
+	    Usuario user, Personal personal, ListConfigurator configurator) throws NoPermisosException {
 
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
@@ -843,7 +853,8 @@ public class UseCase {
 	// we only want to obtain the non deleted objects
 
 	crit.add(Expression.eq("deleted", Boolean.FALSE));
-
+	checkByRole(user, personal.getPersonalcode());
+	
 	// we add the requirement that we only want to display the ones which
 	// are associated
 	crit.createCriteria("compensation_personal").add(
@@ -875,9 +886,10 @@ public class UseCase {
      * @param personal
      *            Personal which contains the set of icompensation_personal
      * @return the las compesation
+     * @throws NoPermisosException 
      */
     public static Compensation ObtainCurrentCompensationFromPersonal(
-	    Usuario user, Personal personal) {
+	    Usuario user, Personal personal) throws NoPermisosException {
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
 		Compensation.class);
@@ -885,7 +897,8 @@ public class UseCase {
 	// we only want to obtain the non deleted objects
 
 	crit.add(Expression.eq("deleted", Boolean.FALSE));
-
+	checkByRole(user, personal.getPersonalcode());
+	
 	// we add the requirement that we only want to display the ones which
 	// are associated
 	crit.createCriteria("compensation_personal").add(
@@ -965,9 +978,10 @@ public class UseCase {
      *         match the search without appling the 'pagination' of the
      *         ListConfigurator, and the list of the instances which match the
      *         configurator (incluing pagination)
+     * @throws NoPermisosException 
      */
     public static Pair<Integer, List<Grant_concession>> ObtainAllIgrant_concession_personalFromPersonal(
-	    Usuario user, Personal personal, ListConfigurator configurator) {
+	    Usuario user, Personal personal, ListConfigurator configurator) throws NoPermisosException {
 
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
@@ -976,7 +990,8 @@ public class UseCase {
 	// we only want to obtain the non deleted objects
 
 	crit.add(Expression.eq("deleted", Boolean.FALSE));
-
+	checkByRole(user, personal.getPersonalcode());
+	
 	// we add the requirement that we only want to display the ones which
 	// are associated
 	crit.createCriteria("grant_concession_personal").add(
@@ -1011,9 +1026,10 @@ public class UseCase {
      *         match the search without appling the 'pagination' of the
      *         ListConfigurator, and the list of the instances which match the
      *         configurator (incluing pagination)
+     * @throws NoPermisosException 
      */
     public static Pair<Integer, List<Academic_info>> ObtainAllIacademic_info_personalFromPersonal(
-	    Usuario user, Personal personal, ListConfigurator configurator) {
+	    Usuario user, Personal personal, ListConfigurator configurator) throws NoPermisosException {
 
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
@@ -1022,7 +1038,8 @@ public class UseCase {
 	// we only want to obtain the non deleted objects
 
 	crit.add(Expression.eq("deleted", Boolean.FALSE));
-
+	checkByRole(user, personal.getPersonalcode());
+	
 	// we add the requirement that we only want to display the ones which
 	// are associated
 	crit.createCriteria("academic_info_personal").add(
@@ -1057,9 +1074,10 @@ public class UseCase {
      *         match the search without appling the 'pagination' of the
      *         ListConfigurator, and the list of the instances which match the
      *         configurator (incluing pagination)
+     * @throws NoPermisosException 
      */
     public static Pair<Integer, List<Work_experience>> ObtainAllIwork_experience_personalFromPersonal(
-	    Usuario user, Personal personal, ListConfigurator configurator) {
+	    Usuario user, Personal personal, ListConfigurator configurator) throws NoPermisosException {
 
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
@@ -1068,7 +1086,8 @@ public class UseCase {
 	// we only want to obtain the non deleted objects
 
 	crit.add(Expression.eq("deleted", Boolean.FALSE));
-
+	checkByRole(user, personal.getPersonalcode());
+	
 	// we add the requirement that we only want to display the ones which
 	// are associated
 	crit.createCriteria("work_experience_personal").add(
@@ -1102,9 +1121,10 @@ public class UseCase {
      *         match the search without appling the 'pagination' of the
      *         ListConfigurator, and the list of the instances which match the
      *         configurator (incluing pagination)
+     * @throws NoPermisosException 
      */
     public static Pair<Integer, List<Funding_detail>> ObtainAllIfunding_detail_personalFromPersonal(
-	    Usuario user, Personal personal, ListConfigurator configurator) {
+	    Usuario user, Personal personal, ListConfigurator configurator) throws NoPermisosException {
 
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
@@ -1113,6 +1133,7 @@ public class UseCase {
 	// we only want to obtain the non deleted objects
 
 	crit.add(Expression.eq("deleted", Boolean.FALSE));
+	checkByRole(user, personal.getPersonalcode());
 
 	// we add the requirement that we only want to display the ones which
 	// are associated
@@ -1178,7 +1199,7 @@ public class UseCase {
     }
 
     public static Pair<Integer, List<Personal_comment>> ObtainAllIpersonal_commentsFromPersonal(
-	    Usuario user, Personal personal, ListConfigurator configurator) {
+	    Usuario user, Personal personal, ListConfigurator configurator) throws NoPermisosException {
 
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
@@ -1187,7 +1208,8 @@ public class UseCase {
 	// we only want to obtain the non deleted objects
 
 	crit.add(Expression.eq("deleted", Boolean.FALSE));
-
+	checkByRole(user, personal.getPersonalcode());
+	
 	// we add the requirement that we only want to display the ones which
 	// are associated
 	crit.createCriteria("personal").add(
@@ -1223,9 +1245,10 @@ public class UseCase {
      *         match the search without appling the 'pagination' of the
      *         ListConfigurator, and the list of the instances which match the
      *         configurator (incluing pagination)
+     * @throws NoPermisosException 
      */
     public static Pair<Integer, List<Benefits>> ObtainAllIbenefits_personalFromPersonal(
-	    Usuario user, Personal personal, ListConfigurator configurator) {
+	    Usuario user, Personal personal, ListConfigurator configurator) throws NoPermisosException {
 
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
@@ -1234,6 +1257,7 @@ public class UseCase {
 	// we only want to obtain the non deleted objects
 
 	crit.add(Expression.eq("deleted", Boolean.FALSE));
+	checkByRole(user, personal.getPersonalcode());
 
 	// we add the requirement that we only want to display the ones which
 	// are associated
@@ -12188,6 +12212,10 @@ public class UseCase {
 	// we only want to obtain the non deleted objects
 	crit.add(Expression.eq("deleted", Boolean.FALSE));
 
+	
+    
+	
+	
 	// we add the ListConfigurator to the criteria, obtaining the number of
 	// results without the pagination
 	int count = configurator.addCriterions(crit);
@@ -12215,10 +12243,14 @@ public class UseCase {
 	// we only want to obtain the non deleted objects
 	crit.add(Expression.eq("deleted", Boolean.FALSE));
 
+	
+	filterByRole(user, crit);
+	
 	// we add the ListConfigurator to the criteria, obtaining the number of
 	// results without the pagination
 	int count = configurator.addCriterions(crit, true);
 
+	
 	/**
 	 * 2. We obtain the list form the DB and we return it with the number of
 	 * elements in the DB *
@@ -12250,6 +12282,42 @@ public class UseCase {
 	return pair;
     }
 
+    private static void checkByRole(Usuario user,String personalcode) throws NoPermisosException{
+    	Criteria crit = HibernateUtil.getSession().createCriteria(Personal.class);
+    	crit.add(Expression.eq("deleted", Boolean.FALSE));
+    	crit.add(Expression.eq("personalcode", personalcode));
+    	filterByRole(user, crit);
+    	if(crit.list().size()==0){
+    		throw new NoPermisosException();
+    	}
+    }
+    
+    private static void filterByRole(Usuario user, Criteria crit){
+    	if (UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME)){ 
+    		crit.createAlias("iprofessional_personal", "p")
+    		.createAlias("p.position", "po")
+    	    .add(Restrictions.eq("p.current", true))
+    	    .add(Restrictions.in("po.positioncode",new String[]{"00005", "00006", "00007", "00014"}));
+    	}else if(UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME)){
+    		crit.createAlias("iprofessional_personal", "p")    		
+    		.createAlias("p.position", "po")
+    	    .createAlias("p.professional_unit", "u1", Criteria.LEFT_JOIN)
+    	    .createAlias("p.professional_unit_2", "u2", Criteria.LEFT_JOIN)
+    	    .createAlias("p.professional_unit_3", "u3", Criteria.LEFT_JOIN)
+    	    .createAlias("p.professional_unit_4", "u4", Criteria.LEFT_JOIN)
+    	    .createAlias("u1.organization_unit", "ou1", Criteria.LEFT_JOIN)
+    	    .createAlias("u2.organization_unit", "ou2", Criteria.LEFT_JOIN)
+    	    .createAlias("u3.organization_unit", "ou3", Criteria.LEFT_JOIN)
+    	    .createAlias("u4.organization_unit", "ou4", Criteria.LEFT_JOIN)
+    	    .add(Restrictions.eq("p.current", true))
+    	    .add(Restrictions.or(Restrictions.isNull("ou1.organization_unitcode"), Restrictions.not(Restrictions.in("ou1.organization_unitcode", new String[]{"00002", "00003", "00004"}))))
+    	    .add(Restrictions.or(Restrictions.isNull("ou2.organization_unitcode"), Restrictions.not(Restrictions.in("ou2.organization_unitcode", new String[]{"00002", "00003", "00004"}))))
+    	    .add(Restrictions.or(Restrictions.isNull("ou3.organization_unitcode"), Restrictions.not(Restrictions.in("ou3.organization_unitcode", new String[]{"00002", "00003", "00004"}))))
+    	    .add(Restrictions.or(Restrictions.isNull("ou4.organization_unitcode"), Restrictions.not(Restrictions.in("ou4.organization_unitcode", new String[]{"00002", "00003", "00004"}))))
+    	    .add(Restrictions.not(Restrictions.in("po.positioncode",new String[]{"00019"})));
+    	}
+    }
+    
     /**
      * This method obtains all instances of Personal that do not have user,
      * given a list-configurator.
@@ -12292,6 +12360,9 @@ public class UseCase {
 
 	    crit.add(Expression.not(Expression.in("personalcode", usersCodes)));
 	}
+	
+	filterByRole(user, crit);
+	
 
 	// we add the ListConfigurator to the criteria, obtaining the number of
 	// results without the pagination
@@ -12301,6 +12372,7 @@ public class UseCase {
 	 * 2. We obtain the list form the DB and we return it with the number of
 	 * elements in the DB *
 	 */
+	
 	List<Personal> personals = (List<Personal>) crit.list();
 
 	Pair<Integer, List<Personal>> pair = new Pair<Integer, List<Personal>>(
@@ -14600,10 +14672,11 @@ public class UseCase {
      * @return the modified personal
      * @throws InternalException
      * @throws ValidationFailedException
+     * @throws NoPermisosException 
      */
     public static Personal changeStateOfPersonalFromValidatedToActive(
 	    Usuario user, Personal personal) throws InternalException,
-	    ValidationFailedException {
+	    ValidationFailedException, NoPermisosException {
 
 	checkToValidatedRequiredData(user, personal.getCode());
 
@@ -14818,9 +14891,10 @@ public class UseCase {
      * @param usuario
      * @param personalCode
      * @throws ValidationFailedException
+     * @throws NoPermisosException 
      */
     public static void checkToValidateRequiredData(Usuario usuario,
-	    String personalCode) throws ValidationFailedException {
+	    String personalCode) throws ValidationFailedException, NoPermisosException {
 	Map<String, List<String>> result = new Hashtable<String, List<String>>();
 
 	Personal personal = getPersonal(personalCode);
@@ -14911,9 +14985,10 @@ public class UseCase {
      * @param usuario
      * @param personalCode
      * @throws ValidationFailedException
+     * @throws NoPermisosException 
      */
     public static void checkToValidatedRequiredData(Usuario usuario,
-	    String personalCode) throws ValidationFailedException {
+	    String personalCode) throws ValidationFailedException, NoPermisosException {
 	Map<String, List<String>> result = new Hashtable<String, List<String>>();
 
 	Personal personal = getPersonal(personalCode);
@@ -14977,7 +15052,7 @@ public class UseCase {
     }
 
     public static boolean isSupervisorOf(Usuario usuario, Personal supervisor,
-	    Personal personal) {
+	    Personal personal) throws NoPermisosException {
 	List<Professional> professionals = ObtainAllActiveIprofessional_personalFromPersonal(
 		null, personal, new ListConfigurator()).second;
 	for (Professional profesional : professionals) {
