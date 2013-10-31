@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<role name="irbpeople_grant" system-groups-included="true">
-  <description>irbpeople_grant</description>
+<role name="irbpeople_innovation" system-groups-included="true">
+  <description>irbpeople_innovation</description>
   <accessible-groups>
     <group name="customList"/>
     
