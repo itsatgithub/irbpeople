@@ -12292,13 +12292,57 @@ public class UseCase {
     	}
     }
     
+    private static String addFilterByRoleWhere(Usuario user, String where){
+    	String sqlToAdd="";
+    	if (UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME)){
+    		sqlToAdd += " personalcode in ( " +
+    			"SELECT " +
+    			"	fper.personalcode " +
+    			"FROM " +
+    			"	personal fper " +
+    			"LEFT JOIN professional fpro ON fpro.professional_personal = fper.personalcode " +
+    			"WHERE " +
+    			"	fper.deleted = 0 " +
+    			"AND fpro.deleted = 0 " +
+    			"AND fpro.current = 1 " +
+    			"AND fpro.position IN ('00005', '00006', '00007','00014') " +
+    			")";
+    	} else if(UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME)) {
+    		sqlToAdd += " personalcode in( " +
+    			"SELECT " +
+    			"	fper.personalcode " +
+    			"FROM " +
+    			"	personal fper " +
+    			"LEFT JOIN professional fpro ON fpro.professional_personal = fper.personalcode " +
+    			"LEFT JOIN unit fun1 on fpro.professional_unit = fun1.unitcode " +
+    			"LEFT JOIN unit fun2 on fpro.professional_unit_2 = fun2.unitcode " +
+    			"LEFT JOIN unit fun3 on fpro.professional_unit_3 = fun3.unitcode " +
+    			"LEFT JOIN unit fun4 on fpro.professional_unit_4 = fun4.unitcode " +
+    			"WHERE "+
+    			"	fper.deleted = 0 " +
+    			"AND fpro.deleted = 0 " +
+    			"AND fpro.current = 1 " +
+    			"AND fpro.position NOT IN ('00019') " +
+    			"AND (fun1.organization_unit is null or fun1.organization_unit not in ('00002', '00003', '00004')) " +
+    			"AND (fun2.organization_unit is null or fun2.organization_unit not in ('00002', '00003', '00004')) " +
+    			"AND (fun3.organization_unit is null or fun3.organization_unit not in ('00002', '00003', '00004')) " +
+    			"AND (fun4.organization_unit is null or fun4.organization_unit not in ('00002', '00003', '00004')) " +
+    			")";
+    	}
+    	if(where.length()>0){
+    		sqlToAdd = " and " + sqlToAdd;
+    	}
+    	return sqlToAdd;
+    }
+    
     private static void filterByRole(Usuario user, Criteria crit){
     	if (UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME)){ 
     		crit.createAlias("iprofessional_personal", "p")
     		.createAlias("p.position", "po")
     	    .add(Restrictions.eq("p.current", true))
+    	    .add(Restrictions.eq("p.deleted", false))
     	    .add(Restrictions.in("po.positioncode",new String[]{"00005", "00006", "00007", "00014"}));
-    	}else if(UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME)){
+    	}else if(true || UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME)){
     		crit.createAlias("iprofessional_personal", "p")    		
     		.createAlias("p.position", "po")
     	    .createAlias("p.professional_unit", "u1", Criteria.LEFT_JOIN)
@@ -12310,6 +12354,7 @@ public class UseCase {
     	    .createAlias("u3.organization_unit", "ou3", Criteria.LEFT_JOIN)
     	    .createAlias("u4.organization_unit", "ou4", Criteria.LEFT_JOIN)
     	    .add(Restrictions.eq("p.current", true))
+    	    .add(Restrictions.eq("p.deleted", false))
     	    .add(Restrictions.or(Restrictions.isNull("ou1.organization_unitcode"), Restrictions.not(Restrictions.in("ou1.organization_unitcode", new String[]{"00002", "00003", "00004"}))))
     	    .add(Restrictions.or(Restrictions.isNull("ou2.organization_unitcode"), Restrictions.not(Restrictions.in("ou2.organization_unitcode", new String[]{"00002", "00003", "00004"}))))
     	    .add(Restrictions.or(Restrictions.isNull("ou3.organization_unitcode"), Restrictions.not(Restrictions.in("ou3.organization_unitcode", new String[]{"00002", "00003", "00004"}))))
@@ -17882,7 +17927,7 @@ public class UseCase {
 			max_education_field);
 	    }
 
-	    String whereClause = makeWhereFromListConfigurator(configurator);
+	    String whereClause = makeWhereFromListConfigurator(user, configurator);
 
 	    if (whereClause.contains("`max_education`")) {
 		whereClause = whereClause.replace("`max_education`",
@@ -17950,7 +17995,7 @@ public class UseCase {
 	    }
 
 	    String queryString = "select distinct " + columnNames + " from "
-		    + view_name + makeWhereFromListConfigurator(configurator)
+		    + view_name + makeWhereFromListConfigurator(user, configurator)
 		    + orderByString;
 
 	    query = HibernateUtil.getSession().createSQLQuery(queryString);
@@ -17966,7 +18011,7 @@ public class UseCase {
     }
 
     private static String makeWhereFromListConfigurator(
-	    ListConfigurator configurator) {
+	    Usuario user, ListConfigurator configurator) {
 
 	String whereString = "";
 
@@ -18048,6 +18093,8 @@ public class UseCase {
 
 	}
 
+	whereString += addFilterByRoleWhere(user, whereString);
+	
 	if (whereString.equals("")) {
 	    return whereString;
 	} else {

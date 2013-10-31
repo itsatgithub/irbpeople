@@ -93,8 +93,8 @@ public class AjaxAction_view_custom_list extends Action {
 		Vector noFields = new Vector();
 
 		// we look up for the SELECT section visible fields and labels
-		Vector SELvisibleFieldNames = rco.getSelect().getVisibleFieldNames();
-		Vector SELvisibleLabels = rco.getSelect().getVisibleLabels(userLang);
+		Vector<String> SELvisibleFieldNames = rco.getSelect().getVisibleFieldNames();
+		Vector<String> SELvisibleLabels = rco.getSelect().getVisibleLabels(userLang);
 
 		ReportFilter.filterFieldsByProfile(user, SELvisibleFieldNames, SELvisibleLabels);
 
