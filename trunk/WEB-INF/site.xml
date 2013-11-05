@@ -4293,43 +4293,7 @@
                         <parameter name="zoneaction.oAcademic_infoSys.new_page_academic_info" value="oAcademic_infoSys.new_page_academic_info" />
                         <parameter name="zoneaction.oAcademic_infoSys.add_academic_info" value="oAcademic_infoSys.add_academic_info" />
                         <parameter name="objectsRecieved" value="none" />
-                    </action>
-                    <action e="" con="vone" obj="academic_info" type="viewone" st0="" st1="" completed="false">
-                        <name>action_view_academic_info</name>
-                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
-                        <description />
-                        <title-caption language="en">View academic_info</title-caption>
-                        <menuitem-caption language="en">View academic_info</menuitem-caption>
-                        <button-caption language="en">View academic_info</button-caption>
-                        <path action="action_manage_my_own_personal_academic_info" command="oAcademic_infoSys" />
-                        <zones>
-                            <zone name="operation" />
-                            <zone name="folder2" />
-                            <zone name="go" />
-                            <zone name="folder" />
-                            <zone name="submit">
-                                <action command="oAcademic_infoSys" action="action_cancel_view_view_academic_info" />
-                            </zone>
-                        </zones>
-                        <parameter name="note" value="" />
-                        <parameter name="objectsRecieved" value="one" />
-                        <content>
-                            <forms>
-                                <form>
-                                    <form-group title="" num-columns="1">
-                                       <attribute-form label="academic_info person" field="name" required="false" writable="true" type="selectBOAttribute" object="academic_info" associationName="academic_info_personal" associationBO="personal" popUp="false" popUpAlways="false" />
-                                        <attribute-form label="thesis director" field="thesis_director" required="false" writable="true" object="academic_info" />
-										<attribute-form label="thesis codirector" field="thesis_codirector" required="false" writable="true" object="academic_info" />
-										<attribute-form label="university" field="university_enrolled" required="false" writable="true" object="academic_info" />
-										<attribute-form label="studies name" field="studies_name" required="false" writable="true" object="academic_info" />										
-                                        <attribute-form label="study type" field="description" required="false" writable="true" type="selectBOAttribute" object="academic_info" associationName="type_of_study" associationBO="type_of_study" popUp="false" popUpAlways="false" />
-                                        <attribute-form label="start date" field="start_date" required="false" writable="true" object="academic_info" />
-										<attribute-form label="end date" field="end_date" required="false" writable="true" object="academic_info" />
-                                    </form-group>
-                                </form>
-                            </forms>
-                        </content>
-                    </action>                    
+                    </action>                                      
                 </group>
                 <group e="" name="oHolidaySys" command="oHolidaySys" nick="oHolidaySys" type="system" action-number="" st0="SystemObj">
                     <description>Auto generated group</description>
@@ -8596,9 +8560,6 @@
                                 </action>
                                 <action command="oPersonalSys" action="action_manage_my_own_personal_grant_concessions">
                                     <button-caption language="en">Grant concessions</button-caption>
-                                </action>
-                                <action command="oPersonalSys" action="action_manage_my_own_personal_academic_info">
-                                    <button-caption language="en">Academic info</button-caption>
                                 </action>
                                 <action command="oPersonalSys" action="action_manage_my_own_personal_education">
                                     <button-caption language="en">Education</button-caption>
@@ -18181,43 +18142,7 @@
                         <parameter name="zoneaction.oAcademic_infoSys.new_page_academic_info" value="oAcademic_infoSys.new_page_academic_info" />
                         <parameter name="zoneaction.oAcademic_infoSys.add_academic_info" value="oAcademic_infoSys.add_academic_info" />
                         <parameter name="objectsRecieved" value="none" />
-                    </action>
-                    <action e="" con="vone" obj="academic_info" type="viewone" st0="" st1="" completed="false">
-                        <name>action_view_academic_info</name>
-                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
-                        <description />
-                        <title-caption language="en">View academic_info</title-caption>
-                        <menuitem-caption language="en">View academic_info</menuitem-caption>
-                        <button-caption language="en">View academic_info</button-caption>
-                        <path action="action_manage_my_own_personal_academic_info" command="oAcademic_infoSys" />
-                        <zones>
-                            <zone name="operation" />
-                            <zone name="folder2" />
-                            <zone name="go" />
-                            <zone name="folder" />
-                            <zone name="submit">
-                                <action command="oAcademic_infoSys" action="action_cancel_view_view_academic_info" />
-                            </zone>
-                        </zones>
-                        <parameter name="note" value="" />
-                        <parameter name="objectsRecieved" value="one" />
-                        <content>
-                            <forms>
-                                <form>
-                                    <form-group title="" num-columns="1">
-                                       <attribute-form label="academic_info person" field="name" required="false" writable="true" type="selectBOAttribute" object="academic_info" associationName="academic_info_personal" associationBO="personal" popUp="false" popUpAlways="false" />
-                                        <attribute-form label="thesis director" field="thesis_director" required="false" writable="true" object="academic_info" />
-										<attribute-form label="thesis codirector" field="thesis_codirector" required="false" writable="true" object="academic_info" />
-										<attribute-form label="university" field="university_enrolled" required="false" writable="true" object="academic_info" />
-										<attribute-form label="studies name" field="studies_name" required="false" writable="true" object="academic_info" />										
-                                        <attribute-form label="study type" field="description" required="false" writable="true" type="selectBOAttribute" object="academic_info" associationName="type_of_study" associationBO="type_of_study" popUp="false" popUpAlways="false" />
-                                        <attribute-form label="start date" field="start_date" required="false" writable="true" object="academic_info" />
-										<attribute-form label="end date" field="end_date" required="false" writable="true" object="academic_info" />
-                                    </form-group>
-                                </form>
-                            </forms>
-                        </content>
-                    </action>                    
+                    </action>                                       
                 </group>
                 <group e="" name="oHolidaySys" command="oHolidaySys" nick="oHolidaySys" type="system" action-number="" st0="SystemObj">
                     <description>Auto generated group</description>
@@ -22532,10 +22457,7 @@
                                 </action>
                                 <action command="oPersonalSys" action="action_manage_my_own_personal_grant_concessions">
                                     <button-caption language="ct">Beques</button-caption>
-                                </action>
-                                <action command="oPersonalSys" action="action_manage_my_own_personal_academic_info">
-                                    <button-caption language="ct">Informació acadèmica</button-caption>
-                                </action>
+                                </action>                                
                                 <action command="oPersonalSys" action="action_manage_my_own_personal_education">
                                     <button-caption language="ct">Educació</button-caption>                                    
                                 </action>
@@ -31876,43 +31798,7 @@
                         <parameter name="zoneaction.oAcademic_infoSys.new_page_academic_info" value="oAcademic_infoSys.new_page_academic_info" />
                         <parameter name="zoneaction.oAcademic_infoSys.add_academic_info" value="oAcademic_infoSys.add_academic_info" />
                         <parameter name="objectsRecieved" value="none" />
-                    </action>
-                    <action e="" con="vone" obj="academic_info" type="viewone" st0="" st1="" completed="false">
-                        <name>action_view_academic_info</name>
-                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
-                        <description />
-                        <title-caption language="en">View academic_info</title-caption>
-                        <menuitem-caption language="en">View academic_info</menuitem-caption>
-                        <button-caption language="en">View academic_info</button-caption>
-                        <path action="action_manage_my_own_personal_academic_info" command="oAcademic_infoSys" />
-                        <zones>
-                            <zone name="operation" />
-                            <zone name="folder2" />
-                            <zone name="go" />
-                            <zone name="folder" />
-                            <zone name="submit">
-                                <action command="oAcademic_infoSys" action="action_cancel_view_view_academic_info" />
-                            </zone>
-                        </zones>
-                        <parameter name="note" value="" />
-                        <parameter name="objectsRecieved" value="one" />
-                        <content>
-                            <forms>
-                                <form>
-                                    <form-group title="" num-columns="1">
-                                       	<attribute-form label="academic_info person" field="name" required="false" writable="true" type="selectBOAttribute" object="academic_info" associationName="academic_info_personal" associationBO="personal" popUp="false" popUpAlways="false" />
-                                        <attribute-form label="thesis director" field="thesis_director" required="false" writable="true" object="academic_info" />
-										<attribute-form label="thesis codirector" field="thesis_codirector" required="false" writable="true" object="academic_info" />
-										<attribute-form label="university" field="university_enrolled" required="false" writable="true" object="academic_info" />
-										<attribute-form label="studies name" field="studies_name" required="false" writable="true" object="academic_info" />										
-                                        <attribute-form label="study type" field="description" required="false" writable="true" type="selectBOAttribute" object="academic_info" associationName="type_of_study" associationBO="type_of_study" popUp="false" popUpAlways="false" />
-                                        <attribute-form label="start date" field="start_date" required="false" writable="true" object="academic_info" />
-										<attribute-form label="end date" field="end_date" required="false" writable="true" object="academic_info" />
-                                    </form-group>
-                                </form>
-                            </forms>
-                        </content>
-                    </action>                   
+                    </action>                                      
                 </group>
                 <group e="" name="oHolidaySys" command="oHolidaySys" nick="oHolidaySys" type="system" action-number="" st0="SystemObj">
                     <description>Auto generated group</description>
@@ -36190,10 +36076,7 @@
                                 </action>
                                 <action command="oPersonalSys" action="action_manage_my_own_personal_grant_concessions">
                                     <button-caption language="es">Becas</button-caption>
-                                </action>
-                                <action command="oPersonalSys" action="action_manage_my_own_personal_academic_info">
-                                    <button-caption language="es">Información académica</button-caption>
-                                </action>
+                                </action>                                
                                 <action command="oPersonalSys" action="action_manage_my_own_personal_education">
                                     <button-caption language="es">Educación</button-caption>
                                 </action>
