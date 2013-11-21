@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Alumni_external_jobs" table="ALUMNI_EXTERNAL_JOBS">
+		<cache usage="read-write" />
+
+		<id name="alumni_external_jobscode" column="alumni_external_jobscode"></id>
+		<version name="version"></version>
+
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		<property name="current" type="boolean">
+            <column name="current" />
+        </property>
+		<many-to-one name="personal" class="Alumni_personal" column="personal" not-null="false" />
+		
+		<property name="start_date" type="timestamp">
+	       <column name="start_date"  />
+        </property>
+        <property name="end_date" type="timestamp">
+	       <column name="end_date"  />
+        </property>
+		
+		<many-to-one name="external_job_positions" class="Alumni_external_job_positions" column="external_job_positions" not-null="false" />
+		
+		<property name="comments" type="string">
+			<column name="comments" length="255" />
+		</property>
+		
+		<many-to-one name="external_job_sectors" class="Alumni_external_job_sectors" column="external_job_sectors" not-null="false" />
+
+		
+		<property name="institution" type="string">
+			<column name="institution" length="100" />
+		</property>
+		
+		<property name="address" type="string">
+			<column name="address" length="255" />
+		</property>
+		
+		<property name="postcode" type="string">
+			<column name="postcode" length="45" />
+		</property>
+		
+		<property name="city" type="string">
+			<column name="city" length="45" />
+		</property>
+
+		<many-to-one name="country" class="Country"
+			column="country" not-null="false" />
+		
+		<property name="telephone" type="string">
+			<column name="telephone" length="45" />
+		</property>
+	</class>
+</hibernate-mapping>

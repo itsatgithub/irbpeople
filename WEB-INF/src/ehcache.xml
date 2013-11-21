@@ -249,6 +249,66 @@
         overflowToDisk="false"
         />
 	
+	<cache name="bussineslogic.objects.alumni_titles"
+        maxElementsInMemory="10"
+        eternal="false"
+        overflowToDisk="false"
+        />
+
+	<cache name="bussineslogic.objects.alumni_params"
+        maxElementsInMemory="10"
+        eternal="false"
+        overflowToDisk="false"
+        />
+
+	<cache name="bussineslogic.objects.alumni_irb_jobs"
+        maxElementsInMemory="10"
+        eternal="false"
+        overflowToDisk="false"
+        />
+
+	<cache name="bussineslogic.objects.alumni_irb_job_positions"
+        maxElementsInMemory="10"
+        eternal="false"
+        overflowToDisk="false"
+        />
+
+	<cache name="bussineslogic.objects.alumni_job_position_types"
+        maxElementsInMemory="10"
+        eternal="false"
+        overflowToDisk="false"
+        />
+
+	<cache name="bussineslogic.objects.alumni_external_job_positions"
+        maxElementsInMemory="10"
+        eternal="false"
+        overflowToDisk="false"
+        />
+
+		<cache name="bussineslogic.objects.alumni_external_jobs"
+        maxElementsInMemory="10"
+        eternal="false"
+        overflowToDisk="false"
+        />
+
+	<cache name="bussineslogic.objects.alumni_external_job_sectors"
+        maxElementsInMemory="10"
+        eternal="false"
+        overflowToDisk="false"
+        />
+
+	<cache name="bussineslogic.objects.alumni_personal"
+        maxElementsInMemory="10"
+        eternal="false"
+        overflowToDisk="false"
+        />
+
+	<cache name="bussineslogic.objects.alumni_communications"
+        maxElementsInMemory="10"
+        eternal="false"
+        overflowToDisk="false"
+        />	
+	
 	<cache name="bussineslogic.objects.type_of_study"
         maxElementsInMemory="10"
         eternal="false"

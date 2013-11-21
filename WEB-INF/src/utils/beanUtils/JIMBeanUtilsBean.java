@@ -600,6 +600,29 @@ public class JIMBeanUtilsBean {
                             copyProperties(originalValue, value);
                         }
                     }
+                    else if(target instanceof bussineslogic.objects.Alumni_personal)
+                    {
+                        if(name.equals("nationality")
+                                && (originalValue instanceof bussineslogic.objects.Nationality)
+                                && (value instanceof presentation.formbeans.objects.Nationality_IDForm))
+                        {
+                            bussineslogic.objects.Nationality newNationality = new bussineslogic.objects.Nationality();
+                            newNationality.setCode( ((presentation.formbeans.objects.Nationality_IDForm)value).getNationalitycode());
+                            ((bussineslogic.objects.Alumni_personal)target).setNationality(newNationality);
+                        }
+                        else if(name.equals("nationality_2")
+                                && (originalValue instanceof bussineslogic.objects.Nationality)
+                                && (value instanceof presentation.formbeans.objects.Nationality_IDForm))
+                        {
+                            bussineslogic.objects.Nationality newNationality = new bussineslogic.objects.Nationality();
+                            newNationality.setCode( ((presentation.formbeans.objects.Nationality_IDForm)value).getNationalitycode());
+                            ((bussineslogic.objects.Alumni_personal)target).setNationality_2(newNationality);
+                        }
+                        else
+                        {
+                            copyProperties(originalValue, value);
+                        }
+                    }
                     else if (target instanceof bussineslogic.objects.Professional)
                     {
                         if(name.equals("payroll_institution")

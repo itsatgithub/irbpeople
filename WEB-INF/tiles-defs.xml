@@ -769,6 +769,236 @@
   <definition name="oType_of_studySys.popUp_action_new_page_type_of_study" extends="popup_template">
     <put name="center" value="/pages/oType_of_studySys/action_new_page_type_of_study.jsp" />
   </definition>
+  <definition name="oAlumni_irb_jobsSys.action_modify_page_alumni_irb_jobs" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_irb_jobsSys/action_modify_page_alumni_irb_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_irb_jobsSys.action_delete_page_alumni_irb_jobs" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_irb_jobsSys/action_delete_page_alumni_irb_jobs.jsp" />
+  </definition>  
+  <definition name="oAlumni_irb_jobsSys.action_add_alumni_irb_jobs" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_irb_jobsSys/action_add_alumni_irb_jobs.jsp" />
+  </definition>  
+  <definition name="oAlumni_irb_jobsSys.action_view_alumni_irb_jobs" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_irb_jobsSys/action_view_alumni_irb_jobs.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_personal_alumni_irb_jobs" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_alumni_irb_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_irb_jobsSys.popUp_action_add_alumni_irb_jobs" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_irb_jobsSys/action_add_alumni_irb_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_irb_jobsSys.popUp_action_modify_page_alumni_irb_jobs" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_irb_jobsSys/action_modify_page_alumni_irb_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_irb_jobsSys.popUp_action_delete_page_alumni_irb_jobs" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_irb_jobsSys/action_delete_page_alumni_irb_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_irb_jobsSys.popUp_action_view_alumni_irb_jobs" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_irb_jobsSys/action_view_alumni_irb_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_external_jobsSys.action_modify_page_alumni_external_jobs" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_jobsSys/action_modify_page_alumni_external_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_external_jobsSys.action_delete_page_alumni_external_jobs" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_jobsSys/action_delete_page_alumni_external_jobs.jsp" />
+  </definition>  
+  <definition name="oAlumni_external_jobsSys.action_add_alumni_external_jobs" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_jobsSys/action_add_alumni_external_jobs.jsp" />
+  </definition>  
+  <definition name="oAlumni_external_jobsSys.action_view_alumni_external_jobs" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_jobsSys/action_view_alumni_external_jobs.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_personal_alumni_external_jobs" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_alumni_external_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_external_jobsSys.popUp_action_add_alumni_external_jobs" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_external_jobsSys/action_add_alumni_external_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_external_jobsSys.popUp_action_modify_page_alumni_external_jobs" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_external_jobsSys/action_modify_page_alumni_external_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_external_jobsSys.popUp_action_delete_page_alumni_external_jobs" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_external_jobsSys/action_delete_page_alumni_external_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_external_jobsSys.popUp_action_mark_current_confirmation" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_external_jobsSys/action_mark_current_confirmation.jsp" />
+  </definition>
+  <definition name="oAlumni_external_jobsSys.popUp_action_view_alumni_external_jobs" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_external_jobsSys/action_view_alumni_external_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_personalSys.action_delete_page_alumni_personal" extends="horizontal_evc_template1">
+	<put name="center" value="/pages/oAlumni_personalSys/action_delete_page_alumni_personal.jsp" />
+  </definition>
+  <definition name="oAlumni_personalSys.popUp_action_delete_page_alumni_personal" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_personalSys/action_delete_page_alumni_personal.jsp" />
+  </definition>
+  <definition name="oAlumni_personalSys.action_manage_alumni_personal_alumni_external_jobs" extends="horizontal_evc_template1">
+	<put name="center" value="/pages/oAlumni_personalSys/action_manage_alumni_external_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_personalSys.action_manage_alumni_personal_alumni_irb_jobs" extends="horizontal_evc_template1">
+	<put name="center" value="/pages/oAlumni_personalSys/action_manage_alumni_irb_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_personalSys.action_manage_alumni_personal" extends="horizontal_evc_template1">
+	<put name="center" value="/pages/oAlumni_personalSys/action_manage_alumni_personal.jsp" />
+  </definition>
+  <definition name="oAlumni_personalSys.action_manage_validated_alumni_personal" extends="horizontal_evc_template1">
+	<put name="center" value="/pages/oAlumni_personalSys/action_manage_validated_alumni_personal.jsp" />
+  </definition>
+  <definition name="oAlumni_personalSys.action_manage_not_validated_alumni_personal" extends="horizontal_evc_template1">
+	<put name="center" value="/pages/oAlumni_personalSys/action_manage_not_validated_alumni_personal.jsp" />
+  </definition>
+  <definition name="oAlumni_personalSys.action_modify_page_alumni_personal" extends="horizontal_evc_template1">
+	<put name="center" value="/pages/oAlumni_personalSys/action_modify_page_alumni_personal.jsp" />
+  </definition>
+  
+  <definition name="oAlumni_paramsSys.action_modify_page_alumni_params" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_paramsSys/action_modify_page_alumni_params.jsp" />
+  </definition>    
+  
+  <definition name="oAlumni_titlesSys.action_delete_page_alumni_titles" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_titlesSys/action_delete_page_alumni_titles.jsp" />
+  </definition>
+  <definition name="oAlumni_titlesSys.action_modify_page_alumni_titles" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_titlesSys/action_modify_page_alumni_titles.jsp" />
+  </definition>
+  <definition name="oAlumni_titlesSys.action_view_alumni_titles" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_titlesSys/action_view_alumni_titles.jsp" />
+  </definition>
+  <definition name="oAlumni_titlesSys.action_manage_alumni_titles" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_titlesSys/action_manage_alumni_titles.jsp" />
+  </definition>
+  <definition name="oAlumni_titlesSys.popUp_action_delete_page_alumni_titles" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_titlesSys/action_delete_page_alumni_titles.jsp" />
+  </definition>
+  <definition name="oAlumni_titlesSys.popUp_action_modify_page_alumni_titles" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_titlesSys/action_modify_page_alumni_titles.jsp" />
+  </definition>
+  <definition name="oAlumni_titlesSys.action_new_page_alumni_titles" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_titlesSys/action_new_page_alumni_titles.jsp" />
+  </definition>
+  <definition name="oAlumni_titlesSys.popUp_action_new_page_alumni_titles" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_titlesSys/action_new_page_alumni_titles.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_positionsSys.action_delete_page_alumni_external_job_positions" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_job_positionsSys/action_delete_alumni_external_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_positionsSys.action_modify_page_alumni_external_job_positions" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_job_positionsSys/action_modify_alumni_external_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_positionsSys.action_view_alumni_external_job_positions" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_job_positionsSys/action_view_alumni_external_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_positionsSys.action_manage_alumni_external_job_positions" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_job_positionsSys/action_manage_alumni_external_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_positionsSys.popUp_action_delete_page_alumni_external_job_positions" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_external_job_positionsSys/action_delete_alumni_external_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_positionsSys.popUp_action_modify_page_alumni_external_job_positions" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_external_job_positionsSys/action_modify_alumni_external_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_positionsSys.action_new_page_alumni_external_job_positions" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_job_positionsSys/action_new_alumni_external_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_positionsSys.popUp_action_new_page_alumni_external_job_positions" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_external_job_positionsSys/action_new_alumni_external_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_irb_job_positionsSys.action_delete_page_alumni_irb_job_positions" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_irb_job_positionsSys/action_delete_alumni_irb_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_irb_job_positionsSys.action_modify_page_alumni_irb_job_positions" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_irb_job_positionsSys/action_modify_alumni_irb_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_irb_job_positionsSys.action_view_alumni_irb_job_positions" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_irb_job_positionsSys/action_view_alumni_irb_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_irb_job_positionsSys.action_manage_alumni_irb_job_positions" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_irb_job_positionsSys/action_manage_alumni_irb_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_irb_job_positionsSys.popUp_action_delete_page_alumni_irb_job_positions" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_irb_job_positionsSys/action_delete_alumni_irb_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_irb_job_positionsSys.popUp_action_modify_page_alumni_irb_job_positions" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_irb_job_positionsSys/action_modify_alumni_irb_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_irb_job_positionsSys.action_new_page_alumni_irb_job_positions" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_irb_job_positionsSys/action_new_alumni_irb_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_irb_job_positionsSys.popUp_action_new_page_alumni_irb_job_positions" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_irb_job_positionsSys/action_new_alumni_irb_job_positions.jsp" />
+  </definition>
+  <definition name="oAlumni_job_position_typesSys.action_delete_page_alumni_job_position_types" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_job_position_typesSys/action_delete_page_alumni_job_position_types.jsp" />
+  </definition>
+  <definition name="oAlumni_job_position_typesSys.action_modify_page_alumni_job_position_types" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_job_position_typesSys/action_modify_page_alumni_job_position_types.jsp" />
+  </definition>
+  <definition name="oAlumni_job_position_typesSys.action_view_alumni_job_position_types" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_job_position_typesSys/action_view_alumni_job_position_types.jsp" />
+  </definition>
+  <definition name="oAlumni_job_position_typesSys.action_manage_alumni_job_position_types" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_job_position_typesSys/action_manage_alumni_job_position_types.jsp" />
+  </definition>
+  <definition name="oAlumni_job_position_typesSys.popUp_action_delete_page_alumni_job_position_types" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_job_position_typesSys/action_delete_page_alumni_job_position_types.jsp" />
+  </definition>
+  <definition name="oAlumni_job_position_typesSys.popUp_action_modify_page_alumni_job_position_types" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_job_position_typesSys/action_modify_page_alumni_job_position_types.jsp" />
+  </definition>
+  <definition name="oAlumni_job_position_typesSys.action_new_page_alumni_job_position_types" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_job_position_typesSys/action_new_page_alumni_job_position_types.jsp" />
+  </definition>
+  <definition name="oAlumni_job_position_typesSys.popUp_action_new_page_alumni_job_position_types" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_job_position_typesSys/action_new_page_alumni_job_position_types.jsp" />
+  </definition>
+  <definition name="oAlumni_communicationsSys.action_delete_page_alumni_communications" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_communicationsSys/action_delete_page_alumni_communications.jsp" />
+  </definition>
+  <definition name="oAlumni_communicationsSys.action_modify_page_alumni_communications" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_communicationsSys/action_modify_page_alumni_communications.jsp" />
+  </definition>
+  <definition name="oAlumni_communicationsSys.action_view_alumni_communications" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_communicationsSys/action_view_alumni_communications.jsp" />
+  </definition>
+  <definition name="oAlumni_communicationsSys.action_manage_alumni_communications" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_communicationsSys/action_manage_alumni_communications.jsp" />
+  </definition>
+  <definition name="oAlumni_communicationsSys.popUp_action_delete_page_alumni_communications" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_communicationsSys/action_delete_page_alumni_communications.jsp" />
+  </definition>
+  <definition name="oAlumni_communicationsSys.popUp_action_modify_page_alumni_communications" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_communicationsSys/action_modify_page_alumni_communications.jsp" />
+  </definition>
+  <definition name="oAlumni_communicationsSys.action_new_page_alumni_communications" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_communicationsSys/action_new_page_alumni_communications.jsp" />
+  </definition>
+  <definition name="oAlumni_communicationsSys.popUp_action_new_page_alumni_communications" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_communicationsSys/action_new_page_alumni_communications.jsp" />
+  </definition>
+ <definition name="oAlumni_external_job_sectorsSys.action_delete_page_alumni_external_job_sectors" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_job_sectorsSys/action_delete_alumni_external_job_sectors.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_sectorsSys.action_modify_page_alumni_external_job_sectors" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_job_sectorsSys/action_modify_alumni_external_job_sectors.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_sectorsSys.action_view_alumni_external_job_sectors" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_job_sectorsSys/action_view_alumni_external_job_sectors.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_sectorsSys.action_manage_alumni_external_job_sectors" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_job_sectorsSys/action_manage_alumni_external_job_sectors.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_sectorsSys.popUp_action_delete_page_alumni_external_job_sectors" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_external_job_sectorsSys/action_delete_alumni_external_job_sectors.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_sectorsSys.popUp_action_modify_page_alumni_external_job_sectors" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_external_job_sectorsSys/action_modify_alumni_external_job_sectors.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_sectorsSys.action_new_page_alumni_external_job_sectors" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_external_job_sectorsSys/action_new_alumni_external_job_sectors.jsp" />
+  </definition>
+  <definition name="oAlumni_external_job_sectorsSys.popUp_action_new_page_alumni_external_job_sectors" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_external_job_sectorsSys/action_new_alumni_external_job_sectors.jsp" />
+  </definition>
   <definition name="oType_of_benefitSys.action_view_type_of_benefit" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oType_of_benefitSys/action_view_type_of_benefit.jsp" />
   </definition>
@@ -881,7 +1111,7 @@
     <put name="center" value="/pages/oAcademic_infoSys/action_modify_page_academic_info.jsp" />
   </definition>
   <definition name="oAcademic_infoSys.action_delete_page_academic_info" extends="horizontal_evc_template1">
-    <put name="center" value="/pages/oGrant_concessionSys/action_delete_page_academic_info.jsp" />
+    <put name="center" value="/pages/oAcademic_infoSys/action_delete_page_academic_info.jsp" />
   </definition>  
   <definition name="oAcademic_infoSys.action_add_academic_info" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oAcademic_infoSys/action_add_academic_info.jsp" />

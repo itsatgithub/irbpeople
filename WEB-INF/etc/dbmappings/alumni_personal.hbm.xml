@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Alumni_personal" table="ALUMNI_PERSONAL">
+		<cache usage="read-write" />
+
+		<id name="alumni_personalcode" column="alumni_personalcode"></id>
+		<version name="version"></version>
+
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+
+		<many-to-one name="titles" class="Alumni_titles" column="titles" not-null="false" />
+
+		<!-- attribute mappings -->
+		<property name="external" type="boolean">
+			<column name="external" />
+		</property>
+		<property name="firstname" type="string">
+			<column name="firstname" length="100" />
+		</property>
+		<property name="surname" type="string">
+			<column name="surname" length="100" />
+		</property>
+		<property name="irb_surname" type="string">
+			<column name="irb_surname" length="100" />
+		</property>
+
+		<many-to-one name="gender" class="Gender" column="gender" not-null="false" />
+		<many-to-one name="nationality" class="Nationality" column="nationality" not-null="false" />
+		<many-to-one name="nationality_2" class="Nationality" column="nationality_2" not-null="false" />
+
+		<property name="birth" type="timestamp">
+			<column name="birth" />
+		</property>
+
+		<property name="email" type="string">
+			<column name="email" length="100" />
+		</property>
+		<property name="url" type="string">
+			<column name="url" length="100" />
+		</property>
+		<property name="facebook" type="string">
+			<column name="facebook" length="100" />
+		</property>
+		<property name="linkedin" type="string">
+			<column name="linkedin" length="100" />
+		</property>
+		<property name="twitter" type="string">
+			<column name="twitter" length="100" />
+		</property>
+		<property name="keywords" type="string">
+			<column name="keywords" length="255" />
+		</property>
+		<property name="biography" type="string">
+			<column name="biography" />
+		</property>
+		<property name="awards" type="string">
+			<column name="awards" />
+		</property>
+		<property name="ORCIDID" type="string">
+			<column name="ORCIDID" length="100" />
+		</property>
+		<property name="researcherid" type="string">
+			<column name="researcherid" length="100" />
+		</property>
+		<property name="pubmedid" type="string">
+			<column name="pubmedid" length="100" />
+		</property>
+		<property name="verified" type="boolean">
+			<column name="verified" />
+		</property>
+		<property name="show_data" type="boolean">
+			<column name="show_data" />
+		</property>
+		
+		<set name="ialumni_communications" table="alumni_personal_communications" inverse="false" lazy="false" fetch="select">
+            <key>
+                <column name="alumni_personalcode" not-null="true" />
+            </key>
+            <many-to-many class="Alumni_communications">
+                <column name="alumni_communicationscode" not-null="true" />
+            </many-to-many>
+        </set>
+		<set name="ialumni_external_jobs" cascade="none" lazy="true">
+			<key>
+				<column name="personal" />
+			</key>
+			<one-to-many class="Alumni_external_jobs" />
+		</set>
+		<set name="ialumni_irb_jobs" cascade="none" lazy="true">
+			<key>
+				<column name="personal" />
+			</key>
+			<one-to-many class="Alumni_irb_jobs" />
+		</set>
+	</class>
+</hibernate-mapping>

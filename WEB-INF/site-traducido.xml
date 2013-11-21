@@ -6153,7 +6153,7 @@
                                             <field name="name_of_institution_or_company" />
                                             <field name="description" object="position" association="work_experience_position" associationDirect="direct" />
                                             <field name="description" object="area" association="area" associationDirect="direct" />
-                                            <field name="descritption" object="type_of_institution" association="type_of_institution" associationDirect="direct" />
+                                            <field name="description" object="type_of_institution" association="type_of_institution" associationDirect="direct" />
                                             <field name="description" object="country" association="work_experience_country" associationDirect="direct" />
                                         </list>
                                     </form-group>
@@ -18208,7 +18208,7 @@
                                             <field name="name_of_institution_or_company" />
                                             <field name="description" object="position" association="work_experience_position" associationDirect="direct" />
                                             <field name="description" object="area" association="area" associationDirect="direct" />
-                                            <field name="descritption" object="type_of_institution" association="type_of_institution" associationDirect="direct" />
+                                            <field name="description" object="type_of_institution" association="type_of_institution" associationDirect="direct" />
                                             <field name="description" object="country" association="work_experience_country" associationDirect="direct" />
                                         </list>
                                     </form-group>
@@ -30024,7 +30024,7 @@
                                             <field name="name_of_institution_or_company" />
                                             <field name="description" object="position" association="work_experience_position" associationDirect="direct" />
                                             <field name="description" object="area" association="area" associationDirect="direct" />
-                                            <field name="descritption" object="type_of_institution" association="type_of_institution" associationDirect="direct" />
+                                            <field name="description" object="type_of_institution" association="type_of_institution" associationDirect="direct" />
                                             <field name="description" object="country" association="work_experience_country" associationDirect="direct" />
                                         </list>
                                     </form-group>

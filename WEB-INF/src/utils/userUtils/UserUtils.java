@@ -159,6 +159,14 @@ public class UserUtils {
 		else return true;
 	}
 	
+	// return true if current user is alumni
+	public static boolean isAlumni(HttpServletRequest request) {
+		Usuario u = getCurrentUsuario(request);
+		if(u!=null)
+			return UseCase.isAlumni(u);
+		else return true;
+	}
+		
 	// return true if current user is RRHH
 	public static boolean checkRole(HttpServletRequest request, String rolename) {
 		Usuario u = getCurrentUsuario(request);

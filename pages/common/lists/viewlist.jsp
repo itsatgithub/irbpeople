@@ -157,8 +157,21 @@ function submitDeleteNoneRowAction(form,boAdderName,name,value){
 	// Total de elementos de la tabla (necesario para la paginación)
 	Integer count = (Integer)request.getAttribute("viewListTotalElements");
 	// Si se ha introducido el nombre de un objectfield lo usamos, sino, usamos el "por defecto".
-	if(request.getParameter("objectfield")==null) lco = lc.getObject(objectname);
-	else lco = lc.getObject(objectfieldName);
+	
+	if(request.getParameter("objectfield")==null){ 
+		System.out.println(objectname);
+		lco = lc.getObject(objectname);
+		if (lco == null){
+			System.err.println(objectname + " object field not found.");
+		}
+	}else {
+		lco = lc.getObject(objectfieldName);
+		if (lco == null){
+			System.err.println(objectfieldName + " object field not found.");
+		}
+	}	
+	
+	
 	// code contiene el nombre del atributo clave, para el sortby por defecto y los nombres de checkboxes, radios, etc.
 	String code=selectObjectName+"code";
 	String codeProperty=(selectObjectProperty==null)? code :  selectObjectProperty+"."+code;

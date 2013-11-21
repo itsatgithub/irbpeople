@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Alumni_irb_jobs" table="ALUMNI_IRB_JOBS">
+		<cache usage="read-write" />
+
+		<id name="alumni_irb_jobscode" column="alumni_irb_jobscode"></id>
+		<version name="version"></version>
+
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+
+		<many-to-one name="personal" class="Alumni_personal" column="personal" not-null="false" />
+		
+		<property name="start_date" type="timestamp">
+	       <column name="start_date"  />
+        </property>
+        <property name="end_date" type="timestamp">
+	       <column name="end_date"  />
+        </property>
+		
+		<many-to-one name="unit" class="Unit" column="unit" not-null="false" />
+		<many-to-one name="unit_2" class="Unit" column="unit_2" not-null="false" />		
+		<many-to-one name="irb_job_positions" class="Alumni_irb_job_positions" column="irb_job_positions" not-null="false" />		
+
+		
+	</class>
+</hibernate-mapping>

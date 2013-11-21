@@ -27,6 +27,13 @@
 		<one-to-many class="Personal" />
 	</set>
 
+	<set name="ialumni_personal" cascade="none" lazy="true">
+		<key>
+			<column name="gender" />
+		</key>
+		<one-to-many class="Alumni_personal" />
+	</set>
+
 		
 		<!-- categorias -->
 		

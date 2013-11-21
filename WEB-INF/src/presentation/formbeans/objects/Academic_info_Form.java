@@ -17,7 +17,7 @@ public class Academic_info_Form extends ValidatorFormAndAction {
 	private String end_date;
 	private String lab_rotation_date;
 	private String thesis_defense_date;
-
+ 
 	private String current;
 	private String studies_name;
 	private String thesis_director;

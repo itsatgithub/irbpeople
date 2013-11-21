@@ -10,10 +10,10 @@ import utils.userUtils.UserUtils;
 
 public class NestedTagMoneyIRB extends NestedTagMoney {
 
-	boolean isrrhh;
+	boolean readonly;
 	@Override
 	public int doEndTag() throws JspException {
-		if(isrrhh){
+		if(readonly){
 			return SKIP_BODY;
 		}
 		return super.doEndTag();
@@ -22,7 +22,8 @@ public class NestedTagMoneyIRB extends NestedTagMoney {
 	@Override
 	public int doStartTag() throws JspException {
 		HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
-		if(isrrhh=!UserUtils.isRRHH(request)) {
+		readonly = !(UserUtils.isRRHH(request) || UserUtils.isAlumni(request));
+		if (readonly) {
 			Object bean = TagUtils.getInstance().lookup(pageContext, this.getName(), 
 					NestedPropertyHelper.getAdjustedProperty(request, this.getProperty()), null);
 			TagUtils.getInstance().write(pageContext, bean!=null ? bean.toString(): "");

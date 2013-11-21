@@ -14,7 +14,8 @@ public class NestedTextAreaIRB extends NestedTextareaTag {
 	@Override
 	public int doStartTag() throws JspException {
 		HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
-		if(UserUtils.isRRHH(request)) {
+		boolean readonly = !(UserUtils.isRRHH(request) || UserUtils.isAlumni(request));
+		if(!readonly) {
 			this.setReadonly(false);
 		}
 		return super.doStartTag();

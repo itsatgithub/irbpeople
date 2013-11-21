@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<report view="alumni_external_jobs" site-number="3">
+    <site name="en">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="current" visible="true" default="true" type-of-field="boolean" size="7">
+                    <caption language="en">Current</caption>
+                </field>
+                <field name="external_job_positions" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">External job positions</caption>
+                </field>
+                <field name="external_job_sectors" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">External job sectors</caption>
+                </field>
+                <field name="institution" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Institution</caption>
+                </field>
+                <field name="city" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">City</caption>
+                </field>
+                <field name="country" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Country</caption>
+                </field>
+                <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Start date</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">End date</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="ct">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="current" visible="true" default="true" type-of-field="boolean" size="7">
+                    <caption language="ct">Actual</caption>
+                </field>
+                <field name="external_job_positions" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Càrrec extern</caption>
+                </field>
+                <field name="external_job_sectors" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Sector extern</caption>
+                </field>
+                <field name="institution" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Institució</caption>
+                </field>
+                <field name="city" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Ciutat</caption>
+                </field>
+                <field name="country" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">País</caption>
+                </field>
+                <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Data inici</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Data fi</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="es">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+               <field name="current" visible="true" default="true" type-of-field="boolean" size="7">
+                    <caption language="es">Actual</caption>
+                </field>
+                <field name="external_job_positions" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="es">Cargo externo</caption>
+                </field>
+                <field name="external_job_sectors" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="es">Sector externo</caption>
+                </field>
+                <field name="institution" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="es">Institución</caption>
+                </field>
+                <field name="city" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="es">Ciudad</caption>
+                </field>
+                <field name="country" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="es">País</caption>
+                </field>
+                <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="es">Fecha de inicio</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="es">Fecha de fin</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+</report>
+

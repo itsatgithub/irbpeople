@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Alumni_params" table="ALUMNI_PARAMS">
+        <cache usage="read-write"/>
+    
+		<id name="alumni_paramscode" column="alumni_paramscode"></id>
+		
+		<!-- attribute mappings -->
+		<property name="title" type="string">
+			<column name="title" length="255" />
+		</property>	
+
+		<property name="value" type="string">
+			<column name="value" length="255" />
+		</property>		
+	</class>
+</hibernate-mapping>
