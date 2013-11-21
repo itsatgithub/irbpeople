@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Alumni_irb_job_positions" table="ALUMNI_IRB_JOB_POSITIONS">
+        <cache usage="read-write"/>
+    
+		<id name="alumni_irb_job_positionscode" column="alumni_irb_job_positionscode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+		<many-to-one name="job_position_types" class="Alumni_job_position_types" column="job_position_types" not-null="false" />
+		
+		<property name="description" type="string">
+			<column name="description" length="255" />
+		</property>
+		<property name="short_description" type="string">
+			<column name="short_description" length="100" />
+		</property>
+		<property name="order_number" type="integer">
+			<column name="order_number"  />
+		</property>
+		
+		<!-- Associacion mappings -->
+		<set name="ialumni_irb_jobs" cascade="none" lazy="true">
+			<key>
+				<column name="irb_job_positions" />
+			</key>
+			<one-to-many class="Alumni_irb_jobs" />
+		</set>
+
+		
+		<!-- categorias -->
+	</class>
+</hibernate-mapping>

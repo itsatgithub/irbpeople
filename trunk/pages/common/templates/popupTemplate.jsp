@@ -16,8 +16,9 @@
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
 	<tr>
-		<td width="80%" align="<%=utils.jsp.Constants.generalTable_align %>"><tiles:insert
-			attribute="center" /></td>
+		<td width="80%" align="<%=utils.jsp.Constants.generalTable_align %>">
+		<tiles:insert attribute="center" />
+		</td>
 	</tr>
 	<tr>
 		<td align="<%=utils.jsp.Constants.submit_align %>"><tiles:insert

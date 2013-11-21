@@ -55,6 +55,13 @@
 		<one-to-many class="Personal" />
 	</set>
 
+	<set name="ialumni_external_jobs" cascade="none" lazy="true">
+		<key>
+			<column name="country" />
+		</key>
+		<one-to-many class="Alumni_external_jobs" />
+	</set>
+
 		
 		<!-- categorias -->
 		

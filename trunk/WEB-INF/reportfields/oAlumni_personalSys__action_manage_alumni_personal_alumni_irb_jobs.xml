@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<report view="alumni_irb_jobs" site-number="3">
+    <site name="en">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="irb_job_positions" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">IRB job positions</caption>
+                </field>
+                <field name="unit" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Unit</caption>
+                </field>
+                <field name="unit_2" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Unit 2</caption>
+                </field>                
+                <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Start date</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">End date</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="ct">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+               <field name="irb_job_positions" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Càrrec a IRB </caption>
+                </field>
+                <field name="unit" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Unitat</caption>
+                </field>
+                <field name="unit_2" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Unitat 2</caption>
+                </field>                
+                <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Data inici</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Data fi</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="es">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+               <field name="irb_job_positions" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Cargo en IRB</caption>
+                </field>
+                <field name="unit" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Unidad</caption>
+                </field>
+                <field name="unit_2" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Unidad 2</caption>
+                </field>                
+                <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Fecha inicio</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Fecha fin</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+</report>
+

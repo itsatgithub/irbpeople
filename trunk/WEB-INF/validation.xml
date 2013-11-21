@@ -451,6 +451,136 @@
 	</var>
 </field>
 </form>
+<form name="alumni_params_Form">
+	
+<field property="value" depends="stringSize">
+	<arg key="alumni_params.value" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>255</var-value>
+	</var>
+</field>
+</form>
+<form name="alumni_titles_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="alumni_titles.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>255</var-value>
+	</var>
+</field>
+<field property="short_description" depends="stringSize">
+	<arg key="alumni_titles.short_description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="order_number" depends="integer">
+	<arg key="alumni_titles.order_number" />
+</field>
+</form>
+<form name="alumni_external_job_positions_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="alumni_external_job_positions.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>255</var-value>
+	</var>
+</field>
+<field property="short_description" depends="stringSize">
+	<arg key="alumni_external_job_positions.short_description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="order_number" depends="integer">
+	<arg key="alumni_external_job_positions.order_number" />
+</field>
+</form>
+<form name="alumni_irb_job_positions_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="alumni_irb_job_positions.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>255</var-value>
+	</var>
+</field>
+<field property="short_description" depends="stringSize">
+	<arg key="alumni_irb_job_positions.short_description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="order_number" depends="integer">
+	<arg key="alumni_irb_job_positions.order_number" />
+</field>
+</form>
+<form name="alumni_job_position_types_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="alumni_job_position_types.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>255</var-value>
+	</var>
+</field>
+<field property="short_description" depends="stringSize">
+	<arg key="alumni_job_position_types.short_description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="order_number" depends="integer">
+	<arg key="alumni_job_position_types.order_number" />
+</field>
+</form>
+<form name="alumni_communications_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="alumni_communications.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>255</var-value>
+	</var>
+</field>
+<field property="short_description" depends="stringSize">
+	<arg key="alumni_communications.short_description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="order_number" depends="integer">
+	<arg key="alumni_communications.order_number" />
+</field>
+</form>
+<form name="alumni_external_job_sectors_Form">
+	
+<field property="description" depends="stringSize">
+	<arg key="alumni_external_job_sectors.description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>255</var-value>
+	</var>
+</field>
+<field property="short_description" depends="stringSize">
+	<arg key="alumni_external_job_sectors.short_description" />
+	<var>
+		<var-name>size</var-name>
+		<var-value>100</var-value>
+	</var>
+</field>
+<field property="order_number" depends="integer">
+	<arg key="alumni_external_job_sectors.order_number" />
+</field>
+</form>
 <form name="holiday_Form">
 	
 <field property="start_date" depends="localeDate">
@@ -2024,17 +2154,442 @@
 
 </form>
 
-<form name="oType_of_benefitSys__action_delete_delete_page_type_of_benefit_Form">
+<form name="alumni_external_jobs_Form">
+	<field property="start_date" depends="localeDate">
+		<var>
+			<var-name>datePattern</var-name>
+			<var-value>simpleDate</var-value>
+		</var>
+		<arg key="alumni_external_jobs.start_date" />
+	</field>  
+	<field property="end_date" depends="localeDate">
+		<var>
+			<var-name>datePattern</var-name>
+			<var-value>simpleDate</var-value>
+		</var>
+		<arg key="alumni_external_jobs.end_date" />
+	</field>  
+	<field property="comments" depends="stringSize">
+	    <arg key="alumni_external_jobs.comments" />
+	    <var>
+	        <var-name>size</var-name>
+	        <var-value>255</var-value>
+	    </var>
+	</field>
+	<field property="institution" depends="stringSize">
+	    <arg key="alumni_external_jobs.institution" />
+	    <var>
+	        <var-name>size</var-name>
+	        <var-value>100</var-value>
+	    </var>
+	</field>
+	<field property="address" depends="stringSize">
+	    <arg key="alumni_external_jobs.address" />
+	    <var>
+	        <var-name>size</var-name>
+	        <var-value>255</var-value>
+	    </var>
+	</field>
+	<field property="postcode" depends="stringSize">
+	    <arg key="alumni_external_jobs.postcode" />
+	    <var>
+	        <var-name>size</var-name>
+	        <var-value>45</var-value>
+	    </var>
+	</field>
+	<field property="city" depends="stringSize">
+	    <arg key="alumni_external_jobs.city" />
+	    <var>
+	        <var-name>size</var-name>
+	        <var-value>45</var-value>
+	    </var>
+	</field>
+	<field property="telephone" depends="stringSize">
+	    <arg key="alumni_external_jobs.telephone" />
+	    <var>
+	        <var-name>size</var-name>
+	        <var-value>45</var-value>
+	    </var>
+	</field>
+</form>
+<form name="oAlumni_external_jobsSys__action_modify_modify_page_alumni_external_jobs_Form">
 	
-<field property="type_of_benefit_Form" depends="nestedBean">
+<field property="alumni_external_jobs_Form" depends="nestedBean">
 	<var>
 		<var-name>beanName</var-name>
-		<var-value>type_of_benefit_Form</var-value>
+		<var-value>alumni_external_jobs_Form</var-value>
+	</var>
+</field>
+	
+</form>
+
+
+<form name="oAlumni_external_jobsSys__action_delete_delete_page_alumni_external_jobs_Form">
+	
+<field property="alumni_external_jobs_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_external_jobs_Form</var-value>
 	</var>
 </field>
 
 	
 	
+</form>
+<form name="oAlumni_external_jobsSys__action_new_new_page_alumni_external_jobs_Form">
+	
+<field property="alumni_external_jobs_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_external_jobs_Form</var-value>
+	</var>
+</field>	
+	
+</form>
+<form name="alumni_irb_jobs_Form">
+	<field property="start_date" depends="localeDate">
+		<var>
+			<var-name>datePattern</var-name>
+			<var-value>simpleDate</var-value>
+		</var>
+		<arg key="alumni_irb_jobs.start_date" />
+	</field>  
+	<field property="end_date" depends="localeDate">
+		<var>
+			<var-name>datePattern</var-name>
+			<var-value>simpleDate</var-value>
+		</var>
+		<arg key="alumni_irb_jobs.end_date" />
+	</field>  	
+</form>
+<form name="oAlumni_irb_jobsSys__action_modify_modify_page_alumni_irb_jobs_Form">
+	
+<field property="alumni_irb_jobs_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_irb_jobs_Form</var-value>
+	</var>
+</field>
+	
+</form>
+
+
+<form name="oAlumni_irb_jobsSys__action_delete_delete_page_alumni_irb_jobs_Form">
+	
+<field property="alumni_irb_jobs_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_irb_jobs_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oAlumni_irb_jobsSys__action_new_new_page_alumni_irb_jobs_Form">
+	
+<field property="alumni_irb_jobs_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_irb_jobs_Form</var-value>
+	</var>
+</field>	
+	
+</form>
+<form name="oAlumni_personalSys__action_delete_delete_page_alumni_personal_Form">	
+	<field property="alumni_personal_Form" depends="nestedBean">
+		<var>
+			<var-name>beanName</var-name>
+			<var-value>alumni_personal_Form</var-value>
+		</var>
+	</field>	
+</form>
+
+<form name="oAlumni_personalSys__action_modify_modify_page_alumni_personal_Form">
+	<field property="alumni_personal_Form" depends="nestedBean">
+		<var>
+			<var-name>beanName</var-name>
+			<var-value>alumni_personal_Form</var-value>
+		</var>
+	</field>	
+</form>
+
+<form name="oAlumni_titlesSys__action_delete_delete_page_alumni_titles_Form">
+	
+<field property="alumni_titles_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_titles_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oAlumni_titlesSys__action_modify_modify_page_alumni_titles_Form">
+	
+<field property="alumni_titles_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_titles_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="alumni_titles_Form.description" depends="required">
+	<arg key="alumni_titles.description" />
+</field>
+
+
+</form>
+<form name="oAlumni_titlesSys__action_new_new_page_alumni_titles_Form">
+	
+<field property="alumni_titles_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_titles_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="alumni_titles_Form.description" depends="required">
+	<arg key="alumni_titles.description" />
+</field>
+
+
+</form>
+<form name="oAlumni_external_job_positionsSys__action_delete_delete_page_alumni_external_job_positions_Form">
+	
+<field property="alumni_external_job_positions_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_external_job_positions_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oAlumni_external_job_positionsSys__action_modify_modify_page_alumni_external_job_positions_Form">
+	
+<field property="alumni_external_job_positions_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_external_job_positions_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="alumni_external_job_positions_Form.description" depends="required">
+	<arg key="alumni_external_job_positions.description" />
+</field>
+
+
+</form>
+<form name="oAlumni_external_job_positionsSys__action_new_new_page_alumni_external_job_positions_Form">
+	
+<field property="alumni_external_job_positions_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_external_job_positions_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="alumni_external_job_positions_Form.description" depends="required">
+	<arg key="alumni_external_job_positions.description" />
+</field>
+
+
+</form>
+<form name="oAlumni_irb_job_positionsSys__action_delete_delete_page_alumni_irb_job_positions_Form">
+	
+<field property="alumni_irb_job_positions_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_irb_job_positions_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oAlumni_irb_job_positionsSys__action_modify_modify_page_alumni_irb_job_positions_Form">
+	
+<field property="alumni_irb_job_positions_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_irb_job_positions_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="alumni_irb_job_positions_Form.description" depends="required">
+	<arg key="alumni_irb_job_positions.description" />
+</field>
+
+
+</form>
+<form name="oAlumni_irb_job_positionsSys__action_new_new_page_alumni_irb_job_positions_Form">
+	
+<field property="alumni_irb_job_positions_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_irb_job_positions_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="alumni_irb_job_positions_Form.description" depends="required">
+	<arg key="alumni_irb_job_positions.description" />
+</field>
+
+
+</form>
+<form name="oAlumni_job_position_typesSys__action_delete_delete_page_alumni_job_position_types_Form">
+	
+<field property="alumni_job_position_types_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_job_position_types_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oAlumni_job_position_typesSys__action_modify_modify_page_alumni_job_position_types_Form">
+	
+<field property="alumni_job_position_types_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_job_position_types_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="alumni_job_position_types_Form.description" depends="required">
+	<arg key="alumni_job_position_types.description" />
+</field>
+
+
+</form>
+<form name="oAlumni_job_position_typesSys__action_new_new_page_alumni_job_position_types_Form">
+	
+<field property="alumni_job_position_types_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_job_position_types_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="alumni_job_position_types_Form.description" depends="required">
+	<arg key="alumni_job_position_types.description" />
+</field>
+
+
+</form>
+
+<form name="oAlumni_communicationsSys__action_delete_delete_page_alumni_communications_Form">
+	
+<field property="alumni_communications_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_communications_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oAlumni_communicationsSys__action_modify_modify_page_alumni_communications_Form">
+	
+<field property="alumni_communications_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_communications_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="alumni_communications_Form.description" depends="required">
+	<arg key="alumni_communications.description" />
+</field>
+
+
+</form>
+<form name="oAlumni_communicationsSys__action_new_new_page_alumni_communications_Form">
+	
+<field property="alumni_communications_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_communications_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="alumni_communications_Form.description" depends="required">
+	<arg key="alumni_communications.description" />
+</field>
+
+
+</form>
+<form name="oAlumni_external_job_sectorsSys__action_delete_delete_page_alumni_external_job_sectors_Form">
+	
+<field property="alumni_external_job_sectors_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_external_job_sectors_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oAlumni_external_job_sectorsSys__action_modify_modify_page_alumni_external_job_sectors_Form">
+	
+<field property="alumni_external_job_sectors_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_external_job_sectors_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="alumni_external_job_sectors_Form.description" depends="required">
+	<arg key="alumni_external_job_sectors.description" />
+</field>
+
+
+</form>
+<form name="oAlumni_external_job_sectorsSys__action_new_new_page_alumni_external_job_sectors_Form">
+	
+<field property="alumni_external_job_sectors_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_external_job_sectors_Form</var-value>
+	</var>
+</field>
+
+	
+	
+<field property="alumni_external_job_sectors_Form.description" depends="required">
+	<arg key="alumni_external_job_sectors.description" />
+</field>
+
+
 </form>
 <form name="oType_of_benefitSys__action_modify_modify_page_type_of_benefit_Form">
 	
@@ -2462,6 +3017,7 @@
 	
 	
 </form>
+
 <form name="oPersonalSys__action_modify_modify_page_personal_Form">
 	
 <field property="personal_Form" depends="nestedBean">

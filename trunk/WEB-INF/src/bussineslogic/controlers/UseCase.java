@@ -52,6 +52,16 @@ import bussineslogic.excepciones.UsuarioExisteException;
 import bussineslogic.excepciones.UsuarioNoActivoException;
 import bussineslogic.excepciones.ValidationFailedException;
 import bussineslogic.objects.Academic_info;
+import bussineslogic.objects.Alumni_external_jobs;
+import bussineslogic.objects.Alumni_irb_jobs;
+import bussineslogic.objects.Alumni_communications;
+import bussineslogic.objects.Alumni_external_job_positions;
+import bussineslogic.objects.Alumni_external_job_sectors;
+import bussineslogic.objects.Alumni_irb_job_positions;
+import bussineslogic.objects.Alumni_job_position_types;
+import bussineslogic.objects.Alumni_personal;
+import bussineslogic.objects.Alumni_titles;
+import bussineslogic.objects.Alumni_params;
 import bussineslogic.objects.ApplicationPreferences;
 import bussineslogic.objects.Area;
 import bussineslogic.objects.AuditLog;
@@ -131,6 +141,7 @@ public class UseCase {
 
     public final static String ADMINISTRATOR_ROLE_NAME = "administrator";
     public final static String BASIC_ROLE_NAME = "basic";
+    public final static String ALUMNI_ROLE_NAME = "irbpeople_alumni";
     public final static String HUMAN_RESOURCES_ROLE_NAME = "irbpeople_rw";
     public final static String IRBPEOPLE_GRANT_ROLE_NAME = "irbpeople_grant";
     public final static String IRBPEOPLE_INNOVATION_ROLE_NAME = "irbpeople_innovation";
@@ -229,7 +240,7 @@ public class UseCase {
 	    } catch (identifyException ie) {
 
 		log.error(
-			"Error en asignaci�n de nuevo id en CreateResearch_group",
+			"Error en asignaciï¿½n de nuevo id en CreateResearch_group",
 			ie);
 		throw new Error(ie.getMessage());
 	    }
@@ -1058,6 +1069,1008 @@ public class UseCase {
 
 	return pair;
     }
+    
+    
+    
+    
+	/**
+     * This method creates a Alumni_external_jobs.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_external_jobs
+     *            Alumni_external_jobs data transfer object (DTO) with the values of
+     *            the new instance.
+     * @return the new alumni_external_jobs created with this Use Case
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_external_jobs CreateAlumni_external_jobs(Usuario user,
+	    Alumni_external_jobs TOAlumni_external_jobs) throws InternalException,
+	    NoPermisosException {
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/**
+	 * 2. For each association from the TOAlumni_external_jobs that are filled
+	 * in the DTO we put the real objects from the DB. *
+	 */
+
+	// we store if the alumni_external_jobs_personal is defined for later use
+	boolean _alumni_external_jobs_personalIsDefined = false;
+
+	if (TOAlumni_external_jobs.getPersonal() != null
+		&& TOAlumni_external_jobs.getPersonal()
+			.getAlumni_personalcode() != null) {
+	    
+		_alumni_external_jobs_personalIsDefined = true;
+	    TOAlumni_external_jobs.setPersonal(getAlumni_personal(TOAlumni_external_jobs.getPersonal().getAlumni_personalcode()));
+	}
+
+	boolean _external_job_positionsIsDefined = false;
+
+	if (TOAlumni_external_jobs.getExternal_job_positions() != null
+		&& TOAlumni_external_jobs.getExternal_job_positions().getAlumni_external_job_positionscode() != null) {
+
+		_external_job_positionsIsDefined = true;
+	    TOAlumni_external_jobs.setExternal_job_positions(getAlumni_external_job_positions(TOAlumni_external_jobs.getExternal_job_positions().getAlumni_external_job_positionscode()));
+	}
+	
+	boolean _external_job_sectorsIsDefined = false;
+
+	if (TOAlumni_external_jobs.getExternal_job_sectors() != null
+		&& TOAlumni_external_jobs.getExternal_job_sectors().getAlumni_external_job_sectorscode() != null) {
+
+		_external_job_sectorsIsDefined = true;
+	    TOAlumni_external_jobs.setExternal_job_sectors(getAlumni_external_job_sectors(TOAlumni_external_jobs.getExternal_job_sectors().getAlumni_external_job_sectorscode()));
+	}
+	
+	boolean _country_codeIsDefined = false;
+
+	if (TOAlumni_external_jobs.getCountry() != null
+		&& TOAlumni_external_jobs.getCountry().getCode() != null) {
+	    // if grant is defined we replace the grant in the DTO with its
+	    // current state in the DB.
+		_country_codeIsDefined = true;
+
+	    TOAlumni_external_jobs.setCountry(getCountry(TOAlumni_external_jobs.getCountry().getCode()));
+	}
+
+	/** 3. We create the new instance * */
+	Alumni_external_jobs alumni_external_jobs = new Alumni_external_jobs();
+
+	/**
+	 * 4. We set all the simple attributes (no associations) to the new
+	 * instance *
+	 */
+
+	alumni_external_jobs.setStart_date(TOAlumni_external_jobs.getStart_date());
+	alumni_external_jobs.setEnd_date(TOAlumni_external_jobs.getEnd_date());
+	alumni_external_jobs.setComments(TOAlumni_external_jobs.getComments());
+	alumni_external_jobs.setInstitution(TOAlumni_external_jobs.getInstitution());
+	alumni_external_jobs.setAddress(TOAlumni_external_jobs.getAddress());
+	alumni_external_jobs.setPostcode(TOAlumni_external_jobs.getPostcode());
+	alumni_external_jobs.setCity(TOAlumni_external_jobs.getCity());
+	alumni_external_jobs.setTelephone(TOAlumni_external_jobs.getTelephone());
+	
+	
+	/** 5. We set the code to the new instance * */
+	try {
+	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
+
+	    alumni_external_jobs.setAlumni_external_jobscode(im
+		    .getId(TOAlumni_external_jobs));
+	} catch (identifyException ie) {
+
+	    log.error(
+		    "Error en asignaciï¿½n de nuevo id en CreateAlumni_external_jobs",
+		    ie);
+	    throw new Error(ie.getMessage());
+	}
+
+	/** 6. We save the new instance to the DB* */
+	HibernateUtil.getSession().save(alumni_external_jobs);
+
+	/**
+	 * We associate the current object to the other objects (only in case
+	 * that the associations where defined in the DTO) *
+	 */
+
+	if (_alumni_external_jobs_personalIsDefined) {
+
+	    if (TOAlumni_external_jobs.getPersonal() != null) {
+
+		TOAlumni_external_jobs.getPersonal()
+			.addIalumni_external_jobs(alumni_external_jobs);
+	    }
+
+	    alumni_external_jobs.setPersonal(TOAlumni_external_jobs
+		    .getPersonal());
+	}
+	
+	if (_external_job_positionsIsDefined) {
+
+	    if (TOAlumni_external_jobs.getExternal_job_positions() != null) {
+
+		TOAlumni_external_jobs.getExternal_job_positions()
+			.addIalumni_external_jobs(alumni_external_jobs);
+	    }
+
+	    alumni_external_jobs.setExternal_job_positions(TOAlumni_external_jobs
+		    .getExternal_job_positions());
+	}
+
+	if (_external_job_sectorsIsDefined) {
+
+	    if (TOAlumni_external_jobs.getExternal_job_sectors() != null) {
+
+		TOAlumni_external_jobs.getExternal_job_sectors()
+			.addIalumni_external_jobs(alumni_external_jobs);
+	    }
+
+	    alumni_external_jobs.setExternal_job_sectors(TOAlumni_external_jobs
+		    .getExternal_job_sectors());
+	}
+
+	if (_country_codeIsDefined) {
+		
+		if (TOAlumni_external_jobs.getCountry() != null) {
+			
+			TOAlumni_external_jobs.getCountry()
+			.addIalumni_external_jobs(alumni_external_jobs);
+		}
+		
+		alumni_external_jobs.setCountry(TOAlumni_external_jobs
+				.getCountry());
+	}
+
+
+	/** 7. We create an Audit message * */
+	//CreateCreationAuditmessage(user, alumni_external_jobs);
+
+	/** 8. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_external_jobs;
+    }
+
+    /**
+     * This method modifies a alumni_external_jobs.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_external_jobs
+     *            Alumni_external_jobs data transfer object (DTO) with the values of
+     *            the modified instance. The code of this attribute indicates
+     *            which alumni_external_jobs will be modified.
+     * @return the modified alumni_external_jobs
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_external_jobs UpdateAlumni_external_jobs(Usuario user,
+	    Alumni_external_jobs TOAlumni_external_jobs) throws InternalException,
+	    NoPermisosException {
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 3. We obtain form the DB the instance to modify * */
+	Alumni_external_jobs alumni_external_jobs = getAlumni_external_jobs(TOAlumni_external_jobs
+		.getAlumni_external_jobscode());
+	
+	/**
+	 * 2. For each association from the TOAlumni_external_jobs that are filled
+	 * in the DTO we put the real objects from the DB. *
+	 */
+
+	// we store if the alumni_external_jobs_personal is defined for later use
+		boolean _alumni_external_jobs_personalIsDefined = false;
+
+		if (TOAlumni_external_jobs.getPersonal() != null
+			&& TOAlumni_external_jobs.getPersonal()
+				.getAlumni_personalcode() != null) {
+		    
+			_alumni_external_jobs_personalIsDefined = true;
+		    TOAlumni_external_jobs.setPersonal(getAlumni_personal(TOAlumni_external_jobs.getPersonal().getAlumni_personalcode()));
+		}
+
+		boolean _external_job_positionsIsDefined = false;
+
+		if (TOAlumni_external_jobs.getExternal_job_positions() != null
+			&& TOAlumni_external_jobs.getExternal_job_positions().getAlumni_external_job_positionscode() != null) {
+
+			_external_job_positionsIsDefined = true;
+		    TOAlumni_external_jobs.setExternal_job_positions(getAlumni_external_job_positions(TOAlumni_external_jobs.getExternal_job_positions().getAlumni_external_job_positionscode()));
+		}
+		
+		boolean _external_job_sectorsIsDefined = false;
+
+		if (TOAlumni_external_jobs.getExternal_job_sectors() != null
+			&& TOAlumni_external_jobs.getExternal_job_sectors().getAlumni_external_job_sectorscode() != null) {
+
+			_external_job_sectorsIsDefined = true;
+		    TOAlumni_external_jobs.setExternal_job_sectors(getAlumni_external_job_sectors(TOAlumni_external_jobs.getExternal_job_sectors().getAlumni_external_job_sectorscode()));
+		}
+		
+		boolean _country_codeIsDefined = false;
+
+		if (TOAlumni_external_jobs.getCountry() != null
+			&& TOAlumni_external_jobs.getCountry().getCode() != null) {
+		    // if grant is defined we replace the grant in the DTO with its
+		    // current state in the DB.
+			_country_codeIsDefined = true;
+
+		    TOAlumni_external_jobs.setCountry(getCountry(TOAlumni_external_jobs.getCountry().getCode()));
+		}
+	
+		/**
+	 * 4. We set all the simple attributes (no associations) to the instance
+	 * *
+	 */
+
+		alumni_external_jobs.setStart_date(TOAlumni_external_jobs.getStart_date());
+		alumni_external_jobs.setEnd_date(TOAlumni_external_jobs.getEnd_date());
+		alumni_external_jobs.setComments(TOAlumni_external_jobs.getComments());
+		alumni_external_jobs.setInstitution(TOAlumni_external_jobs.getInstitution());
+		alumni_external_jobs.setAddress(TOAlumni_external_jobs.getAddress());
+		alumni_external_jobs.setPostcode(TOAlumni_external_jobs.getPostcode());
+		alumni_external_jobs.setCity(TOAlumni_external_jobs.getCity());
+		alumni_external_jobs.setTelephone(TOAlumni_external_jobs.getTelephone());
+
+	/**
+	 * 5. We set the DTO version to the modified object and we update it
+	 * with the new values in the DB. We evict and update the instance to
+	 * prevent concurrent modification *
+	 */
+	HibernateUtil.getSession().evict(alumni_external_jobs);
+	alumni_external_jobs.setVersion(TOAlumni_external_jobs.getVersion());
+	HibernateUtil.getSession().update(alumni_external_jobs);
+
+	/**
+	 * We associate/disassociate the current object to the other objects
+	 * (only in case that the associations where defined in the DTO) *
+	 */
+
+	if (_alumni_external_jobs_personalIsDefined) {
+
+		if (alumni_external_jobs.getPersonal() != null) {
+			alumni_external_jobs.getPersonal().removeIalumni_external_jobs(alumni_external_jobs);
+	    }
+		
+	    if (TOAlumni_external_jobs.getPersonal() != null) {
+
+		TOAlumni_external_jobs.getPersonal()
+			.addIalumni_external_jobs(alumni_external_jobs);
+	    }
+
+	    alumni_external_jobs.setPersonal(TOAlumni_external_jobs
+		    .getPersonal());
+	}
+	
+	if (_external_job_positionsIsDefined) {
+
+		if (alumni_external_jobs.getExternal_job_positions() != null) {
+			alumni_external_jobs.getExternal_job_positions().removeIalumni_external_jobs(alumni_external_jobs);
+	    }
+		
+	    if (TOAlumni_external_jobs.getExternal_job_positions() != null) {
+
+		TOAlumni_external_jobs.getExternal_job_positions()
+			.addIalumni_external_jobs(alumni_external_jobs);
+	    }
+
+	    alumni_external_jobs.setExternal_job_positions(TOAlumni_external_jobs
+		    .getExternal_job_positions());
+	}
+
+	if (_external_job_sectorsIsDefined) {
+		if (alumni_external_jobs.getExternal_job_positions() != null) {
+			alumni_external_jobs.getExternal_job_positions().removeIalumni_external_jobs(alumni_external_jobs);
+	    }
+	    if (TOAlumni_external_jobs.getExternal_job_sectors() != null) {
+
+		TOAlumni_external_jobs.getExternal_job_sectors()
+			.addIalumni_external_jobs(alumni_external_jobs);
+	    }
+
+	    alumni_external_jobs.setExternal_job_sectors(TOAlumni_external_jobs
+		    .getExternal_job_sectors());
+	}
+
+	if (_country_codeIsDefined) {
+		if (alumni_external_jobs.getCountry() != null) {
+			alumni_external_jobs.getCountry().removeIalumni_external_jobs(alumni_external_jobs);
+		}
+		if (TOAlumni_external_jobs.getCountry() != null) {
+			
+			TOAlumni_external_jobs.getCountry()
+			.addIalumni_external_jobs(alumni_external_jobs);
+		}
+		
+		alumni_external_jobs.setCountry(TOAlumni_external_jobs
+				.getCountry());
+	}
+
+	
+	/** 6. We create an Audit message * */
+	CreateModificationAuditmessage(user, alumni_external_jobs);
+
+	/** 7. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_external_jobs;
+    }
+
+    /**
+     * This method removes a alumni_external_jobs.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_external_jobscode
+     *            Code of the alumni_external_jobs to be removed
+     * @throws NoPermisosException
+     */
+    public static void RemoveAlumni_external_jobs(Usuario user,
+	    String alumni_external_jobscode) throws NoPermisosException {
+
+		/** 1. We begin the DB transaction. * */
+		HibernateUtil.beginTransaction();
+	
+		/** 2. We obtain the object to delete form the DB. * */
+		Alumni_external_jobs alumni_external_jobs = getAlumni_external_jobs(alumni_external_jobscode);
+		// testIsHHRROrItself(user,
+		// alumni_external_jobs.getPersonal());
+	
+		/** 3. We mark it as deleted. * */
+		alumni_external_jobs.setDeleted(Boolean.TRUE);
+	
+		/** 4. We create an Audit message * */
+		CreateRemovealAuditmessage(user, alumni_external_jobs);
+	
+		/** 5. We commit the DB transaction. * */
+		HibernateUtil.commitTransaction();
+    }
+
+    /**
+     * This method obtains one instance of alumni_external_jobs given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_external_jobscode
+     *            Code of the alumni_external_jobs to be obtained
+     * @return Alumni_external_jobs with the given code.
+     */
+    public static Alumni_external_jobs ObtainAlumni_external_jobs(Usuario user,
+	    String alumni_external_jobscode) {
+
+	/**
+	 * 1. We obtain the object from the DB using the private getter and we
+	 * return it. *
+	 */
+
+	Alumni_external_jobs alumni_external_jobs = getAlumni_external_jobs(alumni_external_jobscode);
+	return alumni_external_jobs;
+    }
+
+    /**
+     * This method obtains all instances of Alumni_external_jobs, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Alumni_external_jobs>> ObtainAllAlumni_external_jobs(
+	    Usuario user, ListConfigurator configurator) {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Alumni_external_jobs.class);
+
+	// we only want to obtain the non deleted objects
+	crit.add(Expression.eq("deleted", Boolean.FALSE));
+
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	List<Alumni_external_jobs> alumni_external_jobss = (List<Alumni_external_jobs>) crit
+		.list();
+
+	Pair<Integer, List<Alumni_external_jobs>> pair = new Pair<Integer, List<Alumni_external_jobs>>(
+		count, alumni_external_jobss);
+
+	return pair;
+    }
+	
+	/**
+     * Returns the Alumni_external_jobs with the given key. This method is used
+     * internally to get objects form the database.
+     * 
+     * @param alumni_external_jobscode
+     *            code of the Alumni_external_jobs
+     * @return Alumni_external_jobs with the given code
+     */
+    protected static Alumni_external_jobs getAlumni_external_jobs(
+	    String alumni_external_jobscode) {
+	Alumni_external_jobs alumni_external_jobs = (Alumni_external_jobs) HibernateUtil
+		.getSession().get(Alumni_external_jobs.class, alumni_external_jobscode);
+	return alumni_external_jobs;
+    }
+	
+	
+	public static String SetCurrentAlumni_external_jobs(Usuario usuario,
+    	    String alumni_external_jobscode) {
+
+    	/** 1. We begin the DB transaction. * */
+    	HibernateUtil.beginTransaction();
+
+    	/** 2. We obtain the object to delete form the DB. * */
+    	Alumni_external_jobs alumni_external_jobs = getAlumni_external_jobs(alumni_external_jobscode);
+
+    	boolean oldValue = alumni_external_jobs.isCurrent();
+
+    	Set<Alumni_external_jobs> lineasDeAlumni_external_jobscode = alumni_external_jobs
+    		.getPersonal().getIalumni_external_jobs();
+
+    	for (Alumni_external_jobs linea : lineasDeAlumni_external_jobscode) {
+    	    linea.setCurrent(false);
+    	}
+
+    	/** 3. We mark it as deleted. * */
+    	alumni_external_jobs.setCurrent(!oldValue);
+
+    	/** 4. We create an Audit message * */
+    	// CreateRemovealAuditmessage(user, professional);
+
+    	/** 5. We commit the DB transaction. * */
+    	HibernateUtil.commitTransaction();
+
+    	return alumni_external_jobs.getPersonal()
+    		.getAlumni_personalcode();
+    }
+    
+	/**
+     * This method creates a Alumni_irb_jobs.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_irb_jobs
+     *            Alumni_irb_jobs data transfer object (DTO) with the values of
+     *            the new instance.
+     * @return the new alumni_irb_jobs created with this Use Case
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_irb_jobs CreateAlumni_irb_jobs(Usuario user,
+	    Alumni_irb_jobs TOAlumni_irb_jobs) throws InternalException,
+	    NoPermisosException {
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/**
+	 * 2. For each association from the TOAlumni_irb_jobs that are filled
+	 * in the DTO we put the real objects from the DB. *
+	 */
+
+	// we store if the alumni_irb_jobs_personal is defined for later use
+	boolean _alumni_irb_jobs_personalIsDefined = false;
+
+	if (TOAlumni_irb_jobs.getPersonal() != null
+		&& TOAlumni_irb_jobs.getPersonal()
+			.getAlumni_personalcode() != null) {
+	    
+		_alumni_irb_jobs_personalIsDefined = true;
+	    TOAlumni_irb_jobs.setPersonal(getAlumni_personal(TOAlumni_irb_jobs.getPersonal().getAlumni_personalcode()));
+	}
+
+	boolean _irb_job_positionsIsDefined = false;
+
+	if (TOAlumni_irb_jobs.getIrb_job_positions() != null
+		&& TOAlumni_irb_jobs.getIrb_job_positions().getAlumni_irb_job_positionscode() != null) {
+
+		_irb_job_positionsIsDefined = true;
+	    TOAlumni_irb_jobs.setIrb_job_positions(getAlumni_irb_job_positions(TOAlumni_irb_jobs.getIrb_job_positions().getAlumni_irb_job_positionscode()));
+	}
+	
+	
+	boolean _unitIsDefined = false;
+
+	if (TOAlumni_irb_jobs.getUnit() != null
+		&& TOAlumni_irb_jobs.getUnit().getCode() != null) {
+	    // if grant is defined we replace the grant in the DTO with its
+	    // current state in the DB.
+		_unitIsDefined = true;
+
+	    TOAlumni_irb_jobs.setUnit(getUnit(TOAlumni_irb_jobs.getUnit().getCode()));
+	}
+	
+	boolean _unit_2IsDefined = false;
+	
+	if (TOAlumni_irb_jobs.getUnit_2() != null
+			&& TOAlumni_irb_jobs.getUnit_2().getCode() != null) {
+		// if grant is defined we replace the grant in the DTO with its
+		// current state in the DB.
+		_unit_2IsDefined = true;
+		
+		TOAlumni_irb_jobs.setUnit_2(getUnit(TOAlumni_irb_jobs.getUnit_2().getCode()));
+	}
+
+	/** 3. We create the new instance * */
+	Alumni_irb_jobs alumni_irb_jobs = new Alumni_irb_jobs();
+
+	/**
+	 * 4. We set all the simple attributes (no associations) to the new
+	 * instance *
+	 */
+
+	alumni_irb_jobs.setStart_date(TOAlumni_irb_jobs.getStart_date());
+	alumni_irb_jobs.setEnd_date(TOAlumni_irb_jobs.getEnd_date());	
+	
+	
+	/** 5. We set the code to the new instance * */
+	try {
+	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
+
+	    alumni_irb_jobs.setAlumni_irb_jobscode(im
+		    .getId(TOAlumni_irb_jobs));
+	} catch (identifyException ie) {
+
+	    log.error(
+		    "Error en asignaciï¿½n de nuevo id en CreateAlumni_irb_jobs",
+		    ie);
+	    throw new Error(ie.getMessage());
+	}
+
+	/** 6. We save the new instance to the DB* */
+	HibernateUtil.getSession().save(alumni_irb_jobs);
+
+	/**
+	 * We associate the current object to the other objects (only in case
+	 * that the associations where defined in the DTO) *
+	 */
+
+	if (_alumni_irb_jobs_personalIsDefined) {
+
+	    if (TOAlumni_irb_jobs.getPersonal() != null) {
+
+		TOAlumni_irb_jobs.getPersonal()
+			.addIalumni_irb_jobs(alumni_irb_jobs);
+	    }
+
+	    alumni_irb_jobs.setPersonal(TOAlumni_irb_jobs
+		    .getPersonal());
+	}
+	
+	if (_irb_job_positionsIsDefined) {
+
+	    if (TOAlumni_irb_jobs.getIrb_job_positions() != null) {
+
+		TOAlumni_irb_jobs.getIrb_job_positions()
+			.addIalumni_irb_jobs(alumni_irb_jobs);
+	    }
+
+	    alumni_irb_jobs.setIrb_job_positions(TOAlumni_irb_jobs
+		    .getIrb_job_positions());
+	}
+
+	if (_unitIsDefined) {
+		
+		if (TOAlumni_irb_jobs.getUnit() != null) {
+			
+			TOAlumni_irb_jobs.getUnit()
+			.addIalumni_irb_jobs(alumni_irb_jobs);
+		}
+		
+		alumni_irb_jobs.setUnit(TOAlumni_irb_jobs
+				.getUnit());
+	}
+	
+	if (_unit_2IsDefined) {
+		
+		if (TOAlumni_irb_jobs.getUnit_2() != null) {
+			
+			TOAlumni_irb_jobs.getUnit_2()
+			.addIalumni_irb_jobs_2(alumni_irb_jobs);
+		}
+		
+		alumni_irb_jobs.setUnit_2(TOAlumni_irb_jobs
+				.getUnit_2());
+	}
+
+	
+
+	/** 7. We create an Audit message * */
+	CreateCreationAuditmessage(user, alumni_irb_jobs);
+
+	/** 8. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_irb_jobs;
+    }
+
+    /**
+     * This method modifies a alumni_irb_jobs.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_irb_jobs
+     *            Alumni_irb_jobs data transfer object (DTO) with the values of
+     *            the modified instance. The code of this attribute indicates
+     *            which alumni_irb_jobs will be modified.
+     * @return the modified alumni_irb_jobs
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_irb_jobs UpdateAlumni_irb_jobs(Usuario user,
+	    Alumni_irb_jobs TOAlumni_irb_jobs) throws InternalException,
+	    NoPermisosException {
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 3. We obtain form the DB the instance to modify * */
+	Alumni_irb_jobs alumni_irb_jobs = getAlumni_irb_jobs(TOAlumni_irb_jobs
+		.getAlumni_irb_jobscode());
+	
+	/**
+	 * 2. For each association from the TOAlumni_irb_jobs that are filled
+	 * in the DTO we put the real objects from the DB. *
+	 */
+	boolean _alumni_irb_jobs_personalIsDefined = false;
+	// we store if the alumni_irb_jobs_personal is defined for later use
+	if (TOAlumni_irb_jobs.getPersonal() != null
+			&& TOAlumni_irb_jobs.getPersonal()
+				.getAlumni_personalcode() != null) {
+		    
+			_alumni_irb_jobs_personalIsDefined = true;
+		    TOAlumni_irb_jobs.setPersonal(getAlumni_personal(TOAlumni_irb_jobs.getPersonal().getAlumni_personalcode()));
+		}
+
+		boolean _irb_job_positionsIsDefined = false;
+
+		if (TOAlumni_irb_jobs.getIrb_job_positions() != null
+			&& TOAlumni_irb_jobs.getIrb_job_positions().getAlumni_irb_job_positionscode() != null) {
+
+			_irb_job_positionsIsDefined = true;
+		    TOAlumni_irb_jobs.setIrb_job_positions(getAlumni_irb_job_positions(TOAlumni_irb_jobs.getIrb_job_positions().getAlumni_irb_job_positionscode()));
+		}
+		
+		
+		boolean _unitIsDefined = false;
+
+		if (TOAlumni_irb_jobs.getUnit() != null
+			&& TOAlumni_irb_jobs.getUnit().getCode() != null) {
+		    // if grant is defined we replace the grant in the DTO with its
+		    // current state in the DB.
+			_unitIsDefined = true;
+
+		    TOAlumni_irb_jobs.setUnit(getUnit(TOAlumni_irb_jobs.getUnit().getCode()));
+		}
+		
+		boolean _unit_2IsDefined = false;
+		
+		if (TOAlumni_irb_jobs.getUnit_2() != null
+				&& TOAlumni_irb_jobs.getUnit_2().getCode() != null) {
+			// if grant is defined we replace the grant in the DTO with its
+			// current state in the DB.
+			_unit_2IsDefined = true;
+			
+			TOAlumni_irb_jobs.setUnit_2(getUnit(TOAlumni_irb_jobs.getUnit_2().getCode()));
+		}
+	
+		/**
+	 * 4. We set all the simple attributes (no associations) to the instance
+	 * *
+	 */
+
+		alumni_irb_jobs.setStart_date(TOAlumni_irb_jobs.getStart_date());
+		alumni_irb_jobs.setEnd_date(TOAlumni_irb_jobs.getEnd_date());	
+
+	/**
+	 * 5. We set the DTO version to the modified object and we update it
+	 * with the new values in the DB. We evict and update the instance to
+	 * prevent concurrent modification *
+	 */
+	HibernateUtil.getSession().evict(alumni_irb_jobs);
+	alumni_irb_jobs.setVersion(TOAlumni_irb_jobs.getVersion());
+	HibernateUtil.getSession().update(alumni_irb_jobs);
+
+	/**
+	 * We associate/disassociate the current object to the other objects
+	 * (only in case that the associations where defined in the DTO) *
+	 */
+
+	if (_alumni_irb_jobs_personalIsDefined) {
+		
+		if (alumni_irb_jobs.getPersonal() != null) {
+			alumni_irb_jobs.getPersonal().removeIalumni_irb_jobs(alumni_irb_jobs);
+	    }
+		
+	    if (TOAlumni_irb_jobs.getPersonal() != null) {
+
+		TOAlumni_irb_jobs.getPersonal()
+			.addIalumni_irb_jobs(alumni_irb_jobs);
+	    }
+
+	    alumni_irb_jobs.setPersonal(TOAlumni_irb_jobs
+		    .getPersonal());
+	}
+	
+	if (_irb_job_positionsIsDefined) {
+
+		if (alumni_irb_jobs.getIrb_job_positions() != null) {
+			alumni_irb_jobs.getIrb_job_positions().removeIalumni_irb_jobs(alumni_irb_jobs);
+	    }
+		
+	    if (TOAlumni_irb_jobs.getIrb_job_positions() != null) {
+
+		TOAlumni_irb_jobs.getIrb_job_positions()
+			.addIalumni_irb_jobs(alumni_irb_jobs);
+	    }
+
+	    alumni_irb_jobs.setIrb_job_positions(TOAlumni_irb_jobs
+		    .getIrb_job_positions());
+	}
+
+	if (_unitIsDefined) {
+		if (alumni_irb_jobs.getUnit() != null) {
+			alumni_irb_jobs.getUnit().removeIalumni_irb_jobs(alumni_irb_jobs);
+	    }
+		if (TOAlumni_irb_jobs.getUnit() != null) {
+			
+			TOAlumni_irb_jobs.getUnit()
+			.addIalumni_irb_jobs(alumni_irb_jobs);
+		}
+		
+		alumni_irb_jobs.setUnit(TOAlumni_irb_jobs
+				.getUnit());
+	}
+	
+	if (_unit_2IsDefined) {
+		if (alumni_irb_jobs.getUnit_2() != null) {
+			alumni_irb_jobs.getUnit_2().removeIalumni_irb_jobs(alumni_irb_jobs);
+	    }
+		if (TOAlumni_irb_jobs.getUnit_2() != null) {
+			
+			TOAlumni_irb_jobs.getUnit_2()
+			.addIalumni_irb_jobs_2(alumni_irb_jobs);
+		}
+		
+		alumni_irb_jobs.setUnit_2(TOAlumni_irb_jobs
+				.getUnit_2());
+	}
+
+
+	
+	
+	/** 6. We create an Audit message * */
+	CreateModificationAuditmessage(user, alumni_irb_jobs);
+
+	/** 7. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_irb_jobs;
+    }
+
+    /**
+     * This method removes a alumni_irb_jobs.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_irb_jobscode
+     *            Code of the alumni_irb_jobs to be removed
+     * @throws NoPermisosException
+     */
+    public static void RemoveAlumni_irb_jobs(Usuario user,
+	    String alumni_irb_jobscode) throws NoPermisosException {
+
+		/** 1. We begin the DB transaction. * */
+		HibernateUtil.beginTransaction();
+	
+		/** 2. We obtain the object to delete form the DB. * */
+		Alumni_irb_jobs alumni_irb_jobs = getAlumni_irb_jobs(alumni_irb_jobscode);
+		// testIsHHRROrItself(user,
+		// alumni_irb_jobs.getPersonal());
+	
+		/** 3. We mark it as deleted. * */
+		alumni_irb_jobs.setDeleted(Boolean.TRUE);
+	
+		/** 4. We create an Audit message * */
+		CreateRemovealAuditmessage(user, alumni_irb_jobs);
+	
+		/** 5. We commit the DB transaction. * */
+		HibernateUtil.commitTransaction();
+    }
+
+    /**
+     * This method obtains one instance of alumni_irb_jobs given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_irb_jobscode
+     *            Code of the alumni_irb_jobs to be obtained
+     * @return Alumni_irb_jobs with the given code.
+     */
+    public static Alumni_irb_jobs ObtainAlumni_irb_jobs(Usuario user,
+	    String alumni_irb_jobscode) {
+
+	/**
+	 * 1. We obtain the object from the DB using the private getter and we
+	 * return it. *
+	 */
+
+	Alumni_irb_jobs alumni_irb_jobs = getAlumni_irb_jobs(alumni_irb_jobscode);
+	return alumni_irb_jobs;
+    }
+
+    /**
+     * This method obtains all instances of Alumni_irb_jobs, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Alumni_irb_jobs>> ObtainAllAlumni_irb_jobs(
+	    Usuario user, ListConfigurator configurator) {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Alumni_irb_jobs.class);
+
+	// we only want to obtain the non deleted objects
+	crit.add(Expression.eq("deleted", Boolean.FALSE));
+
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	List<Alumni_irb_jobs> alumni_irb_jobss = (List<Alumni_irb_jobs>) crit
+		.list();
+
+	Pair<Integer, List<Alumni_irb_jobs>> pair = new Pair<Integer, List<Alumni_irb_jobs>>(
+		count, alumni_irb_jobss);
+
+	return pair;
+    }
+	
+	/**
+     * Returns the Alumni_irb_jobs with the given key. This method is used
+     * internally to get objects form the database.
+     * 
+     * @param alumni_irb_jobscode
+     *            code of the Alumni_irb_jobs
+     * @return Alumni_irb_jobs with the given code
+     */
+    protected static Alumni_irb_jobs getAlumni_irb_jobs(
+	    String alumni_irb_jobscode) {
+	Alumni_irb_jobs alumni_irb_jobs = (Alumni_irb_jobs) HibernateUtil
+		.getSession().get(Alumni_irb_jobs.class, alumni_irb_jobscode);
+	return alumni_irb_jobs;
+    }
+    
+    
+    
+    
+    
+    
+    
+    /**
+     * This method obtains all instances of Alumni_external_jobs, which belong to
+     * the set of ialumni_external_jobs_alumni_personal of a personal, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param personal
+     *            Personal which contains the set of ialumni_external_jobs_alumni_personal
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     * @throws NoPermisosException 
+     */
+    public static Pair<Integer, List<Alumni_external_jobs>> ObtainAllIalumni_external_jobs_alumni_personalFromPersonal(
+	    Usuario user, Alumni_personal personal, ListConfigurator configurator) throws NoPermisosException {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Alumni_external_jobs.class);
+
+	// we only want to obtain the non deleted objects
+
+	crit.add(Expression.eq("deleted", Boolean.FALSE));
+		
+	// we add the requirement that we only want to display the ones which
+	// are associated
+	crit.createCriteria("personal").add(
+		Expression.idEq(personal.getAlumni_personalcode()));
+
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	Pair<Integer, List<Alumni_external_jobs>> pair = new Pair<Integer, List<Alumni_external_jobs>>(
+		count, crit.list());
+
+	return pair;
+    }
+
+	
+	  /**
+     * This method obtains all instances of Alumni_irb_jobs, which belong to
+     * the set of ialumni_irb_jobs_alumni_personal of a personal, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param personal
+     *            Personal which contains the set of ialumni_irb_jobs_alumni_personal
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     * @throws NoPermisosException 
+     */
+    public static Pair<Integer, List<Alumni_irb_jobs>> ObtainAllIalumni_irb_jobs_alumni_personalFromPersonal(
+	    Usuario user, Alumni_personal personal, ListConfigurator configurator) throws NoPermisosException {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Alumni_irb_jobs.class);
+
+	// we only want to obtain the non deleted objects
+
+	crit.add(Expression.eq("deleted", Boolean.FALSE));	
+	
+	// we add the requirement that we only want to display the ones which
+	// are associated
+	crit.createCriteria("personal").add(
+		Expression.idEq(personal.getAlumni_personalcode()));
+
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	Pair<Integer, List<Alumni_irb_jobs>> pair = new Pair<Integer, List<Alumni_irb_jobs>>(
+		count, crit.list());
+
+	return pair;
+    }
+
 
     /**
      * This method obtains all instances of Work_experience, which belong to the
@@ -1580,7 +2593,7 @@ public class UseCase {
 	    professional.setProfessionalcode(im.getId(TOProfessional));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateProfessional",
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateProfessional",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -2852,7 +3865,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateType_of_education",
+		    "Error en asignaciï¿½n de nuevo id en CreateType_of_education",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -3081,7 +4094,7 @@ public class UseCase {
 	    benefits.setBenefitscode(im.getId(TOBenefits));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateBenefits", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateBenefits", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -3369,7 +4382,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateType_of_benefit",
+		    "Error en asignaciï¿½n de nuevo id en CreateType_of_benefit",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -3583,7 +4596,7 @@ public class UseCase {
 	    grant.setGrantcode(im.getId(TOGrant));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateGrant", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateGrant", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -3877,7 +4890,7 @@ public class UseCase {
 	    education.setEducationcode(im.getId(TOEducation));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateEducation", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateEducation", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -4216,7 +5229,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateMarital_status",
+		    "Error en asignaciï¿½n de nuevo id en CreateMarital_status",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -4609,7 +5622,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreatePayroll_institution",
+		    "Error en asignaciï¿½n de nuevo id en CreatePayroll_institution",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -4825,7 +5838,7 @@ public class UseCase {
 	    child.setChildcode(im.getId(TOChild));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateChild", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateChild", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -4910,7 +5923,7 @@ public class UseCase {
 		    .getId(TOPersonal_comment));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateChild", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateChild", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -5269,7 +6282,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateWork_experience",
+		    "Error en asignaciï¿½n de nuevo id en CreateWork_experience",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -5712,7 +6725,7 @@ public class UseCase {
 	    type_of_grant.setType_of_grantcode(im.getId(TOType_of_grant));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateType_of_grant",
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateType_of_grant",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -5903,7 +6916,7 @@ public class UseCase {
 	    payment.setPaymentcode(im.getId(TOPayment));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreatePayment", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreatePayment", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -6095,7 +7108,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateOrganization_unit",
+		    "Error en asignaciï¿½n de nuevo id en CreateOrganization_unit",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -6525,7 +7538,7 @@ public class UseCase {
 	    working_hours.setWorking_hourscode(im.getId(TOWorking_hours));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateWorking_hours",
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateWorking_hours",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -6721,7 +7734,7 @@ public class UseCase {
 	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
 	    auditmessage.setAuditmessagecode(im.getId(auditmessage));
 	} catch (identifyException ie) {
-	    log.error("Error en asignaci�n de nuevo id en CreateAuditmessage",
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateAuditmessage",
 		    ie);
 	    // throw new Error(ie.getMessage());
 	}
@@ -6784,7 +7797,7 @@ public class UseCase {
 	    audit_log.setAudit_logcode(im.getId("audit_log"));
 	} catch (identifyException ie) {
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateAuditLogmessage",
+		    "Error en asignaciï¿½n de nuevo id en CreateAuditLogmessage",
 		    ie);
 	}
 
@@ -7285,7 +8298,7 @@ public class UseCase {
 	    compensation.setCompensationcode(im.getId(TOCompensation));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateCompensation",
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateCompensation",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -7593,7 +8606,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateType_of_institution",
+		    "Error en asignaciï¿½n de nuevo id en CreateType_of_institution",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -7798,7 +8811,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateType_of_study",
+		    "Error en asignaciï¿½n de nuevo id en CreateType_of_study",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -7959,10 +8972,1483 @@ public class UseCase {
     }
     
     
+    /**
+     * This method modifies a alumni_params.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_params
+     *            Alumni_params data transfer object (DTO) with the values
+     *            of the modified instance. The code of this attribute indicates
+     *            which alumni_params will be modified.
+     * @return the modified alumni_params
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_params UpdateAlumni_params(Usuario user,
+	    Alumni_params TOAlumni_params)
+	    throws InternalException, NoPermisosException {
+	
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain form the DB the instance to modify * */
+	Alumni_params alumni_params = getAlumni_params(TOAlumni_params
+		.getAlumni_paramscode());
+	;
+
+	/**
+	 * 3. We set all the simple attributes (no associations) to the instance
+	 * *
+	 */
+
+	alumni_params.setValue(TOAlumni_params
+		.getValue());
+	
+	/**
+	 * 4. We set the DTO version to the modified object and we update it
+	 * with the new values in the DB. We evict and update the instance to
+	 * prevent concurrent modification *
+	 */
+	HibernateUtil.getSession().evict(alumni_params);	
+	HibernateUtil.getSession().update(alumni_params);
+
+	/** 5. We create an Audit message * */
+	CreateModificationAuditmessage(user, alumni_params);
+
+	/** 6. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_params;
+    }
+
+
+    /**
+     * This method obtains one instance of alumni_params given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_paramscode
+     *            Code of the alumni_params to be obtained
+     * @return Alumni_params with the given code.
+     */
+    public static Alumni_params ObtainAlumni_params(Usuario user,
+	    String alumni_paramscode) {
+
+	/**
+	 * 1. We obtain the object from the DB using the private getter and we
+	 * return it. *
+	 */
+
+	Alumni_params alumni_params = getAlumni_params(alumni_paramscode);
+	return alumni_params;
+    }
+	
+	    /**
+     * Returns the Alumni_params with the given key. This method is used
+     * internally to get objects form the database.
+     * 
+     * @param alumni_paramscode
+     *            code of the Alumni titles
+     * @return Alumni_params with the given code
+     */
+    protected static Alumni_params getAlumni_params(
+    		String alumni_paramscode) {
+    	Alumni_params alumni_params = (Alumni_params) HibernateUtil
+    			.getSession().get(Alumni_params.class,
+    					alumni_paramscode);
+    	return alumni_params;
+    }
     
     
+    /**
+     * This method creates a Alumni_titles.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_titles
+     *            Alumni_titles data transfer object (DTO) with the values
+     *            of the new instance.
+     * @return the new alumni_titles created with this Use Case
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_titles CreateAlumni_titles(Usuario user,
+	    Alumni_titles TOAlumni_titles)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We create the new instance * */
+	Alumni_titles alumni_titles = new Alumni_titles();
+
+	/**
+	 * 3. We set all the simple attributes (no associations) to the new
+	 * instance *
+	 */
+
+	alumni_titles.setDescription(TOAlumni_titles
+		.getDescription());
+
+	alumni_titles.setShort_description(TOAlumni_titles
+			.getShort_description());
+	
+	alumni_titles.setOrder_number(TOAlumni_titles
+			.getOrder_number());
+	
+	/** 4. We set the code to the new instance * */
+	try {
+	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
+
+	    alumni_titles.setAlumni_titlescode(im
+		    .getId(TOAlumni_titles));
+	} catch (identifyException ie) {
+
+	    log.error(
+		    "Error en asignaciï¿½n de nuevo id en CreateAlumni_titles",
+		    ie);
+	    throw new Error(ie.getMessage());
+	}
+
+	/** 5. We save the new instance to the DB* */
+	HibernateUtil.getSession().save(alumni_titles);
+
+	/** 6. We create an Audit message * */
+	CreateCreationAuditmessage(user, alumni_titles);
+
+	/** 7. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_titles;
+    }
+
+    /**
+     * This method modifies a alumni_titles.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_titles
+     *            Alumni_titles data transfer object (DTO) with the values
+     *            of the modified instance. The code of this attribute indicates
+     *            which alumni_titles will be modified.
+     * @return the modified alumni_titles
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_titles UpdateAlumni_titles(Usuario user,
+	    Alumni_titles TOAlumni_titles)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain form the DB the instance to modify * */
+	Alumni_titles alumni_titles = getAlumni_titles(TOAlumni_titles
+		.getAlumni_titlescode());
+	;
+
+	/**
+	 * 3. We set all the simple attributes (no associations) to the instance
+	 * *
+	 */
+
+	alumni_titles.setDescription(TOAlumni_titles
+		.getDescription());
+	
+	alumni_titles.setShort_description(TOAlumni_titles
+			.getShort_description());
+	
+	alumni_titles.setOrder_number(TOAlumni_titles
+			.getOrder_number());
+
+	/**
+	 * 4. We set the DTO version to the modified object and we update it
+	 * with the new values in the DB. We evict and update the instance to
+	 * prevent concurrent modification *
+	 */
+	HibernateUtil.getSession().evict(alumni_titles);
+	alumni_titles.setVersion(TOAlumni_titles.getVersion());
+	HibernateUtil.getSession().update(alumni_titles);
+
+	/** 5. We create an Audit message * */
+	CreateModificationAuditmessage(user, alumni_titles);
+
+	/** 6. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_titles;
+    }
+
+    /**
+     * This method removes a alumni_titles.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_titlescode
+     *            Code of the alumni_titles to be removed
+     * @throws NoPermisosException
+     */
+    public static void RemoveAlumni_titles(Usuario user,
+	    String alumni_titlescode) throws NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain the object to delete form the DB. * */
+	Alumni_titles alumni_titles = getAlumni_titles(alumni_titlescode);
+
+	/** 3. We mark it as deleted. * */
+	alumni_titles.setDeleted(Boolean.TRUE);
+
+	/** 4. We create an Audit message * */
+	CreateRemovealAuditmessage(user, alumni_titles);
+
+	/** 5. We commit the DB transaction. * */
+	HibernateUtil.commitTransaction();
+    }
+
+    /**
+     * This method obtains one instance of alumni_titles given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_titlescode
+     *            Code of the alumni_titles to be obtained
+     * @return Alumni_titles with the given code.
+     */
+    public static Alumni_titles ObtainAlumni_titles(Usuario user,
+	    String alumni_titlescode) {
+
+	/**
+	 * 1. We obtain the object from the DB using the private getter and we
+	 * return it. *
+	 */
+
+	Alumni_titles alumni_titles = getAlumni_titles(alumni_titlescode);
+	return alumni_titles;
+    }
+
+    /**
+     * This method obtains all instances of Alumni_titles, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Alumni_titles>> ObtainAllAlumni_titles(
+	    Usuario user, ListConfigurator configurator) {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Alumni_titles.class);
+
+	// we only want to obtain the non deleted objects
+	crit.add(Expression.eq("deleted", Boolean.FALSE));
+	crit.setCacheable(true);
+
+	configurator.setOrderBy("order_number");
+	configurator.setAsc("");
+	
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	List<Alumni_titles> alumni_titles = (List<Alumni_titles>) crit
+		.list();
+
+	Pair<Integer, List<Alumni_titles>> pair = new Pair<Integer, List<Alumni_titles>>(
+		count, alumni_titles);
+
+	return pair;
+    }
     
+    /**
+     * This method creates a Alumni_external_job_positions.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_external_job_positions
+     *            Alumni_external_job_positions data transfer object (DTO) with the values
+     *            of the new instance.
+     * @return the new alumni_external_job_positions created with this Use Case
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_external_job_positions CreateAlumni_external_job_positions(Usuario user,
+	    Alumni_external_job_positions TOAlumni_external_job_positions)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We create the new instance * */
+	Alumni_external_job_positions alumni_external_job_positions = new Alumni_external_job_positions();
+
+	// we store if the grant is defined for later use
+	boolean _job_position_type_is_defined = false;
+
+	if (TOAlumni_external_job_positions.getJob_position_types() != null
+		&& TOAlumni_external_job_positions.getJob_position_types().getAlumni_job_position_typescode() != null) {
+	    // if grant is defined we replace the grant in the DTO with its
+	    // current state in the DB.
+		_job_position_type_is_defined = true;
+
+		TOAlumni_external_job_positions.setJob_position_types(getAlumni_job_position_types(TOAlumni_external_job_positions.getJob_position_types()
+		    .getAlumni_job_position_typescode()));
+	}
+	
+	/**
+	 * 3. We set all the simple attributes (no associations) to the new
+	 * instance *
+	 */
+
+	alumni_external_job_positions.setDescription(TOAlumni_external_job_positions
+		.getDescription());
+
+	alumni_external_job_positions.setShort_description(TOAlumni_external_job_positions
+			.getShort_description());
+	
+	alumni_external_job_positions.setOrder_number(TOAlumni_external_job_positions
+			.getOrder_number());
+	
+	/** 4. We set the code to the new instance * */
+	try {
+	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
+
+	    alumni_external_job_positions.setAlumni_external_job_positionscode(im
+		    .getId(TOAlumni_external_job_positions));
+	} catch (identifyException ie) {
+
+	    log.error(
+		    "Error en asignaciï¿½n de nuevo id en CreateAlumni_external_job_positions",
+		    ie);
+	    throw new Error(ie.getMessage());
+	}
+
+	/** 5. We save the new instance to the DB* */
+	HibernateUtil.getSession().save(alumni_external_job_positions);
+
+	if (_job_position_type_is_defined) {
+
+	    if (TOAlumni_external_job_positions.getJob_position_types() != null) {
+
+	    	TOAlumni_external_job_positions.getJob_position_types().addIialumni_external_job_positions(alumni_external_job_positions);
+	    }
+
+	    alumni_external_job_positions.setJob_position_types(TOAlumni_external_job_positions.getJob_position_types());
+	}
+	
+	/** 6. We create an Audit message * */
+	CreateCreationAuditmessage(user, alumni_external_job_positions);
+
+	/** 7. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_external_job_positions;
+    }
+
+    /**
+     * This method modifies a alumni_external_job_positions.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_external_job_positions
+     *            Alumni_external_job_positions data transfer object (DTO) with the values
+     *            of the modified instance. The code of this attribute indicates
+     *            which alumni_external_job_positions will be modified.
+     * @return the modified alumni_external_job_positions
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_external_job_positions UpdateAlumni_external_job_positions(Usuario user,
+	    Alumni_external_job_positions TOAlumni_external_job_positions)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain form the DB the instance to modify * */
+	Alumni_external_job_positions alumni_external_job_positions = getAlumni_external_job_positions(TOAlumni_external_job_positions
+		.getAlumni_external_job_positionscode());
+	;
+
+	// we store if the grant is defined for later use
+	boolean _job_position_type_is_defined = false;
+
+	if (TOAlumni_external_job_positions.getJob_position_types() != null
+		&& TOAlumni_external_job_positions.getJob_position_types().getAlumni_job_position_typescode() != null) {
+	    // if grant is defined we replace the grant in the DTO with its
+	    // current state in the DB.
+		_job_position_type_is_defined = true;
+
+		TOAlumni_external_job_positions.setJob_position_types(getAlumni_job_position_types(TOAlumni_external_job_positions.getJob_position_types()
+		    .getAlumni_job_position_typescode()));
+	}
+	
+	/**
+	 * 3. We set all the simple attributes (no associations) to the instance
+	 * *
+	 */
+
+	alumni_external_job_positions.setDescription(TOAlumni_external_job_positions
+		.getDescription());
+	
+	alumni_external_job_positions.setShort_description(TOAlumni_external_job_positions
+			.getShort_description());
+	
+	alumni_external_job_positions.setOrder_number(TOAlumni_external_job_positions
+			.getOrder_number());
+
+	/**
+	 * 4. We set the DTO version to the modified object and we update it
+	 * with the new values in the DB. We evict and update the instance to
+	 * prevent concurrent modification *
+	 */
+	HibernateUtil.getSession().evict(alumni_external_job_positions);
+	alumni_external_job_positions.setVersion(TOAlumni_external_job_positions.getVersion());
+	HibernateUtil.getSession().update(alumni_external_job_positions);
+
+	if (_job_position_type_is_defined) {
+
+		if (alumni_external_job_positions.getJob_position_types() != null) {
+			alumni_external_job_positions.getJob_position_types().removeIalumni_external_job_positions(alumni_external_job_positions);
+		}
+	    if (TOAlumni_external_job_positions.getJob_position_types() != null) {
+
+	    	TOAlumni_external_job_positions.getJob_position_types().addIialumni_external_job_positions(alumni_external_job_positions);
+	    }
+
+	    alumni_external_job_positions.setJob_position_types(TOAlumni_external_job_positions.getJob_position_types());
+	}
+	
+	/** 5. We create an Audit message * */
+	CreateModificationAuditmessage(user, alumni_external_job_positions);
+
+	/** 6. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_external_job_positions;
+    }
+
+    /**
+     * This method removes a alumni_external_job_positions.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_external_job_positionscode
+     *            Code of the alumni_external_job_positions to be removed
+     * @throws NoPermisosException
+     */
+    public static void RemoveAlumni_external_job_positions(Usuario user,
+	    String alumni_external_job_positionscode) throws NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain the object to delete form the DB. * */
+	Alumni_external_job_positions alumni_external_job_positions = getAlumni_external_job_positions(alumni_external_job_positionscode);
+
+	/** 3. We mark it as deleted. * */
+	alumni_external_job_positions.setDeleted(Boolean.TRUE);
+
+	/** 4. We create an Audit message * */
+	CreateRemovealAuditmessage(user, alumni_external_job_positions);
+
+	/** 5. We commit the DB transaction. * */
+	HibernateUtil.commitTransaction();
+    }
+
+    /**
+     * This method obtains one instance of alumni_external_job_positions given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_external_job_positionscode
+     *            Code of the alumni_external_job_positions to be obtained
+     * @return Alumni_external_job_positions with the given code.
+     */
+    public static Alumni_external_job_positions ObtainAlumni_external_job_positions(Usuario user,
+	    String alumni_external_job_positionscode) {
+
+	/**
+	 * 1. We obtain the object from the DB using the private getter and we
+	 * return it. *
+	 */
+
+	Alumni_external_job_positions alumni_external_job_positions = getAlumni_external_job_positions(alumni_external_job_positionscode);
+	return alumni_external_job_positions;
+    }
+
+    /**
+     * This method obtains all instances of Alumni_external_job_positions, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Alumni_external_job_positions>> ObtainAllAlumni_external_job_positions(
+	    Usuario user, ListConfigurator configurator) {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Alumni_external_job_positions.class);
+
+	// we only want to obtain the non deleted objects
+	crit.add(Expression.eq("deleted", Boolean.FALSE));
+	crit.setCacheable(true);
+
+	configurator.setOrderBy("order_number");
+	configurator.setAsc("");
+	
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	List<Alumni_external_job_positions> alumni_external_job_positions = (List<Alumni_external_job_positions>) crit
+		.list();
+
+	Pair<Integer, List<Alumni_external_job_positions>> pair = new Pair<Integer, List<Alumni_external_job_positions>>(
+		count, alumni_external_job_positions);
+
+	return pair;
+    }
     
+    /**
+     * This method creates a Alumni_irb_job_positions.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_irb_job_positions
+     *            Alumni_irb_job_positions data transfer object (DTO) with the values
+     *            of the new instance.
+     * @return the new alumni_irb_job_positions created with this Use Case
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_irb_job_positions CreateAlumni_irb_job_positions(Usuario user,
+	    Alumni_irb_job_positions TOAlumni_irb_job_positions)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We create the new instance * */
+	Alumni_irb_job_positions alumni_irb_job_positions = new Alumni_irb_job_positions();
+
+	// we store if the grant is defined for later use
+	boolean _job_position_type_is_defined = false;
+
+	if (TOAlumni_irb_job_positions.getJob_position_types() != null
+		&& TOAlumni_irb_job_positions.getJob_position_types().getAlumni_job_position_typescode() != null) {
+	    // if grant is defined we replace the grant in the DTO with its
+	    // current state in the DB.
+		_job_position_type_is_defined = true;
+
+		TOAlumni_irb_job_positions.setJob_position_types(getAlumni_job_position_types(TOAlumni_irb_job_positions.getJob_position_types()
+		    .getAlumni_job_position_typescode()));
+	}
+	
+	/**
+	 * 3. We set all the simple attributes (no associations) to the new
+	 * instance *
+	 */
+
+	alumni_irb_job_positions.setDescription(TOAlumni_irb_job_positions
+		.getDescription());
+
+	alumni_irb_job_positions.setShort_description(TOAlumni_irb_job_positions
+			.getShort_description());
+	
+	alumni_irb_job_positions.setOrder_number(TOAlumni_irb_job_positions
+			.getOrder_number());
+	
+	/** 4. We set the code to the new instance * */
+	try {
+	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
+
+	    alumni_irb_job_positions.setAlumni_irb_job_positionscode(im
+		    .getId(TOAlumni_irb_job_positions));
+	} catch (identifyException ie) {
+
+	    log.error(
+		    "Error en asignaciï¿½n de nuevo id en CreateAlumni_irb_job_positions",
+		    ie);
+	    throw new Error(ie.getMessage());
+	}
+
+	/** 5. We save the new instance to the DB* */
+	HibernateUtil.getSession().save(alumni_irb_job_positions);
+
+	if (_job_position_type_is_defined) {
+
+		if (alumni_irb_job_positions.getJob_position_types() != null) {
+			
+			alumni_irb_job_positions.getJob_position_types().removeIalumni_irb_job_positions(alumni_irb_job_positions);
+		}
+	    if (TOAlumni_irb_job_positions.getJob_position_types() != null) {
+
+	    	TOAlumni_irb_job_positions.getJob_position_types().addIalumni_irb_job_positions(alumni_irb_job_positions);
+	    }
+
+	    alumni_irb_job_positions.setJob_position_types(TOAlumni_irb_job_positions.getJob_position_types());
+	}
+	
+	/** 6. We create an Audit message * */
+	CreateCreationAuditmessage(user, alumni_irb_job_positions);
+
+	/** 7. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_irb_job_positions;
+    }
+
+    /**
+     * This method modifies a alumni_irb_job_positions.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_irb_job_positions
+     *            Alumni_irb_job_positions data transfer object (DTO) with the values
+     *            of the modified instance. The code of this attribute indicates
+     *            which alumni_irb_job_positions will be modified.
+     * @return the modified alumni_irb_job_positions
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_irb_job_positions UpdateAlumni_irb_job_positions(Usuario user,
+	    Alumni_irb_job_positions TOAlumni_irb_job_positions)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain form the DB the instance to modify * */
+	Alumni_irb_job_positions alumni_irb_job_positions = getAlumni_irb_job_positions(TOAlumni_irb_job_positions
+		.getAlumni_irb_job_positionscode());
+	;
+
+	// we store if the grant is defined for later use
+	boolean _job_position_type_is_defined = false;
+
+	if (TOAlumni_irb_job_positions.getJob_position_types() != null
+			&& TOAlumni_irb_job_positions.getJob_position_types().getAlumni_job_position_typescode() != null) {
+		    // if grant is defined we replace the grant in the DTO with its
+		    // current state in the DB.
+			_job_position_type_is_defined = true;
+
+			TOAlumni_irb_job_positions.setJob_position_types(getAlumni_job_position_types(TOAlumni_irb_job_positions.getJob_position_types()
+			    .getAlumni_job_position_typescode()));
+		}		
+	
+	/**
+	 * 3. We set all the simple attributes (no associations) to the instance
+	 * *
+	 */
+
+	alumni_irb_job_positions.setDescription(TOAlumni_irb_job_positions
+		.getDescription());
+	
+	alumni_irb_job_positions.setShort_description(TOAlumni_irb_job_positions
+			.getShort_description());
+	
+	alumni_irb_job_positions.setOrder_number(TOAlumni_irb_job_positions
+			.getOrder_number());
+
+	/**
+	 * 4. We set the DTO version to the modified object and we update it
+	 * with the new values in the DB. We evict and update the instance to
+	 * prevent concurrent modification *
+	 */
+	HibernateUtil.getSession().evict(alumni_irb_job_positions);
+	alumni_irb_job_positions.setVersion(TOAlumni_irb_job_positions.getVersion());
+	HibernateUtil.getSession().update(alumni_irb_job_positions);
+
+	if (_job_position_type_is_defined) {
+
+	    if (TOAlumni_irb_job_positions.getJob_position_types() != null) {
+
+	    	TOAlumni_irb_job_positions.getJob_position_types().addIalumni_irb_job_positions(alumni_irb_job_positions);
+	    }
+
+	    alumni_irb_job_positions.setJob_position_types(TOAlumni_irb_job_positions.getJob_position_types());
+	}
+	
+	/** 5. We create an Audit message * */
+	CreateModificationAuditmessage(user, alumni_irb_job_positions);
+
+	/** 6. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_irb_job_positions;
+    }
+
+    /**
+     * This method removes a alumni_irb_job_positions.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_irb_job_positionscode
+     *            Code of the alumni_irb_job_positions to be removed
+     * @throws NoPermisosException
+     */
+    public static void RemoveAlumni_irb_job_positions(Usuario user,
+	    String alumni_irb_job_positionscode) throws NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain the object to delete form the DB. * */
+	Alumni_irb_job_positions alumni_irb_job_positions = getAlumni_irb_job_positions(alumni_irb_job_positionscode);
+
+	/** 3. We mark it as deleted. * */
+	alumni_irb_job_positions.setDeleted(Boolean.TRUE);
+
+	/** 4. We create an Audit message * */
+	CreateRemovealAuditmessage(user, alumni_irb_job_positions);
+
+	/** 5. We commit the DB transaction. * */
+	HibernateUtil.commitTransaction();
+    }
+
+    /**
+     * This method obtains one instance of alumni_irb_job_positions given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_irb_job_positionscode
+     *            Code of the alumni_irb_job_positions to be obtained
+     * @return Alumni_irb_job_positions with the given code.
+     */
+    public static Alumni_irb_job_positions ObtainAlumni_irb_job_positions(Usuario user,
+	    String alumni_irb_job_positionscode) {
+
+	/**
+	 * 1. We obtain the object from the DB using the private getter and we
+	 * return it. *
+	 */
+
+	Alumni_irb_job_positions alumni_irb_job_positions = getAlumni_irb_job_positions(alumni_irb_job_positionscode);
+	return alumni_irb_job_positions;
+    }
+
+    /**
+     * This method obtains all instances of Alumni_irb_job_positions, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Alumni_irb_job_positions>> ObtainAllAlumni_irb_job_positions(
+	    Usuario user, ListConfigurator configurator) {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Alumni_irb_job_positions.class);
+
+	// we only want to obtain the non deleted objects
+	crit.add(Expression.eq("deleted", Boolean.FALSE));
+	crit.setCacheable(true);
+
+	configurator.setOrderBy("order_number");
+	configurator.setAsc("");
+	
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	List<Alumni_irb_job_positions> alumni_irb_job_positions = (List<Alumni_irb_job_positions>) crit
+		.list();
+
+	Pair<Integer, List<Alumni_irb_job_positions>> pair = new Pair<Integer, List<Alumni_irb_job_positions>>(
+		count, alumni_irb_job_positions);
+
+	return pair;
+    }
+    
+    /**
+     * This method creates a Alumni_job_position_types.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_job_position_types
+     *            Alumni_job_position_types data transfer object (DTO) with the values
+     *            of the new instance.
+     * @return the new alumni_job_position_types created with this Use Case
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_job_position_types CreateAlumni_job_position_types(Usuario user,
+	    Alumni_job_position_types TOAlumni_job_position_types)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We create the new instance * */
+	Alumni_job_position_types alumni_job_position_types = new Alumni_job_position_types();
+
+	/**
+	 * 3. We set all the simple attributes (no associations) to the new
+	 * instance *
+	 */
+
+	alumni_job_position_types.setDescription(TOAlumni_job_position_types
+		.getDescription());
+
+	alumni_job_position_types.setShort_description(TOAlumni_job_position_types
+			.getShort_description());
+	
+	alumni_job_position_types.setOrder_number(TOAlumni_job_position_types
+			.getOrder_number());
+	
+	/** 4. We set the code to the new instance * */
+	try {
+	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
+
+	    alumni_job_position_types.setAlumni_job_position_typescode(im
+		    .getId(TOAlumni_job_position_types));
+	} catch (identifyException ie) {
+
+	    log.error(
+		    "Error en asignaciï¿½n de nuevo id en CreateAlumni_job_position_types",
+		    ie);
+	    throw new Error(ie.getMessage());
+	}
+
+	/** 5. We save the new instance to the DB* */
+	HibernateUtil.getSession().save(alumni_job_position_types);
+
+	/** 6. We create an Audit message * */
+	CreateCreationAuditmessage(user, alumni_job_position_types);
+
+	/** 7. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_job_position_types;
+    }
+
+    /**
+     * This method modifies a alumni_job_position_types.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_job_position_types
+     *            Alumni_job_position_types data transfer object (DTO) with the values
+     *            of the modified instance. The code of this attribute indicates
+     *            which alumni_job_position_types will be modified.
+     * @return the modified alumni_job_position_types
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_job_position_types UpdateAlumni_job_position_types(Usuario user,
+	    Alumni_job_position_types TOAlumni_job_position_types)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain form the DB the instance to modify * */
+	Alumni_job_position_types alumni_job_position_types = getAlumni_job_position_types(TOAlumni_job_position_types
+		.getAlumni_job_position_typescode());
+	;
+
+	/**
+	 * 3. We set all the simple attributes (no associations) to the instance
+	 * *
+	 */
+
+	alumni_job_position_types.setDescription(TOAlumni_job_position_types
+		.getDescription());
+	
+	alumni_job_position_types.setShort_description(TOAlumni_job_position_types
+			.getShort_description());
+	
+	alumni_job_position_types.setOrder_number(TOAlumni_job_position_types
+			.getOrder_number());
+
+	/**
+	 * 4. We set the DTO version to the modified object and we update it
+	 * with the new values in the DB. We evict and update the instance to
+	 * prevent concurrent modification *
+	 */
+	HibernateUtil.getSession().evict(alumni_job_position_types);
+	alumni_job_position_types.setVersion(TOAlumni_job_position_types.getVersion());
+	HibernateUtil.getSession().update(alumni_job_position_types);
+
+	/** 5. We create an Audit message * */
+	CreateModificationAuditmessage(user, alumni_job_position_types);
+
+	/** 6. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_job_position_types;
+    }
+
+    /**
+     * This method removes a alumni_job_position_types.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_job_position_typescode
+     *            Code of the alumni_job_position_types to be removed
+     * @throws NoPermisosException
+     */
+    public static void RemoveAlumni_job_position_types(Usuario user,
+	    String alumni_job_position_typescode) throws NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain the object to delete form the DB. * */
+	Alumni_job_position_types alumni_job_position_types = getAlumni_job_position_types(alumni_job_position_typescode);
+
+	/** 3. We mark it as deleted. * */
+	alumni_job_position_types.setDeleted(Boolean.TRUE);
+
+	/** 4. We create an Audit message * */
+	CreateRemovealAuditmessage(user, alumni_job_position_types);
+
+	/** 5. We commit the DB transaction. * */
+	HibernateUtil.commitTransaction();
+    }
+
+    /**
+     * This method obtains one instance of alumni_job_position_types given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_job_position_typescode
+     *            Code of the alumni_job_position_types to be obtained
+     * @return Alumni_job_position_types with the given code.
+     */
+    public static Alumni_job_position_types ObtainAlumni_job_position_types(Usuario user,
+	    String alumni_job_position_typescode) {
+
+	/**
+	 * 1. We obtain the object from the DB using the private getter and we
+	 * return it. *
+	 */
+
+	Alumni_job_position_types alumni_job_position_types = getAlumni_job_position_types(alumni_job_position_typescode);
+	return alumni_job_position_types;
+    }
+
+    /**
+     * This method obtains all instances of Alumni_job_position_types, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Alumni_job_position_types>> ObtainAllAlumni_job_position_types(
+	    Usuario user, ListConfigurator configurator) {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Alumni_job_position_types.class);
+
+	// we only want to obtain the non deleted objects
+	crit.add(Expression.eq("deleted", Boolean.FALSE));
+	crit.setCacheable(true);
+
+	configurator.setOrderBy("order_number");
+	configurator.setAsc("");
+	
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	List<Alumni_job_position_types> alumni_job_position_types = (List<Alumni_job_position_types>) crit
+		.list();
+
+	Pair<Integer, List<Alumni_job_position_types>> pair = new Pair<Integer, List<Alumni_job_position_types>>(
+		count, alumni_job_position_types);
+
+	return pair;
+    }
+    
+    /**
+     * This method creates a Alumni_communications.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_communications
+     *            Alumni_communications data transfer object (DTO) with the values
+     *            of the new instance.
+     * @return the new alumni_communications created with this Use Case
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_communications CreateAlumni_communications(Usuario user,
+	    Alumni_communications TOAlumni_communications)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We create the new instance * */
+	Alumni_communications alumni_communications = new Alumni_communications();
+
+	/**
+	 * 3. We set all the simple attributes (no associations) to the new
+	 * instance *
+	 */
+
+	alumni_communications.setDescription(TOAlumni_communications
+		.getDescription());
+
+	alumni_communications.setShort_description(TOAlumni_communications
+			.getShort_description());
+	
+	alumni_communications.setOrder_number(TOAlumni_communications
+			.getOrder_number());
+	
+	/** 4. We set the code to the new instance * */
+	try {
+	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
+
+	    alumni_communications.setAlumni_communicationscode(im
+		    .getId(TOAlumni_communications));
+	} catch (identifyException ie) {
+
+	    log.error(
+		    "Error en asignaciï¿½n de nuevo id en CreateAlumni_communications",
+		    ie);
+	    throw new Error(ie.getMessage());
+	}
+
+	/** 5. We save the new instance to the DB* */
+	HibernateUtil.getSession().save(alumni_communications);
+
+	/** 6. We create an Audit message * */
+	CreateCreationAuditmessage(user, alumni_communications);
+
+	/** 7. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_communications;
+    }
+
+    /**
+     * This method modifies a alumni_communications.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_communications
+     *            Alumni_communications data transfer object (DTO) with the values
+     *            of the modified instance. The code of this attribute indicates
+     *            which alumni_communications will be modified.
+     * @return the modified alumni_communications
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_communications UpdateAlumni_communications(Usuario user,
+	    Alumni_communications TOAlumni_communications)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain form the DB the instance to modify * */
+	Alumni_communications alumni_communications = getAlumni_communications(TOAlumni_communications
+		.getAlumni_communicationscode());
+	;
+
+	/**
+	 * 3. We set all the simple attributes (no associations) to the instance
+	 * *
+	 */
+
+	alumni_communications.setDescription(TOAlumni_communications
+		.getDescription());
+	
+	alumni_communications.setShort_description(TOAlumni_communications
+			.getShort_description());
+	
+	alumni_communications.setOrder_number(TOAlumni_communications
+			.getOrder_number());
+
+	/**
+	 * 4. We set the DTO version to the modified object and we update it
+	 * with the new values in the DB. We evict and update the instance to
+	 * prevent concurrent modification *
+	 */
+	HibernateUtil.getSession().evict(alumni_communications);
+	alumni_communications.setVersion(TOAlumni_communications.getVersion());
+	HibernateUtil.getSession().update(alumni_communications);
+
+	/** 5. We create an Audit message * */
+	CreateModificationAuditmessage(user, alumni_communications);
+
+	/** 6. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_communications;
+    }
+
+    /**
+     * This method removes a alumni_communications.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_communicationscode
+     *            Code of the alumni_communications to be removed
+     * @throws NoPermisosException
+     */
+    public static void RemoveAlumni_communications(Usuario user,
+	    String alumni_communicationscode) throws NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain the object to delete form the DB. * */
+	Alumni_communications alumni_communications = getAlumni_communications(alumni_communicationscode);
+
+	/** 3. We mark it as deleted. * */
+	alumni_communications.setDeleted(Boolean.TRUE);
+
+	/** 4. We create an Audit message * */
+	CreateRemovealAuditmessage(user, alumni_communications);
+
+	/** 5. We commit the DB transaction. * */
+	HibernateUtil.commitTransaction();
+    }
+
+    /**
+     * This method obtains one instance of alumni_communications given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_communicationscode
+     *            Code of the alumni_communications to be obtained
+     * @return Alumni_communications with the given code.
+     */
+    public static Alumni_communications ObtainAlumni_communications(Usuario user,
+	    String alumni_communicationscode) {
+
+	/**
+	 * 1. We obtain the object from the DB using the private getter and we
+	 * return it. *
+	 */
+
+	Alumni_communications alumni_communications = getAlumni_communications(alumni_communicationscode);
+	return alumni_communications;
+    }
+
+    /**
+     * This method obtains all instances of Alumni_communications, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Alumni_communications>> ObtainAllAlumni_communications(
+	    Usuario user, ListConfigurator configurator) {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Alumni_communications.class);
+
+	// we only want to obtain the non deleted objects
+	crit.add(Expression.eq("deleted", Boolean.FALSE));
+	crit.setCacheable(true);
+
+	configurator.setOrderBy("order_number");
+	configurator.setAsc("");
+	
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	List<Alumni_communications> alumni_communications = (List<Alumni_communications>) crit
+		.list();
+
+	Pair<Integer, List<Alumni_communications>> pair = new Pair<Integer, List<Alumni_communications>>(
+		count, alumni_communications);
+
+	return pair;
+    }
+    
+    /**
+     * This method creates a Alumni_external_job_sectors.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_external_job_sectors
+     *            Alumni_external_job_sectors data transfer object (DTO) with the values
+     *            of the new instance.
+     * @return the new alumni_external_job_sectors created with this Use Case
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_external_job_sectors CreateAlumni_external_job_sectors(Usuario user,
+	    Alumni_external_job_sectors TOAlumni_external_job_sectors)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We create the new instance * */
+	Alumni_external_job_sectors alumni_external_job_sectors = new Alumni_external_job_sectors();
+
+	/**
+	 * 3. We set all the simple attributes (no associations) to the new
+	 * instance *
+	 */
+
+	alumni_external_job_sectors.setDescription(TOAlumni_external_job_sectors
+		.getDescription());
+
+	alumni_external_job_sectors.setShort_description(TOAlumni_external_job_sectors
+			.getShort_description());
+	
+	alumni_external_job_sectors.setOrder_number(TOAlumni_external_job_sectors
+			.getOrder_number());
+	
+	/** 4. We set the code to the new instance * */
+	try {
+	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
+
+	    alumni_external_job_sectors.setAlumni_external_job_sectorscode(im
+		    .getId(TOAlumni_external_job_sectors));
+	} catch (identifyException ie) {
+
+	    log.error(
+		    "Error en asignaciï¿½n de nuevo id en CreateAlumni_external_job_sectors",
+		    ie);
+	    throw new Error(ie.getMessage());
+	}
+
+	/** 5. We save the new instance to the DB* */
+	HibernateUtil.getSession().save(alumni_external_job_sectors);
+
+	/** 6. We create an Audit message * */
+	CreateCreationAuditmessage(user, alumni_external_job_sectors);
+
+	/** 7. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_external_job_sectors;
+    }
+
+    /**
+     * This method modifies a alumni_external_job_sectors.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_external_job_sectors
+     *            Alumni_external_job_sectors data transfer object (DTO) with the values
+     *            of the modified instance. The code of this attribute indicates
+     *            which alumni_external_job_sectors will be modified.
+     * @return the modified alumni_external_job_sectors
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_external_job_sectors UpdateAlumni_external_job_sectors(Usuario user,
+	    Alumni_external_job_sectors TOAlumni_external_job_sectors)
+	    throws InternalException, NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain form the DB the instance to modify * */
+	Alumni_external_job_sectors alumni_external_job_sectors = getAlumni_external_job_sectors(TOAlumni_external_job_sectors
+		.getAlumni_external_job_sectorscode());
+	;
+
+	/**
+	 * 3. We set all the simple attributes (no associations) to the instance
+	 * *
+	 */
+
+	alumni_external_job_sectors.setDescription(TOAlumni_external_job_sectors
+		.getDescription());
+	
+	alumni_external_job_sectors.setShort_description(TOAlumni_external_job_sectors
+			.getShort_description());
+	
+	alumni_external_job_sectors.setOrder_number(TOAlumni_external_job_sectors
+			.getOrder_number());
+
+	/**
+	 * 4. We set the DTO version to the modified object and we update it
+	 * with the new values in the DB. We evict and update the instance to
+	 * prevent concurrent modification *
+	 */
+	HibernateUtil.getSession().evict(alumni_external_job_sectors);
+	alumni_external_job_sectors.setVersion(TOAlumni_external_job_sectors.getVersion());
+	HibernateUtil.getSession().update(alumni_external_job_sectors);
+
+	/** 5. We create an Audit message * */
+	CreateModificationAuditmessage(user, alumni_external_job_sectors);
+
+	/** 6. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_external_job_sectors;
+    }
+
+    /**
+     * This method removes a alumni_external_job_sectors.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_external_job_sectorscode
+     *            Code of the alumni_external_job_sectors to be removed
+     * @throws NoPermisosException
+     */
+    public static void RemoveAlumni_external_job_sectors(Usuario user,
+	    String alumni_external_job_sectorscode) throws NoPermisosException {
+	testIsHHRR(user);
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 2. We obtain the object to delete form the DB. * */
+	Alumni_external_job_sectors alumni_external_job_sectors = getAlumni_external_job_sectors(alumni_external_job_sectorscode);
+
+	/** 3. We mark it as deleted. * */
+	alumni_external_job_sectors.setDeleted(Boolean.TRUE);
+
+	/** 4. We create an Audit message * */
+	CreateRemovealAuditmessage(user, alumni_external_job_sectors);
+
+	/** 5. We commit the DB transaction. * */
+	HibernateUtil.commitTransaction();
+    }
+
+    /**
+     * This method obtains one instance of alumni_external_job_sectors given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_external_job_sectorscode
+     *            Code of the alumni_external_job_sectors to be obtained
+     * @return Alumni_external_job_sectors with the given code.
+     */
+    public static Alumni_external_job_sectors ObtainAlumni_external_job_sectors(Usuario user,
+	    String alumni_external_job_sectorscode) {
+
+	/**
+	 * 1. We obtain the object from the DB using the private getter and we
+	 * return it. *
+	 */
+
+	Alumni_external_job_sectors alumni_external_job_sectors = getAlumni_external_job_sectors(alumni_external_job_sectorscode);
+	return alumni_external_job_sectors;
+    }
+
+    /**
+     * This method obtains all instances of Alumni_external_job_sectors, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Alumni_external_job_sectors>> ObtainAllAlumni_external_job_sectors(
+	    Usuario user, ListConfigurator configurator) {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Alumni_external_job_sectors.class);
+
+	// we only want to obtain the non deleted objects
+	crit.add(Expression.eq("deleted", Boolean.FALSE));
+	crit.setCacheable(true);
+
+	configurator.setOrderBy("order_number");
+	configurator.setAsc("");
+	
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	List<Alumni_external_job_sectors> alumni_external_job_sectors = (List<Alumni_external_job_sectors>) crit
+		.list();
+
+	Pair<Integer, List<Alumni_external_job_sectors>> pair = new Pair<Integer, List<Alumni_external_job_sectors>>(
+		count, alumni_external_job_sectors);
+
+	return pair;
+    }
     
     
     /**
@@ -8038,7 +10524,7 @@ public class UseCase {
 	    holiday.setHolidaycode(im.getId(TOHoliday));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateHoliday", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateHoliday", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -8366,7 +10852,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateGrant_concession",
+		    "Error en asignaciï¿½n de nuevo id en CreateGrant_concession",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -8745,7 +11231,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateAcademic_info",
+		    "Error en asignaciï¿½n de nuevo id en CreateAcademic_info",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -9121,7 +11607,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateType_of_contract",
+		    "Error en asignaciï¿½n de nuevo id en CreateType_of_contract",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -9320,7 +11806,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateType_of_compensation",
+		    "Error en asignaciï¿½n de nuevo id en CreateType_of_compensation",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -9554,7 +12040,7 @@ public class UseCase {
 		unit.setUnitcode(im.getId(TOUnit));
 	    } catch (identifyException ie) {
 
-		log.error("Error en asignaci�n de nuevo id en CreateUnit", ie);
+		log.error("Error en asignaciï¿½n de nuevo id en CreateUnit", ie);
 		throw new Error(ie.getMessage());
 	    }
 
@@ -10221,7 +12707,7 @@ public class UseCase {
 	    category.setCategorycode(im.getId(TOCategory));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateCategory", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateCategory", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -10446,7 +12932,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateFunding_detail",
+		    "Error en asignaciï¿½n de nuevo id en CreateFunding_detail",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -10742,7 +13228,7 @@ public class UseCase {
 	    area.setAreacode(im.getId(TOArea));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateArea", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateArea", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -10932,7 +13418,7 @@ public class UseCase {
 	} catch (identifyException ie) {
 
 	    log.error(
-		    "Error en asignaci�n de nuevo id en CreateType_of_holidays",
+		    "Error en asignaciï¿½n de nuevo id en CreateType_of_holidays",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -11099,7 +13585,7 @@ public class UseCase {
 	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
 	    personalPhoto.setPersonalPhotocode(im.getId(new PersonalPhoto()));
 	} catch (identifyException ie) {
-	    log.error("Error en asignaci�n de nuevo id en CreatePersonalPhoto",
+	    log.error("Error en asignaciï¿½n de nuevo id en CreatePersonalPhoto",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -11153,7 +13639,7 @@ public class UseCase {
 	    personalPhoto.setPersonalPhotocode(im.getId(new PersonalPhoto()));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreatePersonalPhoto",
+	    log.error("Error en asignaciï¿½n de nuevo id en CreatePersonalPhoto",
 		    ie);
 	    throw new Error(ie.getMessage());
 	}
@@ -11463,7 +13949,7 @@ public class UseCase {
 		} catch (identifyException ie) {
 
 		    log.error(
-			    "Error en asignaci�n de nuevo id en CreatePersonal",
+			    "Error en asignaciï¿½n de nuevo id en CreatePersonal",
 			    ie);
 		    throw new Error(ie.getMessage());
 		}
@@ -12281,6 +14767,8 @@ public class UseCase {
 
 	return pair;
     }
+    
+    
 
     private static void checkByRole(Usuario user,String personalcode) throws NoPermisosException{
     	Criteria crit = HibernateUtil.getSession().createCriteria(Personal.class);
@@ -12501,7 +14989,7 @@ public class UseCase {
 	    position.setPositioncode(im.getId(TOPosition));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreatePosition", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreatePosition", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -12736,7 +15224,7 @@ public class UseCase {
 	    } catch (identifyException ie) {
 
 		log.error(
-			"Error en asignaci�n de nuevo id en CreateCompensation",
+			"Error en asignaciï¿½n de nuevo id en CreateCompensation",
 			ie);
 		throw new Error(ie.getMessage());
 	    }
@@ -13099,7 +15587,7 @@ public class UseCase {
 		UserManagement um = UserManagement.singleton();
 		user = (Usuario) um.getUserForLogin(username);
 		// esto es para obtener los roles del usuario
-		// en este momento y no dejar la relaci�n como lazy
+		// en este momento y no dejar la relaciï¿½n como lazy
 		// ya que los vamos a necesitar cuando la sesion ya se haya
 		// cerrado.
 		Set<Role> roles = user.getRoles();
@@ -13113,7 +15601,7 @@ public class UseCase {
 	    if (user == null || !user.isMyPassword(password)) {
 		user = null;
 	    }
-	} else // si est� configurado el acceso ldap
+	} else // si estï¿½ configurado el acceso ldap
 	{
 
 	    LDAPLogin ldapLogin = new LDAPLogin();
@@ -13135,7 +15623,7 @@ public class UseCase {
 		    Personal per = (Personal) crit.uniqueResult();
 
 		    if (per == null) {
-			// Este username no est� en la BD de personal de
+			// Este username no estï¿½ en la BD de personal de
 			// IRBPeople personal.username
 			user = null;
 		    } else {
@@ -13469,22 +15957,22 @@ public class UseCase {
 		    .uniqueResult();
 
 	    if (currentProfessionalInfo == null) {
-		// No hay ning�n resultado. En este punto no es un error pero,
+		// No hay ningï¿½n resultado. En este punto no es un error pero,
 		// probablemente,
-		// el m�todo llamante deber�a informar al usuario de que est�
+		// el mï¿½todo llamante deberï¿½a informar al usuario de que estï¿½
 		// intentando enviar un email
-		// a alguien que no tiene asignado ninguna direcci�n de email.
+		// a alguien que no tiene asignado ninguna direcciï¿½n de email.
 		return null;
 	    } else {
 		return currentProfessionalInfo.getEmail();
 	    }
 
 	} catch (HibernateException he) {
-	    // mas de un resultado. Esto es, seg�n la l�gica de negocio, una
+	    // mas de un resultado. Esto es, segï¿½n la lï¿½gica de negocio, una
 	    // inconsistencia en la BD.
-	    log.error("El registro de personal con c�digo: "
+	    log.error("El registro de personal con cï¿½digo: "
 		    + personalcode
-		    + " tiene m�s de un registro marcado como actual en la tabla professional.");
+		    + " tiene mï¿½s de un registro marcado como actual en la tabla professional.");
 	    return null;
 	}
 
@@ -13971,6 +16459,613 @@ public class UseCase {
     }
 
     /**
+     * Returns the Alumni Personal with the given key. This method is used internally
+     * to get objects form the database.
+     * 
+     * @param alumni_personalcode
+     *            code of the Alumni_personal
+     * @return Alumni_personal with the given code
+     */
+    protected static Alumni_personal getAlumni_personal(String alumni_personalcode) {
+    	Alumni_personal alumni_personal = (Alumni_personal) HibernateUtil.getSession().get(
+    			Alumni_personal.class, alumni_personalcode);
+    	return alumni_personal;
+    }
+    		
+	 /**
+     * This method creates a Alumni_personal.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_personal
+     *            Alumni_personal data transfer object (DTO) with the values of the new
+     *            instance.
+     * @return the new alumni_personal created with this Use Case
+     * @throws InternalException
+     * @throws ValidationFailedException
+     */
+    public static Alumni_personal CreateAlumni_personal(Usuario user, Alumni_personal TOAlumni_personal)
+	    throws InternalException, ValidationFailedException {
+
+	try {
+	    /** 1. We begin the DB transaction. * */
+
+	    HibernateUtil.beginTransaction();
+
+	    /**
+	     * 2. For each association from the TOAlumni_personal that are filled in
+	     * the DTO we put the real objects from the DB. *
+	     */
+	    boolean _genderIsDefined = false;
+	    if (TOAlumni_personal.getGender() != null
+		    && TOAlumni_personal.getGender().getGendercode() != null
+		    && !TOAlumni_personal.getGender().getGendercode().equals("")) {
+
+	    	_genderIsDefined = true;
+
+	    	TOAlumni_personal.setGender(getGender(TOAlumni_personal.getGender()
+			.getGendercode()));
+	    }
+	    
+	    boolean _nationalityIsDefined = false;
+	    if (TOAlumni_personal.getNationality() != null
+		    && TOAlumni_personal.getNationality().getNationalitycode() != null
+		    && !TOAlumni_personal.getNationality().getNationalitycode().equals("")) {
+
+	    	_nationalityIsDefined = true;
+
+	    	TOAlumni_personal.setNationality(getNationality(TOAlumni_personal.getNationality()
+			.getNationalitycode()));
+	    }
+
+	    boolean _nationality_2IsDefined = false;
+	    if (TOAlumni_personal.getNationality_2() != null
+	    		&& TOAlumni_personal.getNationality_2().getNationalitycode() != null
+	    		&& !TOAlumni_personal.getNationality_2().getNationalitycode().equals("")) {
+	    	
+	    	_nationality_2IsDefined = true;
+	    	
+	    	TOAlumni_personal.setNationality_2(getNationality(TOAlumni_personal.getNationality_2()
+	    			.getNationalitycode()));
+	    }
+	    
+	    boolean _alumni_titlesIsDefined = false;
+	    if (TOAlumni_personal.getTitles() != null
+	    		&& TOAlumni_personal.getTitles().getAlumni_titlescode() != null
+	    		&& !TOAlumni_personal.getTitles().getAlumni_titlescode().equals("")) {
+	    	
+	    	_alumni_titlesIsDefined = true;
+	    	
+	    	TOAlumni_personal.setTitles(getAlumni_titles((TOAlumni_personal.getTitles().getAlumni_titlescode())));
+	    }
+	    
+
+	    /** 3. We create the new instance * */
+	    Alumni_personal alumni_personal = new Alumni_personal();
+
+	    /**
+	     * 4. We set all the simple attributes (no associations) to the new
+	     * instance *
+	     */
+
+	    alumni_personal.setExternal(TOAlumni_personal.isExternal());
+	    alumni_personal.setFirstname(TOAlumni_personal.getFirstname());
+	    alumni_personal.setSurname(TOAlumni_personal.getSurname());
+	    alumni_personal.setIrb_surname(TOAlumni_personal.getIrb_surname());
+	    alumni_personal.setBirth(TOAlumni_personal.getBirth());
+	    alumni_personal.setEmail(TOAlumni_personal.getEmail());
+	    alumni_personal.setUrl(TOAlumni_personal.getUrl());
+	    alumni_personal.setFacebook(TOAlumni_personal.getFacebook());
+	    alumni_personal.setLinkedin(TOAlumni_personal.getLinkedin());
+	    alumni_personal.setTwitter(TOAlumni_personal.getTwitter());
+	    alumni_personal.setKeywords(TOAlumni_personal.getKeywords());
+	    alumni_personal.setBiography(TOAlumni_personal.getBiography());
+	    alumni_personal.setAwards(TOAlumni_personal.getAwards());
+	    alumni_personal.setORCIDID(TOAlumni_personal.getORCIDID());
+	    alumni_personal.setResearcherid(TOAlumni_personal.getResearcherid());
+	    alumni_personal.setPubmedid(TOAlumni_personal.getPubmedid());
+	    alumni_personal.setVerified(TOAlumni_personal.isVerified());
+	    alumni_personal.setShow_data(TOAlumni_personal.isShow_data());
+	    
+
+	   /** 5. We set the code to the new instance * */
+	    if (TOAlumni_personal.getCode() != null
+		    && !TOAlumni_personal.getCode().equals("")) {
+			/**
+			 * 5.1 If the TO contains a code, we set it: we are creating a
+			 * alumni_personal for a user *
+			 */
+			alumni_personal.setCode(TOAlumni_personal.getCode());
+	    } else {
+			try {
+			    IdentifyManager_Plain im = IdentifyManager_Plain
+				    .singleton();
+			    
+			    alumni_personal.setAlumni_personalcode(im.getId(TOAlumni_personal));
+			} catch (identifyException ie) {
+	
+			    log.error(
+				    "Error en asignaciï¿½n de nuevo id en CreateAlumni_personal",
+				    ie);
+			    throw new Error(ie.getMessage());
+			}
+	    }
+	    
+	    /** 6. We save the new instance to the DB* */
+	    HibernateUtil.getSession().save(alumni_personal);
+
+	    
+	    
+	    
+	    /**
+	     * We associate the current object to the other objects (only in
+	     * case that the associations where defined in the DTO) *
+	     */
+
+	    if (_genderIsDefined) {
+	    	if (TOAlumni_personal.getGender() != null) {
+	    		TOAlumni_personal.getGender().addIalumni_personal(alumni_personal);
+	    	}
+	    	alumni_personal.setGender(TOAlumni_personal.getGender());
+	    }
+	    if (_nationalityIsDefined) {
+	    	if (TOAlumni_personal.getNationality() != null) {
+	    		TOAlumni_personal.getNationality().addIalumni_personal(alumni_personal);
+	    	}
+	    	alumni_personal.setNationality(TOAlumni_personal.getNationality());
+	    }
+	    if (_nationality_2IsDefined) {
+	    	if (TOAlumni_personal.getNationality_2() != null) {
+	    		TOAlumni_personal.getNationality_2().addIalumni_personal_2(alumni_personal);
+	    	}
+	    	alumni_personal.setNationality_2(TOAlumni_personal.getNationality_2());
+	    }
+	    if (_alumni_titlesIsDefined) {
+	    	if (TOAlumni_personal.getTitles() != null) {
+	    		TOAlumni_personal.getTitles().addIialumni_personal(alumni_personal);
+	    	}
+	    	alumni_personal.setTitles(TOAlumni_personal.getTitles());
+	    }
+	    
+	    
+
+	    /** 7. We create an Audit message * */
+	    CreateCreationAuditmessage(user, alumni_personal);
+
+	    /** 8. We commit the DB transaction and return the new instance * */
+	    HibernateUtil.commitTransaction();
+
+	    return alumni_personal;
+	} catch (RuntimeException e) {
+		throw e;
+	}
+    }
+
+    /**
+     * This method modifies a alumni_personal.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_personal
+     *            Alumni_personal data transfer object (DTO) with the values of the
+     *            modified instance. The code of this attribute indicates which
+     *            alumni_personal will be modified.
+     * @return the modified alumni_personal
+     * @throws InternalException
+     * @throws ValidationFailedException
+     */
+    public static Alumni_personal UpdateAlumni_personal(Usuario user, Alumni_personal TOAlumni_personal)
+	    throws InternalException, ValidationFailedException {
+
+	try {
+
+	    /** 1. We begin the DB transaction. * */
+	    HibernateUtil.beginTransaction();
+
+	    /**
+	     * 2. For each association from the TOAlumni_personal that are filled in
+	     * the DTO we put the real objects from the DB. *
+	     */
+
+	    /**
+	     * 2. For each association from the TOAlumni_personal that are filled in
+	     * the DTO we put the real objects from the DB. *
+	     */
+	    boolean _genderIsDefined = false;
+	    if (TOAlumni_personal.getGender() != null
+		    && TOAlumni_personal.getGender().getGendercode() != null
+		    && !TOAlumni_personal.getGender().getGendercode().equals("")) {
+
+	    	_genderIsDefined = true;
+
+	    	TOAlumni_personal.setGender(getGender(TOAlumni_personal.getGender()
+			.getGendercode()));
+	    }
+	    
+	    boolean _nationalityIsDefined = false;
+	    if (TOAlumni_personal.getNationality() != null
+		    && TOAlumni_personal.getNationality().getNationalitycode() != null
+		    && !TOAlumni_personal.getNationality().getNationalitycode().equals("")) {
+
+	    	_nationalityIsDefined = true;
+
+	    	TOAlumni_personal.setNationality(getNationality(TOAlumni_personal.getNationality()
+			.getNationalitycode()));
+	    }
+
+	    boolean _nationality_2IsDefined = false;
+	    if (TOAlumni_personal.getNationality_2() != null
+	    		&& TOAlumni_personal.getNationality_2().getNationalitycode() != null
+	    		&& !TOAlumni_personal.getNationality_2().getNationalitycode().equals("")) {
+	    	
+	    	_nationality_2IsDefined = true;
+	    	
+	    	TOAlumni_personal.setNationality_2(getNationality(TOAlumni_personal.getNationality_2()
+	    			.getNationalitycode()));
+	    }
+	    
+	    boolean _alumni_titlesIsDefined = false;
+	    if (TOAlumni_personal.getTitles() != null
+	    		&& TOAlumni_personal.getTitles().getAlumni_titlescode() != null
+	    		&& !TOAlumni_personal.getTitles().getAlumni_titlescode().equals("")) {
+	    	
+	    	_alumni_titlesIsDefined = true;
+	    	
+	    	TOAlumni_personal.setTitles(getAlumni_titles((TOAlumni_personal.getTitles().getAlumni_titlescode())));
+	    }
+
+	    /** 3. We obtain form the DB the instance to modify * */
+	    Alumni_personal alumni_personal = getAlumni_personal(TOAlumni_personal.getAlumni_personalcode());
+
+	    /*****/
+
+	    /*****/
+
+	    /**
+	     * 4. We set all the simple attributes (no associations) to the
+	     * instance *
+	     */
+
+	    alumni_personal.setExternal(TOAlumni_personal.isExternal());
+	    alumni_personal.setFirstname(TOAlumni_personal.getFirstname());
+	    alumni_personal.setSurname(TOAlumni_personal.getSurname());
+	    alumni_personal.setIrb_surname(TOAlumni_personal.getIrb_surname());
+	    alumni_personal.setBirth(TOAlumni_personal.getBirth());
+	    alumni_personal.setEmail(TOAlumni_personal.getEmail());
+	    alumni_personal.setUrl(TOAlumni_personal.getUrl());
+	    alumni_personal.setFacebook(TOAlumni_personal.getFacebook());
+	    alumni_personal.setLinkedin(TOAlumni_personal.getLinkedin());
+	    alumni_personal.setTwitter(TOAlumni_personal.getTwitter());
+	    alumni_personal.setKeywords(TOAlumni_personal.getKeywords());
+	    alumni_personal.setBiography(TOAlumni_personal.getBiography());
+	    alumni_personal.setAwards(TOAlumni_personal.getAwards());
+	    alumni_personal.setORCIDID(TOAlumni_personal.getORCIDID());
+	    alumni_personal.setResearcherid(TOAlumni_personal.getResearcherid());
+	    alumni_personal.setPubmedid(TOAlumni_personal.getPubmedid());
+	    alumni_personal.setVerified(TOAlumni_personal.isVerified());
+	    alumni_personal.setShow_data(TOAlumni_personal.isShow_data());
+
+	    
+	    /**
+	     * 5. We set the DTO version to the modified object and we update it
+	     * with the new values in the DB. We evict and update the instance
+	     * to prevent concurrent modification *
+	     */
+	    HibernateUtil.getSession().evict(alumni_personal);
+	    alumni_personal.setVersion(TOAlumni_personal.getVersion());
+	    HibernateUtil.getSession().update(alumni_personal);
+
+	    /**
+	     * We associate/disassociate the current object to the other objects
+	     * (only in case that the associations where defined in the DTO) *
+	     */
+	    
+	    if (_genderIsDefined) {
+	    	if (alumni_personal.getGender() != null) {
+	    		alumni_personal.getGender().removeIalumni_personal(alumni_personal);
+	    	}
+	    	if (TOAlumni_personal.getGender() != null) {
+	    		TOAlumni_personal.getGender().addIalumni_personal(alumni_personal);
+	    	}
+	    	alumni_personal.setGender(TOAlumni_personal.getGender());
+	    }
+	    if (_nationalityIsDefined) {
+	    	if (alumni_personal.getNationality() != null) {
+	    		alumni_personal.getNationality().removeIalumni_personal(alumni_personal);
+	    	}
+	    	if (TOAlumni_personal.getNationality() != null) {
+	    		TOAlumni_personal.getNationality().addIalumni_personal(alumni_personal);
+	    	}
+	    	alumni_personal.setNationality(TOAlumni_personal.getNationality());
+	    }
+	    if (_nationality_2IsDefined) {
+	    	if (alumni_personal.getNationality_2() != null) {
+	    		alumni_personal.getNationality_2().removeIalumni_personal_2(alumni_personal);
+	    	}
+	    	if (TOAlumni_personal.getNationality_2() != null) {
+	    		TOAlumni_personal.getNationality_2().addIalumni_personal_2(alumni_personal);
+	    	}
+	    	alumni_personal.setNationality_2(TOAlumni_personal.getNationality_2());
+	    }
+	    if (_alumni_titlesIsDefined) {
+	    	if (alumni_personal.getTitles() != null) {
+	    		alumni_personal.getTitles().removeIalumni_personal(alumni_personal);
+	    	}
+	    	if (TOAlumni_personal.getTitles() != null) {
+	    		TOAlumni_personal.getTitles().addIialumni_personal(alumni_personal);
+	    	}
+	    	alumni_personal.setTitles(TOAlumni_personal.getTitles());
+	    }
+
+	    alumni_personal.clearIalumni_communications();
+	    alumni_personal.setIalumni_communications(TOAlumni_personal.getIalumni_communications());
+	    
+	    /** 6. We create an Audit message * */	    
+	    CreateModificationAuditmessage(user, alumni_personal);
+
+	    /** 7. We commit the DB transaction and return the new instance * */
+	    HibernateUtil.commitTransaction();
+
+	    return alumni_personal;
+
+	} catch (RuntimeException e) {
+	    throw e;	    
+	}
+
+    }
+
+    /**
+     * This method removes a alumni_personal.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_personalcode
+     *            Code of the alumni_personal to be removed
+     * @throws InternalException
+     * @throws NoPermisosException
+     * @throws UsuarioNoActivoException
+     * @throws ValidationFailedException
+     */
+    public static void RemoveAlumni_personal(Usuario user, String alumni_personalcode)
+	    throws NoPermisosException, InternalException,
+	    UsuarioNoActivoException, ValidationFailedException {
+
+		/** 1. We begin the DB transaction. * */
+		HibernateUtil.beginTransaction();
+	
+		/** 2. We obtain the object to delete form the DB. * */
+		Alumni_personal alumni_personal = getAlumni_personal(alumni_personalcode);
+	
+		/** 3. We mark it as deleted. * */
+		alumni_personal.setDeleted(Boolean.TRUE);
+		
+		/** 4. We create an Audit message * */
+		CreateRemovealAuditmessage(user, alumni_personal);
+	
+		/** 5. We commit the DB transaction. * */
+		HibernateUtil.commitTransaction();
+    }
+
+    /**
+     * This method obtains one instance of alumni_personal given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_personalcode
+     *            Code of the alumni_personal to be obtained
+     * @return Alumni_personal with the given code.
+     */
+    public static Alumni_personal ObtainAlumni_personal(Usuario user, String alumni_personalcode) {
+
+		/**
+		 * 1. We obtain the object from the DB using the private getter and we
+		 * return it. *
+		 */
+	
+		Alumni_personal alumni_personal = getAlumni_personal(alumni_personalcode);
+		return alumni_personal;
+    }
+
+    /**
+     * This method obtains all instances of Alumni_personal, given a list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Alumni_personal>> ObtainAllAlumni_personal(Usuario user,
+	    ListConfigurator configurator) {
+
+		/** 1. We create an Hibernate Criteria to obtain the desired values * */
+		Criteria crit = HibernateUtil.getSession().createCriteria(
+			Alumni_personal.class);
+	
+		// we only want to obtain the non deleted objects
+		crit.add(Expression.eq("deleted", Boolean.FALSE));	
+		
+		// we add the ListConfigurator to the criteria, obtaining the number of
+		// results without the pagination
+		int count = configurator.addCriterions(crit);
+	
+		/**
+		 * 2. We obtain the list form the DB and we return it with the number of
+		 * elements in the DB *
+		 */
+	
+		List<Alumni_personal> alumni_personals = (List<Alumni_personal>) crit.list();
+	
+		Pair<Integer, List<Alumni_personal>> pair = new Pair<Integer, List<Alumni_personal>>(
+			count, alumni_personals);
+	
+		return pair;
+    }
+
+    public static Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>> ObtainValidatedAlumni_personalAndOrderMap(
+    	    Usuario user, ListConfigurator configurator) {
+    	Criteria crit = HibernateUtil.getSession().createCriteria(Alumni_personal.class);
+    	crit.add(Expression.eq("verified", Boolean.TRUE));
+    	return ObtainAllAlumni_personalAndOrderMap(user, configurator, crit);
+    }
+
+    public static Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>> ObtainNotValidatedAlumni_personalAndOrderMap(
+    		Usuario user, ListConfigurator configurator) {
+    	Criteria crit = HibernateUtil.getSession().createCriteria(Alumni_personal.class);
+    	crit.add(Expression.eq("verified", Boolean.FALSE));
+    	return ObtainAllAlumni_personalAndOrderMap(user, configurator, crit);
+    }
+    
+    public static Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>> ObtainAllAlumni_personalAndOrderMap(
+    	    Usuario user, ListConfigurator configurator) {
+    	Criteria crit = HibernateUtil.getSession().createCriteria(Alumni_personal.class);
+    	return ObtainAllAlumni_personalAndOrderMap(user, configurator, crit);
+    }
+    
+    public static Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>> ObtainAllAlumni_personalAndOrderMap(
+	    Usuario user, ListConfigurator configurator, Criteria crit) {
+
+		// we only want to obtain the non deleted objects
+		crit.add(Expression.eq("deleted", Boolean.FALSE));	
+		filterByRole(user, crit);
+		
+		// we add the ListConfigurator to the criteria, obtaining the number of
+		// results without the pagination
+		int count = configurator.addCriterions(crit, true);
+	
+		
+		/**
+		 * 2. We obtain the list form the DB and we return it with the number of
+		 * elements in the DB *
+		 */
+	
+		// ScrollableResults scroll = crit.scroll(ScrollMode.SCROLL_SENSITIVE);
+	
+		List<Alumni_personal> alumni_personals = (List<Alumni_personal>) crit.list();
+	
+		crit.setFirstResult(0);
+		crit.setMaxResults(5000);
+	
+		List<Alumni_personal> allAlumni_personals = (List<Alumni_personal>) crit.list();
+	
+		Map<String, String[]> map = new HashMap<String, String[]>();
+	
+		for (int i = 0; i < allAlumni_personals.size(); i++) {
+		    String next = i == allAlumni_personals.size() - 1 ? null : allAlumni_personals
+			    .get(i + 1).getCode();
+		    String previous = i == 0 ? null : allAlumni_personals.get(i - 1).getCode();
+		    map.put(allAlumni_personals.get(i).getCode(), new String[] { previous,
+			    next });
+		}
+	
+		Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>> pair = new Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>>(
+			count, new Pair<List<Alumni_personal>, Map<String, String[]>>(
+				alumni_personals, map));
+	
+		return pair;
+    }    		
+    
+    
+    /**
+     * Returns the Alumni_titles with the given key. This method is used
+     * internally to get objects form the database.
+     * 
+     * @param titlescode
+     *            code of the Alumni titles
+     * @return Alumni_titles with the given code
+     */
+    protected static Alumni_titles getAlumni_titles(
+    		String titlescode) {
+    	Alumni_titles alumni_titles = (Alumni_titles) HibernateUtil
+    			.getSession().get(Alumni_titles.class,
+    					titlescode);
+    	return alumni_titles;
+    }
+    
+    /**
+     * Returns the Alumni_external_job_positions with the given key. This method is used
+     * internally to get objects form the database.
+     * 
+     * @param external_job_positionscode
+     *            code of the Alumni external_job_positions
+     * @return Alumni_external_job_positions with the given code
+     */
+    protected static Alumni_external_job_positions getAlumni_external_job_positions(
+    		String external_job_positionscode) {
+    	Alumni_external_job_positions alumni_external_job_positions = (Alumni_external_job_positions) HibernateUtil
+    			.getSession().get(Alumni_external_job_positions.class,
+    					external_job_positionscode);
+    	return alumni_external_job_positions;
+    }
+    
+    /**
+     * Returns the Alumni_irb_job_positions with the given key. This method is used
+     * internally to get objects form the database.
+     * 
+     * @param irb_job_positionscode
+     *            code of the Alumni irb_job_positions
+     * @return Alumni_irb_job_positions with the given code
+     */
+    protected static Alumni_irb_job_positions getAlumni_irb_job_positions(
+    		String irb_job_positionscode) {
+    	Alumni_irb_job_positions alumni_irb_job_positions = (Alumni_irb_job_positions) HibernateUtil
+    			.getSession().get(Alumni_irb_job_positions.class,
+    					irb_job_positionscode);
+    	return alumni_irb_job_positions;
+    }
+    
+    /**
+     * Returns the Alumni_job_position_types with the given key. This method is used
+     * internally to get objects form the database.
+     * 
+     * @param code
+     *            code of the Alumni titles
+     * @return Alumni_job_position_types with the given code
+     */
+    protected static Alumni_job_position_types getAlumni_job_position_types(
+    		String code) {
+    	Alumni_job_position_types alumni_job_position_types = (Alumni_job_position_types) HibernateUtil
+    			.getSession().get(Alumni_job_position_types.class,
+    					code);
+    	return alumni_job_position_types;
+    }
+    
+    /**
+     * Returns the Alumni_communications with the given key. This method is used
+     * internally to get objects form the database.
+     * 
+     * @param alumnicommuniations_code
+     *            code of the Alumni communications
+     * @return Alumni_titles with the given code
+     */
+    protected static Alumni_communications getAlumni_communications(
+    		String alumnicommuniations_code) {
+    	Alumni_communications alumnicommuniations = (Alumni_communications) HibernateUtil
+    			.getSession().get(Alumni_communications.class,
+    					alumnicommuniations_code);
+    	return alumnicommuniations;
+    }
+    
+    /**
+     * Returns the Alumni_external_job_sectors with the given key. This method is used
+     * internally to get objects form the database.
+     * 
+     * @param titlescode
+     *            code of the Alumni titles
+     * @return Alumni_external_job_sectors with the given code
+     */
+    protected static Alumni_external_job_sectors getAlumni_external_job_sectors(
+    		String titlescode) {
+    	Alumni_external_job_sectors alumni_external_job_sectors = (Alumni_external_job_sectors) HibernateUtil
+    			.getSession().get(Alumni_external_job_sectors.class,
+    					titlescode);
+    	return alumni_external_job_sectors;
+    }
+
+    /**
      * Returns the Holiday with the given key. This method is used internally to
      * get objects form the database.
      * 
@@ -14423,7 +17518,16 @@ public class UseCase {
     }
 
     
-    
+    /**
+     * Tests if a user is an alumni administrator.
+     * 
+     * @param user
+     *            the user to be tested
+     * @return returns true if the user is an administrator
+     */
+    public static boolean isAlumni(Usuario user) {
+    	return (checkRole(user, ALUMNI_ROLE_NAME));
+    }
     
     /**
      * Tests if a user is an human resorces.
@@ -15207,7 +18311,7 @@ public class UseCase {
 	    report.setReportcode(im.getId(TOReport));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateReport", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateReport", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -15903,7 +19007,7 @@ public class UseCase {
 	    irbholiday.setIrbholidaycode(im.getId(TOIrbholiday));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en irbholiday", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en irbholiday", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -16060,7 +19164,7 @@ public class UseCase {
 	    if (yearInt < yearIntCurrent) {
 		throw new HolidaysException("error.date");
 	    } else if (yearInt > yearIntCurrent) {
-		// caso particular, permitimos entrar los festivos de a�os
+		// caso particular, permitimos entrar los festivos de aï¿½os
 		// venideros.
 		recalculate = false;
 	    }
@@ -16364,7 +19468,7 @@ public class UseCase {
     }
 
     /**
-     * funcio que retorna el dia limit de vacances de l'any anterior, si est�
+     * funcio que retorna el dia limit de vacances de l'any anterior, si estï¿½
      * definit
      */
     public static Irbholiday ObtainIrbholidayLimitVacances(Usuario usuario,
@@ -16437,7 +19541,7 @@ public class UseCase {
 	    irbholidayinfo.setIrbholidayinfocode(im.getId(TOIrbholidayinfo));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en irbholidayinfo", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en irbholidayinfo", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -16546,10 +19650,10 @@ public class UseCase {
 	    // }
 	    // }
 
-	    // ya no comprobamos el solapamiento. Seg�n Cristina M�ndez lo que
+	    // ya no comprobamos el solapamiento. Segï¿½n Cristina Mï¿½ndez lo que
 	    // hay que hacer es:
-	    // coger la primera fecha en el a�o y contar las vacaciones hasta el
-	    // final del a�o
+	    // coger la primera fecha en el aï¿½o y contar las vacaciones hasta el
+	    // final del aï¿½o
 	    // o sea: rango={primera fecha, 31/12}
 
 	    Date fechaMasTemprana = null;
@@ -16688,9 +19792,9 @@ public class UseCase {
 	    //
 	    // Calendar today = Calendar.getInstance();
 	    //
-	    // today.add(Calendar.DAY_OF_MONTH, -1); //el d�a de limite para
-	    // gastas las vacaciones del a�o anterior
-	    // // es v�lido as� que tenemos que comparar la fecha del d�a
+	    // today.add(Calendar.DAY_OF_MONTH, -1); //el dï¿½a de limite para
+	    // gastas las vacaciones del aï¿½o anterior
+	    // // es vï¿½lido asï¿½ que tenemos que comparar la fecha del dï¿½a
 	    // anterior.
 	    //
 	    // if(limite.before( today.getTime() ))
@@ -16709,7 +19813,7 @@ public class UseCase {
 
     /**
      * funcio que retorna, si existeix, el irbholiday que esta enmig de l'any
-     * especificat i el seg�ent
+     * especificat i el segï¿½ent
      */
     // private static Irbholiday ObtainIrbholidayBetweenYears(String
     // personalcode, Calendar year) {
@@ -16960,7 +20064,7 @@ public class UseCase {
 	    if (yearInt < yearIntCurrent) {
 		throw new HolidaysException("error.date");
 	    } else if (yearInt > yearIntCurrent) {
-		// caso particular, permitimos entrar los festivos de a�os
+		// caso particular, permitimos entrar los festivos de aï¿½os
 		// venideros.
 		recalculate = false;
 	    }
@@ -17156,7 +20260,7 @@ public class UseCase {
 	int aps = 0;
 	int previousyearholidays = 0;
 
-	// vacaciones gastadas pendientes de aprovaci�n
+	// vacaciones gastadas pendientes de aprovaciï¿½n
 	int pendingHolidays = 0;
 	int pendingAps = 0;
 	int pendingPreviousyearholidays = 0;
@@ -17186,7 +20290,7 @@ public class UseCase {
 		    int numDays = 0;
 		    if (start.compareTo(limitHolidays) <= 0
 			    && end.compareTo(limitHolidays) <= 0) {
-			// el periodo est� integramente antes de la fecha l�mite
+			// el periodo estï¿½ integramente antes de la fecha lï¿½mite
 			numDays = UseCaseUtils.diasLaborablesAnno(start, end,
 				festivos, yearInt);
 			if (previousyearholidaysforyear >= numDays) {
@@ -17199,7 +20303,7 @@ public class UseCase {
 			    numDays -= numDaysPre;
 			}
 		    } else if (start.compareTo(limitHolidays) <= 0) {
-			// el periodo est� a caballo sobre la fecha l�mite
+			// el periodo estï¿½ a caballo sobre la fecha lï¿½mite
 			numDaysPre = UseCaseUtils.diasLaborablesAnno(start,
 				limitHolidays, festivos, yearInt);
 			GregorianCalendar nextToLimitHolidays = new GregorianCalendar();
@@ -17219,8 +20323,8 @@ public class UseCase {
 			    previousyearholidaysforyear = 0;
 			}
 		    } else {
-			// el periodo est� integramente despu�s de la fecha
-			// l�mite
+			// el periodo estï¿½ integramente despuï¿½s de la fecha
+			// lï¿½mite
 			numDays = UseCaseUtils.diasLaborablesAnno(start, end,
 				festivos, yearInt);
 		    }
@@ -17524,7 +20628,7 @@ public class UseCase {
 	int currentYearInt = getCurrentYearForHolidays();
 	int yearInt = irbholiday.getInitialdate().getYear() + 1900;
 
-	// No se permite el caso de vacaciones a caballo de los dos a�os.
+	// No se permite el caso de vacaciones a caballo de los dos aï¿½os.
 
 	if (irbholiday.getInitialdate().getYear() != irbholiday.getEnddate()
 		.getYear()) {
@@ -17579,7 +20683,7 @@ public class UseCase {
 	    int numDays = 0;
 	    if (start.compareTo(limitHolidays) <= 0
 		    && end.compareTo(limitHolidays) <= 0) {
-		// el periodo est� integramente antes de la fecha l�mite
+		// el periodo estï¿½ integramente antes de la fecha lï¿½mite
 		numDays = UseCaseUtils.diasLaborablesAnno(start, end, festivos,
 			yearInt);
 		if (previousyearholidaysforyear >= numDays) {
@@ -17592,7 +20696,7 @@ public class UseCase {
 		    numDays -= numDaysPre;
 		}
 	    } else if (start.compareTo(limitHolidays) <= 0) {
-		// el periodo est� a caballo sobre la fecha l�mite
+		// el periodo estï¿½ a caballo sobre la fecha lï¿½mite
 		numDaysPre = UseCaseUtils.diasLaborablesAnno(start,
 			limitHolidays, festivos, yearInt);
 		GregorianCalendar nextToLimitHolidays = new GregorianCalendar();
@@ -17610,7 +20714,7 @@ public class UseCase {
 		    previousyearholidaysforyear = 0;
 		}
 	    } else {
-		// el periodo est� integramente despu�s de la fecha l�mite
+		// el periodo estï¿½ integramente despuï¿½s de la fecha lï¿½mite
 		numDays = UseCaseUtils.diasLaborablesAnno(start, end, festivos,
 			yearInt);
 	    }
@@ -18217,7 +21321,7 @@ public class UseCase {
 	    customList.setCustomListcode(im.getId(TOCustomList));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateCustomList", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateCustomList", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -18375,7 +21479,7 @@ public class UseCase {
 	    column.setColumncode(im.getId(TOColumn));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateColumn", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateColumn", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -18579,7 +21683,7 @@ public class UseCase {
 	    filter.setFiltercode(im.getId(TOFilter));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateFilter", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateFilter", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -18952,7 +22056,7 @@ public class UseCase {
 	    orderBy.setOrderBycode(im.getId(TOOrderBy));
 	} catch (identifyException ie) {
 
-	    log.error("Error en asignaci�n de nuevo id en CreateOrderBy", ie);
+	    log.error("Error en asignaciï¿½n de nuevo id en CreateOrderBy", ie);
 	    throw new Error(ie.getMessage());
 	}
 
@@ -19322,7 +22426,7 @@ public class UseCase {
 	int year = getCurrentYearForHolidays();
 	int nextYear = year + 1;
 
-	// AQUI HAY QUE CAMBIAR EL A�O
+	// AQUI HAY QUE CAMBIAR EL Aï¿½O
 
 	List<Personal> personals = ObtainPersonalWithContract(null,
 		new ListConfigurator()).getSecond();

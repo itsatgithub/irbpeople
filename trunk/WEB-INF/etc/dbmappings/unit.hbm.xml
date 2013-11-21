@@ -61,6 +61,19 @@
             </key>
             <one-to-many class="Professional" />
         </set>
+        
+        <set name="ialumni_irb_jobs" cascade="none" lazy="true">
+			<key>
+				<column name="unit" />
+			</key>
+			<one-to-many class="Alumni_irb_jobs" />
+		</set>
+        <set name="ialumni_irb_jobs_2" cascade="none" lazy="true">
+			<key>
+				<column name="unit_2" />
+			</key>
+			<one-to-many class="Alumni_irb_jobs" />
+		</set>
 
         <!-- categorias -->
 

@@ -1,6 +1,6 @@
 <%@ include file="/pages/common/templates/global.jsp" %>
 
-<%  if(UserUtils.isRRHH(request)) {  
+<%  if(UserUtils.isRRHH(request) || UserUtils.isAlumni(request)) {  
 	// Variables para el include del botón
 	String param_id;
 	String param_caption;

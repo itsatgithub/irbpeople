@@ -15,6 +15,16 @@ import bussineslogic.excepciones.UsuarioExisteException;
 import bussineslogic.excepciones.UsuarioNoActivoException;
 import bussineslogic.excepciones.ValidationFailedException;
 import bussineslogic.objects.Academic_info;
+import bussineslogic.objects.Alumni_communications;
+import bussineslogic.objects.Alumni_external_job_positions;
+import bussineslogic.objects.Alumni_external_job_sectors;
+import bussineslogic.objects.Alumni_external_jobs;
+import bussineslogic.objects.Alumni_irb_job_positions;
+import bussineslogic.objects.Alumni_irb_jobs;
+import bussineslogic.objects.Alumni_job_position_types;
+import bussineslogic.objects.Alumni_personal;
+import bussineslogic.objects.Alumni_titles;
+import bussineslogic.objects.Alumni_params;
 import bussineslogic.objects.Area;
 import bussineslogic.objects.Auditmessage;
 import bussineslogic.objects.Auditmessagetype;
@@ -1602,7 +1612,466 @@ public class UseCaseFacade {
 		return UseCase.ObtainAllType_of_study(UseCase.getUsuario(administradorId), configurator);
 	}
 
+	/**
+	 * This method creates a alumni_personal.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_personal Alumni_personal data transfer object (DTO) with the values of the new instance.
+	 * @return the new alumni_personal created with the Use Case
+	 * @throws InternalException
+	 * @throws ValidationFailedException 
+	 */
+	public static Alumni_personal CreateAlumni_personal(String administradorId, Alumni_personal alumni_personal) throws InternalException, ValidationFailedException {
+		return UseCase.CreateAlumni_personal(UseCase.getUsuario(administradorId), alumni_personal);
+	}
+
+	/**
+	 * This method modifies a alumni_personal.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_personal Alumni_personal data transfer object (DTO) with the values of the modified instance. The code of this attribute indicates which alumni_personal will be modified.
+	 * @return the modified alumni_personal
+	 * @throws InternalException
+	 * @throws ValidationFailedException 
+	 */
+	public static Alumni_personal UpdateAlumni_personal(String administradorId, Alumni_personal alumni_personal) throws InternalException, ValidationFailedException {
+		return UseCase.UpdateAlumni_personal(UseCase.getUsuario(administradorId), alumni_personal);
+	}
+
+	/**
+	 * This method removes a alumni_personal.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_personalcode  Code of the alumni_personal to be removed
+	 * @throws UsuarioNoActivoException 
+	 * @throws NoPermisosException 
+	 * @throws ValidationFailedException 
+	 */
+	public static void RemoveAlumni_personal(String administradorId, String alumni_personalcode) throws InternalException, NoPermisosException, UsuarioNoActivoException, ValidationFailedException {
+		UseCase.RemoveAlumni_personal(UseCase.getUsuario(administradorId), alumni_personalcode);
+	}
+
+	/**
+	 * This method obtains one instance of alumni_personal given its code.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_personalcode Code of the alumni_personal to be obtained
+	 * @return Alumni_personal with the given code.
+	 * @throws InternalException
+	 */
+	public static Alumni_personal ObtainAlumni_personal(String administradorId, String alumni_personalcode) throws InternalException {
+		return UseCase.ObtainAlumni_personal(UseCase.getUsuario(administradorId), alumni_personalcode);
+	}
+
+	/**
+	 * This method obtains all instances of Alumni_personal, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws InternalException
+	 */
+	public static Pair<Integer, List<Alumni_personal>> ObtainAllAlumni_personal(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllAlumni_personal(UseCase.getUsuario(administradorId), configurator);
+	}
+
+	public static Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>> ObtainAllAlumni_personalAndOrderMap(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllAlumni_personalAndOrderMap(UseCase.getUsuario(administradorId), configurator);
+	}
+
+	public static Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>> ObtainNotValidatedAlumni_personalAndOrderMap(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainNotValidatedAlumni_personalAndOrderMap(UseCase.getUsuario(administradorId), configurator);
+	}
 	
+	public static Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>> ObtainValidatedAlumni_personalAndOrderMap(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainValidatedAlumni_personalAndOrderMap(UseCase.getUsuario(administradorId), configurator);
+	}
+
+	/**
+     * This method modifies a alumni_params.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_params
+     *            Alumni_params data transfer object (DTO) with the values
+     *            of the modified instance. The code of this attribute indicates
+     *            which alumni_params will be modified.
+     * @return the modified alumni_params
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_params UpdateAlumni_params(String administradorId,
+	    Alumni_params TOAlumni_params)
+	    throws InternalException, NoPermisosException {
+	
+    	return UseCase.UpdateAlumni_params(UseCase.getUsuario(administradorId), TOAlumni_params);
+    }
+
+
+    /**
+     * This method obtains one instance of alumni_params given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_paramscode
+     *            Code of the alumni_params to be obtained
+     * @return Alumni_params with the given code.
+     */
+    public static Alumni_params ObtainAlumni_params(String administradorId,
+	    String alumni_paramscode) throws InternalException, NoPermisosException{
+
+    	return UseCase.ObtainAlumni_params(UseCase.getUsuario(administradorId), alumni_paramscode);
+    } 
+	
+	
+	/**
+	 * This method creates a alumni_titles.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_titles Alumni_titles data transfer object (DTO) with the values of the new instance.
+	 * @return the new alumni_titles created with the Use Case
+	 * @throws InternalException
+	 */
+	public static Alumni_titles CreateAlumni_titles(String administradorId, Alumni_titles alumni_titles) throws InternalException, NoPermisosException {
+		return UseCase.CreateAlumni_titles(UseCase.getUsuario(administradorId), alumni_titles);
+	}
+
+	/**
+	 * This method modifies a alumni_titles.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_titles Alumni_titles data transfer object (DTO) with the values of the modified instance. The code of this attribute indicates which alumni_titles will be modified.
+	 * @return the modified alumni_titles
+	 * @throws InternalException
+	 */
+	public static Alumni_titles UpdateAlumni_titles(String administradorId, Alumni_titles alumni_titles) throws InternalException, NoPermisosException {
+		return UseCase.UpdateAlumni_titles(UseCase.getUsuario(administradorId), alumni_titles);
+	}
+
+	/**
+	 * This method removes a alumni_titles.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_titlescode  Code of the alumni_titles to be removed
+	 */
+	public static void RemoveAlumni_titles(String administradorId, String alumni_titlescode) throws InternalException, NoPermisosException {
+		UseCase.RemoveAlumni_titles(UseCase.getUsuario(administradorId), alumni_titlescode);
+	}
+
+	/**
+	 * This method obtains one instance of alumni_titles given its code.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_titlescode Code of the alumni_titles to be obtained
+	 * @return Alumni_titles with the given code.
+	 * @throws InternalException
+	 */
+	public static Alumni_titles ObtainAlumni_titles(String administradorId, String alumni_titlescode) throws InternalException {
+		return UseCase.ObtainAlumni_titles(UseCase.getUsuario(administradorId), alumni_titlescode);
+	}
+
+	/**
+	 * This method obtains all instances of Alumni_titles, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws InternalException
+	 */
+	public static Pair<Integer, List<Alumni_titles>> ObtainAllAlumni_titles(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllAlumni_titles(UseCase.getUsuario(administradorId), configurator);
+	}
+	
+	/**
+	 * This method creates a alumni_external_job_positions.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_external_job_positions Alumni_external_job_positions data transfer object (DTO) with the values of the new instance.
+	 * @return the new alumni_external_job_positions created with the Use Case
+	 * @throws InternalException
+	 */
+	public static Alumni_external_job_positions CreateAlumni_external_job_positions(String administradorId, Alumni_external_job_positions alumni_external_job_positions) throws InternalException, NoPermisosException {
+		return UseCase.CreateAlumni_external_job_positions(UseCase.getUsuario(administradorId), alumni_external_job_positions);
+	}
+
+	/**
+	 * This method modifies a alumni_external_job_positions.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_external_job_positions Alumni_external_job_positions data transfer object (DTO) with the values of the modified instance. The code of this attribute indicates which alumni_external_job_positions will be modified.
+	 * @return the modified alumni_external_job_positions
+	 * @throws InternalException
+	 */
+	public static Alumni_external_job_positions UpdateAlumni_external_job_positions(String administradorId, Alumni_external_job_positions alumni_external_job_positions) throws InternalException, NoPermisosException {
+		return UseCase.UpdateAlumni_external_job_positions(UseCase.getUsuario(administradorId), alumni_external_job_positions);
+	}
+
+	/**
+	 * This method removes a alumni_external_job_positions.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_external_job_positionscode  Code of the alumni_external_job_positions to be removed
+	 */
+	public static void RemoveAlumni_external_job_positions(String administradorId, String alumni_external_job_positionscode) throws InternalException, NoPermisosException {
+		UseCase.RemoveAlumni_external_job_positions(UseCase.getUsuario(administradorId), alumni_external_job_positionscode);
+	}
+
+	/**
+	 * This method obtains one instance of alumni_external_job_positions given its code.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_external_job_positionscode Code of the alumni_external_job_positions to be obtained
+	 * @return Alumni_external_job_positions with the given code.
+	 * @throws InternalException
+	 */
+	public static Alumni_external_job_positions ObtainAlumni_external_job_positions(String administradorId, String alumni_external_job_positionscode) throws InternalException {
+		return UseCase.ObtainAlumni_external_job_positions(UseCase.getUsuario(administradorId), alumni_external_job_positionscode);
+	}
+
+	/**
+	 * This method obtains all instances of Alumni_external_job_positions, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws InternalException
+	 */
+	public static Pair<Integer, List<Alumni_external_job_positions>> ObtainAllAlumni_external_job_positions(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllAlumni_external_job_positions(UseCase.getUsuario(administradorId), configurator);
+	}
+	
+	/**
+	 * This method creates a alumni_irb_job_positions.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_irb_job_positions Alumni_irb_job_positions data transfer object (DTO) with the values of the new instance.
+	 * @return the new alumni_irb_job_positions created with the Use Case
+	 * @throws InternalException
+	 */
+	public static Alumni_irb_job_positions CreateAlumni_irb_job_positions(String administradorId, Alumni_irb_job_positions alumni_irb_job_positions) throws InternalException, NoPermisosException {
+		return UseCase.CreateAlumni_irb_job_positions(UseCase.getUsuario(administradorId), alumni_irb_job_positions);
+	}
+
+	/**
+	 * This method modifies a alumni_irb_job_positions.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_irb_job_positions Alumni_irb_job_positions data transfer object (DTO) with the values of the modified instance. The code of this attribute indicates which alumni_irb_job_positions will be modified.
+	 * @return the modified alumni_irb_job_positions
+	 * @throws InternalException
+	 */
+	public static Alumni_irb_job_positions UpdateAlumni_irb_job_positions(String administradorId, Alumni_irb_job_positions alumni_irb_job_positions) throws InternalException, NoPermisosException {
+		return UseCase.UpdateAlumni_irb_job_positions(UseCase.getUsuario(administradorId), alumni_irb_job_positions);
+	}
+
+	/**
+	 * This method removes a alumni_irb_job_positions.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_irb_job_positionscode  Code of the alumni_irb_job_positions to be removed
+	 */
+	public static void RemoveAlumni_irb_job_positions(String administradorId, String alumni_irb_job_positionscode) throws InternalException, NoPermisosException {
+		UseCase.RemoveAlumni_irb_job_positions(UseCase.getUsuario(administradorId), alumni_irb_job_positionscode);
+	}
+
+	/**
+	 * This method obtains one instance of alumni_irb_job_positions given its code.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_irb_job_positionscode Code of the alumni_irb_job_positions to be obtained
+	 * @return Alumni_irb_job_positions with the given code.
+	 * @throws InternalException
+	 */
+	public static Alumni_irb_job_positions ObtainAlumni_irb_job_positions(String administradorId, String alumni_irb_job_positionscode) throws InternalException {
+		return UseCase.ObtainAlumni_irb_job_positions(UseCase.getUsuario(administradorId), alumni_irb_job_positionscode);
+	}
+
+	/**
+	 * This method obtains all instances of Alumni_irb_job_positions, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws InternalException
+	 */
+	public static Pair<Integer, List<Alumni_irb_job_positions>> ObtainAllAlumni_irb_job_positions(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllAlumni_irb_job_positions(UseCase.getUsuario(administradorId), configurator);
+	}
+	
+	/**
+	 * This method creates a alumni_job_position_types.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_job_position_types Alumni_job_position_types data transfer object (DTO) with the values of the new instance.
+	 * @return the new alumni_job_position_types created with the Use Case
+	 * @throws InternalException
+	 */
+	public static Alumni_job_position_types CreateAlumni_job_position_types(String administradorId, Alumni_job_position_types alumni_job_position_types) throws InternalException, NoPermisosException {
+		return UseCase.CreateAlumni_job_position_types(UseCase.getUsuario(administradorId), alumni_job_position_types);
+	}
+
+	/**
+	 * This method modifies a alumni_job_position_types.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_job_position_types Alumni_job_position_types data transfer object (DTO) with the values of the modified instance. The code of this attribute indicates which alumni_job_position_types will be modified.
+	 * @return the modified alumni_job_position_types
+	 * @throws InternalException
+	 */
+	public static Alumni_job_position_types UpdateAlumni_job_position_types(String administradorId, Alumni_job_position_types alumni_job_position_types) throws InternalException, NoPermisosException {
+		return UseCase.UpdateAlumni_job_position_types(UseCase.getUsuario(administradorId), alumni_job_position_types);
+	}
+
+	/**
+	 * This method removes a alumni_job_position_types.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_job_position_typescode  Code of the alumni_job_position_types to be removed
+	 */
+	public static void RemoveAlumni_job_position_types(String administradorId, String alumni_job_position_typescode) throws InternalException, NoPermisosException {
+		UseCase.RemoveAlumni_job_position_types(UseCase.getUsuario(administradorId), alumni_job_position_typescode);
+	}
+
+	/**
+	 * This method obtains one instance of alumni_job_position_types given its code.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_job_position_typescode Code of the alumni_job_position_types to be obtained
+	 * @return Alumni_job_position_types with the given code.
+	 * @throws InternalException
+	 */
+	public static Alumni_job_position_types ObtainAlumni_job_position_types(String administradorId, String alumni_job_position_typescode) throws InternalException {
+		return UseCase.ObtainAlumni_job_position_types(UseCase.getUsuario(administradorId), alumni_job_position_typescode);
+	}
+
+	/**
+	 * This method obtains all instances of Alumni_job_position_types, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws InternalException
+	 */
+	public static Pair<Integer, List<Alumni_job_position_types>> ObtainAllAlumni_job_position_types(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllAlumni_job_position_types(UseCase.getUsuario(administradorId), configurator);
+	}
+	
+	/**
+	 * This method creates a alumni_communications.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_communications Alumni_communications data transfer object (DTO) with the values of the new instance.
+	 * @return the new alumni_communications created with the Use Case
+	 * @throws InternalException
+	 */
+	public static Alumni_communications CreateAlumni_communications(String administradorId, Alumni_communications alumni_communications) throws InternalException, NoPermisosException {
+		return UseCase.CreateAlumni_communications(UseCase.getUsuario(administradorId), alumni_communications);
+	}
+
+	/**
+	 * This method modifies a alumni_communications.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_communications Alumni_communications data transfer object (DTO) with the values of the modified instance. The code of this attribute indicates which alumni_communications will be modified.
+	 * @return the modified alumni_communications
+	 * @throws InternalException
+	 */
+	public static Alumni_communications UpdateAlumni_communications(String administradorId, Alumni_communications alumni_communications) throws InternalException, NoPermisosException {
+		return UseCase.UpdateAlumni_communications(UseCase.getUsuario(administradorId), alumni_communications);
+	}
+
+	/**
+	 * This method removes a alumni_communications.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_communicationscode  Code of the alumni_communications to be removed
+	 */
+	public static void RemoveAlumni_communications(String administradorId, String alumni_communicationscode) throws InternalException, NoPermisosException {
+		UseCase.RemoveAlumni_communications(UseCase.getUsuario(administradorId), alumni_communicationscode);
+	}
+
+	/**
+	 * This method obtains one instance of alumni_communications given its code.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_communicationscode Code of the alumni_communications to be obtained
+	 * @return Alumni_communications with the given code.
+	 * @throws InternalException
+	 */
+	public static Alumni_communications ObtainAlumni_communications(String administradorId, String alumni_communicationscode) throws InternalException {
+		return UseCase.ObtainAlumni_communications(UseCase.getUsuario(administradorId), alumni_communicationscode);
+	}
+
+	/**
+	 * This method obtains all instances of Alumni_communications, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws InternalException
+	 */
+	public static Pair<Integer, List<Alumni_communications>> ObtainAllAlumni_communications(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllAlumni_communications(UseCase.getUsuario(administradorId), configurator);
+	}
+	
+	
+	/**
+	 * This method creates a alumni_external_job_sectors.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_external_job_sectors Alumni_external_job_sectors data transfer object (DTO) with the values of the new instance.
+	 * @return the new alumni_external_job_sectors created with the Use Case
+	 * @throws InternalException
+	 */
+	public static Alumni_external_job_sectors CreateAlumni_external_job_sectors(String administradorId, Alumni_external_job_sectors alumni_external_job_sectors) throws InternalException, NoPermisosException {
+		return UseCase.CreateAlumni_external_job_sectors(UseCase.getUsuario(administradorId), alumni_external_job_sectors);
+	}
+
+	/**
+	 * This method modifies a alumni_external_job_sectors.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_external_job_sectors Alumni_external_job_sectors data transfer object (DTO) with the values of the modified instance. The code of this attribute indicates which alumni_external_job_sectors will be modified.
+	 * @return the modified alumni_external_job_sectors
+	 * @throws InternalException
+	 */
+	public static Alumni_external_job_sectors UpdateAlumni_external_job_sectors(String administradorId, Alumni_external_job_sectors alumni_external_job_sectors) throws InternalException, NoPermisosException {
+		return UseCase.UpdateAlumni_external_job_sectors(UseCase.getUsuario(administradorId), alumni_external_job_sectors);
+	}
+
+	/**
+	 * This method removes a alumni_external_job_sectors.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_external_job_sectorscode  Code of the alumni_external_job_sectors to be removed
+	 */
+	public static void RemoveAlumni_external_job_sectors(String administradorId, String alumni_external_job_sectorscode) throws InternalException, NoPermisosException {
+		UseCase.RemoveAlumni_external_job_sectors(UseCase.getUsuario(administradorId), alumni_external_job_sectorscode);
+	}
+
+	/**
+	 * This method obtains one instance of alumni_external_job_sectors given its code.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_external_job_sectorscode Code of the alumni_external_job_sectors to be obtained
+	 * @return Alumni_external_job_sectors with the given code.
+	 * @throws InternalException
+	 */
+	public static Alumni_external_job_sectors ObtainAlumni_external_job_sectors(String administradorId, String alumni_external_job_sectorscode) throws InternalException {
+		return UseCase.ObtainAlumni_external_job_sectors(UseCase.getUsuario(administradorId), alumni_external_job_sectorscode);
+	}
+
+	/**
+	 * This method obtains all instances of Alumni_external_job_sectors, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws InternalException
+	 */
+	public static Pair<Integer, List<Alumni_external_job_sectors>> ObtainAllAlumni_external_job_sectors(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllAlumni_external_job_sectors(UseCase.getUsuario(administradorId), configurator);
+	}
 	
 	/**
 	 * This method creates a holiday.
@@ -3200,5 +3669,152 @@ public class UseCaseFacade {
 
 	public static List<Irbholiday> ObtainHolidaysBetweenDates(Date startDate, Date endDate) {
 		return UseCase.ObtainHolidaysBetweenDates(startDate, endDate);
+	}
+	
+	/**
+	 * This method obtains all instances of Alumni_external_jobs, which belong to the set of ialumni_external_jobs_personal of a personal, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param personalcode Code of the personal which contains the set of ialumni_external_jobs_personal
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws NoPermisosException 
+	 */
+	public static Pair<Integer, List<Alumni_external_jobs>> ObtainAllIalumni_external_jobs_alumni_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException, NoPermisosException {
+		return UseCase.ObtainAllIalumni_external_jobs_alumni_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getAlumni_personal(personalcode), configurator);
+	}
+
+	/**
+	 * This method creates a alumni_external_jobs.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_external_jobs Alumni_external_jobs data transfer object (DTO) with the values of the new instance.
+	 * @return the new alumni_external_jobs created with the Use Case
+	 * @throws InternalException
+	 */
+	public static Alumni_external_jobs CreateAlumni_external_jobs(String administradorId, Alumni_external_jobs alumni_external_jobs) throws InternalException, NoPermisosException {
+		return UseCase.CreateAlumni_external_jobs(UseCase.getUsuario(administradorId), alumni_external_jobs);
+	}
+
+	/**
+	 * This method modifies a alumni_external_jobs.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_external_jobs Alumni_external_jobs data transfer object (DTO) with the values of the modified instance. The code of this attribute indicates which alumni_external_jobs will be modified.
+	 * @return the modified alumni_external_jobs
+	 * @throws InternalException
+	 */
+	public static Alumni_external_jobs UpdateAlumni_external_jobs(String administradorId, Alumni_external_jobs alumni_external_jobs) throws InternalException, NoPermisosException {
+		return UseCase.UpdateAlumni_external_jobs(UseCase.getUsuario(administradorId), alumni_external_jobs);
+	}
+
+	/**
+	 * This method removes a alumni_external_jobs.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_external_jobscode  Code of the alumni_external_jobs to be removed
+	 */
+	public static void RemoveAlumni_external_jobs(String administradorId, String alumni_external_jobscode) throws InternalException, NoPermisosException {
+		UseCase.RemoveAlumni_external_jobs(UseCase.getUsuario(administradorId), alumni_external_jobscode);
+	}
+
+	/**
+	 * This method obtains one instance of alumni_external_jobs given its code.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_external_jobscode Code of the alumni_external_jobs to be obtained
+	 * @return Alumni_external_jobs with the given code.
+	 * @throws InternalException
+	 */
+	public static Alumni_external_jobs ObtainAlumni_external_jobs(String administradorId, String alumni_external_jobscode) throws InternalException {
+		return UseCase.ObtainAlumni_external_jobs(UseCase.getUsuario(administradorId), alumni_external_jobscode);
+	}
+
+	/**
+	 * This method obtains all instances of Alumni_external_jobs, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws InternalException
+	 */
+	public static Pair<Integer, List<Alumni_external_jobs>> ObtainAllAlumni_external_jobs(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllAlumni_external_jobs(UseCase.getUsuario(administradorId), configurator);
+	}
+
+	
+	public static String SetCurrentAlumni_external_jobs(String usercode, String alumni_external_jobscode) throws InternalException {
+		return UseCase.SetCurrentAlumni_external_jobs(UseCase.getUsuario(usercode), alumni_external_jobscode);
+	}
+	
+	/**
+	 * This method obtains all instances of Alumni_irb_jobs, which belong to the set of ialumni_irb_jobs_personal of a personal, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param personalcode Code of the personal which contains the set of ialumni_irb_jobs_personal
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws NoPermisosException 
+	 */
+	public static Pair<Integer, List<Alumni_irb_jobs>> ObtainAllIalumni_irb_jobs_alumni_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException, NoPermisosException {
+		return UseCase.ObtainAllIalumni_irb_jobs_alumni_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getAlumni_personal(personalcode), configurator);
+	}
+
+	/**
+	 * This method creates a alumni_irb_jobs.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_irb_jobs Alumni_irb_jobs data transfer object (DTO) with the values of the new instance.
+	 * @return the new alumni_irb_jobs created with the Use Case
+	 * @throws InternalException
+	 */
+	public static Alumni_irb_jobs CreateAlumni_irb_jobs(String administradorId, Alumni_irb_jobs alumni_irb_jobs) throws InternalException, NoPermisosException {
+		return UseCase.CreateAlumni_irb_jobs(UseCase.getUsuario(administradorId), alumni_irb_jobs);
+	}
+
+	/**
+	 * This method modifies a alumni_irb_jobs.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_irb_jobs Alumni_irb_jobs data transfer object (DTO) with the values of the modified instance. The code of this attribute indicates which alumni_irb_jobs will be modified.
+	 * @return the modified alumni_irb_jobs
+	 * @throws InternalException
+	 */
+	public static Alumni_irb_jobs UpdateAlumni_irb_jobs(String administradorId, Alumni_irb_jobs alumni_irb_jobs) throws InternalException, NoPermisosException {
+		return UseCase.UpdateAlumni_irb_jobs(UseCase.getUsuario(administradorId), alumni_irb_jobs);
+	}
+
+	/**
+	 * This method removes a alumni_irb_jobs.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_irb_jobscode  Code of the alumni_irb_jobs to be removed
+	 */
+	public static void RemoveAlumni_irb_jobs(String administradorId, String alumni_irb_jobscode) throws InternalException, NoPermisosException {
+		UseCase.RemoveAlumni_irb_jobs(UseCase.getUsuario(administradorId), alumni_irb_jobscode);
+	}
+
+	/**
+	 * This method obtains one instance of alumni_irb_jobs given its code.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_irb_jobscode Code of the alumni_irb_jobs to be obtained
+	 * @return Alumni_irb_jobs with the given code.
+	 * @throws InternalException
+	 */
+	public static Alumni_irb_jobs ObtainAlumni_irb_jobs(String administradorId, String alumni_irb_jobscode) throws InternalException {
+		return UseCase.ObtainAlumni_irb_jobs(UseCase.getUsuario(administradorId), alumni_irb_jobscode);
+	}
+
+	/**
+	 * This method obtains all instances of Alumni_irb_jobs, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws InternalException
+	 */
+	public static Pair<Integer, List<Alumni_irb_jobs>> ObtainAllAlumni_irb_jobs(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllAlumni_irb_jobs(UseCase.getUsuario(administradorId), configurator);
 	}
 }

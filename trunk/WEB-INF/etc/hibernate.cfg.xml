@@ -28,7 +28,6 @@
 <mapping resource="../etc/dbmappings/applicationPreferences.hbm.xml"/>
 <mapping resource="../etc/dbmappings/personalPhoto.hbm.xml"/>
 
-
 <mapping resource="../etc/dbmappings/research_group.hbm.xml" />
 <mapping resource="../etc/dbmappings/professional.hbm.xml" />
 <mapping resource="../etc/dbmappings/location.hbm.xml" />
@@ -53,6 +52,16 @@
 <mapping resource="../etc/dbmappings/compensation.hbm.xml" />
 <mapping resource="../etc/dbmappings/type_of_institution.hbm.xml" />
 <mapping resource="../etc/dbmappings/type_of_study.hbm.xml" />
+<mapping resource="../etc/dbmappings/alumni_params.hbm.xml" />
+<mapping resource="../etc/dbmappings/alumni_titles.hbm.xml" />
+<mapping resource="../etc/dbmappings/alumni_personal.hbm.xml" />
+<mapping resource="../etc/dbmappings/alumni_external_job_sectors.hbm.xml" />
+<mapping resource="../etc/dbmappings/alumni_external_jobs.hbm.xml" />
+<mapping resource="../etc/dbmappings/alumni_irb_jobs.hbm.xml" />
+<mapping resource="../etc/dbmappings/alumni_external_job_positions.hbm.xml" />
+<mapping resource="../etc/dbmappings/alumni_irb_job_positions.hbm.xml" />
+<mapping resource="../etc/dbmappings/alumni_job_position_types.hbm.xml" />
+<mapping resource="../etc/dbmappings/alumni_communications.hbm.xml" />
 <mapping resource="../etc/dbmappings/holiday.hbm.xml" />
 <mapping resource="../etc/dbmappings/grant_concession.hbm.xml" />
 <mapping resource="../etc/dbmappings/academic_info.hbm.xml" />

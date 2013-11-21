@@ -19,6 +19,8 @@
     <form-bean name="grant_Form" type="presentation.formbeans.objects.Grant_Form" />
     <form-bean name="grant_concession_Form" type="presentation.formbeans.objects.Grant_concession_Form" />
     <form-bean name="academic_info_Form" type="presentation.formbeans.objects.Academic_info_Form" />
+    <form-bean name="alumni_external_jobs_Form" type="presentation.formbeans.objects.Alumni_external_jobs_Form" />
+    <form-bean name="alumni_irb_jobs_Form" type="presentation.formbeans.objects.Alumni_irb_jobs_Form" />
     <form-bean name="holiday_Form" type="presentation.formbeans.objects.Holiday_Form" />
     <form-bean name="location_Form" type="presentation.formbeans.objects.Location_Form" />
     <form-bean name="marital_status_Form" type="presentation.formbeans.objects.Marital_status_Form" />
@@ -198,6 +200,28 @@
     <form-bean name="oAcademic_infoSys__action_modify_page_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_modify_page_academic_info_Form" />
     <form-bean name="oAcademic_infoSys__action_new_new_page_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_new_new_page_academic_info_Form" />
     <form-bean name="oAcademic_infoSys__action_view_academic_info_Form" type="presentation.formbeans.oAcademic_infoSys.Action_view_academic_info_Form" />
+    <form-bean name="oAlumni_external_jobsSys__action_add_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_external_jobsSys.Action_add_alumni_external_jobs_Form" />
+	<form-bean name="oAlumni_external_jobsSys__action_cancel_delete_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_external_jobsSys.Action_cancel_delete_alumni_external_jobs_Form" />
+	<form-bean name="oAlumni_external_jobsSys__action_cancel_modify_modify_page_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_external_jobsSys.Action_cancel_modify_modify_page_alumni_external_jobs_Form" />
+	<form-bean name="oAlumni_external_jobsSys__action_cancel_new_new_page_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_external_jobsSys.Action_cancel_new_new_page_alumni_external_jobs_Form" />
+	<form-bean name="oAlumni_external_jobsSys__action_cancel_view_view_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_external_jobsSys.Action_cancel_view_view_alumni_external_jobs_Form" />
+	<form-bean name="oAlumni_external_jobsSys__action_delete_delete_page_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_external_jobsSys.Action_delete_delete_page_alumni_external_jobs_Form" />
+	<form-bean name="oAlumni_external_jobsSys__action_delete_page_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_external_jobsSys.Action_delete_page_alumni_external_jobs_Form" />
+	<form-bean name="oAlumni_external_jobsSys__action_modify_modify_page_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_external_jobsSys.Action_modify_modify_page_alumni_external_jobs_Form" />
+	<form-bean name="oAlumni_external_jobsSys__action_modify_page_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_external_jobsSys.Action_modify_page_alumni_external_jobs_Form" />
+	<form-bean name="oAlumni_external_jobsSys__action_new_new_page_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_external_jobsSys.Action_new_new_page_alumni_external_jobs_Form" />
+	<form-bean name="oAlumni_external_jobsSys__action_view_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_external_jobsSys.Action_view_alumni_external_jobs_Form" />
+	<form-bean name="oAlumni_irb_jobsSys__action_add_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_add_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_irb_jobsSys__action_cancel_delete_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_cancel_delete_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_irb_jobsSys__action_cancel_modify_modify_page_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_cancel_modify_modify_page_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_irb_jobsSys__action_cancel_new_new_page_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_cancel_new_new_page_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_irb_jobsSys__action_cancel_view_view_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_cancel_view_view_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_irb_jobsSys__action_delete_delete_page_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_delete_delete_page_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_irb_jobsSys__action_delete_page_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_delete_page_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_irb_jobsSys__action_modify_modify_page_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_modify_modify_page_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_irb_jobsSys__action_modify_page_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_modify_page_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_irb_jobsSys__action_new_new_page_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_new_new_page_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_irb_jobsSys__action_view_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_view_alumni_irb_jobs_Form" />
     <form-bean name="oHolidaySys__action_add_holiday_Form" type="presentation.formbeans.oHolidaySys.Action_add_holiday_Form" />
     <form-bean name="oHolidaySys__action_cancel_delete_holiday_Form" type="presentation.formbeans.oHolidaySys.Action_cancel_delete_holiday_Form" />
     <form-bean name="oHolidaySys__action_cancel_modify_modify_page_holiday_Form" type="presentation.formbeans.oHolidaySys.Action_cancel_modify_modify_page_holiday_Form" />
@@ -359,6 +383,8 @@
     <form-bean name="oPersonalSys__action_new_personal_Form" type="presentation.formbeans.oPersonalSys.Action_new_personal_Form" />
     <form-bean name="oPersonalSys__action_send_my_own_data_to_validate_Form" type="presentation.formbeans.oPersonalSys.Action_send_my_own_data_to_validate_Form" />
     <form-bean name="oPersonalSys__action_todelete_choose_current_personal_Form" type="presentation.formbeans.oPersonalSys.Action_todelete_choose_current_personal_Form" />
+    <form-bean name="oAlumni_personalSys__action_manage_alumni_personal_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_alumni_personal_alumni_external_jobs_Form" />
+    <form-bean name="oAlumni_personalSys__action_manage_alumni_personal_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_alumni_personal_alumni_irb_jobs_Form" />
     <form-bean name="oPersonalSys__action_view_details_Form" type="presentation.formbeans.oPersonalSys.Action_view_details_Form" />
     <form-bean name="oPositionSys__action_cancel_delete_position_Form" type="presentation.formbeans.oPositionSys.Action_cancel_delete_position_Form" />
     <form-bean name="oPositionSys__action_cancel_modify_modify_page_position_Form" type="presentation.formbeans.oPositionSys.Action_cancel_modify_modify_page_position_Form" />
@@ -509,7 +535,97 @@
     <form-bean name="oType_of_studySys__action_new_new_page_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_new_new_page_type_of_study_Form" />
     <form-bean name="oType_of_studySys__action_new_page_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_new_page_type_of_study_Form" />
     <form-bean name="oType_of_studySys__action_view_type_of_study_Form" type="presentation.formbeans.oType_of_studySys.Action_view_type_of_study_Form" />
-    <form-bean name="oUnitSys__action_cancel_delete_unit_Form" type="presentation.formbeans.oUnitSys.Action_cancel_delete_unit_Form" />
+	
+    <form-bean name="oAlumni_personalSys__action_cancel_delete_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_cancel_delete_alumni_personal_Form" />
+	<form-bean name="oAlumni_personalSys__action_cancel_modify_modify_page_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_cancel_modify_modify_page_alumni_personal_Form" />
+	<form-bean name="oAlumni_personalSys__action_delete_delete_page_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_delete_delete_page_alumni_personal_Form" />
+	<form-bean name="oAlumni_personalSys__action_delete_page_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_delete_page_alumni_personal_Form" />
+	<form-bean name="oAlumni_personalSys__action_manage_alumni_personal_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_alumni_personal_alumni_external_jobs_Form" />
+	<form-bean name="oAlumni_personalSys__action_manage_alumni_personal_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_alumni_personal_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_personalSys__action_manage_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_alumni_personal_Form" />
+	<form-bean name="oAlumni_personalSys__action_manage_validated_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_validated_alumni_personal_Form" />
+	<form-bean name="oAlumni_personalSys__action_manage_not_validated_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_not_validated_alumni_personal_Form" />
+	
+	<form-bean name="oAlumni_personalSys__action_modify_modify_page_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_modify_modify_page_alumni_personal_Form" />
+	<form-bean name="oAlumni_personalSys__action_modify_page_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_modify_page_alumni_personal_Form" />
+	
+	<form-bean name="oAlumni_paramsSys__action_cancel_modify_modify_page_alumni_params_Form" type="presentation.formbeans.oAlumni_paramsSys.Action_cancel_modify_modify_page_alumni_params_Form" />
+	<form-bean name="oAlumni_paramsSys__action_modify_modify_page_alumni_params_Form" type="presentation.formbeans.oAlumni_paramsSys.Action_modify_modify_page_alumni_params_Form" />
+	<form-bean name="oAlumni_paramsSys__action_modify_page_alumni_params_Form" type="presentation.formbeans.oAlumni_paramsSys.Action_modify_page_alumni_params_Form" />
+    <form-bean name="oAlumni_titlesSys__action_cancel_delete_alumni_titles_Form" type="presentation.formbeans.oAlumni_titlesSys.Action_cancel_delete_alumni_titles_Form" />
+    <form-bean name="oAlumni_titlesSys__action_cancel_modify_modify_page_alumni_titles_Form" type="presentation.formbeans.oAlumni_titlesSys.Action_cancel_modify_modify_page_alumni_titles_Form" />
+    <form-bean name="oAlumni_titlesSys__action_cancel_new_new_page_alumni_titles_Form" type="presentation.formbeans.oAlumni_titlesSys.Action_cancel_new_new_page_alumni_titles_Form" />
+    <form-bean name="oAlumni_titlesSys__action_cancel_view_view_alumni_titles_Form" type="presentation.formbeans.oAlumni_titlesSys.Action_cancel_view_view_alumni_titles_Form" />
+    <form-bean name="oAlumni_titlesSys__action_delete_delete_page_alumni_titles_Form" type="presentation.formbeans.oAlumni_titlesSys.Action_delete_delete_page_alumni_titles_Form" />
+    <form-bean name="oAlumni_titlesSys__action_delete_page_alumni_titles_Form" type="presentation.formbeans.oAlumni_titlesSys.Action_delete_page_alumni_titles_Form" />
+    <form-bean name="oAlumni_titlesSys__action_manage_alumni_titles_Form" type="presentation.formbeans.oAlumni_titlesSys.Action_manage_alumni_titles_Form" />
+    <form-bean name="oAlumni_titlesSys__action_modify_modify_page_alumni_titles_Form" type="presentation.formbeans.oAlumni_titlesSys.Action_modify_modify_page_alumni_titles_Form" />
+    <form-bean name="oAlumni_titlesSys__action_modify_page_alumni_titles_Form" type="presentation.formbeans.oAlumni_titlesSys.Action_modify_page_alumni_titles_Form" />
+    <form-bean name="oAlumni_titlesSys__action_new_new_page_alumni_titles_Form" type="presentation.formbeans.oAlumni_titlesSys.Action_new_new_page_alumni_titles_Form" />
+    <form-bean name="oAlumni_titlesSys__action_new_page_alumni_titles_Form" type="presentation.formbeans.oAlumni_titlesSys.Action_new_page_alumni_titles_Form" />
+    <form-bean name="oAlumni_titlesSys__action_view_alumni_titles_Form" type="presentation.formbeans.oAlumni_titlesSys.Action_view_alumni_titles_Form" />
+	<form-bean name="oAlumni_external_job_positionsSys__action_cancel_delete_alumni_external_job_positions_Form" type="presentation.formbeans.oAlumni_external_job_positionsSys.Action_cancel_delete_alumni_external_job_positions_Form" />
+    <form-bean name="oAlumni_external_job_positionsSys__action_cancel_modify_modify_page_alumni_external_job_positions_Form" type="presentation.formbeans.oAlumni_external_job_positionsSys.Action_cancel_modify_modify_page_alumni_external_job_positions_Form" />
+    <form-bean name="oAlumni_external_job_positionsSys__action_cancel_new_new_page_alumni_external_job_positions_Form" type="presentation.formbeans.oAlumni_external_job_positionsSys.Action_cancel_new_new_page_alumni_external_job_positions_Form" />
+    <form-bean name="oAlumni_external_job_positionsSys__action_cancel_view_view_alumni_external_job_positions_Form" type="presentation.formbeans.oAlumni_external_job_positionsSys.Action_cancel_view_view_alumni_external_job_positions_Form" />
+    <form-bean name="oAlumni_external_job_positionsSys__action_delete_delete_page_alumni_external_job_positions_Form" type="presentation.formbeans.oAlumni_external_job_positionsSys.Action_delete_delete_page_alumni_external_job_positions_Form" />
+    <form-bean name="oAlumni_external_job_positionsSys__action_delete_page_alumni_external_job_positions_Form" type="presentation.formbeans.oAlumni_external_job_positionsSys.Action_delete_page_alumni_external_job_positions_Form" />
+    <form-bean name="oAlumni_external_job_positionsSys__action_manage_alumni_external_job_positions_Form" type="presentation.formbeans.oAlumni_external_job_positionsSys.Action_manage_alumni_external_job_positions_Form" />
+    <form-bean name="oAlumni_external_job_positionsSys__action_modify_modify_page_alumni_external_job_positions_Form" type="presentation.formbeans.oAlumni_external_job_positionsSys.Action_modify_modify_page_alumni_external_job_positions_Form" />
+    <form-bean name="oAlumni_external_job_positionsSys__action_modify_page_alumni_external_job_positions_Form" type="presentation.formbeans.oAlumni_external_job_positionsSys.Action_modify_page_alumni_external_job_positions_Form" />
+    <form-bean name="oAlumni_external_job_positionsSys__action_new_new_page_alumni_external_job_positions_Form" type="presentation.formbeans.oAlumni_external_job_positionsSys.Action_new_new_page_alumni_external_job_positions_Form" />
+    <form-bean name="oAlumni_external_job_positionsSys__action_new_page_alumni_external_job_positions_Form" type="presentation.formbeans.oAlumni_external_job_positionsSys.Action_new_page_alumni_external_job_positions_Form" />
+    <form-bean name="oAlumni_external_job_positionsSys__action_view_alumni_external_job_positions_Form" type="presentation.formbeans.oAlumni_external_job_positionsSys.Action_view_alumni_external_job_positions_Form" />
+	<form-bean name="oAlumni_irb_job_positionsSys__action_cancel_delete_alumni_irb_job_positions_Form" type="presentation.formbeans.oAlumni_irb_job_positionsSys.Action_cancel_delete_alumni_irb_job_positions_Form" />
+    <form-bean name="oAlumni_irb_job_positionsSys__action_cancel_modify_modify_page_alumni_irb_job_positions_Form" type="presentation.formbeans.oAlumni_irb_job_positionsSys.Action_cancel_modify_modify_page_alumni_irb_job_positions_Form" />
+    <form-bean name="oAlumni_irb_job_positionsSys__action_cancel_new_new_page_alumni_irb_job_positions_Form" type="presentation.formbeans.oAlumni_irb_job_positionsSys.Action_cancel_new_new_page_alumni_irb_job_positions_Form" />
+    <form-bean name="oAlumni_irb_job_positionsSys__action_cancel_view_view_alumni_irb_job_positions_Form" type="presentation.formbeans.oAlumni_irb_job_positionsSys.Action_cancel_view_view_alumni_irb_job_positions_Form" />
+    <form-bean name="oAlumni_irb_job_positionsSys__action_delete_delete_page_alumni_irb_job_positions_Form" type="presentation.formbeans.oAlumni_irb_job_positionsSys.Action_delete_delete_page_alumni_irb_job_positions_Form" />
+    <form-bean name="oAlumni_irb_job_positionsSys__action_delete_page_alumni_irb_job_positions_Form" type="presentation.formbeans.oAlumni_irb_job_positionsSys.Action_delete_page_alumni_irb_job_positions_Form" />
+    <form-bean name="oAlumni_irb_job_positionsSys__action_manage_alumni_irb_job_positions_Form" type="presentation.formbeans.oAlumni_irb_job_positionsSys.Action_manage_alumni_irb_job_positions_Form" />
+    <form-bean name="oAlumni_irb_job_positionsSys__action_modify_modify_page_alumni_irb_job_positions_Form" type="presentation.formbeans.oAlumni_irb_job_positionsSys.Action_modify_modify_page_alumni_irb_job_positions_Form" />
+    <form-bean name="oAlumni_irb_job_positionsSys__action_modify_page_alumni_irb_job_positions_Form" type="presentation.formbeans.oAlumni_irb_job_positionsSys.Action_modify_page_alumni_irb_job_positions_Form" />
+    <form-bean name="oAlumni_irb_job_positionsSys__action_new_new_page_alumni_irb_job_positions_Form" type="presentation.formbeans.oAlumni_irb_job_positionsSys.Action_new_new_page_alumni_irb_job_positions_Form" />
+    <form-bean name="oAlumni_irb_job_positionsSys__action_new_page_alumni_irb_job_positions_Form" type="presentation.formbeans.oAlumni_irb_job_positionsSys.Action_new_page_alumni_irb_job_positions_Form" />
+    <form-bean name="oAlumni_irb_job_positionsSys__action_view_alumni_irb_job_positions_Form" type="presentation.formbeans.oAlumni_irb_job_positionsSys.Action_view_alumni_irb_job_positions_Form" />
+	
+	<form-bean name="oAlumni_job_position_typesSys__action_cancel_delete_alumni_job_position_types_Form" type="presentation.formbeans.oAlumni_job_position_typesSys.Action_cancel_delete_alumni_job_position_types_Form" />
+    <form-bean name="oAlumni_job_position_typesSys__action_cancel_modify_modify_page_alumni_job_position_types_Form" type="presentation.formbeans.oAlumni_job_position_typesSys.Action_cancel_modify_modify_page_alumni_job_position_types_Form" />
+    <form-bean name="oAlumni_job_position_typesSys__action_cancel_new_new_page_alumni_job_position_types_Form" type="presentation.formbeans.oAlumni_job_position_typesSys.Action_cancel_new_new_page_alumni_job_position_types_Form" />
+    <form-bean name="oAlumni_job_position_typesSys__action_cancel_view_view_alumni_job_position_types_Form" type="presentation.formbeans.oAlumni_job_position_typesSys.Action_cancel_view_view_alumni_job_position_types_Form" />
+    <form-bean name="oAlumni_job_position_typesSys__action_delete_delete_page_alumni_job_position_types_Form" type="presentation.formbeans.oAlumni_job_position_typesSys.Action_delete_delete_page_alumni_job_position_types_Form" />
+    <form-bean name="oAlumni_job_position_typesSys__action_delete_page_alumni_job_position_types_Form" type="presentation.formbeans.oAlumni_job_position_typesSys.Action_delete_page_alumni_job_position_types_Form" />
+    <form-bean name="oAlumni_job_position_typesSys__action_manage_alumni_job_position_types_Form" type="presentation.formbeans.oAlumni_job_position_typesSys.Action_manage_alumni_job_position_types_Form" />
+    <form-bean name="oAlumni_job_position_typesSys__action_modify_modify_page_alumni_job_position_types_Form" type="presentation.formbeans.oAlumni_job_position_typesSys.Action_modify_modify_page_alumni_job_position_types_Form" />
+    <form-bean name="oAlumni_job_position_typesSys__action_modify_page_alumni_job_position_types_Form" type="presentation.formbeans.oAlumni_job_position_typesSys.Action_modify_page_alumni_job_position_types_Form" />
+    <form-bean name="oAlumni_job_position_typesSys__action_new_new_page_alumni_job_position_types_Form" type="presentation.formbeans.oAlumni_job_position_typesSys.Action_new_new_page_alumni_job_position_types_Form" />
+    <form-bean name="oAlumni_job_position_typesSys__action_new_page_alumni_job_position_types_Form" type="presentation.formbeans.oAlumni_job_position_typesSys.Action_new_page_alumni_job_position_types_Form" />
+    <form-bean name="oAlumni_job_position_typesSys__action_view_alumni_job_position_types_Form" type="presentation.formbeans.oAlumni_job_position_typesSys.Action_view_alumni_job_position_types_Form" />
+    <form-bean name="oAlumni_communicationsSys__action_cancel_delete_alumni_communications_Form" type="presentation.formbeans.oAlumni_communicationsSys.Action_cancel_delete_alumni_communications_Form" />
+    <form-bean name="oAlumni_communicationsSys__action_cancel_modify_modify_page_alumni_communications_Form" type="presentation.formbeans.oAlumni_communicationsSys.Action_cancel_modify_modify_page_alumni_communications_Form" />
+    <form-bean name="oAlumni_communicationsSys__action_cancel_new_new_page_alumni_communications_Form" type="presentation.formbeans.oAlumni_communicationsSys.Action_cancel_new_new_page_alumni_communications_Form" />
+    <form-bean name="oAlumni_communicationsSys__action_cancel_view_view_alumni_communications_Form" type="presentation.formbeans.oAlumni_communicationsSys.Action_cancel_view_view_alumni_communications_Form" />
+    <form-bean name="oAlumni_communicationsSys__action_delete_delete_page_alumni_communications_Form" type="presentation.formbeans.oAlumni_communicationsSys.Action_delete_delete_page_alumni_communications_Form" />
+    <form-bean name="oAlumni_communicationsSys__action_delete_page_alumni_communications_Form" type="presentation.formbeans.oAlumni_communicationsSys.Action_delete_page_alumni_communications_Form" />
+    <form-bean name="oAlumni_communicationsSys__action_manage_alumni_communications_Form" type="presentation.formbeans.oAlumni_communicationsSys.Action_manage_alumni_communications_Form" />
+    <form-bean name="oAlumni_communicationsSys__action_modify_modify_page_alumni_communications_Form" type="presentation.formbeans.oAlumni_communicationsSys.Action_modify_modify_page_alumni_communications_Form" />
+    <form-bean name="oAlumni_communicationsSys__action_modify_page_alumni_communications_Form" type="presentation.formbeans.oAlumni_communicationsSys.Action_modify_page_alumni_communications_Form" />
+    <form-bean name="oAlumni_communicationsSys__action_new_new_page_alumni_communications_Form" type="presentation.formbeans.oAlumni_communicationsSys.Action_new_new_page_alumni_communications_Form" />
+    <form-bean name="oAlumni_communicationsSys__action_new_page_alumni_communications_Form" type="presentation.formbeans.oAlumni_communicationsSys.Action_new_page_alumni_communications_Form" />
+    <form-bean name="oAlumni_communicationsSys__action_view_alumni_communications_Form" type="presentation.formbeans.oAlumni_communicationsSys.Action_view_alumni_communications_Form" />
+	<form-bean name="oAlumni_external_job_sectorsSys__action_cancel_delete_alumni_external_job_sectors_Form" type="presentation.formbeans.oAlumni_external_job_sectorsSys.Action_cancel_delete_alumni_external_job_sectors_Form" />
+    <form-bean name="oAlumni_external_job_sectorsSys__action_cancel_modify_modify_page_alumni_external_job_sectors_Form" type="presentation.formbeans.oAlumni_external_job_sectorsSys.Action_cancel_modify_modify_page_alumni_external_job_sectors_Form" />
+    <form-bean name="oAlumni_external_job_sectorsSys__action_cancel_new_new_page_alumni_external_job_sectors_Form" type="presentation.formbeans.oAlumni_external_job_sectorsSys.Action_cancel_new_new_page_alumni_external_job_sectors_Form" />
+    <form-bean name="oAlumni_external_job_sectorsSys__action_cancel_view_view_alumni_external_job_sectors_Form" type="presentation.formbeans.oAlumni_external_job_sectorsSys.Action_cancel_view_view_alumni_external_job_sectors_Form" />
+    <form-bean name="oAlumni_external_job_sectorsSys__action_delete_delete_page_alumni_external_job_sectors_Form" type="presentation.formbeans.oAlumni_external_job_sectorsSys.Action_delete_delete_page_alumni_external_job_sectors_Form" />
+    <form-bean name="oAlumni_external_job_sectorsSys__action_delete_page_alumni_external_job_sectors_Form" type="presentation.formbeans.oAlumni_external_job_sectorsSys.Action_delete_page_alumni_external_job_sectors_Form" />
+    <form-bean name="oAlumni_external_job_sectorsSys__action_manage_alumni_external_job_sectors_Form" type="presentation.formbeans.oAlumni_external_job_sectorsSys.Action_manage_alumni_external_job_sectors_Form" />
+    <form-bean name="oAlumni_external_job_sectorsSys__action_modify_modify_page_alumni_external_job_sectors_Form" type="presentation.formbeans.oAlumni_external_job_sectorsSys.Action_modify_modify_page_alumni_external_job_sectors_Form" />
+    <form-bean name="oAlumni_external_job_sectorsSys__action_modify_page_alumni_external_job_sectors_Form" type="presentation.formbeans.oAlumni_external_job_sectorsSys.Action_modify_page_alumni_external_job_sectors_Form" />
+    <form-bean name="oAlumni_external_job_sectorsSys__action_new_new_page_alumni_external_job_sectors_Form" type="presentation.formbeans.oAlumni_external_job_sectorsSys.Action_new_new_page_alumni_external_job_sectors_Form" />
+    <form-bean name="oAlumni_external_job_sectorsSys__action_new_page_alumni_external_job_sectors_Form" type="presentation.formbeans.oAlumni_external_job_sectorsSys.Action_new_page_alumni_external_job_sectors_Form" />
+    <form-bean name="oAlumni_external_job_sectorsSys__action_view_alumni_external_job_sectors_Form" type="presentation.formbeans.oAlumni_external_job_sectorsSys.Action_view_alumni_external_job_sectors_Form" />	
+	<form-bean name="oUnitSys__action_cancel_delete_unit_Form" type="presentation.formbeans.oUnitSys.Action_cancel_delete_unit_Form" />
     <form-bean name="oUnitSys__action_cancel_modify_modify_page_unit_Form" type="presentation.formbeans.oUnitSys.Action_cancel_modify_modify_page_unit_Form" />
     <form-bean name="oUnitSys__action_cancel_new_new_page_unit_Form" type="presentation.formbeans.oUnitSys.Action_cancel_new_new_page_unit_Form" />
     <form-bean name="oUnitSys__action_cancel_view_view_unit_Form" type="presentation.formbeans.oUnitSys.Action_cancel_view_view_unit_Form" />
@@ -621,6 +737,15 @@
     <form-bean name="usuarioIDForm" type="presentation.formbeans.objects.UsuarioIDForm" />
     <form-bean name="work_experience_Form" type="presentation.formbeans.objects.Work_experience_Form" />
     <form-bean name="working_hours_Form" type="presentation.formbeans.objects.Working_hours_Form" />
+    <form-bean name="alumni_titles_Form" type="presentation.formbeans.objects.Alumni_titles_Form" />
+    <form-bean name="alumni_params_Form" type="presentation.formbeans.objects.Alumni_params_Form" />
+    <form-bean name="alumni_job_position_types_Form" type="presentation.formbeans.objects.Alumni_job_position_types_Form" />
+    <form-bean name="alumni_communications_Form" type="presentation.formbeans.objects.Alumni_communications_Form" />
+    <form-bean name="alumni_external_job_sectors_Form" type="presentation.formbeans.objects.Alumni_external_job_sectors_Form" />
+    
+    <form-bean name="alumni_external_job_positions_Form" type="presentation.formbeans.objects.Alumni_external_job_positions_Form" />
+    <form-bean name="alumni_irb_job_positions_Form" type="presentation.formbeans.objects.Alumni_irb_job_positions_Form" />
+    
   </form-beans>
   <global-exceptions>
     <exception key="error.permisionException" path="/other/noPersimionsError.do" type="bussineslogic.excepciones.NoPermisosException" />
@@ -1254,6 +1379,75 @@
     <action name="oAcademic_infoSys__action_view_academic_info_Form" path="/oAcademic_infoSys/popUp_action_view_academic_info" scope="request" type="presentation.actions.oAcademic_infoSys.Action_view_academic_info" unknown="false" validate="true">
       <forward contextRelative="false" name="success" path="oAcademic_infoSys.popUp_action_view_academic_info" redirect="false" />
     </action>
+    <action name="oAlumni_external_jobsSys__action_add_alumni_external_jobs_Form" path="/oAlumni_external_jobsSys/action_add_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_external_jobsSys.Action_add_alumni_external_jobs" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_external_jobsSys.action_add_alumni_external_jobs" redirect="false" />
+	</action>    
+	<action name="oAlumni_external_jobsSys__action_delete_page_alumni_external_jobs_Form" path="/oAlumni_external_jobsSys/popUp_action_mark_current_confirmation" scope="request" type="presentation.actions.oAlumni_external_jobsSys.Action_mark_current_confirmation" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_external_jobsSys.popUp_action_mark_current_confirmation" redirect="false" />
+    </action>
+	<action path="/oAlumni_external_jobsSys/action_cancel_delete_alumni_external_jobs" type="presentation.actions.oAlumni_external_jobsSys.Action_cancel_delete_alumni_external_jobs" unknown="false" validate="true" />
+	<action path="/oAlumni_external_jobsSys/action_cancel_modify_modify_page_alumni_external_jobs" type="presentation.actions.oAlumni_external_jobsSys.Action_cancel_modify_modify_page_alumni_external_jobs" unknown="false" validate="true" />
+	<action path="/oAlumni_external_jobsSys/action_cancel_new_new_page_alumni_external_jobs" type="presentation.actions.oAlumni_external_jobsSys.Action_cancel_new_new_page_alumni_external_jobs" unknown="false" validate="true" />
+	<action path="/oAlumni_external_jobsSys/action_cancel_view_view_alumni_external_jobs" type="presentation.actions.oAlumni_external_jobsSys.Action_cancel_view_view_alumni_external_jobs" unknown="false" validate="true" />
+	<action name="oAlumni_external_jobsSys__action_delete_delete_page_alumni_external_jobs_Form" path="/oAlumni_external_jobsSys/action_delete_delete_page_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_external_jobsSys.Action_delete_delete_page_alumni_external_jobs" unknown="false" validate="true" />
+	<action name="oAlumni_external_jobsSys__action_delete_page_alumni_external_jobs_Form" path="/oAlumni_external_jobsSys/action_delete_page_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_external_jobsSys.Action_delete_page_alumni_external_jobs" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_external_jobsSys.action_delete_page_alumni_external_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_external_jobsSys__action_modify_modify_page_alumni_external_jobs_Form" path="/oAlumni_external_jobsSys/action_modify_modify_page_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_external_jobsSys.Action_modify_modify_page_alumni_external_jobs" unknown="false" validate="true" />
+	<action name="oAlumni_external_jobsSys__action_modify_page_alumni_external_jobs_Form" path="/oAlumni_external_jobsSys/action_modify_page_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_external_jobsSys.Action_modify_page_alumni_external_jobs" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_external_jobsSys.action_modify_page_alumni_external_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_external_jobsSys__action_new_new_page_alumni_external_jobs_Form" path="/oAlumni_external_jobsSys/action_new_new_page_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_external_jobsSys.Action_new_new_page_alumni_external_jobs" unknown="false" validate="true" />
+	<action name="oAlumni_external_jobsSys__action_view_alumni_external_jobs_Form" path="/oAlumni_external_jobsSys/action_view_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_external_jobsSys.Action_view_alumni_external_jobs" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_external_jobsSys.action_view_alumni_external_jobs" redirect="false" />
+	</action>    
+	<action name="oAlumni_external_jobsSys__action_add_alumni_external_jobs_Form" path="/oAlumni_external_jobsSys/popUp_action_add_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_external_jobsSys.Action_add_alumni_external_jobs" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="oAlumni_external_jobsSys.popUp_action_add_alumni_external_jobs" redirect="false" />
+	</action>    
+	<action name="oAlumni_external_jobsSys__action_delete_page_alumni_external_jobs_Form" path="/oAlumni_external_jobsSys/popUp_action_delete_page_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_external_jobsSys.Action_delete_page_alumni_external_jobs" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="oAlumni_external_jobsSys.popUp_action_delete_page_alumni_external_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_external_jobsSys__action_modify_page_alumni_external_jobs_Form" path="/oAlumni_external_jobsSys/popUp_action_modify_page_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_external_jobsSys.Action_modify_page_alumni_external_jobs" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="oAlumni_external_jobsSys.popUp_action_modify_page_alumni_external_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_external_jobsSys__action_view_alumni_external_jobs_Form" path="/oAlumni_external_jobsSys/popUp_action_view_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_external_jobsSys.Action_view_alumni_external_jobs" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="oAlumni_external_jobsSys.popUp_action_view_alumni_external_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_external_jobsSys__action_delete_page_alumni_external_jobs_Form" path="/oAlumni_external_jobsSys/action_set_current_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_external_jobsSys.Action_set_current_alumni_external_jobs" unknown="false" validate="true">
+		<forward contextRelative="false"  name="success" path="/oAlumni_personalSys/action_manage_alumni_personal_alumni_external_jobs.do" redirect="true" />
+	</action>
+    <action name="oAlumni_irb_jobsSys__action_add_alumni_irb_jobs_Form" path="/oAlumni_irb_jobsSys/action_add_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_irb_jobsSys.Action_add_alumni_irb_jobs" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_irb_jobsSys.action_add_alumni_irb_jobs" redirect="false" />
+	</action>    
+	<action path="/oAlumni_irb_jobsSys/action_cancel_delete_alumni_irb_jobs" type="presentation.actions.oAlumni_irb_jobsSys.Action_cancel_delete_alumni_irb_jobs" unknown="false" validate="true" />
+	<action path="/oAlumni_irb_jobsSys/action_cancel_modify_modify_page_alumni_irb_jobs" type="presentation.actions.oAlumni_irb_jobsSys.Action_cancel_modify_modify_page_alumni_irb_jobs" unknown="false" validate="true" />
+	<action path="/oAlumni_irb_jobsSys/action_cancel_new_new_page_alumni_irb_jobs" type="presentation.actions.oAlumni_irb_jobsSys.Action_cancel_new_new_page_alumni_irb_jobs" unknown="false" validate="true" />
+	<action path="/oAlumni_irb_jobsSys/action_cancel_view_view_alumni_irb_jobs" type="presentation.actions.oAlumni_irb_jobsSys.Action_cancel_view_view_alumni_irb_jobs" unknown="false" validate="true" />
+	<action name="oAlumni_irb_jobsSys__action_delete_delete_page_alumni_irb_jobs_Form" path="/oAlumni_irb_jobsSys/action_delete_delete_page_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_irb_jobsSys.Action_delete_delete_page_alumni_irb_jobs" unknown="false" validate="true" />
+	<action name="oAlumni_irb_jobsSys__action_delete_page_alumni_irb_jobs_Form" path="/oAlumni_irb_jobsSys/action_delete_page_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_irb_jobsSys.Action_delete_page_alumni_irb_jobs" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_irb_jobsSys.action_delete_page_alumni_irb_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_irb_jobsSys__action_modify_modify_page_alumni_irb_jobs_Form" path="/oAlumni_irb_jobsSys/action_modify_modify_page_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_irb_jobsSys.Action_modify_modify_page_alumni_irb_jobs" unknown="false" validate="true" />
+	<action name="oAlumni_irb_jobsSys__action_modify_page_alumni_irb_jobs_Form" path="/oAlumni_irb_jobsSys/action_modify_page_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_irb_jobsSys.Action_modify_page_alumni_irb_jobs" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_irb_jobsSys.action_modify_page_alumni_irb_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_irb_jobsSys__action_new_new_page_alumni_irb_jobs_Form" path="/oAlumni_irb_jobsSys/action_new_new_page_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_irb_jobsSys.Action_new_new_page_alumni_irb_jobs" unknown="false" validate="true" />
+	<action name="oAlumni_irb_jobsSys__action_view_alumni_irb_jobs_Form" path="/oAlumni_irb_jobsSys/action_view_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_irb_jobsSys.Action_view_alumni_irb_jobs" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_irb_jobsSys.action_view_alumni_irb_jobs" redirect="false" />
+	</action>    
+	<action name="oAlumni_irb_jobsSys__action_add_alumni_irb_jobs_Form" path="/oAlumni_irb_jobsSys/popUp_action_add_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_irb_jobsSys.Action_add_alumni_irb_jobs" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="oAlumni_irb_jobsSys.popUp_action_add_alumni_irb_jobs" redirect="false" />
+	</action>    
+	<action name="oAlumni_irb_jobsSys__action_delete_page_alumni_irb_jobs_Form" path="/oAlumni_irb_jobsSys/popUp_action_delete_page_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_irb_jobsSys.Action_delete_page_alumni_irb_jobs" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="oAlumni_irb_jobsSys.popUp_action_delete_page_alumni_irb_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_irb_jobsSys__action_modify_page_alumni_irb_jobs_Form" path="/oAlumni_irb_jobsSys/popUp_action_modify_page_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_irb_jobsSys.Action_modify_page_alumni_irb_jobs" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="oAlumni_irb_jobsSys.popUp_action_modify_page_alumni_irb_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_irb_jobsSys__action_view_alumni_irb_jobs_Form" path="/oAlumni_irb_jobsSys/popUp_action_view_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_irb_jobsSys.Action_view_alumni_irb_jobs" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="oAlumni_irb_jobsSys.popUp_action_view_alumni_irb_jobs" redirect="false" />
+	</action>
+	
     <action name="oHolidaySys__action_add_holiday_Form" path="/oHolidaySys/action_add_holiday" scope="request" type="presentation.actions.oHolidaySys.Action_add_holiday" unknown="false" validate="false">
       <forward contextRelative="false" name="success" path="oHolidaySys.action_add_holiday" redirect="false" />
     </action>
@@ -1568,6 +1762,12 @@
     <action name="oPersonalSys__action_manage_my_own_personal_academic_info_Form" path="/oPersonalSys/action_manage_my_own_personal_academic_info" scope="request" type="presentation.actions.oPersonalSys.Action_manage_my_own_personal_academic_info" unknown="false" validate="false">
       <forward contextRelative="false" name="success" path="oPersonalSys.action_manage_my_own_personal_academic_info" redirect="false" />
     </action>
+    <action name="oAlumni_personalSys__action_manage_alumni_personal_alumni_external_jobs_Form" path="/ooAlumni_personalSys/action_manage_alumni_personal_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal_alumni_external_jobs" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_alumni_personal_alumni_external_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_personalSys__action_manage_alumni_personal_alumni_irb_jobs_Form" path="/ooAlumni_personalSys/action_manage_alumni_personal_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal_alumni_irb_jobs" unknown="false" validate="false">
+  		<forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_alumni_personal_alumni_irb_jobs" redirect="false" />
+	</action>
     <action name="oPersonalSys__action_manage_my_own_personal_work_experience_Form" path="/oPersonalSys/action_manage_my_own_personal_work_experience" scope="request" type="presentation.actions.oPersonalSys.Action_manage_my_own_personal_work_experience" unknown="false" validate="false">
       <forward contextRelative="false" name="success" path="oPersonalSys.action_manage_my_own_personal_work_experience" redirect="false" />
     </action>
@@ -2093,6 +2293,227 @@
     </action>
     <action name="oType_of_studySys__action_modify_page_type_of_study_Form" path="/oType_of_studySys/popUp_action_modify_page_type_of_study" scope="request" type="presentation.actions.oType_of_studySys.Action_modify_page_type_of_study" unknown="false" validate="true">
       <forward contextRelative="false" name="success" path="oType_of_studySys.popUp_action_modify_page_type_of_study" redirect="false" />
+    </action>
+    <action path="/oAlumni_personalSys/action_cancel_delete_alumni_personal" type="presentation.actions.oAlumni_personalSys.Action_cancel_delete_alumni_personal" unknown="false" validate="true" />
+	<action path="/oAlumni_personalSys/action_cancel_modify_modify_page_alumni_personal" type="presentation.actions.oAlumni_personalSys.Action_cancel_modify_modify_page_alumni_personal" unknown="false" validate="true" />
+	
+	<action name="oAlumni_personalSys__action_delete_delete_page_alumni_personal_Form" path="/oAlumni_personalSys/action_delete_delete_page_alumni_personal" scope="request" type="presentation.actions.oAlumni_personalSys.Action_delete_delete_page_alumni_personal" unknown="false" validate="true" />
+	<action name="oAlumni_personalSys__action_delete_page_alumni_personal_Form" path="/oAlumni_personalSys/popUp_action_delete_page_alumni_personal" scope="request" type="presentation.actions.oAlumni_personalSys.Action_delete_page_alumni_personal" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="oAlumni_personalSys.popUp_action_delete_page_alumni_personal" redirect="false" />
+	</action>
+	<action name="oAlumni_personalSys__action_manage_alumni_personal_alumni_external_jobs_Form" path="/oAlumni_personalSys/action_manage_alumni_personal_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal_alumni_external_jobs" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_alumni_personal_alumni_external_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_personalSys__action_manage_alumni_personal_alumni_irb_jobs_Form" path="/oAlumni_personalSys/action_manage_alumni_personal_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal_alumni_irb_jobs" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_alumni_personal_alumni_irb_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_personalSys__action_manage_alumni_personal_Form" path="/oAlumni_personalSys/action_manage_alumni_personal" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_alumni_personal" redirect="false" />
+	</action>
+	<action name="oAlumni_personalSys__action_manage_validated_alumni_personal_Form" path="/oAlumni_personalSys/action_manage_validated_alumni_personal" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_validated_alumni_personal" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_validated_alumni_personal" redirect="false" />
+	</action>
+	<action name="oAlumni_personalSys__action_manage_not_validated_alumni_personal_Form" path="/oAlumni_personalSys/action_manage_not_validated_alumni_personal" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_not_validated_alumni_personal" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_not_validated_alumni_personal" redirect="false" />
+	</action>
+	<action name="oAlumni_personalSys__action_modify_modify_page_alumni_personal_Form" path="/oAlumni_personalSys/action_modify_modify_page_alumni_personal" scope="request" type="presentation.actions.oAlumni_personalSys.Action_modify_modify_page_alumni_personal" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="/oAlumni_personalSys/action_modify_page_alumni_personal.do" redirect="true" />
+	  <forward contextRelative="false" name="error" path="/oAlumni_personalSys/action_modify_page_alumni_personal.do" redirect="false" />
+	</action>
+	<action name="oAlumni_personalSys__action_modify_page_alumni_personal_Form" path="/oAlumni_personalSys/action_modify_page_alumni_personal" scope="request" type="presentation.actions.oAlumni_personalSys.Action_modify_page_alumni_personal" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_personalSys.action_modify_page_alumni_personal" redirect="false" />
+	</action>	
+    
+	<action path="/oAlumni_paramsSys/action_cancel_modify_modify_page_alumni_params" type="presentation.actions.oAlumni_paramsSys.Action_cancel_modify_modify_page_alumni_params" unknown="false" validate="true" />
+	<action name="oAlumni_paramsSys__action_modify_modify_page_alumni_params_Form" path="/oAlumni_paramsSys/action_modify_modify_page_alumni_params" scope="request" type="presentation.actions.oAlumni_paramsSys.Action_modify_modify_page_alumni_params" unknown="false" validate="true" />
+	<action name="oAlumni_paramsSys__action_modify_page_alumni_params_Form" path="/oAlumni_paramsSys/action_modify_page_alumni_params" scope="request" type="presentation.actions.oAlumni_paramsSys.Action_modify_page_alumni_params" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_paramsSys.action_modify_page_alumni_params" redirect="false" />
+	</action>	
+    <action path="/oAlumni_titlesSys/action_cancel_delete_alumni_titles" type="presentation.actions.oAlumni_titlesSys.Action_cancel_delete_alumni_titles" unknown="false" validate="true" />
+    <action path="/oAlumni_titlesSys/action_cancel_modify_modify_page_alumni_titles" type="presentation.actions.oAlumni_titlesSys.Action_cancel_modify_modify_page_alumni_titles" unknown="false" validate="true" />
+    <action path="/oAlumni_titlesSys/action_cancel_new_new_page_alumni_titles" type="presentation.actions.oAlumni_titlesSys.Action_cancel_new_new_page_alumni_titles" unknown="false" validate="true" />
+    <action path="/oAlumni_titlesSys/action_cancel_view_view_alumni_titles" type="presentation.actions.oAlumni_titlesSys.Action_cancel_view_view_alumni_titles" unknown="false" validate="true" />
+    <action name="oAlumni_titlesSys__action_delete_delete_page_alumni_titles_Form" path="/oAlumni_titlesSys/action_delete_delete_page_alumni_titles" scope="request" type="presentation.actions.oAlumni_titlesSys.Action_delete_delete_page_alumni_titles" unknown="false" validate="true" />
+    <action name="oAlumni_titlesSys__action_delete_page_alumni_titles_Form" path="/oAlumni_titlesSys/action_delete_page_alumni_titles" scope="request" type="presentation.actions.oAlumni_titlesSys.Action_delete_page_alumni_titles" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_titlesSys.action_delete_page_alumni_titles" redirect="false" />
+    </action>
+    <action name="oAlumni_titlesSys__action_manage_alumni_titles_Form" path="/oAlumni_titlesSys/action_manage_alumni_titles" scope="request" type="presentation.actions.oAlumni_titlesSys.Action_manage_alumni_titles" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_titlesSys.action_manage_alumni_titles" redirect="false" />
+    </action>
+    <action name="oAlumni_titlesSys__action_modify_modify_page_alumni_titles_Form" path="/oAlumni_titlesSys/action_modify_modify_page_alumni_titles" scope="request" type="presentation.actions.oAlumni_titlesSys.Action_modify_modify_page_alumni_titles" unknown="false" validate="true" />
+    <action name="oAlumni_titlesSys__action_modify_page_alumni_titles_Form" path="/oAlumni_titlesSys/action_modify_page_alumni_titles" scope="request" type="presentation.actions.oAlumni_titlesSys.Action_modify_page_alumni_titles" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_titlesSys.action_modify_page_alumni_titles" redirect="false" />
+    </action>
+    <action name="oAlumni_titlesSys__action_new_new_page_alumni_titles_Form" path="/oAlumni_titlesSys/action_new_new_page_alumni_titles" scope="request" type="presentation.actions.oAlumni_titlesSys.Action_new_new_page_alumni_titles" unknown="false" validate="true" />
+    <action name="oAlumni_titlesSys__action_new_page_alumni_titles_Form" path="/oAlumni_titlesSys/action_new_page_alumni_titles" scope="request" type="presentation.actions.oAlumni_titlesSys.Action_new_page_alumni_titles" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_titlesSys.action_new_page_alumni_titles" redirect="false" />
+    </action>
+    <action name="oAlumni_titlesSys__action_new_page_alumni_titles_Form" path="/oAlumni_titlesSys/popUp_action_new_page_alumni_titles" scope="request" type="presentation.actions.oAlumni_titlesSys.Action_new_page_alumni_titles" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_titlesSys.popUp_action_new_page_alumni_titles" redirect="false" />
+    </action>    
+    <action name="oAlumni_titlesSys__action_view_alumni_titles_Form" path="/oAlumni_titlesSys/action_view_alumni_titles" scope="request" type="presentation.actions.oAlumni_titlesSys.Action_view_alumni_titles" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_titlesSys.action_view_alumni_titles" redirect="false" />
+    </action>
+    <action name="oAlumni_titlesSys__action_delete_page_alumni_titles_Form" path="/oAlumni_titlesSys/popUp_action_delete_page_alumni_titles" scope="request" type="presentation.actions.oAlumni_titlesSys.Action_delete_page_alumni_titles" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_titlesSys.popUp_action_delete_page_alumni_titles" redirect="false" />
+    </action>
+    <action name="oAlumni_titlesSys__action_modify_page_alumni_titles_Form" path="/oAlumni_titlesSys/popUp_action_modify_page_alumni_titles" scope="request" type="presentation.actions.oAlumni_titlesSys.Action_modify_page_alumni_titles" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_titlesSys.popUp_action_modify_page_alumni_titles" redirect="false" />
+    </action>
+    <action path="/oAlumni_external_job_positionsSys/action_cancel_delete_alumni_external_job_positions" type="presentation.actions.oAlumni_external_job_positionsSys.Action_cancel_delete_alumni_external_job_positions" unknown="false" validate="true" />
+    <action path="/oAlumni_external_job_positionsSys/action_cancel_modify_modify_page_alumni_external_job_positions" type="presentation.actions.oAlumni_external_job_positionsSys.Action_cancel_modify_modify_page_alumni_external_job_positions" unknown="false" validate="true" />
+    <action path="/oAlumni_external_job_positionsSys/action_cancel_new_new_page_alumni_external_job_positions" type="presentation.actions.oAlumni_external_job_positionsSys.Action_cancel_new_new_page_alumni_external_job_positions" unknown="false" validate="true" />
+    <action path="/oAlumni_external_job_positionsSys/action_cancel_view_view_alumni_external_job_positions" type="presentation.actions.oAlumni_external_job_positionsSys.Action_cancel_view_view_alumni_external_job_positions" unknown="false" validate="true" />
+    <action name="oAlumni_external_job_positionsSys__action_delete_delete_page_alumni_external_job_positions_Form" path="/oAlumni_external_job_positionsSys/action_delete_delete_page_alumni_external_job_positions" scope="request" type="presentation.actions.oAlumni_external_job_positionsSys.Action_delete_delete_page_alumni_external_job_positions" unknown="false" validate="true" />
+    <action name="oAlumni_external_job_positionsSys__action_delete_page_alumni_external_job_positions_Form" path="/oAlumni_external_job_positionsSys/action_delete_page_alumni_external_job_positions" scope="request" type="presentation.actions.oAlumni_external_job_positionsSys.Action_delete_page_alumni_external_job_positions" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_positionsSys.action_delete_page_alumni_external_job_positions" redirect="false" />
+    </action>
+    <action name="oAlumni_external_job_positionsSys__action_manage_alumni_external_job_positions_Form" path="/oAlumni_external_job_positionsSys/action_manage_alumni_external_job_positions" scope="request" type="presentation.actions.oAlumni_external_job_positionsSys.Action_manage_alumni_external_job_positions" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_positionsSys.action_manage_alumni_external_job_positions" redirect="false" />
+    </action>
+    <action name="oAlumni_external_job_positionsSys__action_modify_modify_page_alumni_external_job_positions_Form" path="/oAlumni_external_job_positionsSys/action_modify_modify_page_alumni_external_job_positions" scope="request" type="presentation.actions.oAlumni_external_job_positionsSys.Action_modify_modify_page_alumni_external_job_positions" unknown="false" validate="true" />
+    <action name="oAlumni_external_job_positionsSys__action_modify_page_alumni_external_job_positions_Form" path="/oAlumni_external_job_positionsSys/action_modify_page_alumni_external_job_positions" scope="request" type="presentation.actions.oAlumni_external_job_positionsSys.Action_modify_page_alumni_external_job_positions" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_positionsSys.action_modify_page_alumni_external_job_positions" redirect="false" />
+    </action>
+    <action name="oAlumni_external_job_positionsSys__action_new_new_page_alumni_external_job_positions_Form" path="/oAlumni_external_job_positionsSys/action_new_new_page_alumni_external_job_positions" scope="request" type="presentation.actions.oAlumni_external_job_positionsSys.Action_new_new_page_alumni_external_job_positions" unknown="false" validate="true" />
+    <action name="oAlumni_external_job_positionsSys__action_new_page_alumni_external_job_positions_Form" path="/oAlumni_external_job_positionsSys/action_new_page_alumni_external_job_positions" scope="request" type="presentation.actions.oAlumni_external_job_positionsSys.Action_new_page_alumni_external_job_positions" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_positionsSys.action_new_page_alumni_external_job_positions" redirect="false" />
+    </action>
+    <action name="oAlumni_external_job_positionsSys__action_new_page_alumni_external_job_positions_Form" path="/oAlumni_external_job_positionsSys/popUp_action_new_page_alumni_external_job_positions" scope="request" type="presentation.actions.oAlumni_external_job_positionsSys.Action_new_page_alumni_external_job_positions" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_positionsSys.popUp_action_new_page_alumni_external_job_positions" redirect="false" />
+    </action>    
+    <action name="oAlumni_external_job_positionsSys__action_view_alumni_external_job_positions_Form" path="/oAlumni_external_job_positionsSys/action_view_alumni_external_job_positions" scope="request" type="presentation.actions.oAlumni_external_job_positionsSys.Action_view_alumni_external_job_positions" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_positionsSys.action_view_alumni_external_job_positions" redirect="false" />
+    </action>
+    <action name="oAlumni_external_job_positionsSys__action_delete_page_alumni_external_job_positions_Form" path="/oAlumni_external_job_positionsSys/popUp_action_delete_page_alumni_external_job_positions" scope="request" type="presentation.actions.oAlumni_external_job_positionsSys.Action_delete_page_alumni_external_job_positions" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_positionsSys.popUp_action_delete_page_alumni_external_job_positions" redirect="false" />
+    </action>
+    <action name="oAlumni_external_job_positionsSys__action_modify_page_alumni_external_job_positions_Form" path="/oAlumni_external_job_positionsSys/popUp_action_modify_page_alumni_external_job_positions" scope="request" type="presentation.actions.oAlumni_external_job_positionsSys.Action_modify_page_alumni_external_job_positions" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_positionsSys.popUp_action_modify_page_alumni_external_job_positions" redirect="false" />
+    </action>
+    <action path="/oAlumni_irb_job_positionsSys/action_cancel_delete_alumni_irb_job_positions" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_cancel_delete_alumni_irb_job_positions" unknown="false" validate="true" />
+    <action path="/oAlumni_irb_job_positionsSys/action_cancel_modify_modify_page_alumni_irb_job_positions" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_cancel_modify_modify_page_alumni_irb_job_positions" unknown="false" validate="true" />
+    <action path="/oAlumni_irb_job_positionsSys/action_cancel_new_new_page_alumni_irb_job_positions" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_cancel_new_new_page_alumni_irb_job_positions" unknown="false" validate="true" />
+    <action path="/oAlumni_irb_job_positionsSys/action_cancel_view_view_alumni_irb_job_positions" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_cancel_view_view_alumni_irb_job_positions" unknown="false" validate="true" />
+    <action name="oAlumni_irb_job_positionsSys__action_delete_delete_page_alumni_irb_job_positions_Form" path="/oAlumni_irb_job_positionsSys/action_delete_delete_page_alumni_irb_job_positions" scope="request" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_delete_delete_page_alumni_irb_job_positions" unknown="false" validate="true" />
+    <action name="oAlumni_irb_job_positionsSys__action_delete_page_alumni_irb_job_positions_Form" path="/oAlumni_irb_job_positionsSys/action_delete_page_alumni_irb_job_positions" scope="request" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_delete_page_alumni_irb_job_positions" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_irb_job_positionsSys.action_delete_page_alumni_irb_job_positions" redirect="false" />
+    </action>
+    <action name="oAlumni_irb_job_positionsSys__action_manage_alumni_irb_job_positions_Form" path="/oAlumni_irb_job_positionsSys/action_manage_alumni_irb_job_positions" scope="request" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_manage_alumni_irb_job_positions" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_irb_job_positionsSys.action_manage_alumni_irb_job_positions" redirect="false" />
+    </action>
+    <action name="oAlumni_irb_job_positionsSys__action_modify_modify_page_alumni_irb_job_positions_Form" path="/oAlumni_irb_job_positionsSys/action_modify_modify_page_alumni_irb_job_positions" scope="request" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_modify_modify_page_alumni_irb_job_positions" unknown="false" validate="true" />
+    <action name="oAlumni_irb_job_positionsSys__action_modify_page_alumni_irb_job_positions_Form" path="/oAlumni_irb_job_positionsSys/action_modify_page_alumni_irb_job_positions" scope="request" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_modify_page_alumni_irb_job_positions" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_irb_job_positionsSys.action_modify_page_alumni_irb_job_positions" redirect="false" />
+    </action>
+    <action name="oAlumni_irb_job_positionsSys__action_new_new_page_alumni_irb_job_positions_Form" path="/oAlumni_irb_job_positionsSys/action_new_new_page_alumni_irb_job_positions" scope="request" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_new_new_page_alumni_irb_job_positions" unknown="false" validate="true" />
+    <action name="oAlumni_irb_job_positionsSys__action_new_page_alumni_irb_job_positions_Form" path="/oAlumni_irb_job_positionsSys/action_new_page_alumni_irb_job_positions" scope="request" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_new_page_alumni_irb_job_positions" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_irb_job_positionsSys.action_new_page_alumni_irb_job_positions" redirect="false" />
+    </action>
+    <action name="oAlumni_irb_job_positionsSys__action_new_page_alumni_irb_job_positions_Form" path="/oAlumni_irb_job_positionsSys/popUp_action_new_page_alumni_irb_job_positions" scope="request" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_new_page_alumni_irb_job_positions" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_irb_job_positionsSys.popUp_action_new_page_alumni_irb_job_positions" redirect="false" />
+    </action>    
+    <action name="oAlumni_irb_job_positionsSys__action_view_alumni_irb_job_positions_Form" path="/oAlumni_irb_job_positionsSys/action_view_alumni_irb_job_positions" scope="request" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_view_alumni_irb_job_positions" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_irb_job_positionsSys.action_view_alumni_irb_job_positions" redirect="false" />
+    </action>
+    <action name="oAlumni_irb_job_positionsSys__action_delete_page_alumni_irb_job_positions_Form" path="/oAlumni_irb_job_positionsSys/popUp_action_delete_page_alumni_irb_job_positions" scope="request" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_delete_page_alumni_irb_job_positions" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_irb_job_positionsSys.popUp_action_delete_page_alumni_irb_job_positions" redirect="false" />
+    </action>
+    <action name="oAlumni_irb_job_positionsSys__action_modify_page_alumni_irb_job_positions_Form" path="/oAlumni_irb_job_positionsSys/popUp_action_modify_page_alumni_irb_job_positions" scope="request" type="presentation.actions.oAlumni_irb_job_positionsSys.Action_modify_page_alumni_irb_job_positions" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_irb_job_positionsSys.popUp_action_modify_page_alumni_irb_job_positions" redirect="false" />
+    </action>
+    <action path="/oAlumni_job_position_typesSys/action_cancel_delete_alumni_job_position_types" type="presentation.actions.oAlumni_job_position_typesSys.Action_cancel_delete_alumni_job_position_types" unknown="false" validate="true" />
+    <action path="/oAlumni_job_position_typesSys/action_cancel_modify_modify_page_alumni_job_position_types" type="presentation.actions.oAlumni_job_position_typesSys.Action_cancel_modify_modify_page_alumni_job_position_types" unknown="false" validate="true" />
+    <action path="/oAlumni_job_position_typesSys/action_cancel_new_new_page_alumni_job_position_types" type="presentation.actions.oAlumni_job_position_typesSys.Action_cancel_new_new_page_alumni_job_position_types" unknown="false" validate="true" />
+    <action path="/oAlumni_job_position_typesSys/action_cancel_view_view_alumni_job_position_types" type="presentation.actions.oAlumni_job_position_typesSys.Action_cancel_view_view_alumni_job_position_types" unknown="false" validate="true" />
+    <action name="oAlumni_job_position_typesSys__action_delete_delete_page_alumni_job_position_types_Form" path="/oAlumni_job_position_typesSys/action_delete_delete_page_alumni_job_position_types" scope="request" type="presentation.actions.oAlumni_job_position_typesSys.Action_delete_delete_page_alumni_job_position_types" unknown="false" validate="true" />
+    <action name="oAlumni_job_position_typesSys__action_delete_page_alumni_job_position_types_Form" path="/oAlumni_job_position_typesSys/action_delete_page_alumni_job_position_types" scope="request" type="presentation.actions.oAlumni_job_position_typesSys.Action_delete_page_alumni_job_position_types" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_job_position_typesSys.action_delete_page_alumni_job_position_types" redirect="false" />
+    </action>
+    <action name="oAlumni_job_position_typesSys__action_manage_alumni_job_position_types_Form" path="/oAlumni_job_position_typesSys/action_manage_alumni_job_position_types" scope="request" type="presentation.actions.oAlumni_job_position_typesSys.Action_manage_alumni_job_position_types" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_job_position_typesSys.action_manage_alumni_job_position_types" redirect="false" />
+    </action>
+    <action name="oAlumni_job_position_typesSys__action_modify_modify_page_alumni_job_position_types_Form" path="/oAlumni_job_position_typesSys/action_modify_modify_page_alumni_job_position_types" scope="request" type="presentation.actions.oAlumni_job_position_typesSys.Action_modify_modify_page_alumni_job_position_types" unknown="false" validate="true" />
+    <action name="oAlumni_job_position_typesSys__action_modify_page_alumni_job_position_types_Form" path="/oAlumni_job_position_typesSys/action_modify_page_alumni_job_position_types" scope="request" type="presentation.actions.oAlumni_job_position_typesSys.Action_modify_page_alumni_job_position_types" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_job_position_typesSys.action_modify_page_alumni_job_position_types" redirect="false" />
+    </action>
+    <action name="oAlumni_job_position_typesSys__action_new_new_page_alumni_job_position_types_Form" path="/oAlumni_job_position_typesSys/action_new_new_page_alumni_job_position_types" scope="request" type="presentation.actions.oAlumni_job_position_typesSys.Action_new_new_page_alumni_job_position_types" unknown="false" validate="true" />
+    <action name="oAlumni_job_position_typesSys__action_new_page_alumni_job_position_types_Form" path="/oAlumni_job_position_typesSys/action_new_page_alumni_job_position_types" scope="request" type="presentation.actions.oAlumni_job_position_typesSys.Action_new_page_alumni_job_position_types" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_job_position_typesSys.action_new_page_alumni_job_position_types" redirect="false" />
+    </action>
+    <action name="oAlumni_job_position_typesSys__action_new_page_alumni_job_position_types_Form" path="/oAlumni_job_position_typesSys/popUp_action_new_page_alumni_job_position_types" scope="request" type="presentation.actions.oAlumni_job_position_typesSys.Action_new_page_alumni_job_position_types" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_job_position_typesSys.popUp_action_new_page_alumni_job_position_types" redirect="false" />
+    </action>    
+    <action name="oAlumni_job_position_typesSys__action_view_alumni_job_position_types_Form" path="/oAlumni_job_position_typesSys/action_view_alumni_job_position_types" scope="request" type="presentation.actions.oAlumni_job_position_typesSys.Action_view_alumni_job_position_types" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_job_position_typesSys.action_view_alumni_job_position_types" redirect="false" />
+    </action>
+    <action name="oAlumni_job_position_typesSys__action_delete_page_alumni_job_position_types_Form" path="/oAlumni_job_position_typesSys/popUp_action_delete_page_alumni_job_position_types" scope="request" type="presentation.actions.oAlumni_job_position_typesSys.Action_delete_page_alumni_job_position_types" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_job_position_typesSys.popUp_action_delete_page_alumni_job_position_types" redirect="false" />
+    </action>
+    <action name="oAlumni_job_position_typesSys__action_modify_page_alumni_job_position_types_Form" path="/oAlumni_job_position_typesSys/popUp_action_modify_page_alumni_job_position_types" scope="request" type="presentation.actions.oAlumni_job_position_typesSys.Action_modify_page_alumni_job_position_types" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_job_position_typesSys.popUp_action_modify_page_alumni_job_position_types" redirect="false" />
+    </action>
+    <action path="/oAlumni_communicationsSys/action_cancel_delete_alumni_communications" type="presentation.actions.oAlumni_communicationsSys.Action_cancel_delete_alumni_communications" unknown="false" validate="true" />
+    <action path="/oAlumni_communicationsSys/action_cancel_modify_modify_page_alumni_communications" type="presentation.actions.oAlumni_communicationsSys.Action_cancel_modify_modify_page_alumni_communications" unknown="false" validate="true" />
+    <action path="/oAlumni_communicationsSys/action_cancel_new_new_page_alumni_communications" type="presentation.actions.oAlumni_communicationsSys.Action_cancel_new_new_page_alumni_communications" unknown="false" validate="true" />
+    <action path="/oAlumni_communicationsSys/action_cancel_view_view_alumni_communications" type="presentation.actions.oAlumni_communicationsSys.Action_cancel_view_view_alumni_communications" unknown="false" validate="true" />
+    <action name="oAlumni_communicationsSys__action_delete_delete_page_alumni_communications_Form" path="/oAlumni_communicationsSys/action_delete_delete_page_alumni_communications" scope="request" type="presentation.actions.oAlumni_communicationsSys.Action_delete_delete_page_alumni_communications" unknown="false" validate="true" />
+    <action name="oAlumni_communicationsSys__action_delete_page_alumni_communications_Form" path="/oAlumni_communicationsSys/action_delete_page_alumni_communications" scope="request" type="presentation.actions.oAlumni_communicationsSys.Action_delete_page_alumni_communications" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_communicationsSys.action_delete_page_alumni_communications" redirect="false" />
+    </action>
+    <action name="oAlumni_communicationsSys__action_manage_alumni_communications_Form" path="/oAlumni_communicationsSys/action_manage_alumni_communications" scope="request" type="presentation.actions.oAlumni_communicationsSys.Action_manage_alumni_communications" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_communicationsSys.action_manage_alumni_communications" redirect="false" />
+    </action>
+    <action name="oAlumni_communicationsSys__action_modify_modify_page_alumni_communications_Form" path="/oAlumni_communicationsSys/action_modify_modify_page_alumni_communications" scope="request" type="presentation.actions.oAlumni_communicationsSys.Action_modify_modify_page_alumni_communications" unknown="false" validate="true" />
+    <action name="oAlumni_communicationsSys__action_modify_page_alumni_communications_Form" path="/oAlumni_communicationsSys/action_modify_page_alumni_communications" scope="request" type="presentation.actions.oAlumni_communicationsSys.Action_modify_page_alumni_communications" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_communicationsSys.action_modify_page_alumni_communications" redirect="false" />
+    </action>
+    <action name="oAlumni_communicationsSys__action_new_new_page_alumni_communications_Form" path="/oAlumni_communicationsSys/action_new_new_page_alumni_communications" scope="request" type="presentation.actions.oAlumni_communicationsSys.Action_new_new_page_alumni_communications" unknown="false" validate="true" />
+    <action name="oAlumni_communicationsSys__action_new_page_alumni_communications_Form" path="/oAlumni_communicationsSys/action_new_page_alumni_communications" scope="request" type="presentation.actions.oAlumni_communicationsSys.Action_new_page_alumni_communications" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_communicationsSys.action_new_page_alumni_communications" redirect="false" />
+    </action>
+    <action name="oAlumni_communicationsSys__action_new_page_alumni_communications_Form" path="/oAlumni_communicationsSys/popUp_action_new_page_alumni_communications" scope="request" type="presentation.actions.oAlumni_communicationsSys.Action_new_page_alumni_communications" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_communicationsSys.popUp_action_new_page_alumni_communications" redirect="false" />
+    </action>    
+    <action name="oAlumni_communicationsSys__action_view_alumni_communications_Form" path="/oAlumni_communicationsSys/action_view_alumni_communications" scope="request" type="presentation.actions.oAlumni_communicationsSys.Action_view_alumni_communications" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_communicationsSys.action_view_alumni_communications" redirect="false" />
+    </action>
+    <action name="oAlumni_communicationsSys__action_delete_page_alumni_communications_Form" path="/oAlumni_communicationsSys/popUp_action_delete_page_alumni_communications" scope="request" type="presentation.actions.oAlumni_communicationsSys.Action_delete_page_alumni_communications" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_communicationsSys.popUp_action_delete_page_alumni_communications" redirect="false" />
+    </action>
+    <action name="oAlumni_communicationsSys__action_modify_page_alumni_communications_Form" path="/oAlumni_communicationsSys/popUp_action_modify_page_alumni_communications" scope="request" type="presentation.actions.oAlumni_communicationsSys.Action_modify_page_alumni_communications" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_communicationsSys.popUp_action_modify_page_alumni_communications" redirect="false" />
+    </action>
+    <action path="/oAlumni_external_job_sectorsSys/action_cancel_delete_alumni_external_job_sectors" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_cancel_delete_alumni_external_job_sectors" unknown="false" validate="true" />
+    <action path="/oAlumni_external_job_sectorsSys/action_cancel_modify_modify_page_alumni_external_job_sectors" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_cancel_modify_modify_page_alumni_external_job_sectors" unknown="false" validate="true" />
+    <action path="/oAlumni_external_job_sectorsSys/action_cancel_new_new_page_alumni_external_job_sectors" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_cancel_new_new_page_alumni_external_job_sectors" unknown="false" validate="true" />
+    <action path="/oAlumni_external_job_sectorsSys/action_cancel_view_view_alumni_external_job_sectors" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_cancel_view_view_alumni_external_job_sectors" unknown="false" validate="true" />
+    <action name="oAlumni_external_job_sectorsSys__action_delete_delete_page_alumni_external_job_sectors_Form" path="/oAlumni_external_job_sectorsSys/action_delete_delete_page_alumni_external_job_sectors" scope="request" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_delete_delete_page_alumni_external_job_sectors" unknown="false" validate="true" />
+    <action name="oAlumni_external_job_sectorsSys__action_delete_page_alumni_external_job_sectors_Form" path="/oAlumni_external_job_sectorsSys/action_delete_page_alumni_external_job_sectors" scope="request" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_delete_page_alumni_external_job_sectors" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_sectorsSys.action_delete_page_alumni_external_job_sectors" redirect="false" />
+    </action>
+    <action name="oAlumni_external_job_sectorsSys__action_manage_alumni_external_job_sectors_Form" path="/oAlumni_external_job_sectorsSys/action_manage_alumni_external_job_sectors" scope="request" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_manage_alumni_external_job_sectors" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_sectorsSys.action_manage_alumni_external_job_sectors" redirect="false" />
+    </action>
+    <action name="oAlumni_external_job_sectorsSys__action_modify_modify_page_alumni_external_job_sectors_Form" path="/oAlumni_external_job_sectorsSys/action_modify_modify_page_alumni_external_job_sectors" scope="request" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_modify_modify_page_alumni_external_job_sectors" unknown="false" validate="true" />
+    <action name="oAlumni_external_job_sectorsSys__action_modify_page_alumni_external_job_sectors_Form" path="/oAlumni_external_job_sectorsSys/action_modify_page_alumni_external_job_sectors" scope="request" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_modify_page_alumni_external_job_sectors" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_sectorsSys.action_modify_page_alumni_external_job_sectors" redirect="false" />
+    </action>
+    <action name="oAlumni_external_job_sectorsSys__action_new_new_page_alumni_external_job_sectors_Form" path="/oAlumni_external_job_sectorsSys/action_new_new_page_alumni_external_job_sectors" scope="request" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_new_new_page_alumni_external_job_sectors" unknown="false" validate="true" />
+    <action name="oAlumni_external_job_sectorsSys__action_new_page_alumni_external_job_sectors_Form" path="/oAlumni_external_job_sectorsSys/action_new_page_alumni_external_job_sectors" scope="request" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_new_page_alumni_external_job_sectors" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_sectorsSys.action_new_page_alumni_external_job_sectors" redirect="false" />
+    </action>
+    <action name="oAlumni_external_job_sectorsSys__action_new_page_alumni_external_job_sectors_Form" path="/oAlumni_external_job_sectorsSys/popUp_action_new_page_alumni_external_job_sectors" scope="request" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_new_page_alumni_external_job_sectors" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_sectorsSys.popUp_action_new_page_alumni_external_job_sectors" redirect="false" />
+    </action>    
+    <action name="oAlumni_external_job_sectorsSys__action_view_alumni_external_job_sectors_Form" path="/oAlumni_external_job_sectorsSys/action_view_alumni_external_job_sectors" scope="request" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_view_alumni_external_job_sectors" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_sectorsSys.action_view_alumni_external_job_sectors" redirect="false" />
+    </action>
+    <action name="oAlumni_external_job_sectorsSys__action_delete_page_alumni_external_job_sectors_Form" path="/oAlumni_external_job_sectorsSys/popUp_action_delete_page_alumni_external_job_sectors" scope="request" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_delete_page_alumni_external_job_sectors" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_sectorsSys.popUp_action_delete_page_alumni_external_job_sectors" redirect="false" />
+    </action>
+    <action name="oAlumni_external_job_sectorsSys__action_modify_page_alumni_external_job_sectors_Form" path="/oAlumni_external_job_sectorsSys/popUp_action_modify_page_alumni_external_job_sectors" scope="request" type="presentation.actions.oAlumni_external_job_sectorsSys.Action_modify_page_alumni_external_job_sectors" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_external_job_sectorsSys.popUp_action_modify_page_alumni_external_job_sectors" redirect="false" />
     </action>
     <action path="/oUnitSys/action_cancel_delete_unit" type="presentation.actions.oUnitSys.Action_cancel_delete_unit" unknown="false" validate="true" />
     <action path="/oUnitSys/action_cancel_modify_modify_page_unit" type="presentation.actions.oUnitSys.Action_cancel_modify_modify_page_unit" unknown="false" validate="true" />

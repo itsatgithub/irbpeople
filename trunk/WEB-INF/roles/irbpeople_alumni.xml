@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<role name="irbpeople_alumni" system-groups-included="true">
+  <description>alumni</description>
+  <accessible-groups>
+    <group name="oAlumni_personalSys" />        
+    <group name="oAlumni_paramsSys" />        
+    <group name="oAlumni_titlesSys" />        
+    <group name="oAlumni_external_job_sectorsSys" />        
+    <group name="oAlumni_communicationsSys" />        
+    <group name="oAlumni_job_position_typesSys" />
+    <group name="oAlumni_irb_job_positionsSys" />
+    <group name="oAlumni_external_job_positionsSys" />
+    <group name="oAlumni_external_jobsSys" />
+    <group name="oAlumni_irb_jobsSys" />
+    <group name="customList"/>    
+    <group name="oUnitSys" />
+	<group name="oOrganization_unitSys" />
+	<group name="oGenderSys" />
+	<group name="oCountrySys" />
+  </accessible-groups>
+  <forbidden-actions></forbidden-actions>
+  <forbidden-actions-ref></forbidden-actions-ref>
+</role>
+

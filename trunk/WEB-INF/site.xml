@@ -4293,7 +4293,421 @@
                         <parameter name="zoneaction.oAcademic_infoSys.new_page_academic_info" value="oAcademic_infoSys.new_page_academic_info" />
                         <parameter name="zoneaction.oAcademic_infoSys.add_academic_info" value="oAcademic_infoSys.add_academic_info" />
                         <parameter name="objectsRecieved" value="none" />
-                    </action>                                      
+                    </action>                                       
+                </group>
+                				<group e="" name="oAlumni_external_jobsSys" command="oAlumni_external_jobsSys" nick="oAlumni_external_jobsSys" type="system" action-number="" st0="SystemObj">
+                    <description>Auto generated group</description>
+                    <caption language="en">alumni_external_jobs</caption>
+                    <extends>BaseCommandsProtected</extends>
+                    <action e="" con="new" obj="alumni_external_jobs" type="new" st0="" st1="" completed="false">
+                        <name>action_add_alumni_external_jobs</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Add alumni external job</title-caption>
+                        <menuitem-caption language="en">Add alumni external jobs</menuitem-caption>
+                        <button-caption language="en">Add alumni external jobs</button-caption>
+                        <path action="action_manage_alumni_personal_alumni_external_jobs" command="oAlumni_personalSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="go" />
+                            <zone name="folder" />
+                            <zone name="submit">
+                                <action command="oAlumni_external_jobsSys" action="action_new_new_page_alumni_external_jobs" />
+                                <action command="oAlumni_external_jobsSys" action="action_cancel_new_new_page_alumni_external_jobs" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <parameter name="objectsRecievedType" value="alumni_personal" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">                                        
+                                        <attribute-form label="Alumni external job position" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_external_jobs" associationName="alumni_external_jobs_positions" associationBO="external_job_positions" popUp="false" popUpAlways="false" />
+										<attribute-form label="Alumni external job sector" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_external_jobs" associationName="alumni_external_jobs_sectors" associationBO="external_job_sectors" popUp="false" popUpAlways="false" />
+										<attribute-form label="Institution" field="institution" required="false" writable="true" object="alumni_external_jobs" />
+										<attribute-form label="City" field="city" required="false" writable="true" object="alumni_external_jobs" />
+										<attribute-form label="Country" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_external_jobs" associationName="countrycode" associationBO="country" popUp="false" popUpAlways="false" />										
+										<attribute-form label="Start date" field="start_date" required="false" writable="true" object="alumni_external_jobs" />
+										<attribute-form label="End date" field="end_date" required="false" writable="true" object="alumni_external_jobs" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>                    
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_delete_alumni_external_jobs</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_external_jobs cancel</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_external_jobs cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_delete_page_alumni_external_jobs" command="oAlumni_external_jobsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_external_jobsSys.delete_page_alumni_external_jobs" value="oAlumni_external_jobsSys.delete_page_alumni_external_jobs" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_modify_modify_page_alumni_external_jobs</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_external_jobs cancel</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_external_jobs cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_modify_page_alumni_external_jobs" command="oAlumni_external_jobsSys" />
+                        <parameter name="zoneaction.oAlumni_external_jobsSys.modify_page_alumni_external_jobs" value="oAlumni_external_jobsSys.modify_page_alumni_external_jobs" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_new_new_page_alumni_external_jobs</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_external_jobs cancel</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_external_jobs cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_add_alumni_external_jobs" command="oAlumni_external_jobsSys" />
+                        <parameter name="zoneaction.oAlumni_external_jobsSys.new_page_alumni_external_jobs" value="oAlumni_external_jobsSys.new_page_alumni_external_jobs" />
+                        <parameter name="zoneaction.oAlumni_external_jobsSys.add_alumni_external_jobs" value="oAlumni_external_jobsSys.add_alumni_external_jobs" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_view_view_alumni_external_jobs</name>
+                        <description />
+                        <title-caption language="en">View view_alumni_external_jobs cancel</title-caption>
+                        <menuitem-caption language="en">View view_alumni_external_jobs cancel</menuitem-caption>
+                        <button-caption language="en">Back</button-caption>
+                        <path action="action_view_alumni_external_jobs" command="oAlumni_external_jobsSys" />
+                        <parameter name="zoneaction.oAlumni_external_jobsSys.view_alumni_external_jobs" value="oAlumni_external_jobsSys.view_alumni_external_jobs" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="del" obj="alumni_external_jobs" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_delete_page_alumni_external_jobs</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_external_jobs ok</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_external_jobs ok</menuitem-caption>
+                        <button-caption language="en">Delete</button-caption>
+                        <path action="action_delete_page_alumni_external_jobs" command="oAlumni_external_jobsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_external_jobsSys.delete_page_alumni_external_jobs" value="oAlumni_external_jobsSys.delete_page_alumni_external_jobs" />
+                    </action>
+                    <action e="" con="approve" obj="alumni_external_jobs" type="delete" st0="" st1="" completed="false">
+                        <name>action_set_current_alumni_external_jobs</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_compensation ok</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_compensation ok</menuitem-caption>
+                        <button-caption language="en">Set as current</button-caption>
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="del" obj="alumni_external_jobs" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_page_alumni_external_jobs</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Delete alumni external jobs</title-caption>
+                        <menuitem-caption language="en">Delete alumni external jobs</menuitem-caption>
+                        <button-caption language="en">Delete alumni external jobs</button-caption>
+                        <path action="action_manage_alumni_personal_alumni_external_jobs" command="oAlumni_personalSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="go" />
+                            <zone name="folder" />
+                            <zone name="submit">
+                                <action command="oAlumni_external_jobsSys" action="action_delete_delete_page_alumni_external_jobs" />
+                                <action command="oAlumni_external_jobsSys" action="action_cancel_delete_alumni_external_jobs" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                       <attribute-form label="Alumni external job position" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_external_jobs" associationName="alumni_external_jobs_positions" associationBO="external_job_positions" popUp="false" popUpAlways="false" />
+										<attribute-form label="Alumni external job sector" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_external_jobs" associationName="alumni_external_jobs_sectors" associationBO="external_job_sectors" popUp="false" popUpAlways="false" />                                        
+										<attribute-form label="Institution" field="institution" required="false" writable="true" object="alumni_external_jobs" />
+										<attribute-form label="City" field="city" required="false" writable="true" object="alumni_external_jobs" />
+										<attribute-form label="Country" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_external_jobs" associationName="country" associationBO="country" popUp="false" popUpAlways="false" />                                        
+                                        <attribute-form label="Start date" field="start_date" required="false" writable="true" object="alumni_external_jobs" />
+										<attribute-form label="End date" field="end_date" required="false" writable="true" object="alumni_external_jobs" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="del" obj="alumni_external_jobs" type="delete" st0="" st1="" completed="false">
+                        <name>action_mark_current_confirmation</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Delete alumni external job</title-caption>
+                        <menuitem-caption language="en">Delete alumni external jobs</menuitem-caption>
+                        <button-caption language="en">Delete alumni external jobs</button-caption>
+                        <path action="action_manage_alumni_personal_alumni_external_jobs" command="oAlumni_personalSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="go" />
+                            <zone name="folder" />
+                            <zone name="submit">
+                                <action command="oAlumni_external_jobsSys" action="action_set_current_alumni_external_jobs" />
+                                <action command="oAlumni_external_jobsSys" action="action_cancel_delete_alumni_external_jobs" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                    </action>
+                    <action e="" con="mod" obj="alumni_external_jobs" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_modify_page_alumni_external_jobs</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_external_jobs ok</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_external_jobs ok</menuitem-caption>
+                        <button-caption language="en">Save</button-caption>
+                        <path action="action_modify_page_alumni_external_jobs" command="oAlumni_external_jobsSys" />
+                        <parameter name="zoneaction.oAlumni_external_jobsSys.modify_page_alumni_external_jobs" value="oAlumni_external_jobsSys.modify_page_alumni_external_jobs" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="mod" obj="alumni_external_jobs" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_page_alumni_external_jobs</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Modify alumni external jobs</title-caption>
+                        <menuitem-caption language="en">Modify alumni external jobs</menuitem-caption>
+                        <button-caption language="en">Modify alumni external jobs</button-caption>
+                        <path action="action_manage_alumni_personal_alumni_external_jobs" command="oAlumni_personalSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="go" />
+                            <zone name="folder" />
+                            <zone name="submit">
+                                <action command="oAlumni_external_jobsSys" action="action_modify_modify_page_alumni_external_jobs" />
+                                <action command="oAlumni_external_jobsSys" action="action_cancel_modify_modify_page_alumni_external_jobs" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                       <attribute-form label="Alumni external job position" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_external_jobs" associationName="alumni_external_jobs_positions" associationBO="external_job_positions" popUp="false" popUpAlways="false" />
+
+										<attribute-form label="Alumni external job sector" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_external_jobs" associationName="alumni_external_jobs_sectors" associationBO="external_job_sectors" popUp="false" popUpAlways="false" />                                        
+										
+										<attribute-form label="Institution" field="institution" required="false" writable="true" object="alumni_external_jobs" />
+										
+										<attribute-form label="City" field="city" required="false" writable="true" object="alumni_external_jobs" />
+										
+										<attribute-form label="Country" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_external_jobs" associationName="country" associationBO="country" popUp="false" popUpAlways="false" />                                        
+										
+                                        
+                                        <attribute-form label="Start date" field="start_date" required="false" writable="true" object="alumni_external_jobs" />
+
+										<attribute-form label="End date" field="end_date" required="false" writable="true" object="alumni_external_jobs" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="new" obj="alumni_external_jobs" type="new" st0="" st1="" completed="false">
+                        <name>action_new_new_page_alumni_external_jobs</name>
+                        <description />
+                        <title-caption language="en">New page alumni external jobs ok</title-caption>
+                        <menuitem-caption language="en">New page alumni external jobs ok</menuitem-caption>
+                        <button-caption language="en">Ok</button-caption>
+                        <path action="action_add_alumni_external_jobs" command="oAlumni_external_jobsSys" />
+                        <parameter name="zoneaction.oAlumni_external_jobsSys.new_page_alumni_external_jobs" value="oAlumni_external_jobsSys.new_page_alumni_external_jobs" />
+                        <parameter name="zoneaction.oAlumni_external_jobsSys.add_alumni_external_jobs" value="oAlumni_external_jobsSys.add_alumni_external_jobs" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>                                       
+                </group>
+                				<group e="" name="oAlumni_irb_jobsSys" command="oAlumni_irb_jobsSys" nick="oAlumni_irb_jobsSys" type="system" action-number="" st0="SystemObj">
+                    <description>Auto generated group</description>
+                    <caption language="en">alumni_irb_jobs</caption>
+                    <extends>BaseCommandsProtected</extends>
+                    <action e="" con="new" obj="alumni_irb_jobs" type="new" st0="" st1="" completed="false">
+                        <name>action_add_alumni_irb_jobs</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Add alumni irb job</title-caption>
+                        <menuitem-caption language="en">Add alumni irb jobs</menuitem-caption>
+                        <button-caption language="en">Add alumni irb jobs</button-caption>
+                        <path action="action_manage_alumni_personal_alumni_irb_jobs" command="oAlumni_personalSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="go" />
+                            <zone name="folder" />
+                            <zone name="submit">
+                                <action command="oAlumni_irb_jobsSys" action="action_new_new_page_alumni_irb_jobs" />
+                                <action command="oAlumni_irb_jobsSys" action="action_cancel_new_new_page_alumni_irb_jobs" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <parameter name="objectsRecievedType" value="alumni_personal" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="Alumni irb job position" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="alumni_irb_jobs_positions" associationBO="irb_job_positions" popUp="false" popUpAlways="false" />
+
+										<attribute-form label="Unit" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="unit" associationBO="unit" popUp="false" popUpAlways="false" />                                        
+										
+										<attribute-form label="Unit 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="unit_2" associationBO="unit" popUp="false" popUpAlways="false" />                                        
+										
+										<attribute-form label="Start date" field="start_date" required="false" writable="true" object="alumni_irb_jobs" />
+
+										<attribute-form label="End date" field="end_date" required="false" writable="true" object="alumni_irb_jobs" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>                    
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_delete_alumni_irb_jobs</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_irb_jobs cancel</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_irb_jobs cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_delete_page_alumni_irb_jobs" command="oAlumni_irb_jobsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_irb_jobsSys.delete_page_alumni_irb_jobs" value="oAlumni_irb_jobsSys.delete_page_alumni_irb_jobs" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_modify_modify_page_alumni_irb_jobs</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_irb_jobs cancel</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_irb_jobs cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_modify_page_alumni_irb_jobs" command="oAlumni_irb_jobsSys" />
+                        <parameter name="zoneaction.oAlumni_irb_jobsSys.modify_page_alumni_irb_jobs" value="oAlumni_irb_jobsSys.modify_page_alumni_irb_jobs" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_new_new_page_alumni_irb_jobs</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_irb_jobs cancel</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_irb_jobs cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_add_alumni_irb_jobs" command="oAlumni_irb_jobsSys" />
+                        <parameter name="zoneaction.oAlumni_irb_jobsSys.new_page_alumni_irb_jobs" value="oAlumni_irb_jobsSys.new_page_alumni_irb_jobs" />
+                        <parameter name="zoneaction.oAlumni_irb_jobsSys.add_alumni_irb_jobs" value="oAlumni_irb_jobsSys.add_alumni_irb_jobs" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_view_view_alumni_irb_jobs</name>
+                        <description />
+                        <title-caption language="en">View view_alumni_irb_jobs cancel</title-caption>
+                        <menuitem-caption language="en">View view_alumni_irb_jobs cancel</menuitem-caption>
+                        <button-caption language="en">Back</button-caption>
+                        <path action="action_view_alumni_irb_jobs" command="oAlumni_irb_jobsSys" />
+                        <parameter name="zoneaction.oAlumni_irb_jobsSys.view_alumni_irb_jobs" value="oAlumni_irb_jobsSys.view_alumni_irb_jobs" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="del" obj="alumni_irb_jobs" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_delete_page_alumni_irb_jobs</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_irb_jobs ok</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_irb_jobs ok</menuitem-caption>
+                        <button-caption language="en">Delete</button-caption>
+                        <path action="action_delete_page_alumni_irb_jobs" command="oAlumni_irb_jobsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_irb_jobsSys.delete_page_alumni_irb_jobs" value="oAlumni_irb_jobsSys.delete_page_alumni_irb_jobs" />
+                    </action>                  
+                    <action e="" con="del" obj="alumni_irb_jobs" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_page_alumni_irb_jobs</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Delete alumni irb jobs</title-caption>
+                        <menuitem-caption language="en">Delete alumni irb jobs</menuitem-caption>
+                        <button-caption language="en">Delete alumni irb jobs</button-caption>
+                        <path action="action_manage_alumni_personal_alumni_irb_jobs" command="oAlumni_personalSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="go" />
+                            <zone name="folder" />
+                            <zone name="submit">
+                                <action command="oAlumni_irb_jobsSys" action="action_delete_delete_page_alumni_irb_jobs" />
+                                <action command="oAlumni_irb_jobsSys" action="action_cancel_delete_alumni_irb_jobs" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="Alumni irb job position" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="alumni_irb_jobs_positions" associationBO="irb_job_positions" popUp="false" popUpAlways="false" />
+
+										<attribute-form label="Unit" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="unit" associationBO="unit" popUp="false" popUpAlways="false" />                                        
+										
+										<attribute-form label="Unit 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="unit_2" associationBO="unit" popUp="false" popUpAlways="false" />                                        
+										
+										<attribute-form label="Start date" field="start_date" required="false" writable="true" object="alumni_irb_jobs" />
+
+										<attribute-form label="End date" field="end_date" required="false" writable="true" object="alumni_irb_jobs" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>                    
+                    <action e="" con="mod" obj="alumni_irb_jobs" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_modify_page_alumni_irb_jobs</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_irb_jobs ok</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_irb_jobs ok</menuitem-caption>
+                        <button-caption language="en">Save</button-caption>
+                        <path action="action_modify_page_alumni_irb_jobs" command="oAlumni_irb_jobsSys" />
+                        <parameter name="zoneaction.oAlumni_irb_jobsSys.modify_page_alumni_irb_jobs" value="oAlumni_irb_jobsSys.modify_page_alumni_irb_jobs" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="mod" obj="alumni_irb_jobs" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_page_alumni_irb_jobs</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Modify alumni irb jobs</title-caption>
+                        <menuitem-caption language="en">Modify alumni irb jobs</menuitem-caption>
+                        <button-caption language="en">Modify alumni irb jobs</button-caption>
+                        <path action="action_manage_alumni_personal_alumni_irb_jobs" command="oAlumni_personalSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="go" />
+                            <zone name="folder" />
+                            <zone name="submit">
+                                <action command="oAlumni_irb_jobsSys" action="action_modify_modify_page_alumni_irb_jobs" />
+                                <action command="oAlumni_irb_jobsSys" action="action_cancel_modify_modify_page_alumni_irb_jobs" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="Alumni irb job position" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="alumni_irb_jobs_positions" associationBO="irb_job_positions" popUp="false" popUpAlways="false" />
+
+										<attribute-form label="Unit" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="unit" associationBO="unit" popUp="false" popUpAlways="false" />                                        
+										
+										<attribute-form label="Unit 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="unit_2" associationBO="unit" popUp="false" popUpAlways="false" />                                        
+										
+										<attribute-form label="Start date" field="start_date" required="false" writable="true" object="alumni_irb_jobs" />
+
+										<attribute-form label="End date" field="end_date" required="false" writable="true" object="alumni_irb_jobs" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="new" obj="alumni_irb_jobs" type="new" st0="" st1="" completed="false">
+                        <name>action_new_new_page_alumni_irb_jobs</name>
+                        <description />
+                        <title-caption language="en">New page alumni irb jobs ok</title-caption>
+                        <menuitem-caption language="en">New page alumni irb jobs ok</menuitem-caption>
+                        <button-caption language="en">Ok</button-caption>
+                        <path action="action_add_alumni_irb_jobs" command="oAlumni_irb_jobsSys" />
+                        <parameter name="zoneaction.oAlumni_irb_jobsSys.new_page_alumni_irb_jobs" value="oAlumni_irb_jobsSys.new_page_alumni_irb_jobs" />
+                        <parameter name="zoneaction.oAlumni_irb_jobsSys.add_alumni_irb_jobs" value="oAlumni_irb_jobsSys.add_alumni_irb_jobs" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>                                       
                 </group>
                 <group e="" name="oHolidaySys" command="oHolidaySys" nick="oHolidaySys" type="system" action-number="" st0="SystemObj">
                     <description>Auto generated group</description>
@@ -7534,7 +7948,7 @@
                                             <field name="name_of_institution_or_company" />
                                             <field name="description" object="position" association="work_experience_position" associationDirect="direct" />
                                             <field name="description" object="area" association="area" associationDirect="direct" />
-                                            <field name="descritption" object="type_of_institution" association="type_of_institution" associationDirect="direct" />
+                                            <field name="description" object="type_of_institution" association="type_of_institution" associationDirect="direct" />
                                             <field name="description" object="country" association="work_experience_country" associationDirect="direct" />
                                         </list>
                                     </form-group>
@@ -8167,6 +8581,61 @@
                             </forms>
                         </content>
                     </action>
+                    					<action e="" con="vone" obj="alumni_personal" type="viewone" st0="" st1="" completed="false">
+                        <name>action_manage_alumni_personal_alumni_external_jobs</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">manage personnel alumni_external_jobs</title-caption>
+                        <menuitem-caption language="en">manage personnel alumni_external_jobs</menuitem-caption>
+                        <button-caption language="en">manage personnel alumni_external_jobs</button-caption>
+                        <path action="action_modify_page_alumni_personal" command="oPersonalSys" />
+                        <zones>
+                            <zone name="operation">
+                                <action command="oAlumni_external_jobsSys" action="action_add_alumni_external_jobs">
+                                    <button-caption language="en">Add academic info</button-caption>
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="folder2" />
+                            <zone name="rowaction0">
+                            	<action command="oAlumni_external_jobsSys" action="action_set_current_alumni_external_jobs" />
+                                <action command="oAlumni_external_jobsSys" action="action_modify_page_alumni_external_jobs">
+                                    <parameter name="isPopUp" />
+                                </action>
+                                <action command="oAlumni_external_jobsSys" action="action_delete_page_alumni_external_jobs">
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="go" />
+                            <zone name="submit" />
+                            <zone name="folder" command="oPersonalSys" action="action_modify_page_alumni_personal" />
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="Alumni Personal data" num-columns="3">
+                                        <attribute-form label="alumni_personalcode" field="alumni_personalcode" required="false" writable="false" object="alumni_personal" />
+                                        <attribute-form label="firstname" field="firstname" required="false" writable="false" object="alumni_personal" />
+                                        <attribute-form label="surname" field="surname" required="false" writable="false" object="alumni_personal" />
+                                    </form-group>
+                                    <form-group title="Alumni external jobs" num-columns="2">
+                                        <list type="AS" object="alumni_external_jobs" objectFrom="alumni_external_jobs" association="personal" objectTo="alumni_personal" associationAddress="inverse" selectable="false" multiselectable="false" filter="false" pagination="false" rowactions="true" rowactionszone="rowaction0">
+                                            <field name="start_date" />
+                                            <field name="end_date" />                                            
+                                            <field name="description" object="alumni_external_job_positions" association="external_job_positions" associationDirect="direct" />
+											<field name="description" object="alumni_external_job_sectors" association="external_job_sectors" associationDirect="direct" />
+											<field name="institution" />
+                                            <field name="city" />
+											<field name="description" object="country" association="country" associationDirect="direct" />                                            
+                                        </list>
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    					
                     <action e="" con="vone" obj="personal" type="viewone" st0="" st1="" completed="false">
                         <name>action_manage_personal_rgroup_grant_concessions</name>
                         <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
@@ -8560,7 +9029,7 @@
                                 </action>
                                 <action command="oPersonalSys" action="action_manage_my_own_personal_grant_concessions">
                                     <button-caption language="en">Grant concessions</button-caption>
-                                </action>
+                                </action>                                
                                 <action command="oPersonalSys" action="action_manage_my_own_personal_education">
                                     <button-caption language="en">Education</button-caption>
                                 </action>
@@ -11578,6 +12047,1905 @@
                         </content>
                     </action>
                 </group>
+				<group e="" name="oAlumni_personalSys" command="oAlumni_personalSys" nick="oAlumni_personalSys" type="system" action-number="" st0="SystemObj">
+					<description>Auto generated group</description>
+					<caption language="en">personnel</caption>
+					<extends>BaseCommandsProtected</extends>
+					<action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+						<name>action_cancel_delete_alumni_personal</name>
+						<description />
+						<title-caption language="en">Delete delete_page_personnel cancel</title-caption>
+						<menuitem-caption language="en">Delete delete_page_personnel cancel</menuitem-caption>
+						<button-caption language="en">Cancel</button-caption>
+						<path action="action_delete_page_alumni_personal" command="oAlumni_personalSys" />
+						<parameter name="zoneaction.oAlumni_personalSys.delete_page_alumni_personal" value="oAlumni_personalSys.delete_page_alumni_personal" />
+						<parameter name="objectsRecieved" value="none" />
+					</action>
+					<action e="" con="del" obj="alumni_personal" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_delete_page_alumni_personal</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_personnel ok</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_personnel ok</menuitem-caption>
+                        <button-caption language="en">Delete</button-caption>
+                        <path action="action_delete_page_alumni_personal" command="oAlumni_personalSys" />
+                        <parameter name="zoneaction.oAlumni_personalSys.delete_page_alumni_personal" value="oAlumni_personalSys.delete_page_alumni_personal" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="delelte-all" obj="alumni_personal" type="delete" st0="" st1="" completed="false">
+						<name>action_delete_page_alumni_personal</name>
+						<show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+						<description />
+						<title-caption language="en">Delete</title-caption>
+						<menuitem-caption language="en">Delete</menuitem-caption>
+						<button-caption language="en">Delete</button-caption>
+						<path action="action_manage_alumni_personal" command="oAlumni_personalSys" />
+						<zones>
+							<zone name="operation" />
+							<zone name="folder2" />
+							<zone name="go" />
+							<zone name="folder"/>
+							<zone name="submit">
+								<action command="oAlumni_personalSys" action="action_delete_delete_page_alumni_personal" />
+								<action command="oAlumni_personalSys" action="action_cancel_delete_alumni_personal" />
+							</zone>
+						</zones>
+						<parameter name="note" value="" />
+						<parameter name="objectsRecieved" value="one" />
+						<content>
+							<forms>
+								<form>
+									<form-group title="Alumni_personal" num-columns="2">
+										<attribute-form label="alumni_personalcode" field="alumni_personalcode" required="false" writable="false" object="alumni_personal" />
+										<attribute-form label="firstname" field="firstname" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="surname" field="surname" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="irb_surname" field="irb_surname" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="gender" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_personal" associationName="gender" associationBO="gender" popUp="false" popUpAlways="false" />
+										<attribute-form label="nationality" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_personal" associationName="nationality" associationBO="nationality" popUp="false" popUpAlways="false" />
+										<attribute-form label="nationality 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_personal" associationName="nationality_2" associationBO="nationality" popUp="false" popUpAlways="false" />
+										<attribute-form label="birth" field="birth" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="email" field="email" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="url" field="url" required="false" writable="true" object="alumni_personal" />						
+										<attribute-form label="facebook" field="facebook" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="linkedin" field="linkedin" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="twitter" field="twitter" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="keywords" field="keywords" required="false" writable="true" object="alumni_personal" />
+										
+										<attribute-form label="biography" field="biography" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="awards" field="awards" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="ORCIDID" field="ORCIDID" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="researcherid" field="researcherid" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="pubmedid" field="pubmedid" required="false" writable="true" object="alumni_personal" />
+										
+										<attribute-form label="verified" field="verified" required="false" writable="true" object="alumni_personal" />						
+										<attribute-form label="show_data" field="show_data" required="false" writable="true" object="alumni_personal" />
+									</form-group>				
+								</form>
+							</forms>
+						</content>
+					</action>
+					<action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+						<name>action_cancel_modify_modify_page_alumni_personal</name>
+						<description />
+						<title-caption language="en">Modify modify_page_personnel cancel</title-caption>
+						<menuitem-caption language="en">Modify modify_page_personnel cancel</menuitem-caption>
+						<button-caption language="en">Cancel</button-caption>
+						<path action="action_modify_page_alumni_personal" command="oAlumni_personalSys" />
+						<parameter name="zoneaction.oAlumni_personalSys.modify_page_alumni_personal" value="oAlumni_personalSys.modify_page_alumni_personal" />
+						<parameter name="objectsRecieved" value="none" />
+					</action>									
+					<action e="" con="viewlist" obj="alumni_personal" type="viewlist" st0="" st1="" completed="false">
+						<name>action_manage_alumni_personal</name>
+						<show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+						<description />
+						<title-caption language="en">Manage all personnel</title-caption>
+						<menuitem-caption language="en">Manage all personnel</menuitem-caption>
+						<button-caption language="en">Manage all personnel</button-caption>
+						<path action="action_appHome" command="oAlumni_personalSys" />
+						<zones>
+							<zone name="operation"/>
+							<zone name="folder2" />
+							<zone name="rowaction0">
+								<action command="oAlumni_personalSys" action="action_modify_page_alumni_personal" />
+								<action command="oAlumni_personalSys" action="action_delete_page_alumni_personal">
+									<parameter name="isPopUp" />
+								</action>
+							</zone>
+							<zone name="go" />
+							<zone name="folder">
+								<action command="oAlumni_personalSys" action="action_manage_alumni_personal">
+									<button-caption language="en">All personnel</button-caption>
+								</action>								
+								<action command="oAlumni_personalSys" action="action_manage_validated_alumni_personal">
+									<button-caption language="en">Validated</button-caption>
+								</action>				
+								<action command="oAlumni_personalSys" action="action_manage_not_validated_alumni_personal">
+									<button-caption language="en">Not Validated</button-caption>
+								</action>				
+							</zone>
+							<zone name="submit" />
+						</zones>
+						<parameter name="note" value="" />
+						<parameter name="objectsRecieved" value="none" />
+						<content>
+							<forms>
+								<form>
+									<form-group title="" num-columns="1">
+										<list type="BO" object="alumni_personal" selectable="false" multiselectable="false" filter="true" pagination="true" rowactions="true" rowactionszone="rowaction0">
+											<field name="firstname" />
+											<field name="surname" />							
+										</list>
+									</form-group>
+								</form>
+							</forms>
+						</content>
+					</action>
+					<action e="" con="viewlist" obj="alumni_personal" type="viewlist" st0="" st1="" completed="false">
+						<name>action_manage_validated_alumni_personal</name>
+						<show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+						<description />
+						<title-caption language="en">Manage validated personnel</title-caption>
+						<menuitem-caption language="en">Manage validated personnel</menuitem-caption>
+						<button-caption language="en">Manage validated personnel</button-caption>
+						<path action="action_appHome" command="oAlumni_personalSys" />
+						<zones>
+							<zone name="operation"/>
+							<zone name="folder2" />
+							<zone name="rowaction0">
+								<action command="oAlumni_personalSys" action="action_modify_page_alumni_personal" />
+								<action command="oAlumni_personalSys" action="action_delete_page_alumni_personal">
+									<parameter name="isPopUp" />
+								</action>
+							</zone>
+							<zone name="go" />
+							<zone name="folder">
+								<action command="oAlumni_personalSys" action="action_manage_alumni_personal">
+									<button-caption language="en">All personnel</button-caption>
+								</action>								
+								<action command="oAlumni_personalSys" action="action_manage_validated_alumni_personal">
+									<button-caption language="en">Validated</button-caption>
+								</action>				
+								<action command="oAlumni_personalSys" action="action_manage_not_validated_alumni_personal">
+									<button-caption language="en">Not Validated</button-caption>
+								</action>				
+							</zone>
+							<zone name="submit" />
+						</zones>
+						<parameter name="note" value="" />
+						<parameter name="objectsRecieved" value="none" />
+						<content>
+							<forms>
+								<form>
+									<form-group title="" num-columns="1">
+										<list type="BO" object="alumni_personal" selectable="false" multiselectable="false" filter="true" pagination="true" rowactions="true" rowactionszone="rowaction0">
+											<field name="firstname" />
+											<field name="surname" />							
+										</list>
+									</form-group>
+								</form>
+							</forms>
+						</content>
+					</action>
+					<action e="" con="viewlist" obj="alumni_personal" type="viewlist" st0="" st1="" completed="false">
+						<name>action_manage_not_validated_alumni_personal</name>
+						<show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+						<description />
+						<title-caption language="en">Manage not validated personnel</title-caption>
+						<menuitem-caption language="en">Manage not validated personnel</menuitem-caption>
+						<button-caption language="en">Manage not validated personnel</button-caption>
+						<path action="action_appHome" command="oAlumni_personalSys" />
+						<zones>
+							<zone name="operation"/>
+							<zone name="folder2" />
+							<zone name="rowaction0">
+								<action command="oAlumni_personalSys" action="action_modify_page_alumni_personal" />
+								<action command="oAlumni_personalSys" action="action_delete_page_alumni_personal">
+									<parameter name="isPopUp" />
+								</action>
+							</zone>
+							<zone name="go" />
+							<zone name="folder">
+								<action command="oAlumni_personalSys" action="action_manage_alumni_personal">
+									<button-caption language="en">All personnel</button-caption>
+								</action>								
+								<action command="oAlumni_personalSys" action="action_manage_validated_alumni_personal">
+									<button-caption language="en">Validated</button-caption>
+								</action>				
+								<action command="oAlumni_personalSys" action="action_manage_not_validated_alumni_personal">
+									<button-caption language="en">Not Validated</button-caption>
+								</action>				
+							</zone>
+							<zone name="submit" />
+						</zones>
+						<parameter name="note" value="" />
+						<parameter name="objectsRecieved" value="none" />
+						<content>
+							<forms>
+								<form>
+									<form-group title="" num-columns="1">
+										<list type="BO" object="alumni_personal" selectable="false" multiselectable="false" filter="true" pagination="true" rowactions="true" rowactionszone="rowaction0">
+											<field name="firstname" />
+											<field name="surname" />							
+										</list>
+									</form-group>
+								</form>
+							</forms>
+						</content>
+					</action>
+					<action e="" con="vone" obj="alumni_personal" type="viewone" st0="" st1="" completed="false">
+						<name>action_manage_alumni_personal_alumni_external_jobs</name>
+						<show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+						<description />
+						<title-caption language="en">manage personnel external jobs</title-caption>
+						<menuitem-caption language="en">manage personnel external jobs</menuitem-caption>
+						<button-caption language="en">manage personnel external jobs</button-caption>
+						<path action="action_modify_page_alumni_personal" command="oAlumni_personalSys" />
+						<zones>
+							<zone name="operation">
+								<action command="oAlumni_external_jobsSys" action="action_add_alumni_external_jobs">
+									<button-caption language="en">Add external job</button-caption>
+									<parameter name="isPopUp" />
+								</action>
+							</zone>
+							<zone name="folder2" />
+							<zone name="rowaction0">
+								<action command="oAlumni_external_jobsSys" action="action_set_current_alumni_external_jobs" />
+								<action command="oAlumni_external_jobsSys" action="action_modify_page_alumni_external_jobs">
+									<parameter name="isPopUp" />
+								</action>
+								<action command="oAlumni_external_jobsSys" action="action_delete_page_alumni_external_jobs">
+									<parameter name="isPopUp" />
+								</action>
+							</zone>
+							<zone name="go" />
+							<zone name="submit" />
+							<zone name="folder" command="oAlumni_personalSys" action="action_modify_page_alumni_personal" />
+						</zones>
+						<parameter name="note" value="" />
+						<parameter name="objectsRecieved" value="one" />
+						<content>
+							<forms>
+								<form>
+									<form-group title="Personal data" num-columns="3">
+										<attribute-form label="alumni_personalcode" field="alumni_personalcode" required="false" writable="false" object="alumni_personal" />
+										<attribute-form label="name" field="name" required="false" writable="false" object="alumni_personal" />
+										<attribute-form label="surname" field="surname" required="false" writable="false" object="alumni_personal" />
+									</form-group>
+									<form-group title="External jobs" num-columns="2">
+										<list type="AS" object="alumni_external_jobs" objectFrom="alumni_external_jobs" association="alumni_external_jobs_personal" objectTo="alumni_personal" associationAddress="inverse" selectable="false" multiselectable="false" filter="false" pagination="false" rowactions="true" rowactionszone="rowaction0">
+											<field name="start_date" />
+											<field name="end_date" />							
+										</list>
+									</form-group>
+								</form>
+							</forms>
+						</content>
+					</action>
+					<action e="" con="vone" obj="alumni_personal" type="viewone" st0="" st1="" completed="false">
+						<name>action_manage_alumni_personal_alumni_irb_jobs</name>
+						<show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+						<description />
+						<title-caption language="en">manage personnel irb jobs</title-caption>
+						<menuitem-caption language="en">manage personnel irb jobs</menuitem-caption>
+						<button-caption language="en">manage personnel irb jobs</button-caption>
+						<path action="action_modify_page_alumni_personal" command="oAlumni_personalSys" />
+						<zones>
+							<zone name="operation">
+								<action command="oAlumni_irb_jobsSys" action="action_add_alumni_irb_jobs">
+									<button-caption language="en">Add irb job</button-caption>
+									<parameter name="isPopUp" />
+								</action>
+							</zone>
+							<zone name="folder2" />
+							<zone name="rowaction0">								
+								<action command="oAlumni_irb_jobsSys" action="action_modify_page_alumni_irb_jobs">
+									<parameter name="isPopUp" />
+								</action>
+								<action command="oAlumni_irb_jobsSys" action="action_delete_page_alumni_irb_jobs">
+									<parameter name="isPopUp" />
+								</action>
+							</zone>
+							<zone name="go" />
+							<zone name="submit" />
+							<zone name="folder" command="oAlumni_personalSys" action="action_modify_page_alumni_personal" />
+						</zones>
+						<parameter name="note" value="" />
+						<parameter name="objectsRecieved" value="one" />
+						<content>
+							<forms>
+								<form>
+									<form-group title="Alumni Personal data" num-columns="3">
+                                        <attribute-form label="alumni_personalcode" field="alumni_personalcode" required="false" writable="false" object="alumni_personal" />
+                                        <attribute-form label="firstname" field="firstname" required="false" writable="false" object="alumni_personal" />
+                                        <attribute-form label="surname" field="surname" required="false" writable="false" object="alumni_personal" />
+                                    </form-group>
+                                    <form-group title="Alumni irb jobs" num-columns="2">
+                                        <list type="AS" object="alumni_irb_jobs" objectFrom="alumni_irb_jobs" association="personal" objectTo="alumni_personal" associationAddress="inverse" selectable="false" multiselectable="false" filter="false" pagination="false" rowactions="true" rowactionszone="rowaction0">
+                                            <field name="start_date" />
+                                            <field name="end_date" />                                            
+                                            <field name="description" object="alumni_irb_job_positions" association="irb_job_positions" associationDirect="direct" />
+											<field name="description" object="unit" association="unit" associationDirect="direct" />
+											<field name="description" object="unit" association="unit_2" associationDirect="direct" />
+                                        </list>
+                                    </form-group>
+								</form>
+							</forms>
+						</content>
+					</action>
+					<action e="" con="mod" obj="alumni_personal" type="modify" st0="" st1="" completed="false">
+						<name>action_modify_modify_page_alumni_personal</name>
+						<description />
+						<title-caption language="en">Modify modify_page_alumni_personnel ok</title-caption>
+						<menuitem-caption language="en">Modify modify_page_alumni_personnel ok</menuitem-caption>
+						<button-caption language="en">Save</button-caption>
+						<path action="action_modify_page_alumni_personal" command="oAlumni_personalSys" />
+						<parameter name="zoneaction.oAlumni_personalSys.modify_page_alumni_personal" value="oAlumni_personalSys.modify_page_alumni_personal" />
+						<parameter name="objectsRecieved" value="none" />
+					</action>
+					<action e="" con="mod" obj="alumni_personal" type="modify" st0="" st1="" completed="false">
+						<name>action_modify_page_alumni_personal</name>
+						<show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+						<description />
+						<title-caption language="en">Edit</title-caption>
+						<menuitem-caption language="en">Edit</menuitem-caption>
+						<button-caption language="en">Edit</button-caption>
+						<path action="action_manage_alumni_personal" command="oAlumni_personalSys" />
+						<zones>
+							<zone name="operation" />
+							<zone name="folder2" />
+							<zone name="rowaction0"/>				
+							<zone name="go" />
+							<zone name="folder">
+								<action command="oAlumni_personalSys" action="action_modify_page_alumni_personal">
+									<button-caption language="en">Personal data</button-caption>
+								</action>
+								<action command="oAlumni_personalSys" action="action_manage_alumni_personal_alumni_external_jobs">
+									<button-caption language="en">External jobs</button-caption>
+								</action>
+								<action command="oAlumni_personalSys" action="action_manage_alumni_personal_alumni_irb_jobs">
+									<button-caption language="en">IRB Jobs</button-caption>
+								</action>				
+							</zone>
+							<zone name="submit">
+								<action command="oAlumni_personalSys" action="action_modify_modify_page_alumni_personal">
+									<redirect command="oAlumni_personalSys" action="action_modify_page_alumni_personal" />
+								</action>
+								<action command="oAlumni_personalSys" action="action_cancel_modify_modify_page_alumni_personal" />
+							</zone>
+						</zones>
+						<parameter name="note" value="" />
+						<parameter name="objectsRecieved" value="one" />
+						<content>
+							<forms>
+								<form>
+									<form-group title="Alumni Personal" num-columns="2">
+										<attribute-form label="alumni_personalcode" field="alumni_personalcode" required="false" writable="false" object="alumni_personal" />
+										<attribute-form label="firstname" field="firstname" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="surname" field="surname" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="irb_surname" field="irb_surname" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="gender" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_personal" associationName="gender" associationBO="gender" popUp="false" popUpAlways="false" />
+										<attribute-form label="nationality" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_personal" associationName="nationality" associationBO="nationality" popUp="false" popUpAlways="false" />
+										<attribute-form label="nationality 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_personal" associationName="nationality_2" associationBO="nationality" popUp="false" popUpAlways="false" />
+										<attribute-form label="birth" field="birth" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="email" field="email" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="url" field="url" required="false" writable="true" object="alumni_personal" />						
+										<attribute-form label="facebook" field="facebook" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="linkedin" field="linkedin" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="twitter" field="twitter" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="keywords" field="keywords" required="false" writable="true" object="alumni_personal" />
+										
+										<attribute-form label="biography" field="biography" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="awards" field="awards" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="ORCIDID" field="ORCIDID" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="researcherid" field="researcherid" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="pubmedid" field="pubmedid" required="false" writable="true" object="alumni_personal" />
+										
+										<attribute-form label="verified" field="verified" required="false" writable="true" object="alumni_personal" />						
+										<attribute-form label="show_data" field="show_data" required="false" writable="true" object="alumni_personal" />
+									</form-group>					
+								</form>
+							</forms>
+						</content>
+					</action>	
+					
+				</group>
+				<group e="" name="oAlumni_paramsSys" command="oAlumni_paramsSys" nick="oAlumni_paramsSys" type="system" action-number="" st0="SystemObj">
+					<description>Auto generated group</description>
+					<caption language="en">alumni_params</caption>
+					<extends>BaseCommandsProtected</extends>	
+					<action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+						<name>action_cancel_modify_modify_page_alumni_params</name>
+						<description />
+						<title-caption language="en">Modify modify_page_alumni_params cancel</title-caption>
+						<menuitem-caption language="en">Modify modify_page_alumni_params cancel</menuitem-caption>
+						<button-caption language="en">Cancel</button-caption>
+						<path action="action_modify_page_alumni_params" command="oAlumni_paramsSys" />
+						<parameter name="objectsRecieved" value="none" />
+						<parameter name="zoneaction.oAlumni_paramsSys.modify_page_alumni_params" value="oAlumni_paramsSys.modify_page_alumni_params" />
+					</action>
+					<action e="" con="mod" obj="alumni_params" type="modify" st0="" st1="" completed="false">
+						<name>action_modify_modify_page_alumni_params</name>
+						<description />
+						<title-caption language="en">Modify modify_page_alumni_params ok</title-caption>
+						<menuitem-caption language="en">Modify modify_page_alumni_params ok</menuitem-caption>
+						<button-caption language="en">Save</button-caption>
+						<path action="action_modify_page_alumni_params" command="oAlumni_paramsSys" />
+						<parameter name="objectsRecieved" value="none" />
+						<parameter name="zoneaction.oAlumni_paramsSys.modify_page_alumni_params" value="oAlumni_paramsSys.modify_page_alumni_params" />
+					</action>
+					<action e="" con="mod" obj="alumni_params" type="modify" st0="" st1="" completed="false">
+						<name>action_modify_page_alumni_params</name>
+						<show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+						<description />
+						<title-caption language="en">Set export conditions</title-caption>
+						<menuitem-caption language="en">Set export conditions</menuitem-caption>
+						<button-caption language="en">Set export conditions</button-caption>		
+						<path action="action_appHome" command="oAlumni_paramsSys" />
+						<zones>
+							<zone name="operation" />
+							<!--
+							<zone name="folder2" />
+							<zone name="folder" />
+							-->
+							
+							<zone name="folder" command="oUnitSys" action="action_manage_unit" />
+		                    <zone name="folder2" command="oUnitSys" action="action_manage_unit" />
+		                    <zone name="folder3" command="oUnitSys" action="action_manage_unit" />
+							
+							<zone name="go" />
+							<zone name="submit">
+								<action command="oAlumni_paramsSys" action="action_modify_modify_page_alumni_params" />				
+								<action command="oAlumni_paramsSys" action="action_cancel_modify_modify_page_alumni_params" />				
+							</zone>
+						</zones>
+						<parameter name="note" value="" />						
+						<parameter name="objectsRecieved" value="none" />						
+						<content>
+							<forms>
+								<form>
+									<form-group title="" num-columns="1">
+										<attribute-form label="value" field="value" required="true" writable="true" object="alumni_params" />
+									</form-group>
+								</form>
+							</forms>
+						</content>
+					</action>	
+				</group>
+                <group e="" name="oAlumni_titlesSys" command="oAlumni_titlesSys" nick="oAlumni_titlesSys" type="system" action-number="" st0="SystemObj">
+                    <description>Auto generated group</description>
+                    <caption language="en">alumni_titles</caption>
+                    <extends>BaseCommandsProtected</extends>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_delete_alumni_titles</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_titles cancel</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_titles cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_delete_page_alumni_titles" command="oAlumni_titlesSys" />
+                        <parameter name="zoneaction.oAlumni_titlesSys.delete_page_alumni_titles" value="oAlumni_titlesSys.delete_page_alumni_titles" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_modify_modify_page_alumni_titles</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_titles cancel</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_titles cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_modify_page_alumni_titles" command="oAlumni_titlesSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_titlesSys.modify_page_alumni_titles" value="oAlumni_titlesSys.modify_page_alumni_titles" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_new_new_page_alumni_titles</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_titles cancel</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_titles cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_new_page_alumni_titles" command="oAlumni_titlesSys" />
+                        <parameter name="zoneaction.oAlumni_titlesSys.new_page_alumni_titles" value="oAlumni_titlesSys.new_page_alumni_titles" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_view_view_alumni_titles</name>
+                        <description />
+                        <title-caption language="en">View view_alumni_titles cancel</title-caption>
+                        <menuitem-caption language="en">View view_alumni_titles cancel</menuitem-caption>
+                        <button-caption language="en">Back</button-caption>
+                        <path action="action_" command="oAlumni_titlesSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_titlesSys.view_alumni_titles" value="oAlumni_titlesSys.view_alumni_titles" />
+                    </action>
+                    <action e="" con="del" obj="alumni_titles" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_delete_page_alumni_titles</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_titles ok</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_titles ok</menuitem-caption>
+                        <button-caption language="en">Delete</button-caption>
+                        <path action="action_delete_page_alumni_titles" command="oAlumni_titlesSys" />
+                        <parameter name="zoneaction.oAlumni_titlesSys.delete_page_alumni_titles" value="oAlumni_titlesSys.delete_page_alumni_titles" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="del" obj="alumni_titles" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_page_alumni_titles</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Delete alumni title</title-caption>
+                        <menuitem-caption language="en">Delete alumni title</menuitem-caption>
+                        <button-caption language="en">Delete alumni title</button-caption>
+                        <path action="action_manage_alumni_titles" command="oAlumni_titlesSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_titlesSys" action="action_delete_delete_page_alumni_titles" />
+                                <action command="oAlumni_titlesSys" action="action_cancel_delete_alumni_titles" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="alumni_titles" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="viewlist" obj="alumni_titles" type="viewlist" st0="" st1="" completed="false">
+                        <name>action_manage_alumni_titles</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Alumni title</title-caption>
+                        <menuitem-caption language="en">Alumni title</menuitem-caption>
+                        <button-caption language="en">Alumni title</button-caption>
+                        <path action="action_appHome" command="oAlumni_titlesSys" />
+                        <zones>
+                            <zone name="rowaction0">
+                                <action command="oAlumni_titlesSys" action="action_delete_page_alumni_titles">
+                                    <parameter name="isPopUp" />
+                                </action>
+                                <action command="oAlumni_titlesSys" action="action_modify_page_alumni_titles">
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="folder" />
+                            <zone name="go">
+                                <action command="oAlumni_titlesSys" action="action_new_page_alumni_titles">
+                                    <button-caption language="en">Create Alumni title</button-caption>
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="submit" />
+                            <zone name="operation" />
+                            <zone name="folder" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder2" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder3" command="oUnitSys" action="action_manage_unit" />
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <list type="BO" object="alumni_titles" selectable="false" multiselectable="false" filter="false" pagination="false" rowactions="true" rowactionszone="rowaction0">
+                                            <field name="description" />
+                                            <field name="order_number" />                                            
+                                        </list>
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="mod" obj="alumni_titles" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_modify_page_alumni_titles</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_titles ok</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_titles ok</menuitem-caption>
+                        <button-caption language="en">Save</button-caption>
+                        <path action="action_modify_page_alumni_titles" command="oAlumni_titlesSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_titlesSys.modify_page_alumni_titles" value="oAlumni_titlesSys.modify_page_alumni_titles" />
+                    </action>
+                    <action e="" con="mod" obj="alumni_titles" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_page_alumni_titles</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Modify alumni title</title-caption>
+                        <menuitem-caption language="en">Modify alumni title</menuitem-caption>
+                        <button-caption language="en">Modify alumni title</button-caption>
+                        <path action="action_manage_alumni_titles" command="oAlumni_titlesSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_titlesSys" action="action_modify_modify_page_alumni_titles" />
+                                <action command="oAlumni_titlesSys" action="action_cancel_modify_modify_page_alumni_titles" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="alumni_titles" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="new" obj="alumni_titles" type="new" st0="" st1="" completed="false">
+                        <name>action_new_new_page_alumni_titles</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_titles ok</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_titles ok</menuitem-caption>
+                        <button-caption language="en">Ok</button-caption>
+                        <path action="action_new_page_alumni_titles" command="oAlumni_titlesSys" />
+                        <parameter name="zoneaction.oAlumni_titlesSys.new_page_alumni_titles" value="oAlumni_titlesSys.new_page_alumni_titles" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="new" obj="alumni_titles" type="new" st0="" st1="" completed="false">
+                        <name>action_new_page_alumni_titles</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">New alumni title</title-caption>
+                        <menuitem-caption language="en">New alumni title</menuitem-caption>
+                        <button-caption language="en">New alumni title</button-caption>
+                        <path action="action_manage_alumni_titles" command="oAlumni_titlesSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_titlesSys" action="action_new_new_page_alumni_titles" />
+                                <action command="oAlumni_titlesSys" action="action_cancel_new_new_page_alumni_titles" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="alumni_titles" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="vone" obj="alumni_titles" type="viewone" st0="" st1="" completed="false">
+                        <name>action_view_alumni_titles</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">View alumni title</title-caption>
+                        <menuitem-caption language="en">View alumni title</menuitem-caption>
+                        <button-caption language="en">View alumni title</button-caption>
+                        <path action="action_" command="oAlumni_titlesSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_titlesSys" action="action_cancel_view_view_alumni_titles" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="alumni_titles" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                </group>
+                <group e="" name="oAlumni_external_job_positionsSys" command="oAlumni_external_job_positionsSys" nick="oAlumni_external_job_positionsSys" type="system" action-number="" st0="SystemObj">
+                    <description>Auto generated group</description>
+                    <caption language="en">alumni_external_job_positions</caption>
+                    <extends>BaseCommandsProtected</extends>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_delete_alumni_external_job_positions</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_external_job_positions cancel</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_external_job_positions cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_delete_page_alumni_external_job_positions" command="oAlumni_external_job_positionsSys" />
+                        <parameter name="zoneaction.oAlumni_external_job_positionsSys.delete_page_alumni_external_job_positions" value="oAlumni_external_job_positionsSys.delete_page_alumni_external_job_positions" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_modify_modify_page_alumni_external_job_positions</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_external_job_positions cancel</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_external_job_positions cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_modify_page_alumni_external_job_positions" command="oAlumni_external_job_positionsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_external_job_positionsSys.modify_page_alumni_external_job_positions" value="oAlumni_external_job_positionsSys.modify_page_alumni_external_job_positions" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_new_new_page_alumni_external_job_positions</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_external_job_positions cancel</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_external_job_positions cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_new_page_alumni_external_job_positions" command="oAlumni_external_job_positionsSys" />
+                        <parameter name="zoneaction.oAlumni_external_job_positionsSys.new_page_alumni_external_job_positions" value="oAlumni_external_job_positionsSys.new_page_alumni_external_job_positions" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_view_view_alumni_external_job_positions</name>
+                        <description />
+                        <title-caption language="en">View view_alumni_external_job_positions cancel</title-caption>
+                        <menuitem-caption language="en">View view_alumni_external_job_positions cancel</menuitem-caption>
+                        <button-caption language="en">Back</button-caption>
+                        <path action="action_" command="oAlumni_external_job_positionsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_external_job_positionsSys.view_alumni_external_job_positions" value="oAlumni_external_job_positionsSys.view_alumni_external_job_positions" />
+                    </action>
+                    <action e="" con="del" obj="alumni_external_job_positions" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_delete_page_alumni_external_job_positions</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_external_job_positions ok</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_external_job_positions ok</menuitem-caption>
+                        <button-caption language="en">Delete</button-caption>
+                        <path action="action_delete_page_alumni_external_job_positions" command="oAlumni_external_job_positionsSys" />
+                        <parameter name="zoneaction.oAlumni_external_job_positionsSys.delete_page_alumni_external_job_positions" value="oAlumni_external_job_positionsSys.delete_page_alumni_external_job_positions" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="del" obj="alumni_external_job_positions" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_page_alumni_external_job_positions</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Delete alumni external job position</title-caption>
+                        <menuitem-caption language="en">Delete alumni external job position</menuitem-caption>
+                        <button-caption language="en">Delete alumni external job position</button-caption>
+                        <path action="action_manage_alumni_external_job_positions" command="oAlumni_external_job_positionsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_external_job_positionsSys" action="action_delete_delete_page_alumni_external_job_positions" />
+                                <action command="oAlumni_external_job_positionsSys" action="action_cancel_delete_alumni_external_job_positions" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="alumni_external_job_positions" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="viewlist" obj="alumni_external_job_positions" type="viewlist" st0="" st1="" completed="false">
+                        <name>action_manage_alumni_external_job_positions</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Alumni external job position</title-caption>
+                        <menuitem-caption language="en">Alumni external job position</menuitem-caption>
+                        <button-caption language="en">Alumni external job position</button-caption>
+                        <path action="action_appHome" command="oAlumni_external_job_positionsSys" />
+                        <zones>
+                            <zone name="rowaction0">
+                                <action command="oAlumni_external_job_positionsSys" action="action_delete_page_alumni_external_job_positions">
+                                    <parameter name="isPopUp" />
+                                </action>
+                                <action command="oAlumni_external_job_positionsSys" action="action_modify_page_alumni_external_job_positions">
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="folder" />
+                            <zone name="go">
+                                <action command="oAlumni_external_job_positionsSys" action="action_new_page_alumni_external_job_positions">
+                                    <button-caption language="en">Create Alumni external job position</button-caption>
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="submit" />
+                            <zone name="operation" />
+                            <zone name="folder" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder2" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder3" command="oUnitSys" action="action_manage_unit" />
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <list type="BO" object="alumni_external_job_positions" selectable="false" multiselectable="false" filter="false" pagination="false" rowactions="true" rowactionszone="rowaction0">
+                                            <field name="description" />
+                                            <field name="order_number" />    
+                                            <field name="description" object="alumni_job_position_types" association="job_position_types" associationDirect="direct" />                                        
+                                        </list>
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="mod" obj="alumni_external_job_positions" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_modify_page_alumni_external_job_positions</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_external_job_positions ok</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_external_job_positions ok</menuitem-caption>
+                        <button-caption language="en">Save</button-caption>
+                        <path action="action_modify_page_alumni_external_job_positions" command="oAlumni_external_job_positionsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_external_job_positionsSys.modify_page_alumni_external_job_positions" value="oAlumni_external_job_positionsSys.modify_page_alumni_external_job_positions" />
+                    </action>
+                    <action e="" con="mod" obj="alumni_external_job_positions" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_page_alumni_external_job_positions</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Modify alumni external job position</title-caption>
+                        <menuitem-caption language="en">Modify alumni external job position</menuitem-caption>
+                        <button-caption language="en">Modify alumni external job position</button-caption>
+                        <path action="action_manage_alumni_external_job_positions" command="oAlumni_external_job_positionsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_external_job_positionsSys" action="action_modify_modify_page_alumni_external_job_positions" />
+                                <action command="oAlumni_external_job_positionsSys" action="action_cancel_modify_modify_page_alumni_external_job_positions" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="alumni_external_job_positions" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="new" obj="alumni_external_job_positions" type="new" st0="" st1="" completed="false">
+                        <name>action_new_new_page_alumni_external_job_positions</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_external_job_positions ok</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_external_job_positions ok</menuitem-caption>
+                        <button-caption language="en">Ok</button-caption>
+                        <path action="action_new_page_alumni_external_job_positions" command="oAlumni_external_job_positionsSys" />
+                        <parameter name="zoneaction.oAlumni_external_job_positionsSys.new_page_alumni_external_job_positions" value="oAlumni_external_job_positionsSys.new_page_alumni_external_job_positions" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="new" obj="alumni_external_job_positions" type="new" st0="" st1="" completed="false">
+                        <name>action_new_page_alumni_external_job_positions</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">New alumni external job position</title-caption>
+                        <menuitem-caption language="en">New alumni external job position</menuitem-caption>
+                        <button-caption language="en">New alumni external job position</button-caption>
+                        <path action="action_manage_alumni_external_job_positions" command="oAlumni_external_job_positionsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_external_job_positionsSys" action="action_new_new_page_alumni_external_job_positions" />
+                                <action command="oAlumni_external_job_positionsSys" action="action_cancel_new_new_page_alumni_external_job_positions" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="alumni_external_job_positions" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="vone" obj="alumni_external_job_positions" type="viewone" st0="" st1="" completed="false">
+                        <name>action_view_alumni_external_job_positions</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">View alumni external job position</title-caption>
+                        <menuitem-caption language="en">View alumni external job position</menuitem-caption>
+                        <button-caption language="en">View alumni external job position</button-caption>
+                        <path action="action_" command="oAlumni_external_job_positionsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_external_job_positionsSys" action="action_cancel_view_view_alumni_external_job_positions" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="alumni_external_job_positions" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                </group>
+                <group e="" name="oAlumni_irb_job_positionsSys" command="oAlumni_irb_job_positionsSys" nick="oAlumni_irb_job_positionsSys" type="system" action-number="" st0="SystemObj">
+                    <description>Auto generated group</description>
+                    <caption language="en">alumni_irb_job_positions</caption>
+                    <extends>BaseCommandsProtected</extends>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_delete_alumni_irb_job_positions</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_irb_job_positions cancel</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_irb_job_positions cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_delete_page_alumni_irb_job_positions" command="oAlumni_irb_job_positionsSys" />
+                        <parameter name="zoneaction.oAlumni_irb_job_positionsSys.delete_page_alumni_irb_job_positions" value="oAlumni_irb_job_positionsSys.delete_page_alumni_irb_job_positions" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_modify_modify_page_alumni_irb_job_positions</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_irb_job_positions cancel</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_irb_job_positions cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_modify_page_alumni_irb_job_positions" command="oAlumni_irb_job_positionsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_irb_job_positionsSys.modify_page_alumni_irb_job_positions" value="oAlumni_irb_job_positionsSys.modify_page_alumni_irb_job_positions" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_new_new_page_alumni_irb_job_positions</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_irb_job_positions cancel</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_irb_job_positions cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_new_page_alumni_irb_job_positions" command="oAlumni_irb_job_positionsSys" />
+                        <parameter name="zoneaction.oAlumni_irb_job_positionsSys.new_page_alumni_irb_job_positions" value="oAlumni_irb_job_positionsSys.new_page_alumni_irb_job_positions" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_view_view_alumni_irb_job_positions</name>
+                        <description />
+                        <title-caption language="en">View view_alumni_irb_job_positions cancel</title-caption>
+                        <menuitem-caption language="en">View view_alumni_irb_job_positions cancel</menuitem-caption>
+                        <button-caption language="en">Back</button-caption>
+                        <path action="action_" command="oAlumni_irb_job_positionsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_irb_job_positionsSys.view_alumni_irb_job_positions" value="oAlumni_irb_job_positionsSys.view_alumni_irb_job_positions" />
+                    </action>
+                    <action e="" con="del" obj="alumni_irb_job_positions" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_delete_page_alumni_irb_job_positions</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_irb_job_positions ok</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_irb_job_positions ok</menuitem-caption>
+                        <button-caption language="en">Delete</button-caption>
+                        <path action="action_delete_page_alumni_irb_job_positions" command="oAlumni_irb_job_positionsSys" />
+                        <parameter name="zoneaction.oAlumni_irb_job_positionsSys.delete_page_alumni_irb_job_positions" value="oAlumni_irb_job_positionsSys.delete_page_alumni_irb_job_positions" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="del" obj="alumni_irb_job_positions" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_page_alumni_irb_job_positions</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Delete alumni irb job position</title-caption>
+                        <menuitem-caption language="en">Delete alumni irb job position</menuitem-caption>
+                        <button-caption language="en">Delete alumni irb job position</button-caption>
+                        <path action="action_manage_alumni_irb_job_positions" command="oAlumni_irb_job_positionsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_irb_job_positionsSys" action="action_delete_delete_page_alumni_irb_job_positions" />
+                                <action command="oAlumni_irb_job_positionsSys" action="action_cancel_delete_alumni_irb_job_positions" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="alumni_irb_job_positions" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="viewlist" obj="alumni_irb_job_positions" type="viewlist" st0="" st1="" completed="false">
+                        <name>action_manage_alumni_irb_job_positions</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Alumni irb job position</title-caption>
+                        <menuitem-caption language="en">Alumni irb job position</menuitem-caption>
+                        <button-caption language="en">Alumni irb job position</button-caption>
+                        <path action="action_appHome" command="oAlumni_irb_job_positionsSys" />
+                        <zones>
+                            <zone name="rowaction0">
+                                <action command="oAlumni_irb_job_positionsSys" action="action_delete_page_alumni_irb_job_positions">
+                                    <parameter name="isPopUp" />
+                                </action>
+                                <action command="oAlumni_irb_job_positionsSys" action="action_modify_page_alumni_irb_job_positions">
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="folder" />
+                            <zone name="go">
+                                <action command="oAlumni_irb_job_positionsSys" action="action_new_page_alumni_irb_job_positions">
+                                    <button-caption language="en">Create Alumni irb job position</button-caption>
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="submit" />
+                            <zone name="operation" />
+                            <zone name="folder" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder2" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder3" command="oUnitSys" action="action_manage_unit" />
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <list type="BO" object="alumni_irb_job_positions" selectable="false" multiselectable="false" filter="false" pagination="false" rowactions="true" rowactionszone="rowaction0">
+                                            <field name="description" />
+                                            <field name="order_number" />      
+                                            <field name="description" object="alumni_job_position_types" association="job_position_types" associationDirect="direct" />                                      
+                                        </list>
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="mod" obj="alumni_irb_job_positions" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_modify_page_alumni_irb_job_positions</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_irb_job_positions ok</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_irb_job_positions ok</menuitem-caption>
+                        <button-caption language="en">Save</button-caption>
+                        <path action="action_modify_page_alumni_irb_job_positions" command="oAlumni_irb_job_positionsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_irb_job_positionsSys.modify_page_alumni_irb_job_positions" value="oAlumni_irb_job_positionsSys.modify_page_alumni_irb_job_positions" />
+                    </action>
+                    <action e="" con="mod" obj="alumni_irb_job_positions" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_page_alumni_irb_job_positions</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Modify alumni irb job position</title-caption>
+                        <menuitem-caption language="en">Modify alumni irb job position</menuitem-caption>
+                        <button-caption language="en">Modify alumni irb job position</button-caption>
+                        <path action="action_manage_alumni_irb_job_positions" command="oAlumni_irb_job_positionsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_irb_job_positionsSys" action="action_modify_modify_page_alumni_irb_job_positions" />
+                                <action command="oAlumni_irb_job_positionsSys" action="action_cancel_modify_modify_page_alumni_irb_job_positions" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="alumni_irb_job_positions" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="new" obj="alumni_irb_job_positions" type="new" st0="" st1="" completed="false">
+                        <name>action_new_new_page_alumni_irb_job_positions</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_irb_job_positions ok</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_irb_job_positions ok</menuitem-caption>
+                        <button-caption language="en">Ok</button-caption>
+                        <path action="action_new_page_alumni_irb_job_positions" command="oAlumni_irb_job_positionsSys" />
+                        <parameter name="zoneaction.oAlumni_irb_job_positionsSys.new_page_alumni_irb_job_positions" value="oAlumni_irb_job_positionsSys.new_page_alumni_irb_job_positions" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="new" obj="alumni_irb_job_positions" type="new" st0="" st1="" completed="false">
+                        <name>action_new_page_alumni_irb_job_positions</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">New alumni irb job position</title-caption>
+                        <menuitem-caption language="en">New alumni irb job position</menuitem-caption>
+                        <button-caption language="en">New alumni irb job position</button-caption>
+                        <path action="action_manage_alumni_irb_job_positions" command="oAlumni_irb_job_positionsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_irb_job_positionsSys" action="action_new_new_page_alumni_irb_job_positions" />
+                                <action command="oAlumni_irb_job_positionsSys" action="action_cancel_new_new_page_alumni_irb_job_positions" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="alumni_irb_job_positions" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="vone" obj="alumni_irb_job_positions" type="viewone" st0="" st1="" completed="false">
+                        <name>action_view_alumni_irb_job_positions</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">View alumni irb job position</title-caption>
+                        <menuitem-caption language="en">View alumni irb job position</menuitem-caption>
+                        <button-caption language="en">View alumni irb job position</button-caption>
+                        <path action="action_" command="oAlumni_irb_job_positionsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_irb_job_positionsSys" action="action_cancel_view_view_alumni_irb_job_positions" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="alumni_irb_job_positions" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                </group>
+                <group e="" name="oAlumni_job_position_typesSys" command="oAlumni_job_position_typesSys" nick="oAlumni_job_position_typesSys" type="system" action-number="" st0="SystemObj">
+                    <description>Auto generated group</description>
+                    <caption language="en">alumni_job_position_types</caption>
+                    <extends>BaseCommandsProtected</extends>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_delete_alumni_job_position_types</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_job_position_types cancel</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_job_position_types cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_delete_page_alumni_job_position_types" command="oAlumni_job_position_typesSys" />
+                        <parameter name="zoneaction.oAlumni_job_position_typesSys.delete_page_alumni_job_position_types" value="oAlumni_job_position_typesSys.delete_page_alumni_job_position_types" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_modify_modify_page_alumni_job_position_types</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_job_position_types cancel</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_job_position_types cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_modify_page_alumni_job_position_types" command="oAlumni_job_position_typesSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_job_position_typesSys.modify_page_alumni_job_position_types" value="oAlumni_job_position_typesSys.modify_page_alumni_job_position_types" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_new_new_page_alumni_job_position_types</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_job_position_types cancel</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_job_position_types cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_new_page_alumni_job_position_types" command="oAlumni_job_position_typesSys" />
+                        <parameter name="zoneaction.oAlumni_job_position_typesSys.new_page_alumni_job_position_types" value="oAlumni_job_position_typesSys.new_page_alumni_job_position_types" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_view_view_alumni_job_position_types</name>
+                        <description />
+                        <title-caption language="en">View view_alumni_job_position_types cancel</title-caption>
+                        <menuitem-caption language="en">View view_alumni_job_position_types cancel</menuitem-caption>
+                        <button-caption language="en">Back</button-caption>
+                        <path action="action_" command="oAlumni_job_position_typesSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_job_position_typesSys.view_alumni_job_position_types" value="oAlumni_job_position_typesSys.view_alumni_job_position_types" />
+                    </action>
+                    <action e="" con="del" obj="alumni_job_position_types" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_delete_page_alumni_job_position_types</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_job_position_types ok</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_job_position_types ok</menuitem-caption>
+                        <button-caption language="en">Delete</button-caption>
+                        <path action="action_delete_page_alumni_job_position_types" command="oAlumni_job_position_typesSys" />
+                        <parameter name="zoneaction.oAlumni_job_position_typesSys.delete_page_alumni_job_position_types" value="oAlumni_job_position_typesSys.delete_page_alumni_job_position_types" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="del" obj="alumni_job_position_types" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_page_alumni_job_position_types</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Delete alumni job position types</title-caption>
+                        <menuitem-caption language="en">Delete alumni job position types</menuitem-caption>
+                        <button-caption language="en">Delete alumni job position types</button-caption>
+                        <path action="action_manage_alumni_job_position_types" command="oAlumni_job_position_typesSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_job_position_typesSys" action="action_delete_delete_page_alumni_job_position_types" />
+                                <action command="oAlumni_job_position_typesSys" action="action_cancel_delete_alumni_job_position_types" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="alumni_job_position_types" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="viewlist" obj="alumni_job_position_types" type="viewlist" st0="" st1="" completed="false">
+                        <name>action_manage_alumni_job_position_types</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Alumni job position types</title-caption>
+                        <menuitem-caption language="en">Alumni job position types</menuitem-caption>
+                        <button-caption language="en">Alumni job position types</button-caption>
+                        <path action="action_appHome" command="oAlumni_job_position_typesSys" />
+                        <zones>
+                            <zone name="rowaction0">
+                                <action command="oAlumni_job_position_typesSys" action="action_delete_page_alumni_job_position_types">
+                                    <parameter name="isPopUp" />
+                                </action>
+                                <action command="oAlumni_job_position_typesSys" action="action_modify_page_alumni_job_position_types">
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="folder" />
+                            <zone name="go">
+                                <action command="oAlumni_job_position_typesSys" action="action_new_page_alumni_job_position_types">
+                                    <button-caption language="en">Create Alumni job position types</button-caption>
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="submit" />
+                            <zone name="operation" />
+                            <zone name="folder" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder2" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder3" command="oUnitSys" action="action_manage_unit" />
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <list type="BO" object="alumni_job_position_types" selectable="false" multiselectable="false" filter="false" pagination="false" rowactions="true" rowactionszone="rowaction0">
+                                            <field name="description" />
+                                            <field name="order_number" />                                            
+                                        </list>
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="mod" obj="alumni_job_position_types" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_modify_page_alumni_job_position_types</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_job_position_types ok</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_job_position_types ok</menuitem-caption>
+                        <button-caption language="en">Save</button-caption>
+                        <path action="action_modify_page_alumni_job_position_types" command="oAlumni_job_position_typesSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_job_position_typesSys.modify_page_alumni_job_position_types" value="oAlumni_job_position_typesSys.modify_page_alumni_job_position_types" />
+                    </action>
+                    <action e="" con="mod" obj="alumni_job_position_types" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_page_alumni_job_position_types</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Modify alumni job position types</title-caption>
+                        <menuitem-caption language="en">Modify alumni job position types</menuitem-caption>
+                        <button-caption language="en">Modify alumni job position types</button-caption>
+                        <path action="action_manage_alumni_job_position_types" command="oAlumni_job_position_typesSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_job_position_typesSys" action="action_modify_modify_page_alumni_job_position_types" />
+                                <action command="oAlumni_job_position_typesSys" action="action_cancel_modify_modify_page_alumni_job_position_types" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="alumni_job_position_types" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="new" obj="alumni_job_position_types" type="new" st0="" st1="" completed="false">
+                        <name>action_new_new_page_alumni_job_position_types</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_job_position_types ok</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_job_position_types ok</menuitem-caption>
+                        <button-caption language="en">Ok</button-caption>
+                        <path action="action_new_page_alumni_job_position_types" command="oAlumni_job_position_typesSys" />
+                        <parameter name="zoneaction.oAlumni_job_position_typesSys.new_page_alumni_job_position_types" value="oAlumni_job_position_typesSys.new_page_alumni_job_position_types" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="new" obj="alumni_job_position_types" type="new" st0="" st1="" completed="false">
+                        <name>action_new_page_alumni_job_position_types</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">New alumni job position types</title-caption>
+                        <menuitem-caption language="en">New alumni job position types</menuitem-caption>
+                        <button-caption language="en">New alumni job position types</button-caption>
+                        <path action="action_manage_alumni_job_position_types" command="oAlumni_job_position_typesSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_job_position_typesSys" action="action_new_new_page_alumni_job_position_types" />
+                                <action command="oAlumni_job_position_typesSys" action="action_cancel_new_new_page_alumni_job_position_types" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="alumni_job_position_types" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="vone" obj="alumni_job_position_types" type="viewone" st0="" st1="" completed="false">
+                        <name>action_view_alumni_job_position_types</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">View alumni job position types</title-caption>
+                        <menuitem-caption language="en">View alumni job position types</menuitem-caption>
+                        <button-caption language="en">View alumni job position types</button-caption>
+                        <path action="action_" command="oAlumni_job_position_typesSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_job_position_typesSys" action="action_cancel_view_view_alumni_job_position_types" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="alumni_job_position_types" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                </group>
+                <group e="" name="oAlumni_communicationsSys" command="oAlumni_communicationsSys" nick="oAlumni_communicationsSys" type="system" action-number="" st0="SystemObj">
+                    <description>Auto generated group</description>
+                    <caption language="en">alumni_communications</caption>
+                    <extends>BaseCommandsProtected</extends>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_delete_alumni_communications</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_communications cancel</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_communications cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_delete_page_alumni_communications" command="oAlumni_communicationsSys" />
+                        <parameter name="zoneaction.oAlumni_communicationsSys.delete_page_alumni_communications" value="oAlumni_communicationsSys.delete_page_alumni_communications" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_modify_modify_page_alumni_communications</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_communications cancel</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_communications cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_modify_page_alumni_communications" command="oAlumni_communicationsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_communicationsSys.modify_page_alumni_communications" value="oAlumni_communicationsSys.modify_page_alumni_communications" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_new_new_page_alumni_communications</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_communications cancel</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_communications cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_new_page_alumni_communications" command="oAlumni_communicationsSys" />
+                        <parameter name="zoneaction.oAlumni_communicationsSys.new_page_alumni_communications" value="oAlumni_communicationsSys.new_page_alumni_communications" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_view_view_alumni_communications</name>
+                        <description />
+                        <title-caption language="en">View view_alumni_communications cancel</title-caption>
+                        <menuitem-caption language="en">View view_alumni_communications cancel</menuitem-caption>
+                        <button-caption language="en">Back</button-caption>
+                        <path action="action_" command="oAlumni_communicationsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_communicationsSys.view_alumni_communications" value="oAlumni_communicationsSys.view_alumni_communications" />
+                    </action>
+                    <action e="" con="del" obj="alumni_communications" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_delete_page_alumni_communications</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_communications ok</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_communications ok</menuitem-caption>
+                        <button-caption language="en">Delete</button-caption>
+                        <path action="action_delete_page_alumni_communications" command="oAlumni_communicationsSys" />
+                        <parameter name="zoneaction.oAlumni_communicationsSys.delete_page_alumni_communications" value="oAlumni_communicationsSys.delete_page_alumni_communications" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="del" obj="alumni_communications" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_page_alumni_communications</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Delete Alumni communications</title-caption>
+                        <menuitem-caption language="en">Delete Alumni communications</menuitem-caption>
+                        <button-caption language="en">Delete Alumni communications</button-caption>
+                        <path action="action_manage_alumni_communications" command="oAlumni_communicationsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_communicationsSys" action="action_delete_delete_page_alumni_communications" />
+                                <action command="oAlumni_communicationsSys" action="action_cancel_delete_alumni_communications" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="alumni_communications" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="viewlist" obj="alumni_communications" type="viewlist" st0="" st1="" completed="false">
+                        <name>action_manage_alumni_communications</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Alumni communications</title-caption>
+                        <menuitem-caption language="en">Alumni communications</menuitem-caption>
+                        <button-caption language="en">Alumni communications</button-caption>
+                        <path action="action_appHome" command="oAlumni_communicationsSys" />
+                        <zones>
+                            <zone name="rowaction0">
+                                <action command="oAlumni_communicationsSys" action="action_delete_page_alumni_communications">
+                                    <parameter name="isPopUp" />
+                                </action>
+                                <action command="oAlumni_communicationsSys" action="action_modify_page_alumni_communications">
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="folder" />
+                            <zone name="go">
+                                <action command="oAlumni_communicationsSys" action="action_new_page_alumni_communications">
+                                    <button-caption language="en">Create Alumni communications</button-caption>
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="submit" />
+                            <zone name="operation" />
+                            <zone name="folder" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder2" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder3" command="oUnitSys" action="action_manage_unit" />
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <list type="BO" object="alumni_communications" selectable="false" multiselectable="false" filter="false" pagination="false" rowactions="true" rowactionszone="rowaction0">
+                                            <field name="description" />
+                                            <field name="order_number" />                                            
+                                        </list>
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="mod" obj="alumni_communications" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_modify_page_alumni_communications</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_communications ok</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_communications ok</menuitem-caption>
+                        <button-caption language="en">Save</button-caption>
+                        <path action="action_modify_page_alumni_communications" command="oAlumni_communicationsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_communicationsSys.modify_page_alumni_communications" value="oAlumni_communicationsSys.modify_page_alumni_communications" />
+                    </action>
+                    <action e="" con="mod" obj="alumni_communications" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_page_alumni_communications</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Modify Alumni communications</title-caption>
+                        <menuitem-caption language="en">Modify Alumni communications</menuitem-caption>
+                        <button-caption language="en">Modify Alumni communications</button-caption>
+                        <path action="action_manage_alumni_communications" command="oAlumni_communicationsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_communicationsSys" action="action_modify_modify_page_alumni_communications" />
+                                <action command="oAlumni_communicationsSys" action="action_cancel_modify_modify_page_alumni_communications" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="alumni_communications" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="new" obj="alumni_communications" type="new" st0="" st1="" completed="false">
+                        <name>action_new_new_page_alumni_communications</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_communications ok</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_communications ok</menuitem-caption>
+                        <button-caption language="en">Ok</button-caption>
+                        <path action="action_new_page_alumni_communications" command="oAlumni_communicationsSys" />
+                        <parameter name="zoneaction.oAlumni_communicationsSys.new_page_alumni_communications" value="oAlumni_communicationsSys.new_page_alumni_communications" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="new" obj="alumni_communications" type="new" st0="" st1="" completed="false">
+                        <name>action_new_page_alumni_communications</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">New Alumni communications</title-caption>
+                        <menuitem-caption language="en">New Alumni communications</menuitem-caption>
+                        <button-caption language="en">New Alumni communications</button-caption>
+                        <path action="action_manage_alumni_communications" command="oAlumni_communicationsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_communicationsSys" action="action_new_new_page_alumni_communications" />
+                                <action command="oAlumni_communicationsSys" action="action_cancel_new_new_page_alumni_communications" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="alumni_communications" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="vone" obj="alumni_communications" type="viewone" st0="" st1="" completed="false">
+                        <name>action_view_alumni_communications</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">View Alumni communications</title-caption>
+                        <menuitem-caption language="en">View Alumni communications</menuitem-caption>
+                        <button-caption language="en">View Alumni communications</button-caption>
+                        <path action="action_" command="oAlumni_communicationsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_communicationsSys" action="action_cancel_view_view_alumni_communications" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="alumni_communications" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                </group>
+                <group e="" name="oAlumni_external_job_sectorsSys" command="oAlumni_external_job_sectorsSys" nick="oAlumni_external_job_sectorsSys" type="system" action-number="" st0="SystemObj">
+                    <description>Auto generated group</description>
+                    <caption language="en">alumni_external_job_sectors</caption>
+                    <extends>BaseCommandsProtected</extends>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_delete_alumni_external_job_sectors</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_external_job_sectors cancel</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_external_job_sectors cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_delete_page_alumni_external_job_sectors" command="oAlumni_external_job_sectorsSys" />
+                        <parameter name="zoneaction.oAlumni_external_job_sectorsSys.delete_page_alumni_external_job_sectors" value="oAlumni_external_job_sectorsSys.delete_page_alumni_external_job_sectors" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_modify_modify_page_alumni_external_job_sectors</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_external_job_sectors cancel</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_external_job_sectors cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_modify_page_alumni_external_job_sectors" command="oAlumni_external_job_sectorsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_external_job_sectorsSys.modify_page_alumni_external_job_sectors" value="oAlumni_external_job_sectorsSys.modify_page_alumni_external_job_sectors" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_new_new_page_alumni_external_job_sectors</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_external_job_sectors cancel</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_external_job_sectors cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_new_page_alumni_external_job_sectors" command="oAlumni_external_job_sectorsSys" />
+                        <parameter name="zoneaction.oAlumni_external_job_sectorsSys.new_page_alumni_external_job_sectors" value="oAlumni_external_job_sectorsSys.new_page_alumni_external_job_sectors" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_view_view_alumni_external_job_sectors</name>
+                        <description />
+                        <title-caption language="en">View view_alumni_external_job_sectors cancel</title-caption>
+                        <menuitem-caption language="en">View view_alumni_external_job_sectors cancel</menuitem-caption>
+                        <button-caption language="en">Back</button-caption>
+                        <path action="action_" command="oAlumni_external_job_sectorsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_external_job_sectorsSys.view_alumni_external_job_sectors" value="oAlumni_external_job_sectorsSys.view_alumni_external_job_sectors" />
+                    </action>
+                    <action e="" con="del" obj="alumni_external_job_sectors" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_delete_page_alumni_external_job_sectors</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_external_job_sectors ok</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_external_job_sectors ok</menuitem-caption>
+                        <button-caption language="en">Delete</button-caption>
+                        <path action="action_delete_page_alumni_external_job_sectors" command="oAlumni_external_job_sectorsSys" />
+                        <parameter name="zoneaction.oAlumni_external_job_sectorsSys.delete_page_alumni_external_job_sectors" value="oAlumni_external_job_sectorsSys.delete_page_alumni_external_job_sectors" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="del" obj="alumni_external_job_sectors" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_page_alumni_external_job_sectors</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Delete alumni external job sector</title-caption>
+                        <menuitem-caption language="en">Delete alumni external job sector</menuitem-caption>
+                        <button-caption language="en">Delete alumni external job sector</button-caption>
+                        <path action="action_manage_alumni_external_job_sectors" command="oAlumni_external_job_sectorsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_external_job_sectorsSys" action="action_delete_delete_page_alumni_external_job_sectors" />
+                                <action command="oAlumni_external_job_sectorsSys" action="action_cancel_delete_alumni_external_job_sectors" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="alumni_external_job_sectors" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="viewlist" obj="alumni_external_job_sectors" type="viewlist" st0="" st1="" completed="false">
+                        <name>action_manage_alumni_external_job_sectors</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Alumni external job sector</title-caption>
+                        <menuitem-caption language="en">Alumni external job sector</menuitem-caption>
+                        <button-caption language="en">Alumni external job sector</button-caption>
+                        <path action="action_appHome" command="oAlumni_external_job_sectorsSys" />
+                        <zones>
+                            <zone name="rowaction0">
+                                <action command="oAlumni_external_job_sectorsSys" action="action_delete_page_alumni_external_job_sectors">
+                                    <parameter name="isPopUp" />
+                                </action>
+                                <action command="oAlumni_external_job_sectorsSys" action="action_modify_page_alumni_external_job_sectors">
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="folder" />
+                            <zone name="go">
+                                <action command="oAlumni_external_job_sectorsSys" action="action_new_page_alumni_external_job_sectors">
+                                    <button-caption language="en">Create Alumni external job sector</button-caption>
+                                    <parameter name="isPopUp" />
+                                </action>
+                            </zone>
+                            <zone name="submit" />
+                            <zone name="operation" />
+                            <zone name="folder" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder2" command="oUnitSys" action="action_manage_unit" />
+                            <zone name="folder3" command="oUnitSys" action="action_manage_unit" />
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <list type="BO" object="alumni_external_job_sectors" selectable="false" multiselectable="false" filter="false" pagination="false" rowactions="true" rowactionszone="rowaction0">
+                                            <field name="description" />
+                                            <field name="order_number" />                                            
+                                        </list>
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="mod" obj="alumni_external_job_sectors" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_modify_page_alumni_external_job_sectors</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_external_job_sectors ok</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_external_job_sectors ok</menuitem-caption>
+                        <button-caption language="en">Save</button-caption>
+                        <path action="action_modify_page_alumni_external_job_sectors" command="oAlumni_external_job_sectorsSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_external_job_sectorsSys.modify_page_alumni_external_job_sectors" value="oAlumni_external_job_sectorsSys.modify_page_alumni_external_job_sectors" />
+                    </action>
+                    <action e="" con="mod" obj="alumni_external_job_sectors" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_page_alumni_external_job_sectors</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Modify alumni external job sector</title-caption>
+                        <menuitem-caption language="en">Modify alumni external job sector</menuitem-caption>
+                        <button-caption language="en">Modify alumni external job sector</button-caption>
+                        <path action="action_manage_alumni_external_job_sectors" command="oAlumni_external_job_sectorsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_external_job_sectorsSys" action="action_modify_modify_page_alumni_external_job_sectors" />
+                                <action command="oAlumni_external_job_sectorsSys" action="action_cancel_modify_modify_page_alumni_external_job_sectors" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="alumni_external_job_sectors" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="new" obj="alumni_external_job_sectors" type="new" st0="" st1="" completed="false">
+                        <name>action_new_new_page_alumni_external_job_sectors</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_external_job_sectors ok</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_external_job_sectors ok</menuitem-caption>
+                        <button-caption language="en">Ok</button-caption>
+                        <path action="action_new_page_alumni_external_job_sectors" command="oAlumni_external_job_sectorsSys" />
+                        <parameter name="zoneaction.oAlumni_external_job_sectorsSys.new_page_alumni_external_job_sectors" value="oAlumni_external_job_sectorsSys.new_page_alumni_external_job_sectors" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="new" obj="alumni_external_job_sectors" type="new" st0="" st1="" completed="false">
+                        <name>action_new_page_alumni_external_job_sectors</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">New alumni external job sector</title-caption>
+                        <menuitem-caption language="en">New alumni external job sector</menuitem-caption>
+                        <button-caption language="en">New alumni external job sector</button-caption>
+                        <path action="action_manage_alumni_external_job_sectors" command="oAlumni_external_job_sectorsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_external_job_sectorsSys" action="action_new_new_page_alumni_external_job_sectors" />
+                                <action command="oAlumni_external_job_sectorsSys" action="action_cancel_new_new_page_alumni_external_job_sectors" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="true" writable="true" object="alumni_external_job_sectors" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="vone" obj="alumni_external_job_sectors" type="viewone" st0="" st1="" completed="false">
+                        <name>action_view_alumni_external_job_sectors</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">View alumni external job sector</title-caption>
+                        <menuitem-caption language="en">View alumni external job sector</menuitem-caption>
+                        <button-caption language="en">View alumni external job sector</button-caption>
+                        <path action="action_" command="oAlumni_external_job_sectorsSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="folder" />
+                            <zone name="go" />
+                            <zone name="submit">
+                                <action command="oAlumni_external_job_sectorsSys" action="action_cancel_view_view_alumni_external_job_sectors" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="description" field="description" required="false" writable="false" object="alumni_external_job_sectors" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                </group>
                 <group e="" name="oType_of_institutionSys" command="oType_of_institutionSys" nick="oType_of_institutionSys" type="system" action-number="" st0="SystemObj">
                     <description>Auto generated group</description>
                     <caption language="en">type_of_institution</caption>
@@ -11912,15 +14280,20 @@
                         <zones>
                             <zone name="operation" />
                             <zone name="folder3">
+                                <action command="oAlumni_titlesSys" action="action_manage_alumni_titles" />                                
+                                <action command="oAlumni_external_job_sectorsSys" action="action_manage_alumni_external_job_sectors" />
+                                <action command="oAlumni_communicationsSys" action="action_manage_alumni_communications" />
+                                <action command="oAlumni_job_position_typesSys" action="action_manage_alumni_job_position_types" />
+                                <action command="oAlumni_external_job_positionsSys" action="action_manage_alumni_external_job_positions" />
+                                <action command="oAlumni_irb_job_positionsSys" action="action_manage_alumni_irb_job_positions" />
+                                <action command="oAlumni_paramsSys" action="action_modify_page_alumni_params" />
                                 <action command="oType_of_compensationSys" action="action_manage_type_of_compensation" />
                                 <action command="oType_of_educationSys" action="action_manage_type_of_education" />
                                 <action command="oType_of_grantSys" action="action_manage_type_of_grant" />
                                 <action command="oType_of_holidaysSys" action="action_manage_type_of_holidays" />
                                 <action command="oType_of_institutionSys" action="action_manage_type_of_institution" />
                                 <action command="oType_of_studySys" action="action_manage_type_of_study" />
-                                <action command="oType_of_contractSys" action="action_manage_type_of_contract" />
-                                <action command="oUnitSys" action="action_manage_unit" />
-                                <action command="oWorking_hoursSys" action="action_manage_working_hours" />
+                                <action command="oType_of_contractSys" action="action_manage_type_of_contract" />                                
                             </zone>
                             <zone name="folder2">
                                 <action command="oGrantSys" action="action_manage_grants" />
@@ -11932,6 +14305,8 @@
                                 <action command="oPayroll_institutionSys" action="action_manage_payroll_institution" />
                                 <action command="oPositionSys" action="action_manage_position" />
                                 <action command="oType_of_benefitSys" action="action_manage_type_of_benefit" />
+                                <action command="oUnitSys" action="action_manage_unit" />
+                                <action command="oWorking_hoursSys" action="action_manage_working_hours" />
                             </zone>
                             <zone name="rowaction0">
                                 <action command="oUnitSys" action="action_delete_page_unit">
@@ -13115,6 +15490,13 @@
                             <zone name="folder" />
                             <zone name="group3">
                                 <caption language="en">Support tables</caption>
+                                <action command="oAlumni_titlesSys" action="action_manage_alumni_titles" />
+                                <action command="oAlumni_communicationsSys" action="action_manage_alumni_communications" />
+                                <action command="oAlumni_external_job_sectorsSys" action="action_manage_alumni_external_job_sectors" />
+                                <action command="oAlumni_job_position_typesSys" action="action_manage_alumni_job_position_types" />
+                                <action command="oAlumni_external_job_positionsSys" action="action_manage_alumni_external_job_positions" />
+                                <action command="oAlumni_irb_job_positionsSys" action="action_manage_alumni_irb_job_positions" />
+                                <action command="oAlumni_paramsSys" action="action_modify_page_alumni_params" />                                
                                 <action command="oCategorySys" action="action_manage_category" />
                                 <action command="oAreaSys" action="action_manage_area" />                                
                                 <action command="oGrantSys" action="action_manage_grants" />                                
@@ -13129,6 +15511,13 @@
                                     <button-caption>...</button-caption>
                                 </action>
                             </zone>
+                            <zone name="group1">
+                                <caption language="en">Alumni personnel</caption>
+                                <action command="oAlumni_personalSys" action="action_manage_alumni_personal" />
+                                <action command="oAlumni_personalSys" action="action_manage_validated_alumni_personal" />
+                                <action command="oAlumni_personalSys" action="action_manage_not_validated_alumni_personal" />
+                            </zone>
+                            <!--
                             <zone name="group2">
                                 <caption language="en">Manage my data</caption>
                                 <action command="oPersonalSys" action="action_todelete_choose_current_personal" />
@@ -13137,6 +15526,7 @@
                                     <button-caption language="en">Manage my research group personnel</button-caption>
                                 </action>
                             </zone>
+                            -->
                         </zones>
                         <parameter name="note" value="" />
                         <parameter name="objectsRecieved" value="none" />
@@ -18142,7 +20532,7 @@
                         <parameter name="zoneaction.oAcademic_infoSys.new_page_academic_info" value="oAcademic_infoSys.new_page_academic_info" />
                         <parameter name="zoneaction.oAcademic_infoSys.add_academic_info" value="oAcademic_infoSys.add_academic_info" />
                         <parameter name="objectsRecieved" value="none" />
-                    </action>                                       
+                    </action>                    
                 </group>
                 <group e="" name="oHolidaySys" command="oHolidaySys" nick="oHolidaySys" type="system" action-number="" st0="SystemObj">
                     <description>Auto generated group</description>
@@ -21430,7 +23820,7 @@
                                             <field name="name_of_institution_or_company" />
                                             <field name="description" object="position" association="work_experience_position" associationDirect="direct" />
                                             <field name="description" object="area" association="area" associationDirect="direct" />
-                                            <field name="descritption" object="type_of_institution" association="type_of_institution" associationDirect="direct" />
+                                            <field name="description" object="type_of_institution" association="type_of_institution" associationDirect="direct" />
                                             <field name="description" object="country" association="work_experience_country" associationDirect="direct" />
                                         </list>
                                     </form-group>
@@ -31798,7 +34188,7 @@
                         <parameter name="zoneaction.oAcademic_infoSys.new_page_academic_info" value="oAcademic_infoSys.new_page_academic_info" />
                         <parameter name="zoneaction.oAcademic_infoSys.add_academic_info" value="oAcademic_infoSys.add_academic_info" />
                         <parameter name="objectsRecieved" value="none" />
-                    </action>                                      
+                    </action>                                    
                 </group>
                 <group e="" name="oHolidaySys" command="oHolidaySys" nick="oHolidaySys" type="system" action-number="" st0="SystemObj">
                     <description>Auto generated group</description>
@@ -35086,7 +37476,7 @@
                                             <field name="name_of_institution_or_company" />
                                             <field name="description" object="position" association="work_experience_position" associationDirect="direct" />
                                             <field name="description" object="area" association="area" associationDirect="direct" />
-                                            <field name="descritption" object="type_of_institution" association="type_of_institution" associationDirect="direct" />
+                                            <field name="description" object="type_of_institution" association="type_of_institution" associationDirect="direct" />
                                             <field name="description" object="country" association="work_experience_country" associationDirect="direct" />
                                         </list>
                                     </form-group>

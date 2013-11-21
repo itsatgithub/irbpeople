@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="Alumni_communications" table="ALUMNI_COMMUNICATIONS">
+        <cache usage="read-write"/>
+    
+		<id name="alumni_communicationscode" column="alumni_communicationscode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		
+		<!-- attribute mappings -->
+		<property name="description" type="string">
+			<column name="description" length="255" />
+		</property>
+		<property name="short_description" type="string">
+			<column name="short_description" length="100" />
+		</property>
+		<property name="order_number" type="integer">
+			<column name="order_number"  />
+		</property>
+		
+		<!-- Associacion mappings -->
+		<set name="ialumni_personal" table="alumni_personal_communications" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="alumni_communicationscode" not-null="true" />
+            </key>
+            <many-to-many entity-name="bussineslogic.objects.Alumni_personal">
+                <column name="alumni_personalcode" not-null="true" />
+            </many-to-many>
+        </set>
+
+		
+		<!-- categorias -->
+	</class>
+</hibernate-mapping>

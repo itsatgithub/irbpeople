@@ -35,6 +35,8 @@ Set<Personal> ibirth_country=new HashSet<Personal>();
 Set<Personal> icountry=new HashSet<Personal>();
 Set<Personal> iend_of_contract_country=new HashSet<Personal>();
 
+Set<Alumni_external_jobs> ialumni_external_jobs=new HashSet<Alumni_external_jobs>();
+
 	/**
 	 * Default Constructor which creates an empty country
 	 */
@@ -269,6 +271,36 @@ public void removeIend_of_contract_country(Personal iend_of_contract_country){
 	this.iend_of_contract_country.remove(iend_of_contract_country);
 }
 
+
+
+/**
+ * @return the ialumni_external_jobs
+ */
+public Set<Alumni_external_jobs> getIalumni_external_jobs(){
+	return ialumni_external_jobs;
+}
+
+/**
+* @param ialumni_external_jobs the ialumni_external_jobs to set.
+*/
+public void setIalumni_external_jobs(Set<Alumni_external_jobs> ialumni_external_jobs){
+	this.ialumni_external_jobs=ialumni_external_jobs;
+}
+/**
+* Adds a Alumni_external_jobs to the ialumni_external_jobs set.
+* @param ialumni_external_jobs Alumni_external_jobs to be added
+*/
+public void addIalumni_external_jobs(Alumni_external_jobs ialumni_external_jobs){
+	this.ialumni_external_jobs.add(ialumni_external_jobs);
+}
+
+/**
+* Removes a Alumni_external_jobs to the ialumni_external_jobs set.
+* @param ialumni_external_jobs Alumni_external_jobs to be removed
+*/
+public void removeIalumni_external_jobs(Alumni_external_jobs ialumni_external_jobs){
+	this.ialumni_external_jobs.remove(ialumni_external_jobs);
+}
 
 
 	
