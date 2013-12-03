@@ -461,6 +461,17 @@
 	</var>
 </field>
 </form>
+<form name="oAlumni_personalSys__action_validate_external_modify_modify_page_alumni_personal_Form">	
+	<field property="alumni_personal_Form" depends="nestedBean">
+		<var>
+			<var-name>beanName</var-name>
+			<var-value>alumni_personal_Form</var-value>
+		</var>
+	</field>
+	<field property="alumni_personal_Form.alumni_personalcode" depends="required">
+		<arg key="alumni_personal.alumni_personalcode" />
+	</field>
+</form>
 <form name="alumni_titles_Form">
 	
 <field property="description" depends="stringSize">

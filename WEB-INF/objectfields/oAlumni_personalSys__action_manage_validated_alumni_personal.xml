@@ -27,6 +27,9 @@
                 <field name="surname" visible="true" default="true" type-of-field="text" size="10">
                     <caption language="en">Surname</caption>
                 </field>                
+                <field name="show_data" visible="true" default="true" type-of-field="boolean" size="10">
+                    <caption language="en">Show data</caption>
+                </field>  
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
             <!-- 1/2 - Campos 'hidden'. -->
@@ -48,14 +51,17 @@
             <!-- Los atributos modificables son: 'default' y 'visible'.  -->
             <visible-fields>
                 <field name="alumni_personalcode" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">Código</caption>
+                    <caption language="ct">Codi</caption>
                 </field>
                 <field name="firstname" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">Nombre</caption>
+                    <caption language="ct">Nom</caption>
                 </field>
                 <field name="surname" visible="true" default="true" type-of-field="text" size="10">
-                    <caption language="es">Apellidos</caption>
-                </field>      
+                    <caption language="ct">Cognoms</caption>
+                </field>
+                <field name="show_data" visible="true" default="true" type-of-field="boolean" size="10">
+                    <caption language="ct">Mostrar dades</caption>
+                </field>        
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
             <!-- 1/2 - Campos 'hidden'. -->
@@ -77,14 +83,17 @@
             <!-- Los atributos modificables son: 'default' y 'visible'.  -->
             <visible-fields>
                 <field name="alumni_personalcode" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">Codi</caption>
+                    <caption language="es">Código</caption>
                 </field>
                 <field name="firstname" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">Nom</caption>
+                    <caption language="es">Nombre</caption>
                 </field>
                 <field name="surname" visible="true" default="true" type-of-field="text" size="10">
-                    <caption language="es">Cognoms</caption>
-                </field>     
+                    <caption language="es">Apellidos</caption>
+                </field>
+                <field name="show_data" visible="true" default="true" type-of-field="boolean" size="10">
+                    <caption language="es">Mostrar datos</caption>
+                </field>       
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
             <!-- 1/2 - Campos 'hidden'. -->

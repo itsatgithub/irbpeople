@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<report view="view_alumni_personnel" site-number="1">
+    <site>
+        <!-- Label es el nombre del listado en el desplegable en la pantalla de nuevo listado. -->
+        <label>Alumni info and external jobs (current)</label>
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields>
+                <field name="alumni_personalcode" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Code</caption>
+                </field>
+                <field name="external" visible="true" type-of-field="text">
+                    <caption>Alumni personal: External</caption>
+                </field>
+                <field name="firstname" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Firstname</caption>
+                </field>
+                <field name="surname" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Surname</caption>
+                </field>
+                <field name="irb_surname" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Irb_surname</caption>
+                </field>
+                <field name="birth" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Birth</caption>
+                </field>
+                <field name="email" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Email</caption>
+                </field>
+                <field name="url" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Url</caption>
+                </field>
+                <field name="facebook" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Facebook</caption>
+                </field>
+                <field name="linkedin" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Linkedin</caption>
+                </field>
+                <field name="twitter" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Twitter</caption>
+                </field>
+                <field name="keywords" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Keywords</caption>
+                </field>
+                <field name="biography" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Biography</caption>
+                </field>
+                <field name="awards" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Awards</caption>
+                </field>
+                <field name="ORCIDID" visible="true" type-of-field="text">
+                    <caption>Alumni personal: ORCIDID</caption>
+                </field>
+                <field name="researcherid" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Researcherid</caption>
+                </field>
+                <field name="pubmedid" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Pubmedid</caption>
+                </field>
+                <field name="verified" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Verified</caption>
+                </field>
+                <field name="show_data" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Show data</caption>
+                </field>
+                <field name="gender" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Gender</caption>
+                </field>
+                <field name="nationality" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Nationality</caption>
+                </field>
+                <field name="nationality_2" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Nationality 2</caption>
+                </field>
+                <field name="titles_description" visible="true" type-of-field="text">
+                    <caption>Alumni titles: Description</caption>
+                </field>
+                <field name="titles_short_description" visible="true" type-of-field="text">
+                    <caption>Alumni titles: Short description</caption>
+                </field>
+                <field name="external_jobs_start_date" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Start date</caption>
+                </field>
+                <field name="external_jobs_end_date" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: End date</caption>
+                </field>
+                
+                <field name="external_jobs_comments" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Comments</caption>
+                </field>
+                <field name="external_jobs_institution" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Institution</caption>
+                </field>
+                <field name="external_jobs_address" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Address</caption>
+                </field>
+                <field name="external_jobs_postcode" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Postcode</caption>
+                </field>
+                <field name="external_jobs_city" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: City</caption>
+                </field>
+                <field name="external_jobs_telephone" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Telephone</caption>
+                </field>
+                <field name="external_jobs_country" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Country</caption>
+                </field>
+
+                <field name="external_jobs_positions_description" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs positions: Description</caption>
+                </field>
+                <field name="external_jobs_positions_short_description" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs positions: Short description</caption>
+                </field>
+                
+                <field name="job_position_types_description" visible="true" type-of-field="text">
+                    <caption>Alumni job position types: Description</caption>
+                </field>
+                <field name="job_position_types_short_description" visible="true" type-of-field="text">
+                    <caption>Alumni job position types: Short description</caption>
+                </field>
+                
+                <field name="external_job_sectors_description" visible="true" type-of-field="text">
+                    <caption>Alumni external job sectors: Description</caption>
+                </field>
+                <field name="external_job_sectors_short_description" visible="true" type-of-field="text">
+                    <caption>Alumni external job sectors: Short description</caption>
+                </field>
+                
+                
+                
+                               
+            </select-fields>
+            <where-fields>
+                <field name="alumni_personalcode" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Code</caption>
+                </field>
+                <field name="external" visible="true" type-of-field="boolean">
+                    <caption>Alumni personal: External</caption>
+                </field>
+                <field name="firstname" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Firstname</caption>
+                </field>
+                <field name="surname" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Surname</caption>
+                </field>
+                <field name="irb_surname" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Irb_surname</caption>
+                </field>
+                <field name="birth" visible="true" type-of-field="date">
+                    <caption>Alumni personal: Birth</caption>
+                </field>
+                <field name="email" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Email</caption>
+                </field>
+                <field name="url" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Url</caption>
+                </field>
+                <field name="facebook" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Facebook</caption>
+                </field>
+                <field name="linkedin" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Linkedin</caption>
+                </field>
+                <field name="twitter" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Twitter</caption>
+                </field>
+                <field name="keywords" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Keywords</caption>
+                </field>
+                <field name="biography" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Biography</caption>
+                </field>
+                <field name="awards" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Awards</caption>
+                </field>
+                <field name="ORCIDID" visible="true" type-of-field="text">
+                    <caption>Alumni personal: ORCIDID</caption>
+                </field>
+                <field name="researcherid" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Researcherid</caption>
+                </field>
+                <field name="pubmedid" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Pubmedid</caption>
+                </field>
+                <field name="verified" visible="true" type-of-field="boolean">
+                    <caption>Alumni personal: Verified</caption>
+                </field>
+                <field name="show_data" visible="true" type-of-field="boolean">
+                    <caption>Alumni personal: Show data</caption>
+                </field>
+                <field name="gender" visible="true" type-of-field="select description from gender order by description">
+                    <caption>Alumni personal: Gender</caption>
+                </field>
+                <field name="nationality" visible="true" type-of-field="select description from nationality order by description">
+                    <caption>Alumni personal: Nationality</caption>
+                </field>
+                <field name="nationality_2" visible="true" type-of-field="select description from nationality order by description">
+                    <caption>Alumni personal: Nationality 2</caption>
+                </field>
+                <field name="titles_description" visible="true" type-of-field="select description from alumni_titles order by description">
+                    <caption>Alumni titles: Description</caption>
+                </field>                
+                <field name="external_jobs_start_date" visible="true" type-of-field="date">
+                    <caption>Alumni external jobs: Start date</caption>
+                </field>
+                <field name="external_jobs_end_date" visible="true" type-of-field="date">
+                    <caption>Alumni external jobs: End date</caption>
+                </field>
+                
+                <field name="external_jobs_comments" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Comments</caption>
+                </field>
+                <field name="external_jobs_institution" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Institution</caption>
+                </field>
+                <field name="external_jobs_address" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Address</caption>
+                </field>
+                <field name="external_jobs_postcode" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Postcode</caption>
+                </field>
+                <field name="external_jobs_city" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: City</caption>
+                </field>
+                <field name="external_jobs_telephone" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Telephone</caption>
+                </field>
+                <field name="external_jobs_country" visible="true" type-of-field="select description from country order by description">
+                    <caption>Alumni external jobs: Country</caption>
+                </field>
+
+                <field name="external_jobs_positions_description" visible="true" type-of-field="select description from alumni_external_job_positions order by description">
+                    <caption>Alumni external jobs positions: Description</caption>
+                </field>
+                <field name="job_position_types_description" visible="true" type-of-field="select description from alumni_job_position_types order by description">
+                    <caption>Alumni job position types: Description</caption>
+                </field>                
+                <field name="external_job_sectors_description" visible="true" type-of-field="select description from alumni_external_job_sectors order by description">
+                    <caption>Alumni external job sectors: Description</caption>
+                </field>                 
+            </where-fields>
+            <orderby-fields>
+                <field name="alumni_personalcode" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Code</caption>
+                </field>
+                <field name="external" visible="true" type-of-field="text">
+                    <caption>Alumni personal: External</caption>
+                </field>
+                <field name="firstname" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Firstname</caption>
+                </field>
+                <field name="surname" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Surname</caption>
+                </field>
+                <field name="irb_surname" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Irb_surname</caption>
+                </field>
+                <field name="birth" visible="true" type-of-field="date">
+                    <caption>Alumni personal: Birth</caption>
+                </field>
+                <field name="email" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Email</caption>
+                </field>
+                <field name="url" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Url</caption>
+                </field>
+                <field name="facebook" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Facebook</caption>
+                </field>
+                <field name="linkedin" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Linkedin</caption>
+                </field>
+                <field name="twitter" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Twitter</caption>
+                </field>
+                <field name="keywords" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Keywords</caption>
+                </field>
+                <field name="biography" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Biography</caption>
+                </field>
+                <field name="awards" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Awards</caption>
+                </field>
+                <field name="ORCIDID" visible="true" type-of-field="text">
+                    <caption>Alumni personal: ORCIDID</caption>
+                </field>
+                <field name="researcherid" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Researcherid</caption>
+                </field>
+                <field name="pubmedid" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Pubmedid</caption>
+                </field>
+                <field name="verified" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Verified</caption>
+                </field>
+                <field name="show_data" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Show data</caption>
+                </field>
+                <field name="gender" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Gender</caption>
+                </field>
+                <field name="nationality" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Nationality</caption>
+                </field>
+                <field name="nationality_2" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Nationality 2</caption>
+                </field>
+                <field name="titles_description" visible="true" type-of-field="text">
+                    <caption>Alumni titles: Description</caption>
+                </field>
+                <field name="titles_short_description" visible="true" type-of-field="text">
+                    <caption>Alumni titles: Short description</caption>
+                </field>
+                <field name="external_jobs_start_date" visible="true" type-of-field="date">
+                    <caption>Alumni external jobs: Start date</caption>
+                </field>
+                <field name="external_jobs_end_date" visible="true" type-of-field="date">
+                    <caption>Alumni external jobs: End date</caption>
+                </field>
+                
+                <field name="external_jobs_comments" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Comments</caption>
+                </field>
+                <field name="external_jobs_institution" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Institution</caption>
+                </field>
+                <field name="external_jobs_address" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Address</caption>
+                </field>
+                <field name="external_jobs_postcode" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Postcode</caption>
+                </field>
+                <field name="external_jobs_city" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: City</caption>
+                </field>
+                <field name="external_jobs_telephone" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Telephone</caption>
+                </field>
+                <field name="external_jobs_country" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Country</caption>
+                </field>
+
+                <field name="external_jobs_positions_description" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs positions: Description</caption>
+                </field>
+                <field name="external_jobs_positions_short_description" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs positions: Short description</caption>
+                </field>
+                
+                <field name="job_position_types_description" visible="true" type-of-field="text">
+                    <caption>Alumni job position types: Description</caption>
+                </field>
+                <field name="job_position_types_short_description" visible="true" type-of-field="text">
+                    <caption>Alumni job position types: Short description</caption>
+                </field>
+                
+                <field name="external_job_sectors_description" visible="true" type-of-field="text">
+                    <caption>Alumni external job sectors: Description</caption>
+                </field>
+                <field name="external_job_sectors_short_description" visible="true" type-of-field="text">
+                    <caption>Alumni external job sectors: Short description</caption>
+                </field>
+                          
+            </orderby-fields>
+        </fields>
+    </site>
+</report>

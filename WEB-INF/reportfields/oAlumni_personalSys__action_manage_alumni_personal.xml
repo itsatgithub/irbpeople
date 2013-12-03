@@ -19,7 +19,16 @@
                 </field>
                 <field name="surname" visible="true" default="true" type-of-field="text">
                     <caption language="en">Surname</caption>
-                </field>                
+                </field>
+                <field name="external" visible="true" default="true" type-of-field="boolean">
+                    <caption language="en">External</caption>
+                </field>
+                <field name="verified" visible="true" default="true" type-of-field="boolean">
+                    <caption language="en">Validated</caption>
+                </field>
+                <field name="show_data" visible="true" default="true" type-of-field="boolean">
+                    <caption language="en">Show data</caption>
+                </field>
             </where-fields>
             <!-- ******************************************** -->
             <!-- - Campos visibles en la seccion de ORDERBY   -->
@@ -39,14 +48,23 @@
             <!-- ****************************************** -->
             <where-fields>
                 <field name="alumni_personalcode" visible="true" default="true" type-of-field="text">
-                    <caption language="es">Usercode</caption>
+                    <caption language="ct">Usercode</caption>
                 </field>
                 <field name="firstname" visible="true" default="true" type-of-field="text">
-                    <caption language="es">Nom</caption>
+                    <caption language="ct">Nom</caption>
                 </field>
                 <field name="surname" visible="true" default="true" type-of-field="text">
-                    <caption language="es">Cognoms</caption>
+                    <caption language="ct">Cognoms</caption>
                 </field>  
+                 <field name="external" visible="true" default="true" type-of-field="boolean">
+                    <caption language="ct">Extern</caption>
+                </field>
+                <field name="verified" visible="true" default="true" type-of-field="boolean">
+                    <caption language="ct">Verificat</caption>
+                </field>
+                <field name="show_data" visible="true" default="true" type-of-field="boolean">
+                    <caption language="ct">Mostrar dades</caption>
+                </field>
             </where-fields>
             <!-- ******************************************** -->
             <!-- - Campos visibles en la seccion de ORDERBY   -->
@@ -74,6 +92,15 @@
                 <field name="surname" visible="true" default="true" type-of-field="text">
                     <caption language="es">Apellidos</caption>
                 </field>  
+                 <field name="external" visible="true" default="true" type-of-field="boolean">
+                    <caption language="es">Externo</caption>
+                </field>
+                <field name="verified" visible="true" default="true" type-of-field="boolean">
+                    <caption language="es">Verificado</caption>
+                </field>
+                <field name="show_data" visible="true" default="true" type-of-field="boolean">
+                    <caption language="es">Mostrar datos</caption>
+                </field>
             </where-fields>
             <!-- ******************************************** -->
             <!-- - Campos visibles en la seccion de ORDERBY   -->

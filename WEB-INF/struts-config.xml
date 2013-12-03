@@ -546,8 +546,13 @@
 	<form-bean name="oAlumni_personalSys__action_manage_validated_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_validated_alumni_personal_Form" />
 	<form-bean name="oAlumni_personalSys__action_manage_not_validated_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_not_validated_alumni_personal_Form" />
 	
+	<form-bean name="oAlumni_personalSys__action_force_export_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_force_export_alumni_personal_Form" />
 	<form-bean name="oAlumni_personalSys__action_modify_modify_page_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_modify_modify_page_alumni_personal_Form" />
 	<form-bean name="oAlumni_personalSys__action_modify_page_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_modify_page_alumni_personal_Form" />
+	
+	<form-bean name="oAlumni_personalSys__action_validate_external_Form" type="presentation.formbeans.oAlumni_personalSys.Action_validate_external_Form" />
+	<form-bean name="oAlumni_personalSys__action_validate_external_cancel_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_validate_external_cancel_alumni_personal_Form" />
+	<form-bean name="oAlumni_personalSys__action_validate_external_modify_modify_page_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_validate_external_modify_modify_page_alumni_personal_Form" />
 	
 	<form-bean name="oAlumni_paramsSys__action_cancel_modify_modify_page_alumni_params_Form" type="presentation.formbeans.oAlumni_paramsSys.Action_cancel_modify_modify_page_alumni_params_Form" />
 	<form-bean name="oAlumni_paramsSys__action_modify_modify_page_alumni_params_Form" type="presentation.formbeans.oAlumni_paramsSys.Action_modify_modify_page_alumni_params_Form" />
@@ -1447,7 +1452,16 @@
 	<action name="oAlumni_irb_jobsSys__action_view_alumni_irb_jobs_Form" path="/oAlumni_irb_jobsSys/popUp_action_view_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_irb_jobsSys.Action_view_alumni_irb_jobs" unknown="false" validate="true">
 	  <forward contextRelative="false" name="success" path="oAlumni_irb_jobsSys.popUp_action_view_alumni_irb_jobs" redirect="false" />
 	</action>
+	<action name="oAlumni_personalSys__action_validate_external_Form" path="/oAlumni_personalSys/action_validate_external" scope="request" type="presentation.actions.oAlumni_personalSys.Action_validate_external" unknown="false" validate="false">
+		<forward contextRelative="false" name="success" path="oAlumni_personalSys.action_validate_external" redirect="false" />
+	</action>
+	<action path="/oAlumni_personalSys/action_validate_external_cancel_alumni_personal" type="presentation.actions.oAlumni_personalSys.Action_validate_external_cancel_alumni_personal" unknown="false" validate="true" />
+	<action name="oAlumni_personalSys__action_validate_external_modify_modify_page_alumni_personal_Form" path="/oAlumni_personalSys/action_validate_external_modify_modify_page_alumni_personal" scope="request" type="presentation.actions.oAlumni_personalSys.Action_validate_external_modify_modify_page_alumni_personal" unknown="false" validate="true" />
 	
+	<action name="oAlumni_personalSys__action_validate_external_Form" path="/oAlumni_personalSys/popUp_action_validate_external" scope="request" type="presentation.actions.oAlumni_personalSys.Action_validate_external" unknown="false" validate="true">
+      <forward contextRelative="false" name="success" path="oAlumni_personalSys.popUp_action_validate_external" redirect="false" />
+    </action>
+    
     <action name="oHolidaySys__action_add_holiday_Form" path="/oHolidaySys/action_add_holiday" scope="request" type="presentation.actions.oHolidaySys.Action_add_holiday" unknown="false" validate="false">
       <forward contextRelative="false" name="success" path="oHolidaySys.action_add_holiday" redirect="false" />
     </action>
@@ -1762,10 +1776,10 @@
     <action name="oPersonalSys__action_manage_my_own_personal_academic_info_Form" path="/oPersonalSys/action_manage_my_own_personal_academic_info" scope="request" type="presentation.actions.oPersonalSys.Action_manage_my_own_personal_academic_info" unknown="false" validate="false">
       <forward contextRelative="false" name="success" path="oPersonalSys.action_manage_my_own_personal_academic_info" redirect="false" />
     </action>
-    <action name="oAlumni_personalSys__action_manage_alumni_personal_alumni_external_jobs_Form" path="/ooAlumni_personalSys/action_manage_alumni_personal_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal_alumni_external_jobs" unknown="false" validate="false">
+    <action name="oAlumni_personalSys__action_manage_alumni_personal_alumni_external_jobs_Form" path="/oAlumni_personalSys/action_manage_alumni_personal_alumni_external_jobs" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal_alumni_external_jobs" unknown="false" validate="false">
 	  <forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_alumni_personal_alumni_external_jobs" redirect="false" />
 	</action>
-	<action name="oAlumni_personalSys__action_manage_alumni_personal_alumni_irb_jobs_Form" path="/ooAlumni_personalSys/action_manage_alumni_personal_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal_alumni_irb_jobs" unknown="false" validate="false">
+	<action name="oAlumni_personalSys__action_manage_alumni_personal_alumni_irb_jobs_Form" path="/oAlumni_personalSys/action_manage_alumni_personal_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal_alumni_irb_jobs" unknown="false" validate="false">
   		<forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_alumni_personal_alumni_irb_jobs" redirect="false" />
 	</action>
     <action name="oPersonalSys__action_manage_my_own_personal_work_experience_Form" path="/oPersonalSys/action_manage_my_own_personal_work_experience" scope="request" type="presentation.actions.oPersonalSys.Action_manage_my_own_personal_work_experience" unknown="false" validate="false">
@@ -2323,6 +2337,8 @@
 	<action name="oAlumni_personalSys__action_modify_page_alumni_personal_Form" path="/oAlumni_personalSys/action_modify_page_alumni_personal" scope="request" type="presentation.actions.oAlumni_personalSys.Action_modify_page_alumni_personal" unknown="false" validate="false">
 	  <forward contextRelative="false" name="success" path="oAlumni_personalSys.action_modify_page_alumni_personal" redirect="false" />
 	</action>	
+    
+    <action path="/oAlumni_personalSys/action_force_export_alumni_personal" type="presentation.actions.oAlumni_personalSys.Action_force_export_alumni_personal" unknown="false" validate="false" />
     
 	<action path="/oAlumni_paramsSys/action_cancel_modify_modify_page_alumni_params" type="presentation.actions.oAlumni_paramsSys.Action_cancel_modify_modify_page_alumni_params" unknown="false" validate="true" />
 	<action name="oAlumni_paramsSys__action_modify_modify_page_alumni_params_Form" path="/oAlumni_paramsSys/action_modify_modify_page_alumni_params" scope="request" type="presentation.actions.oAlumni_paramsSys.Action_modify_modify_page_alumni_params" unknown="false" validate="true" />

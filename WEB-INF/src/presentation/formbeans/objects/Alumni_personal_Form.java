@@ -15,7 +15,7 @@ public class Alumni_personal_Form extends ValidatorFormAndAction {
 	String alumni_personalcode;
 
 	// definition of the specific attributes
-	private boolean external;
+	private String external;
 	private Alumni_titles_IDForm titles;
 	private String firstname;
 	private String surname;
@@ -74,11 +74,11 @@ public class Alumni_personal_Form extends ValidatorFormAndAction {
 		this.alumni_personalcode = alumni_personalcode;
 	}
 
-	public boolean isExternal() {
+	public String getExternal() {
 		return external;
 	}
 
-	public void setExternal(boolean external) {
+	public void setExternal(String external) {
 		this.external = external;
 	}
 
