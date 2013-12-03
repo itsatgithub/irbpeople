@@ -26,7 +26,10 @@
                 </field>
                 <field name="surname" visible="true" default="true" type-of-field="text" size="10">
                     <caption language="en">Surname</caption>
-                </field>                
+                </field>
+                <field name="show_data" visible="true" default="true" type-of-field="boolean" size="10">
+                    <caption language="en">Show data</caption>
+                </field>                  
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
             <!-- 1/2 - Campos 'hidden'. -->
@@ -55,7 +58,10 @@
                 </field>
                 <field name="surname" visible="true" default="true" type-of-field="text" size="10">
                     <caption language="es">Apellidos</caption>
-                </field>      
+                </field> 
+                <field name="show_data" visible="true" default="true" type-of-field="boolean" size="10">
+                    <caption language="en">Mostrar datos</caption>
+                </field>       
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
             <!-- 1/2 - Campos 'hidden'. -->
@@ -85,6 +91,9 @@
                 <field name="surname" visible="true" default="true" type-of-field="text" size="10">
                     <caption language="es">Cognoms</caption>
                 </field>     
+                <field name="show_data" visible="true" default="true" type-of-field="boolean" size="10">
+                    <caption language="en">Mostrar dades</caption>
+                </field>  
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
             <!-- 1/2 - Campos 'hidden'. -->

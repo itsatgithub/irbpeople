@@ -56,10 +56,10 @@
 			<column name="keywords" length="255" />
 		</property>
 		<property name="biography" type="string">
-			<column name="biography" />
+			<column name="biography" length="2550" />
 		</property>
 		<property name="awards" type="string">
-			<column name="awards" />
+			<column name="awards" length="2550"/>
 		</property>
 		<property name="ORCIDID" type="string">
 			<column name="ORCIDID" length="100" />

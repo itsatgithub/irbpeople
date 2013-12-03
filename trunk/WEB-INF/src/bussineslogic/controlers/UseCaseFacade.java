@@ -1674,6 +1674,11 @@ public class UseCaseFacade {
 	public static Pair<Integer, List<Alumni_personal>> ObtainAllAlumni_personal(String administradorId, ListConfigurator configurator) throws InternalException {
 		return UseCase.ObtainAllAlumni_personal(UseCase.getUsuario(administradorId), configurator);
 	}
+	
+	public static Pair<Integer, List<Alumni_personal>> ObtainNotExternalAlumni_personal(String administradorId,
+		    ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainNotExternalAlumni_personal(UseCase.getUsuario(administradorId), configurator);
+	}
 
 	public static Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>> ObtainAllAlumni_personalAndOrderMap(String administradorId, ListConfigurator configurator) throws InternalException {
 		return UseCase.ObtainAllAlumni_personalAndOrderMap(UseCase.getUsuario(administradorId), configurator);
@@ -3816,5 +3821,24 @@ public class UseCaseFacade {
 	 */
 	public static Pair<Integer, List<Alumni_irb_jobs>> ObtainAllAlumni_irb_jobs(String administradorId, ListConfigurator configurator) throws InternalException {
 		return UseCase.ObtainAllAlumni_irb_jobs(UseCase.getUsuario(administradorId), configurator);
+	}
+	
+	/**
+	 * This method forces export irb personal to alumni tables
+	 * @param administradorId
+	 */
+	public static void ForceExportAlumni(String administradorId)  throws InternalException {
+		UseCase.ForceExportAlumni(UseCase.getUsuario(administradorId));
+	}
+	
+	/**
+	 * This method exports an external alumni personal to an irb alumni personal, and mark it as validated
+	 * @param administradorId
+	 * @throws UsuarioNoActivoException 
+	 * @throws NoPermisosException 
+	 * @throws ValidationFailedException 
+	 */
+	public static void ValidateAlumniPersonal(String administradorId, Alumni_personal external_alumni_personal, Alumni_personal alumni_personal)  throws InternalException, ValidationFailedException, NoPermisosException, UsuarioNoActivoException {
+		UseCase.ValidateAlumniPersonal(UseCase.getUsuario(administradorId),external_alumni_personal, alumni_personal);
 	}
 }

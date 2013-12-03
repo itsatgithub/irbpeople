@@ -999,6 +999,12 @@
   <definition name="oAlumni_external_job_sectorsSys.popUp_action_new_page_alumni_external_job_sectors" extends="popup_template">
     <put name="center" value="/pages/oAlumni_external_job_sectorsSys/action_new_alumni_external_job_sectors.jsp" />
   </definition>
+  <definition name="oAlumni_personalSys.popUp_action_validate_external" extends="popup_template">
+	<put name="center" value="/pages/oAlumni_personalSys/action_validate_external.jsp" />
+  </definition>
+  <definition name="oAlumni_personalSys.action_validate_external" extends="horizontal_evc_template1">
+	<put name="center" value="/pages/oAlumni_personalSys/action_validate_external.jsp" />
+  </definition>
   <definition name="oType_of_benefitSys.action_view_type_of_benefit" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oType_of_benefitSys/action_view_type_of_benefit.jsp" />
   </definition>

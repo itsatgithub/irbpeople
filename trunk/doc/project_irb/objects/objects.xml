@@ -94,6 +94,16 @@
       <one BO-to="grant" name="grant" />
     </asociations>
   </object>
+  <object name="academic_info">
+    <field name="start date" type="date" isInDescriptor="true" />
+    <field name="end date" type="date" isInDescriptor="true" />    
+    <asociations>
+      <one BO-to="personal" name="academic_info_personal" />
+      <one BO-to="type_of_study" name="type_of_study" />
+      <one BO-to="lab_rotation_lab" name="lab_rotation_lab" />
+      <one BO-to="lab_rotation_lab2" name="lab_rotation_lab2" />
+    </asociations>
+  </object>
   <object name="holiday">
     <field name="start date" type="date" isInDescriptor="true" />
     <field name="end date" type="text" isInDescriptor="true" />
@@ -253,6 +263,32 @@
     <field name="descritption" type="text" isInDescriptor="true" />
     <asociations />
   </object>
+  
+  <object name="alumni_communications">
+    <field name="descritption" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="alumni_titles">
+    <field name="descritption" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="alumni_irb_job_positions">
+    <field name="descritption" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="alumni_job_position_types">
+    <field name="descritption" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="alumni_external_job_positions">
+    <field name="descritption" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  <object name="alumni_external_job_sectors">
+    <field name="descritption" type="text" isInDescriptor="true" />
+    <asociations />
+  </object>
+  
   <object name="unit">
     <field name="description" type="text" isInDescriptor="true" />
     <asociations>

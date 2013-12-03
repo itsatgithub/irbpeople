@@ -26,13 +26,17 @@ import java.util.Vector;
 import ldap.LDAPLogin;
 
 import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.NonUniqueResultException;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
+import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Expression;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.Subqueries;
 import org.hibernate.exception.ConstraintViolationException;
 
 import utils.Pair;
@@ -52,16 +56,16 @@ import bussineslogic.excepciones.UsuarioExisteException;
 import bussineslogic.excepciones.UsuarioNoActivoException;
 import bussineslogic.excepciones.ValidationFailedException;
 import bussineslogic.objects.Academic_info;
-import bussineslogic.objects.Alumni_external_jobs;
-import bussineslogic.objects.Alumni_irb_jobs;
 import bussineslogic.objects.Alumni_communications;
 import bussineslogic.objects.Alumni_external_job_positions;
 import bussineslogic.objects.Alumni_external_job_sectors;
+import bussineslogic.objects.Alumni_external_jobs;
 import bussineslogic.objects.Alumni_irb_job_positions;
+import bussineslogic.objects.Alumni_irb_jobs;
 import bussineslogic.objects.Alumni_job_position_types;
+import bussineslogic.objects.Alumni_params;
 import bussineslogic.objects.Alumni_personal;
 import bussineslogic.objects.Alumni_titles;
-import bussineslogic.objects.Alumni_params;
 import bussineslogic.objects.ApplicationPreferences;
 import bussineslogic.objects.Area;
 import bussineslogic.objects.AuditLog;
@@ -142,6 +146,7 @@ public class UseCase {
     public final static String ADMINISTRATOR_ROLE_NAME = "administrator";
     public final static String BASIC_ROLE_NAME = "basic";
     public final static String ALUMNI_ROLE_NAME = "irbpeople_alumni";
+    public final static String ALUMNI_ADMIN_ROLE_NAME = "irbpeople_alumni_admin";
     public final static String HUMAN_RESOURCES_ROLE_NAME = "irbpeople_rw";
     public final static String IRBPEOPLE_GRANT_ROLE_NAME = "irbpeople_grant";
     public final static String IRBPEOPLE_INNOVATION_ROLE_NAME = "irbpeople_innovation";
@@ -14817,7 +14822,7 @@ public class UseCase {
     			"AND (fun4.organization_unit is null or fun4.organization_unit not in ('00002', '00003', '00004')) " +
     			")";
     	}
-    	if(where.length()>0){
+    	if(where.length()>0 && sqlToAdd.length()>0){
     		sqlToAdd = " and " + sqlToAdd;
     	}
     	return sqlToAdd;
@@ -16904,6 +16909,46 @@ public class UseCase {
 	
 		return pair;
     }
+    
+    /**
+     * This method obtains all instances of Alumni_personal, not external, given a list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Alumni_personal>> ObtainNotExternalAlumni_personal(Usuario user,
+	    ListConfigurator configurator) {
+
+		/** 1. We create an Hibernate Criteria to obtain the desired values * */
+		Criteria crit = HibernateUtil.getSession().createCriteria(
+			Alumni_personal.class);
+	
+		// we only want to obtain the non deleted objects
+		crit.add(Expression.eq("deleted", Boolean.FALSE));	
+		crit.add(Expression.eq("external", Boolean.FALSE));
+		
+		// we add the ListConfigurator to the criteria, obtaining the number of
+		// results without the pagination
+		int count = configurator.addCriterions(crit);
+	
+		/**
+		 * 2. We obtain the list form the DB and we return it with the number of
+		 * elements in the DB *
+		 */
+	
+		List<Alumni_personal> alumni_personals = (List<Alumni_personal>) crit.list();
+	
+		Pair<Integer, List<Alumni_personal>> pair = new Pair<Integer, List<Alumni_personal>>(
+			count, alumni_personals);
+	
+		return pair;
+    }
 
     public static Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>> ObtainValidatedAlumni_personalAndOrderMap(
     	    Usuario user, ListConfigurator configurator) {
@@ -17526,7 +17571,7 @@ public class UseCase {
      * @return returns true if the user is an administrator
      */
     public static boolean isAlumni(Usuario user) {
-    	return (checkRole(user, ALUMNI_ROLE_NAME));
+    	return (checkRole(user, ALUMNI_ROLE_NAME) || checkRole(user, ALUMNI_ADMIN_ROLE_NAME));
     }
     
     /**
@@ -17928,7 +17973,9 @@ public class UseCase {
 
 	/** 3. We commit the DB transaction and return the new instance * */
 	HibernateUtil.commitTransaction();
-
+	
+	// Export if it's necessary
+	ExportAlumni(user, newPersonal.getPersonalcode());
 	return currentPersonal;
     }
 
@@ -21191,7 +21238,7 @@ public class UseCase {
 
 	    if (filtro != null) {
 		filtro += " ";
-		whereString = whereString.equals("") ? filtro : whereString
+		whereString = whereString.length()==0 ? filtro : whereString
 			+ " and " + filtro;
 	    }
 
@@ -22562,5 +22609,213 @@ public class UseCase {
 		personals.size(), personals);
 
 	return pair;
+    }
+    
+    
+    private static void exportPersonalToAlumni(Usuario user, String personalcode){
+    	//Begin transaction
+    	HibernateUtil.beginTransaction();
+    	
+    	Personal personal = getPersonal(personalcode);
+    	//Copy into alumni 
+    	Alumni_personal alumni_personal = new Alumni_personal();
+
+    	//Default values
+    	alumni_personal.setVersion(0);
+    	alumni_personal.setDeleted(false);
+    	alumni_personal.setExternal(false);
+    	alumni_personal.setVerified(false);
+    	alumni_personal.setShow_data(false);
+    	
+    	alumni_personal.setAlumni_personalcode(personal.getPersonalcode());
+    	alumni_personal.setFirstname(personal.getName());
+    	String surname = personal.getSurname1();
+    	if(personal.getSurname2()!=null && personal.getSurname2().length()>0){
+    		surname+=personal.getSurname2();
+    	}
+    	alumni_personal.setSurname(surname);
+    	alumni_personal.setIrb_surname(surname);
+    	
+    	if(personal.getGender()!=null)
+    		alumni_personal.setGender(personal.getGender());
+    	
+    	if(personal.getNationality()!=null)
+    		alumni_personal.setNationality(personal.getNationality());
+
+    	if(personal.getNationality_2()!=null)
+    		alumni_personal.setNationality_2(personal.getNationality_2());
+    	
+    	if(personal.getBirth_date()!=null)
+    		alumni_personal.setBirth(personal.getBirth_date());
+    	
+    	if(personal.getPersonal_email()!=null && personal.getPersonal_email().length()>0)
+    		alumni_personal.setEmail(personal.getPersonal_email());
+    	
+    	
+    	
+    	HibernateUtil.getSession().save(alumni_personal);
+    	
+    	//Copy into alumni_irb_jobs
+    	Set<Professional> professionals = personal.getIprofessional_personal();
+    	if(professionals!=null){
+	    	for (Professional p : professionals){
+	    		Alumni_irb_jobs alumni_irb_job = new Alumni_irb_jobs();
+	    		alumni_irb_job.setDeleted(false);
+	    		alumni_irb_job.setVersion(0);
+	    		
+	    		//Create code
+	    		try {
+	    		    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
+	    		    alumni_irb_job.setAlumni_irb_jobscode(im.getId(alumni_irb_job));
+	    		} catch (identifyException ie) {
+	
+	    		    log.error(
+	    			    "Error en asignación de nuevo id en ExportPersonalToAlumni",
+	    			    ie);
+	    		    throw new Error(ie.getMessage());
+	    		}    		
+	    		alumni_irb_job.setStart_date(p.getStart_date());
+	    		alumni_irb_job.setEnd_date(p.getEnd_date());
+	    		alumni_irb_job.setUnit(p.getProfessional_unit());
+	    		alumni_irb_job.setUnit_2(p.getProfessional_unit_2());
+	    		if (p.getPosition()!=null){
+	    			Alumni_irb_job_positions position = getAlumni_irb_job_positions(p.getPosition().getCode());
+	    			if (position!=null) {
+	    				alumni_irb_job.setIrb_job_positions(position);
+	    			}
+	    		}
+	    		alumni_irb_job.setPersonal(alumni_personal);
+	    		alumni_personal.addIalumni_irb_jobs(alumni_irb_job);
+	    		HibernateUtil.getSession().save(alumni_irb_job);
+	    	}
+    	}
+    	
+    	/** 7. We create an Audit message * */
+    	CreateCreationAuditmessage(user, alumni_personal);    	
+    	
+    	
+    	
+    	//End transaction
+    	/** 8. We commit the DB transaction and return the new instance * */
+    	HibernateUtil.commitTransaction();
+    }
+    
+    	
+    public static void ForceExportAlumni(Usuario user){
+    	ExportAlumni(user, null);
+    }
+    
+    private static void updateBeancodes(String table){
+    	HibernateUtil.beginTransaction();
+    	String query = "update beancodes set codenumber = lpad(((select max(" + table + "code) from " + table + " ) + 1),13,0) where bean = '" + table + "'";
+		SQLQuery sqlQuery = HibernateUtil.getSession().createSQLQuery(query);  
+		sqlQuery.executeUpdate();  
+		HibernateUtil.commitTransaction();
+    }
+    
+    public static void ExportAlumni(Usuario user, String personalcode){
+    	Alumni_params alumni_params = getAlumni_params("EXPORT_MIN_DAYS");
+    	int days = Integer.parseInt(alumni_params.getValue());
+    	
+    	//Search for personal with professional longer than @days and NOT in current alumni
+    	Criteria crit = HibernateUtil.getSession().createCriteria(Personal.class);
+    	crit.add(Expression.eq("deleted", Boolean.FALSE));
+	    
+    	Date fromDate = new Date();    	
+    	fromDate.setTime(fromDate.getTime() - days * 1000 * 60 * 60 * 24);
+    
+    	crit.createAlias("iprofessional_personal", "p", Criteria.INNER_JOIN);    	
+	    crit.add(Restrictions.eq("p.deleted", Boolean.FALSE));
+    	crit.add(Restrictions.le("p.start_date", fromDate));
+    	
+    	//Only obtain one person it the personal code it's set
+    	if(personalcode!=null)
+    		crit.add(Restrictions.eq("personalcode", personalcode));    	
+
+    	//Inactive
+    	crit.add(Restrictions.eq("state.personalstatecode", Personalstate.INACTIVE_CODE));
+    	DetachedCriteria subquery = DetachedCriteria.forClass(Alumni_personal.class)
+    		    //.add(Expression.eq("deleted", Boolean.FALSE))
+    		    .setProjection(Projections.property("alumni_personalcode"));
+    	
+    	crit.add(Subqueries.propertyNotIn("personalcode", subquery));
+    	crit.setProjection(Projections.projectionList().add(Projections.property("personalcode")).add(Projections.groupProperty("personalcode")));
+    	
+    	List<Object> personal = (List<Object>) crit.list();
+    	
+    	if(personal.size()>0){
+    		log.debug("Initializing export of " + personal.size() + " personal");
+	    	for(Object p : personal){
+	    		exportPersonalToAlumni(user, (String)((Object[])p)[0]);
+	    		log.debug("Exported: " + p);    		
+	    	}
+	    	
+	    	updateBeancodes("alumni_personal");
+	    	updateBeancodes("alumni_irb_jobs");
+    	}
+    }
+    
+    public static void ValidateAlumniPersonal(Usuario user, Alumni_personal external_alumni_personal, Alumni_personal alumni_personal) throws ValidationFailedException, NoPermisosException, InternalException, UsuarioNoActivoException {
+    	
+    	HibernateUtil.beginTransaction();
+    	
+    	if(alumni_personal.isExternal()){
+    		String e = "Error, the target alumni personal can not be external";
+    		log.error(e);
+    		throw new Error(e);
+    	}
+    	
+    	// Alumni information
+    	alumni_personal.setSurname(external_alumni_personal.getSurname());
+    	alumni_personal.setUrl(external_alumni_personal.getUrl());
+    	alumni_personal.setFacebook(external_alumni_personal.getFacebook());
+    	alumni_personal.setLinkedin(external_alumni_personal.getLinkedin());
+    	alumni_personal.setTwitter(external_alumni_personal.getTwitter());
+    	alumni_personal.setKeywords(external_alumni_personal.getKeywords());
+    	alumni_personal.setBiography(external_alumni_personal.getBiography());
+    	alumni_personal.setAwards(external_alumni_personal.getAwards());
+    	alumni_personal.setORCIDID(external_alumni_personal.getORCIDID());
+    	alumni_personal.setPubmedid(external_alumni_personal.getPubmedid());
+    	alumni_personal.setResearcherid(external_alumni_personal.getResearcherid());
+    	alumni_personal.setVerified(true);
+    	alumni_personal.setShow_data(external_alumni_personal.isShow_data());
+    	    	
+    	// External jobs and communications
+    	Set<Alumni_communications> communications = external_alumni_personal.getIalumni_communications();
+    	Set<Alumni_external_jobs> external_jobs = external_alumni_personal.getIalumni_external_jobs();
+    	
+    	if(communications.size()>0){
+    		Iterator<Alumni_communications> communicationsIt = communications.iterator();
+    		Set<Alumni_communications> alumni_communications = new HashSet<Alumni_communications>();
+    		while(communicationsIt.hasNext()) {
+	        	Alumni_communications c = communicationsIt.next();
+	        	Alumni_communications c2 = getAlumni_communications(c.getAlumni_communicationscode());
+	        	alumni_communications.add(c2);
+	        }	        
+	        alumni_personal.clearIalumni_communications();
+	        alumni_personal.setIalumni_communications(alumni_communications);    
+    	}
+    	
+    	
+    	if(external_jobs.size()>0){
+	    	Iterator<Alumni_external_jobs> externalJobsIt = external_jobs.iterator();
+	        while(externalJobsIt.hasNext()) {
+	        	externalJobsIt.next().setPersonal(alumni_personal);
+	        }	        
+    	}
+    	
+    	if(external_alumni_personal.getTitles()!=null){
+    		alumni_personal.setTitles(external_alumni_personal.getTitles());
+    	}
+    	
+    	alumni_personal.setVersion(alumni_personal.getVersion()+1);
+    	HibernateUtil.getSession().update(alumni_personal);
+    	
+    	CreateCreationAuditmessage(user, alumni_personal);
+    	
+    	HibernateUtil.commitTransaction();
+    	
+    	RemoveAlumni_personal(user, external_alumni_personal.getAlumni_personalcode());
+    	
     }
 }

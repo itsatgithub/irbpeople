@@ -1,6 +1,7 @@
 package bussineslogic.objects;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -45,9 +46,9 @@ public class Alumni_personal implements Persistent {
 	private String pubmedid;
 	private boolean verified;
 	private boolean show_data;
-	private Set<Alumni_communications> ialumni_communications;
-	private Set<Alumni_external_jobs> ialumni_external_jobs;
-	private Set<Alumni_irb_jobs> ialumni_irb_jobs;
+	private Set<Alumni_communications> ialumni_communications = new HashSet<Alumni_communications>();
+	private Set<Alumni_external_jobs> ialumni_external_jobs = new HashSet<Alumni_external_jobs>();
+	private Set<Alumni_irb_jobs> ialumni_irb_jobs = new HashSet<Alumni_irb_jobs>();
 
 	/**
 	 * Default Constructor which creates an empty alumni_personal

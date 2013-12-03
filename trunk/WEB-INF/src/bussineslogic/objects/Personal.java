@@ -1255,7 +1255,7 @@ public class Personal implements Persistent {
 		if (getCode() == null || getCode().equals(""))
 			return "";
 
-		return (getName() != null ? getName() : "") + " " + (getSurname1() != null ? getSurname1() : "");
+		return "[" + getPersonalcode() + "] " + (getName() != null ? getName() : "") + " " + (getSurname1() != null ? getSurname1() : "");
 	}
 
 	public PersonalPhoto getPhoto() {
