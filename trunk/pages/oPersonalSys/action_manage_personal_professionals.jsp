@@ -124,7 +124,7 @@
 	</tr>
 </table>
 <br>
-
+<% if(showOptionalFields.equals("true")){ %>
 <table cellpadding=0 cellspacing=0>
 	<tr>
 		<td><jsp:include page="/pages/common/templates/groupHeader.jsp"> <jsp:param name="HeaderKey" value="end/spof/spcontract"/> </jsp:include></td>
@@ -250,6 +250,7 @@
 	</tr>
 </table>
 <br>
+<% } %>
 <jsp:include page="/pages/common/lists/personal_comments_include.jsp" />
 
 </html:form>

@@ -5,6 +5,8 @@
 <%@ taglib uri="/tags/jim" prefix="jim"%>
 <%@ taglib uri="/tags/nested-jim" prefix="nested-jim"%>
 <%@page import="utils.jsp.JspUtils"%>
+<%@page import="utils.userUtils.UserUtils"%>
+<%@page import="bussineslogic.controlers.UseCase"%>
 
 <logic:notPresent name="org.apache.struts.action.MESSAGE" scope="application">
 	<font color="red">
@@ -567,7 +569,10 @@
 <br>
 
 
-
+<% 
+boolean showOptionalFields = (!UserUtils.checkRole(request, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) && !UserUtils.checkRole(request, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME));
+if(showOptionalFields){
+%>
 <table cellpadding=0 cellspacing=0>
 	<tr>
 		<td><jsp:include page="/pages/common/templates/groupHeader.jsp"> <jsp:param name="HeaderKey" value="end/spof/spcontract"/> </jsp:include></td>
@@ -683,6 +688,7 @@
 		</td>
 	</tr>
 </table>
+<% } %>
 <br>
 
 
