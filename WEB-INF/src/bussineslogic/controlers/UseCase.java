@@ -14835,7 +14835,7 @@ public class UseCase {
     	    .add(Restrictions.eq("p.current", true))
     	    .add(Restrictions.eq("p.deleted", false))
     	    .add(Restrictions.in("po.positioncode",new String[]{"00005", "00006", "00007", "00014"}));
-    	}else if(UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME)){
+    	}else if(UserUtils.checkRole(user, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)){
     		crit.createAlias("iprofessional_personal", "p")    		
     		.createAlias("p.position", "po")
     	    .createAlias("p.professional_unit", "u1", Criteria.LEFT_JOIN)
