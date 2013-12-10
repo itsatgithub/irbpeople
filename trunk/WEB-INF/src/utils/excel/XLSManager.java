@@ -664,11 +664,17 @@ public class XLSManager {
 					if (obaux != null) {
 						HSSFCell cell = row.createCell(j);
 						// format the object if it is a date String
+						System.out.println(columnCodes[j]);
 						if (columnCodes[j].endsWith("date") || columnCodes[j].contains("_date_")) {
 							obaux = composeDate(obaux.toString());
+							
+							HSSFCellStyle cellStyle = wb.createCellStyle();
+							cellStyle.setDataFormat(HSSFDataFormat.getBuiltinFormat("m/d/yy"));
+							width = insertValue(wb,cell,obaux, cellStyle);
+						}else{
+							// fills the cell with the object
+							width = insertValue(wb, cell, obaux);
 						}
-						// fills the cell with the object
-						width = insertValue(wb, cell, obaux);
 						// update maximum column width
 						maxColWidth[j] = maxim(maxColWidth[j], width);
 					}
