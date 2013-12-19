@@ -14789,6 +14789,7 @@ public class UseCase {
     	String sqlToAdd="";
     	if (UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME)){
     		log.info("Filtering for IRBPepole Grant");
+    		System.out.println("Filtering for IRBPepole Grant");
     		sqlToAdd += " personalcode in ( " +
     			"SELECT " +
     			"	fper.personalcode " +
@@ -14803,6 +14804,7 @@ public class UseCase {
     			")";
     	} else if(UserUtils.checkRole(user, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)) {
     		log.info("Filtering for IRBPepole Innovation");
+    		System.out.println("Filtering for IRBPepole Innovation");
     		sqlToAdd += " personalcode in( " +
     			"SELECT " +
     			"	fper.personalcode " +
@@ -14833,6 +14835,7 @@ public class UseCase {
     private static void filterByRole(Usuario user, Criteria crit){
     	if (UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME)){
     		log.info("Filtering for IRBPeople Grant");
+    		System.out.println("Filtering for IRBPeople Grant");
     		crit.createAlias("iprofessional_personal", "p")
     		.createAlias("p.position", "po")
     	    .add(Restrictions.eq("p.current", true))
@@ -14840,6 +14843,7 @@ public class UseCase {
     	    .add(Restrictions.in("po.positioncode",new String[]{"00005", "00006", "00007", "00014"}));
     	}else if(UserUtils.checkRole(user, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)){
     		log.info("Filtering for IRBPeople Innovation");
+    		System.out.println("Filtering for IRBPeople Innovation");
     		crit.createAlias("iprofessional_personal", "p")    		
     		.createAlias("p.position", "po")
     	    .createAlias("p.professional_unit", "u1", Criteria.LEFT_JOIN)
@@ -17612,7 +17616,8 @@ public class UseCase {
     }
 
     public static boolean checkRole(Usuario user, String role){
-    	log.info("User roles: "+user.getRoles() +" - expected: " + getRole(role));    	
+    	log.info("User roles: "+user.getRoles() +" - expected: " + getRole(role));
+    	System.out.println("User roles: "+user.getRoles() +" - expected: " + getRole(role));
     	return user.getRoles().contains(getRole(role));
     }
     
