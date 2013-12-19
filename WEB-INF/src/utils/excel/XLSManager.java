@@ -663,8 +663,7 @@ public class XLSManager {
 					Object obaux = ((Object[]) obs[i])[j];
 					if (obaux != null) {
 						HSSFCell cell = row.createCell(j);
-						// format the object if it is a date String
-						System.out.println(columnCodes[j]);
+						// format the object if it is a date String						
 						if (columnCodes[j].endsWith("date") || columnCodes[j].contains("_date_")) {
 							obaux = composeDate(obaux.toString());
 							
