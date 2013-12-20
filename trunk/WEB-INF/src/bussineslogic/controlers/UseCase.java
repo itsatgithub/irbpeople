@@ -14728,6 +14728,14 @@ public class UseCase {
 	    Usuario user, ListConfigurator configurator) {
 
     System.out.println("ObtainAllPersonalAndOrderMap");
+    System.out.println(user.getRoles().size());
+    if(user.getRoles().size()>0){
+	    for(Role r : (Set<Role>)user.getRoles()){
+	    	System.out.println("Role name: "+r.getRolename());
+	    }
+    }else{
+    	System.out.println("No roles found!");
+    }
     	
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
