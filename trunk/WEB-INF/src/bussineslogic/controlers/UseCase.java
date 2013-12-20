@@ -14727,6 +14727,8 @@ public class UseCase {
     public static Pair<Integer, Pair<List<Personal>, Map<String, String[]>>> ObtainAllPersonalAndOrderMap(
 	    Usuario user, ListConfigurator configurator) {
 
+    System.out.println("ObtainAllPersonalAndOrderMap");
+    	
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
 		Personal.class);
@@ -14786,7 +14788,7 @@ public class UseCase {
     }
     
     private static String addFilterByRoleWhere(Usuario user, String where){
-    	String sqlToAdd="";
+    	String sqlToAdd="";    	
     	if (UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME)){
     		log.info("Filtering for IRBPepole Grant");
     		System.out.println("Filtering for IRBPepole Grant");
@@ -14882,6 +14884,8 @@ public class UseCase {
 	    Usuario user, ListConfigurator configurator)
 	    throws InternalException {
 
+    	System.out.println("ObtainAllPersonalWithoutUser");
+    	
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
 		Personal.class);
@@ -16981,6 +16985,8 @@ public class UseCase {
     public static Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>> ObtainAllAlumni_personalAndOrderMap(
 	    Usuario user, ListConfigurator configurator, Criteria crit) {
 
+    	System.out.println("ObtainAllAlumni_personalAndOrderMap");
+    	
 		// we only want to obtain the non deleted objects
 		crit.add(Expression.eq("deleted", Boolean.FALSE));	
 		filterByRole(user, crit);
