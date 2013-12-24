@@ -15639,8 +15639,11 @@ public class UseCase {
 		    Set<Role> roles = new HashSet<Role>();
 		    roles.add(new Role(ldapLogin.getUserrole(), ldapLogin
 			    .getUserrole(), ""));
+		    
+		    System.out.println("Setting user roles to user:" + roles);
+		    
 		    user.setRoles(roles);
-
+		    
 		    Criteria crit = HibernateUtil.getSession().createCriteria(
 			    Personal.class);
 		    crit.add(Expression.eq("username", username));
@@ -15651,12 +15654,17 @@ public class UseCase {
 			// Este username no estï¿½ en la BD de personal de
 			// IRBPeople personal.username
 			user = null;
+				System.out.println("User not found in personal");
 		    } else {
 			user.setPersonal(per);
+				System.out.println("User found in personal");
 
 			user.setLanguage(per.getLanguage());
 			user.setCode(per.getPersonalcode());
 			user.setUsername(per.getUsercode());
+			
+			System.out.println("NEW: Save or update db user");
+			HibernateUtil.getSession().saveOrUpdate(user);
 		    }
 
 		} catch (IdentifierException e) {
@@ -17379,6 +17387,8 @@ public class UseCase {
 	Usuario user = null;
 	try {
 	    user = (Usuario) UserManagement.singleton().getUser(userId);
+	    
+	    System.out.println("getUsuario: "+user + " - Roles: " + user.getRoles());
 	} catch (EntityNotFoundException e) {
 	    user = new Usuario();
 
