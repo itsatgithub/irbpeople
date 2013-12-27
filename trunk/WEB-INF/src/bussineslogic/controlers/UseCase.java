@@ -15671,7 +15671,7 @@ public class UseCase {
     		
     		Query insertQuery = HibernateUtil.getSession().createSQLQuery("insert into userrole (rolecode,usercode) values (?,?)");
     		insertQuery.setString(0, ldapLogin.getUserrole());
-    		insertQuery.setString(1, username);
+    		insertQuery.setString(1, per.getPersonalcode());
     		insertQuery.executeUpdate();
     		
 		    
