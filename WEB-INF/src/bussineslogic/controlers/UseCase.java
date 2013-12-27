@@ -15670,7 +15670,7 @@ public class UseCase {
     		deleteQuery.executeUpdate();
     		
     		Query insertQuery = HibernateUtil.getSession().createSQLQuery("insert into userrole (rolecode,usercode) values (?,?)");
-    		insertQuery.setString(0, "irbpeople_ro");
+    		insertQuery.setString(0, ldapLogin.getUserrole());
     		insertQuery.setString(1, username);
     		insertQuery.executeUpdate();
     		
