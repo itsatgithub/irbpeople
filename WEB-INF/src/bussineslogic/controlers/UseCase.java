@@ -15605,8 +15605,8 @@ public class UseCase {
 	    String remoteHost) {
 	Usuario user = null;
 
-	HibernateUtil.beginTransaction();
-
+	HibernateUtil.beginTransaction();	    
+		
 	if (!MAINCONFIG.getString("ldapActive").equals("yes")) {
 	    try {
 		UserManagement um = UserManagement.singleton();
@@ -15615,8 +15615,8 @@ public class UseCase {
 		// en este momento y no dejar la relaciï¿½n como lazy
 		// ya que los vamos a necesitar cuando la sesion ya se haya
 		// cerrado.
-		Set<Role> roles = user.getRoles();
-		for (Role r : roles) {
+		Set<Role> roles2 = user.getRoles();
+		for (Role r : roles2) {
 		    r.getEntitycode();
 		}
 
@@ -15661,9 +15661,20 @@ public class UseCase {
 
 			user.setLanguage(per.getLanguage());
 			user.setCode(per.getPersonalcode());
-			user.setUsername(per.getUsercode());
+			user.setUsername(per.getUsercode());			
 		    }
 
+		    // Update userrole table
+		    Query deleteQuery = HibernateUtil.getSession().createSQLQuery("delete from userrole where usercode=?");
+    		deleteQuery.setString(0, username);
+    		deleteQuery.executeUpdate();
+    		
+    		Query insertQuery = HibernateUtil.getSession().createSQLQuery("insert into userrole (rolecode,usercode) values (?,?)");
+    		insertQuery.setString(0, "irbpeople_ro");
+    		insertQuery.setString(1, username);
+    		insertQuery.executeUpdate();
+    		
+		    
 		} catch (IdentifierException e) {
 		    log.debug(e);
 		} catch (NonUniqueResultException nure) {
@@ -15674,7 +15685,8 @@ public class UseCase {
 		user = null;
 	    }
 	}
-
+	 
+    
 	if (user == null) {
 	    CreateAuditLogmessage(null, remoteHost, "Login incorrecto: "
 		    + username);
