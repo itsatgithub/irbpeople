@@ -14727,14 +14727,14 @@ public class UseCase {
     public static Pair<Integer, Pair<List<Personal>, Map<String, String[]>>> ObtainAllPersonalAndOrderMap(
 	    Usuario user, ListConfigurator configurator) {
 
-    System.out.println("ObtainAllPersonalAndOrderMap");
-    System.out.println(user.getRoles().size());
+    log.debug("ObtainAllPersonalAndOrderMap");
+    log.debug(user.getRoles().size());
     if(user.getRoles().size()>0){
 	    for(Role r : (Set<Role>)user.getRoles()){
-	    	System.out.println("Role name: "+r.getRolename());
+	    	log.debug("Role name: "+r.getRolename());
 	    }
     }else{
-    	System.out.println("No roles found!");
+    	log.debug("No roles found!");
     }
     	
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
@@ -14798,8 +14798,7 @@ public class UseCase {
     private static String addFilterByRoleWhere(Usuario user, String where){
     	String sqlToAdd="";    	
     	if (UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME)){
-    		log.info("Filtering for IRBPepole Grant");
-    		System.out.println("Filtering for IRBPepole Grant");
+    		log.debug("Filtering for IRBPepole Grant");
     		sqlToAdd += " personalcode in ( " +
     			"SELECT " +
     			"	fper.personalcode " +
@@ -14813,8 +14812,7 @@ public class UseCase {
     			"AND fpro.position IN ('00005', '00006', '00007','00014') " +
     			")";
     	} else if(UserUtils.checkRole(user, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)) {
-    		log.info("Filtering for IRBPepole Innovation");
-    		System.out.println("Filtering for IRBPepole Innovation");
+    		log.debug("Filtering for IRBPepole Innovation");
     		sqlToAdd += " personalcode in( " +
     			"SELECT " +
     			"	fper.personalcode " +
@@ -14844,16 +14842,14 @@ public class UseCase {
     
     private static void filterByRole(Usuario user, Criteria crit){
     	if (UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME)){
-    		log.info("Filtering for IRBPeople Grant");
-    		System.out.println("Filtering for IRBPeople Grant");
+    		log.debug("Filtering for IRBPeople Grant");
     		crit.createAlias("iprofessional_personal", "p")
     		.createAlias("p.position", "po")
     	    .add(Restrictions.eq("p.current", true))
     	    .add(Restrictions.eq("p.deleted", false))
     	    .add(Restrictions.in("po.positioncode",new String[]{"00005", "00006", "00007", "00014"}));
     	}else if(UserUtils.checkRole(user, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)){
-    		log.info("Filtering for IRBPeople Innovation");
-    		System.out.println("Filtering for IRBPeople Innovation");
+    		log.debug("Filtering for IRBPeople Innovation");
     		crit.createAlias("iprofessional_personal", "p")    		
     		.createAlias("p.position", "po")
     	    .createAlias("p.professional_unit", "u1", Criteria.LEFT_JOIN)
@@ -14892,7 +14888,7 @@ public class UseCase {
 	    Usuario user, ListConfigurator configurator)
 	    throws InternalException {
 
-    	System.out.println("ObtainAllPersonalWithoutUser");
+    	log.debug("ObtainAllPersonalWithoutUser");
     	
 	/** 1. We create an Hibernate Criteria to obtain the desired values * */
 	Criteria crit = HibernateUtil.getSession().createCriteria(
@@ -15640,7 +15636,7 @@ public class UseCase {
 		    roles.add(new Role(ldapLogin.getUserrole(), ldapLogin
 			    .getUserrole(), ""));
 		    
-		    System.out.println("Setting user roles to user:" + roles);
+		    log.debug("Setting user roles to user:" + roles);
 		    
 		    user.setRoles(roles);
 		    
@@ -15654,10 +15650,10 @@ public class UseCase {
 			// Este username no estï¿½ en la BD de personal de
 			// IRBPeople personal.username
 			user = null;
-				System.out.println("User not found in personal");
+				log.debug("User not found in personal");
 		    } else {
 			user.setPersonal(per);
-				System.out.println("User found in personal");
+				log.debug("User found in personal");
 
 			user.setLanguage(per.getLanguage());
 			user.setCode(per.getPersonalcode());
@@ -15666,7 +15662,7 @@ public class UseCase {
 
 		    // Update userrole table
 		    Query deleteQuery = HibernateUtil.getSession().createSQLQuery("delete from userrole where usercode=?");
-    		deleteQuery.setString(0, username);
+    		deleteQuery.setString(0, per.getPersonalcode());
     		deleteQuery.executeUpdate();
     		
     		Query insertQuery = HibernateUtil.getSession().createSQLQuery("insert into userrole (rolecode,usercode) values (?,?)");
@@ -17010,7 +17006,7 @@ public class UseCase {
     public static Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>> ObtainAllAlumni_personalAndOrderMap(
 	    Usuario user, ListConfigurator configurator, Criteria crit) {
 
-    	System.out.println("ObtainAllAlumni_personalAndOrderMap");
+    	log.debug("ObtainAllAlumni_personalAndOrderMap");
     	
 		// we only want to obtain the non deleted objects
 		crit.add(Expression.eq("deleted", Boolean.FALSE));	
@@ -17397,7 +17393,7 @@ public class UseCase {
 	try {
 	    user = (Usuario) UserManagement.singleton().getUser(userId);
 	    
-	    System.out.println("getUsuario: "+user + " - Roles: " + user.getRoles());
+	    log.debug("getUsuario: "+user + " - Roles: " + user.getRoles());
 	} catch (EntityNotFoundException e) {
 	    user = new Usuario();
 
@@ -17648,9 +17644,8 @@ public class UseCase {
     	return checkRole(user, IRBPEOPLE_INNOVATION_ROLE_NAME);    	
     }
 
-    public static boolean checkRole(Usuario user, String role){
-    	log.info("User roles: "+user.getRoles() +" - expected: " + getRole(role));
-    	System.out.println("User roles: "+user.getRoles() +" - expected: " + getRole(role));
+    public static boolean checkRole(Usuario user, String role){    	
+    	log.debug("User roles: "+user.getRoles() +" - expected: " + getRole(role));
     	return user.getRoles().contains(getRole(role));
     }
     

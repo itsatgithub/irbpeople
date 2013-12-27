@@ -159,7 +159,6 @@ function submitDeleteNoneRowAction(form,boAdderName,name,value){
 	// Si se ha introducido el nombre de un objectfield lo usamos, sino, usamos el "por defecto".
 	
 	if(request.getParameter("objectfield")==null){ 
-		System.out.println(objectname);
 		lco = lc.getObject(objectname);
 		if (lco == null){
 			System.err.println(objectname + " object field not found.");
