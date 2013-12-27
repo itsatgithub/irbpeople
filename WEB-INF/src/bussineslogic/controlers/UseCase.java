@@ -15662,9 +15662,6 @@ public class UseCase {
 			user.setLanguage(per.getLanguage());
 			user.setCode(per.getPersonalcode());
 			user.setUsername(per.getUsercode());
-			
-			System.out.println("NEW: Save or update db user");
-			HibernateUtil.getSession().saveOrUpdate(user);
 		    }
 
 		} catch (IdentifierException e) {
