@@ -16994,6 +16994,7 @@ public class UseCase {
     		Usuario user, ListConfigurator configurator) {
     	Criteria crit = HibernateUtil.getSession().createCriteria(Alumni_personal.class);
     	crit.add(Expression.eq("verified", Boolean.FALSE));
+    	crit.add(Expression.eq("external", Boolean.TRUE));
     	return ObtainAllAlumni_personalAndOrderMap(user, configurator, crit);
     }
     
