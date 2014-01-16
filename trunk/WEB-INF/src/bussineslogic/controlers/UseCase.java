@@ -22670,7 +22670,7 @@ public class UseCase {
     	alumni_personal.setFirstname(personal.getName());
     	String surname = personal.getSurname1();
     	if(personal.getSurname2()!=null && personal.getSurname2().length()>0){
-    		surname+=personal.getSurname2();
+    		surname += " " + personal.getSurname2();
     	}
     	alumni_personal.setSurname(surname);
     	alumni_personal.setIrb_surname(surname);
