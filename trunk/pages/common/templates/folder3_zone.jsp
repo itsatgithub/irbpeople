@@ -7,6 +7,23 @@
 <td>
 <table class="folder1" border="0" cellspacing="0" cellpadding="0" align="left">
 <tr>
+<script type="text/javascript">
+	function checkChanged()
+	{
+		if( (typeof document.forms[0].elements['tainted'] != 'undefined' ) && document.forms[0].elements['tainted'].value=='true')
+			if( confirm('<bean:message key="changes_warning" />') )
+			{
+				document.forms[0].elements['tainted'].value = 'false';
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		else
+			return true;
+	}
+</script>
 <%
 ZoneConstructorUtils zoneConstructor=new ZoneConstructorUtils(request, pageContext, "folder3");
 
