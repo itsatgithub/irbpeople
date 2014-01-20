@@ -12166,10 +12166,10 @@
 									<button-caption language="en">All personnel</button-caption>
 								</action>								
 								<action command="oAlumni_personalSys" action="action_manage_validated_alumni_personal">
-									<button-caption language="en">Validated</button-caption>
+									<button-caption language="en">Verified</button-caption>
 								</action>				
 								<action command="oAlumni_personalSys" action="action_manage_not_validated_alumni_personal">
-									<button-caption language="en">External not Validated</button-caption>
+									<button-caption language="en">External not verified</button-caption>
 								</action>				
 							</zone>
 							<zone name="submit" />
@@ -12196,9 +12196,9 @@
 						<name>action_manage_validated_alumni_personal</name>
 						<show view="" template="protected_template_12" screen="" pane="center" jsp="" />
 						<description />
-						<title-caption language="en">Manage validated personnel</title-caption>
-						<menuitem-caption language="en">Manage validated personnel</menuitem-caption>
-						<button-caption language="en">Manage validated personnel</button-caption>
+						<title-caption language="en">Manage verified personnel</title-caption>
+						<menuitem-caption language="en">Manage verified personnel</menuitem-caption>
+						<button-caption language="en">Manage verified personnel</button-caption>
 						<path action="action_appHome" command="oAlumni_personalSys" />
 						<zones>
 							<zone name="operation"/>
@@ -12215,10 +12215,10 @@
 									<button-caption language="en">All personnel</button-caption>
 								</action>								
 								<action command="oAlumni_personalSys" action="action_manage_validated_alumni_personal">
-									<button-caption language="en">Validated</button-caption>
+									<button-caption language="en">Verified</button-caption>
 								</action>				
 								<action command="oAlumni_personalSys" action="action_manage_not_validated_alumni_personal">
-									<button-caption language="en">External not Validated</button-caption>
+									<button-caption language="en">External not verified</button-caption>
 								</action>				
 							</zone>
 							<zone name="submit" />
@@ -12245,9 +12245,9 @@
 						<name>action_manage_not_validated_alumni_personal</name>
 						<show view="" template="protected_template_12" screen="" pane="center" jsp="" />
 						<description />
-						<title-caption language="en">Manage external not validated personnel</title-caption>
-						<menuitem-caption language="en">Manage external not validated personnel</menuitem-caption>
-						<button-caption language="en">Manage external not validated personnel</button-caption>
+						<title-caption language="en">Manage external not verified personnel</title-caption>
+						<menuitem-caption language="en">Manage external not verified personnel</menuitem-caption>
+						<button-caption language="en">Manage external not verified personnel</button-caption>
 						<path action="action_appHome" command="oAlumni_personalSys" />
 						<zones>
 							<zone name="operation"/>
@@ -12267,10 +12267,10 @@
 									<button-caption language="en">All personnel</button-caption>
 								</action>								
 								<action command="oAlumni_personalSys" action="action_manage_validated_alumni_personal">
-									<button-caption language="en">Validated</button-caption>
+									<button-caption language="en">Verified</button-caption>
 								</action>				
 								<action command="oAlumni_personalSys" action="action_manage_not_validated_alumni_personal">
-									<button-caption language="en">External not Validated</button-caption>
+									<button-caption language="en">External not verified</button-caption>
 								</action>				
 							</zone>
 							<zone name="submit" />

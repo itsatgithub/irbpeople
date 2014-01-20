@@ -31,7 +31,7 @@
                     <caption language="en">External</caption>
                 </field>
                 <field name="verified" visible="true" default="true" type-of-field="boolean" size="10">
-                    <caption language="en">Validated</caption>
+                    <caption language="en">Verified</caption>
                 </field>
                 <field name="show_data" visible="true" default="true" type-of-field="boolean" size="10">
                     <caption language="en">Show data</caption>
