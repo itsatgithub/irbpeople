@@ -2,13 +2,15 @@
 <role name="irbpeople_alumni" system-groups-included="true">
   <description>alumni</description>
   <accessible-groups>
-    <group name="oAlumni_personalSys" />
-    <group name="oAlumni_communicationsSys" />        
+    <group name="oAlumni_personalSys" />            
     <group name="oAlumni_external_jobsSys" />
     <group name="oAlumni_irb_jobsSys" />
     <group name="customList"/>		
   </accessible-groups>
-  <forbidden-actions></forbidden-actions>
+  <forbidden-actions>
+      <action group_name="oAlumni_personalSys" name="action_manage_validated_alumni_personal" />
+      <action group_name="oAlumni_personalSys" name="action_manage_not_validated_alumni_personal" />
+  </forbidden-actions>
   <forbidden-actions-ref></forbidden-actions-ref>
 </role>
 

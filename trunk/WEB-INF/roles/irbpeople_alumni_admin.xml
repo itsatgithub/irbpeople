@@ -16,11 +16,7 @@
     <group name="oUnitSys" />	
 	
   </accessible-groups>
-  <forbidden-actions>
-      <!--   
-      <action group_name="oUnitSys" name="action_manage_unit" /> 
-      -->
-  </forbidden-actions>
+  <forbidden-actions></forbidden-actions>
   <forbidden-actions-ref>
       <action-ref action="action_manage_unit" group="oUnitSys" zone="folder2" action-ref="action_manage_unit" group-ref="oUnitSys" /> 
   </forbidden-actions-ref>
