@@ -21124,7 +21124,8 @@ public class UseCase {
 			max_education_field);
 	    }
 
-	    String queryString = "select distinct " + columnNames + " from "
+	    //TODO Comentado provisional - String queryString = "select distinct " + columnNames + " from "
+	    String queryString = "select " + columnNames + " from "
 		    + view_name + whereClause;
 
 	    if (!whereClause.contains(" where ")) {
@@ -21184,7 +21185,8 @@ public class UseCase {
 		view_name += " left join `benefits` `ben` on `personalcode` = `ben`.`benefits_personal` and `ben`.`deleted`=0 left join type_of_benefit `tbe` on ben.type_of_benefit = tbe.type_of_benefitcode";
 	    }
 
-	    String queryString = "select distinct " + columnNames + " from "
+	    //TODO Comentado provisional - String queryString = "select distinct " + columnNames + " from "
+	    String queryString = "select " + columnNames + " from "
 		    + view_name + makeWhereFromListConfigurator(user, configurator)
 		    + orderByString;
 
