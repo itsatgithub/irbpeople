@@ -22759,9 +22759,11 @@ public class UseCase {
     	//Search for personal with professional longer than @days and NOT in current alumni
     	Criteria crit = HibernateUtil.getSession().createCriteria(Personal.class);
     	crit.add(Expression.eq("deleted", Boolean.FALSE));
-	    
-    	Date fromDate = new Date();    	
-    	fromDate.setTime(fromDate.getTime() - days * 1000 * 60 * 60 * 24);
+    	Date fromDate = new Date();  
+    	Calendar c = Calendar.getInstance();
+    	c.setTime(fromDate);
+    	c.add(Calendar.DATE, -days);
+    	fromDate.setTime(c.getTime().getTime());    	
     
     	crit.createAlias("iprofessional_personal", "p", Criteria.INNER_JOIN);    	
 	    crit.add(Restrictions.eq("p.deleted", Boolean.FALSE));
