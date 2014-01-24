@@ -2,7 +2,7 @@
 <report view="view_alumni_personnel" site-number="1">
     <site>
         <!-- Label es el nombre del listado en el desplegable en la pantalla de nuevo listado. -->
-        <label>Alumni info and external jobs (current)</label>
+        <label>Alumni info, external and irb jobs</label>
         <fields>
             <!-- ****************************************** -->
             <!-- - Campos visibles en la seccion de SELECT 	-->
@@ -75,11 +75,8 @@
                     <caption>Alumni personal: Nationality 2</caption>
                 </field>
                 <field name="titles_description" visible="true" type-of-field="text">
-                    <caption>Alumni titles: Description</caption>
-                </field>
-                <field name="titles_short_description" visible="true" type-of-field="text">
-                    <caption>Alumni titles: Short description</caption>
-                </field>
+                    <caption>Alumni personal: Titles</caption>
+                </field>                
                 <field name="external_jobs_start_date" visible="true" type-of-field="text">
                     <caption>Alumni external jobs: Start date</caption>
                 </field>
@@ -110,29 +107,36 @@
                 </field>
 
                 <field name="external_jobs_positions_description" visible="true" type-of-field="text">
-                    <caption>Alumni external jobs positions: Description</caption>
+                    <caption>Alumni external jobs: Position</caption>
                 </field>
-                <field name="external_jobs_positions_short_description" visible="true" type-of-field="text">
-                    <caption>Alumni external jobs positions: Short description</caption>
-                </field>
-                
-                <field name="job_position_types_description" visible="true" type-of-field="text">
-                    <caption>Alumni job position types: Description</caption>
-                </field>
-                <field name="job_position_types_short_description" visible="true" type-of-field="text">
-                    <caption>Alumni job position types: Short description</caption>
-                </field>
-                
+                <field name="external_job_position_types_description" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Position type</caption>
+                </field>                
                 <field name="external_job_sectors_description" visible="true" type-of-field="text">
-                    <caption>Alumni external job sectors: Description</caption>
+                    <caption>Alumni external jobs: Sector</caption>
+                </field>                
+                <field name="external_jobs_current" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Current</caption>
                 </field>
-                <field name="external_job_sectors_short_description" visible="true" type-of-field="text">
-                    <caption>Alumni external job sectors: Short description</caption>
+                
+                <field name="irb_jobs_start_date" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Start date</caption>
                 </field>
-                
-                
-                
-                               
+                <field name="irb_jobs_end_date" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: End date</caption>
+                </field>
+                <field name="irb_jobs_unit" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Unit</caption>
+                </field>
+                <field name="irb_jobs_unit_2" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Unit 2</caption>
+                </field>
+                <field name="irb_jobs_positions_description" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Position</caption>
+                </field>
+                <field name="irb_job_position_types_description" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Position type</caption>
+                </field>               
             </select-fields>
             <where-fields>
                 <field name="alumni_personalcode" visible="true" type-of-field="text">
@@ -210,6 +214,9 @@
                 <field name="external_jobs_end_date" visible="true" type-of-field="date">
                     <caption>Alumni external jobs: End date</caption>
                 </field>
+                <field name="external_jobs_current" visible="true" type-of-field="boolean">
+                    <caption>Alumni external jobs: Current</caption>
+                </field>
                 
                 <field name="external_jobs_comments" visible="true" type-of-field="text">
                     <caption>Alumni external jobs: Comments</caption>
@@ -233,15 +240,37 @@
                     <caption>Alumni external jobs: Country</caption>
                 </field>
 
-                <field name="external_jobs_positions_description" visible="true" type-of-field="select description from alumni_external_job_positions order by description">
-                    <caption>Alumni external jobs positions: Description</caption>
+                <field name="external_jobs_positions_description" visible="true" type-of-field="select short_description from alumni_external_job_positions order by order_number">
+                    <caption>Alumni external jobs: Position</caption>
                 </field>
-                <field name="job_position_types_description" visible="true" type-of-field="select description from alumni_job_position_types order by description">
-                    <caption>Alumni job position types: Description</caption>
+                <field name="external_job_position_types_description" visible="true" type-of-field="select short_description from alumni_job_position_types order by order_number">
+                    <caption>Alumni external jobs: Position type</caption>
                 </field>                
-                <field name="external_job_sectors_description" visible="true" type-of-field="select description from alumni_external_job_sectors order by description">
-                    <caption>Alumni external job sectors: Description</caption>
+                <field name="external_job_sectors_description" visible="true" type-of-field="select short_description from alumni_external_job_sectors order by order_number">
+                    <caption>Alumni external jobs: Sector</caption>
                 </field>                 
+                
+                
+                <field name="irb_jobs_start_date" visible="true" type-of-field="date">
+                    <caption>Alumni irb jobs: Start date</caption>
+                </field>
+                <field name="irb_jobs_end_date" visible="true" type-of-field="date">
+                    <caption>Alumni irb jobs: End date</caption>
+                </field>
+                <field name="irb_jobs_unit" visible="true" type-of-field="select description from unit order by description">
+                    <caption>Alumni irb jobs: Unit</caption>
+                </field>
+                <field name="irb_jobs_unit_2" visible="true" type-of-field="select description from unit order by description">
+                    <caption>Alumni irb jobs: Unit 2</caption>
+                </field>
+                <field name="irb_jobs_positions_description" visible="true" type-of-field="select short_description from alumni_irb_job_positions order by order_number">
+                    <caption>Alumni irb jobs: Position</caption>
+                </field>
+                <field name="irb_job_position_types_description" visible="true" type-of-field="select short_description from alumni_job_position_types order by order_number">
+                    <caption>Alumni irb jobs: Position type</caption>
+                </field>               
+                
+                
             </where-fields>
             <orderby-fields>
                 <field name="alumni_personalcode" visible="true" type-of-field="text">
@@ -311,10 +340,7 @@
                     <caption>Alumni personal: Nationality 2</caption>
                 </field>
                 <field name="titles_description" visible="true" type-of-field="text">
-                    <caption>Alumni titles: Description</caption>
-                </field>
-                <field name="titles_short_description" visible="true" type-of-field="text">
-                    <caption>Alumni titles: Short description</caption>
+                    <caption>Alumni personal: Titles</caption>
                 </field>
                 <field name="external_jobs_start_date" visible="true" type-of-field="date">
                     <caption>Alumni external jobs: Start date</caption>
@@ -346,26 +372,39 @@
                 </field>
 
                 <field name="external_jobs_positions_description" visible="true" type-of-field="text">
-                    <caption>Alumni external jobs positions: Description</caption>
-                </field>
-                <field name="external_jobs_positions_short_description" visible="true" type-of-field="text">
-                    <caption>Alumni external jobs positions: Short description</caption>
+                    <caption>Alumni external jobs: Position</caption>
                 </field>
                 
-                <field name="job_position_types_description" visible="true" type-of-field="text">
-                    <caption>Alumni job position types: Description</caption>
-                </field>
-                <field name="job_position_types_short_description" visible="true" type-of-field="text">
-                    <caption>Alumni job position types: Short description</caption>
+                <field name="external_job_position_types_description" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Position type</caption>
                 </field>
                 
                 <field name="external_job_sectors_description" visible="true" type-of-field="text">
-                    <caption>Alumni external job sectors: Description</caption>
+                    <caption>Alumni external jobs: Sector</caption>
+                </field>                
+                <field name="external_jobs_current" visible="true" type-of-field="text">
+                    <caption>Alumni external jobs: Current</caption>
                 </field>
-                <field name="external_job_sectors_short_description" visible="true" type-of-field="text">
-                    <caption>Alumni external job sectors: Short description</caption>
+                
+                
+                <field name="irb_jobs_start_date" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Start date</caption>
                 </field>
-                          
+                <field name="irb_jobs_end_date" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: End date</caption>
+                </field>
+                <field name="irb_jobs_unit" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Unit</caption>
+                </field>
+                <field name="irb_jobs_unit_2" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Unit 2</caption>
+                </field>
+                <field name="irb_jobs_positions_description" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Position</caption>
+                </field>
+                <field name="irb_job_position_types_description" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Position type</caption>
+                </field>
             </orderby-fields>
         </fields>
     </site>

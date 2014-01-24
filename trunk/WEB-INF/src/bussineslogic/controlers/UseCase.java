@@ -25,8 +25,8 @@ import java.util.Vector;
 
 import ldap.LDAPLogin;
 
+import org.apache.poi.util.ArrayUtil;
 import org.hibernate.Criteria;
-import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.NonUniqueResultException;
 import org.hibernate.Query;
@@ -130,6 +130,7 @@ import com.justinmind.usermanagement.exception.EntityNotFoundException;
 import com.justinmind.usermanagement.exception.IdentifierException;
 import com.justinmind.usermanagement.exception.PermissionPriorityException;
 import com.justinmind.usermanagement.exception.UserManagementException;
+import com.mchange.v1.util.ArrayUtils;
 
 /**
  * This class contains use cases of the application.
@@ -21124,7 +21125,7 @@ public class UseCase {
 			max_education_field);
 	    }
 
-	    //TODO Comentado provisional - String queryString = "select distinct " + columnNames + " from "
+	    //TODO Atención distinct
 	    String queryString = "select " + columnNames + " from "
 		    + view_name + whereClause;
 
@@ -21185,7 +21186,7 @@ public class UseCase {
 		view_name += " left join `benefits` `ben` on `personalcode` = `ben`.`benefits_personal` and `ben`.`deleted`=0 left join type_of_benefit `tbe` on ben.type_of_benefit = tbe.type_of_benefitcode";
 	    }
 
-	    //TODO Comentado provisional - String queryString = "select distinct " + columnNames + " from "
+	    //TODO Atención distinct
 	    String queryString = "select " + columnNames + " from "
 		    + view_name + makeWhereFromListConfigurator(user, configurator)
 		    + orderByString;
@@ -21195,6 +21196,8 @@ public class UseCase {
 
 	List<Object[]> objects = (List<Object[]>) query.list();
 
+	
+	
 	Pair<Integer, List<Object[]>> pair = new Pair<Integer, List<Object[]>>(
 		objects.size(), objects);
 
@@ -22700,6 +22703,9 @@ public class UseCase {
     	Set<Professional> professionals = personal.getIprofessional_personal();
     	if(professionals!=null){
 	    	for (Professional p : professionals){
+	    		if(p.isDeleted()){
+	    			continue;
+	    		}
 	    		Alumni_irb_jobs alumni_irb_job = new Alumni_irb_jobs();
 	    		alumni_irb_job.setDeleted(false);
 	    		alumni_irb_job.setVersion(0);
@@ -22820,7 +22826,7 @@ public class UseCase {
     	alumni_personal.setORCIDID(external_alumni_personal.getORCIDID());
     	alumni_personal.setPubmedid(external_alumni_personal.getPubmedid());
     	alumni_personal.setResearcherid(external_alumni_personal.getResearcherid());
-    	alumni_personal.setVerified(true);
+    	alumni_personal.setVerified(external_alumni_personal.isVerified());
     	alumni_personal.setShow_data(external_alumni_personal.isShow_data());
     	    	
     	// External jobs and communications
