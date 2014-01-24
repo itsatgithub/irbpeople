@@ -46,7 +46,8 @@ public class Action_validate_external_modify_modify_page_alumni_personal extends
 		Alumni_personal external_alumni = UseCaseFacade.ObtainAlumni_personal(usercode, personalcode);
 
 		personalcode = ((Alumni_personal) fbManager.getPOJO("alumni_personal_Form", Alumni_personal.class)).getCode();
-		
+		boolean verified = ((Alumni_personal) fbManager.getPOJO("external_alumni_personal_Form", Alumni_personal.class)).isVerified();
+		external_alumni.setVerified(verified);
 		if (personalcode.length() > 0) {
 			Alumni_personal alumni = UseCaseFacade.ObtainAlumni_personal(usercode, personalcode);
 			UseCaseFacade.ValidateAlumniPersonal(usercode, external_alumni, alumni);

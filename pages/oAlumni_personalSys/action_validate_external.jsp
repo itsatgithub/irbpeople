@@ -210,7 +210,8 @@
 											<jim:message key="alumni_personal.verified" />
 										</td>
 										<td class="FormFieldRight">
-											<nested:write property="verified" />
+											<nested-jim:booleanSelector
+												property="verified" />
 										</td>
 										<td class="FormFieldLeft">
 											<jim:message key="alumni_personal.show_data" />
