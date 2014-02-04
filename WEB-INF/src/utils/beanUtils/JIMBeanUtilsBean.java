@@ -641,6 +641,62 @@ public class JIMBeanUtilsBean {
                             newInstitution.setCode(((presentation.formbeans.objects.Payroll_institution_IDForm)value).getPayroll_institutioncode());
                             ((bussineslogic.objects.Professional)target).setPayroll_institution_2(newInstitution);
                         }
+                        else if(name.equals("professional_unit")
+                        		&& (originalValue instanceof bussineslogic.objects.Unit)
+                        		&& (value instanceof presentation.formbeans.objects.Unit_IDForm))
+                        {
+                        	bussineslogic.objects.Unit newUnit = new bussineslogic.objects.Unit();
+                        	newUnit.setCode(((presentation.formbeans.objects.Unit_IDForm)value).getUnitcode());
+                        	((bussineslogic.objects.Professional)target).setProfessional_unit(newUnit);
+                        }
+                        else if(name.equals("professional_unit_3")
+                        		&& (originalValue instanceof bussineslogic.objects.Unit)
+                        		&& (value instanceof presentation.formbeans.objects.Unit_IDForm))
+                        {
+                        	bussineslogic.objects.Unit newUnit = new bussineslogic.objects.Unit();
+                        	newUnit.setCode(((presentation.formbeans.objects.Unit_IDForm)value).getUnitcode());
+                        	((bussineslogic.objects.Professional)target).setProfessional_unit_3(newUnit);
+                        }
+                        else if(name.equals("professional_unit_4")
+                        		&& (originalValue instanceof bussineslogic.objects.Unit)
+                        		&& (value instanceof presentation.formbeans.objects.Unit_IDForm))
+                        {
+                        	bussineslogic.objects.Unit newUnit = new bussineslogic.objects.Unit();
+                        	newUnit.setCode(((presentation.formbeans.objects.Unit_IDForm)value).getUnitcode());
+                        	((bussineslogic.objects.Professional)target).setProfessional_unit_4(newUnit);
+                        }
+                        else if(name.equals("research_group")
+                        		&& (originalValue instanceof bussineslogic.objects.Research_group)
+                        		&& (value instanceof presentation.formbeans.objects.Research_group_IDForm))
+                        {
+                        	bussineslogic.objects.Research_group newResearchGroup = new bussineslogic.objects.Research_group();
+                        	newResearchGroup.setCode(((presentation.formbeans.objects.Research_group_IDForm)value).getResearch_groupcode());
+                        	((bussineslogic.objects.Professional)target).setResearch_group(newResearchGroup);
+                        }
+                        else if(name.equals("research_group_2")
+                        		&& (originalValue instanceof bussineslogic.objects.Research_group)
+                        		&& (value instanceof presentation.formbeans.objects.Research_group_IDForm))
+                        {
+                        	bussineslogic.objects.Research_group newResearchGroup = new bussineslogic.objects.Research_group();
+                        	newResearchGroup.setCode(((presentation.formbeans.objects.Research_group_IDForm)value).getResearch_groupcode());
+                        	((bussineslogic.objects.Professional)target).setResearch_group_2(newResearchGroup);
+                        }
+                        else if(name.equals("research_group_3")
+                        		&& (originalValue instanceof bussineslogic.objects.Research_group)
+                        		&& (value instanceof presentation.formbeans.objects.Research_group_IDForm))
+                        {
+                        	bussineslogic.objects.Research_group newResearchGroup = new bussineslogic.objects.Research_group();
+                        	newResearchGroup.setCode(((presentation.formbeans.objects.Research_group_IDForm)value).getResearch_groupcode());
+                        	((bussineslogic.objects.Professional)target).setResearch_group_3(newResearchGroup);
+                        }
+                        else if(name.equals("research_group_4")
+                        		&& (originalValue instanceof bussineslogic.objects.Research_group)
+                        		&& (value instanceof presentation.formbeans.objects.Research_group_IDForm))
+                        {
+                        	bussineslogic.objects.Research_group newResearchGroup = new bussineslogic.objects.Research_group();
+                        	newResearchGroup.setCode(((presentation.formbeans.objects.Research_group_IDForm)value).getResearch_groupcode());
+                        	((bussineslogic.objects.Professional)target).setResearch_group_4(newResearchGroup);
+                        }
                         else
                         {
                             copyProperties(originalValue, value);
