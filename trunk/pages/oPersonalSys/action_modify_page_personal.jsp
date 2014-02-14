@@ -474,7 +474,7 @@
 </td>
 <td class="FormFieldRight">
 	
-<nested:text property="bank_account" maxlength="100" tabindex="28" size="40" onchange="this.form.elements['tainted'].value=true"/>
+<nested:text property="bank_account" maxlength="150" tabindex="28" size="50" onchange="this.form.elements['tainted'].value=true"/>
 	
 </td>
 </tr>
@@ -510,6 +510,30 @@
 	<td class="FormSeparator"></td>
 	<td class="BlankSeparator"></td>
 </tr>
+
+
+
+<tr>
+	<td class="FormFieldLeft">	
+		<jim:message key="personal.mostAdvancedEducation" />
+	</td>
+	<td class="FormFieldRight">	
+		<nested:write property="mostAdvancedEducation"/>
+	</td>
+	<td class="FormFieldLeft">
+		<jim:message key="swift" />	
+	</td>
+	<td class="FormFieldRight">	
+		<nested:text property="swift" maxlength="20" tabindex="30" size="20" onchange="this.form.elements['tainted'].value=true"/>	
+	</td>
+</tr>
+<tr>
+	<td class="FormSeparator"></td>
+	<td class="BlankSeparator"></td>
+</tr>
+
+
+
 <tr>
 
 <td class="FormFieldLeft">
@@ -520,25 +544,6 @@
 <td class="FormFieldRight"  colspan="3">
 	
 <nested:text property="second_affiliation" maxlength="255" tabindex="24" size="80" onchange="this.form.elements['tainted'].value=true"/>
-	
-</td>
-
-	
-</tr>
-<tr>
-	<td class="FormSeparator"></td>
-	<td class="BlankSeparator"></td>
-</tr>
-<tr>
-
-<td class="FormFieldLeft">
-	
-<jim:message key="personal.mostAdvancedEducation" />
-	
-</td>
-<td class="FormFieldRight"  colspan="3">
-	
-<nested:write property="mostAdvancedEducation"/>
 	
 </td>
 

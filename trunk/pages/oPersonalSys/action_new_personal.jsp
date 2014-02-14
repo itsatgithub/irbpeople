@@ -264,7 +264,7 @@
 								</td>
 
 								<td class="FormFieldLeft"><jim:message key="bank/spaccount" /></td>
-								<td class="FormFieldRight"><nested:text	property="bank_account" maxlength="100" tabindex="28"/></td>
+								<td class="FormFieldRight"><nested:text	property="bank_account" maxlength="120" size="50" tabindex="28"/></td>
 							</tr>
 							<tr>
 								<td class="FormSeparator"></td>
@@ -284,6 +284,26 @@
 									<nested:text property="bic" maxlength="20" tabindex="29" size="20" onchange="this.form.elements['tainted'].value=true"/>	
 								</td>
 							</tr>
+							<tr>
+								<td class="FormSeparator"></td>
+								<td class="BlankSeparator"></td>
+							</tr>
+							<tr>
+								<td class="FormFieldLeft">&nbsp;</td>
+								<td class="FormFieldRight">&nbsp;</td>
+								<td class="FormFieldLeft">
+									<jim:message key="swift" />	
+								</td>
+								<td class="FormFieldRight">	
+									<nested:text property="swift" maxlength="20" tabindex="30" size="20" onchange="this.form.elements['tainted'].value=true"/>	
+								</td>
+							</tr>
+							<tr>
+								<td class="FormSeparator"></td>
+								<td class="BlankSeparator"></td>
+							</tr>
+														
+							
 							<tr>
 								<td class="FormSeparator"></td>
 								<td class="BlankSeparator"></td>

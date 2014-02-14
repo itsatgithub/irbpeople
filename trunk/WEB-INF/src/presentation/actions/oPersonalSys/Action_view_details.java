@@ -26,6 +26,7 @@ import utils.listFilter.ViewListConfiguration;
 import utils.beanUtils.ExtendedBeanUtils;
 import utils.filter.ListConfigurator;
 
+import bussineslogic.controlers.UseCase;
 import bussineslogic.controlers.UseCaseFacade;
 
 import bussineslogic.objects.*;
@@ -201,7 +202,12 @@ request.setAttribute("_selec_marital_status", _selec_marital_status_Form);
 	
 	
 	/** 7.  We navigate to the correct page. */
-	
+
+Type_of_education mostAdvancedEducation = UseCase.obtainMostAdvancedEducationForPersonal(personal.getPersonalcode());
+if (mostAdvancedEducation != null) {
+	action_view_details_Form.getPersonal_Form().setMostAdvancedEducation(mostAdvancedEducation.getDescription());
+}
+
 	return NavigationFunctions.findForward(request, mapping, "success");
 	
 	

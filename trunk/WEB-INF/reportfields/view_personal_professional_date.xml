@@ -56,6 +56,9 @@
                 <field name="bic" visible="true" type-of-field="text">
                     <caption >Employee: BIC</caption>
                 </field>
+                <field name="swift" visible="true" type-of-field="text">
+                    <caption >Employee: SWIFT</caption>
+                </field>
                 <field name="research_project" visible="true" type-of-field="text">
                     <caption >Personal: Research project</caption>
                 </field>
@@ -334,6 +337,9 @@
                 </field>
                 <field name="bic" visible="true" type-of-field="text">
                     <caption >Employee: BIC</caption>
+                </field>
+                <field name="swift" visible="true" type-of-field="text">
+                    <caption >Employee: SWIFT</caption>
                 </field>
                 <field name="research_project" visible="true" type-of-field="text">
                     <caption >Personal: Research project</caption>
@@ -619,8 +625,11 @@
                 <field name="bank_account" visible="true" type-of-field="text">
                     <caption >Employee: IBAN</caption>
                 </field>
-                <field name="BIC" visible="true" type-of-field="text">
+                <field name="bic" visible="true" type-of-field="text">
                     <caption >Employee: BIC</caption>
+                </field>
+                <field name="swift" visible="true" type-of-field="text">
+                    <caption >Employee: SWIFT</caption>
                 </field>
                 <field name="research_project" visible="true" type-of-field="text">
                     <caption >Personal: Research project</caption>
