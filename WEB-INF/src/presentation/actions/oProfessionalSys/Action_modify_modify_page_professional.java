@@ -1,37 +1,24 @@
 package presentation.actions.oProfessionalSys;
 
 
+import java.io.PrintWriter;
+import java.util.Enumeration;
+import java.util.Locale;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import java.util.Collections;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import utils.formbeans.ToStringComparator;
+import presentation.formbeans.oProfessionalSys.Action_modify_modify_page_professional_Form;
 import utils.actions.NavigationFunctions;
-import utils.actions.BOAdderFunctions;
 import utils.formbeans.FormBeanManager;
-import utils.formbeans.BOAdderFormBean;
 import utils.userUtils.UserUtils;
-import utils.Pair;
-import utils.listFilter.ViewListConfiguration;
-import utils.beanUtils.ExtendedBeanUtils;
-import utils.filter.ListConfigurator;
-
 import bussineslogic.controlers.UseCaseFacade;
-
-import bussineslogic.objects.*;
-import presentation.formbeans.objects.*;
-
-	import presentation.formbeans.oProfessionalSys.*;
+import bussineslogic.objects.Professional;
 
 
 /**
@@ -50,18 +37,16 @@ public class Action_modify_modify_page_professional extends Action {
     	String usercode = UserUtils.getCurrentUsuarioId(request); 
     	Locale locale = UserUtils.getCurrentLocale(request); 
     	
-
-
-
-			/** 2.  We obtain the initial form bean and we put it to a new FormBeanManager. */
+    	/** 2.  We obtain the initial form bean and we put it to a new FormBeanManager. */
 		
 Action_modify_modify_page_professional_Form action_modify_modify_page_professional_Form=(Action_modify_modify_page_professional_Form) form;
 
 FormBeanManager fbManager=new FormBeanManager(request, action_modify_modify_page_professional_Form);			
 		
 	/** 3.  We use the business logic to modify the new item */
-	
-	Professional professional = UseCaseFacade.UpdateProfessional(usercode,(Professional) fbManager.getPOJO("professional_Form",Professional.class));	
+	Professional updatedProfessional = (Professional) fbManager.getPOJO("professional_Form",Professional.class);
+
+	Professional professional = UseCaseFacade.UpdateProfessional(usercode, updatedProfessional);	
 	
 	/** 4.  In case that a BOAdder exists in the previous jsp, we update the list of values using the business logic. */
 	

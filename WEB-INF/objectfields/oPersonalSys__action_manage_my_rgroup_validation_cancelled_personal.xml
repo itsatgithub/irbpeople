@@ -67,6 +67,9 @@
                 <field name="personal.bic" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">BIC</caption>
                 </field>
+                <field name="personal.swift" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">SWIFT</caption>
+                </field>
                 <field name="personal.research_project" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Research project</caption>
                 </field>
@@ -169,6 +172,9 @@
                 <field name="personal.BIC" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="ct">BIC</caption>
                 </field>
+                <field name="personal.swift" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">SWIFT</caption>
+                </field>
                 <field name="personal.research_project" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="ct">Projecte de recerca</caption>
                 </field>
@@ -270,6 +276,9 @@
                 </field>
                 <field name="personal.BIC" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="es">BIC</caption>
+                </field>
+                <field name="personal.swift" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="es">SWIFT</caption>
                 </field>
                 <field name="personal.research_project" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="es">Proyecto de investigación</caption>

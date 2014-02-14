@@ -2639,7 +2639,7 @@ public class UseCase {
 
 	    if (TOProfessional.getResearch_group_2() != null) {
 
-		TOProfessional.getResearch_group_2().addIresearch_group(
+		TOProfessional.getResearch_group_2().addIresearch_group_2(
 			professional);
 	    }
 
@@ -2650,7 +2650,7 @@ public class UseCase {
 
 	    if (TOProfessional.getResearch_group_3() != null) {
 
-		TOProfessional.getResearch_group_3().addIresearch_group(
+		TOProfessional.getResearch_group_3().addIresearch_group_3(
 			professional);
 	    }
 
@@ -2661,7 +2661,7 @@ public class UseCase {
 
 	    if (TOProfessional.getResearch_group_4() != null) {
 
-		TOProfessional.getResearch_group_4().addIresearch_group(
+		TOProfessional.getResearch_group_4().addIresearch_group_4(
 			professional);
 	    }
 
@@ -2718,7 +2718,7 @@ public class UseCase {
 
 	    if (TOProfessional.getProfessional_unit_2() != null) {
 
-		TOProfessional.getProfessional_unit_2().addIprofessional_unit(
+		TOProfessional.getProfessional_unit_2().addIprofessional_unit_2(
 			professional);
 	    }
 
@@ -2730,7 +2730,7 @@ public class UseCase {
 
 	    if (TOProfessional.getProfessional_unit_3() != null) {
 
-		TOProfessional.getProfessional_unit_3().addIprofessional_unit(
+		TOProfessional.getProfessional_unit_3().addIprofessional_unit_3(
 			professional);
 	    }
 
@@ -2742,7 +2742,7 @@ public class UseCase {
 
 	    if (TOProfessional.getProfessional_unit_4() != null) {
 
-		TOProfessional.getProfessional_unit_4().addIprofessional_unit(
+		TOProfessional.getProfessional_unit_4().addIprofessional_unit_4(
 			professional);
 	    }
 
@@ -13903,6 +13903,8 @@ public class UseCase {
 
 	    personal.setBank_account(TOPersonal.getBank_account());
 	    
+	    personal.setSwift(TOPersonal.getSwift());
+	    
 	    personal.setBic(TOPersonal.getBic());
 
 	    personal.setResearch_project(TOPersonal.getResearch_project());
@@ -14368,6 +14370,8 @@ public class UseCase {
 	    }
 
 	    personal.setBank_account(TOPersonal.getBank_account());
+	    
+	    personal.setSwift(TOPersonal.getSwift());
 	    
 	    personal.setBic(TOPersonal.getBic());
 
