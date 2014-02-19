@@ -169,7 +169,9 @@ public void removeIuser(Auditmessage iuser){
 }
 
 
-
+	public String getFullname(){
+		return this.toString();
+	}
 	
 	
 	@Override

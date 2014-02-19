@@ -25,7 +25,6 @@ import java.util.Vector;
 
 import ldap.LDAPLogin;
 
-import org.apache.poi.util.ArrayUtil;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.NonUniqueResultException;
@@ -115,6 +114,7 @@ import bussineslogic.objects.Type_of_holidays;
 import bussineslogic.objects.Type_of_institution;
 import bussineslogic.objects.Type_of_study;
 import bussineslogic.objects.Unit;
+import bussineslogic.objects.User_access;
 import bussineslogic.objects.Usuario;
 import bussineslogic.objects.Views;
 import bussineslogic.objects.Work_experience;
@@ -130,7 +130,6 @@ import com.justinmind.usermanagement.exception.EntityNotFoundException;
 import com.justinmind.usermanagement.exception.IdentifierException;
 import com.justinmind.usermanagement.exception.PermissionPriorityException;
 import com.justinmind.usermanagement.exception.UserManagementException;
-import com.mchange.v1.util.ArrayUtils;
 
 /**
  * This class contains use cases of the application.
@@ -15601,104 +15600,160 @@ public class UseCase {
      * @param username
      *            String with the username of the user to obtain
      * @return logged user
+     * @throws UsuarioNoActivoException 
      */
     public static Usuario HacerLogin(String username, String password,
-	    String remoteHost) {
-	Usuario user = null;
-
-	HibernateUtil.beginTransaction();	    
+	    String remoteHost) throws UsuarioNoActivoException {
+		Usuario user = null;
+	
+		HibernateUtil.beginTransaction();	    
+		User_access userAccess = getUser_access(username);
+		String userFullname = null;
+		if(userAccess == null || !userAccess.isLocked()){
 		
-	if (!MAINCONFIG.getString("ldapActive").equals("yes")) {
-	    try {
-		UserManagement um = UserManagement.singleton();
-		user = (Usuario) um.getUserForLogin(username);
-		// esto es para obtener los roles del usuario
-		// en este momento y no dejar la relaciï¿½n como lazy
-		// ya que los vamos a necesitar cuando la sesion ya se haya
-		// cerrado.
-		Set<Role> roles2 = user.getRoles();
-		for (Role r : roles2) {
-		    r.getEntitycode();
+			if (!MAINCONFIG.getString("ldapActive").equals("yes")) {
+			    try {
+				UserManagement um = UserManagement.singleton();
+				user = (Usuario) um.getUserForLogin(username);
+				// esto es para obtener los roles del usuario
+				// en este momento y no dejar la relaciï¿½n como lazy
+				// ya que los vamos a necesitar cuando la sesion ya se haya
+				// cerrado.
+				Set<Role> roles2 = user.getRoles();
+				for (Role r : roles2) {
+				    r.getEntitycode();
+				}
+		
+			    } catch (Exception e) {
+				log.debug(e);
+			    }
+			    
+			    if(user!=null){
+			    	userFullname = user.getFullname();		    			
+			    }
+			    
+			    if (user == null || !user.isMyPassword(password)) {
+				user = null;
+			    }
+			} else // si estï¿½ configurado el acceso ldap
+			{
+		
+			    LDAPLogin ldapLogin = new LDAPLogin();
+		
+			    boolean correctLogin = ldapLogin.doLogin(username, password);
+			    try{
+			    	userFullname = ldapLogin.getFullname(username);
+			    }catch(Exception e){
+			    	log.error("Error obteniendo nombre completo en LDAP para " + username, e);
+			    }
+			    
+			    if (correctLogin) {
+				user = new Usuario();
+				try {
+				    Set<Role> roles = new HashSet<Role>();
+				    roles.add(new Role(ldapLogin.getUserrole(), ldapLogin
+					    .getUserrole(), ""));
+				    
+				    log.debug("Setting user roles to user:" + roles);
+				    
+				    user.setRoles(roles);
+				    
+				    Criteria crit = HibernateUtil.getSession().createCriteria(
+					    Personal.class);
+				    crit.add(Expression.eq("username", username));
+		
+				    Personal per = (Personal) crit.uniqueResult();
+		
+				    if (per == null) {
+					// Este username no estï¿½ en la BD de personal de
+					// IRBPeople personal.username
+					user = null;
+						log.debug("User not found in personal");
+				    } else {
+					user.setPersonal(per);
+						log.debug("User found in personal");
+		
+					user.setLanguage(per.getLanguage());
+					user.setCode(per.getPersonalcode());
+					user.setUsername(per.getUsercode());			
+				    }
+		
+				    // Update userrole table
+				    Query deleteQuery = HibernateUtil.getSession().createSQLQuery("delete from userrole where usercode=?");
+		    		deleteQuery.setString(0, per.getPersonalcode());
+		    		deleteQuery.executeUpdate();
+		    		
+		    		Query insertQuery = HibernateUtil.getSession().createSQLQuery("insert into userrole (rolecode,usercode) values (?,?)");
+		    		insertQuery.setString(0, ldapLogin.getUserrole());
+		    		insertQuery.setString(1, per.getPersonalcode());
+		    		insertQuery.executeUpdate();
+		    		
+				    
+				} catch (IdentifierException e) {
+				    log.debug(e);
+				} catch (NonUniqueResultException nure) {
+				    log.debug(nure);
+				    user = null;
+				}
+			    } else {
+				user = null;
+			    }
+			}
 		}
-
-	    } catch (Exception e) {
-		log.debug(e);
-	    }
-	    if (user == null || !user.isMyPassword(password)) {
-		user = null;
-	    }
-	} else // si estï¿½ configurado el acceso ldap
-	{
-
-	    LDAPLogin ldapLogin = new LDAPLogin();
-
-	    boolean correctLogin = ldapLogin.doLogin(username, password);
-
-	    if (correctLogin) {
-		user = new Usuario();
-		try {
-		    Set<Role> roles = new HashSet<Role>();
-		    roles.add(new Role(ldapLogin.getUserrole(), ldapLogin
-			    .getUserrole(), ""));
-		    
-		    log.debug("Setting user roles to user:" + roles);
-		    
-		    user.setRoles(roles);
-		    
-		    Criteria crit = HibernateUtil.getSession().createCriteria(
-			    Personal.class);
-		    crit.add(Expression.eq("username", username));
-
-		    Personal per = (Personal) crit.uniqueResult();
-
-		    if (per == null) {
-			// Este username no estï¿½ en la BD de personal de
-			// IRBPeople personal.username
+		
+		if(userAccess == null && userFullname!=null){
+			userAccess = new User_access();
+			userAccess.setUsercode(username);
+			userAccess.setName(userFullname);
+			userAccess.setLocked(false);
+			userAccess.setTries(0);
+			userAccess.setLast_access(new Date());
+			HibernateUtil.getSession().save(userAccess);
+		}
+		if ( userAccess != null && !userAccess.isLocked()){
+			userAccess.setLast_access(new Date());
+		}else{
 			user = null;
-				log.debug("User not found in personal");
-		    } else {
-			user.setPersonal(per);
-				log.debug("User found in personal");
-
-			user.setLanguage(per.getLanguage());
-			user.setCode(per.getPersonalcode());
-			user.setUsername(per.getUsercode());			
-		    }
-
-		    // Update userrole table
-		    Query deleteQuery = HibernateUtil.getSession().createSQLQuery("delete from userrole where usercode=?");
-    		deleteQuery.setString(0, per.getPersonalcode());
-    		deleteQuery.executeUpdate();
-    		
-    		Query insertQuery = HibernateUtil.getSession().createSQLQuery("insert into userrole (rolecode,usercode) values (?,?)");
-    		insertQuery.setString(0, ldapLogin.getUserrole());
-    		insertQuery.setString(1, per.getPersonalcode());
-    		insertQuery.executeUpdate();
-    		
-		    
-		} catch (IdentifierException e) {
-		    log.debug(e);
-		} catch (NonUniqueResultException nure) {
-		    log.debug(nure);
-		    user = null;
 		}
-	    } else {
-		user = null;
-	    }
-	}
-	 
-    
-	if (user == null) {
-	    CreateAuditLogmessage(null, remoteHost, "Login incorrecto: "
-		    + username);
-	} else {
-	    CreateAuditLogmessage(user, remoteHost, "Login");
-	}
-
-	HibernateUtil.commitTransaction();
-
-	return user;
+		
+		if (user == null) {
+			//TODO JORDI Cambiar		
+			int maxAccessTry = 3;
+			
+			if(userAccess != null && !userAccess.isLocked()){
+				//Check if user has to be locked
+				userAccess.setTries(userAccess.getTries()+1);
+				if(maxAccessTry <= userAccess.getTries()){
+					userAccess.setLocked(true);				
+					CreateAuditLogmessage(null, remoteHost, "Login incorrecto, se bloquea usuario tras " + userAccess.getTries() + " intentos: " + username);
+				}else{
+					CreateAuditLogmessage(null, remoteHost, "Login incorrecto, " + userAccess.getTries() + "intentos: " + username);	
+				}
+			}else{
+				//User is already locked
+				CreateAuditLogmessage(null, remoteHost, "Usuario previamente bloqueado: " + username);
+			}
+		    
+		} else {
+			// Correct login, reset tries		
+			userAccess.setTries(0);
+		    CreateAuditLogmessage(user, remoteHost, "Login correcto");
+		}
+	
+		HibernateUtil.commitTransaction();
+	
+		if (userAccess!=null && userAccess.isLocked()){
+			throw new UsuarioNoActivoException();
+		}
+		
+		return user;
     }
+    
+    
+    protected static User_access getUser_access(String personal) {
+    	return (User_access) HibernateUtil.getSession().get(User_access.class, personal);    	
+    }
+
 
     public static void HacerLogout(Usuario user, String remoteHost, String type) {
 	CreateAuditLogmessage(user, remoteHost, type);

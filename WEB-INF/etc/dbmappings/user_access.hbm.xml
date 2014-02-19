@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="bussineslogic.objects">
+
+	<class name="User_access" table="USER_ACCESS">
+		<cache usage="read-write" />
+
+		<id name="usercode" column="usercode"></id>
+		<version name="version"></version>
+		
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
+		<property name="locked" type="boolean">
+			<column name="locked" />
+		</property>		
+		<property name="last_access" type="timestamp">
+			<column name="last_access" />
+		</property>
+		<property name="name" type="string">
+			<column name="name" length="100" />
+		</property>
+		<property name="tries" type="integer">
+			<column name="tries" length="100" />
+		</property>
+
+	</class>
+</hibernate-mapping>
