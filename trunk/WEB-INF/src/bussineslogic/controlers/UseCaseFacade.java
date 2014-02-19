@@ -2983,7 +2983,7 @@ public class UseCaseFacade {
 	 * @param username String with the username of the user to obtain
 	 * @return Logged user
 	 */
-	public static Usuario HacerLogin(String username, String password, String remoteHost) {
+	public static Usuario HacerLogin(String username, String password, String remoteHost) throws UsuarioNoActivoException{
 		return UseCase.HacerLogin(username, password, remoteHost);
 	}
 

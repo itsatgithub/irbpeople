@@ -27,6 +27,7 @@ import com.justinmind.util.siteorg.SiteOrg;
 import com.justinmind.util.siteorg.SiteOrgManager;
 
 import bussineslogic.controlers.UseCaseFacade;
+import bussineslogic.excepciones.UsuarioNoActivoException;
 import presentation.formbeans.objects.*;
 import bussineslogic.objects.*;
 
@@ -42,13 +43,19 @@ public class DoLogin extends Action {
 
     	NavigationFunctions.setReturnPoint(request, mapping.getPath());
     	UsuarioForm newUsuarioForm = (UsuarioForm)form;                                                           
-                                                                
-        Usuario current = UseCaseFacade.HacerLogin(newUsuarioForm.getUsername(), newUsuarioForm.getPassword(), request.getRemoteHost());
-       
-        if(current==null){
+                      
+    	Usuario current = null;
+    	String errorMsg = "errors.usuario-no-valido";
+    	try{
+    		current = UseCaseFacade.HacerLogin(newUsuarioForm.getUsername(), newUsuarioForm.getPassword(), request.getRemoteHost());
+    	}catch(UsuarioNoActivoException e){
+    		errorMsg = "errors.usuario-bloqueado";
+    	}
+        
+    	if(current==null){
         	ActionErrors errors=new ActionErrors();
         	ActionMessages messages=new ActionMessages();
-        	messages.add("errors.usuario-no-valido", new ActionMessage("errors.usuario-no-valido"));
+        	messages.add(errorMsg, new ActionMessage(errorMsg));
         	errors.add(messages);
         	request.setAttribute(Globals.ERROR_KEY, errors);        	
         	        	

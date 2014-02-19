@@ -126,6 +126,12 @@
         overflowToDisk="false"
         />
 
+	<cache name="bussineslogic.objects.user_access"
+        maxElementsInMemory="500"
+        eternal="false"
+        overflowToDisk="false"
+        />
+
 
 	<cache name="bussineslogic.objects.irb_budget"
         maxElementsInMemory="10"
