@@ -22,9 +22,9 @@ import bussineslogic.objects.Alumni_external_jobs;
 import bussineslogic.objects.Alumni_irb_job_positions;
 import bussineslogic.objects.Alumni_irb_jobs;
 import bussineslogic.objects.Alumni_job_position_types;
+import bussineslogic.objects.Alumni_params;
 import bussineslogic.objects.Alumni_personal;
 import bussineslogic.objects.Alumni_titles;
-import bussineslogic.objects.Alumni_params;
 import bussineslogic.objects.Area;
 import bussineslogic.objects.Auditmessage;
 import bussineslogic.objects.Auditmessagetype;
@@ -71,6 +71,7 @@ import bussineslogic.objects.Type_of_holidays;
 import bussineslogic.objects.Type_of_institution;
 import bussineslogic.objects.Type_of_study;
 import bussineslogic.objects.Unit;
+import bussineslogic.objects.User_access;
 import bussineslogic.objects.Usuario;
 import bussineslogic.objects.Views;
 import bussineslogic.objects.Work_experience;
@@ -1690,6 +1691,18 @@ public class UseCaseFacade {
 	
 	public static Pair<Integer, Pair<List<Alumni_personal>, Map<String, String[]>>> ObtainValidatedAlumni_personalAndOrderMap(String administradorId, ListConfigurator configurator) throws InternalException {
 		return UseCase.ObtainValidatedAlumni_personalAndOrderMap(UseCase.getUsuario(administradorId), configurator);
+	}
+
+	public static Pair<Integer, Pair<List<User_access>, Map<String, String[]>>> ObtainAllUser_accessAndOrderMap(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllUser_accessAndOrderMap(UseCase.getUsuario(administradorId), configurator);
+	}
+	
+	public static User_access ObtainUser_access(String administradorId, String user_accesscode) throws InternalException {
+		return UseCase.ObtainUser_access(UseCase.getUsuario(administradorId), user_accesscode);
+	}
+
+	public static void UnlockUser_access(String administradorId, String user_accesscode) throws InternalException {
+		UseCase.UnlockUser_access(UseCase.getUsuario(administradorId), user_accesscode);
 	}
 
 	/**

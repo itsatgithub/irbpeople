@@ -335,7 +335,16 @@ String concept = null;
 					toSubmitAction="submitRowAction";
 					destinationAction = item.getLink();
 				}
-					
+
+				// Allow filter actions
+				if(item.containsParameter("showWhenField")){
+					String showWhenField = item.getParameter("showWhenField");
+					String showWhenValue = item.getParameter("showWhenValue");
+					String showWhenRowValue = (String)BeanUtils.getProperty(pageContext.getAttribute("i_item"), showWhenField);					
+					if(!showWhenRowValue.equals(showWhenValue)){
+						continue;						
+					}
+				}
 		          
 		%>  
 		<td height=23 width=19 style="padding-right:2px" >
