@@ -2,6 +2,7 @@
 <role name="irbpeople_rw" system-groups-included="true">
   <description>irbpeople_rw</description>
   <accessible-groups>
+    <group name="oUser_accessSys" />
     <group name="oCalendarSys" />
     <group name="oUserSys" />
     <group name="oType_of_benefitSys" />

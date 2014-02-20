@@ -851,9 +851,22 @@
 	<put name="center" value="/pages/oAlumni_personalSys/action_modify_page_alumni_personal.jsp" />
   </definition>
   
+  <definition name="oUser_accessSys.action_manage_user_access" extends="horizontal_evc_template1">
+	<put name="center" value="/pages/oUser_accessSys/action_manage_user_access.jsp" />
+  </definition>
+  <definition name="oUser_accessSys.popUp_action_unlock_user_access" extends="popup_template">
+	<put name="center" value="/pages/oUser_accessSys/action_unlock_user_access.jsp" />
+  </definition>
+  <definition name="oUser_accessSys.action_unlock_user_access" extends="horizontal_evc_template1">
+	<put name="center" value="/pages/oUser_accessSys/action_unlock_user_access.jsp" />
+  </definition>
+  
   <definition name="oAlumni_paramsSys.action_modify_page_alumni_params" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oAlumni_paramsSys/action_modify_page_alumni_params.jsp" />
-  </definition>    
+  </definition> 
+  
+  
+  
   
   <definition name="oAlumni_titlesSys.action_delete_page_alumni_titles" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oAlumni_titlesSys/action_delete_page_alumni_titles.jsp" />

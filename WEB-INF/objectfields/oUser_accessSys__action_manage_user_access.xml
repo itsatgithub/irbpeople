@@ -54,7 +54,7 @@
             <!-- Los atributos modificables son: 'default' y 'visible'.  -->
             <visible-fields>
                 <field name="usercode" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="ct">Usercode</caption>
+                    <caption language="ct">User code</caption>
                 </field>
                 <field name="name" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="ct">Name</caption>
@@ -89,7 +89,7 @@
             <!-- Los atributos modificables son: 'default' y 'visible'.  -->
             <visible-fields>
                <field name="usercode" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">Usercode</caption>
+                    <caption language="es">User code</caption>
                 </field>
                 <field name="name" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="es">Name</caption>

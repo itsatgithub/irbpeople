@@ -4295,6 +4295,100 @@
                         <parameter name="objectsRecieved" value="none" />
                     </action>                                       
                 </group>
+                
+                
+                <group e="" name="oUser_accessSys" command="oUser_accessSys" nick="oUser_accessSys" type="system" action-number="" st0="SystemObj">
+                    <description>Auto generated group</description>
+                    <caption language="en">user_access</caption>
+                    <extends>BaseCommandsProtected</extends>
+                    <action e="" con="viewlist" obj="user_access" type="viewlist" st0="" st1="" completed="false">
+						<name>action_manage_user_access</name>
+						<show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+						<description />
+						<title-caption language="en">Manage user access</title-caption>
+						<menuitem-caption language="en">Manage user access</menuitem-caption>
+						<button-caption language="en">Manage user access</button-caption>
+						<path action="action_appHome" command="oUser_accessSys" />
+						<zones>
+							<zone name="operation"/>
+							<zone name="folder2" />
+							<zone name="rowaction0">
+								<action command="oUser_accessSys" action="action_unlock_user_access">								
+									<parameter name="isPopUp" />
+									<parameter name="showWhenField" value="locked" />
+									<parameter name="showWhenValue" value="Yes" />
+								</action>
+							</zone>
+							<zone name="go" />
+							<zone name="folder" />
+							<zone name="submit" />
+						</zones>
+						<parameter name="note" value="" />
+						<parameter name="objectsRecieved" value="none" />
+						<content>
+							<forms>
+								<form>
+									<form-group title="" num-columns="1">
+										<list type="BO" object="user_access" selectable="false" multiselectable="false" filter="true" pagination="true" rowactions="true" rowactionszone="rowaction0">
+											<field name="usercode" />
+											<field name="name" />							
+											<field name="locked" />							
+											<field name="last_access" />							
+											<field name="tries" />							
+										</list>
+									</form-group>
+								</form>
+							</forms>
+						</content>
+					</action>
+					<action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_unlock_cancel_user_access</name>
+                        <description />
+                        <title-caption language="en">Unlock user access cancel</title-caption>
+                        <menuitem-caption language="en">Unlock user access cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_unlock_user_access" command="oUser_accessSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oUser_accessSys.unlock_page_user_access" value="oUser_accessSys.unlock_page_user_access" />
+                    </action>
+                    
+                    <action e="" con="convert" obj="user_access" type="modify" st0="" st1="" completed="false">
+                        <name>action_unlock_user_access</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Unlock user access</title-caption>
+                        <menuitem-caption language="en">Unlock user access</menuitem-caption>
+                        <button-caption language="en">Unlock user access</button-caption>
+                        <path action="action_manage_user_access" command="oUser_accessSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="go" />
+                            <zone name="folder" />
+                            <zone name="submit">
+                                <action command="oUser_accessSys" action="action_unlock_modify_modify_page_user_access" />
+                                <action command="oUser_accessSys" action="action_unlock_cancel_user_access" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                    </action>
+                    
+                    <action e="" con="mod" obj="user_access" type="modify" st0="" st1="" completed="false">
+                        <name>action_unlock_modify_modify_page_user_access</name>
+                        <description />
+                        <title-caption language="en">Do unlock user</title-caption>
+                        <menuitem-caption language="en">Do unlock user</menuitem-caption>
+                        <button-caption language="en">Save</button-caption>
+                        <path action="action_unlock_user_access" command="oUser_accessSys" />
+                        <parameter name="zoneaction.oUser_accessSys.unlock_user_access" value="oUser_access.unlock_user_access" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                </group>
+                
+                
+                
+                
                 				<group e="" name="oAlumni_external_jobsSys" command="oAlumni_external_jobsSys" nick="oAlumni_external_jobsSys" type="system" action-number="" st0="SystemObj">
                     <description>Auto generated group</description>
                     <caption language="en">alumni_external_jobs</caption>
@@ -15550,6 +15644,7 @@
                                 <action command="oPersonalSys" action="action_manage_all_personal" />
                                 <action command="oPersonalSys" action="action_manage_active_personal" />
                                 <action command="oResearch_groupSys" action="action_manage_research_groups" />
+                                <action command="oUser_accessSys" action="action_manage_user_access" />
                                 <action command="oAuditmessageSys" action="action_viewlist_auditmessage">
                                     <button-caption language="en">View auditmessages</button-caption>
                                 </action>

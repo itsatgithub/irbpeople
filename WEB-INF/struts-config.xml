@@ -554,6 +554,11 @@
 	<form-bean name="oAlumni_personalSys__action_validate_external_cancel_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_validate_external_cancel_alumni_personal_Form" />
 	<form-bean name="oAlumni_personalSys__action_validate_external_modify_modify_page_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_validate_external_modify_modify_page_alumni_personal_Form" />
 	
+	<form-bean name="oUser_accessSys__action_unlock_cancel_user_access_Form" type="presentation.formbeans.oUser_accessSys.Action_unlock_cancel_user_access_Form" />
+	<form-bean name="oUser_accessSys__action_unlock_modify_modify_page_user_access_Form" type="presentation.formbeans.oUser_accessSys.Action_unlock_modify_modify_page_user_access_Form" />
+	<form-bean name="oUser_accessSys__action_unlock_user_access_Form" type="presentation.formbeans.oUser_accessSys.Action_unlock_user_access_Form" />
+	<form-bean name="oUser_accessSys__action_manage_user_access_Form" type="presentation.formbeans.oUser_accessSys.Action_manage_user_access_Form" />
+	
 	<form-bean name="oAlumni_paramsSys__action_cancel_modify_modify_page_alumni_params_Form" type="presentation.formbeans.oAlumni_paramsSys.Action_cancel_modify_modify_page_alumni_params_Form" />
 	<form-bean name="oAlumni_paramsSys__action_modify_modify_page_alumni_params_Form" type="presentation.formbeans.oAlumni_paramsSys.Action_modify_modify_page_alumni_params_Form" />
 	<form-bean name="oAlumni_paramsSys__action_modify_page_alumni_params_Form" type="presentation.formbeans.oAlumni_paramsSys.Action_modify_page_alumni_params_Form" />
@@ -1461,7 +1466,26 @@
 	<action name="oAlumni_personalSys__action_validate_external_Form" path="/oAlumni_personalSys/popUp_action_validate_external" scope="request" type="presentation.actions.oAlumni_personalSys.Action_validate_external" unknown="false" validate="true">
       <forward contextRelative="false" name="success" path="oAlumni_personalSys.popUp_action_validate_external" redirect="false" />
     </action>
+
+	
+	
+	<action name="oUser_accessSys__action_unlock_user_access_Form" path="/oUser_sysSys/action_unlock_user_access" scope="request" type="presentation.actions.oUser_accessSys.Action_unlock_user_access" unknown="false" validate="false">
+		<forward contextRelative="false" name="success" path="oUser_accessSys.action_unlock_user_access" redirect="false" />
+	</action>
+	<action path="/oUser_accessSys/action_unlock_cancel_user_access" type="presentation.actions.oUser_accessSys.Action_unlock_cancel_user_access" unknown="false" validate="true" />
+	
+	<action name="oUser_accessSys__action_unlock_modify_modify_page_user_access_Form" path="/oUser_accessSys/action_unlock_modify_modify_page_user_access" scope="request" type="presentation.actions.oUser_accessSys.Action_unlock_modify_modify_page_user_access" unknown="false" validate="true" />
+	
+	<action name="oUser_accessSys__action_unlock_user_access_Form" path="/oUser_accessSys/popUp_action_unlock_user_access" scope="request" type="presentation.actions.oUser_accessSys.Action_unlock_user_access" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oUser_accessSys.popUp_action_unlock_user_access" redirect="false" />
+    </action>
     
+	<action name="oUser_accessSys__action_manage_user_access_Form" path="/oUser_accessSys/action_manage_user_access" scope="request" type="presentation.actions.oUser_accessSys.Action_manage_user_access" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oUser_accessSys.action_manage_user_access" redirect="false" />
+	</action>
+	
+	
+	
     <action name="oHolidaySys__action_add_holiday_Form" path="/oHolidaySys/action_add_holiday" scope="request" type="presentation.actions.oHolidaySys.Action_add_holiday" unknown="false" validate="false">
       <forward contextRelative="false" name="success" path="oHolidaySys.action_add_holiday" redirect="false" />
     </action>

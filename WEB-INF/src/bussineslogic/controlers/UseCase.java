@@ -15749,15 +15749,74 @@ public class UseCase {
 		return user;
     }
     
+    public static User_access ObtainUser_access(Usuario user, String user_accesscode) {
+    	return getUser_access(user_accesscode);    	
+    }
     
     protected static User_access getUser_access(String personal) {
     	return (User_access) HibernateUtil.getSession().get(User_access.class, personal);    	
     }
 
-
     public static void HacerLogout(Usuario user, String remoteHost, String type) {
-	CreateAuditLogmessage(user, remoteHost, type);
+    	CreateAuditLogmessage(user, remoteHost, type);
     }
+    
+    public static User_access UnlockUser_access(Usuario user, String useraccess_code) throws InternalException {
+    	HibernateUtil.beginTransaction();
+
+    	User_access user_access = getUser_access(useraccess_code);
+    	user_access.setLocked(false);
+    	CreateStateChangeAuditmessage(user, user_access, "unlocked");
+    	HibernateUtil.commitTransaction();
+
+    	return user_access;
+    }
+    
+    public static Pair<Integer, Pair<List<User_access>, Map<String, String[]>>> ObtainAllUser_accessAndOrderMap(
+    	    Usuario user, ListConfigurator configurator) {
+
+        /** 1. We create an Hibernate Criteria to obtain the desired values * */
+    	Criteria crit = HibernateUtil.getSession().createCriteria(User_access.class);
+
+    	// we only want to obtain the non deleted objects
+    	crit.add(Expression.eq("deleted", Boolean.FALSE));
+    	
+    	filterByRole(user, crit);
+    	
+    	// we add the ListConfigurator to the criteria, obtaining the number of
+    	// results without the pagination
+    	int count = configurator.addCriterions(crit, true);
+
+    	
+    	/**
+    	 * 2. We obtain the list form the DB and we return it with the number of
+    	 * elements in the DB *
+    	 */
+
+    	List<User_access> users = (List<User_access>) crit.list();
+
+    	crit.setFirstResult(0);
+    	crit.setMaxResults(5000);
+
+    	List<User_access> allUsers = (List<User_access>) crit.list();
+
+    	Map<String, String[]> map = new HashMap<String, String[]>();
+
+    	for (int i = 0; i < allUsers.size(); i++) {
+    	    String next = i == allUsers.size() - 1 ? null : allUsers
+    		    .get(i + 1).getCode();
+    	    String previous = i == 0 ? null : allUsers.get(i - 1).getCode();
+    	    map.put(allUsers.get(i).getCode(), new String[] { previous,
+    		    next });
+    	}
+
+    	Pair<Integer, Pair<List<User_access>, Map<String, String[]>>> pair = new Pair<Integer, Pair<List<User_access>, Map<String, String[]>>>(
+    		count, new Pair<List<User_access>, Map<String, String[]>>(
+    				users, map));
+
+    	return pair;
+        }
+    
 
     /**
      * This method terminates a active user.
