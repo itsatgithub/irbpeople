@@ -16,6 +16,7 @@
 <property name="hibernate.connection.password">X24mnt32</property>
 <property name="hibernate.show.sql">false</property>
 
+
 <!-- Connection pool -->
 <property name="hibernate.c3p0.min_size">5</property>
 <property name="hibernate.c3p0.max_size">20</property>
@@ -52,6 +53,7 @@
 <mapping resource="../etc/dbmappings/compensation.hbm.xml" />
 <mapping resource="../etc/dbmappings/type_of_institution.hbm.xml" />
 <mapping resource="../etc/dbmappings/type_of_study.hbm.xml" />
+<mapping resource="../etc/dbmappings/params.hbm.xml" />
 <mapping resource="../etc/dbmappings/alumni_params.hbm.xml" />
 <mapping resource="../etc/dbmappings/alumni_titles.hbm.xml" />
 <mapping resource="../etc/dbmappings/alumni_personal.hbm.xml" />
@@ -65,6 +67,7 @@
 <mapping resource="../etc/dbmappings/holiday.hbm.xml" />
 <mapping resource="../etc/dbmappings/grant_concession.hbm.xml" />
 <mapping resource="../etc/dbmappings/academic_info.hbm.xml" />
+<mapping resource="../etc/dbmappings/user_access.hbm.xml" />
 <mapping resource="../etc/dbmappings/type_of_contract.hbm.xml" />
 <mapping resource="../etc/dbmappings/type_of_compensation.hbm.xml" />
 <mapping resource="../etc/dbmappings/unit.hbm.xml" />
