@@ -267,6 +267,12 @@
         overflowToDisk="false"
         />
 
+	<cache name="bussineslogic.objects.params"
+        maxElementsInMemory="10"
+        eternal="false"
+        overflowToDisk="false"
+        />
+
 	<cache name="bussineslogic.objects.alumni_irb_jobs"
         maxElementsInMemory="10"
         eternal="false"

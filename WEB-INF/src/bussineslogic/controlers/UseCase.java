@@ -95,6 +95,7 @@ import bussineslogic.objects.Nationality;
 import bussineslogic.objects.Notirb_active_personal;
 import bussineslogic.objects.OrderBy;
 import bussineslogic.objects.Organization_unit;
+import bussineslogic.objects.Params;
 import bussineslogic.objects.Payment;
 import bussineslogic.objects.Payroll_institution;
 import bussineslogic.objects.Personal;
@@ -8976,6 +8977,82 @@ public class UseCase {
 	return pair;
     }
     
+    public static Params UpdateParams(Usuario user,
+    	    Params TOParams)
+    	    throws InternalException, NoPermisosException {
+    	
+		/** 1. We begin the DB transaction. * */
+		HibernateUtil.beginTransaction();
+	
+		/** 2. We obtain form the DB the instance to modify * */
+		Params params = getParams(TOParams
+			.getParamscode());
+	;
+
+	/**
+	 * 3. We set all the simple attributes (no associations) to the instance
+	 * *
+	 */
+
+	params.setValue(TOParams
+		.getValue());
+	
+	/**
+	 * 4. We set the DTO version to the modified object and we update it
+	 * with the new values in the DB. We evict and update the instance to
+	 * prevent concurrent modification *
+	 */
+	HibernateUtil.getSession().evict(params);	
+	HibernateUtil.getSession().update(params);
+
+	/** 5. We create an Audit message * */
+	CreateModificationAuditmessage(user, params);
+
+	/** 6. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return params;
+    }
+
+
+    /**
+     * This method obtains one instance of params given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param paramscode
+     *            Code of the params to be obtained
+     * @return Params with the given code.
+     */
+    public static Params ObtainParams(Usuario user,
+	    String paramscode) {
+
+		/**
+		 * 1. We obtain the object from the DB using the private getter and we
+		 * return it. *
+		 */
+	
+		Params params = getParams(paramscode);
+		return params;
+    }
+	
+	    /**
+     * Returns the Params with the given key. This method is used
+     * internally to get objects form the database.
+     * 
+     * @param paramscode
+     *            code of the Alumni titles
+     * @return Params with the given code
+     */
+    protected static Params getParams(
+    		String paramscode) {
+    	Params params = (Params) HibernateUtil
+    			.getSession().get(Params.class,
+    					paramscode);
+    	return params;
+    }
+        
+    
     
     /**
      * This method modifies a alumni_params.
@@ -15717,8 +15794,9 @@ public class UseCase {
 		}
 		
 		if (user == null) {
-			//TODO JORDI Cambiar		
-			int maxAccessTry = 3;
+
+			Params params = getParams("MAX_LOGIN_TRIES");
+	    	int maxAccessTry = Integer.parseInt(params.getValue());
 			
 			if(userAccess != null && !userAccess.isLocked()){
 				//Check if user has to be locked

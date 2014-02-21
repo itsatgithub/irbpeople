@@ -559,6 +559,10 @@
 	<form-bean name="oUser_accessSys__action_unlock_user_access_Form" type="presentation.formbeans.oUser_accessSys.Action_unlock_user_access_Form" />
 	<form-bean name="oUser_accessSys__action_manage_user_access_Form" type="presentation.formbeans.oUser_accessSys.Action_manage_user_access_Form" />
 	
+	<form-bean name="oParamsSys__action_cancel_modify_modify_page_params_Form" type="presentation.formbeans.oParamsSys.Action_cancel_modify_modify_page_params_Form" />
+	<form-bean name="oParamsSys__action_modify_modify_page_params_Form" type="presentation.formbeans.oParamsSys.Action_modify_modify_page_params_Form" />
+	<form-bean name="oParamsSys__action_modify_page_params_Form" type="presentation.formbeans.oParamsSys.Action_modify_page_params_Form" />
+	
 	<form-bean name="oAlumni_paramsSys__action_cancel_modify_modify_page_alumni_params_Form" type="presentation.formbeans.oAlumni_paramsSys.Action_cancel_modify_modify_page_alumni_params_Form" />
 	<form-bean name="oAlumni_paramsSys__action_modify_modify_page_alumni_params_Form" type="presentation.formbeans.oAlumni_paramsSys.Action_modify_modify_page_alumni_params_Form" />
 	<form-bean name="oAlumni_paramsSys__action_modify_page_alumni_params_Form" type="presentation.formbeans.oAlumni_paramsSys.Action_modify_page_alumni_params_Form" />
@@ -747,6 +751,7 @@
     <form-bean name="usuarioIDForm" type="presentation.formbeans.objects.UsuarioIDForm" />
     <form-bean name="work_experience_Form" type="presentation.formbeans.objects.Work_experience_Form" />
     <form-bean name="working_hours_Form" type="presentation.formbeans.objects.Working_hours_Form" />
+    <form-bean name="params_Form" type="presentation.formbeans.objects.Params_Form" />
     <form-bean name="alumni_titles_Form" type="presentation.formbeans.objects.Alumni_titles_Form" />
     <form-bean name="alumni_params_Form" type="presentation.formbeans.objects.Alumni_params_Form" />
     <form-bean name="alumni_job_position_types_Form" type="presentation.formbeans.objects.Alumni_job_position_types_Form" />
@@ -2363,6 +2368,12 @@
 	</action>	
     
     <action path="/oAlumni_personalSys/action_force_export_alumni_personal" type="presentation.actions.oAlumni_personalSys.Action_force_export_alumni_personal" unknown="false" validate="false" />
+    
+    <action path="/oParamsSys/action_cancel_modify_modify_page_params" type="presentation.actions.oParamsSys.Action_cancel_modify_modify_page_params" unknown="false" validate="true" />
+	<action name="oParamsSys__action_modify_modify_page_params_Form" path="/oParamsSys/action_modify_modify_page_params" scope="request" type="presentation.actions.oParamsSys.Action_modify_modify_page_params" unknown="false" validate="true" />
+	<action name="oParamsSys__action_modify_page_params_Form" path="/oParamsSys/action_modify_page_params" scope="request" type="presentation.actions.oParamsSys.Action_modify_page_params" unknown="false" validate="false">
+      <forward contextRelative="false" name="success" path="oParamsSys.action_modify_page_params" redirect="false" />
+	</action>
     
 	<action path="/oAlumni_paramsSys/action_cancel_modify_modify_page_alumni_params" type="presentation.actions.oAlumni_paramsSys.Action_cancel_modify_modify_page_alumni_params" unknown="false" validate="true" />
 	<action name="oAlumni_paramsSys__action_modify_modify_page_alumni_params_Form" path="/oAlumni_paramsSys/action_modify_modify_page_alumni_params" scope="request" type="presentation.actions.oAlumni_paramsSys.Action_modify_modify_page_alumni_params" unknown="false" validate="true" />
