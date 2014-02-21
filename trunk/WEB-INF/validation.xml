@@ -451,6 +451,15 @@
 	</var>
 </field>
 </form>
+<form name="params_Form">
+	<field property="value" depends="stringSize">
+		<arg key="params.value" />
+		<var>
+			<var-name>size</var-name>
+			<var-value>255</var-value>
+		</var>
+	</field>
+</form>
 <form name="alumni_params_Form">
 	
 <field property="value" depends="stringSize">

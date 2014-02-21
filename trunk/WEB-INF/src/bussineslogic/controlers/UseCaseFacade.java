@@ -52,6 +52,7 @@ import bussineslogic.objects.Marital_status;
 import bussineslogic.objects.Nationality;
 import bussineslogic.objects.OrderBy;
 import bussineslogic.objects.Organization_unit;
+import bussineslogic.objects.Params;
 import bussineslogic.objects.Payment;
 import bussineslogic.objects.Payroll_institution;
 import bussineslogic.objects.Personal;
@@ -1705,6 +1706,42 @@ public class UseCaseFacade {
 		UseCase.UnlockUser_access(UseCase.getUsuario(administradorId), user_accesscode);
 	}
 
+	/**
+     * This method modifies a params.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOParams
+     *            Params data transfer object (DTO) with the values
+     *            of the modified instance. The code of this attribute indicates
+     *            which params will be modified.
+     * @return the modified params
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Params UpdateParams(String administradorId,
+	    Params TOParams)
+	    throws InternalException, NoPermisosException {
+	
+    	return UseCase.UpdateParams(UseCase.getUsuario(administradorId), TOParams);
+    }
+
+
+    /**
+     * This method obtains one instance of params given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param paramscode
+     *            Code of the params to be obtained
+     * @return Params with the given code.
+     */
+    public static Params ObtainParams(String administradorId,
+	    String paramscode) throws InternalException, NoPermisosException{
+
+    	return UseCase.ObtainParams(UseCase.getUsuario(administradorId), paramscode);
+    }
+	
 	/**
      * This method modifies a alumni_params.
      * 

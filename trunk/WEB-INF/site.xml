@@ -4379,7 +4379,7 @@
                         <description />
                         <title-caption language="en">Do unlock user</title-caption>
                         <menuitem-caption language="en">Do unlock user</menuitem-caption>
-                        <button-caption language="en">Save</button-caption>
+                        <button-caption language="en">Unlock</button-caption>
                         <path action="action_unlock_user_access" command="oUser_accessSys" />
                         <parameter name="zoneaction.oUser_accessSys.unlock_user_access" value="oUser_access.unlock_user_access" />
                         <parameter name="objectsRecieved" value="none" />
@@ -12610,6 +12610,68 @@
                         <parameter name="objectsRecieved" value="one" />
 					</action>
 				</group>
+				<group e="" name="oParamsSys" command="oParamsSys" nick="oParamsSys" type="system" action-number="" st0="SystemObj">
+					<description>Auto generated group</description>
+					<caption language="en">params</caption>
+					<extends>BaseCommandsProtected</extends>	
+					<action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+						<name>action_cancel_modify_modify_page_params</name>
+						<description />
+						<title-caption language="en">Modify modify_page_params cancel</title-caption>
+						<menuitem-caption language="en">Modify modify_page_params cancel</menuitem-caption>
+						<button-caption language="en">Cancel</button-caption>
+						<path action="action_modify_page_params" command="oParamsSys" />
+						<parameter name="objectsRecieved" value="none" />
+						<parameter name="zoneaction.oParamsSys.modify_page_params" value="oParamsSys.modify_page_params" />
+					</action>
+					<action e="" con="mod" obj="params" type="modify" st0="" st1="" completed="false">
+						<name>action_modify_modify_page_params</name>
+						<description />
+						<title-caption language="en">Modify modify_page_params ok</title-caption>
+						<menuitem-caption language="en">Modify modify_page_params ok</menuitem-caption>
+						<button-caption language="en">Save</button-caption>
+						<path action="action_modify_page_params" command="oParamsSys" />
+						<parameter name="objectsRecieved" value="none" />
+						<parameter name="zoneaction.oParamsSys.modify_page_params" value="oParamsSys.modify_page_params" />
+					</action>
+					<action e="" con="mod" obj="params" type="modify" st0="" st1="" completed="false">
+						<name>action_modify_page_params</name>
+						<show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+						<description />
+						<title-caption language="en">Access parameters</title-caption>
+						<menuitem-caption language="en">v</menuitem-caption>
+						<button-caption language="en">Access parameters</button-caption>		
+						<path action="action_appHome" command="oParamsSys" />
+						<zones>
+							<zone name="operation" />
+							<!--
+							<zone name="folder2" />
+							<zone name="folder" />
+							-->
+							
+							<zone name="folder" command="oUnitSys" action="action_manage_unit" />
+		                    <zone name="folder2" command="oUnitSys" action="action_manage_unit" />
+		                    <zone name="folder3" command="oUnitSys" action="action_manage_unit" />
+							
+							<zone name="go" />
+							<zone name="submit">
+								<action command="oParamsSys" action="action_modify_modify_page_params" />				
+								<action command="oParamsSys" action="action_cancel_modify_modify_page_params" />
+							</zone>
+						</zones>
+						<parameter name="note" value="" />						
+						<parameter name="objectsRecieved" value="none" />						
+						<content>
+							<forms>
+								<form>
+									<form-group title="" num-columns="1">
+										<attribute-form label="value" field="value" required="true" writable="true" object="params" />
+									</form-group>
+								</form>
+							</forms>
+						</content>
+					</action>	
+				</group>
 				<group e="" name="oAlumni_paramsSys" command="oAlumni_paramsSys" nick="oAlumni_paramsSys" type="system" action-number="" st0="SystemObj">
 					<description>Auto generated group</description>
 					<caption language="en">alumni_params</caption>
@@ -14450,6 +14512,7 @@
                                 <action command="oAlumni_external_job_positionsSys" action="action_manage_alumni_external_job_positions" />
                                 <action command="oAlumni_irb_job_positionsSys" action="action_manage_alumni_irb_job_positions" />
                                 <action command="oAlumni_paramsSys" action="action_modify_page_alumni_params" />
+                                <action command="oParamsSys" action="action_modify_page_params" />
                                 <action command="oType_of_compensationSys" action="action_manage_type_of_compensation" />
                                 <action command="oType_of_educationSys" action="action_manage_type_of_education" />
                                 <action command="oType_of_grantSys" action="action_manage_type_of_grant" />
@@ -15661,6 +15724,7 @@
                                 <action command="oAlumni_external_job_positionsSys" action="action_manage_alumni_external_job_positions" />
                                 <action command="oAlumni_irb_job_positionsSys" action="action_manage_alumni_irb_job_positions" />
                                 <action command="oAlumni_paramsSys" action="action_modify_page_alumni_params" />                                
+                                <action command="oParamsSys" action="action_modify_page_params" />                                
                                 <action command="oCategorySys" action="action_manage_category" />
                                 <action command="oAreaSys" action="action_manage_area" />                                
                                 <action command="oGrantSys" action="action_manage_grants" />                                

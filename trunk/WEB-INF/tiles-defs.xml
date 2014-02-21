@@ -864,6 +864,9 @@
   <definition name="oAlumni_paramsSys.action_modify_page_alumni_params" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oAlumni_paramsSys/action_modify_page_alumni_params.jsp" />
   </definition> 
+  <definition name="oParamsSys.action_modify_page_params" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oParamsSys/action_modify_page_params.jsp" />
+  </definition> 
   
   
   
