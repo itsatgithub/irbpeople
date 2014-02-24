@@ -916,7 +916,7 @@
 		<var-value>20</var-value>
 	</var>
 </field>
-<field property="swfit" depends="stringSize">
+<field property="swift" depends="stringSize">
 	<arg key="personal.swift" />
 	<var>
 		<var-name>size</var-name>
