@@ -14867,6 +14867,9 @@ public class UseCase {
     
 
     private static void checkByRole(Usuario user,String personalcode) throws NoPermisosException{
+    	if (user==null) {
+    		return;
+    	}
     	Criteria crit = HibernateUtil.getSession().createCriteria(Personal.class);
     	crit.add(Expression.eq("deleted", Boolean.FALSE));
     	crit.add(Expression.eq("personalcode", personalcode));
