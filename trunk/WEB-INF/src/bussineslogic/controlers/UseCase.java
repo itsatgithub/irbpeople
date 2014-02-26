@@ -15722,7 +15722,12 @@ public class UseCase {
 		
 			    boolean correctLogin = ldapLogin.doLogin(username, password);
 			    try{
-			    	userFullname = ldapLogin.getFullname(username);
+			    	String getLDAPFullName = MAINCONFIG.getString("getLDAPFullName");
+			    	if (getLDAPFullName!=null && (getLDAPFullName.trim().equals("yes") || getLDAPFullName.trim().equals("1"))){
+			    		userFullname = ldapLogin.getFullname(username);
+			    	}else{
+			    		userFullname = "UNDEFINED";
+			    	}
 			    }catch(Exception e){
 			    	log.error("Error obteniendo nombre completo en LDAP para " + username, e);
 			    }
