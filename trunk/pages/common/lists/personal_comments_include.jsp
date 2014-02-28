@@ -15,7 +15,7 @@
 			<table class="FormTable" cellpadding="0" cellspacing="0">
 	<tr>
 		<td align="center">
-		<% if(!UserUtils.isRRHH(request)) { %>
+		<% if(UserUtils.isRRHH(request)) { %>
 	<jsp:include
 		page="/pages/common/lists/BOAdderStart_.jsp" flush="true">
 		<jsp:param name="BOAdderName" value="personal_comments" />
