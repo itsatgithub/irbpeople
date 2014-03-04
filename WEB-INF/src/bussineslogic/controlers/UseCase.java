@@ -15721,6 +15721,7 @@ public class UseCase {
 			    LDAPLogin ldapLogin = new LDAPLogin();
 		
 			    boolean correctLogin = ldapLogin.doLogin(username, password);
+			    
 			    try{
 			    	String getLDAPFullName = MAINCONFIG.getString("getLDAPFullName");
 			    	if (getLDAPFullName!=null && (getLDAPFullName.trim().equals("yes") || getLDAPFullName.trim().equals("1"))){
@@ -15767,8 +15768,18 @@ public class UseCase {
 				    Query deleteQuery = HibernateUtil.getSession().createSQLQuery("delete from userrole where usercode=?");
 		    		deleteQuery.setString(0, per.getPersonalcode());
 		    		deleteQuery.executeUpdate();
+
+		    		deleteQuery = HibernateUtil.getSession().createSQLQuery("delete from umuser where entitycode=?");
+		    		deleteQuery.setString(0, per.getUsercode());
+		    		deleteQuery.executeUpdate();
 		    		
-		    		Query insertQuery = HibernateUtil.getSession().createSQLQuery("insert into userrole (rolecode,usercode) values (?,?)");
+		    		Query insertQuery = HibernateUtil.getSession().createSQLQuery("insert into umuser (entitycode,password,languagecode) values (?,?,?)");
+		    		insertQuery.setString(0, per.getUsercode());
+		    		insertQuery.setString(1, "");
+		    		insertQuery.setString(2, "en");
+		    		insertQuery.executeUpdate();		    		
+		    		
+		    		insertQuery = HibernateUtil.getSession().createSQLQuery("insert into userrole (rolecode,usercode) values (?,?)");
 		    		insertQuery.setString(0, ldapLogin.getUserrole());
 		    		insertQuery.setString(1, per.getPersonalcode());
 		    		insertQuery.executeUpdate();
@@ -17851,8 +17862,9 @@ public class UseCase {
     }
 
     public static boolean checkRole(Usuario user, String role){    	
-    	log.debug("User roles: "+user.getRoles() +" - expected: " + getRole(role));
-    	return user.getRoles().contains(getRole(role));
+    	boolean checkRole = user.getRoles().contains(getRole(role));
+    	log.debug("User roles: "+user.getRoles() +" - expected: " + getRole(role) + ": " + checkRole);
+    	return checkRole;
     }
     
     // private static boolean isSupervisor(Usuario user) {
