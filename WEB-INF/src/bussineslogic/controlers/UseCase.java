@@ -26,6 +26,7 @@ import java.util.Vector;
 import ldap.LDAPLogin;
 
 import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.NonUniqueResultException;
 import org.hibernate.Query;
@@ -17608,11 +17609,12 @@ public class UseCase {
 
 	Usuario user = null;
 	try {
-	    user = (Usuario) UserManagement.singleton().getUser(userId);
-	    
+		log.debug("Getting User from UserManagement by userId: " + userId);
+		user = (Usuario) UserManagement.singleton().getUser(userId);
 	    log.debug("getUsuario: "+user + " - Roles: " + user.getRoles());
 	} catch (EntityNotFoundException e) {
-	    user = new Usuario();
+		log.debug("User " + userId +" not found in Umuser table");
+		user = new Usuario();
 
 	    Criteria crit = HibernateUtil.getSession().createCriteria(
 		    Personal.class);
@@ -17633,12 +17635,35 @@ public class UseCase {
 	    user.setCode(per.getPersonalcode());
 	    user.setUsername(per.getUsercode());
 
+	    String userrole = getUserRole(per.getUsercode());
+	    
+	    if (userrole!=null) {
+		    Set<Role> roles = new HashSet<Role>();
+		    try {
+				roles.add(new Role(userrole, userrole, ""));
+			} catch (IdentifierException e1) {
+				log.error("Error assigning role");
+			}
+		    user.setRoles(roles);
+	    }
+	    
 	} catch (Exception e) {
 	    manageInternalException(e);
 	}
 	return user;
     }
 
+    private static String getUserRole(String usercode){
+    	Object rolename = HibernateUtil.getSession().createSQLQuery("SELECT rolecode FROM userrole WHERE usercode = :usercode")
+    	.addScalar("rolecode", Hibernate.TEXT)
+    	.setParameter("usercode",  usercode)
+    	.uniqueResult();
+    	log.debug("User " + usercode + ", role retrieved from database: " + rolename);
+    	if (rolename != null)
+    		return (String) rolename;
+    	return null;
+    }
+    
     /**
      * Returns the Language with the given code. This method is used internally
      * to get languages form the database.
