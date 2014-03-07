@@ -38,7 +38,7 @@
 
 
 <jsp:include page="/pages/common/lists/filter.jsp" flush="true">
-	<jsp:param name="reportfield" value="oAlumni_personalSys__action_manage_alumni_personal"/>
+	<jsp:param name="reportfield" value="oAlumni_personalSys__action_manage_validated_alumni_personal"/>
 </jsp:include>
 </td></tr>
 <tr><td>

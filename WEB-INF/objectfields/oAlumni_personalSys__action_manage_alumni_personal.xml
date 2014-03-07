@@ -45,9 +45,9 @@
         </fields>
     </site>
     <site name="ct">
-        <label language="es">Etiqueta de visualizacion para el objeto 'alumni_personal'.</label>
-        <comment language="es">Descripcion de visualizacion para el objeto 'alumni_personal'.</comment>
-        <title language="es">Titulo de visualizacion para el objeto 'alumni_personal'.</title>
+        <label language="ct">Etiqueta de visualizacion para el objeto 'alumni_personal'.</label>
+        <comment language="ct">Descripcion de visualizacion para el objeto 'alumni_personal'.</comment>
+        <title language="ct">Titulo de visualizacion para el objeto 'alumni_personal'.</title>
         <!-- Campos del objeto para visualizacion -->
         <fields>
             <!-- - Campos visibles -->
@@ -57,22 +57,22 @@
             <!-- Los atributos modificables son: 'default' y 'visible'.  -->
             <visible-fields>
                 <field name="alumni_personalcode" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">Código</caption>
+                    <caption language="ct">Codi</caption>
                 </field>
                 <field name="firstname" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">Nombre</caption>
+                    <caption language="ct">Nom</caption>
                 </field>
                 <field name="surname" visible="true" default="true" type-of-field="text" size="10">
-                    <caption language="es">Apellidos</caption>
-                </field>  
+                    <caption language="ct">Cognoms</caption>
+                </field>     
                 <field name="external" visible="true" default="true" type-of-field="boolean" size="10">
-                    <caption language="ct">Extern</caption>
+                    <caption language="ct">Externo</caption>
                 </field>
                 <field name="verified" visible="true" default="true" type-of-field="boolean" size="10">
-                    <caption language="ct">Verificat</caption>
+                    <caption language="ct">Verificado</caption>
                 </field>
                 <field name="show_data" visible="true" default="true" type-of-field="boolean" size="10">
-                    <caption language="ct">Mostrar dades</caption>
+                    <caption language="ct">Mostrar datos</caption>
                 </field>    
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
@@ -95,22 +95,22 @@
             <!-- Los atributos modificables son: 'default' y 'visible'.  -->
             <visible-fields>
                 <field name="alumni_personalcode" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">Codi</caption>
+                    <caption language="es">Código</caption>
                 </field>
                 <field name="firstname" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">Nom</caption>
+                    <caption language="es">Nombre</caption>
                 </field>
                 <field name="surname" visible="true" default="true" type-of-field="text" size="10">
-                    <caption language="es">Cognoms</caption>
-                </field>     
+                    <caption language="es">Apellidos</caption>
+                </field>  
                 <field name="external" visible="true" default="true" type-of-field="boolean" size="10">
-                    <caption language="es">Externo</caption>
+                    <caption language="es">Extern</caption>
                 </field>
                 <field name="verified" visible="true" default="true" type-of-field="boolean" size="10">
-                    <caption language="es">Verificado</caption>
+                    <caption language="es">Verificat</caption>
                 </field>
                 <field name="show_data" visible="true" default="true" type-of-field="boolean" size="10">
-                    <caption language="es">Mostrar datos</caption>
+                    <caption language="es">Mostrar dades</caption>
                 </field>
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->

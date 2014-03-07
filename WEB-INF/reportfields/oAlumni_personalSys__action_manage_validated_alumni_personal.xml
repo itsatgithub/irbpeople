@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<report view="alumni_personal" site-number="3">
+    <site name="en">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="alumni_personalcode" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Usercode</caption>
+                </field>
+                <field name="firstname" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Name</caption>
+                </field>
+                <field name="surname" visible="true" default="true" type-of-field="text">
+                    <caption language="en">Surname</caption>
+                </field>
+                <field name="external" visible="true" default="true" type-of-field="boolean">
+                    <caption language="en">External</caption>
+                </field>                
+                <field name="show_data" visible="true" default="true" type-of-field="boolean">
+                    <caption language="en">Show data</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="ct">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="alumni_personalcode" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">Usercode</caption>
+                </field>
+                <field name="firstname" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">Nom</caption>
+                </field>
+                <field name="surname" visible="true" default="true" type-of-field="text">
+                    <caption language="ct">Cognoms</caption>
+                </field>  
+                 <field name="external" visible="true" default="true" type-of-field="boolean">
+                    <caption language="ct">Extern</caption>
+                </field>                
+                <field name="show_data" visible="true" default="true" type-of-field="boolean">
+                    <caption language="ct">Mostrar dades</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+    <site name="es">
+        <!-- Englobamos en '<fields>' la manipulacion de los campos en las 3 zonas del report: SELECT, WHERE y ORDERBY. -->
+        <fields>
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de SELECT 	-->
+            <!-- ****************************************** -->
+            <select-fields />
+            <!-- ****************************************** -->
+            <!-- - Campos visibles en la seccion de WHERE 	-->
+            <!-- ****************************************** -->
+            <where-fields>
+                <field name="alumni_personalcode" visible="true" default="true" type-of-field="text">
+                    <caption language="es">Usercode</caption>
+                </field>
+                <field name="firstname" visible="true" default="true" type-of-field="text">
+                    <caption language="es">Nombre</caption>
+                </field>
+                <field name="surname" visible="true" default="true" type-of-field="text">
+                    <caption language="es">Apellidos</caption>
+                </field>  
+                 <field name="external" visible="true" default="true" type-of-field="boolean">
+                    <caption language="es">Externo</caption>
+                </field>                
+                <field name="show_data" visible="true" default="true" type-of-field="boolean">
+                    <caption language="es">Mostrar datos</caption>
+                </field>
+            </where-fields>
+            <!-- ******************************************** -->
+            <!-- - Campos visibles en la seccion de ORDERBY   -->
+            <!-- ******************************************** -->
+            <orderby-fields />
+        </fields>
+    </site>
+</report>
+
