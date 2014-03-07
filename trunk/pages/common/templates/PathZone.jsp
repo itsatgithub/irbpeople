@@ -16,12 +16,8 @@ MenuItem[] items=menu.getItems();
 		MenuItem item=items[i];
 		if(i!=0){%><%=" > "%><%}
 		
-		if(i+1 >= items.length){%><b><%}
-		%>
-		<html:link page="<%=item.getLink()%>">
-		<%=item.getCaptionTitle()%>
-		</html:link><%
-		if(i+1 >= items.length){%></b><%}
+		if(i+1 >= items.length){%><b><%=item.getCaptionTitle()%></b><%}
+		if(i+1 < items.length){%><html:link page="<%=item.getLink()%>"><%=item.getCaptionTitle()%></html:link><%}
 	}
 }
 %>
