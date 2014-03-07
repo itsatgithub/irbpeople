@@ -1372,8 +1372,8 @@ public class UseCase {
 	}
 
 	if (_external_job_sectorsIsDefined) {
-		if (alumni_external_jobs.getExternal_job_positions() != null) {
-			alumni_external_jobs.getExternal_job_positions().removeIalumni_external_jobs(alumni_external_jobs);
+		if (alumni_external_jobs.getExternal_job_sectors() != null) {
+			alumni_external_jobs.getExternal_job_sectors().removeIalumni_external_jobs(alumni_external_jobs);
 	    }
 	    if (TOAlumni_external_jobs.getExternal_job_sectors() != null) {
 
