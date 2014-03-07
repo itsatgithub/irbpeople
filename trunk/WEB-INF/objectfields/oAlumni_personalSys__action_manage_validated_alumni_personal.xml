@@ -18,21 +18,21 @@
             <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
             <!-- Los atributos modificables son: 'default' y 'visible'.  -->
             <visible-fields>
-                <field name="usercode" visible="true" default="true" type-of-field="text" size="20">
+                <field name="alumni_personalcode" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">User code</caption>
                 </field>
-                <field name="name" visible="true" default="true" type-of-field="text" size="20">
+                <field name="firstname" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Name</caption>
                 </field>
-                <field name="locked" visible="true" default="true" type-of-field="boolean" size="10">
-                    <caption language="en">Locked</caption>
+                <field name="surname" visible="true" default="true" type-of-field="text" size="10">
+                    <caption language="en">Surname</caption>
                 </field>
-                <field name="tries" visible="true" default="true" type-of-field="integer" size="10">
-                    <caption language="en">Tries</caption>
-                </field>
-                <field name="last_access" visible="true" default="true" type-of-field="date" size="10">
-                    <caption language="en">Last access</caption>
-                </field>                                
+                <field name="external" visible="true" default="true" type-of-field="boolean" size="10">
+                    <caption language="en">External</caption>
+                </field>                
+                <field name="show_data" visible="true" default="true" type-of-field="boolean" size="10">
+                    <caption language="en">Show data</caption>
+                </field>                                        
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
             <!-- 1/2 - Campos 'hidden'. -->
@@ -42,9 +42,9 @@
         </fields>
     </site>
     <site name="ct">
-        <label language="es">Etiqueta de visualizacion para el objeto 'user_access'.</label>
-        <comment language="es">Descripcion de visualizacion para el objeto 'user_access'.</comment>
-        <title language="es">Titulo de visualizacion para el objeto 'user_access'.</title>
+        <label language="ct">Etiqueta de visualizacion para el objeto 'user_access'.</label>
+        <comment language="ct">Descripcion de visualizacion para el objeto 'user_access'.</comment>
+        <title language="ct">Titulo de visualizacion para el objeto 'user_access'.</title>
         <!-- Campos del objeto para visualizacion -->
         <fields>
             <!-- - Campos visibles -->
@@ -53,21 +53,21 @@
             <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
             <!-- Los atributos modificables son: 'default' y 'visible'.  -->
             <visible-fields>
-                <field name="usercode" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="ct">Usercode</caption>
+                <field name="alumni_personalcode" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Codi</caption>
                 </field>
-                <field name="name" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="ct">Name</caption>
+                <field name="firstname" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Nom</caption>
                 </field>
-                <field name="locked" visible="true" default="true" type-of-field="boolean" size="10">
-                    <caption language="ct">Locked</caption>
-                </field>
-                <field name="tries" visible="true" default="true" type-of-field="integer" size="10">
-                    <caption language="ct">Tries</caption>
-                </field>
-                <field name="last_access" visible="true" default="true" type-of-field="date" size="10">
-                    <caption language="ct">Last access</caption>
-                </field>
+                <field name="surname" visible="true" default="true" type-of-field="text" size="10">
+                    <caption language="ct">Cognoms</caption>
+                </field>     
+                <field name="external" visible="true" default="true" type-of-field="boolean" size="10">
+                    <caption language="ct">Externo</caption>
+                </field>                
+                <field name="show_data" visible="true" default="true" type-of-field="boolean" size="10">
+                    <caption language="ct">Mostrar datos</caption>
+                </field>      
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
             <!-- 1/2 - Campos 'hidden'. -->
@@ -88,20 +88,20 @@
             <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
             <!-- Los atributos modificables son: 'default' y 'visible'.  -->
             <visible-fields>
-               <field name="usercode" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">Usercode</caption>
+               <field name="alumni_personalcode" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="es">Código</caption>
                 </field>
-                <field name="name" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">Name</caption>
+                <field name="firstname" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="es">Nombre</caption>
                 </field>
-                <field name="locked" visible="true" default="true" type-of-field="boolean" size="10">
-                    <caption language="es">Locked</caption>
-                </field>
-                <field name="tries" visible="true" default="true" type-of-field="integer" size="10">
-                    <caption language="es">Tries</caption>
-                </field>
-                <field name="last_access" visible="true" default="true" type-of-field="date" size="10">
-                    <caption language="es">Last access</caption>
+                <field name="surname" visible="true" default="true" type-of-field="text" size="10">
+                    <caption language="es">Apellidos</caption>
+                </field>  
+                <field name="external" visible="true" default="true" type-of-field="boolean" size="10">
+                    <caption language="es">Extern</caption>
+                </field>                
+                <field name="show_data" visible="true" default="true" type-of-field="boolean" size="10">
+                    <caption language="se">Mostrar dades</caption>
                 </field>
             </visible-fields>
             <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
