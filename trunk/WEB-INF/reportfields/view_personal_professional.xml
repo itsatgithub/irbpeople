@@ -54,11 +54,8 @@
                     <caption >Employee: IBAN</caption>
                 </field>
                 <field name="bic" visible="true" type-of-field="text">
-                    <caption >Employee: BIC</caption>
-                </field>
-                <field name="swift" visible="true" type-of-field="text">
-                    <caption >Employee: SWIFT</caption>
-                </field>
+                    <caption >Employee: BIC/SWIFT</caption>
+                </field>                
                 <field name="research_project" visible="true" type-of-field="text">
                     <caption >Personal: Research project</caption>
                 </field>
@@ -336,11 +333,8 @@
                     <caption >Employee: IBAN</caption>
                 </field>
                 <field name="bic" visible="true" type-of-field="text">
-                    <caption >Employee: BIC</caption>
-                </field>
-                <field name="swift" visible="true" type-of-field="text">
-                    <caption >Employee: SWIFT</caption>
-                </field>
+                    <caption >Employee: BIC/SWIFT</caption>
+                </field>                
                 <field name="research_project" visible="true" type-of-field="text">
                     <caption >Personal: Research project</caption>
                 </field>
@@ -619,11 +613,8 @@
                     <caption >Employee: IBAN</caption>
                 </field>
                 <field name="bic" visible="true" type-of-field="text">
-                    <caption >Employee: BIC</caption>
-                </field>
-                <field name="swift" visible="true" type-of-field="text">
-                    <caption >Employee: SWIFT</caption>
-                </field>
+                    <caption >Employee: BIC/SWIFT</caption>
+                </field>                
                 <field name="research_project" visible="true" type-of-field="text">
                     <caption >Personal: Research project</caption>
                 </field>

@@ -916,13 +916,6 @@
 		<var-value>20</var-value>
 	</var>
 </field>
-<field property="swift" depends="stringSize">
-	<arg key="personal.swift" />
-	<var>
-		<var-name>size</var-name>
-		<var-value>20</var-value>
-	</var>
-</field>
 <field property="research_project" depends="stringSize">
 	<arg key="personal.research_project" />
 	<var>

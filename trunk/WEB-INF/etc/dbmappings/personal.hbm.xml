@@ -58,10 +58,7 @@
         </property>
         <property name="bic" type="string">
             <column name="bic" length="20" />
-        </property>
-        <property name="swift" type="string">
-            <column name="swift" length="20" />
-        </property>
+        </property>        
         <property name="research_project" type="string">
             <column name="research_project" length="100" />
         </property>

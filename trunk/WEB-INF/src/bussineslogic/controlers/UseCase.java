@@ -13980,8 +13980,6 @@ public class UseCase {
 
 	    personal.setBank_account(TOPersonal.getBank_account());
 	    
-	    personal.setSwift(TOPersonal.getSwift());
-	    
 	    personal.setBic(TOPersonal.getBic());
 
 	    personal.setResearch_project(TOPersonal.getResearch_project());
@@ -14447,8 +14445,6 @@ public class UseCase {
 	    }
 
 	    personal.setBank_account(TOPersonal.getBank_account());
-	    
-	    personal.setSwift(TOPersonal.getSwift());
 	    
 	    personal.setBic(TOPersonal.getBic());
 

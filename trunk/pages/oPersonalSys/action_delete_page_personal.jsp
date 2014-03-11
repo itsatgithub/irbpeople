@@ -419,12 +419,7 @@
 	<td class="FormFieldRight">	
 		<nested:write property="mostAdvancedEducation"/>	
 	</td>
-	<td class="FormFieldLeft">
-		<jim:message key="swift" />	
-	</td>
-	<td class="FormFieldRight">	
-		<nested:write property="swift"/>	
-	</td>
+	<td colspan="2">&nbsp;</td>
 </tr>
 <tr>
 	<td class="FormSeparator"></td>

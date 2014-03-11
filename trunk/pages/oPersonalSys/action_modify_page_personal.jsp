@@ -520,12 +520,7 @@
 	<td class="FormFieldRight">	
 		<nested:write property="mostAdvancedEducation"/>
 	</td>
-	<td class="FormFieldLeft">
-		<jim:message key="swift" />	
-	</td>
-	<td class="FormFieldRight">	
-		<nested:text property="swift" maxlength="20" tabindex="30" size="20" onchange="this.form.elements['tainted'].value=true"/>	
-	</td>
+	<td colspan="2">&nbsp;</td>	
 </tr>
 <tr>
 	<td class="FormSeparator"></td>

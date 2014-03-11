@@ -289,22 +289,6 @@
 								<td class="BlankSeparator"></td>
 							</tr>
 							<tr>
-								<td class="FormFieldLeft">&nbsp;</td>
-								<td class="FormFieldRight">&nbsp;</td>
-								<td class="FormFieldLeft">
-									<jim:message key="swift" />	
-								</td>
-								<td class="FormFieldRight">	
-									<nested:text property="swift" maxlength="20" tabindex="30" size="20" onchange="this.form.elements['tainted'].value=true"/>	
-								</td>
-							</tr>
-							<tr>
-								<td class="FormSeparator"></td>
-								<td class="BlankSeparator"></td>
-							</tr>
-														
-							
-							<tr>
 								<td class="FormSeparator"></td>
 								<td class="BlankSeparator"></td>
 							</tr>

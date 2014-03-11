@@ -65,10 +65,7 @@
                     <caption language="en">IBAN</caption>
                 </field>
                 <field name="personal.bic" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">BIC</caption>
-                </field>
-                <field name="personal.swift" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="en">SWIFT</caption>
+                    <caption language="en">BIC/SWIFT</caption>
                 </field>
                 <field name="personal.research_project" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Research project</caption>
@@ -170,11 +167,8 @@
                     <caption language="ct">IBAN</caption>
                 </field>
                 <field name="personal.bic" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="ct">BIC</caption>
-                </field>
-                <field name="personal.swift" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="ct">SWIFT</caption>
-                </field>
+                    <caption language="ct">BIC/SWIFT</caption>
+                </field>                
                 <field name="personal.research_project" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="ct">Projecte de recerca</caption>
                 </field>
@@ -275,11 +269,8 @@
                     <caption language="es">IBAN</caption>
                 </field>
                 <field name="personal.bic" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">BIC</caption>
-                </field>
-                <field name="personal.swift" visible="true" default="true" type-of-field="text" size="20">
-                    <caption language="es">SWIFT</caption>
-                </field>
+                    <caption language="es">BIC/SWIFT</caption>
+                </field>                
                 <field name="personal.research_project" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="es">Proyecto de investigación</caption>
                 </field>
