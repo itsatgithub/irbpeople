@@ -7404,7 +7404,6 @@
                                         <attribute-form label="bank" field="description" required="false" writable="false" type="selectBOAttribute" object="personal" associationName="bank" associationBO="bank" popUp="false" popUpAlways="false" />
                                         <attribute-form label="bank account" field="bank_account" required="false" writable="false" object="personal" />
                                         <attribute-form label="bic" field="bic" required="false" writable="false" object="personal" />
-                                        <attribute-form label="swift" field="swift" required="false" writable="false" object="personal" />
                                         <attribute-form label="marital_status" field="description" required="false" writable="false" type="selectBOAttribute" object="personal" associationName="marital_status" associationBO="marital_status" popUp="false" popUpAlways="false" />
                                     </form-group>
                                     <form-group title="Funding General" num-columns="2">
@@ -9353,7 +9352,6 @@
                                         <attribute-form label="bank" field="description" required="false" writable="true" type="selectBOAttribute" object="personal" associationName="bank" associationBO="bank" popUp="false" popUpAlways="false" />
                                         <attribute-form label="bank account" field="bank_account" required="false" writable="true" object="personal" />
                                         <attribute-form label="bic" field="bic" required="false" writable="false" object="personal" />
-                                        <attribute-form label="swift" field="swift" required="false" writable="false" object="personal" />
                                         <attribute-form label="marital_status" field="description" required="false" writable="true" type="selectBOAttribute" object="personal" associationName="marital_status" associationBO="marital_status" popUp="false" popUpAlways="false" />
                                     </form-group>
                                     <form-group title="Funding general" num-columns="2">
@@ -9436,7 +9434,6 @@
                                         <attribute-form label="bank" field="description" required="false" writable="true" type="selectBOAttribute" object="personal" associationName="bank" associationBO="bank" popUp="false" popUpAlways="false" />
                                         <attribute-form label="bank account" field="bank_account" required="false" writable="true" object="personal" />
                                         <attribute-form label="bic" field="bic" required="false" writable="false" object="personal" />
-                                        <attribute-form label="swift" field="swift" required="false" writable="false" object="personal" />
                                         <attribute-form label="marital status" field="description" required="false" writable="true" type="selectBOAttribute" object="personal" associationName="marital_status" associationBO="marital_status" popUp="false" popUpAlways="false" />
                                     </form-group>
                                     <form-group title="Funding general" num-columns="2">
@@ -9610,7 +9607,6 @@
                                         <attribute-form label="bank" field="description" required="false" writable="false" type="selectBOAttribute" object="personal" associationName="bank" associationBO="bank" popUp="false" popUpAlways="false" />
                                         <attribute-form label="bank account" field="bank_account" required="false" writable="false" object="personal" />
                                         <attribute-form label="bic" field="bic" required="false" writable="false" object="personal" />
-                                        <attribute-form label="swift" field="swift" required="false" writable="false" object="personal" />
                                         <attribute-form label="marital_status" field="description" required="false" writable="false" type="selectBOAttribute" object="personal" associationName="marital_status" associationBO="marital_status" popUp="false" popUpAlways="false" />
                                     </form-group>
                                     <form-group title="funding general" num-columns="2">
@@ -23410,7 +23406,6 @@
                                         <attribute-form label="bank" field="description" required="false" writable="false" type="selectBOAttribute" object="personal" associationName="bank" associationBO="bank" popUp="false" popUpAlways="false" />
                                         <attribute-form label="bank account" field="bank_account" required="false" writable="false" object="personal" />
                                         <attribute-form label="bic" field="bic" required="false" writable="false" object="personal" />
-                                        <attribute-form label="swift" field="swift" required="false" writable="false" object="personal" />
                                         <attribute-form label="marital_status" field="description" required="false" writable="false" type="selectBOAttribute" object="personal" associationName="marital_status" associationBO="marital_status" popUp="false" popUpAlways="false" />
                                     </form-group>
                                     <form-group title="Funding General" num-columns="2">
@@ -25305,7 +25300,6 @@
                                         <attribute-form label="bank" field="description" required="false" writable="true" type="selectBOAttribute" object="personal" associationName="bank" associationBO="bank" popUp="false" popUpAlways="false" />
                                         <attribute-form label="bank account" field="bank_account" required="false" writable="true" object="personal" />
                                         <attribute-form label="bic" field="bic" required="false" writable="false" object="personal" />
-                                        <attribute-form label="swift" field="swift" required="false" writable="false" object="personal" />
                                         <attribute-form label="marital_status" field="description" required="false" writable="true" type="selectBOAttribute" object="personal" associationName="marital_status" associationBO="marital_status" popUp="false" popUpAlways="false" />
                                     </form-group>
                                     <form-group title="Funding general" num-columns="2">
@@ -25388,7 +25382,6 @@
                                         <attribute-form label="bank" field="description" required="false" writable="true" type="selectBOAttribute" object="personal" associationName="bank" associationBO="bank" popUp="false" popUpAlways="false" />
                                         <attribute-form label="bank account" field="bank_account" required="false" writable="true" object="personal" />
                                         <attribute-form label="bic" field="bic" required="false" writable="false" object="personal" />
-                                        <attribute-form label="swift" field="swift" required="false" writable="false" object="personal" />
                                         <attribute-form label="marital status" field="description" required="false" writable="true" type="selectBOAttribute" object="personal" associationName="marital_status" associationBO="marital_status" popUp="false" popUpAlways="false" />
                                     </form-group>
                                     <form-group title="Funding general" num-columns="2">
@@ -25562,7 +25555,6 @@
                                         <attribute-form label="bank" field="description" required="false" writable="false" type="selectBOAttribute" object="personal" associationName="bank" associationBO="bank" popUp="false" popUpAlways="false" />
                                         <attribute-form label="bank account" field="bank_account" required="false" writable="false" object="personal" />
                                         <attribute-form label="bic" field="bic" required="false" writable="false" object="personal" />
-                                        <attribute-form label="swift" field="swift" required="false" writable="false" object="personal" />
                                         <attribute-form label="marital_status" field="description" required="false" writable="false" type="selectBOAttribute" object="personal" associationName="marital_status" associationBO="marital_status" popUp="false" popUpAlways="false" />
                                     </form-group>
                                     <form-group title="funding general" num-columns="2">
@@ -37070,7 +37062,6 @@
                                         <attribute-form label="bank" field="description" required="false" writable="false" type="selectBOAttribute" object="personal" associationName="bank" associationBO="bank" popUp="false" popUpAlways="false" />
                                         <attribute-form label="bank account" field="bank_account" required="false" writable="false" object="personal" />
                                         <attribute-form label="bic" field="bic" required="false" writable="false" object="personal" />
-                                        <attribute-form label="swift" field="swift" required="false" writable="false" object="personal" />
                                         <attribute-form label="marital_status" field="description" required="false" writable="false" type="selectBOAttribute" object="personal" associationName="marital_status" associationBO="marital_status" popUp="false" popUpAlways="false" />
                                     </form-group>
                                     <form-group title="Funding General" num-columns="2">
@@ -38928,7 +38919,6 @@
                                         <attribute-form label="bank" field="description" required="false" writable="true" type="selectBOAttribute" object="personal" associationName="bank" associationBO="bank" popUp="false" popUpAlways="false" />
                                         <attribute-form label="bank account" field="bank_account" required="false" writable="true" object="personal" />
                                         <attribute-form label="bic" field="bic" required="false" writable="false" object="personal" />
-                                        <attribute-form label="swift" field="swift" required="false" writable="false" object="personal" />
                                         <attribute-form label="marital_status" field="description" required="false" writable="true" type="selectBOAttribute" object="personal" associationName="marital_status" associationBO="marital_status" popUp="false" popUpAlways="false" />
                                     </form-group>
                                     <form-group title="Funding general" num-columns="2">
@@ -39011,7 +39001,6 @@
                                         <attribute-form label="bank" field="description" required="false" writable="true" type="selectBOAttribute" object="personal" associationName="bank" associationBO="bank" popUp="false" popUpAlways="false" />
                                         <attribute-form label="bank account" field="bank_account" required="false" writable="true" object="personal" />
                                         <attribute-form label="bic" field="bic" required="false" writable="false" object="personal" />
-                                        <attribute-form label="swift" field="swift" required="false" writable="false" object="personal" />
                                         <attribute-form label="marital status" field="description" required="false" writable="true" type="selectBOAttribute" object="personal" associationName="marital_status" associationBO="marital_status" popUp="false" popUpAlways="false" />
                                     </form-group>
                                     <form-group title="Funding general" num-columns="2">
@@ -39185,7 +39174,6 @@
                                         <attribute-form label="bank" field="description" required="false" writable="false" type="selectBOAttribute" object="personal" associationName="bank" associationBO="bank" popUp="false" popUpAlways="false" />
                                         <attribute-form label="bank account" field="bank_account" required="false" writable="false" object="personal" />
                                         <attribute-form label="bic" field="bic" required="false" writable="false" object="personal" />
-                                        <attribute-form label="swift" field="swift" required="false" writable="false" object="personal" />
                                         <attribute-form label="marital_status" field="description" required="false" writable="false" type="selectBOAttribute" object="personal" associationName="marital_status" associationBO="marital_status" popUp="false" popUpAlways="false" />
                                     </form-group>
                                     <form-group title="funding general" num-columns="2">

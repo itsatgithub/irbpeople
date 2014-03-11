@@ -42,8 +42,6 @@ public class Personal_Form extends ValidatorFormAndAction {
 	
 	private String bic = null;
 	
-	private String swift = null;
-
 	private String research_project = null;
 
 	private String sponsoring_agency = null;
@@ -253,14 +251,6 @@ public class Personal_Form extends ValidatorFormAndAction {
 
 	public void setBic(String bic) {
 		this.bic = bic;
-	}
-
-	public String getSwift() {
-		return swift;
-	}
-	
-	public void setSwift(String swift) {
-		this.swift = swift;
 	}
 	
 	public String getBank_account() {
