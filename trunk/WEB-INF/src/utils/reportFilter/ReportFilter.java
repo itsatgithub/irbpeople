@@ -10,7 +10,7 @@ import bussineslogic.objects.Usuario;
 public class ReportFilter {
 
 	public static void filterFieldsByProfile(Usuario user, Vector<String> names, Vector<String> labels) {
-		String[] fieldsToSkipList = { "professional_end_date" };
+		String[] fieldsToSkipList = { /*"professional_end_date"*/};
 		String[] labelsToSkipList = { "Compensation", "Benefit" };
 		Vector<String> fieldsToSkip = new Vector<String>(Arrays.asList(fieldsToSkipList));
 		Vector<String> labelsToSkip = new Vector<String>(Arrays.asList(labelsToSkipList));
