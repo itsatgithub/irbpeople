@@ -99,7 +99,6 @@
 	<td class="FormSeparator"></td>
 	<td class="BlankSeparator"></td>
 </tr>
-<% if(!UserUtils.checkRole(request, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) && !UserUtils.checkRole(request, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)) { %>
 <tr>	
 <td class="FormFieldLeft">
 	
@@ -112,7 +111,6 @@
 	
 </td>
 </tr>
-<% } %>
 <tr>
 	<td class="FormSeparator"></td>
 	<td class="BlankSeparator"></td>

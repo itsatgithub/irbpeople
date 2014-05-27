@@ -2530,10 +2530,8 @@ public class UseCase {
 	 */
 
 	professional.setStart_date(TOProfessional.getStart_date());
-
-	if(!UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) && !UserUtils.checkRole(user, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)) {
-		professional.setEnd_date(TOProfessional.getEnd_date());
-	}
+	professional.setEnd_date(TOProfessional.getEnd_date());
+	
 
 	Professional currentPro = null;
 
@@ -3234,10 +3232,8 @@ public class UseCase {
 	 */
 
 	professional.setStart_date(TOProfessional.getStart_date());
-
-	if(!UserUtils.checkRole(user, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) && !UserUtils.checkRole(user, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)) {
-		professional.setEnd_date(TOProfessional.getEnd_date());
-	}
+	professional.setEnd_date(TOProfessional.getEnd_date());
+	
 
 	professional.setEmail(TOProfessional.getEmail());
 

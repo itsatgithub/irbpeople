@@ -123,8 +123,6 @@
 	<td class="BlankSeparator"></td>
 </tr>
 <tr>
-<% if(!UserUtils.checkRole(request, UseCase.IRBPEOPLE_GRANT_ROLE_NAME) && !UserUtils.checkRole(request, UseCase.IRBPEOPLE_INNOVATION_ROLE_NAME)) { %>
-	
 <td class="FormFieldLeft">
 	
 <jim:message key="end/spdate" />
@@ -136,7 +134,6 @@
 	
 </td>
 </tr>
-<% } %>
 <tr>
 	<td class="FormSeparator"></td>
 	<td class="BlankSeparator"></td>
