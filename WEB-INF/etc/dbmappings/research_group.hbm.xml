@@ -3,74 +3,87 @@
 
 <hibernate-mapping package="bussineslogic.objects">
 
-    <class name="Research_group" table="RESEARCH_GROUP">
-        <cache usage="read-write"/>
-    
-        <id name="research_groupcode" column="research_groupcode"></id>
-        <version name="version"></version>
+	<class name="Research_group" table="RESEARCH_GROUP">
+		<cache usage="read-write" />
 
-        <property name="deleted" type="boolean">
-            <column name="deleted" />
-        </property>
+		<id name="research_groupcode" column="research_groupcode"></id>
+		<version name="version"></version>
 
-        <!-- attribute mappings -->
-        <property name="description" type="string">
-            <column name="description" length="500" />
-        </property>
+		<property name="deleted" type="boolean">
+			<column name="deleted" />
+		</property>
 
-        <property name="group" type="string">
-            <column name="`group`" length="100" />
-        </property>
+		<!-- attribute mappings -->
+		<property name="description" type="string">
+			<column name="description" length="500" />
+		</property>
 
-        <!-- Associacion mappings -->
-        <many-to-one name="supervisor" class="Personal" column="supervisor" not-null="false" />
+		<property name="group" type="string">
+			<column name="`group`" length="100" />
+		</property>
 
-        <many-to-one name="unit" class="Unit" column="unit" not-null="false" />
+		<!-- Associacion mappings -->
+		<many-to-one name="supervisor" class="Personal" column="supervisor"
+			not-null="false" />
+
+		<many-to-one name="unit" class="Unit" column="unit"
+			not-null="false" />
 
 
-        <set name="iresearch_group" cascade="none" lazy="true">
-            <key>
-                <column name="research_group" />
-            </key>
-            <one-to-many class="Professional" />
-        </set>
-        
-        <set name="iresearch_group_2" cascade="none" lazy="true">
-            <key>
-                <column name="research_group_2" />
-            </key>
-            <one-to-many class="Professional" />
-        </set>
-        
-        <set name="iresearch_group_3" cascade="none" lazy="true">
-            <key>
-                <column name="research_group_3" />
-            </key>
-            <one-to-many class="Professional" />
-        </set>
-        
-        <set name="iresearch_group_4" cascade="none" lazy="true">
-            <key>
-                <column name="research_group_4" />
-            </key>
-            <one-to-many class="Professional" />
-        </set>
-        
-        <set name="iacademic_info" cascade="none" lazy="true">
+		<set name="iresearch_group" cascade="none" lazy="true">
+			<key>
+				<column name="research_group" />
+			</key>
+			<one-to-many class="Professional" />
+		</set>
+
+		<set name="iresearch_group_2" cascade="none" lazy="true">
+			<key>
+				<column name="research_group_2" />
+			</key>
+			<one-to-many class="Professional" />
+		</set>
+
+		<set name="iresearch_group_3" cascade="none" lazy="true">
+			<key>
+				<column name="research_group_3" />
+			</key>
+			<one-to-many class="Professional" />
+		</set>
+
+		<set name="iresearch_group_4" cascade="none" lazy="true">
+			<key>
+				<column name="research_group_4" />
+			</key>
+			<one-to-many class="Professional" />
+		</set>
+
+		<set name="iacademic_info" cascade="none" lazy="true">
 			<key>
 				<column name="lab_rotation_lab" />
 			</key>
 			<one-to-many class="Academic_info" />
 		</set>
-        <set name="iacademic_info_2" cascade="none" lazy="true">
+		<set name="iacademic_info_2" cascade="none" lazy="true">
 			<key>
 				<column name="lab_rotation_lab2" />
 			</key>
 			<one-to-many class="Academic_info" />
 		</set>
+		<set name="ialumni_irb_jobs_3" cascade="none" lazy="true">
+			<key>
+				<column name="research_group" />
+			</key>
+			<one-to-many class="Alumni_irb_jobs" />
+		</set>
+		<set name="ialumni_irb_jobs_4" cascade="none" lazy="true">
+			<key>
+				<column name="research_group_2" />
+			</key>
+			<one-to-many class="Alumni_irb_jobs" />
+		</set>
 
+		<!-- categorias -->
 
-        <!-- categorias -->
-
-    </class>
+	</class>
 </hibernate-mapping>

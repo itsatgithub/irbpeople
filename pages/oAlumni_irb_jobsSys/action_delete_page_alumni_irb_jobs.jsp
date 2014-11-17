@@ -108,6 +108,23 @@
 <nested:write property="unit_2" />	
 </td>
 </tr>
+
+<tr>
+<td class="FormFieldLeft">
+<jim:message key="alumni_irb_jobs.research_group" />
+</td>
+<td class="FormFieldRight">
+<nested:write property="research_group" />	
+</td>
+</tr>
+<tr>
+<td class="FormFieldLeft">
+<jim:message key="alumni_irb_jobs.research_group_2" />
+</td>
+<td class="FormFieldRight">
+<nested:write property="research_group_2" />	
+</td>
+</tr>
 </table>
 	</nested:nest>
 	</td>

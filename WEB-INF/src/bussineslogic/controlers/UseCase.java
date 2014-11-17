@@ -1613,6 +1613,30 @@ public class UseCase {
 		
 		TOAlumni_irb_jobs.setUnit_2(getUnit(TOAlumni_irb_jobs.getUnit_2().getCode()));
 	}
+	
+	boolean _research_groupIsDefined = false;
+	
+	if (TOAlumni_irb_jobs.getResearch_group() != null
+			&& TOAlumni_irb_jobs.getResearch_group().getCode() != null) {
+		// if grant is defined we replace the grant in the DTO with its
+		// current state in the DB.
+		_research_groupIsDefined = true;
+		
+		TOAlumni_irb_jobs.setResearch_group(getResearch_group(TOAlumni_irb_jobs.getResearch_group().getCode()));
+	}
+	
+	boolean _research_group_2IsDefined = false;
+	
+	if (TOAlumni_irb_jobs.getResearch_group_2() != null
+			&& TOAlumni_irb_jobs.getResearch_group_2().getCode() != null) {
+		// if grant is defined we replace the grant in the DTO with its
+		// current state in the DB.
+		_research_group_2IsDefined = true;
+				
+		TOAlumni_irb_jobs.setResearch_group_2(getResearch_group(TOAlumni_irb_jobs.getResearch_group_2().getCode()));
+	}
+	
+	
 
 	/** 3. We create the new instance * */
 	Alumni_irb_jobs alumni_irb_jobs = new Alumni_irb_jobs();
@@ -1696,6 +1720,29 @@ public class UseCase {
 				.getUnit_2());
 	}
 
+	if (_research_groupIsDefined) {
+		
+		if (TOAlumni_irb_jobs.getResearch_group() != null) {
+			
+			TOAlumni_irb_jobs.getResearch_group()
+			.addIalumni_irb_jobs_3(alumni_irb_jobs);
+		}
+		
+		alumni_irb_jobs.setResearch_group(TOAlumni_irb_jobs
+				.getResearch_group());
+	}
+
+	if (_research_group_2IsDefined) {
+		
+		if (TOAlumni_irb_jobs.getResearch_group_2() != null) {
+			
+			TOAlumni_irb_jobs.getResearch_group_2()
+			.addIalumni_irb_jobs_4(alumni_irb_jobs);
+		}
+		
+		alumni_irb_jobs.setResearch_group_2(TOAlumni_irb_jobs
+				.getResearch_group_2());
+	}
 	
 
 	/** 7. We create an Audit message * */
@@ -1776,7 +1823,28 @@ public class UseCase {
 			
 			TOAlumni_irb_jobs.setUnit_2(getUnit(TOAlumni_irb_jobs.getUnit_2().getCode()));
 		}
+		
+		boolean _research_groupIsDefined = false;
+		
+		if (TOAlumni_irb_jobs.getResearch_group() != null
+				&& TOAlumni_irb_jobs.getResearch_group().getCode() != null) {
+			// if grant is defined we replace the grant in the DTO with its
+			// current state in the DB.
+			_research_groupIsDefined = true;
+			TOAlumni_irb_jobs.setResearch_group(getResearch_group(TOAlumni_irb_jobs.getResearch_group().getCode()));
+		}
 	
+		boolean _research_group_2IsDefined = false;
+		
+		if (TOAlumni_irb_jobs.getResearch_group_2() != null
+				&& TOAlumni_irb_jobs.getResearch_group_2().getCode() != null) {
+			// if grant is defined we replace the grant in the DTO with its
+			// current state in the DB.
+			_research_group_2IsDefined = true;
+			
+			TOAlumni_irb_jobs.setResearch_group_2(getResearch_group(TOAlumni_irb_jobs.getResearch_group_2().getCode()));
+		}
+		
 		/**
 	 * 4. We set all the simple attributes (no associations) to the instance
 	 * *
@@ -1859,6 +1927,34 @@ public class UseCase {
 				.getUnit_2());
 	}
 
+	
+	if (_research_groupIsDefined) {
+		if (alumni_irb_jobs.getResearch_group() != null) {
+			alumni_irb_jobs.getResearch_group().removeIalumni_irb_jobs_3(alumni_irb_jobs);
+	    }
+		if (TOAlumni_irb_jobs.getResearch_group() != null) {
+			
+			TOAlumni_irb_jobs.getResearch_group()
+			.addIalumni_irb_jobs_3(alumni_irb_jobs);
+		}
+		
+		alumni_irb_jobs.setResearch_group(TOAlumni_irb_jobs
+				.getResearch_group());
+	}
+	
+	if (_research_group_2IsDefined) {
+		if (alumni_irb_jobs.getResearch_group_2() != null) {
+			alumni_irb_jobs.getResearch_group_2().removeIalumni_irb_jobs_4(alumni_irb_jobs);
+	    }
+		if (TOAlumni_irb_jobs.getResearch_group_2() != null) {
+			
+			TOAlumni_irb_jobs.getResearch_group_2()
+			.addIalumni_irb_jobs_4(alumni_irb_jobs);
+		}
+		
+		alumni_irb_jobs.setResearch_group_2(TOAlumni_irb_jobs
+				.getResearch_group_2());
+	}
 
 	
 	
@@ -22958,6 +23054,10 @@ public class UseCase {
 	    		alumni_irb_job.setEnd_date(p.getEnd_date());
 	    		alumni_irb_job.setUnit(p.getProfessional_unit());
 	    		alumni_irb_job.setUnit_2(p.getProfessional_unit_2());
+	    		
+	    		alumni_irb_job.setResearch_group(p.getResearch_group());
+	    		alumni_irb_job.setResearch_group_2(p.getResearch_group_2());
+	    		
 	    		if (p.getPosition()!=null){
 	    			Alumni_irb_job_positions position = getAlumni_irb_job_positions(p.getPosition().getCode());
 	    			if (position!=null) {

@@ -19,7 +19,13 @@
                 </field>
                 <field name="unit_2" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Unit 2</caption>
+                </field>
+                <field name="research_group" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Research group</caption>
                 </field>                
+                <field name="research_group_2" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Research group 2</caption>
+                </field>                  
                 <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Start date</caption>
                 </field>
@@ -52,7 +58,13 @@
                 </field>
                 <field name="unit_2" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="ct">Unitat 2</caption>
+                </field>
+                <field name="research_group" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Grup de recerca</caption>
                 </field>                
+                <field name="research_group_2" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Grup de recerca 2</caption>
+                </field>                  
                 <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="ct">Data inici</caption>
                 </field>
@@ -86,6 +98,12 @@
                 <field name="unit_2" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Unidad 2</caption>
                 </field>                
+                <field name="research_group" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Grupo de investigación</caption>
+                </field>                
+                <field name="research_group_2" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Grupo de investigación 2</caption>
+                </field>  
                 <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Fecha inicio</caption>
                 </field>

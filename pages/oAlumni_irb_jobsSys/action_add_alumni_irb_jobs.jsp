@@ -113,6 +113,27 @@
 </nested-jim:TagSelect>	
 </td>
 </tr>
+
+<tr>
+<td class="FormFieldLeft">
+<jim:message key="alumni_irb_jobs.research_group" />
+</td>
+<td class="FormFieldRight">
+<nested-jim:TagSelect property="research_group.research_groupcode" >
+	<nested-jim:TagOptionsCollection name="_selec_research_group" label="_descripcion" value="research_groupcode" />
+</nested-jim:TagSelect>	
+</td>
+</tr>
+<tr>
+<td class="FormFieldLeft">
+<jim:message key="alumni_irb_jobs.research_group_2" />
+</td>
+<td class="FormFieldRight">
+<nested-jim:TagSelect property="research_group_2.research_groupcode" >
+	<nested-jim:TagOptionsCollection name="_selec_research_group" label="_descripcion" value="research_groupcode" />
+</nested-jim:TagSelect>	
+</td>
+</tr>
 </table>
 	</nested:nest>
 	</td>

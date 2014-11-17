@@ -24,6 +24,10 @@ public class Research_group implements Persistent{
 	//Indicates whereas this research_group is deleted
 	private boolean deleted=false;
 	
+	Set<Alumni_irb_jobs> ialumni_irb_jobs_3 = new HashSet<Alumni_irb_jobs>();
+	Set<Alumni_irb_jobs> ialumni_irb_jobs_4 = new HashSet<Alumni_irb_jobs>();
+
+	
 	//definition of the specific attributes
 	
 String description;
@@ -262,6 +266,14 @@ public void addIresearch_group_4(Professional iresearch_group){
 	this.iresearch_group_4.add(iresearch_group);
 }
 
+
+
+
+
+
+
+
+
 /**
  * @return the iresearch_group
  */
@@ -318,6 +330,76 @@ public void addIacademic_info_2(Academic_info iresearch_group){
 */
 public void removeIacademic_info_2(Academic_info iresearch_group){
 	this.iacademic_info_2.remove(iresearch_group);
+}
+
+/**
+ * @return the ialumni_irb_jobs
+ */
+public Set<Alumni_irb_jobs> getIalumni_irb_jobs_3() {
+	return ialumni_irb_jobs_3;
+}
+
+/**
+ * @param ialumni_irb_jobs
+ *            the ialumni_irb_jobs to set.
+ */
+public void setIalumni_irb_jobs_3(Set<Alumni_irb_jobs> ialumni_irb_jobs) {
+	this.ialumni_irb_jobs_3 = ialumni_irb_jobs;
+}
+
+/**
+ * Adds a Alumni_irb_jobs to the ialumni_irb_jobs set.
+ * 
+ * @param ialumni_irb_jobs
+ *            Alumni_irb_jobs to be added
+ */
+public void addIalumni_irb_jobs_3(Alumni_irb_jobs ialumni_irb_jobs) {
+	this.ialumni_irb_jobs_3.add(ialumni_irb_jobs);
+}
+
+/**
+ * Removes a Alumni_irb_jobs to the ialumni_irb_jobs set.
+ * 
+ * @param ialumni_irb_jobs
+ *            Alumni_irb_jobs to be removed
+ */
+public void removeIalumni_irb_jobs_3(Alumni_irb_jobs ialumni_irb_jobs) {
+	this.ialumni_irb_jobs_3.remove(ialumni_irb_jobs);
+}
+
+/**
+ * @return the ialumni_irb_jobs
+ */
+public Set<Alumni_irb_jobs> getIalumni_irb_jobs_4() {
+	return ialumni_irb_jobs_4;
+}
+
+/**
+ * @param ialumni_irb_jobs
+ *            the ialumni_irb_jobs to set.
+ */
+public void setIalumni_irb_jobs_4(Set<Alumni_irb_jobs> ialumni_irb_jobs) {
+	this.ialumni_irb_jobs_4 = ialumni_irb_jobs;
+}
+
+/**
+ * Adds a Alumni_irb_jobs to the ialumni_irb_jobs set.
+ * 
+ * @param ialumni_irb_jobs
+ *            Alumni_irb_jobs to be added
+ */
+public void addIalumni_irb_jobs_4(Alumni_irb_jobs ialumni_irb_jobs) {
+	this.ialumni_irb_jobs_4.add(ialumni_irb_jobs);
+}
+
+/**
+ * Removes a Alumni_irb_jobs to the ialumni_irb_jobs set.
+ * 
+ * @param ialumni_irb_jobs
+ *            Alumni_irb_jobs to be removed
+ */
+public void removeIalumni_irb_jobs_4(Alumni_irb_jobs ialumni_irb_jobs) {
+	this.ialumni_irb_jobs_4.remove(ialumni_irb_jobs);
 }
 
 

@@ -74,7 +74,6 @@
 			</key>
 			<one-to-many class="Alumni_irb_jobs" />
 		</set>
-
         <!-- categorias -->
 
     </class>
