@@ -15,6 +15,7 @@ import org.apache.struts.action.ActionMapping;
 import presentation.formbeans.oAlumni_irb_jobsSys.Action_add_alumni_irb_jobs_Form;
 import presentation.formbeans.objects.Alumni_irb_job_positions_Form;
 import presentation.formbeans.objects.Alumni_irb_jobs_Form;
+import presentation.formbeans.objects.Research_group_Form;
 import presentation.formbeans.objects.Unit_Form;
 import utils.Pair;
 import utils.actions.NavigationFunctions;
@@ -27,6 +28,7 @@ import bussineslogic.controlers.UseCaseFacade;
 import bussineslogic.objects.Alumni_irb_job_positions;
 import bussineslogic.objects.Alumni_irb_jobs;
 import bussineslogic.objects.Country;
+import bussineslogic.objects.Research_group;
 import bussineslogic.objects.Unit;
 
 /**
@@ -101,6 +103,10 @@ public class Action_add_alumni_irb_jobs extends Action {
 		Collections.sort(_selec_unit_Form, new ToStringComparator());
 		request.setAttribute("_selec_unit", _selec_unit_Form);
 		
+		Pair<Integer, List<Research_group>> _selec_research_group = UseCaseFacade.ObtainAllResearch_group(usercode, new ListConfigurator());
+		List<Research_group> _selec_research_group_Form = ExtendedBeanUtils.copyPropertiesToFormBean(_selec_research_group.getSecond(), locale, Research_group_Form.class);
+		Collections.sort(_selec_research_group_Form, new ToStringComparator());
+		request.setAttribute("_selec_research_group", _selec_research_group_Form);
 
 		/**
 		 * 6.5. We add the values of the the view-lists (if any) to the request.

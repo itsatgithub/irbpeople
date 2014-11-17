@@ -17,6 +17,10 @@ public class Alumni_irb_jobs_Form extends ValidatorFormAndAction {
 	private String end_date;
 	private Unit_IDForm unit;
 	private Unit_IDForm unit_2;
+	
+	private Research_group_IDForm research_group;
+	private Research_group_IDForm research_group_2;
+	
 	private Alumni_irb_job_positions_IDForm irb_job_positions;
 
 	public String getVersion() {
@@ -99,6 +103,26 @@ public class Alumni_irb_jobs_Form extends ValidatorFormAndAction {
 
 	public void setUnit_2(Unit_IDForm unit_2) {
 		this.unit_2 = unit_2;
+	}
+
+	public Research_group_IDForm getResearch_group() {
+		if (research_group == null)
+			research_group = new Research_group_IDForm();
+		return research_group;
+	}
+	
+	public void setResearch_group(Research_group_IDForm research_group) {
+		this.research_group = research_group;
+	}
+
+	public Research_group_IDForm getResearch_group_2() {
+		if (research_group_2 == null)
+			research_group_2 = new Research_group_IDForm();
+		return research_group_2;
+	}
+	
+	public void setResearch_group_2(Research_group_IDForm research_group) {
+		this.research_group_2 = research_group;
 	}
 
 	public Alumni_irb_job_positions_IDForm getIrb_job_positions() {

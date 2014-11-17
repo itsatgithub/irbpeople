@@ -131,6 +131,12 @@
                 <field name="irb_jobs_unit_2" visible="true" type-of-field="text">
                     <caption>Alumni irb jobs: Unit 2</caption>
                 </field>
+                <field name="irb_jobs_research_group" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Research Group</caption>
+                </field>
+                <field name="irb_jobs_research_group_2" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Research Group 2</caption>
+                </field>
                 <field name="irb_jobs_positions_description" visible="true" type-of-field="text">
                     <caption>Alumni irb jobs: Position</caption>
                 </field>
@@ -262,6 +268,12 @@
                 </field>
                 <field name="irb_jobs_unit_2" visible="true" type-of-field="select description from unit order by description">
                     <caption>Alumni irb jobs: Unit 2</caption>
+                </field>
+                <field name="irb_jobs_research_group" visible="true" type-of-field="select description from research_group order by description">
+                    <caption>Alumni irb jobs: Research Group</caption>
+                </field>
+                <field name="irb_jobs_research_group_2" visible="true" type-of-field="select description from research_group order by description">
+                    <caption>Alumni irb jobs: Research Group 2</caption>
                 </field>
                 <field name="irb_jobs_positions_description" visible="true" type-of-field="select short_description from alumni_irb_job_positions order by order_number">
                     <caption>Alumni irb jobs: Position</caption>
@@ -398,6 +410,12 @@
                 </field>
                 <field name="irb_jobs_unit_2" visible="true" type-of-field="text">
                     <caption>Alumni irb jobs: Unit 2</caption>
+                </field>
+                <field name="irb_jobs_research_group" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Research Group</caption>
+                </field>
+                <field name="irb_jobs_research_group_2" visible="true" type-of-field="text">
+                    <caption>Alumni irb jobs: Research Group 2</caption>
                 </field>
                 <field name="irb_jobs_positions_description" visible="true" type-of-field="text">
                     <caption>Alumni irb jobs: Position</caption>

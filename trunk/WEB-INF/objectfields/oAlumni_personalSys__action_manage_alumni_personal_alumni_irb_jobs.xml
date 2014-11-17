@@ -27,6 +27,12 @@
                 <field name="unit_2" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Unit 2</caption>
                 </field>                
+                <field name="research_group" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Research group</caption>
+                </field>                
+                <field name="research_group_2" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Research group 2</caption>
+                </field>                
                 <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Start date</caption>
                 </field>

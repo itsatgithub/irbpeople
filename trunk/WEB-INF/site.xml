@@ -4644,7 +4644,10 @@
 
 										<attribute-form label="Unit" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="unit" associationBO="unit" popUp="false" popUpAlways="false" />                                        
 										
-										<attribute-form label="Unit 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="unit_2" associationBO="unit" popUp="false" popUpAlways="false" />                                        
+										<attribute-form label="Unit 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="unit_2" associationBO="unit" popUp="false" popUpAlways="false" />
+										
+										<attribute-form label="Reseach group" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="research_group" associationBO="research_group" popUp="false" popUpAlways="false" />
+										<attribute-form label="Reseach group 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="research_group_2" associationBO="research_group" popUp="false" popUpAlways="false" />
 										
 										<attribute-form label="Start date" field="start_date" required="false" writable="true" object="alumni_irb_jobs" />
 
@@ -4735,6 +4738,9 @@
 										
 										<attribute-form label="Unit 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="unit_2" associationBO="unit" popUp="false" popUpAlways="false" />                                        
 										
+										<attribute-form label="Reseach group" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="research_group" associationBO="research_group" popUp="false" popUpAlways="false" />
+										<attribute-form label="Reseach group 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="research_group_2" associationBO="research_group" popUp="false" popUpAlways="false" />
+										
 										<attribute-form label="Start date" field="start_date" required="false" writable="true" object="alumni_irb_jobs" />
 
 										<attribute-form label="End date" field="end_date" required="false" writable="true" object="alumni_irb_jobs" />
@@ -4782,6 +4788,9 @@
 										<attribute-form label="Unit" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="unit" associationBO="unit" popUp="false" popUpAlways="false" />                                        
 										
 										<attribute-form label="Unit 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="unit_2" associationBO="unit" popUp="false" popUpAlways="false" />                                        
+										
+										<attribute-form label="Reseach group" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="research_group" associationBO="research_group" popUp="false" popUpAlways="false" />
+										<attribute-form label="Reseach group 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_irb_jobs" associationName="research_group_2" associationBO="research_group" popUp="false" popUpAlways="false" />
 										
 										<attribute-form label="Start date" field="start_date" required="false" writable="true" object="alumni_irb_jobs" />
 
@@ -12481,6 +12490,8 @@
                                             <field name="description" object="alumni_irb_job_positions" association="irb_job_positions" associationDirect="direct" />
 											<field name="description" object="unit" association="unit" associationDirect="direct" />
 											<field name="description" object="unit" association="unit_2" associationDirect="direct" />
+											<field name="description" object="reseach_group" association="reseach_group" associationDirect="direct" />
+											<field name="description" object="reseach_group" association="reseach_group_2" associationDirect="direct" />
                                         </list>
                                     </form-group>
 								</form>
