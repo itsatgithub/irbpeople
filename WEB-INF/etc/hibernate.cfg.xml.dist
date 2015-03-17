@@ -11,9 +11,9 @@
 
 <!-- sqlserver 2005 jdbc driver -->
 <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-<property name="hibernate.connection.url">jdbc:mysql://irbsvr3.irb.pcb.ub.es:3306/irbdb?zeroDateTimeBehavior=convertToNull</property>
-<property name="hibernate.connection.username">root</property>
-<property name="hibernate.connection.password">X24mnt32</property>
+<property name="hibernate.connection.url">jdbc:mysql://server:3306/irbdb?zeroDateTimeBehavior=convertToNull</property>
+<property name="hibernate.connection.username">username</property>
+<property name="hibernate.connection.password">password</property>
 <property name="hibernate.show.sql">false</property>
 
 
