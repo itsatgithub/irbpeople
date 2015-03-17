@@ -1,6 +1,6 @@
 #! /bin/sh
 
-TOMCATDIR=/usr/share/tomcat5
+TOMCATDIR=/usr/share/tomcat5.5
 LIBDIR=../lib
 
 CLASSPATH=.:$TOMCATDIR/common/lib/servlet-api.jar:$TOMCATDIR/common/lib/jsp-api.jar

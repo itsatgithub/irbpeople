@@ -8,8 +8,8 @@ rrhhRecipients=enrique.cano@justinmind.com
 #El mismo para todos, puede ser es,en o ct.
 rrhhLanguage=en
 
-#Esto es un path + filename (por ejemplo una dirección de red)
-#se tratará como un string java o sea que hay que escapar con \ los caracteres reservados.
+#Esto es un path + filename (por ejemplo una direcciï¿½n de red)
+#se tratarï¿½ como un string java o sea que hay que escapar con \ los caracteres reservados.
 endOfContractInstructionsFileName=\\\\jim\\software\\esto_es_una_prueba.pdf
 
 ###############################################################################
@@ -18,15 +18,15 @@ endOfContractInstructionsFileName=\\\\jim\\software\\esto_es_una_prueba.pdf
 ldapActive=no
 
 #nombre del host al que nos vamos a conectar mediante LDAP
-# en producción será: axaptaserver.irb.pcb.ub.es
-#hostName=axaptaserver.irb.pcb.ub.es
+# en producciï¿½n serï¿½: demo
+#hostName=demo
 hostName=jim
 #hostPort=389
 #hostVersion=3
 
 #para hacer el login usamos el formato 'username@domainname'
-# en producción será: axapta.irb.pcb.ub.es
-#domainName=axapta.irb.pcb.ub.es
+# en producciï¿½n serï¿½: demo
+#domainName=demo
 domainName=jim.com
 
 domainAdminUser=admin
@@ -41,7 +41,7 @@ getLDAPFullName=no
 userLoginAttribute=sAMAccountName
 
 #Atributo que contiene el rol del usuario en IRBPeople
-# en producción será: irbrole
+# en producciï¿½n serï¿½: irbrole
 irbpeopleRoleAttribute=homePhone
 
 searchBase=dc=jim, dc=com
@@ -53,16 +53,16 @@ searchBase=dc=jim, dc=com
 ###############################################################################
 sshActive=no
 
-sshHostName=irbsvr4.irb.pcb.ub.es
-sshUsername=irbpeople
-sshPassword=T24mV298
+sshHostName=demo
+sshUsername=demo
+sshPassword=demo
 sshFilenameWithPath=/dades/ldif/irbpeople_{0,date,yyyy-MM-dd}_{0,time,HH-mm-ss}.ldif
 sshCommand=./iceimport.sh {0}
 
-# configuración ssh en producción
-# sshHostName=irbsvr4.irb.pcb.ub.es
-# sshUsername=irbpeople
-# sshPassword=T24mV298 
+# configuraciï¿½n ssh en producciï¿½n
+# sshHostName=demo
+# sshUsername=demo
+# sshPassword=demo 
 
 ###############################################################################
 ### END OF CONTRACTS REMAINDER SECTION                                      ###
