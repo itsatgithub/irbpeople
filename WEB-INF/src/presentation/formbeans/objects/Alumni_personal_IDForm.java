@@ -29,6 +29,12 @@ public class Alumni_personal_IDForm extends ValidatorFormAndAction {
 	private String pubmedid;
 	private String verified;
 	private String show_data;
+	
+	private String remarks;
+	private String skype;
+	private String cellphone;
+	private String deceased;
+	private String communications_wanted;
 
 	public Alumni_personal_IDForm getAlumni_personal() {
 		return this;
@@ -234,6 +240,46 @@ public class Alumni_personal_IDForm extends ValidatorFormAndAction {
 
 	public void setShow_data(String show_data) {
 		this.show_data = show_data;
+	}
+	
+	public String getRemarks() {
+		return remarks;
+	}
+
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+
+	public String getSkype() {
+		return skype;
+	}
+
+	public void setSkype(String skype) {
+		this.skype = skype;
+	}
+
+	public String getCellphone() {
+		return cellphone;
+	}
+
+	public void setCellphone(String cellphone) {
+		this.cellphone = cellphone;
+	}
+
+	public String getDeceased() {
+		return deceased;
+	}
+
+	public void setDeceased(String deceased) {
+		this.deceased = deceased;
+	}
+
+	public String getCommunications_wanted() {
+		return communications_wanted;
+	}
+
+	public void setCommunications_wanted(String communications_wanted) {
+		this.communications_wanted = communications_wanted;
 	}
 
 }

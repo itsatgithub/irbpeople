@@ -16910,6 +16910,12 @@ public class UseCase {
 	    alumni_personal.setVerified(TOAlumni_personal.isVerified());
 	    alumni_personal.setShow_data(TOAlumni_personal.isShow_data());
 	    
+	    alumni_personal.setRemarks(TOAlumni_personal.getRemarks());
+	    alumni_personal.setSkype(TOAlumni_personal.getSkype());
+	    alumni_personal.setCellphone(TOAlumni_personal.getCellphone());
+	    alumni_personal.setDeceased(TOAlumni_personal.isDeceased());
+	    alumni_personal.setCommunications_wanted(TOAlumni_personal.isCommunications_wanted());
+	    
 
 	   /** 5. We set the code to the new instance * */
 	    if (TOAlumni_personal.getCode() != null
@@ -17087,6 +17093,12 @@ public class UseCase {
 	    alumni_personal.setPubmedid(TOAlumni_personal.getPubmedid());
 	    alumni_personal.setVerified(TOAlumni_personal.isVerified());
 	    alumni_personal.setShow_data(TOAlumni_personal.isShow_data());
+	    
+	    alumni_personal.setRemarks(TOAlumni_personal.getRemarks());
+	    alumni_personal.setSkype(TOAlumni_personal.getSkype());
+	    alumni_personal.setCellphone(TOAlumni_personal.getCellphone());
+	    alumni_personal.setDeceased(TOAlumni_personal.isDeceased());
+	    alumni_personal.setCommunications_wanted(TOAlumni_personal.isCommunications_wanted());
 
 	    
 	    /**
@@ -23161,6 +23173,12 @@ public class UseCase {
     	alumni_personal.setResearcherid(external_alumni_personal.getResearcherid());
     	alumni_personal.setVerified(external_alumni_personal.isVerified());
     	alumni_personal.setShow_data(external_alumni_personal.isShow_data());
+    	
+    	alumni_personal.setRemarks(external_alumni_personal.getRemarks());
+	    alumni_personal.setSkype(external_alumni_personal.getSkype());
+	    alumni_personal.setCellphone(external_alumni_personal.getCellphone());
+	    alumni_personal.setDeceased(external_alumni_personal.isDeceased());
+	    alumni_personal.setCommunications_wanted(external_alumni_personal.isCommunications_wanted());
     	    	
     	// External jobs and communications
     	Set<Alumni_communications> communications = external_alumni_personal.getIalumni_communications();

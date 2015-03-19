@@ -49,6 +49,12 @@ public class Alumni_personal implements Persistent {
 	private Set<Alumni_communications> ialumni_communications = new HashSet<Alumni_communications>();
 	private Set<Alumni_external_jobs> ialumni_external_jobs = new HashSet<Alumni_external_jobs>();
 	private Set<Alumni_irb_jobs> ialumni_irb_jobs = new HashSet<Alumni_irb_jobs>();
+	
+	private String remarks;
+	private String skype;
+	private String cellphone;
+	private boolean deceased;
+	private boolean communications_wanted;
 
 	/**
 	 * Default Constructor which creates an empty alumni_personal
@@ -465,6 +471,46 @@ public class Alumni_personal implements Persistent {
 			return "";
 
 		return getCode();
+	}
+	
+	public String getRemarks() {
+		return remarks;
+	}
+
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+
+	public String getSkype() {
+		return skype;
+	}
+
+	public void setSkype(String skype) {
+		this.skype = skype;
+	}
+
+	public String getCellphone() {
+		return cellphone;
+	}
+
+	public void setCellphone(String cellphone) {
+		this.cellphone = cellphone;
+	}
+
+	public boolean isDeceased() {
+		return deceased;
+	}
+
+	public void setDeceased(boolean deceased) {
+		this.deceased = deceased;
+	}
+
+	public boolean isCommunications_wanted() {
+		return communications_wanted;
+	}
+
+	public void setCommunications_wanted(boolean communications_wanted) {
+		this.communications_wanted = communications_wanted;
 	}
 
 }

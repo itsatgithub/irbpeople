@@ -35,11 +35,14 @@
                 <field name="facebook" visible="true" type-of-field="text">
                     <caption>Alumni personal: Facebook</caption>
                 </field>
+                <field name="twitter" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Twitter</caption>
+                </field>
                 <field name="linkedin" visible="true" type-of-field="text">
                     <caption>Alumni personal: Linkedin</caption>
                 </field>
-                <field name="twitter" visible="true" type-of-field="text">
-                    <caption>Alumni personal: Twitter</caption>
+                <field name="skype" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Skype</caption>
                 </field>
                 <field name="keywords" visible="true" type-of-field="text">
                     <caption>Alumni personal: Keywords</caption>
@@ -65,6 +68,18 @@
                 <field name="show_data" visible="true" type-of-field="text">
                     <caption>Alumni personal: Show data</caption>
                 </field>
+                <field name="remarks" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Remarks</caption>
+                </field>
+                <field name="cellphone" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Cellphone</caption>
+                </field>
+                <field name="deceased" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Deceased</caption>
+                </field>
+                <field name="communications_wanted" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Communications wanted</caption>
+                </field>                
                 <field name="gender" visible="true" type-of-field="text">
                     <caption>Alumni personal: Gender</caption>
                 </field>
@@ -172,11 +187,14 @@
                 <field name="facebook" visible="true" type-of-field="text">
                     <caption>Alumni personal: Facebook</caption>
                 </field>
+                <field name="twitter" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Twitter</caption>
+                </field>
                 <field name="linkedin" visible="true" type-of-field="text">
                     <caption>Alumni personal: Linkedin</caption>
                 </field>
-                <field name="twitter" visible="true" type-of-field="text">
-                    <caption>Alumni personal: Twitter</caption>
+                <field name="skype" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Skype</caption>
                 </field>
                 <field name="keywords" visible="true" type-of-field="text">
                     <caption>Alumni personal: Keywords</caption>
@@ -201,6 +219,18 @@
                 </field>
                 <field name="show_data" visible="true" type-of-field="boolean">
                     <caption>Alumni personal: Show data</caption>
+                </field>
+                <field name="remarks" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Remarks</caption>
+                </field>
+                <field name="cellphone" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Cellphone</caption>
+                </field>
+                <field name="deceased" visible="true" type-of-field="boolean">
+                    <caption>Alumni personal: Deceased</caption>
+                </field>
+                <field name="communications_wanted" visible="true" type-of-field="boolean">
+                    <caption>Alumni personal: Communications wanted</caption>
                 </field>
                 <field name="gender" visible="true" type-of-field="select description from gender order by description">
                     <caption>Alumni personal: Gender</caption>
@@ -312,11 +342,14 @@
                 <field name="facebook" visible="true" type-of-field="text">
                     <caption>Alumni personal: Facebook</caption>
                 </field>
+                <field name="twitter" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Twitter</caption>
+                </field>
                 <field name="linkedin" visible="true" type-of-field="text">
                     <caption>Alumni personal: Linkedin</caption>
                 </field>
-                <field name="twitter" visible="true" type-of-field="text">
-                    <caption>Alumni personal: Twitter</caption>
+                <field name="skype" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Skype</caption>
                 </field>
                 <field name="keywords" visible="true" type-of-field="text">
                     <caption>Alumni personal: Keywords</caption>
@@ -341,6 +374,18 @@
                 </field>
                 <field name="show_data" visible="true" type-of-field="text">
                     <caption>Alumni personal: Show data</caption>
+                </field>
+                <field name="remarks" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Remarks</caption>
+                </field>
+                <field name="cellphone" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Cellphone</caption>
+                </field>
+                <field name="deceased" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Deceased</caption>
+                </field>
+                <field name="communications_wanted" visible="true" type-of-field="text">
+                    <caption>Alumni personal: Communications wanted</caption>
                 </field>
                 <field name="gender" visible="true" type-of-field="text">
                     <caption>Alumni personal: Gender</caption>

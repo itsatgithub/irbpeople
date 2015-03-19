@@ -139,10 +139,24 @@
 											<nested:write property="url" />
 										</td>
 										<td class="FormFieldLeft">
+											<jim:message key="alumni_personal.cellphone" />
+										</td>
+										<td class="FormFieldRight">
+											<nested:write property="cellphone" />
+										</td>
+									</tr>
+									<tr>
+										<td class="FormFieldLeft">
 											<jim:message key="alumni_personal.facebook" />
 										</td>
 										<td class="FormFieldRight">
 											<nested:write property="facebook" />
+										</td>
+										<td class="FormFieldLeft">
+											<jim:message key="alumni_personal.twitter" />
+										</td>
+										<td class="FormFieldRight">
+											<nested:write property="twitter" />
 										</td>
 									</tr>
 									<tr>
@@ -153,10 +167,10 @@
 											<nested:write property="linkedin" />
 										</td>
 										<td class="FormFieldLeft">
-											<jim:message key="alumni_personal.twitter" />
+											<jim:message key="alumni_personal.skype" />
 										</td>
 										<td class="FormFieldRight">
-											<nested:write property="twitter" />
+											<nested:write property="skype" />
 										</td>
 									</tr>
 									<tr>
@@ -225,12 +239,38 @@
 										<td class="BlankSeparator"></td>
 									</tr>
 									<tr>
+										<td class="FormFieldLeft">
+											<jim:message key="alumni_personal.deceased" />
+										</td>
+										<td class="FormFieldRight">
+											<nested:write property="deceased" />
+										</td>
+										<td class="FormFieldLeft">
+											<jim:message key="alumni_personal.communications_wanted" />
+										</td>
+										<td class="FormFieldRight">
+											<nested:write property="communications_wanted" />
+										</td>
+									</tr>
+									<tr>
+										<td class="FormSeparator"></td>
+										<td class="BlankSeparator"></td>
+									</tr>
+									<tr>
 										<td class="FormFieldLeft"><jim:message
 												key="alumni_personal.communications" /></td>
 										<td class="FormFieldRight" colspan="3">
 											<nested:write property="alumni_communications_string" />												
 										</td>										
 									</tr>
+									<tr>
+										<td class="FormFieldLeft"><jim:message
+												key="alumni_personal.remarks" /></td>
+										<td class="FormFieldRight" colspan="3">
+											<nested:write property="remarks" />	
+										</td>										
+									</tr>
+									
 									<tr>									
 										<td class="FormSeparator"></td>
 										<td class="BlankSeparator"></td>
