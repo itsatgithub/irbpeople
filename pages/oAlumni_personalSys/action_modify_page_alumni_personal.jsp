@@ -137,9 +137,23 @@
 										<td class="FormFieldRight"><nested:text property="url"
 												maxlength="100" /></td>
 										<td class="FormFieldLeft"><jim:message
+												key="alumni_personal.cellphone" /></td>
+										<td class="FormFieldRight"><nested:text
+												property="cellphone" maxlength="20" /></td>
+									</tr>
+									<tr>
+										<td class="FormSeparator"></td>
+										<td class="BlankSeparator"></td>
+									</tr>
+									<tr>
+										<td class="FormFieldLeft"><jim:message
 												key="alumni_personal.facebook" /></td>
 										<td class="FormFieldRight"><nested:text
 												property="facebook" maxlength="100" /></td>
+										<td class="FormFieldLeft"><jim:message
+												key="alumni_personal.twitter" /></td>
+										<td class="FormFieldRight"><nested:text
+												property="twitter" maxlength="100" /></td>										
 									</tr>
 									<tr>
 										<td class="FormSeparator"></td>
@@ -151,10 +165,10 @@
 										<td class="FormFieldRight"><nested:text
 												property="linkedin" maxlength="100" /></td>
 										<td class="FormFieldLeft"><jim:message
-												key="alumni_personal.twitter" /></td>
+												key="alumni_personal.skype" /></td>
 										<td class="FormFieldRight"><nested:text
-												property="twitter" maxlength="100" /></td>
-									</tr>
+												property="skype" maxlength="100" /></td>										
+									</tr>									
 									<tr>
 										<td class="FormSeparator"></td>
 										<td class="BlankSeparator"></td>
@@ -217,12 +231,32 @@
 									</tr>
 									<tr>
 										<td class="FormFieldLeft"><jim:message
+												key="alumni_personal.deceased" /></td>
+										<td class="FormFieldRight"><nested-jim:booleanSelector
+												property="deceased" /></td>
+										<td class="FormFieldLeft"><jim:message
+												key="alumni_personal.communications_wanted" /></td>
+										<td class="FormFieldRight"><nested-jim:booleanSelector
+												property="communications_wanted" /></td>
+									</tr>
+									<tr>
+										<td class="FormSeparator"></td>
+										<td class="BlankSeparator"></td>
+									</tr>									
+									<tr>
+										<td class="FormFieldLeft"><jim:message
 												key="alumni_personal.communications" /></td>
 										<td class="FormFieldRight" colspan="3">
 											<nested-jim:TagSelect property="alumni_communications" multiple="true">
 												<nested-jim:TagOptionsCollection  name="_selec_alumni_communications" label="_descripcion" value="alumni_communicationscode" />
 											</nested-jim:TagSelect>
 										</td>										
+									</tr>
+									<tr>
+										<td class="FormFieldLeft"><jim:message
+												key="alumni_personal.remarks" /></td>
+										<td class="FormFieldRight" colspan="3"><nested:textarea
+												property="remarks" /></td>										
 									</tr>
 								</table>
 							</td>

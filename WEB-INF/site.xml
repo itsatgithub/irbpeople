@@ -12231,6 +12231,13 @@
 										
 										<attribute-form label="verified" field="verified" required="false" writable="true" object="alumni_personal" />						
 										<attribute-form label="show_data" field="show_data" required="false" writable="true" object="alumni_personal" />
+										
+										
+										<attribute-form label="remarks" field="remarks" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="skype" field="skype" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="cellphone" field="cellphone" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="deceased" field="deceased" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="communications_wanted" field="communications_wanted" required="false" writable="true" object="alumni_personal" />
 									</form-group>				
 								</form>
 							</forms>
@@ -12568,6 +12575,12 @@
 										
 										<attribute-form label="verified" field="verified" required="false" writable="true" object="alumni_personal" />						
 										<attribute-form label="show_data" field="show_data" required="false" writable="true" object="alumni_personal" />
+										
+										<attribute-form label="remarks" field="remarks" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="skype" field="skype" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="cellphone" field="cellphone" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="deceased" field="deceased" required="false" writable="true" object="alumni_personal" />
+										<attribute-form label="communications_wanted" field="communications_wanted" required="false" writable="true" object="alumni_personal" />
 									</form-group>					
 								</form>
 							</forms>

@@ -77,6 +77,21 @@
 			<column name="show_data" />
 		</property>
 		
+		<property name="remarks" type="string">
+			<column name="remarks" length="2550"/>
+		</property>
+		<property name="skype" type="string">
+			<column name="skype" length="100" />
+		</property>
+		<property name="cellphone" type="string">
+			<column name="cellphone" length="20" />
+		</property>
+		<property name="deceased" type="boolean">
+			<column name="deceased" />
+		</property>
+		<property name="communications_wanted" type="boolean">
+			<column name="communications_wanted" />
+		</property>
 		<set name="ialumni_communications" table="alumni_personal_communications" inverse="false" lazy="false" fetch="select">
             <key>
                 <column name="alumni_personalcode" not-null="true" />
