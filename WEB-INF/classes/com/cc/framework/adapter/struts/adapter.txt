@@ -1,0 +1,1 @@
+This is the cc-framework struts adapter for struts version 1.2

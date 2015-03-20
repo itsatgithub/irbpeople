@@ -102,7 +102,8 @@
         <property name="validationCode" type="string">
             <column name="validationCode" length="100" />
         </property>
-
+		<property name="access_scientific_publications" type="boolean"><column name="access_scientific_publications" /></property>
+		
         <!-- Associacion mappings -->
         <many-to-one name="birth_country" class="Country" column="birth_country" not-null="false" />
 
