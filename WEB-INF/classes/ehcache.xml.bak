@@ -1,0 +1,330 @@
+<ehcache>
+
+	<defaultCache
+		maxElementsInMemory="10000"
+		eternal="false"
+		timeToIdleSeconds="120"
+		timeToLiveSeconds="120"
+		overflowToDisk="false"
+		diskPersistent="false"
+		diskExpiryThreadIntervalSeconds="120"
+		memoryStoreEvictionPolicy="LRU"
+	/>
+
+	<cache name="bussineslogic.objects.ApplicationPreferences"
+		maxElementsInMemory="2"
+		eternal="true"
+		overflowToDisk="false"
+	/>
+
+
+
+	<!--  a partir de aquí son read-write y, por lo tanto, no
+eternal -->
+
+	<cache name="bussineslogic.objects.Personal"
+		maxElementsInMemory="2000"
+		eternal="false"
+		overflowToDisk="false"
+	/>
+ 
+	<cache name="bussineslogic.objects.Beancode"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+    
+    <cache name="bussineslogic.objects.Entity"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+    
+    <cache name="bussineslogic.objects.Language"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.MainTable"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.Permission"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.TypeInstance"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.applicationPreferences"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.area"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.audit_log"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.auditmessage"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.auditmessagetype"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.bank"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.benefits"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.category"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.child"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.column"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.compensation"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.country"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.customList"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.education"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.filter"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.filterType"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.funding_detail"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.gender"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.grant"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.grant_concession"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.holiday"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.irb_budget"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.irbholiday"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.irbholidayinfo"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.location"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.marital_status"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.nationality"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.notirb_active_personal"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.orderBy"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.organization_unit"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.payment"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.payroll_institution"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.personal"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.personalPhoto"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.personal_comment"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.personalstate"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.position"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.professional"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.report"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.reportparameter"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.research_group"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.type_of_benefit"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.type_of_compensation"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.type_of_contract"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.type_of_education"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.type_of_grant"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.type_of_holidays"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.type_of_institution"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.unit"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.usuario"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.views"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.work_experience"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+        	<cache name="bussineslogic.objects.working_hours"
+        maxElementsInMemory="100"
+        eternal="false"
+        overflowToDisk="false"
+        />
+
+
+</ehcache>
