@@ -80,6 +80,8 @@ Set<Compensation> icompensation_personal=new HashSet<Compensation>();
 Set<Research_group> isupervisor=new HashSet<Research_group>();
 Set<Unit> isupervisor_unit=new HashSet<Unit>();
 
+boolean access_scientific_publications;
+
 //	atributs per a validacio del supervisor
 
 	String validationCode;
@@ -1069,5 +1071,14 @@ public void removeIsupervisor_unit(Unit isupervisor_unit){
 	public void setValidationCode(String validationCode) {
 		this.validationCode = validationCode;
 	}
+	
+	public boolean isAccess_scientific_publications(){
+		return access_scientific_publications;
+	}
+
+	public void setAccess_scientific_publications(boolean access_scientific_publications){
+		this.access_scientific_publications = access_scientific_publications;
+	}
+
 
 }

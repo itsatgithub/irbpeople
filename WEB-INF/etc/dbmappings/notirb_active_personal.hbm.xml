@@ -63,7 +63,7 @@
 </property><property name="end_of_contract_email" type="string">
 	<column name="end_of_contract_email" length="100" />
 </property>
-
+<property name="access_scientific_publications" type="boolean"><column name="access_scientific_publications" /></property>
 <property name="validationCode" type="string">
 	<column name="validationCode" length="100" />
 </property>

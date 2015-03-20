@@ -98,6 +98,8 @@ public class Personal_Form extends ValidatorFormAndAction {
 
 	private String mostAdvancedEducation = null;
 
+	private String access_scientific_publications = null;
+	
 	public String getValidationCode() {
 		return validationCode;
 	}
@@ -505,6 +507,14 @@ public class Personal_Form extends ValidatorFormAndAction {
 
 	public void setMostAdvancedEducation(String mostAdvancedEducation) {
 		this.mostAdvancedEducation = mostAdvancedEducation;
+	}
+	
+	public String getAccess_scientific_publications(){
+		return access_scientific_publications;
+	}
+
+	public void setAccess_scientific_publications(String access_scientific_publications){
+		this.access_scientific_publications = access_scientific_publications;
 	}
 
 }

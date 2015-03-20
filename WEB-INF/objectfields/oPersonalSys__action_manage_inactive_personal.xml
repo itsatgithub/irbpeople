@@ -70,6 +70,9 @@
                 <field name="personal.research_project" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Research project</caption>
                 </field>
+                <field name="personal.access_scientific_publications" visible="true" default="true" type-of-field="boolean" size="10">
+				    <caption language="en">Access Scientific Publications</caption>
+				</field>
                 <field name="personal.sponsoring_agency" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="en">Sponsoring agency</caption>
                 </field>
@@ -168,7 +171,10 @@
                 </field>
                 <field name="personal.bic" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="ct">BIC/SWIFT</caption>
-                </field>                
+                </field>             
+                <field name="personal.access_scientific_publications" visible="true" default="true" type-of-field="boolean" size="10">
+				    <caption language="ct">Access Scientific Publications</caption>
+				</field>   
                 <field name="personal.research_project" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="ct">Projecte de recerca</caption>
                 </field>
@@ -274,6 +280,9 @@
                 <field name="personal.research_project" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="es">Proyecto de investigación</caption>
                 </field>
+                <field name="personal.access_scientific_publications" visible="true" default="true" type-of-field="boolean" size="10">
+				    <caption language="es">Access Scientific Publications</caption>
+				</field>
                 <field name="personal.sponsoring_agency" visible="true" default="true" type-of-field="text" size="20">
                     <caption language="es">Agencia patrocinadora</caption>
                 </field>

@@ -145,6 +145,8 @@ public class Personal implements Persistent {
 	// atributs per a validacio del supervisor
 
 	String validationCode;
+	
+	boolean access_scientific_publications;
 
 	/**
 	 * Default Constructor which creates an empty personal
@@ -1361,5 +1363,14 @@ public class Personal implements Persistent {
 	public void setSecond_affiliation(String second_affiliation) {
 		this.second_affiliation = second_affiliation;
 	}
+	
+	public boolean isAccess_scientific_publications(){
+		return access_scientific_publications;
+	}
+
+	public void setAccess_scientific_publications(boolean access_scientific_publications){
+		this.access_scientific_publications = access_scientific_publications;
+	}
+
 
 }
