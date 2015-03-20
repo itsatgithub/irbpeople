@@ -64,6 +64,8 @@ public class Personal_IDForm extends ValidatorFormAndAction {
 	private String second_affiliation = null;
 
 	private Personalstate_IDForm state = null;
+	
+	private String access_scientific_publications = null;
 
 	public Personal_IDForm getPersonal() {
 		return this;
@@ -312,6 +314,14 @@ public class Personal_IDForm extends ValidatorFormAndAction {
 
 	public String getSecond_affiliation() {
 		return second_affiliation;
+	}
+	
+	public String getAccess_scientific_publications(){
+		return access_scientific_publications;
+	}
+
+	public void setAccess_scientific_publications(String access_scientific_publications){
+		this.access_scientific_publications = access_scientific_publications;
 	}
 
 }

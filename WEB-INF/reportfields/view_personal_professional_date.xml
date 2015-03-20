@@ -55,7 +55,8 @@
                 </field>
                 <field name="bic" visible="true" type-of-field="text">
                     <caption >Employee: BIC/SWIFT</caption>
-                </field>                
+                </field>               
+                
                 <field name="research_project" visible="true" type-of-field="text">
                     <caption >Personal: Research project</caption>
                 </field>
@@ -125,6 +126,9 @@
                 <field name="max_education" visible="true" type-of-field="text">
                     <caption >Employee: Most important academic title</caption>
                 </field>
+                <field name="access_scientific_publications" visible="true" type-of-field="text">
+				    <caption>Employee: Access Scientific Publications</caption>
+				</field>
                 <field name="state" visible="true" type-of-field="text">
                     <caption >Personal: State</caption>
                 </field>
@@ -334,7 +338,8 @@
                 </field>
                 <field name="bic" visible="true" type-of-field="text">
                     <caption >Employee: BIC/SWIFT</caption>
-                </field>                
+                </field>               
+                
                 <field name="research_project" visible="true" type-of-field="text">
                     <caption >Personal: Research project</caption>
                 </field>
@@ -404,6 +409,9 @@
                 <field name="max_education" visible="true" type-of-field="select description from type_of_education order by `order`">
                     <caption >Employee: Most important academic title</caption>
                 </field>
+                <field name="access_scientific_publications" visible="true" type-of-field="boolean">
+				    <caption>Employee: Access Scientific Publications</caption>
+				</field>
                 <field name="state" visible="true" type-of-field="select description from personalstate order by description">
                     <caption >Personal: State</caption>
                 </field>
@@ -621,7 +629,8 @@
                 </field>
                 <field name="bic" visible="true" type-of-field="text">
                     <caption >Employee: BIC/SWIFT</caption>
-                </field>                
+                </field>               
+                
                 <field name="research_project" visible="true" type-of-field="text">
                     <caption >Personal: Research project</caption>
                 </field>
@@ -691,6 +700,9 @@
                 <field name="max_education" visible="true" type-of-field="text">
                     <caption >Employee: Most important academic title</caption>
                 </field>
+                <field name="access_scientific_publications" visible="true" type-of-field="text">
+				    <caption>Employee: Access Scientific Publications</caption>
+				</field>
                 <field name="state" visible="true" type-of-field="text">
                     <caption >Personal: State</caption>
                 </field>

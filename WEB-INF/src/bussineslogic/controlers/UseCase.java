@@ -14072,6 +14072,8 @@ public class UseCase {
 
 	    personal.setBank_account(TOPersonal.getBank_account());
 	    
+	    personal.setAccess_scientific_publications(TOPersonal.isAccess_scientific_publications());
+	    
 	    personal.setBic(TOPersonal.getBic());
 
 	    personal.setResearch_project(TOPersonal.getResearch_project());
@@ -14537,6 +14539,8 @@ public class UseCase {
 	    }
 
 	    personal.setBank_account(TOPersonal.getBank_account());
+	    
+	    personal.setAccess_scientific_publications(TOPersonal.isAccess_scientific_publications());
 	    
 	    personal.setBic(TOPersonal.getBic());
 

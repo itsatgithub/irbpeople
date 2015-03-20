@@ -285,6 +285,8 @@
 								</td>
 							</tr>
 							<tr>
+								<td class="FormFieldLeft"><jim:message key="personal.access_scientific_publications" /></td>
+								<td class="FormFieldRight"><nested-jim:booleanSelector property="access_scientific_publications" /></td>
 								<td class="FormSeparator"></td>
 								<td class="BlankSeparator"></td>
 							</tr>

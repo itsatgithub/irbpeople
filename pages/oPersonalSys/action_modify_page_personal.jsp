@@ -520,7 +520,8 @@
 	<td class="FormFieldRight">	
 		<nested:write property="mostAdvancedEducation"/>
 	</td>
-	<td colspan="2">&nbsp;</td>	
+	<td class="FormFieldLeft"><jim:message key="personal.access_scientific_publications" /></td>
+	<td class="FormFieldRight"><nested-jim:booleanSelector property="access_scientific_publications" /></td>
 </tr>
 <tr>
 	<td class="FormSeparator"></td>
