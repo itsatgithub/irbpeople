@@ -36,6 +36,9 @@ public class Unit implements Persistent {
 	Set<Alumni_irb_jobs> ialumni_irb_jobs = new HashSet<Alumni_irb_jobs>();
 	Set<Alumni_irb_jobs> ialumni_irb_jobs_2 = new HashSet<Alumni_irb_jobs>();
 
+	Set<Alumni_directory_data> ialumni_directory_data = new HashSet<Alumni_directory_data>();
+	Set<Alumni_directory_data> ialumni_directory_data_2 = new HashSet<Alumni_directory_data>();
+
 	/**
 	 * Default Constructor which creates an empty unit
 	 */
@@ -398,6 +401,76 @@ public class Unit implements Persistent {
 		this.ialumni_irb_jobs_2.remove(ialumni_irb_jobs);
 	}
 
+	/**
+	 * @return the ialumni_directory_data
+	 */
+	public Set<Alumni_directory_data> getIalumni_directory_data() {
+		return ialumni_directory_data;
+	}
+
+	/**
+	 * @param ialumni_directory_data
+	 *            the ialumni_directory_data to set.
+	 */
+	public void setIalumni_directory_data(Set<Alumni_directory_data> ialumni_directory_data) {
+		this.ialumni_directory_data = ialumni_directory_data;
+	}
+
+	/**
+	 * Adds a Alumni_directory_data to the ialumni_directory_data set.
+	 * 
+	 * @param ialumni_directory_data
+	 *            Alumni_directory_data to be added
+	 */
+	public void addIalumni_directory_data(Alumni_directory_data ialumni_directory_data) {
+		this.ialumni_directory_data.add(ialumni_directory_data);
+	}
+
+	/**
+	 * Removes a Alumni_directory_data to the ialumni_directory_data set.
+	 * 
+	 * @param ialumni_directory_data
+	 *            Alumni_directory_data to be removed
+	 */
+	public void removeIalumni_directory_data(Alumni_directory_data ialumni_directory_data) {
+		this.ialumni_directory_data.remove(ialumni_directory_data);
+	}
+
+	/**
+	 * @return the ialumni_directory_data
+	 */
+	public Set<Alumni_directory_data> getIalumni_directory_data_2() {
+		return ialumni_directory_data_2;
+	}
+
+	/**
+	 * @param ialumni_directory_data
+	 *            the ialumni_directory_data to set.
+	 */
+	public void setIalumni_directory_data_2(Set<Alumni_directory_data> ialumni_directory_data) {
+		this.ialumni_directory_data_2 = ialumni_directory_data;
+	}
+
+	/**
+	 * Adds a Alumni_directory_data to the ialumni_directory_data set.
+	 * 
+	 * @param ialumni_directory_data
+	 *            Alumni_directory_data to be added
+	 */
+	public void addIalumni_directory_data_2(Alumni_directory_data ialumni_directory_data) {
+		this.ialumni_directory_data_2.add(ialumni_directory_data);
+	}
+
+	/**
+	 * Removes a Alumni_directory_data to the ialumni_directory_data set.
+	 * 
+	 * @param ialumni_directory_data
+	 *            Alumni_directory_data to be removed
+	 */
+	public void removeIalumni_directory_data_2(Alumni_directory_data ialumni_directory_data) {
+		this.ialumni_directory_data_2.remove(ialumni_directory_data);
+	}
+	
 	@Override
 	public String toString() {
 		if (getCode() == null || getCode().equals(""))

@@ -278,6 +278,11 @@
         eternal="false"
         overflowToDisk="false"
         />
+	<cache name="bussineslogic.objects.alumni_directory_data"
+        maxElementsInMemory="10"
+        eternal="false"
+        overflowToDisk="false"
+        />
 
 	<cache name="bussineslogic.objects.alumni_irb_job_positions"
         maxElementsInMemory="10"

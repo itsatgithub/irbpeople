@@ -57,6 +57,7 @@ import bussineslogic.excepciones.UsuarioNoActivoException;
 import bussineslogic.excepciones.ValidationFailedException;
 import bussineslogic.objects.Academic_info;
 import bussineslogic.objects.Alumni_communications;
+import bussineslogic.objects.Alumni_directory_data;
 import bussineslogic.objects.Alumni_external_job_positions;
 import bussineslogic.objects.Alumni_external_job_sectors;
 import bussineslogic.objects.Alumni_external_jobs;
@@ -2079,6 +2080,648 @@ public class UseCase {
     
     
     
+    
+    
+    
+	/**
+     * This method creates a Alumni_directory_data.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_directory_data
+     *            Alumni_directory_data data transfer object (DTO) with the values of
+     *            the new instance.
+     * @return the new alumni_directory_data created with this Use Case
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_directory_data CreateAlumni_directory_data(Usuario user,
+	    Alumni_directory_data TOAlumni_directory_data) throws InternalException,
+	    NoPermisosException {
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/**
+	 * 2. For each association from the TOAlumni_directory_data that are filled
+	 * in the DTO we put the real objects from the DB. *
+	 */
+
+	// we store if the alumni_directory_data_personal is defined for later use
+	boolean _alumni_directory_data_personalIsDefined = false;
+
+	if (TOAlumni_directory_data.getPersonal() != null
+		&& TOAlumni_directory_data.getPersonal()
+			.getAlumni_personalcode() != null) {
+	    
+		_alumni_directory_data_personalIsDefined = true;
+	    TOAlumni_directory_data.setPersonal(getAlumni_personal(TOAlumni_directory_data.getPersonal().getAlumni_personalcode()));
+	}
+
+	boolean _irb_job_positionsIsDefined = false;
+
+	if (TOAlumni_directory_data.getIrb_job_positions() != null
+		&& TOAlumni_directory_data.getIrb_job_positions().getAlumni_irb_job_positionscode() != null) {
+
+		_irb_job_positionsIsDefined = true;
+	    TOAlumni_directory_data.setIrb_job_positions(getAlumni_irb_job_positions(TOAlumni_directory_data.getIrb_job_positions().getAlumni_irb_job_positionscode()));
+	}
+	
+	
+	boolean _unitIsDefined = false;
+
+	if (TOAlumni_directory_data.getUnit() != null
+		&& TOAlumni_directory_data.getUnit().getCode() != null) {
+	    // if grant is defined we replace the grant in the DTO with its
+	    // current state in the DB.
+		_unitIsDefined = true;
+
+	    TOAlumni_directory_data.setUnit(getUnit(TOAlumni_directory_data.getUnit().getCode()));
+	}
+	
+	boolean _unit_2IsDefined = false;
+	
+	if (TOAlumni_directory_data.getUnit_2() != null
+			&& TOAlumni_directory_data.getUnit_2().getCode() != null) {
+		// if grant is defined we replace the grant in the DTO with its
+		// current state in the DB.
+		_unit_2IsDefined = true;
+		
+		TOAlumni_directory_data.setUnit_2(getUnit(TOAlumni_directory_data.getUnit_2().getCode()));
+	}
+	
+	boolean _research_groupIsDefined = false;
+	
+	if (TOAlumni_directory_data.getResearch_group() != null
+			&& TOAlumni_directory_data.getResearch_group().getCode() != null) {
+		// if grant is defined we replace the grant in the DTO with its
+		// current state in the DB.
+		_research_groupIsDefined = true;
+		
+		TOAlumni_directory_data.setResearch_group(getResearch_group(TOAlumni_directory_data.getResearch_group().getCode()));
+	}
+	
+	boolean _research_group_2IsDefined = false;
+	
+	if (TOAlumni_directory_data.getResearch_group_2() != null
+			&& TOAlumni_directory_data.getResearch_group_2().getCode() != null) {
+		// if grant is defined we replace the grant in the DTO with its
+		// current state in the DB.
+		_research_group_2IsDefined = true;
+				
+		TOAlumni_directory_data.setResearch_group_2(getResearch_group(TOAlumni_directory_data.getResearch_group_2().getCode()));
+	}
+	
+	
+
+	/** 3. We create the new instance * */
+	Alumni_directory_data alumni_directory_data = new Alumni_directory_data();
+
+	/**
+	 * 4. We set all the simple attributes (no associations) to the new
+	 * instance *
+	 */
+
+	alumni_directory_data.setStart_date(TOAlumni_directory_data.getStart_date());
+	alumni_directory_data.setEnd_date(TOAlumni_directory_data.getEnd_date());	
+	
+	
+	/** 5. We set the code to the new instance * */
+	try {
+	    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
+
+	    alumni_directory_data.setAlumni_directory_datacode(im
+		    .getId(TOAlumni_directory_data));
+	} catch (identifyException ie) {
+
+	    log.error(
+		    "Error en asignaciï¿½n de nuevo id en CreateAlumni_directory_data",
+		    ie);
+	    throw new Error(ie.getMessage());
+	}
+
+	/** 6. We save the new instance to the DB* */
+	HibernateUtil.getSession().save(alumni_directory_data);
+
+	/**
+	 * We associate the current object to the other objects (only in case
+	 * that the associations where defined in the DTO) *
+	 */
+
+	if (_alumni_directory_data_personalIsDefined) {
+
+	    if (TOAlumni_directory_data.getPersonal() != null) {
+
+		TOAlumni_directory_data.getPersonal()
+			.addIalumni_directory_data(alumni_directory_data);
+	    }
+
+	    alumni_directory_data.setPersonal(TOAlumni_directory_data
+		    .getPersonal());
+	}
+	
+	if (_irb_job_positionsIsDefined) {
+
+	    if (TOAlumni_directory_data.getIrb_job_positions() != null) {
+
+		TOAlumni_directory_data.getIrb_job_positions()
+			.addIalumni_directory_data(alumni_directory_data);
+	    }
+
+	    alumni_directory_data.setIrb_job_positions(TOAlumni_directory_data
+		    .getIrb_job_positions());
+	}
+
+	if (_unitIsDefined) {
+		
+		if (TOAlumni_directory_data.getUnit() != null) {
+			
+			TOAlumni_directory_data.getUnit()
+			.addIalumni_directory_data(alumni_directory_data);
+		}
+		
+		alumni_directory_data.setUnit(TOAlumni_directory_data
+				.getUnit());
+	}
+	
+	if (_unit_2IsDefined) {
+		
+		if (TOAlumni_directory_data.getUnit_2() != null) {
+			
+			TOAlumni_directory_data.getUnit_2()
+			.addIalumni_directory_data_2(alumni_directory_data);
+		}
+		
+		alumni_directory_data.setUnit_2(TOAlumni_directory_data
+				.getUnit_2());
+	}
+
+	if (_research_groupIsDefined) {
+		
+		if (TOAlumni_directory_data.getResearch_group() != null) {
+			
+			TOAlumni_directory_data.getResearch_group()
+			.addIalumni_directory_data_3(alumni_directory_data);
+		}
+		
+		alumni_directory_data.setResearch_group(TOAlumni_directory_data
+				.getResearch_group());
+	}
+
+	if (_research_group_2IsDefined) {
+		
+		if (TOAlumni_directory_data.getResearch_group_2() != null) {
+			
+			TOAlumni_directory_data.getResearch_group_2()
+			.addIalumni_directory_data_4(alumni_directory_data);
+		}
+		
+		alumni_directory_data.setResearch_group_2(TOAlumni_directory_data
+				.getResearch_group_2());
+	}
+	
+
+	/** 7. We create an Audit message * */
+	CreateCreationAuditmessage(user, alumni_directory_data);
+
+	/** 8. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_directory_data;
+    }
+
+    /**
+     * This method modifies a alumni_directory_data.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param TOAlumni_directory_data
+     *            Alumni_directory_data data transfer object (DTO) with the values of
+     *            the modified instance. The code of this attribute indicates
+     *            which alumni_directory_data will be modified.
+     * @return the modified alumni_directory_data
+     * @throws InternalException
+     * @throws NoPermisosException
+     */
+    public static Alumni_directory_data UpdateAlumni_directory_data(Usuario user,
+	    Alumni_directory_data TOAlumni_directory_data) throws InternalException,
+	    NoPermisosException {
+
+	/** 1. We begin the DB transaction. * */
+	HibernateUtil.beginTransaction();
+
+	/** 3. We obtain form the DB the instance to modify * */
+	Alumni_directory_data alumni_directory_data = getAlumni_directory_data(TOAlumni_directory_data
+		.getAlumni_directory_datacode());
+	
+	/**
+	 * 2. For each association from the TOAlumni_directory_data that are filled
+	 * in the DTO we put the real objects from the DB. *
+	 */
+	boolean _alumni_directory_data_personalIsDefined = false;
+	// we store if the alumni_directory_data_personal is defined for later use
+	if (TOAlumni_directory_data.getPersonal() != null
+			&& TOAlumni_directory_data.getPersonal()
+				.getAlumni_personalcode() != null) {
+		    
+			_alumni_directory_data_personalIsDefined = true;
+		    TOAlumni_directory_data.setPersonal(getAlumni_personal(TOAlumni_directory_data.getPersonal().getAlumni_personalcode()));
+		}
+
+		boolean _irb_job_positionsIsDefined = false;
+
+		if (TOAlumni_directory_data.getIrb_job_positions() != null
+			&& TOAlumni_directory_data.getIrb_job_positions().getAlumni_irb_job_positionscode() != null) {
+
+			_irb_job_positionsIsDefined = true;
+		    TOAlumni_directory_data.setIrb_job_positions(getAlumni_irb_job_positions(TOAlumni_directory_data.getIrb_job_positions().getAlumni_irb_job_positionscode()));
+		}
+		
+		
+		boolean _unitIsDefined = false;
+
+		if (TOAlumni_directory_data.getUnit() != null
+			&& TOAlumni_directory_data.getUnit().getCode() != null) {
+		    // if grant is defined we replace the grant in the DTO with its
+		    // current state in the DB.
+			_unitIsDefined = true;
+
+		    TOAlumni_directory_data.setUnit(getUnit(TOAlumni_directory_data.getUnit().getCode()));
+		}
+		
+		boolean _unit_2IsDefined = false;
+		
+		if (TOAlumni_directory_data.getUnit_2() != null
+				&& TOAlumni_directory_data.getUnit_2().getCode() != null) {
+			// if grant is defined we replace the grant in the DTO with its
+			// current state in the DB.
+			_unit_2IsDefined = true;
+			
+			TOAlumni_directory_data.setUnit_2(getUnit(TOAlumni_directory_data.getUnit_2().getCode()));
+		}
+		
+		boolean _research_groupIsDefined = false;
+		
+		if (TOAlumni_directory_data.getResearch_group() != null
+				&& TOAlumni_directory_data.getResearch_group().getCode() != null) {
+			// if grant is defined we replace the grant in the DTO with its
+			// current state in the DB.
+			_research_groupIsDefined = true;
+			TOAlumni_directory_data.setResearch_group(getResearch_group(TOAlumni_directory_data.getResearch_group().getCode()));
+		}
+	
+		boolean _research_group_2IsDefined = false;
+		
+		if (TOAlumni_directory_data.getResearch_group_2() != null
+				&& TOAlumni_directory_data.getResearch_group_2().getCode() != null) {
+			// if grant is defined we replace the grant in the DTO with its
+			// current state in the DB.
+			_research_group_2IsDefined = true;
+			
+			TOAlumni_directory_data.setResearch_group_2(getResearch_group(TOAlumni_directory_data.getResearch_group_2().getCode()));
+		}
+		
+		/**
+	 * 4. We set all the simple attributes (no associations) to the instance
+	 * *
+	 */
+
+		alumni_directory_data.setStart_date(TOAlumni_directory_data.getStart_date());
+		alumni_directory_data.setEnd_date(TOAlumni_directory_data.getEnd_date());	
+
+	/**
+	 * 5. We set the DTO version to the modified object and we update it
+	 * with the new values in the DB. We evict and update the instance to
+	 * prevent concurrent modification *
+	 */
+	HibernateUtil.getSession().evict(alumni_directory_data);
+	alumni_directory_data.setVersion(TOAlumni_directory_data.getVersion());
+	HibernateUtil.getSession().update(alumni_directory_data);
+
+	/**
+	 * We associate/disassociate the current object to the other objects
+	 * (only in case that the associations where defined in the DTO) *
+	 */
+
+	if (_alumni_directory_data_personalIsDefined) {
+		
+		if (alumni_directory_data.getPersonal() != null) {
+			alumni_directory_data.getPersonal().removeIalumni_directory_data(alumni_directory_data);
+	    }
+		
+	    if (TOAlumni_directory_data.getPersonal() != null) {
+
+		TOAlumni_directory_data.getPersonal()
+			.addIalumni_directory_data(alumni_directory_data);
+	    }
+
+	    alumni_directory_data.setPersonal(TOAlumni_directory_data
+		    .getPersonal());
+	}
+	
+	if (_irb_job_positionsIsDefined) {
+
+		if (alumni_directory_data.getIrb_job_positions() != null) {
+			alumni_directory_data.getIrb_job_positions().removeIalumni_directory_data(alumni_directory_data);
+	    }
+		
+	    if (TOAlumni_directory_data.getIrb_job_positions() != null) {
+
+		TOAlumni_directory_data.getIrb_job_positions()
+			.addIalumni_directory_data(alumni_directory_data);
+	    }
+
+	    alumni_directory_data.setIrb_job_positions(TOAlumni_directory_data
+		    .getIrb_job_positions());
+	}
+
+	if (_unitIsDefined) {
+		if (alumni_directory_data.getUnit() != null) {
+			alumni_directory_data.getUnit().removeIalumni_directory_data(alumni_directory_data);
+	    }
+		if (TOAlumni_directory_data.getUnit() != null) {
+			
+			TOAlumni_directory_data.getUnit()
+			.addIalumni_directory_data(alumni_directory_data);
+		}
+		
+		alumni_directory_data.setUnit(TOAlumni_directory_data
+				.getUnit());
+	}
+	
+	if (_unit_2IsDefined) {
+		if (alumni_directory_data.getUnit_2() != null) {
+			alumni_directory_data.getUnit_2().removeIalumni_directory_data(alumni_directory_data);
+	    }
+		if (TOAlumni_directory_data.getUnit_2() != null) {
+			
+			TOAlumni_directory_data.getUnit_2()
+			.addIalumni_directory_data_2(alumni_directory_data);
+		}
+		
+		alumni_directory_data.setUnit_2(TOAlumni_directory_data
+				.getUnit_2());
+	}
+
+	
+	if (_research_groupIsDefined) {
+		if (alumni_directory_data.getResearch_group() != null) {
+			alumni_directory_data.getResearch_group().removeIalumni_directory_data_3(alumni_directory_data);
+	    }
+		if (TOAlumni_directory_data.getResearch_group() != null) {
+			
+			TOAlumni_directory_data.getResearch_group()
+			.addIalumni_directory_data_3(alumni_directory_data);
+		}
+		
+		alumni_directory_data.setResearch_group(TOAlumni_directory_data
+				.getResearch_group());
+	}
+	
+	if (_research_group_2IsDefined) {
+		if (alumni_directory_data.getResearch_group_2() != null) {
+			alumni_directory_data.getResearch_group_2().removeIalumni_directory_data_4(alumni_directory_data);
+	    }
+		if (TOAlumni_directory_data.getResearch_group_2() != null) {
+			
+			TOAlumni_directory_data.getResearch_group_2()
+			.addIalumni_directory_data_4(alumni_directory_data);
+		}
+		
+		alumni_directory_data.setResearch_group_2(TOAlumni_directory_data
+				.getResearch_group_2());
+	}
+
+	
+	
+	/** 6. We create an Audit message * */
+	CreateModificationAuditmessage(user, alumni_directory_data);
+
+	/** 7. We commit the DB transaction and return the new instance * */
+	HibernateUtil.commitTransaction();
+
+	return alumni_directory_data;
+    }
+
+    /**
+     * This method removes a alumni_directory_data.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_directory_datacode
+     *            Code of the alumni_directory_data to be removed
+     * @throws NoPermisosException
+     */
+    public static void RemoveAlumni_directory_data(Usuario user,
+	    String alumni_directory_datacode) throws NoPermisosException {
+
+		/** 1. We begin the DB transaction. * */
+		HibernateUtil.beginTransaction();
+	
+		/** 2. We obtain the object to delete form the DB. * */
+		Alumni_directory_data alumni_directory_data = getAlumni_directory_data(alumni_directory_datacode);
+		// testIsHHRROrItself(user,
+		// alumni_directory_data.getPersonal());
+	
+		/** 3. We mark it as deleted. * */
+		alumni_directory_data.setDeleted(Boolean.TRUE);
+	
+		/** 4. We create an Audit message * */
+		CreateRemovealAuditmessage(user, alumni_directory_data);
+	
+		/** 5. We commit the DB transaction. * */
+		HibernateUtil.commitTransaction();
+    }
+
+    /**
+     * This method obtains one instance of alumni_directory_data given its code.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param alumni_directory_datacode
+     *            Code of the alumni_directory_data to be obtained
+     * @return Alumni_directory_data with the given code.
+     */
+    public static Alumni_directory_data ObtainAlumni_directory_data(Usuario user,
+	    String alumni_directory_datacode) {
+
+	/**
+	 * 1. We obtain the object from the DB using the private getter and we
+	 * return it. *
+	 */
+
+	Alumni_directory_data alumni_directory_data = getAlumni_directory_data(alumni_directory_datacode);
+	return alumni_directory_data;
+    }
+
+    /**
+     * This method obtains all instances of Alumni_directory_data, given a
+     * list-configurator.
+     * 
+     * @param user
+     *            The user who executes this use case
+     * @param configurator
+     *            ListConfigurator to be used
+     * @return A pair with an Integer with the total number of instances which
+     *         match the search without appling the 'pagination' of the
+     *         ListConfigurator, and the list of the instances which match the
+     *         configurator (incluing pagination)
+     */
+    public static Pair<Integer, List<Alumni_directory_data>> ObtainAllAlumni_directory_data(
+	    Usuario user, ListConfigurator configurator) {
+
+	/** 1. We create an Hibernate Criteria to obtain the desired values * */
+	Criteria crit = HibernateUtil.getSession().createCriteria(
+		Alumni_directory_data.class);
+
+	// we only want to obtain the non deleted objects
+	crit.add(Expression.eq("deleted", Boolean.FALSE));
+
+	// we add the ListConfigurator to the criteria, obtaining the number of
+	// results without the pagination
+	int count = configurator.addCriterions(crit);
+
+	/**
+	 * 2. We obtain the list form the DB and we return it with the number of
+	 * elements in the DB *
+	 */
+	List<Alumni_directory_data> alumni_directory_datas = (List<Alumni_directory_data>) crit
+		.list();
+
+	Pair<Integer, List<Alumni_directory_data>> pair = new Pair<Integer, List<Alumni_directory_data>>(
+		count, alumni_directory_datas);
+
+	return pair;
+    }
+	
+	/**
+     * Returns the Alumni_directory_data with the given key. This method is used
+     * internally to get objects form the database.
+     * 
+     * @param alumni_directory_datacode
+     *            code of the Alumni_directory_data
+     * @return Alumni_directory_data with the given code
+     */
+    protected static Alumni_directory_data getAlumni_directory_data(
+	    String alumni_directory_datacode) {
+	Alumni_directory_data alumni_directory_data = (Alumni_directory_data) HibernateUtil
+		.getSession().get(Alumni_directory_data.class, alumni_directory_datacode);
+	return alumni_directory_data;
+    }
+    
+    
+    /**
+	   * This method obtains all instances of Alumni_directory_data, which belong to
+	   * the set of ialumni_directory_data_alumni_personal of a personal, given a
+	   * list-configurator.
+	   * 
+	   * @param user
+	   *            The user who executes this use case
+	   * @param personal
+	   *            Personal which contains the set of ialumni_directory_data_alumni_personal
+	   * @param configurator
+	   *            ListConfigurator to be used
+	   * @return A pair with an Integer with the total number of instances which
+	   *         match the search without appling the 'pagination' of the
+	   *         ListConfigurator, and the list of the instances which match the
+	   *         configurator (incluing pagination)
+	   * @throws NoPermisosException 
+	   */
+	  public static Pair<Integer, List<Alumni_directory_data>> ObtainAllIalumni_directory_data_alumni_personalFromPersonal(
+		    Usuario user, Alumni_personal personal, ListConfigurator configurator) throws NoPermisosException {
+	
+		/** 1. We create an Hibernate Criteria to obtain the desired values * */
+		Criteria crit = HibernateUtil.getSession().createCriteria(
+			Alumni_directory_data.class);
+	
+		// we only want to obtain the non deleted objects
+	
+		crit.add(Expression.eq("deleted", Boolean.FALSE));	
+		
+		// we add the requirement that we only want to display the ones which
+		// are associated
+		crit.createCriteria("personal").add(
+			Expression.idEq(personal.getAlumni_personalcode()));
+	
+		// we add the ListConfigurator to the criteria, obtaining the number of
+		// results without the pagination
+		int count = configurator.addCriterions(crit);
+	
+		/**
+		 * 2. We obtain the list form the DB and we return it with the number of
+		 * elements in the DB *
+		 */
+		Pair<Integer, List<Alumni_directory_data>> pair = new Pair<Integer, List<Alumni_directory_data>>(
+			count, crit.list());
+	
+		return pair;
+	  }    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+	
+	  /**
+	   * This method obtains all instances of Alumni_irb_jobs, which belong to
+	   * the set of ialumni_irb_jobs_alumni_personal of a personal, given a
+	   * list-configurator.
+	   * 
+	   * @param user
+	   *            The user who executes this use case
+	   * @param personal
+	   *            Personal which contains the set of ialumni_irb_jobs_alumni_personal
+	   * @param configurator
+	   *            ListConfigurator to be used
+	   * @return A pair with an Integer with the total number of instances which
+	   *         match the search without appling the 'pagination' of the
+	   *         ListConfigurator, and the list of the instances which match the
+	   *         configurator (incluing pagination)
+	   * @throws NoPermisosException 
+	   */
+	  public static Pair<Integer, List<Alumni_irb_jobs>> ObtainAllIalumni_irb_jobs_alumni_personalFromPersonal(
+		    Usuario user, Alumni_personal personal, ListConfigurator configurator) throws NoPermisosException {
+	
+		/** 1. We create an Hibernate Criteria to obtain the desired values * */
+		Criteria crit = HibernateUtil.getSession().createCriteria(
+			Alumni_irb_jobs.class);
+	
+		// we only want to obtain the non deleted objects
+	
+		crit.add(Expression.eq("deleted", Boolean.FALSE));	
+		
+		// we add the requirement that we only want to display the ones which
+		// are associated
+		crit.createCriteria("personal").add(
+			Expression.idEq(personal.getAlumni_personalcode()));
+	
+		// we add the ListConfigurator to the criteria, obtaining the number of
+		// results without the pagination
+		int count = configurator.addCriterions(crit);
+	
+		/**
+		 * 2. We obtain the list form the DB and we return it with the number of
+		 * elements in the DB *
+		 */
+		Pair<Integer, List<Alumni_irb_jobs>> pair = new Pair<Integer, List<Alumni_irb_jobs>>(
+			count, crit.list());
+	
+		return pair;
+	  }    
+    
+    
+    
+    
+    
     /**
      * This method obtains all instances of Alumni_external_jobs, which belong to
      * the set of ialumni_external_jobs_alumni_personal of a personal, given a
@@ -2126,53 +2769,6 @@ public class UseCase {
 	return pair;
     }
 
-	
-	  /**
-     * This method obtains all instances of Alumni_irb_jobs, which belong to
-     * the set of ialumni_irb_jobs_alumni_personal of a personal, given a
-     * list-configurator.
-     * 
-     * @param user
-     *            The user who executes this use case
-     * @param personal
-     *            Personal which contains the set of ialumni_irb_jobs_alumni_personal
-     * @param configurator
-     *            ListConfigurator to be used
-     * @return A pair with an Integer with the total number of instances which
-     *         match the search without appling the 'pagination' of the
-     *         ListConfigurator, and the list of the instances which match the
-     *         configurator (incluing pagination)
-     * @throws NoPermisosException 
-     */
-    public static Pair<Integer, List<Alumni_irb_jobs>> ObtainAllIalumni_irb_jobs_alumni_personalFromPersonal(
-	    Usuario user, Alumni_personal personal, ListConfigurator configurator) throws NoPermisosException {
-
-	/** 1. We create an Hibernate Criteria to obtain the desired values * */
-	Criteria crit = HibernateUtil.getSession().createCriteria(
-		Alumni_irb_jobs.class);
-
-	// we only want to obtain the non deleted objects
-
-	crit.add(Expression.eq("deleted", Boolean.FALSE));	
-	
-	// we add the requirement that we only want to display the ones which
-	// are associated
-	crit.createCriteria("personal").add(
-		Expression.idEq(personal.getAlumni_personalcode()));
-
-	// we add the ListConfigurator to the criteria, obtaining the number of
-	// results without the pagination
-	int count = configurator.addCriterions(crit);
-
-	/**
-	 * 2. We obtain the list form the DB and we return it with the number of
-	 * elements in the DB *
-	 */
-	Pair<Integer, List<Alumni_irb_jobs>> pair = new Pair<Integer, List<Alumni_irb_jobs>>(
-		count, crit.list());
-
-	return pair;
-    }
 
 
     /**
@@ -23043,7 +23639,7 @@ public class UseCase {
     	
     	
     	HibernateUtil.getSession().save(alumni_personal);
-    	
+
     	//Copy into alumni_irb_jobs
     	Set<Professional> professionals = personal.getIprofessional_personal();
     	if(professionals!=null){
@@ -23083,6 +23679,43 @@ public class UseCase {
 	    		alumni_irb_job.setPersonal(alumni_personal);
 	    		alumni_personal.addIalumni_irb_jobs(alumni_irb_job);
 	    		HibernateUtil.getSession().save(alumni_irb_job);
+	    		
+	    		
+	    		
+	    		
+	    		
+	    		Alumni_directory_data alumni_directory_data = new Alumni_directory_data();
+	    		alumni_directory_data.setDeleted(false);
+	    		alumni_directory_data.setVersion(0);
+	    		
+	    		//Create code
+	    		try {
+	    		    IdentifyManager_Plain im = IdentifyManager_Plain.singleton();
+	    		    alumni_directory_data.setAlumni_directory_datacode(im.getId(alumni_directory_data));
+	    		} catch (identifyException ie) {
+	
+	    		    log.error(
+	    			    "Error en asignación de nuevo id en ExportPersonalToAlumni",
+	    			    ie);
+	    		    throw new Error(ie.getMessage());
+	    		}    		
+	    		alumni_directory_data.setStart_date(p.getStart_date());
+	    		alumni_directory_data.setEnd_date(p.getEnd_date());
+	    		alumni_directory_data.setUnit(p.getProfessional_unit());
+	    		alumni_directory_data.setUnit_2(p.getProfessional_unit_2());
+	    		
+	    		alumni_directory_data.setResearch_group(p.getResearch_group());
+	    		alumni_directory_data.setResearch_group_2(p.getResearch_group_2());
+	    		
+	    		if (p.getPosition()!=null){
+	    			Alumni_irb_job_positions position = getAlumni_irb_job_positions(p.getPosition().getCode());
+	    			if (position!=null) {
+	    				alumni_directory_data.setIrb_job_positions(position);
+	    			}
+	    		}
+	    		alumni_directory_data.setPersonal(alumni_personal);
+	    		alumni_personal.addIalumni_directory_data(alumni_directory_data);
+	    		HibernateUtil.getSession().save(alumni_directory_data);
 	    	}
     	}
     	

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Nota: El nombre del objeto (nombre_del_objeto) es el nombre en minusculas de la tabla en base de datos. 	-->
+<!-- Nota: En general, si un atributo de tipo 'boolean' no se encuentra se considera su valor como 'false'. 	-->
+<item-list obj="alumni_directory_data" site-number="3">
+    <desc>Descripcion para la lista del objeto 'alumni_directory_data'.</desc>
+    <!-- Categorizaciones para poder agrupar los ficheros de configuracion. -->
+    <!-- Para agregar una categoria poner un atributo 'attName=attValue'.   -->
+    <category />
+    <site name="en">
+        <label language="es">Etiqueta de visualizacion para el objeto 'alumni_directory_data'.</label>
+        <comment language="es">Descripcion de visualizacion para el objeto 'alumni_directory_data'.</comment>
+        <title language="es">Titulo de visualizacion para el objeto 'alumni_directory_data'.</title>
+        <!-- Campos del objeto para visualizacion -->
+        <fields>
+            <!-- - Campos visibles -->
+            <!-- El orden es el de aparicion de los tags. Para editar el orden se recomienda utilizar el XMLSpy, -->
+            <!-- mediante el cual, es sencillo mover un tag arriba y abajo. -->
+            <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
+            <!-- Los atributos modificables son: 'default' y 'visible'.  -->
+            <visible-fields>
+                <field name="irb_job_positions" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">IRB job positions</caption>
+                </field>
+                <field name="unit" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Unit</caption>
+                </field>
+                <field name="unit_2" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Unit 2</caption>
+                </field>                
+                <field name="research_group" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Research group</caption>
+                </field>                
+                <field name="research_group_2" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Research group 2</caption>
+                </field>                
+                <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Start date</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">End date</caption>
+                </field>
+            </visible-fields>
+            <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
+            <!-- 1/2 - Campos 'hidden'. -->
+            <hidden-fields />
+            <!-- 2/2 - Campos 'discarded'. -->
+            <discarded-fields />
+        </fields>
+    </site>
+    <site name="ct">
+        <label language="ct">Etiqueta de visualizacion para el objeto 'alumni_directory_data'.</label>
+        <comment language="ct">Descripcion de visualizacion para el objeto 'alumni_directory_data'.</comment>
+        <title language="ct">Titulo de visualizacion para el objeto 'alumni_directory_data'.</title>
+        <!-- Campos del objeto para visualizacion -->
+        <fields>
+            <!-- - Campos visibles -->
+            <!-- El orden es el de aparicion de los tags. Para editar el orden se recomienda utilizar el XMLSpy, -->
+            <!-- mediante el cual, es sencillo mover un tag arriba y abajo. -->
+            <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
+            <!-- Los atributos modificables son: 'default' y 'visible'.  -->
+            <visible-fields>
+                <field name="irb_job_positions" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Càrrec a IRB </caption>
+                </field>
+                <field name="unit" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Unitat</caption>
+                </field>
+                <field name="unit_2" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Unitat 2</caption>
+                </field>                
+                <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Data inici</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="ct">Data fi</caption>
+                </field>
+            </visible-fields>
+            <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
+            <!-- 1/2 - Campos 'hidden'. -->
+            <hidden-fields />
+            <!-- 2/2 - Campos 'discarded'. -->
+            <discarded-fields />
+        </fields>
+    </site>
+    <site name="es">
+        <label language="es">Etiqueta de visualizacion para el objeto 'alumni_directory_data'.</label>
+        <comment language="es">Descripcion de visualizacion para el objeto 'alumni_directory_data'.</comment>
+        <title language="es">Titulo de visualizacion para el objeto 'alumni_directory_data'.</title>
+        <!-- Campos del objeto para visualizacion -->
+        <fields>
+            <!-- - Campos visibles -->
+            <!-- El orden es el de aparicion de los tags. Para editar el orden se recomienda utilizar el XMLSpy, -->
+            <!-- mediante el cual, es sencillo mover un tag arriba y abajo. -->
+            <!-- Todos los atributos son modificables, pero algunos de ellos (label por ejemplo), se deberian modificar en otro sitio -->
+            <!-- Los atributos modificables son: 'default' y 'visible'.  -->
+            <visible-fields>
+              	<field name="irb_job_positions" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Cargo en IRB</caption>
+                </field>
+                <field name="unit" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Unidad</caption>
+                </field>
+                <field name="unit_2" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Unidad 2</caption>
+                </field>                
+                <field name="start_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Fecha inicio</caption>
+                </field>
+                <field name="end_date" visible="true" default="true" type-of-field="text" size="20">
+                    <caption language="en">Fecha fin</caption>
+                </field>
+            </visible-fields>
+            <!-- - Campos NO visibles - NO MODIFICAR, ES SOLO A NIVEL INFORMATIVO -->
+            <!-- 1/2 - Campos 'hidden'. -->
+            <hidden-fields />
+            <!-- 2/2 - Campos 'discarded'. -->
+            <discarded-fields />
+        </fields>
+    </site>
+</item-list>
+

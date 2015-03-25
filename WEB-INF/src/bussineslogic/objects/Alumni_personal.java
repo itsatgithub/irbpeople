@@ -49,6 +49,7 @@ public class Alumni_personal implements Persistent {
 	private Set<Alumni_communications> ialumni_communications = new HashSet<Alumni_communications>();
 	private Set<Alumni_external_jobs> ialumni_external_jobs = new HashSet<Alumni_external_jobs>();
 	private Set<Alumni_irb_jobs> ialumni_irb_jobs = new HashSet<Alumni_irb_jobs>();
+	private Set<Alumni_directory_data> ialumni_directory_data = new HashSet<Alumni_directory_data>();
 	
 	private String remarks;
 	private String skype;
@@ -463,6 +464,41 @@ public class Alumni_personal implements Persistent {
 	 */
 	public void removeIalumni_irb_jobs(Alumni_irb_jobs ialumni_irb_jobs) {
 		this.ialumni_irb_jobs.remove(ialumni_irb_jobs);
+	}
+	
+	/**
+	 * @return the ialumni_directory_data
+	 */
+	public Set<Alumni_directory_data> getIalumni_directory_data() {
+		return ialumni_directory_data;
+	}
+
+	/**
+	 * @param ialumni_directory_data
+	 *            the ialumni_directory_data to set.
+	 */
+	public void setIalumni_directory_data(Set<Alumni_directory_data> ialumni_directory_data) {
+		this.ialumni_directory_data = ialumni_directory_data;
+	}
+
+	/**
+	 * Adds a Alumni communications to the ialumni_directory_data set.
+	 * 
+	 * @param ialumni_directory_data
+	 *            Alumni communications to be added
+	 */
+	public void addIalumni_directory_data(Alumni_directory_data ialumni_directory_data) {
+		this.ialumni_directory_data.add(ialumni_directory_data);
+	}
+
+	/**
+	 * Removes a Alumni communications to the ialumni_directory_data set.
+	 * 
+	 * @param ialumni_directory_data
+	 *            Alumni communications to be removed
+	 */
+	public void removeIalumni_directory_data(Alumni_directory_data ialumni_directory_data) {
+		this.ialumni_directory_data.remove(ialumni_directory_data);
 	}
 
 	@Override

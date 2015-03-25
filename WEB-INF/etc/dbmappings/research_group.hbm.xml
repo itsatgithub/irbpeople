@@ -83,6 +83,19 @@
 			<one-to-many class="Alumni_irb_jobs" />
 		</set>
 
+		<set name="ialumni_directory_data_3" cascade="none" lazy="true">
+			<key>
+				<column name="research_group" />
+			</key>
+			<one-to-many class="Alumni_directory_data" />
+		</set>
+		<set name="ialumni_directory_data_4" cascade="none" lazy="true">
+			<key>
+				<column name="research_group_2" />
+			</key>
+			<one-to-many class="Alumni_directory_data" />
+		</set>
+
 		<!-- categorias -->
 
 	</class>

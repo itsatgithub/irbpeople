@@ -112,5 +112,11 @@
 			</key>
 			<one-to-many class="Alumni_irb_jobs" />
 		</set>
+		<set name="ialumni_directory_data" cascade="none" lazy="true">
+			<key>
+				<column name="personal" />
+			</key>
+			<one-to-many class="Alumni_directory_data" />
+		</set>
 	</class>
 </hibernate-mapping>

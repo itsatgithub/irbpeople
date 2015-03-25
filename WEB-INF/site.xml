@@ -4812,6 +4812,211 @@
                         <parameter name="objectsRecieved" value="none" />
                     </action>                                       
                 </group>
+                
+                
+                <group e="" name="oAlumni_directory_dataSys" command="oAlumni_directory_dataSys" nick="oAlumni_directory_dataSys" type="system" action-number="" st0="SystemObj">
+                    <description>Auto generated group</description>
+                    <caption language="en">alumni_directory_data</caption>
+                    <extends>BaseCommandsProtected</extends>
+                    <action e="" con="new" obj="alumni_directory_data" type="new" st0="" st1="" completed="false">
+                        <name>action_add_alumni_directory_data</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Add Alumni directory data</title-caption>
+                        <menuitem-caption language="en">Add alumni directory data</menuitem-caption>
+                        <button-caption language="en">Add alumni directory data</button-caption>
+                        <path action="action_manage_alumni_personal_alumni_directory_data" command="oAlumni_personalSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="go" />
+                            <zone name="folder" />
+                            <zone name="submit">
+                                <action command="oAlumni_directory_dataSys" action="action_new_new_page_alumni_directory_data" />
+                                <action command="oAlumni_directory_dataSys" action="action_cancel_new_new_page_alumni_directory_data" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <parameter name="objectsRecievedType" value="alumni_personal" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="Alumni directory data position" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="alumni_directory_data_positions" associationBO="irb_job_positions" popUp="false" popUpAlways="false" />
+
+										<attribute-form label="Unit" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="unit" associationBO="unit" popUp="false" popUpAlways="false" />                                        
+										
+										<attribute-form label="Unit 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="unit_2" associationBO="unit" popUp="false" popUpAlways="false" />
+										
+										<attribute-form label="Reseach group" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="research_group" associationBO="research_group" popUp="false" popUpAlways="false" />
+										<attribute-form label="Reseach group 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="research_group_2" associationBO="research_group" popUp="false" popUpAlways="false" />
+										
+										<attribute-form label="Start date" field="start_date" required="false" writable="true" object="alumni_directory_data" />
+
+										<attribute-form label="End date" field="end_date" required="false" writable="true" object="alumni_directory_data" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>                    
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_delete_alumni_directory_data</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_directory_data cancel</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_directory_data cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_delete_page_alumni_directory_data" command="oAlumni_directory_dataSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_directory_dataSys.delete_page_alumni_directory_data" value="oAlumni_directory_dataSys.delete_page_alumni_directory_data" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_modify_modify_page_alumni_directory_data</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_directory_data cancel</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_directory_data cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_modify_page_alumni_directory_data" command="oAlumni_directory_dataSys" />
+                        <parameter name="zoneaction.oAlumni_directory_dataSys.modify_page_alumni_directory_data" value="oAlumni_directory_dataSys.modify_page_alumni_directory_data" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_new_new_page_alumni_directory_data</name>
+                        <description />
+                        <title-caption language="en">New new_page_alumni_directory_data cancel</title-caption>
+                        <menuitem-caption language="en">New new_page_alumni_directory_data cancel</menuitem-caption>
+                        <button-caption language="en">Cancel</button-caption>
+                        <path action="action_add_alumni_directory_data" command="oAlumni_directory_dataSys" />
+                        <parameter name="zoneaction.oAlumni_directory_dataSys.new_page_alumni_directory_data" value="oAlumni_directory_dataSys.new_page_alumni_directory_data" />
+                        <parameter name="zoneaction.oAlumni_directory_dataSys.add_alumni_directory_data" value="oAlumni_directory_dataSys.add_alumni_directory_data" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="cancel" obj="" type="cancel" st0="" st1="" completed="false">
+                        <name>action_cancel_view_view_alumni_directory_data</name>
+                        <description />
+                        <title-caption language="en">View view_alumni_directory_data cancel</title-caption>
+                        <menuitem-caption language="en">View view_alumni_directory_data cancel</menuitem-caption>
+                        <button-caption language="en">Back</button-caption>
+                        <path action="action_view_alumni_directory_data" command="oAlumni_directory_dataSys" />
+                        <parameter name="zoneaction.oAlumni_directory_dataSys.view_alumni_directory_data" value="oAlumni_directory_dataSys.view_alumni_directory_data" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="del" obj="alumni_directory_data" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_delete_page_alumni_directory_data</name>
+                        <description />
+                        <title-caption language="en">Delete delete_page_alumni_directory_data ok</title-caption>
+                        <menuitem-caption language="en">Delete delete_page_alumni_directory_data ok</menuitem-caption>
+                        <button-caption language="en">Delete</button-caption>
+                        <path action="action_delete_page_alumni_directory_data" command="oAlumni_directory_dataSys" />
+                        <parameter name="objectsRecieved" value="none" />
+                        <parameter name="zoneaction.oAlumni_directory_dataSys.delete_page_alumni_directory_data" value="oAlumni_directory_dataSys.delete_page_alumni_directory_data" />
+                    </action>                  
+                    <action e="" con="del" obj="alumni_directory_data" type="delete" st0="" st1="" completed="false">
+                        <name>action_delete_page_alumni_directory_data</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Delete alumni directory data</title-caption>
+                        <menuitem-caption language="en">Delete alumni directory data</menuitem-caption>
+                        <button-caption language="en">Delete alumni directory data</button-caption>
+                        <path action="action_manage_alumni_personal_alumni_directory_data" command="oAlumni_personalSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="go" />
+                            <zone name="folder" />
+                            <zone name="submit">
+                                <action command="oAlumni_directory_dataSys" action="action_delete_delete_page_alumni_directory_data" />
+                                <action command="oAlumni_directory_dataSys" action="action_cancel_delete_alumni_directory_data" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="Alumni directory data position" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="alumni_directory_data_positions" associationBO="irb_job_positions" popUp="false" popUpAlways="false" />
+
+										<attribute-form label="Unit" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="unit" associationBO="unit" popUp="false" popUpAlways="false" />                                        
+										
+										<attribute-form label="Unit 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="unit_2" associationBO="unit" popUp="false" popUpAlways="false" />                                        
+										
+										<attribute-form label="Reseach group" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="research_group" associationBO="research_group" popUp="false" popUpAlways="false" />
+										<attribute-form label="Reseach group 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="research_group_2" associationBO="research_group" popUp="false" popUpAlways="false" />
+										
+										<attribute-form label="Start date" field="start_date" required="false" writable="true" object="alumni_directory_data" />
+
+										<attribute-form label="End date" field="end_date" required="false" writable="true" object="alumni_directory_data" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>                    
+                    <action e="" con="mod" obj="alumni_directory_data" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_modify_page_alumni_directory_data</name>
+                        <description />
+                        <title-caption language="en">Modify modify_page_alumni_directory_data ok</title-caption>
+                        <menuitem-caption language="en">Modify modify_page_alumni_directory_data ok</menuitem-caption>
+                        <button-caption language="en">Save</button-caption>
+                        <path action="action_modify_page_alumni_directory_data" command="oAlumni_directory_dataSys" />
+                        <parameter name="zoneaction.oAlumni_directory_dataSys.modify_page_alumni_directory_data" value="oAlumni_directory_dataSys.modify_page_alumni_directory_data" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>
+                    <action e="" con="mod" obj="alumni_directory_data" type="modify" st0="" st1="" completed="false">
+                        <name>action_modify_page_alumni_directory_data</name>
+                        <show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+                        <description />
+                        <title-caption language="en">Modify alumni directory data</title-caption>
+                        <menuitem-caption language="en">Modify alumni directory data</menuitem-caption>
+                        <button-caption language="en">Modify alumni directory data</button-caption>
+                        <path action="action_manage_alumni_personal_alumni_directory_data" command="oAlumni_personalSys" />
+                        <zones>
+                            <zone name="operation" />
+                            <zone name="folder2" />
+                            <zone name="go" />
+                            <zone name="folder" />
+                            <zone name="submit">
+                                <action command="oAlumni_directory_dataSys" action="action_modify_modify_page_alumni_directory_data" />
+                                <action command="oAlumni_directory_dataSys" action="action_cancel_modify_modify_page_alumni_directory_data" />
+                            </zone>
+                        </zones>
+                        <parameter name="note" value="" />
+                        <parameter name="objectsRecieved" value="one" />
+                        <content>
+                            <forms>
+                                <form>
+                                    <form-group title="" num-columns="1">
+                                        <attribute-form label="Alumni directory data position" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="alumni_directory_data_positions" associationBO="irb_job_positions" popUp="false" popUpAlways="false" />
+
+										<attribute-form label="Unit" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="unit" associationBO="unit" popUp="false" popUpAlways="false" />                                        
+										
+										<attribute-form label="Unit 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="unit_2" associationBO="unit" popUp="false" popUpAlways="false" />                                        
+										
+										<attribute-form label="Reseach group" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="research_group" associationBO="research_group" popUp="false" popUpAlways="false" />
+										<attribute-form label="Reseach group 2" field="description" required="false" writable="true" type="selectBOAttribute" object="alumni_directory_data" associationName="research_group_2" associationBO="research_group" popUp="false" popUpAlways="false" />
+										
+										<attribute-form label="Start date" field="start_date" required="false" writable="true" object="alumni_directory_data" />
+
+										<attribute-form label="End date" field="end_date" required="false" writable="true" object="alumni_directory_data" />
+                                    </form-group>
+                                </form>
+                            </forms>
+                        </content>
+                    </action>
+                    <action e="" con="new" obj="alumni_directory_data" type="new" st0="" st1="" completed="false">
+                        <name>action_new_new_page_alumni_directory_data</name>
+                        <description />
+                        <title-caption language="en">New page alumni directory data ok</title-caption>
+                        <menuitem-caption language="en">New page alumni directory data ok</menuitem-caption>
+                        <button-caption language="en">Ok</button-caption>
+                        <path action="action_add_alumni_directory_data" command="oAlumni_directory_dataSys" />
+                        <parameter name="zoneaction.oAlumni_directory_dataSys.new_page_alumni_directory_data" value="oAlumni_directory_dataSys.new_page_alumni_directory_data" />
+                        <parameter name="zoneaction.oAlumni_directory_dataSys.add_alumni_directory_data" value="oAlumni_directory_dataSys.add_alumni_directory_data" />
+                        <parameter name="objectsRecieved" value="none" />
+                    </action>                                       
+                </group>
+                
+                
                 <group e="" name="oHolidaySys" command="oHolidaySys" nick="oHolidaySys" type="system" action-number="" st0="SystemObj">
                     <description>Auto generated group</description>
                     <caption language="en">holiday</caption>
@@ -12468,7 +12673,7 @@
 						<zones>
 							<zone name="operation">
 								<action command="oAlumni_irb_jobsSys" action="action_add_alumni_irb_jobs">
-									<button-caption language="en">Add irb job</button-caption>
+									<button-caption language="en">Add directory data</button-caption>
 									<parameter name="isPopUp" />
 								</action>
 							</zone>
@@ -12510,6 +12715,61 @@
 							</forms>
 						</content>
 					</action>
+					
+					<action e="" con="vone" obj="alumni_personal" type="viewone" st0="" st1="" completed="false">
+						<name>action_manage_alumni_personal_alumni_directory_data</name>
+						<show view="" template="protected_template_12" screen="" pane="center" jsp="" />
+						<description />
+						<title-caption language="en">manage personnel directory data</title-caption>
+						<menuitem-caption language="en">manage personnel directory data</menuitem-caption>
+						<button-caption language="en">manage personnel directory data</button-caption>
+						<path action="action_modify_page_alumni_personal" command="oAlumni_personalSys" />
+						<zones>
+							<zone name="operation">
+								<action command="oAlumni_directory_dataSys" action="action_add_alumni_directory_data">
+									<button-caption language="en">Add directory data</button-caption>
+									<parameter name="isPopUp" />
+								</action>
+							</zone>
+							<zone name="folder2" />
+							<zone name="rowaction0">								
+								<action command="oAlumni_directory_dataSys" action="action_modify_page_alumni_directory_data">
+									<parameter name="isPopUp" />
+								</action>
+								<action command="oAlumni_directory_dataSys" action="action_delete_page_alumni_directory_data">
+									<parameter name="isPopUp" />
+								</action>
+							</zone>
+							<zone name="go" />
+							<zone name="submit" />
+							<zone name="folder" command="oAlumni_personalSys" action="action_modify_page_alumni_personal" />
+						</zones>
+						<parameter name="note" value="" />
+						<parameter name="objectsRecieved" value="one" />
+						<content>
+							<forms>
+								<form>
+									<form-group title="Alumni Personal data" num-columns="3">
+                                        <attribute-form label="alumni_personalcode" field="alumni_personalcode" required="false" writable="false" object="alumni_personal" />
+                                        <attribute-form label="firstname" field="firstname" required="false" writable="false" object="alumni_personal" />
+                                        <attribute-form label="surname" field="surname" required="false" writable="false" object="alumni_personal" />
+                                    </form-group>
+                                    <form-group title="Alumni directory data" num-columns="2">
+                                        <list type="AS" object="alumni_directory_data" objectFrom="alumni_directory_data" association="personal" objectTo="alumni_personal" associationAddress="inverse" selectable="false" multiselectable="false" filter="false" pagination="false" rowactions="true" rowactionszone="rowaction0">
+                                            <field name="start_date" />
+                                            <field name="end_date" />                                            
+                                            <field name="description" object="alumni_irb_job_positions" association="irb_job_positions" associationDirect="direct" />
+											<field name="description" object="unit" association="unit" associationDirect="direct" />
+											<field name="description" object="unit" association="unit_2" associationDirect="direct" />
+											<field name="description" object="reseach_group" association="reseach_group" associationDirect="direct" />
+											<field name="description" object="reseach_group" association="reseach_group_2" associationDirect="direct" />
+                                        </list>
+                                    </form-group>
+								</form>
+							</forms>
+						</content>
+					</action>
+					
 					<action e="" con="mod" obj="alumni_personal" type="modify" st0="" st1="" completed="false">
 						<name>action_modify_modify_page_alumni_personal</name>
 						<description />
@@ -12542,6 +12802,9 @@
 								</action>
 								<action command="oAlumni_personalSys" action="action_manage_alumni_personal_alumni_irb_jobs">
 									<button-caption language="en">IRB Jobs</button-caption>
+								</action>
+								<action command="oAlumni_personalSys" action="action_manage_alumni_personal_alumni_directory_data">
+									<button-caption language="en">Directory Data</button-caption>
 								</action>				
 							</zone>
 							<zone name="submit">

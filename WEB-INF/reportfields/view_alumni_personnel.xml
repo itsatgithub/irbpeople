@@ -157,7 +157,26 @@
                 </field>
                 <field name="irb_job_position_types_description" visible="true" type-of-field="text">
                     <caption>Alumni irb jobs: Position type</caption>
-                </field>               
+                </field>
+                
+                <field name="directory_data_start_date" visible="true" type-of-field="text">
+					<caption>Alumni directory data: Start date</caption>
+				</field>
+				<field name="directory_data_end_date" visible="true" type-of-field="text">
+					<caption>Alumni directory data: End date</caption>
+				</field>
+				<field name="directory_data_unit" visible="true" type-of-field="text">
+					<caption>Alumni directory data: Unit</caption>
+				</field>
+				<field name="directory_data_unit_2" visible="true" type-of-field="text">
+					<caption>Alumni directory data: Unit 2</caption>
+				</field>
+				<field name="directory_data_research_group" visible="true" type-of-field="text">
+					<caption>Alumni directory data: Research Group</caption>
+				</field>
+				<field name="directory_data_research_group_2" visible="true" type-of-field="text">
+					<caption>Alumni directory data: Research Group 2</caption>
+				</field>
             </select-fields>
             <where-fields>
                 <field name="alumni_personalcode" visible="true" type-of-field="text">
@@ -311,8 +330,26 @@
                 <field name="irb_job_position_types_description" visible="true" type-of-field="select short_description from alumni_job_position_types order by order_number">
                     <caption>Alumni irb jobs: Position type</caption>
                 </field>               
+
                 
-                
+				<field name="directory_data_start_date" visible="true" type-of-field="date">
+                    <caption>Alumni directory data: Start date</caption>
+                </field>
+                <field name="directory_data_end_date" visible="true" type-of-field="date">
+                    <caption>Alumni directory data: End date</caption>
+                </field>
+                <field name="directory_data_unit" visible="true" type-of-field="select description from unit order by description">
+                    <caption>Alumni directory data: Unit</caption>
+                </field>
+                <field name="directory_data_unit_2" visible="true" type-of-field="select description from unit order by description">
+                    <caption>Alumni directory data: Unit 2</caption>
+                </field>
+                <field name="directory_data_research_group" visible="true" type-of-field="select description from research_group order by description">
+                    <caption>Alumni directory data: Research Group</caption>
+                </field>
+                <field name="directory_data_research_group_2" visible="true" type-of-field="select description from research_group order by description">
+                    <caption>Alumni directory data: Research Group 2</caption>
+                </field>
             </where-fields>
             <orderby-fields>
                 <field name="alumni_personalcode" visible="true" type-of-field="text">
@@ -468,6 +505,25 @@
                 <field name="irb_job_position_types_description" visible="true" type-of-field="text">
                     <caption>Alumni irb jobs: Position type</caption>
                 </field>
+                
+                <field name="directory_data_start_date" visible="true" type-of-field="text">
+					<caption>Alumni directory data: Start date</caption>
+				</field>
+				<field name="directory_data_end_date" visible="true" type-of-field="text">
+					<caption>Alumni directory data: End date</caption>
+				</field>
+				<field name="directory_data_unit" visible="true" type-of-field="text">
+					<caption>Alumni directory data: Unit</caption>
+				</field>
+				<field name="directory_data_unit_2" visible="true" type-of-field="text">
+					<caption>Alumni directory data: Unit 2</caption>
+				</field>
+				<field name="directory_data_research_group" visible="true" type-of-field="text">
+					<caption>Alumni directory data: Research Group</caption>
+				</field>
+				<field name="directory_data_research_group_2" visible="true" type-of-field="text">
+					<caption>Alumni directory data: Research Group 2</caption>
+				</field>				 
             </orderby-fields>
         </fields>
     </site>

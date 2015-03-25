@@ -21,6 +21,7 @@ import bussineslogic.objects.Alumni_external_job_sectors;
 import bussineslogic.objects.Alumni_external_jobs;
 import bussineslogic.objects.Alumni_irb_job_positions;
 import bussineslogic.objects.Alumni_irb_jobs;
+import bussineslogic.objects.Alumni_directory_data;
 import bussineslogic.objects.Alumni_job_position_types;
 import bussineslogic.objects.Alumni_params;
 import bussineslogic.objects.Alumni_personal;
@@ -3871,6 +3872,77 @@ public class UseCaseFacade {
 	 */
 	public static Pair<Integer, List<Alumni_irb_jobs>> ObtainAllAlumni_irb_jobs(String administradorId, ListConfigurator configurator) throws InternalException {
 		return UseCase.ObtainAllAlumni_irb_jobs(UseCase.getUsuario(administradorId), configurator);
+	}
+	
+	/**
+	 * This method obtains all instances of Alumni_directory_data, which belong to the set of ialumni_directory_data_personal of a personal, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param personalcode Code of the personal which contains the set of ialumni_directory_data_personal
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws NoPermisosException 
+	 */
+	public static Pair<Integer, List<Alumni_directory_data>> ObtainAllIalumni_directory_data_alumni_personalFromPersonal(String administradorId, String personalcode, ListConfigurator configurator) throws InternalException, NoPermisosException {
+		return UseCase.ObtainAllIalumni_directory_data_alumni_personalFromPersonal(UseCase.getUsuario(administradorId), UseCase.getAlumni_personal(personalcode), configurator);
+	}
+
+	/**
+	 * This method creates a alumni_directory_data.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_directory_data Alumni_directory_data data transfer object (DTO) with the values of the new instance.
+	 * @return the new alumni_directory_data created with the Use Case
+	 * @throws InternalException
+	 */
+	public static Alumni_directory_data CreateAlumni_directory_data(String administradorId, Alumni_directory_data alumni_directory_data) throws InternalException, NoPermisosException {
+		return UseCase.CreateAlumni_directory_data(UseCase.getUsuario(administradorId), alumni_directory_data);
+	}
+
+	/**
+	 * This method modifies a alumni_directory_data.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_directory_data Alumni_directory_data data transfer object (DTO) with the values of the modified instance. The code of this attribute indicates which alumni_directory_data will be modified.
+	 * @return the modified alumni_directory_data
+	 * @throws InternalException
+	 */
+	public static Alumni_directory_data UpdateAlumni_directory_data(String administradorId, Alumni_directory_data alumni_directory_data) throws InternalException, NoPermisosException {
+		return UseCase.UpdateAlumni_directory_data(UseCase.getUsuario(administradorId), alumni_directory_data);
+	}
+
+	/**
+	 * This method removes a alumni_directory_data.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_directory_datacode  Code of the alumni_directory_data to be removed
+	 */
+	public static void RemoveAlumni_directory_data(String administradorId, String alumni_directory_datacode) throws InternalException, NoPermisosException {
+		UseCase.RemoveAlumni_directory_data(UseCase.getUsuario(administradorId), alumni_directory_datacode);
+	}
+
+	/**
+	 * This method obtains one instance of alumni_directory_data given its code.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param alumni_directory_datacode Code of the alumni_directory_data to be obtained
+	 * @return Alumni_directory_data with the given code.
+	 * @throws InternalException
+	 */
+	public static Alumni_directory_data ObtainAlumni_directory_data(String administradorId, String alumni_directory_datacode) throws InternalException {
+		return UseCase.ObtainAlumni_directory_data(UseCase.getUsuario(administradorId), alumni_directory_datacode);
+	}
+
+	/**
+	 * This method obtains all instances of Alumni_directory_data, given a list-configurator.
+	 * 
+	 * @param administradorId Code (no username) of the user who executes this use case
+	 * @param configurator ListConfigurator to be used
+	 * @return A pair with an Integer with the total number of instances which match the search without appling the 'pagination' of the ListConfigurator, and the list of the instances which match the configurator (incluing pagination)
+	 * @throws InternalException
+	 */
+	public static Pair<Integer, List<Alumni_directory_data>> ObtainAllAlumni_directory_data(String administradorId, ListConfigurator configurator) throws InternalException {
+		return UseCase.ObtainAllAlumni_directory_data(UseCase.getUsuario(administradorId), configurator);
 	}
 	
 	/**

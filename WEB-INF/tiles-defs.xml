@@ -796,6 +796,33 @@
   <definition name="oAlumni_irb_jobsSys.popUp_action_view_alumni_irb_jobs" extends="popup_template">
     <put name="center" value="/pages/oAlumni_irb_jobsSys/action_view_alumni_irb_jobs.jsp" />
   </definition>
+   <definition name="oAlumni_directory_dataSys.action_modify_page_alumni_directory_data" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_directory_dataSys/action_modify_page_alumni_directory_data.jsp" />
+  </definition>
+  <definition name="oAlumni_directory_dataSys.action_delete_page_alumni_directory_data" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_directory_dataSys/action_delete_page_alumni_directory_data.jsp" />
+  </definition>  
+  <definition name="oAlumni_directory_dataSys.action_add_alumni_directory_data" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_directory_dataSys/action_add_alumni_directory_data.jsp" />
+  </definition>  
+  <definition name="oAlumni_directory_dataSys.action_view_alumni_directory_data" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oAlumni_directory_dataSys/action_view_alumni_directory_data.jsp" />
+  </definition>
+  <definition name="oPersonalSys.action_manage_personal_alumni_directory_data" extends="horizontal_evc_template1">
+    <put name="center" value="/pages/oPersonalSys/action_manage_personal_alumni_directory_data.jsp" />
+  </definition>
+  <definition name="oAlumni_directory_dataSys.popUp_action_add_alumni_directory_data" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_directory_dataSys/action_add_alumni_directory_data.jsp" />
+  </definition>
+  <definition name="oAlumni_directory_dataSys.popUp_action_modify_page_alumni_directory_data" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_directory_dataSys/action_modify_page_alumni_directory_data.jsp" />
+  </definition>
+  <definition name="oAlumni_directory_dataSys.popUp_action_delete_page_alumni_directory_data" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_directory_dataSys/action_delete_page_alumni_directory_data.jsp" />
+  </definition>
+  <definition name="oAlumni_directory_dataSys.popUp_action_view_alumni_directory_data" extends="popup_template">
+    <put name="center" value="/pages/oAlumni_directory_dataSys/action_view_alumni_directory_data.jsp" />
+  </definition>
   <definition name="oAlumni_external_jobsSys.action_modify_page_alumni_external_jobs" extends="horizontal_evc_template1">
     <put name="center" value="/pages/oAlumni_external_jobsSys/action_modify_page_alumni_external_jobs.jsp" />
   </definition>
@@ -837,6 +864,9 @@
   </definition>
   <definition name="oAlumni_personalSys.action_manage_alumni_personal_alumni_irb_jobs" extends="horizontal_evc_template1">
 	<put name="center" value="/pages/oAlumni_personalSys/action_manage_alumni_irb_jobs.jsp" />
+  </definition>
+  <definition name="oAlumni_personalSys.action_manage_alumni_personal_alumni_directory_data" extends="horizontal_evc_template1">
+	<put name="center" value="/pages/oAlumni_personalSys/action_manage_alumni_directory_data.jsp" />
   </definition>
   <definition name="oAlumni_personalSys.action_manage_alumni_personal" extends="horizontal_evc_template1">
 	<put name="center" value="/pages/oAlumni_personalSys/action_manage_alumni_personal.jsp" />
