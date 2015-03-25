@@ -2317,6 +2317,58 @@
 </field>	
 	
 </form>
+
+<form name="alumni_directory_data_Form">
+	<field property="start_date" depends="localeDate">
+		<var>
+			<var-name>datePattern</var-name>
+			<var-value>simpleDate</var-value>
+		</var>
+		<arg key="alumni_directory_data.start_date" />
+	</field>  
+	<field property="end_date" depends="localeDate">
+		<var>
+			<var-name>datePattern</var-name>
+			<var-value>simpleDate</var-value>
+		</var>
+		<arg key="alumni_directory_data.end_date" />
+	</field>  	
+</form>
+<form name="oAlumni_directory_dataSys__action_modify_modify_page_alumni_directory_data_Form">
+	
+<field property="alumni_directory_data_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_directory_data_Form</var-value>
+	</var>
+</field>
+	
+</form>
+
+
+<form name="oAlumni_directory_dataSys__action_delete_delete_page_alumni_directory_data_Form">
+	
+<field property="alumni_directory_data_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_directory_data_Form</var-value>
+	</var>
+</field>
+
+	
+	
+</form>
+<form name="oAlumni_directory_dataSys__action_new_new_page_alumni_directory_data_Form">
+	
+<field property="alumni_directory_data_Form" depends="nestedBean">
+	<var>
+		<var-name>beanName</var-name>
+		<var-value>alumni_directory_data_Form</var-value>
+	</var>
+</field>	
+</form>
+
+
 <form name="oAlumni_personalSys__action_delete_delete_page_alumni_personal_Form">	
 	<field property="alumni_personal_Form" depends="nestedBean">
 		<var>

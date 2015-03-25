@@ -60,6 +60,7 @@
 <mapping resource="../etc/dbmappings/alumni_external_job_sectors.hbm.xml" />
 <mapping resource="../etc/dbmappings/alumni_external_jobs.hbm.xml" />
 <mapping resource="../etc/dbmappings/alumni_irb_jobs.hbm.xml" />
+<mapping resource="../etc/dbmappings/alumni_directory_data.hbm.xml" />
 <mapping resource="../etc/dbmappings/alumni_external_job_positions.hbm.xml" />
 <mapping resource="../etc/dbmappings/alumni_irb_job_positions.hbm.xml" />
 <mapping resource="../etc/dbmappings/alumni_job_position_types.hbm.xml" />

@@ -5,6 +5,7 @@
     <group name="oAlumni_personalSys" />            
     <group name="oAlumni_external_jobsSys" />
     <group name="oAlumni_irb_jobsSys" />
+    <group name="oAlumni_directory_dataSys" />
     <group name="customList"/>		
   </accessible-groups>
   <forbidden-actions>

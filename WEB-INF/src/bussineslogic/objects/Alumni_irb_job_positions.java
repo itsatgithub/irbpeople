@@ -30,6 +30,8 @@ public class Alumni_irb_job_positions implements Persistent {
 	private Alumni_job_position_types job_position_types;
 	
 	Set<Alumni_irb_jobs> ialumni_irb_jobs = new HashSet<Alumni_irb_jobs>();
+	
+	Set<Alumni_directory_data> ialumni_directory_data = new HashSet<Alumni_directory_data>();
 
 	/**
 	 * Default Constructor which creates an empty alumni_titles
@@ -186,6 +188,41 @@ public class Alumni_irb_job_positions implements Persistent {
 		this.ialumni_irb_jobs.remove(ialumni_personal);
 	}
 
+	/**
+	 * @return the ialumni_irb_job_positions
+	 */
+	public Set<Alumni_directory_data> getIalumni_directory_data() {
+		return ialumni_directory_data;
+	}
+
+	/**
+	 * @param ialumni_irb_job_positions
+	 *            the ialumni_irb_job_positions to set.
+	 */
+	public void setIalumni_directory_data(Set<Alumni_directory_data> ialumni_directory_data) {
+		this.ialumni_directory_data = ialumni_directory_data;
+	}
+
+	/**
+	 * Adds a Alumni personal to the ialumni_irb_job_positions set.
+	 * 
+	 * @param ialumni_irb_job_positions
+	 *            Alumni personal to be added
+	 */
+	public void addIalumni_directory_data(Alumni_directory_data ialumni_personal) {
+		this.ialumni_directory_data.add(ialumni_personal);
+	}
+
+	/**
+	 * Removes a Alumni personal to the ialumni_irb_job_positions set.
+	 * 
+	 * @param ialumni_irb_job_positions
+	 *            Alumni personal to be removed
+	 */
+	public void removeIalumni_directory_data(Alumni_directory_data ialumni_personal) {
+		this.ialumni_directory_data.remove(ialumni_personal);
+	}
+	
 	public int getOrder_number() {
 		return order_number;
 	}

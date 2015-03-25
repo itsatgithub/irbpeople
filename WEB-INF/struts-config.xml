@@ -21,6 +21,7 @@
     <form-bean name="academic_info_Form" type="presentation.formbeans.objects.Academic_info_Form" />
     <form-bean name="alumni_external_jobs_Form" type="presentation.formbeans.objects.Alumni_external_jobs_Form" />
     <form-bean name="alumni_irb_jobs_Form" type="presentation.formbeans.objects.Alumni_irb_jobs_Form" />
+    <form-bean name="alumni_directory_data_Form" type="presentation.formbeans.objects.Alumni_directory_data_Form" />
     <form-bean name="holiday_Form" type="presentation.formbeans.objects.Holiday_Form" />
     <form-bean name="location_Form" type="presentation.formbeans.objects.Location_Form" />
     <form-bean name="marital_status_Form" type="presentation.formbeans.objects.Marital_status_Form" />
@@ -222,6 +223,17 @@
 	<form-bean name="oAlumni_irb_jobsSys__action_modify_page_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_modify_page_alumni_irb_jobs_Form" />
 	<form-bean name="oAlumni_irb_jobsSys__action_new_new_page_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_new_new_page_alumni_irb_jobs_Form" />
 	<form-bean name="oAlumni_irb_jobsSys__action_view_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_irb_jobsSys.Action_view_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_directory_dataSys__action_add_alumni_directory_data_Form" type="presentation.formbeans.oAlumni_directory_dataSys.Action_add_alumni_directory_data_Form" />
+	<form-bean name="oAlumni_directory_dataSys__action_cancel_delete_alumni_directory_data_Form" type="presentation.formbeans.oAlumni_directory_dataSys.Action_cancel_delete_alumni_directory_data_Form" />
+	<form-bean name="oAlumni_directory_dataSys__action_cancel_modify_modify_page_alumni_directory_data_Form" type="presentation.formbeans.oAlumni_directory_dataSys.Action_cancel_modify_modify_page_alumni_directory_data_Form" />
+	<form-bean name="oAlumni_directory_dataSys__action_cancel_new_new_page_alumni_directory_data_Form" type="presentation.formbeans.oAlumni_directory_dataSys.Action_cancel_new_new_page_alumni_directory_data_Form" />
+	<form-bean name="oAlumni_directory_dataSys__action_cancel_view_view_alumni_directory_data_Form" type="presentation.formbeans.oAlumni_directory_dataSys.Action_cancel_view_view_alumni_directory_data_Form" />
+	<form-bean name="oAlumni_directory_dataSys__action_delete_delete_page_alumni_directory_data_Form" type="presentation.formbeans.oAlumni_directory_dataSys.Action_delete_delete_page_alumni_directory_data_Form" />
+	<form-bean name="oAlumni_directory_dataSys__action_delete_page_alumni_directory_data_Form" type="presentation.formbeans.oAlumni_directory_dataSys.Action_delete_page_alumni_directory_data_Form" />
+	<form-bean name="oAlumni_directory_dataSys__action_modify_modify_page_alumni_directory_data_Form" type="presentation.formbeans.oAlumni_directory_dataSys.Action_modify_modify_page_alumni_directory_data_Form" />
+	<form-bean name="oAlumni_directory_dataSys__action_modify_page_alumni_directory_data_Form" type="presentation.formbeans.oAlumni_directory_dataSys.Action_modify_page_alumni_directory_data_Form" />
+	<form-bean name="oAlumni_directory_dataSys__action_new_new_page_alumni_directory_data_Form" type="presentation.formbeans.oAlumni_directory_dataSys.Action_new_new_page_alumni_directory_data_Form" />
+	<form-bean name="oAlumni_directory_dataSys__action_view_alumni_directory_data_Form" type="presentation.formbeans.oAlumni_directory_dataSys.Action_view_alumni_directory_data_Form" />	
     <form-bean name="oHolidaySys__action_add_holiday_Form" type="presentation.formbeans.oHolidaySys.Action_add_holiday_Form" />
     <form-bean name="oHolidaySys__action_cancel_delete_holiday_Form" type="presentation.formbeans.oHolidaySys.Action_cancel_delete_holiday_Form" />
     <form-bean name="oHolidaySys__action_cancel_modify_modify_page_holiday_Form" type="presentation.formbeans.oHolidaySys.Action_cancel_modify_modify_page_holiday_Form" />
@@ -385,6 +397,7 @@
     <form-bean name="oPersonalSys__action_todelete_choose_current_personal_Form" type="presentation.formbeans.oPersonalSys.Action_todelete_choose_current_personal_Form" />
     <form-bean name="oAlumni_personalSys__action_manage_alumni_personal_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_alumni_personal_alumni_external_jobs_Form" />
     <form-bean name="oAlumni_personalSys__action_manage_alumni_personal_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_alumni_personal_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_personalSys__action_manage_alumni_personal_alumni_directory_data_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_alumni_personal_alumni_directory_data_Form" />    
     <form-bean name="oPersonalSys__action_view_details_Form" type="presentation.formbeans.oPersonalSys.Action_view_details_Form" />
     <form-bean name="oPositionSys__action_cancel_delete_position_Form" type="presentation.formbeans.oPositionSys.Action_cancel_delete_position_Form" />
     <form-bean name="oPositionSys__action_cancel_modify_modify_page_position_Form" type="presentation.formbeans.oPositionSys.Action_cancel_modify_modify_page_position_Form" />
@@ -542,6 +555,7 @@
 	<form-bean name="oAlumni_personalSys__action_delete_page_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_delete_page_alumni_personal_Form" />
 	<form-bean name="oAlumni_personalSys__action_manage_alumni_personal_alumni_external_jobs_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_alumni_personal_alumni_external_jobs_Form" />
 	<form-bean name="oAlumni_personalSys__action_manage_alumni_personal_alumni_irb_jobs_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_alumni_personal_alumni_irb_jobs_Form" />
+	<form-bean name="oAlumni_personalSys__action_manage_alumni_personal_alumni_directory_data_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_alumni_personal_alumni_directory_data_Form" />
 	<form-bean name="oAlumni_personalSys__action_manage_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_alumni_personal_Form" />
 	<form-bean name="oAlumni_personalSys__action_manage_validated_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_validated_alumni_personal_Form" />
 	<form-bean name="oAlumni_personalSys__action_manage_not_validated_alumni_personal_Form" type="presentation.formbeans.oAlumni_personalSys.Action_manage_not_validated_alumni_personal_Form" />
@@ -1462,6 +1476,37 @@
 	<action name="oAlumni_irb_jobsSys__action_view_alumni_irb_jobs_Form" path="/oAlumni_irb_jobsSys/popUp_action_view_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_irb_jobsSys.Action_view_alumni_irb_jobs" unknown="false" validate="true">
 	  <forward contextRelative="false" name="success" path="oAlumni_irb_jobsSys.popUp_action_view_alumni_irb_jobs" redirect="false" />
 	</action>
+	 <action name="oAlumni_directory_dataSys__action_add_alumni_directory_data_Form" path="/oAlumni_directory_dataSys/action_add_alumni_directory_data" scope="request" type="presentation.actions.oAlumni_directory_dataSys.Action_add_alumni_directory_data" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_directory_dataSys.action_add_alumni_directory_data" redirect="false" />
+	</action>    
+	<action path="/oAlumni_directory_dataSys/action_cancel_delete_alumni_directory_data" type="presentation.actions.oAlumni_directory_dataSys.Action_cancel_delete_alumni_directory_data" unknown="false" validate="true" />
+	<action path="/oAlumni_directory_dataSys/action_cancel_modify_modify_page_alumni_directory_data" type="presentation.actions.oAlumni_directory_dataSys.Action_cancel_modify_modify_page_alumni_directory_data" unknown="false" validate="true" />
+	<action path="/oAlumni_directory_dataSys/action_cancel_new_new_page_alumni_directory_data" type="presentation.actions.oAlumni_directory_dataSys.Action_cancel_new_new_page_alumni_directory_data" unknown="false" validate="true" />
+	<action path="/oAlumni_directory_dataSys/action_cancel_view_view_alumni_directory_data" type="presentation.actions.oAlumni_directory_dataSys.Action_cancel_view_view_alumni_directory_data" unknown="false" validate="true" />
+	<action name="oAlumni_directory_dataSys__action_delete_delete_page_alumni_directory_data_Form" path="/oAlumni_directory_dataSys/action_delete_delete_page_alumni_directory_data" scope="request" type="presentation.actions.oAlumni_directory_dataSys.Action_delete_delete_page_alumni_directory_data" unknown="false" validate="true" />
+	<action name="oAlumni_directory_dataSys__action_delete_page_alumni_directory_data_Form" path="/oAlumni_directory_dataSys/action_delete_page_alumni_directory_data" scope="request" type="presentation.actions.oAlumni_directory_dataSys.Action_delete_page_alumni_directory_data" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_directory_dataSys.action_delete_page_alumni_directory_data" redirect="false" />
+	</action>
+	<action name="oAlumni_directory_dataSys__action_modify_modify_page_alumni_directory_data_Form" path="/oAlumni_directory_dataSys/action_modify_modify_page_alumni_directory_data" scope="request" type="presentation.actions.oAlumni_directory_dataSys.Action_modify_modify_page_alumni_directory_data" unknown="false" validate="true" />
+	<action name="oAlumni_directory_dataSys__action_modify_page_alumni_directory_data_Form" path="/oAlumni_directory_dataSys/action_modify_page_alumni_directory_data" scope="request" type="presentation.actions.oAlumni_directory_dataSys.Action_modify_page_alumni_directory_data" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_directory_dataSys.action_modify_page_alumni_directory_data" redirect="false" />
+	</action>
+	<action name="oAlumni_directory_dataSys__action_new_new_page_alumni_directory_data_Form" path="/oAlumni_directory_dataSys/action_new_new_page_alumni_directory_data" scope="request" type="presentation.actions.oAlumni_directory_dataSys.Action_new_new_page_alumni_directory_data" unknown="false" validate="true" />
+	<action name="oAlumni_directory_dataSys__action_view_alumni_directory_data_Form" path="/oAlumni_directory_dataSys/action_view_alumni_directory_data" scope="request" type="presentation.actions.oAlumni_directory_dataSys.Action_view_alumni_directory_data" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_directory_dataSys.action_view_alumni_directory_data" redirect="false" />
+	</action>    
+	<action name="oAlumni_directory_dataSys__action_add_alumni_directory_data_Form" path="/oAlumni_directory_dataSys/popUp_action_add_alumni_directory_data" scope="request" type="presentation.actions.oAlumni_directory_dataSys.Action_add_alumni_directory_data" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="oAlumni_directory_dataSys.popUp_action_add_alumni_directory_data" redirect="false" />
+	</action>    
+	<action name="oAlumni_directory_dataSys__action_delete_page_alumni_directory_data_Form" path="/oAlumni_directory_dataSys/popUp_action_delete_page_alumni_directory_data" scope="request" type="presentation.actions.oAlumni_directory_dataSys.Action_delete_page_alumni_directory_data" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="oAlumni_directory_dataSys.popUp_action_delete_page_alumni_directory_data" redirect="false" />
+	</action>
+	<action name="oAlumni_directory_dataSys__action_modify_page_alumni_directory_data_Form" path="/oAlumni_directory_dataSys/popUp_action_modify_page_alumni_directory_data" scope="request" type="presentation.actions.oAlumni_directory_dataSys.Action_modify_page_alumni_directory_data" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="oAlumni_directory_dataSys.popUp_action_modify_page_alumni_directory_data" redirect="false" />
+	</action>
+	<action name="oAlumni_directory_dataSys__action_view_alumni_directory_data_Form" path="/oAlumni_directory_dataSys/popUp_action_view_alumni_directory_data" scope="request" type="presentation.actions.oAlumni_directory_dataSys.Action_view_alumni_directory_data" unknown="false" validate="true">
+	  <forward contextRelative="false" name="success" path="oAlumni_directory_dataSys.popUp_action_view_alumni_directory_data" redirect="false" />
+	</action>
 	<action name="oAlumni_personalSys__action_validate_external_Form" path="/oAlumni_personalSys/action_validate_external" scope="request" type="presentation.actions.oAlumni_personalSys.Action_validate_external" unknown="false" validate="false">
 		<forward contextRelative="false" name="success" path="oAlumni_personalSys.action_validate_external" redirect="false" />
 	</action>
@@ -1810,6 +1855,9 @@
 	</action>
 	<action name="oAlumni_personalSys__action_manage_alumni_personal_alumni_irb_jobs_Form" path="/oAlumni_personalSys/action_manage_alumni_personal_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal_alumni_irb_jobs" unknown="false" validate="false">
   		<forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_alumni_personal_alumni_irb_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_personalSys__action_manage_alumni_personal_alumni_directory_data_Form" path="/oAlumni_personalSys/action_manage_alumni_personal_alumni_directory_data" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal_alumni_directory_data" unknown="false" validate="false">
+  		<forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_alumni_personal_alumni_directory_data" redirect="false" />
 	</action>
     <action name="oPersonalSys__action_manage_my_own_personal_work_experience_Form" path="/oPersonalSys/action_manage_my_own_personal_work_experience" scope="request" type="presentation.actions.oPersonalSys.Action_manage_my_own_personal_work_experience" unknown="false" validate="false">
       <forward contextRelative="false" name="success" path="oPersonalSys.action_manage_my_own_personal_work_experience" redirect="false" />
@@ -2349,6 +2397,9 @@
 	</action>
 	<action name="oAlumni_personalSys__action_manage_alumni_personal_alumni_irb_jobs_Form" path="/oAlumni_personalSys/action_manage_alumni_personal_alumni_irb_jobs" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal_alumni_irb_jobs" unknown="false" validate="false">
 	  <forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_alumni_personal_alumni_irb_jobs" redirect="false" />
+	</action>
+	<action name="oAlumni_personalSys__action_manage_alumni_personal_alumni_directory_data_Form" path="/oAlumni_personalSys/action_manage_alumni_personal_alumni_directory_data" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal_alumni_directory_data" unknown="false" validate="false">
+	  <forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_alumni_personal_alumni_directory_data" redirect="false" />
 	</action>
 	<action name="oAlumni_personalSys__action_manage_alumni_personal_Form" path="/oAlumni_personalSys/action_manage_alumni_personal" scope="request" type="presentation.actions.oAlumni_personalSys.Action_manage_alumni_personal" unknown="false" validate="false">
 	  <forward contextRelative="false" name="success" path="oAlumni_personalSys.action_manage_alumni_personal" redirect="false" />

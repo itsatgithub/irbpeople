@@ -200,6 +200,10 @@
 		<pattern>{n}</pattern>
 		<num>0000000000001</num>
 	</code>
+	<code beanName="alumni_directory_data">
+		<pattern>{n}</pattern>
+		<num>0000000000001</num>
+	</code>
 	<code beanName="alumni_communications">
 		<pattern>{n}</pattern>
 		<num>0000000000001</num>
